@@ -1,0 +1,95 @@
+.technic_daily_planner {
+    font-family: 'Andika';
+    position: relative;
+}
+
+.technic_daily_planner .wrapper{
+    background: #f7f0ea;
+}
+
+.technic_daily_planner .card{
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    overflow: hidden;
+    width: calc(100% - 500px);
+    box-shadow: 10px 10px 10px #ddd;
+    background: #fff;
+    border: 3px solid #265543;
+    border-radius: 10px;
+}
+
+.technic_daily_planner .card-body{
+    overflow: auto;
+    position: relative;
+}
+
+.SWRow .caption{
+    /* color:#265543; */
+    font-weight: 600;
+}
+
+.technic_daily_planner label>.badge, label>abbr {
+    margin-right: .125rem;
+}
+
+.technic_daily_planner abbr[data-original-title], .technic_daily_planner abbr[title] {
+    text-decoration: none;
+}
+
+@media (max-width: 575.98px){
+    .page-inner {
+        padding: 1rem;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .technic_daily_planner .wrapper{
+        background: #e7eaf5;
+    }
+    
+    .section-block {
+        padding-right: 0;
+        padding-left: 0;
+    }
+
+    .steps {
+        margin: .6rem 0;
+    }
+
+    .technic_daily_planner .card{
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        overflow: hidden;
+        height: calc(100% - 150px); 
+        width: calc(100% - 30px);
+        /* box-shadow:0 0 10px rgba(0,0,0,0.1);; */
+        /* background: #f8f8ff; */
+        background: #f0f3f7;
+        border-color: transparent !important;
+        border-radius: 0.75rem;
+        /* box-shadow: 0 1px 1px 0px #d7def4; */
+        box-shadow: 10px 10px 10px #ddd;
+    }
+    
+    .technic_daily_planner .card-body{
+        overflow: auto;
+        position: relative;
+        padding: 1.25rem;
+    }
+
+    .SWRow .caption,.SWRow .control{
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .SWRow .caption{
+        color: #56575f;
+        font-weight: 600;
+    }
+}

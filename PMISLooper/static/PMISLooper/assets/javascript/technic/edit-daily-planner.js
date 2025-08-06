@@ -1,0 +1,59 @@
+$(function(){
+
+    var form = new SWForm("#form-wapper", "Technical Daily Planner", "/looper/technic/edit-daily-planner", "POST", false);
+
+    form.addComponent(new SWText("inc_id", "hidden", ""));//？？？？
+    form.addComponent(new SWCombobox("contact", "Contact", window.CommonData.PartUserNames, undefined));
+    form.addComponent(new SWDate("inputdate", "date","InputDate")); //？？？？
+    form.addComponent(new SWText("itemno", "text", "ItemNo"));   //？？？？
+    form.addComponent(new SWText("taskno", "text", "TaskNo"));
+    form.layout.append(`<button id="task_no_btn">search</button>`);
+    form.addComponent(new SWDate("startdate", "datetime-local", "StartDate"));
+    form.addComponent(new SWText("taskdescription", "text", "TaskDescription"));
+    form.addComponent(new SWText("goalachieve", "text", "GoalAchieve"));
+    form.addComponent(new SWText("platformused", "text", "PlatformUsed"));
+    form.addComponent(new SWText("tasktype", "text", "TaskType"));
+    form.addComponent(new SWText("score", "text", "Score"));
+    form.addComponent(new SWText("framespecification", "text", "FrameSpecification"));
+    form.addComponent(new SWText("designdoc", "text", "DesignDoc"));
+    form.addComponent(new SWText("questions", "text", "Questions"));
+    form.addComponent(new SWText("newtechnicalneed", "text", "NewTechnicalNeed"));
+    form.addComponent(new SWText("comment", "text", "Comment"));
+    form.addComponent(new SWCombobox("status", "Status", ["T","C"]));
+    form.addComponent(new SWDate("enddate", "datetime-local", "EndDate"));
+
+    form.init_data("/looper/DailyPlanner/create");
+
+    form.save_data("/looper/DailyPlanner/create",);
+
+    form.save_format = function(data) {
+        data.inputdate = Date.parse(data.inputdate).toString("yyyyMMdd");
+    }
+    
+    function search(){
+        var taskno=$('input[name="taskno"]').val();
+        $.ajax({
+            url:'/looper/search_demo',
+            data:{'taskno':taskno},
+            type:'GET',
+            dataType:'json',
+            cache: false,
+            success: function(data){
+                if (data.status){
+                    task.find("input[name='task']").text(data[0].task);
+                }
+            }
+        })
+    }
+
+    $("#taskno").keyup(function(){
+        if(event.keyCode == 13){ 
+            search();
+        }
+    });
+
+    $("#form-wapper").on("click", "#task_no_btn", function(e){ 
+        e.preventDefault();
+        search(); 
+    });
+});

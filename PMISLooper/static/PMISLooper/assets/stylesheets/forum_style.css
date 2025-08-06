@@ -1,0 +1,362 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+}
+
+body {
+    /* font-family: 'Raleway', Arial, sans-serif; */
+    font-family: 'Andika';
+    background-color: #EEF1F2;
+    padding-top: 71px;
+    line-height: 1.5;
+    font-size: 17px;
+}
+
+a:hover{
+    text-decoration: none;
+}
+.hide {
+    display: none!important;
+}
+ol, ul {
+    list-style: none;
+}
+.m-bottom {
+    margin-bottom: 1px;
+}
+.border-radius-end {
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.navbar {
+    padding-top: 0.625rem;
+    padding-bottom: 0.625rem;
+    min-height: 52px;
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.15);
+}
+
+.navbar a {
+    vertical-align: middle;
+}
+
+.navbar a:not(.btn):not(.dropdown-item) {
+    color: #FFFFFF;
+}
+
+.navbar .navbar-toggler {
+    width: 37px;
+    height: 27px;
+    vertical-align: middle;
+    outline: 0;
+}
+
+.navbar .navbar-nav .nav-link:not(.btn) {
+    text-transform: uppercase;
+    font-size: 0.7142em;
+    padding: 0.5rem 0.7rem;
+    line-height: 1.625rem;
+}
+
+#search {
+    position: relative;
+    font-size: 18px;
+}
+
+#search label {
+    position: absolute;
+    left: 17px;
+    top: 6px;
+}
+
+#search #search-input{
+    padding-left: 43px;
+    padding-right: 43px;
+    border-radius: 23px;
+}
+
+#search #search-clear {
+    text-decoration: none;
+    position: absolute;
+    right: 18px;
+    top: 11px;
+    color: #b3b3b3;
+}
+
+#Panel {
+    margin-top: 15px;
+    float: left;
+    width: 250px;
+}
+
+.Box {
+    border-radius: 1px;
+    background: #cfecff;
+    color: #888;
+    padding: 6px 10px;
+    margin: 0 0 10px;
+    box-shadow: 0px 0px 2px #999;
+}
+
+div.Box {
+    color: #111;
+    box-shadow: none;
+    margin-bottom: 16px;
+    border-radius: 5px;
+    padding: 6px 13px;
+    background: #FFF;
+    border: 1px solid #EEF1F2;
+}
+
+div.Box h4 {
+    color: #333;
+    line-height: 20px;
+    padding-top: 1px;
+    padding-bottom: 3px;
+    text-shadow: 0 1px 0 #fff;
+    font-size: 17px;
+    font-weight: bold;
+    margin: 0;
+}
+
+div.Box p {
+    color: #111;
+    padding-bottom: 5px;
+    line-height: 18px;
+    margin: 4px 0;
+    font-size: 12px;
+    font-family: 'Andika';
+}
+
+.P{
+    margin: 0.5em 0;
+}
+
+div.Box.GuestBox div.P {
+    margin-top: 3px;
+}
+
+a.Button, .Button {
+    background: #ca3c3c;
+    border: 1px solid #ca3c3c;
+    border-bottom-color: #ca3c3c;
+    text-shadow: none;
+    box-shadow: none;
+    text-decoration: none;
+    color: #FFF;
+}
+
+.GuestBox .Button {
+    background: #ca3c3c !important;
+}
+
+.GuestBox .Button:hover{
+    background:#e35555 !important;
+}
+
+div.Box.GuestBox a.Button {
+    font-size: 11px;
+    padding: 4px 7px 3px 6px;
+    border-radius: 2px;
+}
+
+div.PanelBar {
+    margin-bottom: 16px;
+    border-radius: 5px;
+    background: #FFF;
+    border: 1px solid #EEF1F2;
+}
+
+div.PanelBar li {
+    border-bottom: 1px solid #EEF1F2;
+}
+
+div.PanelBar li:first-child {
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+}
+
+div.PanelBar li a {
+    padding: 4px 13px;
+    font-size: 14px;
+    color: #222;
+    display: block;
+    text-shadow: 0 1px 0 #fff;
+    border-top: 1px solid #fff;
+    padding-top: 3px;
+}
+
+div.PanelBar li:first-child a {
+    padding-top: 4px;
+    border-top: 0px;
+    font-size: 17px;
+}
+
+div.PanelBar li.current {
+    background-color: #FFF;
+    font-weight: bold;
+}
+
+div.PanelBar li.current a {
+    color: #333;
+    text-shadow: 0 0px 0 #fff;
+}
+
+div.PanelBar li:last-child {
+    border-bottom: 0px;
+}
+
+div.box-wrapper {
+    padding-bottom: 16px;
+}
+
+div.Box.BoxCategories {
+    margin-bottom: 0px;
+}
+
+ul.PanelInfo {
+    border-top: 0px;
+    border-bottom: 0;
+    padding-bottom: 3px;
+}
+
+ul.PanelInfo.PanelCategories li {
+    background: none;
+    border-bottom: 0px;
+    padding: 2px 0px 0px 0px;
+    font-size: 12px;
+}
+
+.dropdown-toggle:after, .card a, .bootstrap-switch-label:before {
+    -webkit-transition: all 150ms ease 0s;
+    transition: all 150ms ease 0s;
+}
+
+.dropdown-toggle[aria-expanded="true"]:after {
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+
+.PanelInfo li a {
+    color: #111;
+    font-size: 14px;
+}
+
+#AdvancedRank.Box h4 {
+    padding-bottom: 5px;
+}
+
+.BoxAdmin ul {
+    border-top: 0px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+}
+
+.BoxAdmin li {
+    background: none;
+    border-bottom: 0px;
+    padding: 0px 0px 0px 0px;
+    font-size: 12px;
+}
+
+.BoxAdmin li a {
+    color: #888;
+}
+
+.BoxAdmin span {
+    color: #888;
+}
+
+main{
+    margin-top: 15px;
+}
+
+div.SubTab {
+    display: block;
+    border: 1px solid #B2C5D6;
+    border-bottom-color: #E8E8E8;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-color: #EEF1F2;
+}
+
+
+.reply {
+    border: 1px solid #eee;
+    width: 54px;
+    height: 45px;
+    font-size: 12px;
+    border-radius: 3px;
+}
+
+time {
+    cursor: default;
+    color: #888;
+    font-size: 12px;
+}
+
+.page-link-gx {
+    position: relative;
+    display: block;
+    padding: 5px 10px;
+    margin-left: -1px;
+    line-height: 1.25;
+    color: #000000;
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+    border-radius: 3px;
+    font-size: 14px;
+}
+
+.active-page {
+    background-color: #f96332;
+    border-color: #f96332;
+    border-radius: 3px;
+    color: white;
+}
+
+#ul-ranking div:nth-child(1)>strong {
+    color: #FF3636;
+}
+
+#ul-ranking div:nth-child(2)>strong {
+    color: #f96332;
+}
+
+#ul-ranking div:nth-child(3)>strong {
+    color: #FFB236;
+}
+
+#ul-ranking div:nth-child(4)>strong {
+    color: #888;
+}
+
+#ul-ranking div:nth-child(5)>strong {
+    color: #888;
+}
+
+#ul-ranking>div{
+    font-size: 14px;
+}
+
+.tpname span {
+    overflow: hidden;
+    color: #111 !important;
+}
+
+.tpscore {
+    display: inline-block;
+    color: #777;
+    line-height: 15px;
+    right: 15px;
+    top: 6px;
+}
+
+@media screen and (min-width: 992px){
+    .navbar-nav .nav-item:not(:last-child) {
+        margin-right: 5px;
+    }
+}

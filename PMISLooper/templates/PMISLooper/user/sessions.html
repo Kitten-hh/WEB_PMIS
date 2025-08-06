@@ -1,0 +1,134 @@
+{% extends 'PMISLooper/index.html' %}
+{%load static %}
+{% load i18n %}
+{%load md5url %}
+{%load customer_filter%}
+{%block form_css%}
+{{block.super}}
+<link rel="stylesheet" href="{% md5url 'PMISLooper/assets/stylesheets/user/sessions.css' %}" data-skin="default">
+<link rel="stylesheet" href="{% md5url 'PMISLooper/assets/stylesheets/user/sessions_dark.css' %}" data-skin="dark">
+{%endblock%}
+{%  block content %}
+{{block.super}}
+<header class="page-cover flex-row justify-content-between activites_header">
+  <div class="d-none d-sm-flex align-items-center text-center col-auto p-3 border-right" style="border-right-style: dashed !important;">
+    <a href="javascript:;" class="user-avatar user-avatar-lg custShadow"><img src="{% static 'PMISLooper/assets/images/timg.jpg' %}" alt=""></a>
+    <div class="pl-2">
+      <h2 class="h4 mb-0 username"></h2>
+      <div class="mt-1">
+        <i class="fa fa-star text-yellow"></i> <i class="fa fa-star text-yellow"></i> <i class="fa fa-star text-yellow"></i> <i class="fa fa-star text-yellow"></i> <i class="far fa-star text-yellow"></i>
+      </div>
+    </div>
+  </div>
+  <div class="metric-row w-100 m-0 flex-nowrap customer_metric_row scrollbar">
+    <a href="javascript:;" class="metric align-items-center customer_metric">
+      <p class="metric-value h5 value">5</p>
+      <h2 class="metric-label"> {% trans "Projects" %} </h2>
+    </a>
+    <a href="javascript:;" id="session_link" class="metric align-items-center customer_metric">
+      <p class="metric-value h5 value">35</p>
+      <h2 class="metric-label"> {% trans "Sessions" %} </h2>
+    </a>
+    <a href="javascript:;" id="act_tasks_link" class="metric align-items-center customer_metric">
+      <p class="metric-value h5 value">14</p>
+      <h2 class="metric-label"><span class="ml-2">{% trans "Tasks" %}</span></h2>
+    </a>
+    <a href="javascript:;" id="new_technicals" class="metric align-items-center customer_metric">
+      <p class="metric-value h5 value">14</p>
+      <h2 class="metric-label"> {% trans "New Technicals" %} </h2>
+    </a>
+    <a href="javascript:;" id="new_questions" class="metric align-items-center customer_metric">
+      <p class="metric-value h5 value">3</p>
+      <h2 class="metric-label"> {% trans "New Questions" %} </h2>
+    </a>
+    <a href="javascript:;" id="project_goal" class="metric align-items-center customer_metric">
+      <p class="metric-value h5 value"><span class="text-primary pgoal_total">31</span> / <span
+          class="pgoal_completed">53</span></p>
+      <h2 class="metric-label"> {% trans "Project Goal" %} </h2>
+    </a>
+    <a href="javascript:;" id="week_goal" class="metric align-items-center customer_metric">
+      <p class="metric-value h5 value"><span class="text-primary pgoal_total">6</span> / <span
+          class="pgoal_completed">10</span></p>
+      <h2 class="metric-label"> {% trans "Week Goal" %} </h2>
+    </a>
+    <a href="javascript:;" id="must_finish" class="metric align-items-center customer_metric">
+      <p class="metric-value h5 value"><span class="text-primary pgoal_total">23</span> / <span
+          class="pgoal_completed">30</span></p>
+      <h2 class="metric-label"> {% trans "Must Finish" %} </h2>
+    </a>
+    <a href="javascript:;" id="must_have" class="metric align-items-center customer_metric">
+      <p class="metric-value h5 value"><span class="text-primary pgoal_total">10</span> / <span
+          class="pgoal_completed">20</span></p>
+      <h2 class="metric-label">{% trans "Must Have" %} </h2>
+    </a>
+  </div>
+</header>
+  <nav class="page-navs">
+    <!-- .nav-scroller -->
+    <div class="nav-scroller">
+      <!-- .nav -->
+      <div class="nav nav-center nav-tabs">
+        <a class="nav-link" href="/looper">{% trans "Overview"%}</a> <a class="nav-link" href="/looper/user/activites">{% trans "Activities"%}</a> <a class="nav-link" href="/looper/user/teams">{% trans "Teams"%}</a> <a class="nav-link" href="/devplat/project/overview" target="project">{% trans "Projects"%}</a><a class="nav-link" href="/looper/user/top5_projects" target="top_project">{% trans "Milestone"%}</a> <a class="nav-link active" href="/looper/user/sessions">{% trans "Sessions"%}</a> <a class="nav-link" href="/looper">{% trans "Settings"%}</a>
+      </div><!-- /.nav -->
+    </div><!-- /.nav-scroller -->
+  </nav><!-- /.page-navs -->
+  <div class="page-inner">  
+    <div id="sessions">
+    </div>
+  </div>
+  <div id="tasklist" class="collapse task-collapse" style="display: none;">
+    <div class="row task_wap task-item">
+      <span class="d-none pk">[[inc_id]]</span>
+      <div class="col-12">
+        <div class="card wrap-primary">
+          <div class="card-body">
+            <div class="card-title d-flex align-content-center">
+              <span class="task-num">
+                <h4 class="card-subtitle"><i class="fas fa-circle circle-dot"></i>[[taskno]]</h4>
+              </span>
+              <span class="ml-auto alert-link">[[progress]]</span>
+            </div>
+            <div class="card-content d-flex pl-2">
+              <div class="font-weight-bolder">[[task]]</div>
+            </div>
+          </div>
+          <div class="footer_wrap text-dark">
+            <ul class="list d-flex justify-content-around pl-0 flex-wrap">
+              <li class="list-item">
+                <span class="menu-text"> [[planbdate]] / [[planedate]]</span>
+              </li>
+              <li class="list-item">
+                <span class="">[[schpriority]]</span>
+              </li>
+              <li class="list-item">
+                <span class="badge badge-subtle badge-primary">[[contact]]</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Task List</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Send message</button>
+        </div>
+      </div>
+    </div>
+{%  endblock %}
+
+{%block form_js%}
+    {{ block.super }} 
+    <script src="{% md5url 'PMISLooper/assets/javascript/user/sessions.js' %}" type="text/javascript"></script>      
+{%endblock%}

@@ -1,0 +1,23 @@
+{% extends 'PMISLooper/vue_index.html' %}
+{%load static %}
+{% load render_bundle from webpack_loader %}
+{% load md5url %}
+{%block form_css%}
+{{block.super}}
+<style>
+    .app>.app-aside {
+        display: none;
+    }
+</style>
+<link rel="stylesheet" type="text/css" href="{% md5url 'FlowChartApp/assets/stylesheets/main.css' %}" data-skin="default" /> 
+<link rel="stylesheet" type="text/css" href="{% md5url 'FlowChartApp/assets/stylesheets/main_dark.css' %}" data-skin="dark" /> 
+{%endblock%}
+{%block form_js%}
+{{block.super}}
+<script type="text/javascript" src="{% static 'BaseApp/vendor/gojs/go.js' %}"></script>
+<script type="text/javascript" src="{% static 'BaseApp/vendor/gojs/Figures.js' %}"></script>
+<script type="text/javascript" src="{% static 'BaseApp/vendor/gojs/RoundedRectangles.js' %}"></script>
+<script type="text/javascript" src="{% static 'BaseApp/vendor/gojs/DataInspector.js' %}"></script>
+<script type="text/javascript" src="{% static 'BaseApp/vendor/gojs/OrthogonalLinkReshapingTool.js' %}"></script>
+{% render_bundle 'FlowChartApp/dist/javascript/main' %}
+{%endblock%}   

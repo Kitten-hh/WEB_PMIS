@@ -1,0 +1,147 @@
+<div class="quick-add-task modal fade" id="add-task-module" tabindex="-1" role="dialog" aria-labelledby="form" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog modal-dialog-centered col-12">
+        <div class="modal-content">
+            <div class="modal-header">
+                <a class="cart floating-button" href="#"><i class="fa fa-plus"></i></a>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <i class="far fa-times-circle" style="font-size: 20px;color: #fff;"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="form" class="form-1 form">
+                    <div class="card card-custom gutter-b example example-compact">
+                        <div class="card-body">
+                            <div id="myTabCard" class="tab-content">
+                                <div class="tab-pane fade active show" id="task-description">
+                                    <div class="col-12 col-md-12 d-flex justify-content-start cust_taskId">
+                                        <label class="mr-3">任务编号</label>
+                                        <p class="text-yellow">888-100.0-135992.0</p>
+                                    </div>
+                                    <div class="form-group" id="textarea" style>
+                                        <textarea class="form-control control cust_control" id="tf1" rows="12"
+                                            placeholder="任务描述:"></textarea>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade cHeight" id="user"></div>
+                                <div class="tab-pane fade cHeight" id="taskType">
+                                    <div class="row">
+                                        <div class="col-12 col-md-5" id="tasktype_c"></div>
+                                        <div class="col-12 col-md-5" id="subtasktype_c">
+                                        </div>
+                                        <div class="col-12 col-md-2" id="diff_c"></div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade cHeight" id="planDate">
+                                    <div class="form-group" id="textarea" style>
+                                        <label>備註</label>
+                                        <textarea name="remark" class="form-control control cust_control" id="tf1" rows="6"></textarea>
+                                    </div>                                    
+                                </div>
+                                <div class="tab-pane fade cHeight" id="email"></div>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <div class="col-lg-12 d-flex">
+                                <ul class="nav nav-tabs card-header-tabs">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" data-toggle="tab" href="#task-description">
+                                            <i class="fas fa-file-signature" style="font-size: 16px;"></i></a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link show" data-toggle="tab" href="#user"><i
+                                                class="fas fa-user-edit" style="font-size: 16px;"></i></a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link show" data-toggle="tab" href="#taskType"><i
+                                                class="fas fa-tasks" style="font-size: 16px;"></i></a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link show" data-toggle="tab" href="#planDate"><i
+                                            class="fas fa-clock" style="font-size: 16px;"></i></a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link show" data-toggle="tab" href="#email"><i class="fas fa-at"
+                                                style="font-size: 16px;"></i></a>
+                                    </li>
+                                </ul>
+                                <div class="ml-auto align-items-center d-flex">
+                                    <button type="reset" class="btn btn-cust save">Save</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="normal-add-task modal fade" id="add-task" tabindex="-1" role="dialog" aria-labelledby="form" style="display: none;" aria-hidden="true">
+    <div class="modal-dialog modal-lg col-12">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Add New Task</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><i class="far fa-times-circle" style="font-size: 20px;color: #000;"></i></button>
+            </div>
+            <div class="modal-body">
+                <form id="form" class="form-1 form">
+                    <div class="card card-custom gutter-b example example-compact">
+                        <div class="card-body">
+                            <div class="row justify-content-center">
+                                <div class="col-12 col-md-12 d-flex justify-content-start cust_taskId">
+                                    <label class="mr-3">任务编号</label>
+                                    <p class="text-mute">888-100.0-135992.0</p>
+                                </div>
+                                <div class="col-md-10 mx-auto">
+                                    <div class="row">
+                                        <div class="col-12 col-md-12" id="description"></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12 col-md-12" id="remark"></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12 col-md-6" id="users"></div>
+                                        <div class="col-12 col-md-6" id="priority_p"></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12 col-md-4" id="class"></div>
+                                        <div class="col-12 col-md-4" id="progress_p"></div>
+                                        <div class="col-12 col-md-4" id="operation"></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12 col-md-4" id="tasktype_p"></div>
+                                        <div class="col-12 col-md-4" id="subtasktype_p"></div>
+                                        <div class="col-12 col-md-2" id="diff_p"></div>
+                                        <div class="col-12 col-md-2" id="score"></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12 col-md-6" id="planbdate"></div>
+                                        <div class="col-12 col-md-6" id="planedate"></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12 col-md-6" id="bdate"></div>
+                                        <div class="col-12 col-md-6" id="edate"></div>
+                                    </div>    
+                                    <div class="row">
+                                        <div class="col-12 col-md-12" id="email_p"></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12 col-md-12" id="dayjoy"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer d-flex justify-content-center">
+                            <div class="row">
+                                <div class="col-lg-12 d-flex justify-content-center">
+                                    <button type="reset" class="btn btn-light mr-5">Reset</button>
+                                    <button  class="btn btn-info add mr-5 add">Add</button> 
+                                    <button  class="btn btn-primary save">Save</button> 
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
+                </form>                 
+            </div>
+        </div>
+    </div>
+</div>

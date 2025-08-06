@@ -1,0 +1,159 @@
+{% extends "BaseProject/base/looper_base/main.html" %}
+{% load static %}
+{%block title%}PMIS{%endblock%}
+{%block main_menu%}
+<!-- .menu -->
+<ul class="menu">
+  <!-- .menu-item -->
+  <li class="menu-item has-active">
+    <a href="/PMIS" class="menu-link"><span class="menu-icon fas fa-home"></span> <span class="menu-text">Dashboard</span><span class="badge badge-warning">New</span></a>
+  </li><!-- /.menu-item -->
+  <!-- .menu-item -->
+  <li class="menu-item has-child">
+    <a href="#" class="menu-link"><span class="menu-icon far fa-file"></span> <span class="menu-text">Project</span> <span class="badge badge-warning">New</span></a> <!-- child menu -->
+    <ul class="menu">
+      <li class="menu-item">
+          <a href="page-project.html" class="menu-link">Overview</a>
+      </li>
+      <li class="menu-item">
+          <a href="page-project-board.html" class="menu-link">Board</a>
+      </li>
+      <li class="menu-item">
+        <a href="/PMIS/goal_master_form" target="_blank" class="menu-link"><span class="menu-text">Goal Master</span><span class="badge badge-warning">New</span></a>
+      </li>
+      <li class="menu-item">
+          <a href="/PMIS/looper_gantt" class="menu-link"><span class="menu-text">Gantt View</span><span class="badge badge-warning">New</span></a>
+      </li>
+      <li class="menu-item">
+        <a href="/PMIS/looper_calendar" class="menu-link"><span class="menu-text">Calendar</span><span class="badge badge-warning">New</span></a>
+      </li>
+      <li class="menu-item">
+        <a href="/PMIS/project/template_task" class="menu-link"><span class="menu-text">Template Task</span><span class="badge badge-warning">New</span></a>
+      </li>
+        <li class="menu-item has-child">
+          <a href="#" class="menu-link">Team</a> <!-- grand child menu -->
+          <ul class="menu">
+            <li class="menu-item">    
+              <a href="page-team.html" class="menu-link">Overview</a>
+            </li>
+            <li class="menu-item">
+              <a href="page-team-feeds.html" class="menu-link">Feeds</a>
+            </li>
+            <li class="menu-item">
+              <a href="page-team-projects.html" class="menu-link">Projects</a>
+            </li>
+            <li class="menu-item">
+              <a href="page-team-members.html" class="menu-link">Members</a>
+            </li>
+          </ul><!-- /grand child menu -->
+        </li>                    
+    </ul><!-- /child menu -->
+  </li><!-- /.menu-item -->
+  <!-- .menu-item -->
+  <li class="menu-item has-child">
+    <a href="#" class="menu-link"><span class="menu-icon oi oi-wrench"></span> <span class="menu-text">Auth</span></a> <!-- child menu -->
+    <ul class="menu">
+      <li class="menu-item">
+        <a href="auth-comingsoon-v1.html" class="menu-link">Coming Soon v1</a>
+      </li>
+      <li class="menu-item">
+        <a href="auth-comingsoon-v2.html" class="menu-link">Coming Soon v2</a>
+      </li>
+      <li class="menu-item">
+        <a href="auth-cookie-consent.html" class="menu-link">Cookie Consent</a>
+      </li>
+      <li class="menu-item">
+        <a href="auth-empty-state.html" class="menu-link">Empty State</a>
+      </li>
+      <li class="menu-item">
+        <a href="auth-error-v1.html" class="menu-link">Error Page v1</a>
+      </li>
+      <li class="menu-item">
+        <a href="auth-error-v2.html" class="menu-link">Error Page v2</a>
+      </li>
+      <li class="menu-item">
+        <a href="auth-error-v3.html" class="menu-link">Error Page v3</a>
+      </li>
+      <li class="menu-item">
+        <a href="auth-maintenance.html" class="menu-link">Maintenance</a>
+      </li>
+      <li class="menu-item">
+        <a href="auth-page-message.html" class="menu-link">Page Message</a>
+      </li>
+      <li class="menu-item">
+        <a href="auth-session-timeout.html" class="menu-link">Session Timeout</a>
+      </li>
+      <li class="menu-item">
+        <a href="auth-signin-v1.html" class="menu-link">Sign In v1</a>
+      </li>
+      <li class="menu-item">
+        <a href="auth-signin-v2.html" class="menu-link">Sign In v2</a>
+      </li>
+      <li class="menu-item">
+        <a href="auth-signup.html" class="menu-link">Sign Up</a>
+      </li>
+      <li class="menu-item">
+        <a href="auth-recovery-username.html" class="menu-link">Recovery Username</a>
+      </li>
+      <li class="menu-item">
+        <a href="auth-recovery-password.html" class="menu-link">Recovery Password</a>
+      </li>
+      <li class="menu-item">
+        <a href="auth-lockscreen.html" class="menu-link">Screen Locked</a>
+      </li>
+    </ul><!-- /child menu -->
+  </li><!-- /.menu-item -->
+  <!-- .menu-item -->
+  <li class="menu-item has-child">
+    <a href="#" class="menu-link"><span class="menu-icon oi oi-person"></span> <span class="menu-text">User</span><span class="badge badge-warning">New</span></a> <!-- child menu -->
+    <ul class="menu">
+      <li class="menu-item">
+        <a href="/PMIS/user/profile?username=hb" class="menu-link"><span class="menu-text">Profile</span><span class="badge badge-warning">New</span></a>
+      </li>
+      <li class="menu-item">
+        <a href="/PMIS/user/getUserActivites" class="menu-link"><span class="menu-text">Activities</span><span class="badge badge-warning">New</span></a>
+      </li>
+      <li class="menu-item">
+        <a href="user-teams.html" class="menu-link">Teams</a>
+      </li>
+      <li class="menu-item">
+        <a href="/PMIS/user/project?username=hb" class="menu-link"><span class="menu-text">Projects</span><span class="badge badge-warning">New</span></a>
+      </li>
+      <li class="menu-item">
+        <a href="user-tasks.html" class="menu-link">Tasks</a>
+      </li>
+      <li class="menu-item">
+        <a href="/looper" class="menu-link">Profile Settings</a>
+      </li>
+      <li class="menu-item">
+        <a href="user-account-settings.html" class="menu-link">Account Settings</a>
+      </li>
+      <li class="menu-item">
+        <a href="user-billing-settings.html" class="menu-link">Billing Settings</a>
+      </li>
+      <li class="menu-item">
+        <a href="user-notification-settings.html" class="menu-link">Notification Settings</a>
+      </li>
+    </ul><!-- /child menu -->
+  </li><!-- /.menu-item -->
+  <li class="menu-item has-child">
+    <a href="#" class="menu-link"><span class="menu-icon oi oi-person"></span> <span class="menu-text">Tasks</span><span class="badge badge-warning">New</span></a> <!-- child menu -->                
+    <ul class="menu">
+    <li class="menu-item">
+      <a href="/PMIS/task_enquiry" class="menu-link">Task Enquiry</a>
+    </li>
+  </ul>
+  </li>
+  <li class="menu-item has-child">
+    <a href="#" class="menu-link"><span class="menu-icon oi oi-person"></span> <span class="menu-text">Schedule</span><span class="badge badge-warning">New</span></a> <!-- child menu -->                
+    <ul class="menu">
+    <li class="menu-item">
+      <a href="/PMIS/schparams" class="menu-link">Setting</a>
+      <a href="/PMIS/schedule/display?username=hb" class="menu-link">Priority in Session(Test)</a>
+      <a href="/PMIS/schedule/display_bar?username=hb" class="menu-link">Priority in Session(Chart)</a>
+    </li>
+  </ul>
+  </li>  
+</ul><!-- /.menu -->
+{%endblock%}
+         

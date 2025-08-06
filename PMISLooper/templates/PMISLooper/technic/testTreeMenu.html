@@ -1,0 +1,135 @@
+{% extends 'playground/looper-base/base_form1/nofo_base.html' %}
+{%load static %}
+{%block form_css%}
+{{block.super}}
+<!--begin::Page Vendors Styles(used by this page)-->
+<link href="{% static 'BaseApp/vendor/Looper/assets/vendor/jstree/themes/default/style.min.css'%}" rel="stylesheet" type="text/css" />
+<link href="{% static 'BaseApp/vendor/jquery-splitter/css/jquery.splitter.css'%}" rel="stylesheet">
+<!--end::Page Vendors Styles-->
+<link rel="stylesheet" type="text/css" href="{% static 'playground/assets/stylesheets/webPMS/treeMenu.css' %}" />
+{%endblock%}
+
+{%  block content %}
+    <div class="page-section d-sm-none">
+        <div class="container-fluid py-3">
+            <h1 class="page-title"> Master-details </h1>
+            <p class="text-muted"> Your list items goes here. </p><button class="btn btn-danger btn-floated d-lg-none" type="button" data-toggle="sidebar"><i class="fa fa-th-list"></i></button>
+        </div>
+    </div>
+    <div id="splitter" class>
+        <div id="leftPane"></div>
+        <div id="rightPane" class="sidebar-section">
+            <header class="sidebar-header d-xl-none">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item active">
+                            <a href="#" onclick="Looper.toggleSidebar()"><i class="breadcrumb-icon fa fa-angle-left mr-2"></i>Back</a>
+                        </li>
+                    </ol>
+                </nav>
+                <div class="ml-auto">
+                    <a href="#" class="card-header-item justify-content-start"><span><i class="fa fa-plus-circle mr-1"></i> 添加頁 </span></a>
+                </div>
+            </header>
+            <div class="sidebar-sec">
+                <div class="card-header">
+                    <a href="#" class="card-header-item justify-content-start"><span><i class="fa fa-plus-circle mr-1"></i> 添加頁 </span></a>
+                </div>
+                <div class="col_cust">
+                    <div id="techtree" class="tree-demo">
+                            
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{%endblock%}
+{%block form_js%}
+<!--begin::Page Vendors(used by this page)-->
+<script src="{% static 'BaseApp/vendor/Looper/assets/vendor/jstree/jstree.min.js'%}"></script>
+<script src="{% md5url 'BaseApp/vendor/jquery-splitter/js/jquery.splitter.js'%}"></script>
+<!--end::Page Vendors-->
+        <script>
+        $(function () {
+                $(".page").addClass("has-sidebar has-sidebar-expand-xl sidebar_cust");
+                $(".app-main").css("padding-bottom", "0");
+
+                if (SWApp.os.isAndroid || SWApp.os.isPhone){
+                    $("#splitter").attr("id","pc_sidebar").addClass("page-sidebar");
+                    $(".col_cust").addClass("ps-20");
+                    $(".sidebar-sec .card-header").addClass("d-none");
+                    $(".tree-demo").css("overflow","hidden");
+                } 
+                else{
+                    $("#pc_sidebar").attr("id","splitter");
+                // 分隔條插件
+                    var splitter = $('#splitter').split({
+                        orientation: 'vertical',
+                        position: '83%'
+                    });
+                }
+                // jsTree插件  
+                $("#techtree").jstree({
+                    "core": {
+                        "themes": {
+                            "responsive": false,
+                            "dots": false,
+                        },
+                        "check_callback": true,
+                        'data' : function (obj, callback) {
+                            var jsonarray = new Array();
+                            $.ajax({
+                                type: "GET",
+                                url:"/looper/DailyPlanner/selectTreeMenu",
+                                dataType:"json",
+                                async: false,
+                                success:function(result) {
+                                    var arrays= result.data;
+                                    for(var i=0 ; i<arrays.length; i++){
+                                        var arr = {
+                                            "id":arrays[i].FolderID,
+                                            "parent":arrays[i].ParentID==0?"#":arrays[i].ParentID,
+                                            "text":arrays[i].FolderName,
+                                            'state': {
+                                                'opened': true
+                                            },
+                                        }
+                                        jsonarray.push(arr);
+                                    }
+                                }
+                            });
+                            callback.call(this, jsonarray);
+                        },
+                    },
+                    "types": {
+                        "default": {
+                            "icon": "fa fa-cloud text-warning"
+                        }
+                    },
+                    "plugins": [
+                        "contextmenu",
+                        "dnd",
+                        "types",
+                        "wholerow",
+                        "unique"
+                    ]
+                });
+            
+                $('#techtree').bind("activate_node.jstree", function (obj, e) {
+                    // 获取当前节点
+                    var currentNode = e.node;
+                    if (currentNode.id.slice(0,10)=='Technical_'){
+                        window.open("http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Dja-com-00004");   
+                    }
+                    if (currentNode.text.slice(0,5)=='Task'){
+                        thecontact = currentNode.parent.slice(0,-8)
+                        theinputdate = currentNode.id.slice(0,-5)
+                        theitemno = currentNode.id.slice(-4)
+                    }
+                });
+
+            
+            
+            });
+        </script>
+{%endblock%}

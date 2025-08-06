@@ -1,0 +1,2567 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-04-22 10:39+0800\n"
+"PO-Revision-Date: 2025-02-26 13:23+0806\n"
+"Last-Translator: Anonymous User <anonymous@user.tld>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Translated-Using: django-rosetta 0.9.8\n"
+
+#: BaseApp/templates/BaseApp/app/components/SWAdvancedsearch.html:7
+msgid "Query Window"
+msgstr "查询窗口"
+
+#: BaseApp/templates/BaseApp/app/components/SWAdvancedsearch.html:13
+#: BaseApp/templates/BaseApp/app/components/SWSelectquery.html:22
+#: PMIS/templates/PMIS/Technical_Material_create.html:390
+#: PMIS/templates/PMIS/Technical_Material_update.html:383
+#: PMISLooper/templates/PMISLooper/goal/overall/quarterly_goal.html:1667
+#: PMISLooper/templates/PMISLooper/technic/quickAddTechnic.html:266
+#: PMISLooper/templates/PMISLooper/technic/quickAddTechnic.html:300
+#: PMISLooper/templates/PMISLooper/user/top5_projects.html:243
+msgid "Confirm"
+msgstr "確定"
+
+#: BaseApp/templates/BaseApp/app/components/SWAdvancedsearch.html:14
+#: BaseApp/templates/BaseApp/app/components/SWSelectquery.html:23
+#: BaseApp/templates/BaseApp/looper_base/components/SWBoardlist.html:19
+#: BaseApp/templates/BaseApp/looper_base/components/SWForm.html:16
+#: BaseApp/templates/BaseApp/looper_base/components/SWProjectlist.html:16
+#: BaseApp/templates/BaseApp/vue_looper_base/components/SearchDlg_Bak.html:232
+#: DevPlat/templates/DevPlat/course.html:86
+#: DevPlat/templates/DevPlat/course.html:102
+#: DevPlat/templates/DevPlat/dev_sessions.html:597
+#: DevPlat/templates/DevPlat/dev_sessions.html:613
+#: DevPlat/templates/DevPlat/dev_sessions.html:629
+#: DevPlat/templates/DevPlat/dev_sessions.html:645
+#: DevPlat/templates/DevPlat/dev_sessions.html:661
+#: DevPlat/templates/DevPlat/dev_sessions.html:677
+#: PMIS/templates/PMIS/Technical_Material_create.html:331
+#: PMIS/templates/PMIS/Technical_Material_create.html:391
+#: PMIS/templates/PMIS/Technical_Material_update.html:324
+#: PMIS/templates/PMIS/Technical_Material_update.html:384
+#: PMISLooper/templates/PMISLooper/goal/goal_master_form.html:94
+#: PMISLooper/templates/PMISLooper/goal/project_goal.html:658
+#: PMISLooper/templates/PMISLooper/goal/project_goal.html:825
+#: PMISLooper/templates/PMISLooper/task/quick-add-task.html:531
+#: PMISLooper/templates/PMISLooper/technic/quickAddTechnic.html:160
+#: PMISLooper/templates/PMISLooper/technic/quickAddTechnic.html:213
+#: PMISLooper/templates/PMISLooper/technic/quickAddTechnic.html:267
+#: PMISLooper/templates/PMISLooper/technic/quickAddTechnic.html:301
+#: PMISLooper/templates/PMISLooper/technic/quickAddTechnic.html:356
+#: PMISLooper/templates/PMISLooper/technic/quickAddTechnic_BAK.html:148
+#: PMISLooper/templates/PMISLooper/technic/quickAddTechnic_BAK.html:202
+#: PMISLooper/templates/PMISLooper/user/top5_projects.html:244
+msgid "Cancel"
+msgstr "取消"
+
+#: BaseApp/templates/BaseApp/app/components/SWMindmap.html:6
+#: BaseApp/templates/BaseApp/looper_base/components/SWForm.html:15
+#: BaseApp/templates/BaseApp/vue_looper_base/components/SearchDlg.html:48
+#: BaseApp/templates/BaseApp/vue_looper_base/components/SearchDlg_Bak.html:104
+#: BaseApp/templates/BaseApp/vue_looper_base/components/SearchDlg_Bak.html:106
+#: BaseApp/templates/BaseApp/vue_looper_base/components/SearchDlg_Bak.html:231
+#: BaseApp/templates/BaseApp/vue_looper_base/components/SearchDlg_Bak.html:299
+#: DevPlat/templates/DevPlat/course.html:85
+#: DevPlat/templates/DevPlat/course.html:101
+#: DevPlat/templates/DevPlat/dev_sessions.html:390
+#: DevPlat/templates/DevPlat/dev_sessions.html:596
+#: DevPlat/templates/DevPlat/dev_sessions.html:612
+#: DevPlat/templates/DevPlat/dev_sessions.html:628
+#: DevPlat/templates/DevPlat/dev_sessions.html:644
+#: DevPlat/templates/DevPlat/dev_sessions.html:660
+#: DevPlat/templates/DevPlat/dev_sessions.html:676
+#: PMIS/templates/PMIS/Technical_Material_create.html:279
+#: PMIS/templates/PMIS/Technical_Material_create.html:330
+#: PMIS/templates/PMIS/Technical_Material_update.html:273
+#: PMIS/templates/PMIS/Technical_Material_update.html:323
+#: PMISLooper/templates/PMISLooper/goal/goal_master_form.html:95
+#: PMISLooper/templates/PMISLooper/goal/project_goal.html:657
+#: PMISLooper/templates/PMISLooper/goal/project_goal.html:824
+#: PMISLooper/templates/PMISLooper/task/quick-add-task.html:103
+#: PMISLooper/templates/PMISLooper/task/quick-add-task.html:350
+#: PMISLooper/templates/PMISLooper/task/quick-add-task.html:530
+#: PMISLooper/templates/PMISLooper/technic/quickAddTechnic.html:159
+#: PMISLooper/templates/PMISLooper/technic/quickAddTechnic.html:212
+#: PMISLooper/templates/PMISLooper/technic/quickAddTechnic.html:355
+#: PMISLooper/templates/PMISLooper/technic/quickAddTechnic_BAK.html:147
+#: PMISLooper/templates/PMISLooper/technic/quickAddTechnic_BAK.html:201
+#: PMISLooper/templates/PMISLooper/technic/technic.html:141
+#: PMISLooper/templates/PMISLooper/technic/technical_dailyPlanner_statement.html:115
+msgid "Save"
+msgstr "保存"
+
+#: BaseApp/templates/BaseApp/app/components/SWMindmap.html:10
+#: BaseApp/templates/BaseApp/vue_looper_base/components/SearchDlg.html:47
+msgid "Load"
+msgstr "加載"
+
+#: BaseApp/templates/BaseApp/app/components/SWMindmap.html:14
+msgid "Layout"
+msgstr "佈局"
+
+#: BaseApp/templates/BaseApp/app/components/SWMindmap.html:18
+#: BaseApp/templates/BaseApp/vue_looper_base/components/SearchDlg.html:49
+#: BaseApp/templates/BaseApp/vue_looper_base/components/SearchDlg_Bak.html:110
+#: PMISLooper/templates/PMISLooper/task/quick-add-task.html:351
+msgid "Delete"
+msgstr "刪除"
+
+#: BaseApp/templates/BaseApp/app/components/SWMindmap.html:22
+msgid "Undo"
+msgstr "撤銷"
+
+#: BaseApp/templates/BaseApp/app/components/SWMindmap.html:26
+msgid "Redo"
+msgstr "恢復"
+
+#: BaseApp/templates/BaseApp/app/components/SWMindmap.html:30
+#: DevPlat/templates/DevPlat/dev_sessions.html:465
+#: DevPlat/templates/DevPlat/projects.html:140
+#: PMISLooper/templates/PMISLooper/goal/goalManagement.html:22
+#: PMISLooper/templates/PMISLooper/goal/goalManagement.html:103
+#: PMISLooper/templates/PMISLooper/goal/overall/quarterly_goal.html:1658
+#: PMISLooper/templates/PMISLooper/user/top5_projects.html:171
+#: PMISLooper/templates/PMISLooper/user/top5_projects.html:225
+msgid "Clear"
+msgstr "清空"
+
+#: BaseApp/templates/BaseApp/app/components/SWMindmap.html:34
+#: PMISLooper/templates/PMISLooper/task/quick-add-task.html:143
+#: PMISLooper/templates/PMISLooper/task/quick-add-task.html:337
+msgid "Add"
+msgstr "增加"
+
+#: BaseApp/templates/BaseApp/app/components/SWMindmap.html:38
+msgid "Edit Text"
+msgstr "修改文字"
+
+#: BaseApp/templates/BaseApp/app/components/SWMindmap.html:47
+msgid "Import"
+msgstr "導入"
+
+#: BaseApp/templates/BaseApp/app/components/SWMindmap.html:82
+msgid "Search..."
+msgstr "查詢..."
+
+#: BaseApp/templates/BaseApp/app/components/SWMindmap.html:85
+#: BaseApp/templates/BaseApp/app/components/SWSelectquery.html:7
+#: BaseApp/templates/BaseApp/looper_base/components/SWBoardlist.html:13
+#: BaseApp/templates/BaseApp/looper_base/components/SWBoardlist.html:20
+#: BaseApp/templates/BaseApp/looper_base/components/SWProjectlist.html:10
+#: BaseApp/templates/BaseApp/looper_base/components/SWProjectlist.html:17
+#: DevPlat/templates/DevPlat/dev_sessions.html:466
+#: PMIS/templates/PMIS/newOpportunity.html:163
+#: PMISLooper/templates/PMISLooper/goal/goalManagement.html:23
+#: PMISLooper/templates/PMISLooper/goal/goal_master_form.html:53
+#: PMISLooper/templates/PMISLooper/goal/overall/quarterly_goal.html:1659
+#: PMISLooper/templates/PMISLooper/task/task-enquiry.html:61
+#: PMISLooper/templates/PMISLooper/technic/solutiontypeTable.html:33
+#: PMISLooper/templates/PMISLooper/technic/tasktypeTable.html:28
+#: PMISLooper/templates/PMISLooper/user/top5_projects.html:226
+msgid "Search"
+msgstr "查詢"
+
+#: BaseApp/templates/BaseApp/app/components/SWRichText.html:3
+msgid "Click edit button to change me."
+msgstr "點擊編輯按鈕更改我"
+
+#: BaseApp/templates/BaseApp/looper_base/base_form1/menu.html:120
+#: BaseApp/templates/BaseApp/vue_looper_base/base_form1/menu.html:120
+msgid "Night mode"
+msgstr "夜間模式"
+
+#: BaseApp/templates/BaseApp/looper_base/components/SWAIComBox.html:17
+msgid "Preset Question"
+msgstr "預設問題"
+
+#: BaseApp/templates/BaseApp/looper_base/components/SWAIComBox.html:30
+#: BaseApp/templates/BaseApp/vue_looper_base/components/SearchDlg_Bak.html:300
+#: DevPlat/templates/DevPlat/TechnicalParaphrases.html:64
+#: PMISLooper/templates/PMISLooper/ai/AIComBox.html:35
+#: PMISLooper/templates/PMISLooper/task/quick-add-task.html:583
+#: PMISLooper/templates/PMISLooper/user/top5_projects.html:267
+#: PMISLooper/templates/PMISLooper/user/top5_projects.html:290
+msgid "Close"
+msgstr "關閉"
+
+#: BaseApp/templates/BaseApp/looper_base/components/SWForm.html:9
+#, fuzzy
+#| msgid "Layout"
+msgid "Form Layout"
+msgstr "佈局"
+
+#: BaseApp/templates/BaseApp/vue_looper_base/components/SearchDlg.html:59
+#: BaseApp/templates/BaseApp/vue_looper_base/components/SearchDlg_Bak.html:122
+msgid "Condition"
+msgstr "基本條件"
+
+#: BaseApp/templates/BaseApp/vue_looper_base/components/SearchDlg.html:62
+#: BaseApp/templates/BaseApp/vue_looper_base/components/SearchDlg.html:80
+#: BaseApp/templates/BaseApp/vue_looper_base/components/SearchDlg_Bak.html:125
+#: BaseApp/templates/BaseApp/vue_looper_base/components/SearchDlg_Bak.html:143
+msgid "Sub-Condition"
+msgstr "子表條件"
+
+#: BaseApp/templates/BaseApp/vue_looper_base/components/SearchDlg.html:76
+#: BaseApp/templates/BaseApp/vue_looper_base/components/SearchDlg_Bak.html:139
+msgid "Field Order"
+msgstr "設置排序字段"
+
+#: BaseApp/templates/BaseApp/vue_looper_base/components/SearchDlg.html:123
+#: BaseApp/templates/BaseApp/vue_looper_base/components/SearchDlg_Bak.html:328
+msgid "Add Condition"
+msgstr "添加條件"
+
+#: BaseApp/templates/BaseApp/vue_looper_base/components/SearchDlg.html:124
+#: BaseApp/templates/BaseApp/vue_looper_base/components/SearchDlg_Bak.html:329
+msgid "Add Group"
+msgstr "添加條件組"
+
+#: BaseApp/templates/BaseApp/vue_looper_base/components/SearchDlg.html:125
+#: BaseApp/templates/BaseApp/vue_looper_base/components/SearchDlg_Bak.html:330
+msgid "<enter a value>"
+msgstr "<輸入條件>"
+
+#: BaseApp/templates/BaseApp/vue_looper_base/components/SearchDlg.html:130
+#: BaseApp/templates/BaseApp/vue_looper_base/components/SearchDlg_Bak.html:335
+msgid "Between"
+msgstr "之間"
+
+#: BaseApp/templates/BaseApp/vue_looper_base/components/SearchDlg.html:131
+#: BaseApp/templates/BaseApp/vue_looper_base/components/SearchDlg_Bak.html:336
+msgid "Contains"
+msgstr "包含"
+
+#: BaseApp/templates/BaseApp/vue_looper_base/components/SearchDlg.html:132
+#: BaseApp/templates/BaseApp/vue_looper_base/components/SearchDlg_Bak.html:337
+msgid "Ends with"
+msgstr "以...結束"
+
+#: BaseApp/templates/BaseApp/vue_looper_base/components/SearchDlg.html:133
+#: BaseApp/templates/BaseApp/vue_looper_base/components/SearchDlg_Bak.html:338
+msgid "Equals"
+msgstr "等於"
+
+#: BaseApp/templates/BaseApp/vue_looper_base/components/SearchDlg.html:134
+#: BaseApp/templates/BaseApp/vue_looper_base/components/SearchDlg_Bak.html:339
+msgid "Greater than"
+msgstr "大於"
+
+#: BaseApp/templates/BaseApp/vue_looper_base/components/SearchDlg.html:135
+#: BaseApp/templates/BaseApp/vue_looper_base/components/SearchDlg_Bak.html:340
+msgid "Greater than or equal to"
+msgstr "大於或等於"
+
+#: BaseApp/templates/BaseApp/vue_looper_base/components/SearchDlg.html:136
+#: BaseApp/templates/BaseApp/vue_looper_base/components/SearchDlg_Bak.html:341
+msgid "Is blank"
+msgstr "是空白"
+
+#: BaseApp/templates/BaseApp/vue_looper_base/components/SearchDlg.html:137
+#: BaseApp/templates/BaseApp/vue_looper_base/components/SearchDlg_Bak.html:342
+msgid "Is not blank"
+msgstr "不是空白"
+
+#: BaseApp/templates/BaseApp/vue_looper_base/components/SearchDlg.html:138
+#: BaseApp/templates/BaseApp/vue_looper_base/components/SearchDlg_Bak.html:343
+msgid "Less than"
+msgstr "小於"
+
+#: BaseApp/templates/BaseApp/vue_looper_base/components/SearchDlg.html:139
+#: BaseApp/templates/BaseApp/vue_looper_base/components/SearchDlg_Bak.html:344
+msgid "Less than or equal to"
+msgstr "小於或等於"
+
+#: BaseApp/templates/BaseApp/vue_looper_base/components/SearchDlg.html:140
+#: BaseApp/templates/BaseApp/vue_looper_base/components/SearchDlg_Bak.html:345
+msgid "Does not contain"
+msgstr "不包含"
+
+#: BaseApp/templates/BaseApp/vue_looper_base/components/SearchDlg.html:141
+#: BaseApp/templates/BaseApp/vue_looper_base/components/SearchDlg_Bak.html:346
+msgid "Does not equal"
+msgstr "不等於"
+
+#: BaseApp/templates/BaseApp/vue_looper_base/components/SearchDlg.html:142
+#: BaseApp/templates/BaseApp/vue_looper_base/components/SearchDlg_Bak.html:347
+msgid "Starts with"
+msgstr "以...開始"
+
+#: BaseApp/templates/BaseApp/vue_looper_base/components/SearchDlg.html:145
+#: BaseApp/templates/BaseApp/vue_looper_base/components/SearchDlg_Bak.html:350
+msgid "And"
+msgstr "與"
+
+#: BaseApp/templates/BaseApp/vue_looper_base/components/SearchDlg.html:146
+#: BaseApp/templates/BaseApp/vue_looper_base/components/SearchDlg_Bak.html:351
+msgid "Not And"
+msgstr "非與"
+
+#: BaseApp/templates/BaseApp/vue_looper_base/components/SearchDlg.html:147
+#: BaseApp/templates/BaseApp/vue_looper_base/components/SearchDlg_Bak.html:352
+msgid "Not Or"
+msgstr "非或"
+
+#: BaseApp/templates/BaseApp/vue_looper_base/components/SearchDlg.html:148
+#: BaseApp/templates/BaseApp/vue_looper_base/components/SearchDlg_Bak.html:353
+msgid "Or"
+msgstr "或"
+
+#: BaseApp/templates/BaseApp/vue_looper_base/components/SearchDlg_Bak.html:97
+msgid "condition name"
+msgstr "條件列表"
+
+#: BaseApp/templates/BaseApp/vue_looper_base/components/SearchDlg_Bak.html:102
+msgid "Modify"
+msgstr "修改"
+
+#: BaseApp/templates/BaseApp/vue_looper_base/components/SearchDlg_Bak.html:107
+msgid "Save as"
+msgstr "另存為"
+
+#: BaseApp/templates/BaseApp/vue_looper_base/components/SearchDlg_Bak.html:178
+msgid "SearchDlg.query_type_editor.title"
+msgstr ""
+
+#: BaseApp/templates/BaseApp/vue_looper_base/components/SearchDlg_Bak.html:190
+msgid "SearchDlg.query_type_editor.qt001"
+msgstr ""
+
+#: BaseApp/templates/BaseApp/vue_looper_base/components/SearchDlg_Bak.html:196
+msgid "SearchDlg.query_type_editor.qt002"
+msgstr ""
+
+#: BaseApp/templates/BaseApp/vue_looper_base/components/SearchDlg_Bak.html:202
+msgid "SearchDlg.query_type_editor.qt006"
+msgstr ""
+
+#: BaseApp/templates/BaseApp/vue_looper_base/components/SearchDlg_Bak.html:210
+msgid "SearchDlg.query_type_editor.qt006c"
+msgstr ""
+
+#: BaseApp/templates/BaseApp/vue_looper_base/components/SearchDlg_Bak.html:216
+msgid "SearchDlg.query_type_editor.qt011"
+msgstr ""
+
+#: BaseApp/templates/BaseApp/vue_looper_base/components/SearchDlg_Bak.html:222
+msgid "SearchDlg.query_type_editor.qt003"
+msgstr ""
+
+#: BaseApp/templates/BaseApp/vue_looper_base/components/SearchDlg_Bak.html:248
+msgid "SearchDlg.query_filter_editor.title"
+msgstr ""
+
+#: BaseApp/templates/BaseApp/vue_looper_base/components/SearchDlg_Bak.html:260
+msgid "SearchDlg.query_type_editor.qf002"
+msgstr ""
+
+#: BaseApp/templates/BaseApp/vue_looper_base/components/SearchDlg_Bak.html:266
+msgid "SearchDlg.query_type_editor.qf001"
+msgstr ""
+
+#: BaseApp/templates/BaseApp/vue_looper_base/components/SearchDlg_Bak.html:272
+msgid "SearchDlg.query_type_editor.qf001c"
+msgstr ""
+
+#: BaseApp/templates/BaseApp/vue_looper_base/components/SearchDlg_Bak.html:278
+msgid "SearchDlg.query_type_editor.qf008"
+msgstr ""
+
+#: BaseApp/templates/BaseApp/vue_looper_base/components/SearchDlg_Bak.html:284
+msgid "SearchDlg.query_type_editor.qf003"
+msgstr ""
+
+#: BaseApp/templates/BaseApp/vue_looper_base/components/SearchDlg_Bak.html:290
+msgid "SearchDlg.query_type_editor.qf012"
+msgstr ""
+
+#: BaseApp/templates/BaseApp/vue_looper_base/components/SearchDlg_Bak.html:413
+#: BaseApp/templates/BaseApp/vue_looper_base/components/SearchDlg_Bak.html:783
+msgid "SearchDlg.addItem"
+msgstr ""
+
+#: BaseApp/templates/BaseApp/vue_looper_base/components/SearchDlg_Bak.html:790
+msgid "SearchDlg.updateItem"
+msgstr ""
+
+#: BaseApp/templates/BaseApp/vue_looper_base/components/SearchDlg_Bak.html:797
+msgid "SearchDlg.deleteItem"
+msgstr ""
+
+#: BonusApp/templates/BonusApp/bonus/bonus_analysis.html:20
+#: PMISLooper/templates/PMISLooper/base.html:407
+#: PMISLooper/templates/PMISLooper/base.html:408
+#: PMISLooper/templates/PMISLooper/base.html:412
+msgid "Bonus Simulation"
+msgstr "獎金模擬"
+
+#: BonusApp/templates/BonusApp/bonus/bonus_credit.html:22
+#: BonusApp/templates/BonusApp/bonus/userdeduction.html:22
+#: PMISLooper/templates/PMISLooper/base.html:415
+msgid "Bonus Credit"
+msgstr ""
+
+#: BonusApp/templates/BonusApp/bonus/improvearea.html:13
+#: PMISLooper/templates/PMISLooper/base.html:416
+msgid "Improve Area"
+msgstr ""
+
+#: BonusApp/templates/BonusApp/bonus/tasktype.html:16
+#: PMISLooper/templates/PMISLooper/base.html:413
+msgid "Lookup TaskType"
+msgstr "查找任務分類"
+
+#: DevPlat/templates/DevPlat/TechnicalParaphrases.html:6
+msgid "Generate Paraphrases"
+msgstr ""
+
+#: DevPlat/templates/DevPlat/TechnicalParaphrases.html:15
+msgid "Generating, please wait..."
+msgstr ""
+
+#: DevPlat/templates/DevPlat/TechnicalParaphrases.html:20
+msgid "Paraphrase Method"
+msgstr ""
+
+#: DevPlat/templates/DevPlat/TechnicalParaphrases.html:22
+msgid "GPT Generate"
+msgstr ""
+
+#: DevPlat/templates/DevPlat/TechnicalParaphrases.html:23
+#: PMISLooper/templates/PMISLooper/dashboard/dashboard.html:63
+#: PMISLooper/templates/PMISLooper/dashboard/staff_dashboard.html:71
+msgid "Custom"
+msgstr "自定義"
+
+#: DevPlat/templates/DevPlat/TechnicalParaphrases.html:28
+msgid "Number of Paraphrases"
+msgstr ""
+
+#: DevPlat/templates/DevPlat/TechnicalParaphrases.html:33
+msgid "GPT Version"
+msgstr ""
+
+#: DevPlat/templates/DevPlat/TechnicalParaphrases.html:43
+#: PMIS/templates/PMIS/Technical_Material.html:43
+#: PMIS/templates/PMIS/Technical_Material_create.html:123
+#: PMIS/templates/PMIS/Technical_Material_show.html:61
+#: PMIS/templates/PMIS/Technical_Material_update.html:93
+msgid "Topic"
+msgstr "主題"
+
+#: DevPlat/templates/DevPlat/TechnicalParaphrases.html:47
+msgid "English Paraphrases"
+msgstr ""
+
+#: DevPlat/templates/DevPlat/TechnicalParaphrases.html:55
+msgid "Chinese Paraphrases"
+msgstr ""
+
+#: DevPlat/templates/DevPlat/TechnicalParaphrases.html:65
+msgid "Generate"
+msgstr ""
+
+#: DevPlat/templates/DevPlat/course.html:38
+msgid "Course Management System"
+msgstr "課程管理系統"
+
+#: DevPlat/templates/DevPlat/course.html:65
+#: DevPlat/templates/DevPlat/dev_sessions.html:291
+#: DevPlat/templates/DevPlat/dev_sessions.html:403
+#: DevPlat/templates/DevPlat/projects.html:28
+#: DevPlat/templates/DevPlat/ruledoc.html:29
+#: PMISLooper/templates/PMISLooper/goal/project_goal.html:465
+#: PMISLooper/templates/PMISLooper/mindmap/mindmap.html:42
+#: PMISLooper/templates/PMISLooper/technic/TreeMenu.html:33
+msgid "Back"
+msgstr "返回"
+
+#: DevPlat/templates/DevPlat/course.html:79
+msgid "Add Course"
+msgstr "添加課程"
+
+#: DevPlat/templates/DevPlat/course.html:95
+msgid "Add Solution"
+msgstr "添加解決方案"
+
+#: DevPlat/templates/DevPlat/dev_sessions.html:59
+#: DevPlat/templates/DevPlat/index.html:249
+#: PMISLooper/templates/PMISLooper/base.html:294
+#: PMISLooper/templates/PMISLooper/user/activities.html:124
+#: PMISLooper/templates/PMISLooper/user/sessions.html:71
+#: PMISLooper/templates/PMISLooper/user/teams.html:80
+#: PMISLooper/templates/PMISLooper/user/top5_projects.html:77
+#: PMISLooper/templates/PMISLooper/user/top5_projects_bak.html:27
+msgid "Overview"
+msgstr "概覽"
+
+#: DevPlat/templates/DevPlat/dev_sessions.html:62
+msgid "Requirements"
+msgstr "需求"
+
+#: DevPlat/templates/DevPlat/dev_sessions.html:65
+#: DevPlat/templates/DevPlat/dev_sessions.html:107
+msgid "Session Tasks"
+msgstr "模塊任務"
+
+#: DevPlat/templates/DevPlat/dev_sessions.html:68
+#: DevPlat/templates/DevPlat/dev_sessions.html:108
+msgid "Diagram"
+msgstr "圖表"
+
+#: DevPlat/templates/DevPlat/dev_sessions.html:71
+#: DevPlat/templates/DevPlat/dev_sessions.html:109
+msgid "Design"
+msgstr "設計"
+
+#: DevPlat/templates/DevPlat/dev_sessions.html:74
+#: DevPlat/templates/DevPlat/dev_sessions.html:110
+msgid "Specification"
+msgstr "技術說明"
+
+#: DevPlat/templates/DevPlat/dev_sessions.html:77
+#: DevPlat/templates/DevPlat/dev_sessions.html:111
+msgid "Deliverables"
+msgstr "可交付成果"
+
+#: DevPlat/templates/DevPlat/dev_sessions.html:80
+#: DevPlat/templates/DevPlat/dev_sessions.html:112
+#: PMIS/templates/PMIS/Technical_Material.html:141
+#: PMIS/templates/PMIS/Technical_Material_create.html:224
+#: PMIS/templates/PMIS/Technical_Material_show.html:154
+#: PMIS/templates/PMIS/Technical_Material_update.html:193
+#: PMISLooper/templates/PMISLooper/technic/technical_dailyPlanner_statement.html:79
+msgid "Questions"
+msgstr "問題"
+
+#: DevPlat/templates/DevPlat/dev_sessions.html:83
+#: DevPlat/templates/DevPlat/dev_sessions.html:113
+msgid "Quality"
+msgstr "質量"
+
+#: DevPlat/templates/DevPlat/dev_sessions.html:86
+#: DevPlat/templates/DevPlat/dev_sessions.html:114
+#: PMISLooper/templates/PMISLooper/base.html:358
+#: PMISLooper/templates/PMISLooper/testing/testing.html:24
+msgid "Testing"
+msgstr "測試"
+
+#: DevPlat/templates/DevPlat/dev_sessions.html:89
+#: DevPlat/templates/DevPlat/dev_sessions.html:115
+#: DevPlat/templates/DevPlat/index.html:248
+msgid "Control Center"
+msgstr "控制中心"
+
+#: DevPlat/templates/DevPlat/dev_sessions.html:92
+#: DevPlat/templates/DevPlat/dev_sessions.html:116
+#: DevPlat/templates/DevPlat/projects.html:71
+#: PMISLooper/templates/PMISLooper/goal/goalManagement.html:34
+#: PMISLooper/templates/PMISLooper/user/top5_projects.html:98
+msgid "Summary"
+msgstr "總結"
+
+#: DevPlat/templates/DevPlat/dev_sessions.html:95
+#: DevPlat/templates/DevPlat/dev_sessions.html:117
+msgid "User Manual"
+msgstr "用戶手冊"
+
+#: DevPlat/templates/DevPlat/dev_sessions.html:99
+#: DevPlat/templates/DevPlat/dev_sessions.html:118
+#: DevPlat/templates/DevPlat/index.html:67
+#: PMISLooper/templates/PMISLooper/base.html:131
+msgid "Log"
+msgstr "日誌"
+
+#: DevPlat/templates/DevPlat/dev_sessions.html:102
+msgid "More"
+msgstr "更多"
+
+#: DevPlat/templates/DevPlat/dev_sessions.html:153
+msgid "Tab content Design"
+msgstr "設計標籤內容"
+
+#: DevPlat/templates/DevPlat/dev_sessions.html:292
+msgid "Add Specification"
+msgstr "添加技術說明"
+
+#: DevPlat/templates/DevPlat/dev_sessions.html:301
+msgid "Basic"
+msgstr "詳細資料"
+
+#: DevPlat/templates/DevPlat/dev_sessions.html:306
+#: PMISLooper/templates/PMISLooper/dashboard/staff_dashboard.html:403
+msgid "Function"
+msgstr "功能"
+
+#: DevPlat/templates/DevPlat/dev_sessions.html:312
+msgid "Instructions"
+msgstr "操作說明"
+
+#: DevPlat/templates/DevPlat/dev_sessions.html:318
+msgid "Logic"
+msgstr "邏輯"
+
+#: DevPlat/templates/DevPlat/dev_sessions.html:324
+msgid "Maintain"
+msgstr "維護記錄"
+
+#: DevPlat/templates/DevPlat/dev_sessions.html:338
+#: DevPlat/templates/DevPlat/dev_sessions.html:351
+#: DevPlat/templates/DevPlat/dev_sessions.html:364
+#: DevPlat/templates/DevPlat/dev_sessions.html:377
+#: PMISLooper/templates/PMISLooper/technic/technic.html:72
+#: PMISLooper/templates/PMISLooper/technic/technic.html:85
+#: PMISLooper/templates/PMISLooper/technic/technic.html:128
+msgid "Next step"
+msgstr "下一步"
+
+#: DevPlat/templates/DevPlat/dev_sessions.html:349
+#: DevPlat/templates/DevPlat/dev_sessions.html:362
+#: DevPlat/templates/DevPlat/dev_sessions.html:375
+#: DevPlat/templates/DevPlat/dev_sessions.html:388
+#: PMISLooper/templates/PMISLooper/technic/technic.html:83
+#: PMISLooper/templates/PMISLooper/technic/technic.html:126
+#: PMISLooper/templates/PMISLooper/technic/technic.html:139
+msgid "Previous"
+msgstr "上一步"
+
+#: DevPlat/templates/DevPlat/dev_sessions.html:404
+msgid "Technical Requirement"
+msgstr "技術需求"
+
+#: DevPlat/templates/DevPlat/dev_sessions.html:416
+msgid "Tab content Deliverables"
+msgstr "可交付成果標籤內容"
+
+#: DevPlat/templates/DevPlat/dev_sessions.html:419
+msgid "Tab content Knowledge based"
+msgstr "知識庫標籤內容"
+
+#: DevPlat/templates/DevPlat/dev_sessions.html:434
+msgid "Tab content Quality"
+msgstr "質量標籤內容"
+
+#: DevPlat/templates/DevPlat/dev_sessions.html:437
+msgid "Tab content Testing"
+msgstr "測試標籤內容"
+
+#: DevPlat/templates/DevPlat/dev_sessions.html:460
+#: DevPlat/templates/DevPlat/dev_sessions.html:463
+msgid "AI"
+msgstr ""
+
+#: DevPlat/templates/DevPlat/dev_sessions.html:467
+#: PMISLooper/templates/PMISLooper/task/quick-add-task.html:341
+msgid "Add Task"
+msgstr "添加任務"
+
+#: DevPlat/templates/DevPlat/dev_sessions.html:474
+#: PMISLooper/templates/PMISLooper/goal/overall/quarterly_goal.html:1622
+msgid "SessionTasks"
+msgstr "任務列表"
+
+#: DevPlat/templates/DevPlat/dev_sessions.html:477
+msgid "Document list"
+msgstr "文檔列表"
+
+#: DevPlat/templates/DevPlat/dev_sessions.html:480
+msgid "SessionTopTasks"
+msgstr "前40條任務"
+
+#: DevPlat/templates/DevPlat/dev_sessions.html:483
+msgid "SessionTopPriorityTasks"
+msgstr "前40條重要任務"
+
+#: DevPlat/templates/DevPlat/dev_sessions.html:535
+msgid "Tab content Summary"
+msgstr "總結標籤內容"
+
+#: DevPlat/templates/DevPlat/dev_sessions.html:538
+msgid "Tab content User Manual"
+msgstr "用戶手冊標籤內容"
+
+#: DevPlat/templates/DevPlat/dev_sessions.html:587
+msgid "Select System"
+msgstr "選擇系統"
+
+#: DevPlat/templates/DevPlat/dev_sessions.html:606
+msgid "Edit Function"
+msgstr "編輯功能"
+
+#: DevPlat/templates/DevPlat/dev_sessions.html:622
+#: DevPlat/templates/DevPlat/dev_sessions.html:638
+#: DevPlat/templates/DevPlat/dev_sessions.html:654
+msgid "Edit Instructions"
+msgstr "編輯操作說明"
+
+#: DevPlat/templates/DevPlat/dev_sessions.html:670
+msgid "Edit Technical Requirement"
+msgstr "編輯技術需求"
+
+#: DevPlat/templates/DevPlat/index.html:54
+#: PMISLooper/templates/PMISLooper/base.html:113
+#: PMISLooper/templates/PMISLooper/base.html:118
+#: PMISLooper/templates/PMISLooper/base.html:280
+#: PMISLooper/templates/PMISLooper/base.html:399
+msgid "Chat with Ai"
+msgstr "AI聊天"
+
+#: DevPlat/templates/DevPlat/index.html:58
+#: PMISLooper/templates/PMISLooper/base.html:122
+#: PMISLooper/templates/PMISLooper/task/quick-add-task.html:154
+msgid "New Task"
+msgstr "新增任務"
+
+#: DevPlat/templates/DevPlat/index.html:63
+#: PMISLooper/templates/PMISLooper/base.html:127
+#: PMISLooper/templates/PMISLooper/technic/quickAddTechnic.html:9
+#: PMISLooper/templates/PMISLooper/technic/quickAddTechnic_BAK.html:9
+msgid "Mini Technical"
+msgstr "Mini技術文檔"
+
+#: DevPlat/templates/DevPlat/index.html:70
+#: PMISLooper/templates/PMISLooper/base.html:134
+msgid "Knowledge Based"
+msgstr "知識庫"
+
+#: DevPlat/templates/DevPlat/index.html:73
+#: PMISLooper/templates/PMISLooper/base.html:137
+#: PMISLooper/templates/PMISLooper/base.html:300
+#: PMISLooper/templates/PMISLooper/goal/goal_master_form.html:38
+msgid "Goal Management"
+msgstr "目標管理"
+
+#: DevPlat/templates/DevPlat/index.html:76
+#: DevPlat/templates/DevPlat/index.html:246
+#: DevPlat/templates/DevPlat/question.html:19
+#: PMISLooper/templates/PMISLooper/base.html:140
+msgid "Question"
+msgstr "問題"
+
+#: DevPlat/templates/DevPlat/index.html:79
+#: PMISLooper/templates/PMISLooper/base.html:143
+msgid "System Bug Rpt"
+msgstr "系統問題上報"
+
+#: DevPlat/templates/DevPlat/index.html:82
+#: PMISLooper/templates/PMISLooper/base.html:146
+msgid "Message Summay"
+msgstr "消息匯總"
+
+#: DevPlat/templates/DevPlat/index.html:94
+#: PMISLooper/templates/PMISLooper/base.html:168
+msgid "Today's Tasks"
+msgstr "今日任務"
+
+#: DevPlat/templates/DevPlat/index.html:97
+#: PMISLooper/templates/PMISLooper/base.html:171
+#: PMISLooper/templates/PMISLooper/base.html:288
+msgid "Dashboard"
+msgstr "看板"
+
+#: DevPlat/templates/DevPlat/index.html:100
+#: PMISLooper/templates/PMISLooper/base.html:174
+msgid "Activity-Task"
+msgstr "進行中的任務"
+
+#: DevPlat/templates/DevPlat/index.html:103
+#: PMISLooper/templates/PMISLooper/base.html:177
+msgid "Scoring"
+msgstr "績效分"
+
+#: DevPlat/templates/DevPlat/index.html:106
+#: PMISLooper/templates/PMISLooper/base.html:180
+msgid "Goal"
+msgstr "目標"
+
+#: DevPlat/templates/DevPlat/index.html:109
+#: PMISLooper/templates/PMISLooper/base.html:183
+#: PMISLooper/templates/PMISLooper/base.html:356
+msgid "Meeting"
+msgstr "會議"
+
+#: DevPlat/templates/DevPlat/index.html:112
+#: PMISLooper/templates/PMISLooper/base.html:186
+#: PMISLooper/templates/PMISLooper/user/activities.html:128
+#: PMISLooper/templates/PMISLooper/user/sessions.html:71
+#: PMISLooper/templates/PMISLooper/user/teams.html:80
+#: PMISLooper/templates/PMISLooper/user/top5_projects.html:81
+msgid "Milestone"
+msgstr "重要節點"
+
+#: DevPlat/templates/DevPlat/index.html:115
+#: PMISLooper/templates/PMISLooper/base.html:189
+#: PMISLooper/templates/PMISLooper/base.html:446
+msgid "Forum"
+msgstr "論壇"
+
+#: DevPlat/templates/DevPlat/index.html:118
+#: PMISLooper/templates/PMISLooper/base.html:192
+msgid "Projects-SDLC"
+msgstr "項目"
+
+#: DevPlat/templates/DevPlat/index.html:243
+msgid "Knowledge based"
+msgstr "知識庫"
+
+#: DevPlat/templates/DevPlat/index.html:244
+msgid "Solution Type"
+msgstr "解決方案類型"
+
+#: DevPlat/templates/DevPlat/index.html:245
+#: PMISLooper/templates/PMISLooper/base.html:450
+msgid "Repository"
+msgstr "資源庫"
+
+#: DevPlat/templates/DevPlat/index.html:247
+msgid "Course"
+msgstr "課程"
+
+#: DevPlat/templates/DevPlat/index.html:251
+#: PMISLooper/templates/PMISLooper/dashboard/staff_dashboard.html:93
+msgid "Mindmap"
+msgstr "思維導圖"
+
+#: DevPlat/templates/DevPlat/index.html:253
+msgid "RuleDoc"
+msgstr "規則文檔"
+
+#: DevPlat/templates/DevPlat/projects.html:141
+#: PMISLooper/templates/PMISLooper/goal/goalManagement.html:104
+#: PMISLooper/templates/PMISLooper/user/top5_projects.html:172
+msgid "OK"
+msgstr "確認"
+
+#: DevPlat/templates/DevPlat/projects.html:149
+#: PMISLooper/templates/PMISLooper/goal/goalManagement.html:112
+#: PMISLooper/templates/PMISLooper/user/top5_projects.html:180
+msgid "Task Category"
+msgstr "任務類別"
+
+#: DevPlat/templates/DevPlat/projects.html:153
+#: PMISLooper/templates/PMISLooper/goal/goalManagement.html:116
+#: PMISLooper/templates/PMISLooper/user/top5_projects.html:184
+msgid "Users"
+msgstr "用戶"
+
+#: DevPlat/templates/DevPlat/projects.html:165
+#: PMISLooper/templates/PMISLooper/dashboard/staff_dashboard.html:679
+msgid "Gantt View"
+msgstr "甘特圖視圖"
+
+#: DevPlat/templates/DevPlat/projects.html:194
+msgid "Project"
+msgstr "項目"
+
+#: DevPlat/templates/DevPlat/question.html:22
+msgid "Question List"
+msgstr "問題列表"
+
+#: DevPlat/templates/DevPlat/question.html:48
+msgid "Various Sessions Question"
+msgstr "按模塊分類的問題"
+
+#: DevPlat/templates/DevPlat/ruledoc.html:14
+msgid "System's Rule Doc"
+msgstr "系統的規則文檔"
+
+#: DevPlat/templates/DevPlat/ruledoc.html:33
+msgid "Rule Content"
+msgstr "規則內容"
+
+#: FlowChartApp/templates/FlowChartApp/Preview.html:16
+#: PMISLooper/templates/PMISLooper/base.html:355
+msgid "FlowChart"
+msgstr "流程圖"
+
+#: PMIS/Services/UserService.py:135
+msgid "username is not exists"
+msgstr "用戶名不存在"
+
+#: PMIS/ViewsFolder/views_goalmanagement.py:110
+msgid "Please pass search_filter or filter in parameters"
+msgstr ""
+
+#: PMIS/ViewsFolder/views_task.py:323 PMIS/ViewsFolder/views_task.py:446
+#: PMIS/ViewsFolder/views_task.py:747
+msgid "You do not have permission to perform this action."
+msgstr ""
+
+#: PMIS/ViewsFolder/views_task.py:735
+#, python-brace-format
+msgid "The task {0} does not exist"
+msgstr ""
+
+#: PMIS/ViewsFolder/views_task.py:751
+msgid "The input parameter is incorrect!"
+msgstr ""
+
+#: PMIS/templates/PMIS/Technical_Material.html:20
+#: PMIS/templates/PMIS/Technical_Material_create.html:67
+#: PMIS/templates/PMIS/Technical_Material_show.html:38
+#: PMIS/templates/PMIS/Technical_Material_update.html:64
+msgid "Detail Technical Topic Description"
+msgstr "詳細技術主題描述"
+
+#: PMIS/templates/PMIS/Technical_Material.html:33
+#: PMIS/templates/PMIS/Technical_Material_create.html:82
+#: PMIS/templates/PMIS/Technical_Material_show.html:51
+#: PMIS/templates/PMIS/Technical_Material_update.html:79
+msgid "Technical ID"
+msgstr "技術編號"
+
+#: PMIS/templates/PMIS/Technical_Material.html:35
+#: PMIS/templates/PMIS/Technical_Material_create.html:83
+#: PMIS/templates/PMIS/Technical_Material_show.html:53
+#: PMIS/templates/PMIS/Technical_Material_update.html:80
+#: PMISLooper/templates/PMISLooper/task/quick-add-task.html:252
+#: PMISLooper/templates/PMISLooper/technic/technical_dailyPlanner_statement.html:31
+msgid "Date"
+msgstr "日期"
+
+#: PMIS/templates/PMIS/Technical_Material.html:38
+#: PMIS/templates/PMIS/Technical_Material_create.html:84
+#: PMIS/templates/PMIS/Technical_Material_show.html:56
+#: PMIS/templates/PMIS/Technical_Material_update.html:81
+#: PMISLooper/templates/PMISLooper/task/task-enquiry.html:39
+#: PMISLooper/templates/PMISLooper/technic/technical_dailyPlanner_statement.html:29
+msgid "Contact"
+msgstr "聯繫人"
+
+#: PMIS/templates/PMIS/Technical_Material.html:39
+#: PMIS/templates/PMIS/Technical_Material_create.html:91
+#: PMIS/templates/PMIS/Technical_Material_show.html:57
+#: PMIS/templates/PMIS/Technical_Material_update.html:85
+#: PMISLooper/templates/PMISLooper/dashboard/staff_dashboard.html:409
+#: PMISLooper/templates/PMISLooper/task/quick-add-task.html:295
+#: PMISLooper/templates/PMISLooper/technic/technical_dailyPlanner_statement.html:53
+msgid "Score"
+msgstr "分數"
+
+#: PMIS/templates/PMIS/Technical_Material.html:51
+#: PMIS/templates/PMIS/Technical_Material_create.html:131
+#: PMIS/templates/PMIS/Technical_Material_show.html:68
+#: PMIS/templates/PMIS/Technical_Material_update.html:101
+msgid "Concept/Theory"
+msgstr "概念"
+
+#: PMIS/templates/PMIS/Technical_Material.html:63
+#: PMIS/templates/PMIS/Technical_Material_create.html:139
+#: PMIS/templates/PMIS/Technical_Material_show.html:76
+#: PMIS/templates/PMIS/Technical_Material_update.html:109
+msgid "Usage"
+msgstr "作用"
+
+#: PMIS/templates/PMIS/Technical_Material.html:70
+#: PMIS/templates/PMIS/Technical_Material_create.html:147
+#: PMIS/templates/PMIS/Technical_Material_show.html:83
+#: PMIS/templates/PMIS/Technical_Material_update.html:117
+msgid "Pre-requist/Dependancy"
+msgstr "需要的依賴"
+
+#: PMIS/templates/PMIS/Technical_Material.html:78
+#: PMIS/templates/PMIS/Technical_Material_create.html:155
+#: PMIS/templates/PMIS/Technical_Material_show.html:91
+#: PMIS/templates/PMIS/Technical_Material_update.html:125
+msgid "Control"
+msgstr "控件信息"
+
+#: PMIS/templates/PMIS/Technical_Material.html:85
+#: PMIS/templates/PMIS/Technical_Material_create.html:163
+#: PMIS/templates/PMIS/Technical_Material_show.html:98
+#: PMIS/templates/PMIS/Technical_Material_update.html:133
+msgid "Properties"
+msgstr "類中重要的屬性作用"
+
+#: PMIS/templates/PMIS/Technical_Material.html:93
+#: PMIS/templates/PMIS/Technical_Material_create.html:172
+#: PMIS/templates/PMIS/Technical_Material_show.html:106
+#: PMIS/templates/PMIS/Technical_Material_update.html:142
+#: PMISLooper/templates/PMISLooper/technic/quickAddTechnic.html:94
+#: PMISLooper/templates/PMISLooper/technic/quickAddTechnic_BAK.html:83
+msgid "Implementation Procedure/Steps"
+msgstr "實現思路"
+
+#: PMIS/templates/PMIS/Technical_Material.html:109
+#: PMIS/templates/PMIS/Technical_Material_create.html:187
+#: PMIS/templates/PMIS/Technical_Material_show.html:122
+#: PMIS/templates/PMIS/Technical_Material_update.html:157
+msgid "Example"
+msgstr "應用舉例"
+
+#: PMIS/templates/PMIS/Technical_Material.html:125
+#: PMIS/templates/PMIS/Technical_Material_create.html:206
+#: PMIS/templates/PMIS/Technical_Material_show.html:138
+#: PMIS/templates/PMIS/Technical_Material_update.html:175
+msgid "Precaution"
+msgstr "注意事項"
+
+#: PMIS/templates/PMIS/Technical_Material.html:148
+#: PMIS/templates/PMIS/Technical_Material_create.html:240
+#: PMIS/templates/PMIS/Technical_Material_show.html:161
+#: PMIS/templates/PMIS/Technical_Material_update.html:201
+msgid "Video"
+msgstr "視頻"
+
+#: PMIS/templates/PMIS/Technical_Material.html:155
+#: PMIS/templates/PMIS/Technical_Material_create.html:99
+#: PMIS/templates/PMIS/Technical_Material_create.html:357
+#: PMIS/templates/PMIS/Technical_Material_show.html:168
+#: PMIS/templates/PMIS/Technical_Material_update.html:210
+#: PMIS/templates/PMIS/Technical_Material_update.html:350
+#: PMISLooper/templates/PMISLooper/technic/quickAddTechnic.html:237
+msgid "Category"
+msgstr "類別"
+
+#: PMIS/templates/PMIS/Technical_Material.html:163
+#: PMIS/templates/PMIS/Technical_Material_create.html:107
+#: PMIS/templates/PMIS/Technical_Material_create.html:364
+#: PMIS/templates/PMIS/Technical_Material_show.html:176
+#: PMIS/templates/PMIS/Technical_Material_update.html:218
+#: PMIS/templates/PMIS/Technical_Material_update.html:357
+#: PMISLooper/templates/PMISLooper/technic/quickAddTechnic.html:244
+msgid "Area"
+msgstr "區域"
+
+#: PMIS/templates/PMIS/Technical_Material.html:171
+#: PMIS/templates/PMIS/Technical_Material_create.html:115
+#: PMIS/templates/PMIS/Technical_Material_create.html:371
+#: PMIS/templates/PMIS/Technical_Material_show.html:184
+#: PMIS/templates/PMIS/Technical_Material_update.html:226
+#: PMIS/templates/PMIS/Technical_Material_update.html:364
+#: PMISLooper/templates/PMISLooper/technic/quickAddTechnic.html:251
+msgid "Sub Area"
+msgstr "子區域"
+
+#: PMIS/templates/PMIS/Technical_Material.html:179
+#: PMIS/templates/PMIS/Technical_Material_create.html:232
+#: PMIS/templates/PMIS/Technical_Material_show.html:192
+#: PMIS/templates/PMIS/Technical_Material_update.html:234
+msgid "Reference"
+msgstr "參考"
+
+#: PMIS/templates/PMIS/Technical_Material.html:186
+#: PMIS/templates/PMIS/Technical_Material_create.html:248
+#: PMIS/templates/PMIS/Technical_Material_show.html:199
+#: PMIS/templates/PMIS/Technical_Material_update.html:242
+msgid "Compulsory"
+msgstr "必須項"
+
+#: PMIS/templates/PMIS/Technical_Material.html:193
+#: PMIS/templates/PMIS/Technical_Material_create.html:263
+#: PMIS/templates/PMIS/Technical_Material_show.html:206
+#: PMIS/templates/PMIS/Technical_Material_update.html:250
+#: PMISLooper/templates/PMISLooper/technic/technic.html:58
+#: PMISLooper/templates/PMISLooper/technic/technical_dailyPlanner_statement.html:123
+msgid "Status"
+msgstr "狀態"
+
+#: PMIS/templates/PMIS/Technical_Material.html:201
+#: PMIS/templates/PMIS/Technical_Material_create.html:271
+#: PMIS/templates/PMIS/Technical_Material_show.html:214
+#: PMIS/templates/PMIS/Technical_Material_update.html:258
+msgid "Mind Map ID"
+msgstr "思維導圖"
+
+#: PMIS/templates/PMIS/Technical_Material.html:210
+#: PMIS/templates/PMIS/Technical_Material_create.html:256
+#: PMIS/templates/PMIS/Technical_Material_show.html:223
+#: PMIS/templates/PMIS/Technical_Material_update.html:266
+#: PMIS/templates/PMIS/newOpportunity.html:105
+msgid "Parent Mind Map ID"
+msgstr "父思維導圖編號"
+
+#: PMIS/templates/PMIS/Technical_Material_create.html:180
+#: PMIS/templates/PMIS/Technical_Material_update.html:150
+msgid "Add Steps"
+msgstr "添加步驟"
+
+#: PMIS/templates/PMIS/Technical_Material_create.html:198
+#: PMIS/templates/PMIS/Technical_Material_update.html:167
+msgid "Add Exampletab"
+msgstr "添加示例標籤"
+
+#: PMIS/templates/PMIS/Technical_Material_create.html:216
+#: PMIS/templates/PMIS/Technical_Material_update.html:185
+msgid "Add Precaution"
+msgstr "添加注意事項"
+
+#: PMIS/templates/PMIS/Technical_Material_create.html:291
+#: PMIS/templates/PMIS/Technical_Material_update.html:284
+#: PMISLooper/templates/PMISLooper/technic/quickAddTechnic.html:173
+#: PMISLooper/templates/PMISLooper/technic/quickAddTechnic.html:315
+#: PMISLooper/templates/PMISLooper/technic/quickAddTechnic_BAK.html:161
+msgid "Create Category"
+msgstr "創建類別"
+
+#: PMIS/templates/PMIS/Technical_Material_create.html:345
+#: PMIS/templates/PMIS/Technical_Material_update.html:338
+#: PMISLooper/templates/PMISLooper/technic/quickAddTechnic.html:227
+#: PMISLooper/templates/PMISLooper/technic/quickAddTechnic.html:281
+msgid "Selected Category"
+msgstr "選擇類別"
+
+#: PMIS/templates/PMIS/newOpportunity.html:89
+msgid "Technical Table"
+msgstr "技術文檔表"
+
+#: PMIS/templates/PMIS/newOpportunity.html:104
+msgid "Search Mini Technial"
+msgstr "查詢Mini技術文檔"
+
+#: PMISLooper/ViewsFolder/AIConditionManagerView.py:99
+#: PMISLooper/ViewsFolder/AIConditionManagerView.py:155
+#, python-brace-format
+msgid "Successfully deleted {deleted_count} records"
+msgstr "成功刪除了{deleted_count}條記錄"
+
+#: PMISLooper/ViewsFolder/AIConditionManagerView.py:103
+#: PMISLooper/ViewsFolder/AIConditionManagerView.py:159
+msgid "Error occurred during deletion: "
+msgstr "刪除過程中出錯"
+
+#: PMISLooper/ViewsFolder/AIConditionManagerView.py:172
+msgid "Error occurred while fetching category info: "
+msgstr "獲取類別信息時出錯:"
+
+#: PMISLooper/ViewsFolder/AnalyseProjects.py:16
+msgid "Please pass contact or filter in parameters"
+msgstr ""
+
+#: PMISLooper/ViewsFolder/NotificationView copy.py:32
+#: PMISLooper/ViewsFolder/NotificationView.py:32
+msgid "repeat cycle valid."
+msgstr "勾選\"重覆\"框必須設置重覆周期!"
+
+#: PMISLooper/ViewsFolder/NotificationView copy.py:38
+#: PMISLooper/ViewsFolder/NotificationView.py:38
+msgid "Please set the reminder start date."
+msgstr "請設置提醒開始日期!"
+
+#: PMISLooper/ViewsFolder/NotificationView copy.py:40
+#: PMISLooper/ViewsFolder/NotificationView.py:40
+msgid "Please set the reminder end date."
+msgstr "請設置提醒結束日期!"
+
+#: PMISLooper/ViewsFolder/NotificationView copy.py:42
+#: PMISLooper/ViewsFolder/NotificationView.py:42
+msgid "The reminder start time cannot be empty."
+msgstr "提醒開始時間不能為空!"
+
+#: PMISLooper/ViewsFolder/NotificationView copy.py:44
+#: PMISLooper/ViewsFolder/NotificationView.py:44
+msgid "The reminder end time cannot be empty."
+msgstr "提醒結束時間不能為空!"
+
+#: PMISLooper/ViewsFolder/NotificationView copy.py:46
+#: PMISLooper/ViewsFolder/NotificationView.py:46
+msgid "The reminder start time must less end time."
+msgstr "提醒開始時間必須小於提醒結束時間!"
+
+#: PMISLooper/ViewsFolder/NotificationView copy.py:49
+#: PMISLooper/ViewsFolder/NotificationView.py:49
+msgid "reminder date valid."
+msgstr "提醒開始日期必須小於等於提醒結束日期!"
+
+#: PMISLooper/ViewsFolder/NotificationView copy.py:130
+#: PMISLooper/ViewsFolder/NotificationView.py:130
+msgid "Setup Successful!"
+msgstr "設置成功!"
+
+#: PMISLooper/ViewsFolder/NotificationView copy.py:140
+#: PMISLooper/ViewsFolder/NotificationView.py:140
+msgid "Setup failed"
+msgstr "設置失敗!"
+
+#: PMISLooper/ViewsFolder/NotificationView copy.py:171 copy.py:195
+#: PMISLooper/ViewsFolder/NotificationView.py:171
+#: PMISLooper/ViewsFolder/NotificationView.py:193
+#, fuzzy
+#| msgid "username is not exists"
+msgid "This task does not exist"
+msgstr "用戶名不存在"
+
+#: PMISLooper/ViewsFolder/NotificationView copy.py:174
+#: PMISLooper/ViewsFolder/NotificationView.py:174
+msgid "Search data fail!"
+msgstr ""
+
+#: PMISLooper/ViewsFolder/NotificationView copy.py:192
+#: PMISLooper/ViewsFolder/NotificationView.py:191
+#, fuzzy
+#| msgid "Setup Successful!"
+msgid "Assign Successful!"
+msgstr "設置成功!"
+
+#: PMISLooper/ViewsFolder/NotificationView copy.py:199
+#: PMISLooper/ViewsFolder/NotificationView.py:197
+#: PMISLooper/ViewsFolder/NotificationView.py:199
+#, fuzzy
+#| msgid "Assigned"
+msgid "Assign failed"
+msgstr "分配"
+
+#: PMISLooper/ViewsFolder/NotificationView copy.py:202
+#: PMISLooper/ViewsFolder/NotificationView.py:201
+msgid "Illegal access"
+msgstr ""
+
+#: PMISLooper/ViewsFolder/NotificationView.py:168
+msgid "The task has been assigned to "
+msgstr ""
+
+#: PMISLooper/templates/PMISLooper/ai/AIComBox.html:6
+#, fuzzy
+#| msgid "Chat with Ai"
+msgid "Chat With AI"
+msgstr "AI聊天"
+
+#: PMISLooper/templates/PMISLooper/base.html:275
+msgid "Operation FlowChart"
+msgstr "幫助流程"
+
+#: PMISLooper/templates/PMISLooper/base.html:289
+msgid "Team Dashboard"
+msgstr "團隊看板"
+
+#: PMISLooper/templates/PMISLooper/base.html:290
+#: PMISLooper/templates/PMISLooper/dashboard/staff_dashboard.html:701
+msgid "Staff Dashboard"
+msgstr "個人看板"
+
+#: PMISLooper/templates/PMISLooper/base.html:292
+msgid "Task DashBoard"
+msgstr "任務看板"
+
+#: PMISLooper/templates/PMISLooper/base.html:293
+#: PMISLooper/templates/PMISLooper/dashboard/dashboard.html:97
+#: PMISLooper/templates/PMISLooper/dashboard/dashboard.html:186
+#: PMISLooper/templates/PMISLooper/dashboard/staff_dashboard.html:129
+#: PMISLooper/templates/PMISLooper/dashboard/staff_dashboard.html:260
+#: PMISLooper/templates/PMISLooper/user/activities.html:81
+#: PMISLooper/templates/PMISLooper/user/activities.html:127
+#: PMISLooper/templates/PMISLooper/user/sessions.html:26
+#: PMISLooper/templates/PMISLooper/user/sessions.html:71
+#: PMISLooper/templates/PMISLooper/user/teams.html:37
+#: PMISLooper/templates/PMISLooper/user/teams.html:80
+#: PMISLooper/templates/PMISLooper/user/top5_projects.html:34
+#: PMISLooper/templates/PMISLooper/user/top5_projects.html:80
+#: PMISLooper/templates/PMISLooper/user/top5_projects_bak.html:30
+msgid "Projects"
+msgstr "項目"
+
+#: PMISLooper/templates/PMISLooper/base.html:296
+msgid "Milestone Activiites"
+msgstr "重要節點活動"
+
+#: PMISLooper/templates/PMISLooper/base.html:298
+#: PMISLooper/templates/PMISLooper/goal/goal_master_form.html:30
+msgid "Goal Master"
+msgstr "主要的目標"
+
+#: PMISLooper/templates/PMISLooper/base.html:299
+msgid "Outstanding Goal"
+msgstr "脫期目標管理"
+
+#: PMISLooper/templates/PMISLooper/base.html:301
+#: PMISLooper/templates/PMISLooper/dashboard/staff_dashboard.html:138
+#: PMISLooper/templates/PMISLooper/goal/project_goal.html:588
+#: PMISLooper/templates/PMISLooper/user/activities.html:85
+#: PMISLooper/templates/PMISLooper/user/activities.html:129
+#: PMISLooper/templates/PMISLooper/user/sessions.html:30
+#: PMISLooper/templates/PMISLooper/user/sessions.html:71
+#: PMISLooper/templates/PMISLooper/user/teams.html:41
+#: PMISLooper/templates/PMISLooper/user/teams.html:80
+#: PMISLooper/templates/PMISLooper/user/top5_projects.html:38
+#: PMISLooper/templates/PMISLooper/user/top5_projects.html:82
+#: PMISLooper/templates/PMISLooper/user/top5_projects_bak.html:32
+msgid "Sessions"
+msgstr "模塊"
+
+#: PMISLooper/templates/PMISLooper/base.html:303
+#: PMISLooper/templates/PMISLooper/session/PmsSessionManager.html:28
+msgid "Session Query"
+msgstr "模塊管理"
+
+#: PMISLooper/templates/PMISLooper/base.html:304
+msgid "AI Condition Manager"
+msgstr "AI條件管理"
+
+#: PMISLooper/templates/PMISLooper/base.html:306
+#: PMISLooper/templates/PMISLooper/base.html:338
+#: PMISLooper/templates/PMISLooper/base.html:353
+msgid "MindMap"
+msgstr "思維導圖"
+
+#: PMISLooper/templates/PMISLooper/base.html:307
+msgid "Gantt Chart"
+msgstr "甘特圖"
+
+#: PMISLooper/templates/PMISLooper/base.html:308
+msgid "SystemBugRpt"
+msgstr "系統問題上報"
+
+#: PMISLooper/templates/PMISLooper/base.html:311
+msgid "Management"
+msgstr "管理"
+
+#: PMISLooper/templates/PMISLooper/base.html:312
+#: PMISLooper/templates/PMISLooper/session/ChatbotQuestionManagementOverview.html:28
+msgid "Chatbot Question Management Overview"
+msgstr "代理管理助手"
+
+#: PMISLooper/templates/PMISLooper/base.html:314
+msgid "Open Web UI"
+msgstr "開放式網頁界面"
+
+#: PMISLooper/templates/PMISLooper/base.html:317
+msgid "Auth"
+msgstr "權限"
+
+#: PMISLooper/templates/PMISLooper/base.html:318
+msgid "Auth Users"
+msgstr "用戶管理"
+
+#: PMISLooper/templates/PMISLooper/base.html:319
+msgid "Auth Roles"
+msgstr "角色管理"
+
+#: PMISLooper/templates/PMISLooper/base.html:320
+msgid "Auth Permissions"
+msgstr "權限管理"
+
+#: PMISLooper/templates/PMISLooper/base.html:321
+msgid "Message Permissions"
+msgstr "消息權限"
+
+#: PMISLooper/templates/PMISLooper/base.html:323
+msgid "User"
+msgstr "用戶"
+
+#: PMISLooper/templates/PMISLooper/base.html:324
+msgid "Activites"
+msgstr "活動"
+
+#: PMISLooper/templates/PMISLooper/base.html:325
+#: PMISLooper/templates/PMISLooper/dashboard/dashboard.html:87
+#: PMISLooper/templates/PMISLooper/dashboard/staff_dashboard.html:111
+#: PMISLooper/templates/PMISLooper/user/activities.html:126
+#: PMISLooper/templates/PMISLooper/user/sessions.html:71
+#: PMISLooper/templates/PMISLooper/user/teams.html:80
+#: PMISLooper/templates/PMISLooper/user/top5_projects.html:79
+#: PMISLooper/templates/PMISLooper/user/top5_projects_bak.html:29
+msgid "Teams"
+msgstr "團隊"
+
+#: PMISLooper/templates/PMISLooper/base.html:328
+#: PMISLooper/templates/PMISLooper/dashboard/dashboard.html:189
+#: PMISLooper/templates/PMISLooper/dashboard/staff_dashboard.html:150
+#: PMISLooper/templates/PMISLooper/user/activities.html:89
+#: PMISLooper/templates/PMISLooper/user/sessions.html:34
+#: PMISLooper/templates/PMISLooper/user/teams.html:45
+#: PMISLooper/templates/PMISLooper/user/top5_projects.html:42
+msgid "Tasks"
+msgstr "任務"
+
+#: PMISLooper/templates/PMISLooper/base.html:330
+#: PMISLooper/templates/PMISLooper/task/task-enquiry.html:22
+msgid "Task Enquiry"
+msgstr "任務查詢"
+
+#: PMISLooper/templates/PMISLooper/base.html:331
+msgid "FAQ Analysis Task"
+msgstr "任務類型分析"
+
+#: PMISLooper/templates/PMISLooper/base.html:333
+msgid "Technical"
+msgstr "技術"
+
+#: PMISLooper/templates/PMISLooper/base.html:334
+msgid "Technical Daily Planner"
+msgstr "技術的每日計劃"
+
+#: PMISLooper/templates/PMISLooper/base.html:335
+msgid "Temp technical analysis"
+msgstr "技術文檔分析"
+
+#: PMISLooper/templates/PMISLooper/base.html:336
+msgid "Analysis TaskType"
+msgstr "任務類型分析"
+
+#: PMISLooper/templates/PMISLooper/base.html:337
+msgid "SolutionType"
+msgstr "解決方案類型"
+
+#: PMISLooper/templates/PMISLooper/base.html:340
+msgid "Analysis SolutionType"
+msgstr "解決方案類型分析"
+
+#: PMISLooper/templates/PMISLooper/base.html:341
+#: PMISLooper/templates/PMISLooper/technic/quickAddTechnic.html:23
+#: PMISLooper/templates/PMISLooper/technic/quickAddTechnic_BAK.html:22
+msgid "Technical Enquiry"
+msgstr "技術查詢"
+
+#: PMISLooper/templates/PMISLooper/base.html:342
+msgid "Abnormal Daily Planner"
+msgstr "異常的每日計劃"
+
+#: PMISLooper/templates/PMISLooper/base.html:344
+#: PMISLooper/templates/PMISLooper/technic/SALCFollowUp.html:26
+msgid "SALC Follow Up"
+msgstr "SALC跟進"
+
+#: PMISLooper/templates/PMISLooper/base.html:346
+msgid "Frame Update"
+msgstr ""
+
+#: PMISLooper/templates/PMISLooper/base.html:348
+msgid "Schedule"
+msgstr "自動排期"
+
+#: PMISLooper/templates/PMISLooper/base.html:349
+msgid "Set Priority"
+msgstr "設置優先級"
+
+#: PMISLooper/templates/PMISLooper/base.html:350
+msgid "Schedule Dashboard"
+msgstr "排期看板"
+
+#: PMISLooper/templates/PMISLooper/base.html:361
+msgid "Application"
+msgstr "應用"
+
+#: PMISLooper/templates/PMISLooper/base.html:362
+msgid "Developing"
+msgstr "開發"
+
+#: PMISLooper/templates/PMISLooper/base.html:363
+msgid "Accounting"
+msgstr ""
+
+#: PMISLooper/templates/PMISLooper/base.html:365
+#, fuzzy
+#| msgid "Set Priority"
+msgid "Set Priority(Schedule)"
+msgstr "設置優先級"
+
+#: PMISLooper/templates/PMISLooper/base.html:366
+msgid "Lead App"
+msgstr "客戶APP"
+
+#: PMISLooper/templates/PMISLooper/base.html:368
+#: PMISLooper/templates/PMISLooper/base.html:405
+msgid "CRM"
+msgstr "客戶管理系統"
+
+#: PMISLooper/templates/PMISLooper/base.html:370
+msgid "CRM Backend"
+msgstr "客戶管理系統後端"
+
+#: PMISLooper/templates/PMISLooper/base.html:372
+#: PMISLooper/templates/PMISLooper/base.html:373
+#: PMISLooper/templates/PMISLooper/base.html:444
+msgid "Orderwise"
+msgstr ""
+
+#: PMISLooper/templates/PMISLooper/base.html:375
+msgid "Orderwise(SZ)"
+msgstr ""
+
+#: PMISLooper/templates/PMISLooper/base.html:377
+msgid "VC220 WebSite"
+msgstr "VC220 網站"
+
+#: PMISLooper/templates/PMISLooper/base.html:379
+msgid "ERPBom(Test)"
+msgstr "ERP物料清單（測試）"
+
+#: PMISLooper/templates/PMISLooper/base.html:381
+#: PMISLooper/templates/PMISLooper/base.html:382
+msgid "WebSo"
+msgstr ""
+
+#: PMISLooper/templates/PMISLooper/base.html:384
+msgid "VC Asia SI System"
+msgstr ""
+
+#: PMISLooper/templates/PMISLooper/base.html:385
+msgid "WebSo(SI)"
+msgstr ""
+
+#: PMISLooper/templates/PMISLooper/base.html:387
+msgid "Repository(Bak)"
+msgstr "資源庫（備份）"
+
+#: PMISLooper/templates/PMISLooper/base.html:389
+msgid "Co_operate Sales"
+msgstr "公司經營銷售"
+
+#: PMISLooper/templates/PMISLooper/base.html:392
+msgid "Project Follow Up in WPMIS"
+msgstr ""
+
+#: PMISLooper/templates/PMISLooper/base.html:393
+msgid "TenantCloud"
+msgstr ""
+
+#: PMISLooper/templates/PMISLooper/base.html:395
+#, fuzzy
+#| msgid "System"
+msgid "EmpHRPS System"
+msgstr "系統"
+
+#: PMISLooper/templates/PMISLooper/base.html:398
+#, fuzzy
+#| msgid "Goal Management"
+msgid "Document Management"
+msgstr "目標管理"
+
+#: PMISLooper/templates/PMISLooper/base.html:401
+msgid "Full Course"
+msgstr "全部課程"
+
+#: PMISLooper/templates/PMISLooper/base.html:403
+msgid "SO"
+msgstr "銷售訂單"
+
+#: PMISLooper/templates/PMISLooper/base.html:411
+msgid "Bonus Simulation(Vue)"
+msgstr "獎金模擬(Vue)"
+
+#: PMISLooper/templates/PMISLooper/base.html:414
+msgid "Bonus Debit"
+msgstr ""
+
+#: PMISLooper/templates/PMISLooper/base.html:418
+#, fuzzy
+#| msgid "ERPBom"
+msgid "ERPBom(YM)"
+msgstr "ERP物料清單"
+
+#: PMISLooper/templates/PMISLooper/base.html:420
+#, fuzzy
+#| msgid "ERPBom(Test)"
+msgid "ERPBom(Vietnam)"
+msgstr "ERP物料清單（測試）"
+
+#: PMISLooper/templates/PMISLooper/base.html:422
+#, fuzzy
+#| msgid "WEB SO"
+msgid "WEB SO(Macau)"
+msgstr "銷售訂單網站"
+
+#: PMISLooper/templates/PMISLooper/base.html:424
+#, fuzzy
+#| msgid "WEB SO"
+msgid "WEB SO(Singapore)"
+msgstr "銷售訂單網站"
+
+#: PMISLooper/templates/PMISLooper/base.html:426
+#, fuzzy
+#| msgid "WEB SO"
+msgid "WEB SO(SW)"
+msgstr "銷售訂單網站"
+
+#: PMISLooper/templates/PMISLooper/base.html:428
+#, fuzzy
+#| msgid "WEB SO"
+msgid "WEB SO(Rest)"
+msgstr "銷售訂單網站"
+
+#: PMISLooper/templates/PMISLooper/base.html:430
+#, fuzzy
+#| msgid "WEB SO"
+msgid "WEB SO(SZ)"
+msgstr "銷售訂單網站"
+
+#: PMISLooper/templates/PMISLooper/base.html:432
+#, fuzzy
+#| msgid "WEB SO"
+msgid "WEB SO(Vietnam)"
+msgstr "銷售訂單網站"
+
+#: PMISLooper/templates/PMISLooper/base.html:434
+#, fuzzy
+#| msgid "WEB SO"
+msgid "WEB SO(Oudi)"
+msgstr "銷售訂單網站"
+
+#: PMISLooper/templates/PMISLooper/base.html:436
+#, fuzzy
+#| msgid "WEB SO"
+msgid "WEB SO(Shenghui)"
+msgstr "銷售訂單網站"
+
+#: PMISLooper/templates/PMISLooper/base.html:438
+#, fuzzy
+#| msgid "WEB SO"
+msgid "WEB SO(Yongzhen)"
+msgstr "銷售訂單網站"
+
+#: PMISLooper/templates/PMISLooper/base.html:440
+#, fuzzy
+#| msgid "WEB SO"
+msgid "VIVC WEB SO(Singapore)"
+msgstr "銷售訂單網站"
+
+#: PMISLooper/templates/PMISLooper/base.html:442
+#, fuzzy
+#| msgid "WEB SO"
+msgid "WEB PO"
+msgstr "銷售訂單網站"
+
+#: PMISLooper/templates/PMISLooper/base.html:448
+msgid "Playground"
+msgstr "操場"
+
+#: PMISLooper/templates/PMISLooper/base.html:452
+#, fuzzy
+msgid "VC220 RestApi"
+msgstr "VC220 網站"
+
+#: PMISLooper/templates/PMISLooper/base.html:455
+#: PMISLooper/templates/PMISLooper/base.html:457
+msgid "Development"
+msgstr "開發"
+
+#: PMISLooper/templates/PMISLooper/dashboard/dashboard.html:21
+msgid "Hi"
+msgstr "你好"
+
+#: PMISLooper/templates/PMISLooper/dashboard/dashboard.html:27
+#: PMISLooper/templates/PMISLooper/dashboard/dashboard.html:46
+#: PMISLooper/templates/PMISLooper/dashboard/dashboard.html:306
+#: PMISLooper/templates/PMISLooper/dashboard/staff_dashboard.html:41
+#: PMISLooper/templates/PMISLooper/dashboard/staff_dashboard.html:56
+msgid "This Week"
+msgstr "本周"
+
+#: PMISLooper/templates/PMISLooper/dashboard/dashboard.html:34
+#: PMISLooper/templates/PMISLooper/dashboard/staff_dashboard.html:48
+msgid "Today"
+msgstr "今天"
+
+#: PMISLooper/templates/PMISLooper/dashboard/dashboard.html:40
+#: PMISLooper/templates/PMISLooper/dashboard/staff_dashboard.html:52
+msgid "Yesterday"
+msgstr "昨天"
+
+#: PMISLooper/templates/PMISLooper/dashboard/dashboard.html:52
+#: PMISLooper/templates/PMISLooper/dashboard/staff_dashboard.html:60
+msgid "This Month"
+msgstr "本月"
+
+#: PMISLooper/templates/PMISLooper/dashboard/dashboard.html:58
+#: PMISLooper/templates/PMISLooper/dashboard/staff_dashboard.html:67
+msgid "This Year"
+msgstr "本年"
+
+#: PMISLooper/templates/PMISLooper/dashboard/dashboard.html:107
+msgid "Active Tasks"
+msgstr "進行中的任務"
+
+#: PMISLooper/templates/PMISLooper/dashboard/dashboard.html:119
+#: PMISLooper/templates/PMISLooper/dashboard/staff_dashboard.html:188
+#: PMISLooper/templates/PMISLooper/dashboard/staff_dashboard.html:201
+msgid "ONGOING TASKS"
+msgstr "進行中任務"
+
+#: PMISLooper/templates/PMISLooper/dashboard/dashboard.html:136
+#: PMISLooper/templates/PMISLooper/dashboard/staff_dashboard.html:218
+msgid "Completion Tasks"
+msgstr "完成任務"
+
+#: PMISLooper/templates/PMISLooper/dashboard/dashboard.html:149
+#: PMISLooper/templates/PMISLooper/dashboard/staff_dashboard.html:231
+msgid "Tasks Performance"
+msgstr "任務表現"
+
+#: PMISLooper/templates/PMISLooper/dashboard/dashboard.html:167
+#: PMISLooper/templates/PMISLooper/dashboard/staff_dashboard.html:243
+msgid "Assigned"
+msgstr "分配"
+
+#: PMISLooper/templates/PMISLooper/dashboard/dashboard.html:171
+#: PMISLooper/templates/PMISLooper/dashboard/dashboard.html:191
+#: PMISLooper/templates/PMISLooper/dashboard/dashboard.html:247
+#: PMISLooper/templates/PMISLooper/dashboard/staff_dashboard.html:246
+#: PMISLooper/templates/PMISLooper/dashboard/staff_dashboard.html:265
+#: PMISLooper/templates/PMISLooper/dashboard/staff_dashboard.html:321
+#: PMISLooper/templates/PMISLooper/dashboard/staff_dashboard.html:379
+msgid "Completed"
+msgstr "完成"
+
+#: PMISLooper/templates/PMISLooper/dashboard/dashboard.html:175
+#: PMISLooper/templates/PMISLooper/dashboard/dashboard.html:193
+#: PMISLooper/templates/PMISLooper/dashboard/staff_dashboard.html:249
+#: PMISLooper/templates/PMISLooper/dashboard/staff_dashboard.html:267
+msgid "Active"
+msgstr "進行"
+
+#: PMISLooper/templates/PMISLooper/dashboard/dashboard.html:195
+#: PMISLooper/templates/PMISLooper/dashboard/staff_dashboard.html:269
+msgid "Overdue"
+msgstr "超時"
+
+#: PMISLooper/templates/PMISLooper/dashboard/dashboard.html:242
+#: PMISLooper/templates/PMISLooper/dashboard/staff_dashboard.html:316
+msgid "Completion Rate"
+msgstr "完成率11"
+
+#: PMISLooper/templates/PMISLooper/dashboard/dashboard.html:245
+#: PMISLooper/templates/PMISLooper/dashboard/staff_dashboard.html:263
+#: PMISLooper/templates/PMISLooper/dashboard/staff_dashboard.html:319
+#: PMISLooper/templates/PMISLooper/dashboard/staff_dashboard.html:376
+msgid "Assign"
+msgstr "分配"
+
+#: PMISLooper/templates/PMISLooper/dashboard/dashboard.html:249
+#: PMISLooper/templates/PMISLooper/dashboard/staff_dashboard.html:323
+#: PMISLooper/templates/PMISLooper/dashboard/staff_dashboard.html:382
+msgid "Actual Uncomplete"
+msgstr "實際未完成"
+
+#: PMISLooper/templates/PMISLooper/dashboard/dashboard.html:251
+#: PMISLooper/templates/PMISLooper/dashboard/staff_dashboard.html:325
+#: PMISLooper/templates/PMISLooper/dashboard/staff_dashboard.html:385
+msgid "Unassign Complete"
+msgstr "已分配未完成"
+
+#: PMISLooper/templates/PMISLooper/dashboard/dashboard.html:298
+#: PMISLooper/templates/PMISLooper/dashboard/staff_dashboard.html:427
+msgid "Weekly Goals"
+msgstr "周目標"
+
+#: PMISLooper/templates/PMISLooper/dashboard/dashboard.html:302
+msgid "Last Week"
+msgstr "上周"
+
+#: PMISLooper/templates/PMISLooper/dashboard/dashboard.html:310
+msgid "Next Week"
+msgstr "下周"
+
+#: PMISLooper/templates/PMISLooper/dashboard/dashboard.html:901
+#: PMISLooper/templates/PMISLooper/dashboard/staff_dashboard.html:560
+msgid "Active Tasks: To-Dos"
+msgstr "進行中的任務"
+
+#: PMISLooper/templates/PMISLooper/dashboard/dashboard.html:921
+#: PMISLooper/templates/PMISLooper/dashboard/staff_dashboard.html:580
+msgid "back to top"
+msgstr "回到頂部"
+
+#: PMISLooper/templates/PMISLooper/dashboard/staff_dashboard.html:45
+msgid "Last Quarter"
+msgstr "上季度"
+
+#: PMISLooper/templates/PMISLooper/dashboard/staff_dashboard.html:63
+msgid "This Quarter"
+msgstr "本季度"
+
+#: PMISLooper/templates/PMISLooper/dashboard/staff_dashboard.html:102
+msgid "Goals"
+msgstr "目標"
+
+#: PMISLooper/templates/PMISLooper/dashboard/staff_dashboard.html:120
+#: PMISLooper/templates/PMISLooper/user/top5_projects.html:256
+msgid "Calendar"
+msgstr "日曆"
+
+#: PMISLooper/templates/PMISLooper/dashboard/staff_dashboard.html:159
+msgid "New Tasks"
+msgstr "新任務"
+
+#: PMISLooper/templates/PMISLooper/dashboard/staff_dashboard.html:167
+#: PMISLooper/templates/PMISLooper/user/activities.html:93
+#: PMISLooper/templates/PMISLooper/user/sessions.html:38
+#: PMISLooper/templates/PMISLooper/user/teams.html:49
+#: PMISLooper/templates/PMISLooper/user/top5_projects.html:46
+msgid "New Technicals"
+msgstr "新文檔"
+
+#: PMISLooper/templates/PMISLooper/dashboard/staff_dashboard.html:176
+#: PMISLooper/templates/PMISLooper/user/activities.html:97
+#: PMISLooper/templates/PMISLooper/user/sessions.html:42
+#: PMISLooper/templates/PMISLooper/user/teams.html:53
+#: PMISLooper/templates/PMISLooper/user/top5_projects.html:50
+msgid "New Questions"
+msgstr "新問題"
+
+#: PMISLooper/templates/PMISLooper/dashboard/staff_dashboard.html:388
+#: PMISLooper/templates/PMISLooper/goal/project_goal.html:726
+#: PMISLooper/templates/PMISLooper/goal/project_goal.html:797
+msgid "Ratio"
+msgstr "比率"
+
+#: PMISLooper/templates/PMISLooper/dashboard/staff_dashboard.html:399
+msgid "Frame"
+msgstr "窗口"
+
+#: PMISLooper/templates/PMISLooper/dashboard/staff_dashboard.html:413
+msgid "Simulate Score"
+msgstr "模擬分數"
+
+#: PMISLooper/templates/PMISLooper/dashboard/staff_dashboard.html:417
+msgid "TScore"
+msgstr "目標分數"
+
+#: PMISLooper/templates/PMISLooper/goal/goalManagement.html:17
+msgid "Outstanding Goal Management"
+msgstr "脫期目標管理"
+
+#: PMISLooper/templates/PMISLooper/goal/goal_master_form.html:40
+msgid "Check the Gantt View"
+msgstr "查看甘特圖"
+
+#: PMISLooper/templates/PMISLooper/goal/goal_master_form.html:42
+msgid "Allow multiple"
+msgstr "允許多選"
+
+#: PMISLooper/templates/PMISLooper/goal/goal_master_form.html:64
+msgid "Edit Appraisal"
+msgstr "修改評估"
+
+#: PMISLooper/templates/PMISLooper/goal/goal_master_form.html:77
+msgid "Project Desp"
+msgstr "工程描述"
+
+#: PMISLooper/templates/PMISLooper/goal/goal_master_form.html:81
+msgid "PSDate"
+msgstr "結束日期"
+
+#: PMISLooper/templates/PMISLooper/goal/goal_master_form.html:87
+msgid "PFDate"
+msgstr "結束日期"
+
+#: PMISLooper/templates/PMISLooper/goal/goal_master_treelist.html:14
+msgid "Goal Tree List"
+msgstr "目標數列表"
+
+#: PMISLooper/templates/PMISLooper/goal/overall/quarterly_goal.html:20
+msgid "Quarterly Goal"
+msgstr "季度目標"
+
+#: PMISLooper/templates/PMISLooper/goal/overall/quarterly_goal.html:26
+msgid "Goals for"
+msgstr "目標"
+
+#: PMISLooper/templates/PMISLooper/goal/overall/quarterly_goal.html:54
+#: PMISLooper/templates/PMISLooper/goal/overall/quarterly_goal.html:734
+msgid "Quarterly Goals"
+msgstr "季度目標"
+
+#: PMISLooper/templates/PMISLooper/goal/overall/quarterly_goal.html:83
+#: PMISLooper/templates/PMISLooper/goal/overall/quarterly_goal.html:767
+msgid "June"
+msgstr "六月"
+
+#: PMISLooper/templates/PMISLooper/goal/overall/quarterly_goal.html:85
+#: PMISLooper/templates/PMISLooper/goal/overall/quarterly_goal.html:293
+#: PMISLooper/templates/PMISLooper/goal/overall/quarterly_goal.html:770
+msgid "August"
+msgstr "八月"
+
+#: PMISLooper/templates/PMISLooper/goal/overall/quarterly_goal.html:87
+#: PMISLooper/templates/PMISLooper/goal/overall/quarterly_goal.html:504
+#: PMISLooper/templates/PMISLooper/goal/overall/quarterly_goal.html:773
+msgid "September"
+msgstr "九月"
+
+#: PMISLooper/templates/PMISLooper/goal/overall/quarterly_goal.html:102
+#: PMISLooper/templates/PMISLooper/goal/overall/quarterly_goal.html:162
+#: PMISLooper/templates/PMISLooper/goal/overall/quarterly_goal.html:301
+#: PMISLooper/templates/PMISLooper/goal/overall/quarterly_goal.html:371
+#: PMISLooper/templates/PMISLooper/goal/overall/quarterly_goal.html:512
+#: PMISLooper/templates/PMISLooper/goal/overall/quarterly_goal.html:582
+#: PMISLooper/templates/PMISLooper/goal/overall/quarterly_goal.html:790
+#: PMISLooper/templates/PMISLooper/goal/overall/quarterly_goal.html:857
+#: PMISLooper/templates/PMISLooper/goal/overall/quarterly_goal.html:1057
+#: PMISLooper/templates/PMISLooper/goal/overall/quarterly_goal.html:1133
+#: PMISLooper/templates/PMISLooper/goal/overall/quarterly_goal.html:1335
+#: PMISLooper/templates/PMISLooper/goal/overall/quarterly_goal.html:1411
+msgid "Week1"
+msgstr "第一週"
+
+#: PMISLooper/templates/PMISLooper/goal/overall/quarterly_goal.html:108
+#: PMISLooper/templates/PMISLooper/goal/overall/quarterly_goal.html:186
+#: PMISLooper/templates/PMISLooper/goal/overall/quarterly_goal.html:307
+#: PMISLooper/templates/PMISLooper/goal/overall/quarterly_goal.html:396
+#: PMISLooper/templates/PMISLooper/goal/overall/quarterly_goal.html:518
+#: PMISLooper/templates/PMISLooper/goal/overall/quarterly_goal.html:609
+#: PMISLooper/templates/PMISLooper/goal/overall/quarterly_goal.html:795
+#: PMISLooper/templates/PMISLooper/goal/overall/quarterly_goal.html:896
+#: PMISLooper/templates/PMISLooper/goal/overall/quarterly_goal.html:1062
+#: PMISLooper/templates/PMISLooper/goal/overall/quarterly_goal.html:1172
+#: PMISLooper/templates/PMISLooper/goal/overall/quarterly_goal.html:1340
+#: PMISLooper/templates/PMISLooper/goal/overall/quarterly_goal.html:1452
+msgid "Week2"
+msgstr "第二週"
+
+#: PMISLooper/templates/PMISLooper/goal/overall/quarterly_goal.html:114
+#: PMISLooper/templates/PMISLooper/goal/overall/quarterly_goal.html:211
+#: PMISLooper/templates/PMISLooper/goal/overall/quarterly_goal.html:313
+#: PMISLooper/templates/PMISLooper/goal/overall/quarterly_goal.html:421
+#: PMISLooper/templates/PMISLooper/goal/overall/quarterly_goal.html:524
+#: PMISLooper/templates/PMISLooper/goal/overall/quarterly_goal.html:634
+#: PMISLooper/templates/PMISLooper/goal/overall/quarterly_goal.html:800
+#: PMISLooper/templates/PMISLooper/goal/overall/quarterly_goal.html:935
+#: PMISLooper/templates/PMISLooper/goal/overall/quarterly_goal.html:1067
+#: PMISLooper/templates/PMISLooper/goal/overall/quarterly_goal.html:1211
+#: PMISLooper/templates/PMISLooper/goal/overall/quarterly_goal.html:1345
+#: PMISLooper/templates/PMISLooper/goal/overall/quarterly_goal.html:1491
+msgid "Week3"
+msgstr "第三週"
+
+#: PMISLooper/templates/PMISLooper/goal/overall/quarterly_goal.html:120
+#: PMISLooper/templates/PMISLooper/goal/overall/quarterly_goal.html:238
+#: PMISLooper/templates/PMISLooper/goal/overall/quarterly_goal.html:319
+#: PMISLooper/templates/PMISLooper/goal/overall/quarterly_goal.html:449
+#: PMISLooper/templates/PMISLooper/goal/overall/quarterly_goal.html:530
+#: PMISLooper/templates/PMISLooper/goal/overall/quarterly_goal.html:658
+#: PMISLooper/templates/PMISLooper/goal/overall/quarterly_goal.html:805
+#: PMISLooper/templates/PMISLooper/goal/overall/quarterly_goal.html:974
+#: PMISLooper/templates/PMISLooper/goal/overall/quarterly_goal.html:1072
+#: PMISLooper/templates/PMISLooper/goal/overall/quarterly_goal.html:1251
+#: PMISLooper/templates/PMISLooper/goal/overall/quarterly_goal.html:1350
+#: PMISLooper/templates/PMISLooper/goal/overall/quarterly_goal.html:1526
+msgid "Week4"
+msgstr "第四週"
+
+#: PMISLooper/templates/PMISLooper/goal/overall/quarterly_goal.html:126
+#: PMISLooper/templates/PMISLooper/goal/overall/quarterly_goal.html:262
+#: PMISLooper/templates/PMISLooper/goal/overall/quarterly_goal.html:325
+#: PMISLooper/templates/PMISLooper/goal/overall/quarterly_goal.html:474
+#: PMISLooper/templates/PMISLooper/goal/overall/quarterly_goal.html:536
+#: PMISLooper/templates/PMISLooper/goal/overall/quarterly_goal.html:680
+#: PMISLooper/templates/PMISLooper/goal/overall/quarterly_goal.html:810
+#: PMISLooper/templates/PMISLooper/goal/overall/quarterly_goal.html:1012
+#: PMISLooper/templates/PMISLooper/goal/overall/quarterly_goal.html:1077
+#: PMISLooper/templates/PMISLooper/goal/overall/quarterly_goal.html:1289
+#: PMISLooper/templates/PMISLooper/goal/overall/quarterly_goal.html:1355
+#: PMISLooper/templates/PMISLooper/goal/overall/quarterly_goal.html:1561
+msgid "Week5"
+msgstr "第五週"
+
+#: PMISLooper/templates/PMISLooper/goal/overall/quarterly_goal.html:138
+#: PMISLooper/templates/PMISLooper/goal/overall/quarterly_goal.html:337
+#: PMISLooper/templates/PMISLooper/goal/overall/quarterly_goal.html:548
+#: PMISLooper/templates/PMISLooper/goal/overall/quarterly_goal.html:823
+#: PMISLooper/templates/PMISLooper/goal/overall/quarterly_goal.html:1090
+#: PMISLooper/templates/PMISLooper/goal/overall/quarterly_goal.html:1368
+msgid "Monthly Goals"
+msgstr "月目標"
+
+#: PMISLooper/templates/PMISLooper/goal/overall/quarterly_goal.html:1612
+msgid "unlink"
+msgstr ""
+
+#: PMISLooper/templates/PMISLooper/goal/overall/quarterly_goal.html:1632
+msgid "Select RelationID"
+msgstr "選擇關聯任務"
+
+#: PMISLooper/templates/PMISLooper/goal/overall/quarterly_goal.html:1639
+msgid "Task Query"
+msgstr "任務查詢"
+
+#: PMISLooper/templates/PMISLooper/goal/overall/quarterly_goal.html:1647
+#: PMISLooper/templates/PMISLooper/task/task-enquiry.html:41
+#: PMISLooper/templates/PMISLooper/user/top5_projects.html:215
+msgid "PlanBDate"
+msgstr "計劃開始"
+
+#: PMISLooper/templates/PMISLooper/goal/overall/quarterly_goal.html:1651
+#: PMISLooper/templates/PMISLooper/technic/quickAddTechnic.html:35
+#: PMISLooper/templates/PMISLooper/user/top5_projects.html:219
+msgid "To"
+msgstr "到"
+
+#: PMISLooper/templates/PMISLooper/goal/project_goal.html:18
+msgid "Project Goals"
+msgstr "項目目标"
+
+#: PMISLooper/templates/PMISLooper/goal/project_goal.html:22
+msgid "Add Goals"
+msgstr "添加目標"
+
+#: PMISLooper/templates/PMISLooper/goal/project_goal.html:474
+msgid "Sessions's Task"
+msgstr "模塊任務"
+
+#: PMISLooper/templates/PMISLooper/goal/project_goal.html:541
+msgid "Link Session"
+msgstr "鏈接模塊"
+
+#: PMISLooper/templates/PMISLooper/goal/project_goal.html:670
+msgid "Estimated"
+msgstr "預計"
+
+#: PMISLooper/templates/PMISLooper/goal/project_goal.html:676
+#: PMISLooper/templates/PMISLooper/goal/project_goal.html:747
+msgid "Total Qty"
+msgstr "總數量"
+
+#: PMISLooper/templates/PMISLooper/goal/project_goal.html:686
+#: PMISLooper/templates/PMISLooper/goal/project_goal.html:757
+msgid "Finish Qty"
+msgstr "完成數量"
+
+#: PMISLooper/templates/PMISLooper/goal/project_goal.html:696
+#: PMISLooper/templates/PMISLooper/goal/project_goal.html:767
+msgid "UnFinish Qty"
+msgstr "未完成數量"
+
+#: PMISLooper/templates/PMISLooper/goal/project_goal.html:706
+#: PMISLooper/templates/PMISLooper/goal/project_goal.html:777
+msgid "Left Days"
+msgstr "剩餘天數"
+
+#: PMISLooper/templates/PMISLooper/goal/project_goal.html:716
+#: PMISLooper/templates/PMISLooper/goal/project_goal.html:787
+msgid "Expected Date"
+msgstr "預計日期"
+
+#: PMISLooper/templates/PMISLooper/goal/project_goal.html:741
+msgid "Simulation"
+msgstr "模擬"
+
+#: PMISLooper/templates/PMISLooper/goal/project_goal.html:818
+#: PMISLooper/templates/PMISLooper/technic/technic.html:123
+msgid "Add Goal"
+msgstr "添加目標"
+
+#: PMISLooper/templates/PMISLooper/goal/project_goal.html:835
+msgid "Goal Simulation"
+msgstr "目標模擬"
+
+#: PMISLooper/templates/PMISLooper/mindmap/mindmap.html:48
+#: PMISLooper/templates/PMISLooper/mindmap/mindmap.html:57
+#: PMISLooper/templates/PMISLooper/technic/TreeMenu.html:39
+#: PMISLooper/templates/PMISLooper/technic/TreeMenu.html:48
+msgid "Add Page"
+msgstr "添加頁"
+
+#: PMISLooper/templates/PMISLooper/mindmap/mindmap.html:129
+msgid "Edit Session"
+msgstr "編輯模塊"
+
+#: PMISLooper/templates/PMISLooper/mindmap/mindmap.html:145
+msgid "Quarterly Mindmap"
+msgstr "季度思維導圖"
+
+#: PMISLooper/templates/PMISLooper/mindmap/mindmap.html:147
+msgid "Solution Mindmap"
+msgstr "解決方案思維導圖"
+
+#: PMISLooper/templates/PMISLooper/mindmap/mindmap.html:149
+#, fuzzy
+#| msgid "Mindmap"
+msgid "Course Mindmap"
+msgstr "思維導圖"
+
+#: PMISLooper/templates/PMISLooper/mindmap/mindmap.html:151
+msgid "Project Mindmap"
+msgstr "項目思維導圖"
+
+#: PMISLooper/templates/PMISLooper/task/quick-add-task.html:20
+#: PMISLooper/templates/PMISLooper/task/quick-add-task.html:194
+#: PMISLooper/templates/PMISLooper/task/quick-add-task.html:403
+msgid "TaskID"
+msgstr "任務編號"
+
+#: PMISLooper/templates/PMISLooper/task/quick-add-task.html:25
+#: PMISLooper/templates/PMISLooper/task/task-enquiry.html:38
+msgid "Task"
+msgstr "任務描述"
+
+#: PMISLooper/templates/PMISLooper/task/quick-add-task.html:51
+msgid "Remark"
+msgstr "備註"
+
+#: PMISLooper/templates/PMISLooper/task/quick-add-task.html:61
+#: PMISLooper/templates/PMISLooper/task/quick-add-task.html:319
+msgid "Upload"
+msgstr "上傳"
+
+#: PMISLooper/templates/PMISLooper/task/quick-add-task.html:65
+#: PMISLooper/templates/PMISLooper/task/quick-add-task.html:324
+msgid "Attachment"
+msgstr "附件"
+
+#: PMISLooper/templates/PMISLooper/task/quick-add-task.html:69
+#: PMISLooper/templates/PMISLooper/task/quick-add-task.html:343
+msgid "Send Notif"
+msgstr "發消息"
+
+#: PMISLooper/templates/PMISLooper/task/quick-add-task.html:71
+#: PMISLooper/templates/PMISLooper/task/quick-add-task.html:345
+msgid "Send Instant Notification"
+msgstr "即時發消息"
+
+#: PMISLooper/templates/PMISLooper/task/quick-add-task.html:72
+#: PMISLooper/templates/PMISLooper/task/quick-add-task.html:346
+msgid "Set Notification"
+msgstr "設置提醒"
+
+#: PMISLooper/templates/PMISLooper/task/quick-add-task.html:134
+#: PMISLooper/templates/PMISLooper/task/quick-add-task.html:169
+msgid "Query Results"
+msgstr "查詢結果"
+
+#: PMISLooper/templates/PMISLooper/task/quick-add-task.html:144
+#: PMISLooper/templates/PMISLooper/task/quick-add-task.html:338
+msgid "Task Transfer"
+msgstr "轉任務"
+
+#: PMISLooper/templates/PMISLooper/task/quick-add-task.html:186
+msgid "Task Detail"
+msgstr "任務明細"
+
+#: PMISLooper/templates/PMISLooper/task/quick-add-task.html:202
+msgid "ProjectName"
+msgstr "項目名稱"
+
+#: PMISLooper/templates/PMISLooper/task/quick-add-task.html:206
+msgid "ModuleName"
+msgstr "模組名稱"
+
+#: PMISLooper/templates/PMISLooper/task/quick-add-task.html:210
+msgid "ModuleFlowchart"
+msgstr "模組流程圖"
+
+#: PMISLooper/templates/PMISLooper/task/quick-add-task.html:229
+#: PMISLooper/templates/PMISLooper/task/quick-add-task.html:398
+msgid "Basic Information"
+msgstr "基本信息"
+
+#: PMISLooper/templates/PMISLooper/task/quick-add-task.html:271
+msgid "Relation Information"
+msgstr "關聯信息"
+
+#: PMISLooper/templates/PMISLooper/task/quick-add-task.html:285
+msgid "Add Relation Task"
+msgstr "添加關聯任務"
+
+#: PMISLooper/templates/PMISLooper/task/quick-add-task.html:349
+msgid "Approve required"
+msgstr ""
+
+#: PMISLooper/templates/PMISLooper/task/quick-add-task.html:365
+msgid "View File Details"
+msgstr "查看文件明細"
+
+#: PMISLooper/templates/PMISLooper/task/quick-add-task.html:388
+msgid "Set Notification Reminder"
+msgstr "設置消息提醒"
+
+#: PMISLooper/templates/PMISLooper/task/quick-add-task.html:410
+msgid "TaskProgress"
+msgstr "任務進度"
+
+#: PMISLooper/templates/PMISLooper/task/quick-add-task.html:417
+#: PMISLooper/templates/PMISLooper/task/quick-add-task.html:418
+#: PMISLooper/templates/PMISLooper/task/quick-add-task.html:419
+msgid "Reminder"
+msgstr "提醒人"
+
+#: PMISLooper/templates/PMISLooper/task/quick-add-task.html:422
+msgid "Start Time"
+msgstr "開始時間"
+
+#: PMISLooper/templates/PMISLooper/task/quick-add-task.html:428
+#: PMISLooper/templates/PMISLooper/task/task-enquiry.html:43
+msgid "Progress"
+msgstr "進度"
+
+#: PMISLooper/templates/PMISLooper/task/quick-add-task.html:430
+msgid "Waiting for Reminder"
+msgstr "等待提醒"
+
+#: PMISLooper/templates/PMISLooper/task/quick-add-task.html:431
+msgid "Reminding"
+msgstr "提醒中"
+
+#: PMISLooper/templates/PMISLooper/task/quick-add-task.html:432
+msgid "Reminder Complete"
+msgstr "完成提醒"
+
+#: PMISLooper/templates/PMISLooper/task/quick-add-task.html:436
+msgid "End Time"
+msgstr "結束時間"
+
+#: PMISLooper/templates/PMISLooper/task/quick-add-task.html:445
+msgid "Repeat"
+msgstr "重覆"
+
+#: PMISLooper/templates/PMISLooper/task/quick-add-task.html:452
+msgid "Repeat Cycle"
+msgstr "重覆周期"
+
+#: PMISLooper/templates/PMISLooper/task/quick-add-task.html:464
+#: PMISLooper/templates/PMISLooper/task/quick-add-task.html:465
+msgid "Overdue Reminder"
+msgstr "脫期提醒人"
+
+#: PMISLooper/templates/PMISLooper/task/quick-add-task.html:472
+msgid "Reminder Start"
+msgstr "提醒開始"
+
+#: PMISLooper/templates/PMISLooper/task/quick-add-task.html:479
+msgid "Starts on Date"
+msgstr "開始於日期"
+
+#: PMISLooper/templates/PMISLooper/task/quick-add-task.html:486
+msgid "Before Plan Begin Date"
+msgstr "開始於計畫開始前"
+
+#: PMISLooper/templates/PMISLooper/task/quick-add-task.html:489
+#: PMISLooper/templates/PMISLooper/task/quick-add-task.html:490
+#: PMISLooper/templates/PMISLooper/task/quick-add-task.html:491
+#: PMISLooper/templates/PMISLooper/task/quick-add-task.html:492
+msgid "Days Before"
+msgstr "天前"
+
+#: PMISLooper/templates/PMISLooper/task/quick-add-task.html:493
+msgid "Week Before"
+msgstr "周前"
+
+#: PMISLooper/templates/PMISLooper/task/quick-add-task.html:501
+msgid "Reminder End"
+msgstr "提醒結束"
+
+#: PMISLooper/templates/PMISLooper/task/quick-add-task.html:508
+msgid "Ends on Date"
+msgstr "結束於日期"
+
+#: PMISLooper/templates/PMISLooper/task/quick-add-task.html:515
+msgid "Ends When Task is C or F"
+msgstr "結束於任務C或F"
+
+#: PMISLooper/templates/PMISLooper/task/quick-add-task.html:521
+msgid "Ends When 'I Konw' Button in Message is Clicked"
+msgstr "結束於點擊消息中的[I Know]按鈕"
+
+#: PMISLooper/templates/PMISLooper/task/quick-add-task.html:543
+msgid "Request Approve"
+msgstr ""
+
+#: PMISLooper/templates/PMISLooper/task/quick-add-task.html:554
+#, fuzzy
+#| msgid "Rule Content"
+msgid "Approve Content"
+msgstr "規則內容"
+
+#: PMISLooper/templates/PMISLooper/task/quick-add-task.html:573
+msgid "relationTask"
+msgstr "關聯任務"
+
+#: PMISLooper/templates/PMISLooper/task/task-enquiry.html:37
+msgid "TaskNo"
+msgstr "任務編號"
+
+#: PMISLooper/templates/PMISLooper/task/task-enquiry.html:40
+msgid "SchPriority"
+msgstr "優先級"
+
+#: PMISLooper/templates/PMISLooper/task/task-enquiry.html:42
+msgid "EDate"
+msgstr "結束日期"
+
+#: PMISLooper/templates/PMISLooper/technic/AnomalyDailyPlannerTable.html:23
+msgid "Anomaly Detail Technical Daily Planner"
+msgstr "異常詳細技術每日計劃"
+
+#: PMISLooper/templates/PMISLooper/technic/createUI.html:32
+msgid "Edit"
+msgstr "修改"
+
+#: PMISLooper/templates/PMISLooper/technic/createUI.html:33
+msgid "Save Change"
+msgstr "保存修改"
+
+#: PMISLooper/templates/PMISLooper/technic/quickAddTechnic.html:31
+msgid "CreateDate"
+msgstr "創建日期"
+
+#: PMISLooper/templates/PMISLooper/technic/quickAddTechnic.html:50
+#: PMISLooper/templates/PMISLooper/technic/quickAddTechnic_BAK.html:39
+msgid "Add Technical"
+msgstr "新增技術文檔"
+
+#: PMISLooper/templates/PMISLooper/technic/quickAddTechnic.html:97
+#: PMISLooper/templates/PMISLooper/technic/quickAddTechnic_BAK.html:86
+#, fuzzy
+#| msgid "Add Page"
+msgid "Add Step"
+msgstr "添加頁"
+
+#: PMISLooper/templates/PMISLooper/technic/quickAddTechnic.html:158
+msgid "Print_Report"
+msgstr "打印報表"
+
+#: PMISLooper/templates/PMISLooper/technic/solutiontypeTable.html:28
+msgid "Solution Type Cartogram"
+msgstr "解決方案類型統計圖"
+
+#: PMISLooper/templates/PMISLooper/technic/solutiontypeTable.html:37
+msgid "All Distinct Solution Type Count:"
+msgstr "所有人Distinct Solution Type數量:"
+
+#: PMISLooper/templates/PMISLooper/technic/tasktypeTable.html:24
+msgid "Task Type Cartogram"
+msgstr "任務類型統計圖"
+
+#: PMISLooper/templates/PMISLooper/technic/technic.html:33
+msgid "Detail Technical Daily Planner"
+msgstr "詳細技術每日計劃"
+
+#: PMISLooper/templates/PMISLooper/technic/technic.html:41
+msgid "Personal"
+msgstr "個人的"
+
+#: PMISLooper/templates/PMISLooper/technic/technic.html:46
+msgid "Task Info"
+msgstr "任務信息"
+
+#: PMISLooper/templates/PMISLooper/technic/technic.html:52
+#: PMISLooper/templates/PMISLooper/technic/technic.html:91
+#: PMISLooper/templates/PMISLooper/technic/technical_dailyPlanner_statement.html:60
+msgid "Technique Involved"
+msgstr "涉及的技術"
+
+#: PMISLooper/templates/PMISLooper/technic/technic.html:92
+msgid "Major components, library, pattern"
+msgstr "涉及到此任務的主要控件、庫、模式等"
+
+#: PMISLooper/templates/PMISLooper/technic/technic.html:95
+msgid "For Goal 1"
+msgstr "目標1"
+
+#: PMISLooper/templates/PMISLooper/technic/technical_dailyPlanner_statement.html:21
+msgid "Detail Technical Daily Planner(Sample)"
+msgstr "詳細技術每日計劃（樣本）"
+
+#: PMISLooper/templates/PMISLooper/technic/technical_dailyPlanner_statement.html:27
+msgid "Task ID"
+msgstr "任務編號"
+
+#: PMISLooper/templates/PMISLooper/technic/technical_dailyPlanner_statement.html:35
+msgid "Task Description"
+msgstr "任務描述"
+
+#: PMISLooper/templates/PMISLooper/technic/technical_dailyPlanner_statement.html:39
+msgid "Goal Achieve"
+msgstr "目標實現"
+
+#: PMISLooper/templates/PMISLooper/technic/technical_dailyPlanner_statement.html:45
+msgid "Platform Used"
+msgstr "平台使用"
+
+#: PMISLooper/templates/PMISLooper/technic/technical_dailyPlanner_statement.html:47
+msgid "System"
+msgstr "系統"
+
+#: PMISLooper/templates/PMISLooper/technic/technical_dailyPlanner_statement.html:51
+msgid "Task type"
+msgstr "任務分類"
+
+#: PMISLooper/templates/PMISLooper/technic/technical_dailyPlanner_statement.html:67
+msgid "Frame Specification"
+msgstr "框架規範"
+
+#: PMISLooper/templates/PMISLooper/technic/technical_dailyPlanner_statement.html:71
+msgid "Design Doc"
+msgstr "設計文檔"
+
+#: PMISLooper/templates/PMISLooper/technic/technical_dailyPlanner_statement.html:75
+msgid "Flowchart/Diagram"
+msgstr "流程圖/圖表"
+
+#: PMISLooper/templates/PMISLooper/technic/technical_dailyPlanner_statement.html:86
+msgid "New Technical Need/Found"
+msgstr "新技術需求/發現"
+
+#: PMISLooper/templates/PMISLooper/technic/technical_dailyPlanner_statement.html:94
+msgid "Comment"
+msgstr "備註"
+
+#: PMISLooper/templates/PMISLooper/technic/technical_dailyPlanner_statement.html:103
+msgid "Abnormal"
+msgstr "異常"
+
+#: PMISLooper/templates/PMISLooper/technic/technical_dailyPlanner_statement.html:125
+msgid "Estimated Completion Day"
+msgstr "預計完成時間"
+
+#: PMISLooper/templates/PMISLooper/user/activities.html:102
+#: PMISLooper/templates/PMISLooper/user/sessions.html:47
+#: PMISLooper/templates/PMISLooper/user/teams.html:58
+#: PMISLooper/templates/PMISLooper/user/top5_projects.html:55
+msgid "Project Goal"
+msgstr "項目目标"
+
+#: PMISLooper/templates/PMISLooper/user/activities.html:107
+#: PMISLooper/templates/PMISLooper/user/sessions.html:52
+#: PMISLooper/templates/PMISLooper/user/teams.html:63
+#: PMISLooper/templates/PMISLooper/user/top5_projects.html:60
+msgid "Week Goal"
+msgstr "周目標"
+
+#: PMISLooper/templates/PMISLooper/user/activities.html:112
+#: PMISLooper/templates/PMISLooper/user/sessions.html:57
+#: PMISLooper/templates/PMISLooper/user/teams.html:68
+#: PMISLooper/templates/PMISLooper/user/top5_projects.html:65
+msgid "Must Finish"
+msgstr "必須完成"
+
+#: PMISLooper/templates/PMISLooper/user/activities.html:117
+#: PMISLooper/templates/PMISLooper/user/sessions.html:62
+#: PMISLooper/templates/PMISLooper/user/teams.html:73
+#: PMISLooper/templates/PMISLooper/user/top5_projects.html:70
+msgid "Must Have"
+msgstr "必須有"
+
+#: PMISLooper/templates/PMISLooper/user/activities.html:125
+#: PMISLooper/templates/PMISLooper/user/sessions.html:71
+#: PMISLooper/templates/PMISLooper/user/teams.html:80
+#: PMISLooper/templates/PMISLooper/user/top5_projects.html:78
+#: PMISLooper/templates/PMISLooper/user/top5_projects_bak.html:28
+msgid "Activities"
+msgstr "活動"
+
+#: PMISLooper/templates/PMISLooper/user/activities.html:130
+#: PMISLooper/templates/PMISLooper/user/sessions.html:71
+#: PMISLooper/templates/PMISLooper/user/teams.html:80
+#: PMISLooper/templates/PMISLooper/user/top5_projects.html:83
+#: PMISLooper/templates/PMISLooper/user/top5_projects_bak.html:33
+msgid "Settings"
+msgstr "設置"
+
+#: PMISLooper/templates/PMISLooper/user/index_login.html:50
+#: PMISLooper/templates/PMISLooper/user/index_login.html:69
+msgid "Profile"
+msgstr "用戶資料"
+
+#: PMISLooper/templates/PMISLooper/user/index_login.html:51
+#: PMISLooper/templates/PMISLooper/user/index_login.html:71
+msgid "Logout"
+msgstr "退出賬號"
+
+#: PMISLooper/templates/PMISLooper/user/top5_projects.html:192
+msgid "Add Must Finish Task"
+msgstr "添加必須完成任務"
+
+#: PMISLooper/templates/PMISLooper/user/top5_projects.html:204
+msgid "Set Must Have Task"
+msgstr "設置必須有任務"
+
+#: PMISLooper/templates/PMISLooper/user/top5_projects.html:279
+msgid "Gantt"
+msgstr "甘特圖"
+
+#: PMISLooper/templates/PMISLooper/user/top5_projects_bak.html:31
+msgid "Top5_projects"
+msgstr "前五的項目"
+
+#: ProjectManagement_app/Views/SessionView.py:35
+msgid "This session contains tasks and cannot be deleted!"
+msgstr ""
+
+#: ScheduleApp/Services/TaskForAIService.py:233
+msgid "Please input a time range!"
+msgstr ""
+
+#: ScheduleApp/Services/TaskForAIService.py:235
+msgid "Please input recordid!"
+msgstr ""
+
+#: ScheduleApp/Services/TaskForAIService.py:237
+msgid "Please input sessionid!"
+msgstr ""
+
+#: ScheduleApp/ViewsFolder/ScheduleView.py:169
+msgid "The 'contact' parameter must be passed."
+msgstr "必須傳入聯繫人參數"
+
+#: WEB_PMIS/settings copy.py:302 WEB_PMIS/settings.py:312
+#: WEB_PMIS/settings_151.py:297 WEB_PMIS/settings_Release.py:307
+#: WEB_PMIS/settings_Test.py:307
+msgid "English"
+msgstr "Eng"
+
+#: WEB_PMIS/settings copy.py:303 WEB_PMIS/settings.py:313
+#: WEB_PMIS/settings_151.py:298 WEB_PMIS/settings_Release.py:308
+#: WEB_PMIS/settings_Test.py:308
+msgid "Simplified Chinese"
+msgstr "简体"
+
+#: WEB_PMIS/settings copy.py:304 WEB_PMIS/settings.py:314
+#: WEB_PMIS/settings_151.py:299 WEB_PMIS/settings_Release.py:309
+#: WEB_PMIS/settings_Test.py:309
+msgid "Traditional Chinese"
+msgstr "繁體"
+
+#, fuzzy
+#~ msgid "SessionManager"
+#~ msgstr "模塊"
+
+#~ msgid "User Deduction"
+#~ msgstr "用戶罰薪"
+
+#~ msgid "Top Projects"
+#~ msgstr "重要活動"
+
+#~ msgid "Comments"
+#~ msgstr "備註"
+
+#~ msgid "Tab content Control Conter"
+#~ msgstr "控制中心標籤內容"
+
+#~ msgid "Project Dashboard"
+#~ msgstr "項目看板"
+
+#, fuzzy
+#~ msgid "CRM DashBoard"
+#~ msgstr "看板"
+
+#, fuzzy
+#~ msgid "New Technical"
+#~ msgstr "新文檔"
+
+#, fuzzy
+#~ msgid "confirm"
+#~ msgstr "確定"
+
+#, fuzzy
+#~ msgid "Temp Flowchart"
+#~ msgstr "流程圖"
+
+#, fuzzy
+#~ msgid "Goal Management(Old)"
+#~ msgstr "目標管理"
+
+#~ msgid "CRM Front"
+#~ msgstr "客戶管理系統前端"
+
+#, fuzzy
+#~ msgid " Week4"
+#~ msgstr "第四週"
+
+#~ msgid "Today\\"
+#~ msgstr "今日任務"
+
+#~ msgid "Select"
+#~ msgstr "選擇"

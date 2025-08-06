@@ -1,0 +1,124 @@
+
+
+{% extends 'PMIS/Starter_page.html' %}
+
+{%  block content %}
+
+    <h5> Single Task Page  </h5>
+    {% for AllTask in All_Task %}
+
+  <form class="site-form" method="POST" >
+        {% csrf_token %}
+        <!-- 
+        <div class="fieldWrapper">
+        -->
+        <!-- -->
+            <div class="form-group row">
+            {{ form.Pid.errors }}
+            <label for="form.Pid.id_for_label }}" class="col-4 col-form-label">Pid</label>
+            <div class="col-12">
+                <input class="form-control" type="text" value={{ AllTask.Pid }} id="Pid">
+            </div>
+          </div>
+            <div class="form-group row">
+            {{ form.Tid.errors }}
+            <label for="form.Tid.id_for_label }}" class="col-4 col-form-label">Tid</label>
+            <div class="col-12">
+                <input class="form-control" type="text" value={{ AllTask.Tid }} id="Tid">
+            </div>
+        </div>
+        <div class="form-group row">
+            {{ form.TaskID.errors }}
+            <label for="form.TaskID.id_for_label }}" class="col-4 col-form-label">TaskID</label>
+            <div class="col-12">
+                <input class="form-control" type="text" value={{ AllTask.TaskID }} id="TaskID">
+            </div>
+        </div>
+        <div class="form-group row">
+            {{ form.Task.errors }}
+            <label for="form.Task.id_for_label }}" class="col-4 col-form-label">Task</label>
+            <div class="col-12">
+                <textarea class="form-control" id="Task">{{ AllTask.Task }} </textarea>
+            </div>
+        </div>   
+         <div class="form-group row">
+            {{ form.contact.errors }}
+            <label for="form.contact.id_for_label }}" class="col-4 col-form-label">contact</label>
+            <div class="col-12">
+                <input class="form-control" type="text" value={{ AllTask.contact }} id="contact">
+            </div>
+        </div>
+         <div class="form-group row">
+            {{ form.PlanBDate.errors }}
+            <label for="form.PlanBDate.id_for_label }}" class="col-4 col-form-label">Date</label>
+            <div class="col-12">
+                <input class="form-control" type="date" value={{ AllTask.PlanBDate }} id="PlanBDate"> required/>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            {{ form.Class.errors }}
+            <label for="form.Class.id_for_label }}" class="col-4 col-form-label">Class</label>
+            <div class="col-12">
+                <input class="form-control" type="text" value={{ AllTask.Class }} id="Class">
+            </div>
+        </div>
+        <div class="form-group row">
+            {{ form.Remark.errors }}
+            <label for="form.Remark.id_for_label }}" class="col-4 col-form-label">Remark</label>
+            <div class="col-12">
+                <input class="form-control" type="text" value={{ AllTask.Remark }} id="Remark">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            {{ form.Progress.errors }}
+            <label for="form.Progress.id_for_label }}" class="col-4 col-form-label">Progress</label>
+            <div class="col-12">
+                <input class="form-control" type="text" value={{ AllTask.Progress }} id="Progress">
+            </div>
+        </div>
+                
+        <!-- 
+            <button type="submit" class="btn btn-primary" value="">Submit</button> 
+        -->
+
+    </form>
+
+    {% endfor %}
+
+        <button onclick="ClearFields()" class="btn btn-primary">Clear</button>
+        <button onclick="ModifyWord()" class="btn btn-primary">Save</button>
+
+
+
+<script>
+        function SavetoModel() {
+        }    
+
+        function ClearFields() {
+                var IDs = ["Pid","Tid","TaskID","Task","contact","PlanBDate","Class","Remark","Progress"];
+                var  fLen, i;
+                
+                fLen = IDs.length;
+                
+                for (i =0; i<fLen; i++){ 
+                    document.getElementById(IDs[i]).value = '';           
+                    //alert(IDs[i] +' Right?')
+                }  
+        }    
+
+        function SearchWord() {
+        }    
+
+        function ModifyWord() {
+        }    
+
+        // TechID :      - To Get data from Server and parse it to Java Object from JSON
+        function SearchWord() {
+        }
+</script>
+
+
+
+{% endblock %}

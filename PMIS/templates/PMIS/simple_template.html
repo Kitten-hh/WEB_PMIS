@@ -1,0 +1,16 @@
+{% extends 'PMIS/my_main_page.html' %}
+{%block content%}
+<div class="card border-0 shadow-sm mb-4">
+    <div class="card-body">
+      {{task_datatable}}
+    </div>
+</div>
+{%endblock%}
+
+{% block page_js%}
+<script type="text/javascript">
+  $(document).ready(function() {
+      datatableview.initialize($('.datatable'), SimpleDataTableStyle)
+  });
+</script>
+{%endblock%}

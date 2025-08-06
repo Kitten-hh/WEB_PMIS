@@ -1,0 +1,85 @@
+/* body {
+    font-family: 'Andika', "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif !important;
+} */
+.rule_container>.card-body,.page-sidebar>.card-body {
+    height:calc(100vh - 110px);
+}
+@media (min-width:1200px) {
+    .page-sidebar {
+        width:65% !important;
+        max-width:65% !important;
+    }
+    .page-inner {
+        margin-right: 65% !important;
+    }
+}
+.page-sidebar {
+    box-shadow: 0 0 0 1px rgb(20 20 31 / 5%), 0 1px 3px 0 rgb(20 20 31 / 15%);    
+}
+.page, .card {
+    background-color: #f6f7f9;
+}
+.card-body {
+    font-size: 1rem;
+}
+.leftPanel .row>div{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-bottom:1px solid #d6d8e1;
+    border-right:1px solid #d6d8e1;
+}
+.leftPanel .row:first-child>div {
+    border-top:1px solid #d6d8e1;    
+}
+
+.leftPanel .row>div:first-child {
+    border-left:1px solid #d6d8e1;       
+}
+
+.note-editor,.note-editing-area,.note-editable {
+    height: 100% !important;
+}
+#rule_table .btn-sm {
+    padding:0.125rem 0.25rem 0.125rem 0.25rem !important;
+}
+#rule_table .SWTextarea {
+    margin: 0px !important;
+}
+.SWDataTable .dataTables_wrapper {
+    background-color: #f6f7f9;
+}
+
+#rule_table_container {
+    height:95%
+}
+
+#rule_table_container .dataTables_wrapper {
+    padding:0px !important;
+}
+#rule_table_container .table-responsive {
+    border-width: 0px !important;
+}
+.btn_add_rule  {
+    right:0.25rem !important;
+    bottom: 0.25rem !important;
+}
+
+#rule_table_container .dataTables_wrapper .row {
+   margin: 0;
+}
+
+.ruledoc-expanded {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    max-width: 100% !important;
+    background-color: #f6f7f9;
+    z-index: 1030;
+}
+
+#ruledocExpandedBtn {
+    position: absolute;
+    top: 2px;
+    right: 8px;
+}

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assign Task</title>
+    <link rel="stylesheet" href="{% static 'BaseApp/vendor/Looper/assets/stylesheets/theme.min.css' %}">
+    <link rel="stylesheet" href="{% static 'BaseProject/vendor/Looper/assets/vendor/bootstrap-select/css/bootstrap-select.min.css' %}">
+    <link rel="stylesheet" href="{% static 'BaseApp/vendor/Looper/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'PMISLooper/assets/stylesheets/user/assignTask.css' %}">
+</head>
+
+<body>
+    <div class="bg-overlay"></div>
+    <div class="container assignTaskPage col col-md-11 col-lg-9 col-xl-7 col-xxl-6 col-xxxl-5">
+        <div class="card mb-0">
+            <div class="card-header">
+                <h2 class="card-title mb-0">Task Allocation</h2>
+            </div>
+            <div class="card-body">
+                <form method="post" action="/en/looper/notif/assign_task">
+                    <div class="form-group">
+                        <label for="taskno">TaskNo</label>
+                        <input type="text" id="taskno" name="taskno" class="col px-0" value="{{ taskno }}" readonly>
+                    </div>
+                    <div class="form-group mb-0">
+                        <label class="align-self-start">TaskDesc</label>
+                        <textarea class="form-control col" rows="6" disabled>{{ task }}</textarea>
+                    </div>
+                    <div class="log-divider my-1"></div>
+                    <div class="form-actions row pt-0">
+                        <div class="form-group mb-1 col col-sm-4 col-md-3">
+                            <label for="contact_person">Contact</label>
+                            <select id="contact_person" class="col px-0" name="contact" data-toggle="selectpicker" data-live-search="true" data-none-selected-text data-size="5" {% if has_error %} disabled {% endif %}>
+                                <option value=""></option>
+                                {% for user in users %}
+                                <option value="{{ user }}" {% if user == contact %}selected{% endif %}>{{ user }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <div class="form-group mb-1 col col-sm-4 col-md-3">
+                            <label for="class1">Class</label>
+                            <select id="class1" class="col px-0" name="class_field" data-toggle="selectpicker" data-live-search="true" data-none-selected-text data-size="5" {% if has_error %} disabled {% endif %}>
+                                <option value=""></option>
+                                <option value="1" {% if class_field == 1 %}selected{% endif %}>Class1</option>
+                                <option value="2" {% if class_field == 2 %}selected{% endif %}>Class2</option>
+                                <option value="3" {% if class_field == 3 %}selected{% endif %}>Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group mb-1 col col-sm-4 col-md-3">
+                            <label for="priority">Priority</label>
+                            <select id="priority" class="col px-0" name="priority" data-toggle="selectpicker" data-live-search="true" data-none-selected-text data-size="5" {% if has_error %} disabled {% endif %}>
+                                <option value=""></option>
+                                <option value="888" {% if priority == 888 %}selected{% endif %}>888</option>
+                                <option value="8888" {% if priority == 8888 %}selected{% endif %}>8888</option>
+                                <option value="8889" {% if priority == 8889 %}selected{% endif %}>8889</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-auto submitBtn">
+                            <input type="submit" class="btn btn-primary" value="Assign To..." {% if has_error %} disabled {% endif %}>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        {% if message %}
+        <div class="font-weight-bolder page-message" role="alert" style="font-size: 1.3rem; margin-top: 20px;">
+            <i class="far fa-fw fa-bell"></i>
+            {{ message }}
+        </div>
+        {% endif %}
+    </div>
+
+    <script src="{% static 'BaseApp/vendor/Looper/assets/vendor/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'BaseApp/vendor/Looper/assets/vendor/popper.js/umd/popper.min.js' %}"></script>
+    <script src="{% static 'BaseApp/vendor/Looper/assets/vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'BaseApp/vendor/Looper/assets/vendor/particles.js/particles.js' %}"></script>
+    <script src="{% static 'BaseApp/vendor/Looper/assets/javascript/theme.min.js' %}"></script>
+    <script src="{% static 'BaseApp/vendor/Looper

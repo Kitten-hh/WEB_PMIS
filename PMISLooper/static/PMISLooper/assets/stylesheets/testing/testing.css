@@ -1,0 +1,69 @@
+.testingPage>.page-inner {
+    padding: 0;
+}
+
+.testingPage .page-title-bar {
+    margin-bottom: 0;
+}
+
+.testingPage .page-title-bar>h5.page-navs {
+    margin-bottom: 1px;
+}
+
+.testingPage .page-inner.page-inner-fill {
+    height: 100%;
+}
+
+.testingPage pre {
+    font-size: 100%;
+    margin-bottom: 0;
+}
+
+.testingPage table tbody tr:first-child td:first-child {
+    width: 400px;
+}
+
+.testingPage .has-sidebar-fluid {
+    position: relative;
+}
+
+.testingPage .sidebar-section {
+    padding: 0;
+}
+
+.testingPage .testing_tree {
+    height: calc(100vh - 7.1rem);
+    overflow: hidden auto;
+}
+
+.testingPage .page-section>.page .page-sidebar {
+    height: 100%;
+    overflow: hidden auto;
+}
+
+.testingPage .page-section>.page .page-sidebar .testInfoTable_wrapper {
+    overflow: hidden auto;
+}
+
+.testingPage .page-section>.page .page-sidebar .testInfoTable_wrapper .LPDataTable .table td, 
+.testingPage .page-section>.page .page-sidebar .testInfoTable_wrapper .LPDataTable .table th {
+    white-space: nowrap;
+}
+
+.excelTemplateModal .modal-header,
+.excelTemplateModal .modal-footer,
+.uploadExcelModal .modal-header,
+.uploadExcelModal .modal-footer {
+    box-shadow: none;
+}
+
+@media (min-width:768px) { 
+    .testingPage .page-section>.page.has-sidebar-expand-lg.has-sidebar-fluid .page-inner {
+        margin-right: calc(100vw - 32.5rem);
+    }
+
+    .testingPage .page-section>.page.has-sidebar-expand-lg.has-sidebar-fluid .page-sidebar {
+        width: calc(100vw - 32.5rem);
+        max-width: calc(100vw - 32.5rem);
+    }
+}

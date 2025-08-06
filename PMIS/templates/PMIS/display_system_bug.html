@@ -1,0 +1,59 @@
+{% extends 'PMIS/Starter_page.html' %}
+{% load customer_filter %}
+{%  block content %}
+
+
+    <!-- 
+    <form method ="post">
+        <button class="btn btn-primary" <a href="http://121.13.252.163:8001/Knowledge/knowledge"</a> value="">Search</button> 
+    -->
+    <H5>SystemBug Form </H5>
+    <div class="row">
+        <div class="col-sm-16">
+          <div class="card">
+            <div class="card-header">
+              <h5 class="card-title">Tables <small>Datatables</small></h5>
+            </div>
+            <div class="card-block table-responsive">
+              <table class="table text-nowrap" id="dataTables-example">
+                <thead>
+                  <tr>
+                    {% for field in form %}
+                    <th>{{field.label}}</th>
+                    {% endfor %}
+                  </tr>
+                </thead>
+                <tbody>
+                  <!--下面這一行代碼中的 datas 為view傳過來的數據的參數名,請一定要對應-->
+                  {% for row in datas %}
+                   <!--forloop.counter 表示循環的序號 |表示使用django的filter過濾語法 divisibleby:2 
+                    表示將循環序號除2是否整除， 這一行的功能是判斷當前行序號是否偶數-->
+                   {% if forloop.counter|divisibleby:2 %}
+                    <tr class="even">
+                    {% else %}
+                    {% if forloop.counter == 1%}
+                    <tr class="odd table-active">
+                      {%else%}
+                    <tr class="odd">
+                      {%endif%}
+                    {% endif %}
+                        <!--row參數是上面for語句從datas中每次循環取出的對象-->
+                        {% for field in form %}
+                        {% if field.field|getType == 'DateTimeField' %}
+                        <td>{{row | getAttr:field.name|date:'Y-n-d H:i'}}</td>
+                        {%else%}
+                        <td>{{row | getAttr:field.name}}</td>
+                        {%endif%}
+                        {% endfor %}
+                    </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+
+
+

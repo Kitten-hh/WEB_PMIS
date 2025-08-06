@@ -1,0 +1,695 @@
+[
+    {
+        "count": 13,
+        "people": [
+            "lxb",
+            "syl",
+            "hw"
+        ],
+        "category": "20200226006",
+        "area": "REST API Development",
+        "subarea": "Building RESTful APIs with Django Rest Framework (DRF)",
+        "tecstatus": "T",
+        "tecno": "Dja-RES-00038  ",
+        "tecnotitle": "如何使用Django Rest FrameWork創建CRUD API(How to use Django Restapi for CRUD operations )"
+    },
+    {
+        "count": 11,
+        "people": [
+            "lxb",
+            "hw"
+        ],
+        "category": "20210824001",
+        "area": "Styling and CSS",
+        "subarea": "Using CSS frameworks with React",
+        "tecstatus": "N",
+        "tecno": "Rea-Sty-00019  ",
+        "tecnotitle": "如何使用React Boostrap中的Modal組件來創建模態框"
+    },
+    {
+        "count": 10,
+        "people": [
+            "xuan",
+            "syl",
+            "hb",
+            "hw"
+        ],
+        "category": "20200226006",
+        "area": "Models and Databases",
+        "subarea": "Defining models and database tables",
+        "tecstatus": "T",
+        "tecno": "Dja-Mod-00060  ",
+        "tecnotitle": "如何使用 Django ORM 從現有數據庫錶生成模型 (How to generate a model from a data table)"
+    },
+    {
+        "count": 10,
+        "people": [
+            "lxb",
+            "hw"
+        ],
+        "category": "20200226006",
+        "area": "REST API Development",
+        "subarea": "Building RESTful APIs with Django Rest Framework (DRF)",
+        "tecstatus": "N",
+        "tecno": "Dja-RES-00041  ",
+        "tecnotitle": "在CRUD API 中如何實現分頁、過濾和排序功能(How to implement pagination, filtering, and sorting in a CRUD API)"
+    },
+    {
+        "count": 8,
+        "people": [
+            "zyl",
+            "hb",
+            "hw"
+        ],
+        "category": "20210824001",
+        "area": "Components and Props",
+        "subarea": "Component composition and reusability",
+        "tecstatus": "N",
+        "tecno": "Rea-Com-00016  ",
+        "tecnotitle": "React Bootstrap 中如何使用自定義下拉框選擇控件(RBSelect)選擇或錄入數據"
+    },
+    {
+        "count": 8,
+        "people": [
+            "zyl",
+            "lxb",
+            "hw"
+        ],
+        "category": "20210824001",
+        "area": "Styling and CSS",
+        "subarea": "Using CSS frameworks with React",
+        "tecstatus": "N",
+        "tecno": "Rea-Sty-00016  ",
+        "tecnotitle": "如何使用React Boostrap中的Button組件來創建按鈕"
+    },
+    {
+        "count": 8,
+        "people": [
+            "lxb",
+            "hw"
+        ],
+        "category": "20210824001",
+        "area": "Components and Props",
+        "subarea": "Component composition and reusability",
+        "tecstatus": "N",
+        "tecno": "Rea-Com-00013  ",
+        "tecnotitle": "React Bootstrap 中如何使用 RBInput 控件"
+    },
+    {
+        "count": 8,
+        "people": [
+            "lxb",
+            "hw"
+        ],
+        "category": "20210824001",
+        "area": "Styling and CSS",
+        "subarea": "Using CSS frameworks with React",
+        "tecstatus": "N",
+        "tecno": "Rea-Sty-00020  ",
+        "tecnotitle": "如何使用React Bootstrap中的Card組件來創建內容容器"
+    },
+    {
+        "count": 6,
+        "people": [
+            "hw",
+            "xmm",
+            "xuan"
+        ],
+        "category": "20200226006",
+        "area": "REST API Development",
+        "subarea": "Building RESTful APIs with Django Rest Framework (DRF)",
+        "tecstatus": "N",
+        "tecno": "Dja-RES-00053  ",
+        "tecnotitle": "如何使用 Django Rest Framework 的 CRUD API 中使用 @action 添加新的 API"
+    },
+    {
+        "count": 5,
+        "people": [
+            "zyl",
+            "lxb",
+            "hw"
+        ],
+        "category": "20210824001",
+        "area": "Components and Props",
+        "subarea": "Component composition and reusability",
+        "tecstatus": "N",
+        "tecno": "Rea-Com-00089  ",
+        "tecnotitle": "React Bootstrap 如何使用 RBAlertMessage 控件來創建一個用戶操作提示彈窗？ (How to Use RBAlertMessage in React Bootstrap to Create User Action Alert Popups)"
+    },
+    {
+        "count": 4,
+        "people": [
+            "hw"
+        ],
+        "category": "20210824001",
+        "area": "Data Fetching",
+        "subarea": "Fetching data from APIs using fetch or Axios",
+        "tecstatus": "N",
+        "tecno": "Rea-Dat-00026  ",
+        "tecnotitle": "如何在 React 中使用 Axios 的 GET 請求獲取後臺數據 (How to perform a GET request with Axios in React to fetch data)"
+    },
+    {
+        "count": 4,
+        "people": [
+            "lxb",
+            "hw"
+        ],
+        "category": "20210824001",
+        "area": "Styling and CSS",
+        "subarea": "Using CSS frameworks with React",
+        "tecstatus": "N",
+        "tecno": "Rea-Sty-00032  ",
+        "tecnotitle": "React Boostrap 中如何使用Dropdown組件來創建下拉式選單"
+    },
+    {
+        "count": 4,
+        "people": [
+            "zyl",
+            "hw"
+        ],
+        "category": "20210824001",
+        "area": "Styling and CSS",
+        "subarea": "Using CSS frameworks with React",
+        "tecstatus": "N",
+        "tecno": "Rea-Sty-00039  ",
+        "tecnotitle": "React中如何使用React Icons圖標庫來為頁面添加圖標（以Font Awesome 6圖標庫為標準）"
+    },
+    {
+        "count": 4,
+        "people": [
+            "lxb",
+            "hw"
+        ],
+        "category": "20210728001",
+        "area": "Page",
+        "subarea": null,
+        "tecstatus": "N",
+        "tecno": "Rea-Pag-00002  ",
+        "tecnotitle": "React中如何使用React router來添加路由"
+    },
+    {
+        "count": 4,
+        "people": [
+            "lxb",
+            "hw"
+        ],
+        "category": "20210824001",
+        "area": "Data Fetching",
+        "subarea": "Fetching data from APIs using fetch or Axios",
+        "tecstatus": "N",
+        "tecno": "Rea-Dat-00012  ",
+        "tecnotitle": "使用React進行POST請求來新增數據"
+    },
+    {
+        "count": 3,
+        "people": [
+            "lxb",
+            "hw"
+        ],
+        "category": "20200226006",
+        "area": "REST API Development",
+        "subarea": "Building RESTful APIs with Django Rest Framework (DRF)",
+        "tecstatus": "N",
+        "tecno": "Dja-RES-00039  ",
+        "tecnotitle": "如何在 CRUD API 中，針對不同操作（如新增、修改、刪除）進行差異化的數據驗證(How to perform differentiated data validation for different operations (such as create, update, delete) in a CRUD API)"
+    },
+    {
+        "count": 3,
+        "people": [
+            "xmm",
+            "lxb"
+        ],
+        "category": "20200226006",
+        "area": "Excel",
+        "subarea": null,
+        "tecstatus": "N",
+        "tecno": "Dja-Exc-00006  ",
+        "tecnotitle": "Django中實現Excel文件導入"
+    },
+    {
+        "count": 3,
+        "people": [
+            "xmm",
+            "hw"
+        ],
+        "category": "20200226006",
+        "area": "REST API Development",
+        "subarea": "Building RESTful APIs with Django Rest Framework (DRF)",
+        "tecstatus": "N",
+        "tecno": "Dja-RES-00042  ",
+        "tecnotitle": "如何自定義一個TransactionalModelViewSet的CRUD API的基類，使繼承它的API CRUD操作時支持事務(How to customize a base class for TransactionalModelViewSet CRUD API, so that the CRUD operations of the API inheriting it support transactions.)"
+    },
+    {
+        "count": 3,
+        "people": [
+            "zyl",
+            "hw"
+        ],
+        "category": "20210824001",
+        "area": "Styling and CSS",
+        "subarea": "Using CSS frameworks with React",
+        "tecstatus": "N",
+        "tecno": "Rea-Sty-00015  ",
+        "tecnotitle": "React Bootstrap中如何使用Stack組件來快速構建垂直或水平佈局"
+    },
+    {
+        "count": 3,
+        "people": [
+            "zyl",
+            "lxb",
+            "hw"
+        ],
+        "category": "20210824001",
+        "area": "Styling and CSS",
+        "subarea": "Using CSS frameworks with React",
+        "tecstatus": "N",
+        "tecno": "Rea-Sty-00021  ",
+        "tecnotitle": "如何使用React Boostrap中的Breadcrumb組件"
+    },
+    {
+        "count": 3,
+        "people": [
+            "lxb",
+            "hw"
+        ],
+        "category": "20210824001",
+        "area": "Styling and CSS",
+        "subarea": "Using CSS frameworks with React",
+        "tecstatus": "N",
+        "tecno": "Rea-Sty-00025  ",
+        "tecnotitle": "如何使用React Boostrap中的Image組件來顯示圖像"
+    },
+    {
+        "count": 3,
+        "people": [
+            "lxb"
+        ],
+        "category": "20210824001",
+        "area": "Components and Props",
+        "subarea": "Component composition and reusability",
+        "tecstatus": "N",
+        "tecno": "Rea-Com-00017  ",
+        "tecnotitle": "React中如何使用基於Boostrap的RBInputGroup控件"
+    },
+    {
+        "count": 2,
+        "people": [
+            "hb",
+            "lxb"
+        ],
+        "category": "20210824001",
+        "area": "Data Fetching",
+        "subarea": "Fetching data from APIs using fetch or Axios",
+        "tecstatus": "N",
+        "tecno": "Rea-Dat-00013  ",
+        "tecnotitle": "使用React進行POST請求來修改數據"
+    },
+    {
+        "count": 2,
+        "people": [
+            "lxb",
+            "hw"
+        ],
+        "category": "20200226006",
+        "area": "REST API Development",
+        "subarea": "Building RESTful APIs with Django Rest Framework (DRF)",
+        "tecstatus": "N",
+        "tecno": "Dja-RES-00043  ",
+        "tecnotitle": "如何處理 Django Rest Framework 中的關聯和嵌套資源（Handling Associations and Nested Resources in CRUD APIs）"
+    },
+    {
+        "count": 2,
+        "people": [
+            "hw"
+        ],
+        "category": "20210824001",
+        "area": "Data Fetching",
+        "subarea": "Fetching data from APIs using fetch or Axios",
+        "tecstatus": "N",
+        "tecno": "Rea-Dat-00027  ",
+        "tecnotitle": "如何在 React 中使用 Axios 進行 PATCH 請求更新數據 (How to perform a PATCH request with Axios in React to update data)"
+    },
+    {
+        "count": 2,
+        "people": [
+            "hw"
+        ],
+        "category": "20210824001",
+        "area": "Components and Props",
+        "subarea": "Component composition and reusability",
+        "tecstatus": "N",
+        "tecno": "Rea-Com-00019  ",
+        "tecnotitle": "React中如何使用RBFlatpickerDate日期選擇控件"
+    },
+    {
+        "count": 2,
+        "people": [
+            "hw"
+        ],
+        "category": "20210824001",
+        "area": "Component",
+        "subarea": "PDF Generation",
+        "tecstatus": "N",
+        "tecno": "Rea-Com-00110  ",
+        "tecnotitle": "React 如何導出PDF和預覽PDF"
+    },
+    {
+        "count": 2,
+        "people": [
+            "lxb"
+        ],
+        "category": "20210824001",
+        "area": "File",
+        "subarea": null,
+        "tecstatus": "N",
+        "tecno": "Rea-Fil-00002  ",
+        "tecnotitle": "React Bootstrap應用中實現文件上傳"
+    },
+    {
+        "count": 2,
+        "people": [
+            "lxb"
+        ],
+        "category": "20210824001",
+        "area": "Components and Props",
+        "subarea": "Component composition and reusability",
+        "tecstatus": "N",
+        "tecno": "Rea-Com-00024  ",
+        "tecnotitle": "React中如何使用基於Boostrap的RBTabs控件"
+    },
+    {
+        "count": 2,
+        "people": [
+            "hw",
+            "xuan"
+        ],
+        "category": "20210824001",
+        "area": "Components and Props",
+        "subarea": "Layout and Grid System",
+        "tecstatus": "N",
+        "tecno": "Rea-Com-00103  ",
+        "tecnotitle": "如何在 React Bootstrap 中使用 RBCoreLayout 佈局控件來創建一個PMIS風格的頁面基本佈局"
+    },
+    {
+        "count": 2,
+        "people": [
+            "hw"
+        ],
+        "category": "20210824001",
+        "area": "Styling and CSS",
+        "subarea": "Using CSS frameworks with React",
+        "tecstatus": "N",
+        "tecno": "Rea-Sty-00011  ",
+        "tecnotitle": "如何使用React Boostrap的网格系統(Grid system)"
+    },
+    {
+        "count": 2,
+        "people": [
+            "xuan",
+            "hw"
+        ],
+        "category": "20210824001",
+        "area": "Styling and CSS",
+        "subarea": "Using CSS frameworks with React",
+        "tecstatus": "N",
+        "tecno": "Rea-Sty-00018  ",
+        "tecnotitle": "如何使用React Boostrap中的Badge組件來一個小型狀態標識（徽章）"
+    },
+    {
+        "count": 2,
+        "people": [
+            "xuan",
+            "hw"
+        ],
+        "category": "20210824001",
+        "area": "Styling and CSS",
+        "subarea": "Using CSS frameworks with React",
+        "tecstatus": "N",
+        "tecno": "Rea-Sty-00035  ",
+        "tecnotitle": "如何在React Bootstrap中使用ListGroup組件來創建一個列表"
+    },
+    {
+        "count": 1,
+        "people": [
+            "hw"
+        ],
+        "category": "20210824001",
+        "area": "Styling and CSS",
+        "subarea": "Using CSS frameworks with React",
+        "tecstatus": "N",
+        "tecno": "Rea-Sty-00029  ",
+        "tecnotitle": "如何使用React Boostrap中FormControl組件來創建表單元素"
+    },
+    {
+        "count": 1,
+        "people": [
+            "hw"
+        ],
+        "category": "20210824001",
+        "area": "Components and Props",
+        "subarea": "Component composition and reusability",
+        "tecstatus": "N",
+        "tecno": "Rea-Com-00014  ",
+        "tecnotitle": "React Bootstrap 中如何使用 RBCheckbox 控件"
+    },
+    {
+        "count": 1,
+        "people": [
+            "hw"
+        ],
+        "category": "20210715001",
+        "area": "Components",
+        "subarea": null,
+        "tecstatus": "N",
+        "tecno": "Vue-Com-00016  ",
+        "tecnotitle": "如何刷新Datatable並定位到指定頁碼"
+    },
+    {
+        "count": 1,
+        "people": [
+            "hw"
+        ],
+        "category": "20200226006",
+        "area": "Export Excel",
+        "subarea": null,
+        "tecstatus": "N",
+        "tecno": "Dja-Exp-00001  ",
+        "tecnotitle": "在Django中導出Master Details的Excel報表"
+    },
+    {
+        "count": 1,
+        "people": [
+            "hw"
+        ],
+        "category": "20200226006",
+        "area": "REST API Development",
+        "subarea": "Building RESTful APIs with Django Rest Framework (DRF)",
+        "tecstatus": "N",
+        "tecno": "Dja-Res-00010  ",
+        "tecnotitle": "如何使用@api_view創建RestApi（How to create RestApi with @api_view）"
+    },
+    {
+        "count": 1,
+        "people": [
+            "hw"
+        ],
+        "category": "20210715001",
+        "area": "Component",
+        "subarea": "Creating and Registering Components",
+        "tecstatus": "N",
+        "tecno": "Vue-Com-00045  ",
+        "tecnotitle": "如何在 Vue 中使用彈出框組件（How to use the popup box component in Vue）"
+    },
+    {
+        "count": 1,
+        "people": [
+            "hw"
+        ],
+        "category": "20210715001",
+        "area": "Components",
+        "subarea": "Creating and Registering Components",
+        "tecstatus": "N",
+        "tecno": "Dja-Com-00038  ",
+        "tecnotitle": "Vue 如何使用LPCombobox文本下拉框控件(How to use the Combobox component in Vue)"
+    },
+    {
+        "count": 1,
+        "people": [
+            "lxb"
+        ],
+        "category": "20200226006",
+        "area": "RestApi",
+        "subarea": "Get List Data",
+        "tecstatus": "N",
+        "tecno": "Dja-Lis-00001  ",
+        "tecnotitle": "生成獲取Model對象列表的Rest API"
+    },
+    {
+        "count": 1,
+        "people": [
+            "lxb"
+        ],
+        "category": "20200225002",
+        "area": "Generics CreateAPIView",
+        "subarea": null,
+        "tecstatus": "N",
+        "tecno": "Dja-Gen-00006  ",
+        "tecnotitle": "Django Rest Framework CreateAPIView(如何使用Djang Rest Framework的Generics CreateAPIView提供新增單個Model實例數據的Rest Api)"
+    },
+    {
+        "count": 1,
+        "people": [
+            "lxb"
+        ],
+        "category": "20200226006",
+        "area": "Admin",
+        "subarea": null,
+        "tecstatus": "N",
+        "tecno": "Dja-Adm-00002  ",
+        "tecnotitle": "配置Django管理頁面(configuring the Admin Area)"
+    },
+    {
+        "count": 1,
+        "people": [
+            "lxb"
+        ],
+        "category": "20210824001",
+        "area": "Data Fetching",
+        "subarea": "Fetching data from APIs using fetch or Axios",
+        "tecstatus": "N",
+        "tecno": "Rea-Dat-00014  ",
+        "tecnotitle": "使用React進行DELETE請求來刪除數據（添加刪除提示（提示使用RBAlertMessage控件(Rea-Com-00089)實現）"
+    },
+    {
+        "count": 1,
+        "people": [
+            "lxb"
+        ],
+        "category": "20200226006",
+        "area": "RestApi",
+        "subarea": "Search data",
+        "tecstatus": "N",
+        "tecno": "Dja-Res-00055  ",
+        "tecnotitle": "在 Django Vue 中使用 DataTables 從 REST API 讀取數據"
+    },
+    {
+        "count": 1,
+        "people": [
+            "lxb"
+        ],
+        "category": "20190314001",
+        "area": "delphi",
+        "subarea": null,
+        "tecstatus": "N",
+        "tecno": "Del-del-00028  ",
+        "tecnotitle": "Delphi 添加自定義檢測"
+    },
+    {
+        "count": 1,
+        "people": [
+            "hw"
+        ],
+        "category": "20210824001",
+        "area": "Styling and CSS",
+        "subarea": "Styling and CSS",
+        "tecstatus": "N",
+        "tecno": "Rea-Sty-00023  ",
+        "tecnotitle": "React中常見的設置樣式的方法"
+    },
+    {
+        "count": 1,
+        "people": [
+            "hw"
+        ],
+        "category": "20210824001",
+        "area": "State Management",
+        "subarea": "Managing state with React Hooks (useState, useEffect, useContext, etc.)",
+        "tecstatus": "N",
+        "tecno": "Rea-Sta-00002  ",
+        "tecnotitle": "How to use React useState and useEffect Hook fundamentally"
+    },
+    {
+        "count": 1,
+        "people": [
+            "hw"
+        ],
+        "category": "20200225001",
+        "area": "Model",
+        "subarea": "Filter",
+        "tecstatus": "N",
+        "tecno": "Pyt-Mod-00006  ",
+        "tecnotitle": "Django Model Filter"
+    },
+    {
+        "count": 1,
+        "people": [
+            "hw"
+        ],
+        "category": "20210824001",
+        "area": "Data Fetching",
+        "subarea": "Fetching data from APIs using fetch or Axios",
+        "tecstatus": "T",
+        "tecno": "Rea-Dat-00011  ",
+        "tecnotitle": "如何在 React 中使用 Axios 進行 POST 請求獲取數據(How to perform a POST request with Axios in React to fetch data)"
+    },
+    {
+        "count": 1,
+        "people": [
+            "lxb"
+        ],
+        "category": "20210824001",
+        "area": "Components and Props",
+        "subarea": "Component composition and reusability",
+        "tecstatus": "N",
+        "tecno": "Rea-Com-00071  ",
+        "tecnotitle": "React中如何創建基於Bootstrap的自定義指標顯示控件（RBMetrics）"
+    },
+    {
+        "count": 1,
+        "people": [
+            "hw"
+        ],
+        "category": "20210824001",
+        "area": "Components and Props",
+        "subarea": "Component composition and reusability",
+        "tecstatus": "N",
+        "tecno": "Rea-Com-00015  ",
+        "tecnotitle": "React中如何使用基於Boostrap的RBRadios控件"
+    },
+    {
+        "count": 1,
+        "people": [
+            "hw"
+        ],
+        "category": "20210824001",
+        "area": "DataTable",
+        "subarea": null,
+        "tecstatus": "N",
+        "tecno": "Rea-Dat-00019  ",
+        "tecnotitle": "如何在React 中使用 RBDataTable 控件顯示數據"
+    },
+    {
+        "count": 1,
+        "people": [
+            "lxb"
+        ],
+        "category": "20200226006",
+        "area": "binary",
+        "subarea": null,
+        "tecstatus": "N",
+        "tecno": "Dja-bin-00001  ",
+        "tecnotitle": "Django Rest Api支持二進制字段BinaryField的上傳和下載"
+    },
+    {
+        "count": 1,
+        "people": [
+            "lxb"
+        ],
+        "category": "20210824001",
+        "area": "Data Fetching",
+        "subarea": "Fetching data from APIs using fetch or Axios",
+        "tecstatus": "N",
+        "tecno": "Rea-Dat-00021  ",
+        "tecnotitle": "使用 React 進行 GET 請求獲取數據(Using React to Make GET Requests to Fetch Data)"
+    }
+]

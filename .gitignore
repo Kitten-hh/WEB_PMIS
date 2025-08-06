@@ -1,0 +1,7 @@
+.history/
+**/__pycache__
+uwsgi.log
+node_modules/
+**/dist/javascript/**/*-*.js
+log/
+log/WEB_PMIS_info.log

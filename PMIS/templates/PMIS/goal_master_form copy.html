@@ -1,0 +1,52 @@
+{% extends 'PMIS/My_Starter_page.html' %}
+{% load customer_filter %}
+{%  block content %}
+    <!-- 
+    <form method ="post">
+        <button class="btn btn-primary" <a href="http://121.13.252.163:8001/Knowledge/knowledge"</a> value="">Search</button> 
+    -->
+    <div class="k-grid__item k-grid__item--fluid k-grid k-grid--hor">
+        <div class="k-content k-grid__item k-grid__item--fluid">
+          <div class="k-portlet k-portlet--mobile">
+            <div class="k-portlet__head">
+              <h5 class="k-portlet__head-label">Goal Master Form</h5>
+            </div>
+            <div class="k-portlet__body">
+              <table class="table table-striped- table-bordered table-hover table-checkable" id="dataTables-example">
+                <thead>
+                  <tr>
+                    {% for field in form %}
+                    <th>{{field.label}}</th>
+                    {% endfor %}
+                  </tr>
+                </thead>
+                <tbody>
+                  <!--下面這一行代碼中的 datas 為view傳過來的數據的參數名,請一定要對應-->
+                  {% for row in datas %}
+                   <!--forloop.counter 表示循環的序號 |表示使用django的filter過濾語法 divisibleby:2 
+                    表示將循環序號除2是否整除， 這一行的功能是判斷當前行序號是否偶數-->
+                   {% if forloop.counter|divisibleby:2 %}
+                    <tr class="even">
+                    {% else %}
+                    <tr class="odd">
+                    {% endif %}
+                        <!--row參數是上面for語句從datas中每次循環取出的對象-->
+                        {% for field in form %}
+                            {% if field.field|getType == 'DateTimeField' %}
+                            <td>{{row|getAttr:field.name|date:'Y-n-d H:i'}}</td>
+                            {%else%}
+                            <td>{{row|getAttr:field.name}}</td>
+                            {%endif%}
+                        {% endfor %}
+                    </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+
+
+

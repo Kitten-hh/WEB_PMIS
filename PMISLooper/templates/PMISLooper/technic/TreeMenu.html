@@ -1,0 +1,70 @@
+{% extends 'PMISLooper/index.html' %}
+{%load static %}
+{% load i18n %}
+{%block form_css%}
+{{block.super}}
+<link rel="stylesheet" type="text/css" href="{% static 'PMISLooper/assets/stylesheets/webPMS/technic.css' %}" />
+<link href="{% static 'BaseApp/vendor/Looper/assets/vendor/jstree/themes/default/style.min.css'%}" rel="stylesheet"
+    type="text/css" />
+<link href="{% static 'BaseApp/vendor/jquery-splitter/css/jquery.splitter.css'%}" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="{% static 'PMISLooper/assets/stylesheets/technic/treeMenu.css' %}" data-skin="default" />
+<link rel="stylesheet" type="text/css" href="{% static 'PMISLooper/assets/stylesheets/technic/treeMenu_dark.css' %}" data-skin="dark" />
+{%endblock%}
+
+{%  block content %}
+{{block.super}}
+<div class="page-section d-sm-none">
+    <div class="container-fluid py-3">
+        <iframe src="" frameborder="0" width='100%' id="phoneiframe" style="height: 100vh;"></iframe>
+        <p class="text-muted"> </p><button class="btn btn-danger btn-floated d-lg-none" type="button"
+            data-toggle="sidebar"><i class="fa fa-th-list"></i></button>
+    </div>
+</div>
+<div id="splitter" class>
+    <div id="leftPane" style="overflow: unset;">
+        <iframe src="" frameborder="0" width='100%' id="pciframe" style="height:100vh"></iframe>
+    </div>
+    <div id="rightPane" class="sidebar-section">
+        <header class="sidebar-header d-xl-none">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item active">
+                        <a href="#" onclick="Looper.toggleSidebar()"><i
+                                class="breadcrumb-icon fa fa-angle-left mr-2"></i>{% trans "Back" %}</a>
+                </li>
+                </ol>
+            </nav>
+            <div class="ml-auto">
+                <a href="#" class="card-header-item justify-content-start"><span><i class="fa fa-plus-circle mr-1"></i>
+                    {% trans "Add Page" %} </span></a>
+            </div>
+        </header>
+        <div class="sidebar-sec">
+            <div id="Optiondiv" style="margin: 8px 0;">
+
+            </div>
+            <div class="card-header sidebar_header">
+                <a href="#" class="card-header-item justify-content-start"><span><i class="fa fa-plus-circle mr-1"></i>
+                    {% trans "Add Page" %} </span></a>
+            </div>
+            <div class="col_cust">
+                <div id="techtree" class="tree-demo">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{%endblock%}
+{%block form_js%}
+{{block.super}}
+<!-- BEGIN ::this page PLUGINS JS -->
+<!-- END PLUGINS JS -->
+
+<script src="{% static 'PMISLooper/assets/javascript/technic/TreeMenu.js'%}"></script>
+
+
+
+
+
+{%endblock%}

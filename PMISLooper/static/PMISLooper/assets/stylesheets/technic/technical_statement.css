@@ -1,0 +1,117 @@
+.technical_statement {
+    font-size: 17.5px;
+    color: rgb(80, 76, 137);
+    line-height: 28px;
+    overflow-x: hidden;
+    background: #f6f7f9;
+    font-family: -apple-system,BlinkMacSystemFont,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-feature-settings: "tnum";
+    font-variant: tabular-nums;
+  }
+  
+.technical_statement h4 {
+    font-weight: 600;
+    margin: 0px;
+    line-height: 1.3;
+    color: rgb(55, 44, 122);
+    font-family: 'Andika';
+  }
+
+.technical_statement abbr {
+    color: #b76ba3;
+    margin-right: .125rem;
+  }
+
+.technical_statement  .row .col, .technical_statement .row [class^=col-] {
+    padding-top: .75rem;
+    padding-bottom: .75rem;
+    background-color: #e6e8ed;
+    border: 1px solid #346cb0;
+}
+
+#TechnicReport .col-12 {
+  background: rgb(255, 255, 255);
+  border: 2px solid rgb(52, 108, 176);
+}
+
+.technical_statement .col.has-child, .technical_statement .not_padding, .technical_statement .col-auto {
+    padding-top: 0!important;
+    padding-bottom: 0!important;
+    border: 0!important;
+}
+
+.technical_statement .not_plr {
+    padding-left: 0!important;
+    padding-right: 0!important;
+}
+
+.technical_statement .not_border {
+  border: 0!important;
+}
+
+.technical_statement .sta_wrap {
+  margin-bottom: 0;
+  background-color: #e6e8ed;
+  box-shadow: 0 0 0 1px rgb(20 20 31 / 5%), 0 1px 3px 0 rgb(20 20 31 / 15%);
+}
+
+.technical_statement .sta_wrap .card-body {
+  background-color: #e6e8ed;
+}
+
+.technical_statement p {
+  margin-bottom: .5rem;
+}
+
+.technical_statement .sta_wrap .SWCheckbox {
+  display: inline-flex;
+    margin-right: 1rem;
+}
+
+.technical_statement .row_notmlr {
+  margin-right: -1px;
+  margin-left: 0px;
+}
+
+.technical_statement .border_add{
+  border: 1px solid #346cb0;
+  border-right-width: 1.5px;
+}
+
+.technical_statement .technical_title {
+  font-weight: 600;
+  line-height: 1.5;
+  color: #363642;
+  text-align: left;
+  font-family: 'Andika';
+}
+
+.technical_statement .technical_content {
+  font-size: 20px;
+  color: #000;
+}
+
+@media (max-width: 576px) {
+  .technical_statement h4 {
+    font-size: 17px;
+  }
+}
+
+.abnormal_wrap {
+  background-color: hsla(0,0%,100%,.12);
+}
+
+.abnormal_wrap .form-control {
+  background-color: hsl(220deg 16% 93%);
+}
+
+.technical-tis .col-form-label {
+  border:none !important;
+  padding-top:inherit !important;
+  padding-bottom: inherit !important;
+  padding-right: 5px !important;
+}
+
+.technical-tis{
+  width: 120px !important;
+}

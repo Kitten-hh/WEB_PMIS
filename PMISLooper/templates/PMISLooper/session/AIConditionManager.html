@@ -1,0 +1,22 @@
+{% extends 'PMISLooper/vue_index.html' %}
+{%load static %}
+{%load md5url %}
+{% load render_bundle from webpack_loader %}
+
+{%block form_css%}
+{{block.super}}
+<link rel="stylesheet" type="text/css" href="{% static 'PMISLooper/assets/stylesheets/session/AIConditionManager.css' %}"  data-skin="default"/>  
+<link rel="stylesheet" type="text/css" href="{% static 'PMISLooper/assets/stylesheets/session/AIConditionManager_dark.css' %}"  data-skin="dark"/>
+{%endblock%}
+
+{% block content%}
+{{block.super}}
+
+{%endblock%}   
+
+
+{%block form_js%}
+{{block.super}}
+{% render_bundle 'PMISLooper/dist/javascript/AIConditionManager' %} 
+
+{%endblock%}   

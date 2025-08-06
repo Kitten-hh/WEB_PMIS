@@ -1,0 +1,465 @@
+.container-custl {
+    background-color: #504e4e;
+    height: calc(100vh - 3.5rem);
+}
+
+.MesgSumCard {
+    border-radius: 1.2rem;
+    color: #fff;
+    background-color: #0000004f;
+    height: 100%;
+    margin-bottom: 0;
+}
+
+.MesgSumCard>.card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.MesgSumCard .MesgDate {
+    color: #ffffff96;
+}
+
+.MesgSumCard>.card-header .badge {
+    width: 3rem;
+    height: 3rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 3rem;
+    background-color: #1a303e63;
+}
+
+.MesgSumCard>.card-body {
+    position: relative;
+    flex-wrap: wrap;
+    padding: 3rem;    
+    margin-bottom: 1rem;
+    height: 100%;
+    overflow-y: auto;
+}
+
+.MesgSumCard .card.sumCard {
+    color: #fafafa;
+    padding: 0;
+    border-radius: 22px;
+    position: absolute;
+    box-shadow: 0 .1875rem .75rem rgba(140, 152, 164, .25);
+    transition: transform 0.9s cubic-bezier(0.23, 1, 0.32, 1) 0s, z-index 0.3s ease;
+}
+
+.MesgSumCard .card.sumCard h3.card-title {
+    font-weight: 400;
+    font-size: 1.2rem;
+}
+
+.MesgSumCard .card.sumCard>.card-body {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.MesgSumCard .card.sumCard .metric-value>sup {
+    color: #f6f7f9;
+}
+
+.metricDetailInfo {
+    min-width: 0;
+    white-space: pre-line;
+    line-height: normal;
+}
+
+.MesgSumCard .card.sumCard:hover {
+    box-shadow: 0 .1875rem .75rem rgba(140, 152, 164, .4);
+}
+
+.MesgSumCard .card.sumCard>.card-body {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.MesgSumCard .card.sumCard:nth-child(1)>.card-body {
+    align-items: flex-start;
+    text-align: left;
+    padding-left: 1.2rem;
+}
+
+.MesgSumCard .card.sumCard:nth-child(2)>.card-body,
+.MesgSumCard .card.sumCard:nth-child(5)>.card-body,
+.MesgSumCard .card.sumCard:nth-child(6)>.card-body {
+    text-align: center;
+    align-items: center;
+}
+
+.MesgSumCard .card.sumCard .metric-value>sup {
+    color: #f6f7f9;
+}
+
+.metricDetailInfo {
+    min-width: 0;
+    white-space: pre-line;
+    line-height: normal;
+}
+
+/* style 2 */
+.summaryStyle2 .MesgSumCard>.card-header .badge {
+    background-color: #1a303e36
+}
+
+.summaryStyle2 .MesgSumCard>.card-body>.card.sumCard {
+    height: 180px;
+    width: 62%;
+}
+
+.summaryStyle2 .MesgSumCard>.card-body>.card.sumCard:hover {
+    box-shadow: 0 .1875rem .75rem rgba(0, 98, 196, 0.4);
+    z-index: 1;
+    transform: scale(1.1);
+    -webkit-box-shadow: 5px 5px 5px #ddd;
+    -moz-box-shadow: 5px 5px 5px #ddd;
+    box-shadow: 5px 5px 5px #ddd;
+    cursor: pointer;
+}
+
+.summaryStyle2 .MesgSumCard .card.sumCard>.card-body {
+    justify-content: flex-start;
+}
+
+.summaryStyle2 .MesgSumCard .card.sumCard:nth-child(even)>.card-body,
+.summaryStyle2 .MesgSumCard .card.sumCard:nth-child(6)>.card-body {
+    align-items: flex-end;
+    text-align: right;
+}
+
+.summaryStyle2 .MesgSumCard .card.sumCard:nth-child(5)>.card-body {
+    align-items: flex-start;
+    text-align: left;
+}
+
+.summaryStyle2 .MesgSumCard>.card-body>.card.sumCard:nth-child(1) {
+    background-color: #21D4FD;
+    background-image: linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
+}
+
+.summaryStyle2 .MesgSumCard>.card-body>.card.sumCard:nth-child(2) {
+    background-color: #FF3CAC;
+    background-image: linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%);
+}
+
+.summaryStyle2 .MesgSumCard>.card-body>.card.sumCard:nth-child(3) {
+    background-color: #00DBDE;
+    background-image: linear-gradient(349deg, #00DBDE 0%, #FC00FF 100%);
+}
+
+.summaryStyle2 .MesgSumCard>.card-body>.card.sumCard:nth-child(4) {
+    background-color: #F4D03F;
+    background-image: linear-gradient(132deg, #F4D03F 0%, #16A085 100%);
+}
+
+.summaryStyle2 .MesgSumCard>.card-body>.card.sumCard:nth-child(5) {
+    background-color: #FBDA61;
+    background-image: linear-gradient(45deg, #FBDA61 0%, #FF5ACD 100%);
+}
+
+.summaryStyle2 .MesgSumCard>.card-body>.card.sumCard:nth-child(6) {
+    background-color: #21D4FD;
+    background-image: linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
+}
+
+.summaryStyle2 .MesgSumCard>.card-body>.card.sumCard:nth-child(7) {
+    background-color: #08AEEA;
+    background-image: linear-gradient(120deg, #08AEEA 0%, #2AF598 100%);
+}
+
+.summaryStyle2 .MesgSumCard>.card-body>.card.sumCard:nth-child(8) {
+    background-color: #00DBDE;
+    background-image: linear-gradient(210deg, #00DBDE 0%, #FC00FF 100%);
+}
+
+.summaryStyle2 .MesgSumCard>.card-body>.card.sumCard:nth-child(9) {
+    background-color: #00DBDE;
+    background-image: linear-gradient(53deg, #00DBDE 0%, #FC00FF 100%);
+}
+
+.summaryStyle2 .MesgSumCard>.card-body>.card.sumCard:nth-child(10) {
+    background-color: #FF3CAC;
+    background-image: linear-gradient(140deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%);
+}
+
+.summaryStyle2 .MesgSumCard>.card-body>.card.sumCard:nth-child(11) {
+    background-color: #F4D03F;
+    background-image: linear-gradient(235deg, #F4D03F 0%, #16A085 100%);
+}
+
+.summaryStyle2 .MesgSumCard>.card-body>.card.sumCard:nth-child(12) {
+    background-color: #08AEEA;
+    background-image: linear-gradient(240deg, #08AEEA 0%, #2AF598 100%);
+}
+
+.summaryStyle2 .MesgSumCard>.card-body>.card.sumCard:nth-child(13) {
+    background-color: #21D4FD;
+    background-image: linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
+}
+
+.summaryStyle2 .MesgSumCard>.card-body>.card.sumCard:nth-child(14) {
+    background-color: #FF3CAC;
+    background-image: linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%);
+}
+
+.summaryStyle2 .MesgSumCard>.card-body>.card.sumCard:nth-child(15) {
+    background-color: #00DBDE;
+    background-image: linear-gradient(349deg, #00DBDE 0%, #FC00FF 100%);
+}
+
+.summaryStyle2 .MesgSumCard>.card-body>.card.sumCard:nth-child(16) {
+    background-color: #F4D03F;
+    background-image: linear-gradient(132deg, #F4D03F 0%, #16A085 100%);
+}
+
+.summaryStyle2 .MesgSumCard>.card-body>.card.sumCard:nth-child(17) {
+    background-color: #FBDA61;
+    background-image: linear-gradient(45deg, #FBDA61 0%, #FF5ACD 100%);
+}
+
+.summaryStyle2 .MesgSumCard>.card-body>.card.sumCard:nth-child(18) {
+    background-color: #21D4FD;
+    background-image: linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
+}
+
+.summaryStyle2 .MesgSumCard>.card-body>.card.sumCard:nth-child(19) {
+    background-color: #08AEEA;
+    background-image: linear-gradient(120deg, #08AEEA 0%, #2AF598 100%);
+}
+
+.summaryStyle2 .MesgSumCard>.card-body>.card.sumCard:nth-child(20) {
+    background-color: #00DBDE;
+    background-image: linear-gradient(210deg, #00DBDE 0%, #FC00FF 100%);
+}
+
+.summaryStyle2 .MesgSumCard>.card-body>.card.sumCard:nth-child(21) {
+    background-color: #00DBDE;
+    background-image: linear-gradient(53deg, #00DBDE 0%, #FC00FF 100%);
+}
+
+.summaryStyle2 .MesgSumCard>.card-body>.card.sumCard:nth-child(22) {
+    background-color: #FF3CAC;
+    background-image: linear-gradient(140deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%);
+}
+
+.summaryStyle2 .MesgSumCard>.card-body>.card.sumCard:nth-child(23) {
+    background-color: #F4D03F;
+    background-image: linear-gradient(235deg, #F4D03F 0%, #16A085 100%);
+}
+
+.summaryStyle2 .MesgSumCard>.card-body>.card.sumCard:nth-child(24) {
+    background-color: #08AEEA;
+    background-image: linear-gradient(240deg, #08AEEA 0%, #2AF598 100%);
+}
+.summaryStyle2 .MesgSumCard>.card-body>.card.sumCard:nth-child(25) {
+    background-color: #21D4FD;
+    background-image: linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
+}
+
+.summaryStyle2 .MesgSumCard>.card-body>.card.sumCard:nth-child(26) {
+    background-color: #FF3CAC;
+    background-image: linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%);
+}
+
+.summaryStyle2 .MesgSumCard>.card-body>.card.sumCard:nth-child(27) {
+    background-color: #00DBDE;
+    background-image: linear-gradient(349deg, #00DBDE 0%, #FC00FF 100%);
+}
+
+.summaryStyle2 .MesgSumCard>.card-body>.card.sumCard:nth-child(28) {
+    background-color: #F4D03F;
+    background-image: linear-gradient(132deg, #F4D03F 0%, #16A085 100%);
+}
+
+.summaryStyle2 .MesgSumCard>.card-body>.card.sumCard:nth-child(29) {
+    background-color: #FBDA61;
+    background-image: linear-gradient(45deg, #FBDA61 0%, #FF5ACD 100%);
+}
+
+.summaryStyle2 .MesgSumCard>.card-body>.card.sumCard:nth-child(30) {
+    background-color: #21D4FD;
+    background-image: linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
+}
+
+.summaryStyle2 .MesgSumCard>.card-body>.card.sumCard:nth-child(31) {
+    background-color: #08AEEA;
+    background-image: linear-gradient(120deg, #08AEEA 0%, #2AF598 100%);
+}
+
+.summaryStyle2 .MesgSumCard>.card-body>.card.sumCard:nth-child(32) {
+    background-color: #00DBDE;
+    background-image: linear-gradient(210deg, #00DBDE 0%, #FC00FF 100%);
+}
+
+.summaryStyle2 .MesgSumCard>.card-body>.card.sumCard:nth-child(33) {
+    background-color: #00DBDE;
+    background-image: linear-gradient(53deg, #00DBDE 0%, #FC00FF 100%);
+}
+
+.summaryStyle2 .MesgSumCard>.card-body>.card.sumCard:nth-child(34) {
+    background-color: #FF3CAC;
+    background-image: linear-gradient(140deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%);
+}
+
+.summaryStyle2 .MesgSumCard>.card-body>.card.sumCard:nth-child(35) {
+    background-color: #F4D03F;
+    background-image: linear-gradient(235deg, #F4D03F 0%, #16A085 100%);
+}
+
+.summaryStyle2 .MesgSumCard>.card-body>.card.sumCard:nth-child(36) {
+    background-color: #08AEEA;
+    background-image: linear-gradient(240deg, #08AEEA 0%, #2AF598 100%);
+}
+
+.summaryStyle2 .MesgSumCard>.card-body>.card.sumCard:nth-child(37) {
+    background-color: #21D4FD;
+    background-image: linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
+}
+
+.summaryStyle2 .MesgSumCard>.card-body>.card.sumCard:nth-child(38) {
+    background-color: #FF3CAC;
+    background-image: linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%);
+}
+
+.summaryStyle2 .MesgSumCard>.card-body>.card.sumCard:nth-child(39) {
+    background-color: #00DBDE;
+    background-image: linear-gradient(349deg, #00DBDE 0%, #FC00FF 100%);
+}
+
+.summaryStyle2 .MesgSumCard>.card-body>.card.sumCard:nth-child(40) {
+    background-color: #F4D03F;
+    background-image: linear-gradient(132deg, #F4D03F 0%, #16A085 100%);
+}
+
+.mesgModal .modal-header {
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+}
+
+.mesgModal .modal-body {
+    padding-left: .5rem;
+    padding-right: .5rem;
+}
+
+.mesgModal .queryWrapper {
+    margin-top: 12px;
+}
+
+.mesgModal .queryWrapper .query_tools {
+    margin-left: auto;
+}
+
+.mesgModal .queryWrapper .form-group {
+    margin-bottom: .5rem;
+}
+
+.page:not(.lang_en) .mesgModal .queryWrapper .form-group label.col-form-label {
+    min-width: 74px;
+}
+.page.lang_en .mesgModal .queryWrapper .form-group label.col-form-label {
+    min-width: 82px;
+}
+
+@media (max-width: 576px) {
+    .MesgSumCardTitle {
+        font-size: 22px;
+    }
+
+    .MesgSumCard>.card-body {
+        padding: .5rem;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .mesgModal .queryWrapper .query_recordID {
+        order: -1;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    
+    .mesgModal .queryWrapper .query_contact {
+        flex: 0 0 58.333333%;
+        max-width: 58.333333%
+    }
+}
+
+@media (min-width: 768px) {
+    .mesgModal .modal-dialog {
+        max-width: 800px;
+    }
+
+    .mesgModal .queryWrapper .query_recordID {
+        order: 0;
+    }
+
+    .page:not(.lang_en) .mesgModal .queryWrapper .form-group label.col-form-label,
+    .page.lang_en .mesgModal .queryWrapper .form-group label.col-form-label {
+        min-width: auto;
+    }
+}
+
+@media (min-width: 1200px) {
+    .summaryStyle2.container-custl {
+        max-width: none;
+        background-image: none;
+    }
+
+    .summaryStyle2.container-custl .MesgSumCard {
+        max-width: 900px;        
+        margin-right: auto;
+        margin-left: auto;
+    }
+    
+    .summaryStyle2 .MesgSumCard>.card-body>.card.sumCard {
+        height: 200px;
+        width: 32%;
+    }    
+
+    .container-custl.summaryStyle2 .MesgSumCard .card.sumCard>.card-body {
+        align-items: flex-start;
+        text-align: left;
+    }
+}
+
+/* dataTable 圖標 */
+.LPDataTable table.dataTable thead .sorting:before {
+    content: "\f0de" !important;
+    right: 0.5em !important;
+}
+
+.LPDataTable table.dataTable thead .sorting:after {
+    content: "\f0dd" !important;
+}
+
+.LPDataTable .dataTables_wrapper .datatable_paging_inline {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.mesgModal .LPDataTable table.dataTable thead th {
+    padding: .3rem;
+}
+
+.mesgModal .LPDataTable table.dataTable .sorting:before,
+.mesgModal .LPDataTable table.dataTable .sorting_asc:before,
+.mesgModal .LPDataTable table.dataTable .sorting_desc:before {
+    top: 9px;
+}
+
+.mesgModal .LPDataTable table.dataTable .sorting:after, 
+.mesgModal .LPDataTable table.dataTable .sorting_asc:after, 
+.mesgModal .LPDataTable table.dataTable .sorting_desc:after {
+    top: 9px;
+}

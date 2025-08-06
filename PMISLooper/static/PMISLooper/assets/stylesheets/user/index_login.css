@@ -1,0 +1,88 @@
+.base-footer {
+    display: none;
+}
+
+@media (min-width: 768px){
+    .auth-form {
+        padding:1rem 2rem 1rem;
+        max-width: 530px;
+        width: 274px;
+        box-shadow: none;
+        background-color: initial;
+    }
+} 
+.auth-page #toast-container.toast-top-center {
+    top: 0 !important;
+}
+.auth-page #toast-container .toast.toast-info{
+    width: 274px !important;
+    max-width: 274px !important;
+    min-width: 1px;
+    align-items: center;
+}
+.auth-page .toast-close-button {
+    top: -2px !important;
+}
+.login_modal .modal-dialog {
+    max-width: 480px;
+}
+.login_modal .modal-content {
+    border-radius: 10px;
+    border: 1px solid #e0e6ed;
+}
+.login_modal .modal-body {
+    padding: 25px;
+    text-align: center;
+}
+.login_modal .auth-form {
+    padding: 1.25rem;
+}
+.login_modal h1:after, .auth-page-title:after {
+    content: ' ';
+    display: block;
+    width: 100%;
+    height: 2px;
+    margin-top: 10px;
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(52,108,176,0)), color-stop(20%,rgba(52,108,176,0.8)), color-stop(53%,rgba(52,108,176,1)), color-stop(79%,rgba(52,108,176,0.8)), color-stop(100%,rgba(52,108,176,0)));
+    background: -webkit-linear-gradient(left, rgba(52,108,176,0) 0%,rgba(52,108,176,0.8) 20%,rgba(52,108,176,1) 53%,rgba(52,108,176,0.8) 79%,rgba(52,108,176,0) 100%);
+    background: linear-gradient(left, rgba(52,108,176,0) 0%,rgba(52,108,176,0.8) 20%,rgba(52,108,176,1) 53%,rgba(52,108,176,0.8) 79%,rgba(52,108,176,0) 100%);
+}   
+form.auth-form .custom-control:not(.custom-switch) .custom-control-label:after, 
+form.auth-form .custom-control:not(.custom-switch) .custom-control-label:before {
+    top: .25rem !important;
+}
+@media (min-width: 768px) {
+    .login_modal .auth-form {
+        max-width: 100%;
+        width: 100%;
+    }   
+}
+#login_modal {
+    z-index: 99999 !important;
+    background: rgb(20 20 31 / 30%) !important;        
+}
+
+/* topbar */
+.top-bar-list .top-bar-item-right .header-nav li.nav-item:nth-child(2),
+.top-bar-list .top-bar-item-right .header-nav li.nav-item:nth-child(3) {
+    display: none;
+}
+
+@media (max-width: 500px) {
+    .top-bar-list .header-nav .nav-link {
+        padding-left: .3rem !important;
+        padding-right: .3rem !important;
+    }
+}
+
+@media (max-width: 400px) {
+    .top-bar-list ul.header-nav {
+        padding: 0 !important;
+    }
+}
+
+/* chrome谷歌浏览器input自动填充默认样式調整 */
+/* input:-internal-autofill-selected {
+    -webkit-text-fill-color: #363642;
+    transition: background-color 1000s ease-out 0.5s;
+} */

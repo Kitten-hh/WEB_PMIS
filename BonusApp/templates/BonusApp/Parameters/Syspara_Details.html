@@ -1,0 +1,65 @@
+{% extends 'BaseApp/keen_base/base_form1/base.html' %}
+
+{% load static %}
+
+{% block form_css %}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="container-fluid Custom_Head"> 
+    <a class="navbar-brand" id="prev_page" href="javascript:void(0)"> 
+        <i class="fa fa-arrow-left"></i> 
+    </a> 
+</div>
+
+<div id="app">
+        <div class="card card-custom ml-2 mr-2 mt-2">
+            <div class="card-header">
+                <div class="card-title mt-4 mb-4" style="font-size: xx-large;font-weight: 400; text-align-last: center">
+                    {{ Syspara.nfield }}</div>
+                <input id="inc_id" type="hidden" value="{{Syspara.inc_id}}"/>
+                <div class="card-toolbar">
+                    <a href="/bonus/get_Syspara_Add_Page/?pk={{ Syspara.inc_id }}" class="btn btn-icon btn-outline-primary mr-2">
+                        <i class="icon-2x flaticon-edit"></i>
+                    </a>
+                    <!-- <button class="btn btn-icon btn-outline-primary" id="btn_delete">
+                        <i class="icon-2x flaticon-delete"></i>
+                    </button> -->
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="form-group">
+                    <label>用户名</label>
+                    <span class="d-block" style="font-size: large;font-weight: 400;">{{ Syspara.ftype }}</span>
+                </div>
+                <div class="form-group">
+                    <label>所选系统</label>
+                    <span class="d-block" style="font-size: large;font-weight: 400;">{{ Syspara.desp}}</span>
+                </div>
+                <div class="form-group">
+                    <label>参数名称</label>
+                    <span class="d-block" style="font-size: large;font-weight: 400;">{{ Syspara.nfield }}</span>
+                </div>
+                <div class="form-group">
+                    <label>参数值</label>
+                    <span class="d-block" style="font-size: large;font-weight: 400;">{{ Syspara.fvalue }}</span>
+                </div>
+            </div>
+        </div>
+</div>
+{% endblock %}
+
+{%block form_js%} 
+
+<script type="text/javascript" src="{% static 'BonusApp/SystemParameters/Syspara_Public.js' %}"></script>
+
+<script type="text/javascript">
+   
+    //把Bottom Bar移除掉
+    $("#kt_footer").remove();
+
+</script>
+
+{% endblock %}

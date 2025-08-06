@@ -1,0 +1,14 @@
+/* 优化弹出框整体布局 */
+#paraphrase-modal .list-group {
+    overflow-y: auto;
+    max-height: 270px
+}
+
+#loadingMessage {
+    position: absolute;
+    top: calc(50% - 10px);
+    z-index: 1600;
+    left: calc(50% - 90px);
+    background-color: #8d8dbe;
+    color: white;
+}

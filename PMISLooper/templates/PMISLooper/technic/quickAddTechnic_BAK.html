@@ -1,0 +1,210 @@
+{% load i18n %}
+
+<div class="modal fade" id="quick-add-technic" tabindex="-1" role="dialog" aria-labelledby="form" aria-hidden="true"
+    style="display: none;">
+    <div class="modal-dialog modal-lg modal-dialog-scrollable " role="document">
+        <div class="modal-content" id="quick_techinc_form_div">
+            <div class="modal-header">
+                <h5 class="modal-title">
+                    {% trans "Mini Technical" %}
+                </h5>
+                <button type="button" class="close text-dark" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body px-1 px-sm-3">
+                <form id="quick_techinc_form" name="stepperForm" class="pd-0" method="post"
+                    enctype="multipart/form-data">
+                    <div class="card card-reflow">
+                        <div class="card-body p-0 ">
+                            <fieldset class="mb-3 technicalEnquiry card-expansion-item">
+                                <legend class="mb-0">                                    
+                                    <button class="btn btn-reset d-flex justify-content-between prevent-default pl-0" data-toggle="collapse" data-target="#techEnquiryCollapse" aria-expanded="true" aria-controls="techEnquiryCollapse"><span class="collapse-indicator"><i class="fa fa-fw fa-caret-right mr-1"></i></span><span>{% trans "Technical Enquiry" %}</span></button>
+                                </legend>
+                                <div id="techEnquiryCollapse" class="collapse">
+                                    <div class="card-body pt-2 px-0"> 
+                                        <div class="row mx-0 mb-2">
+                                            <div class="col-12 px-0">
+                                                <div id="enquiryInput" class="enquiryInput"></div>
+                                            </div>
+                                        </div>
+                                        <div id="techEnquiryTable">
+
+                                        </div>    
+                                    </div>
+                                  </div>
+                            </fieldset>
+                            
+                            <fieldset class="scrollbar mb-3">
+                                <legend class="mb-0">{% trans "Add Technical" %}</legend>
+                                <div class="technicInfo">
+                                    <div class="row">
+                                        <div hidden>
+                                            <input type="text" name="mb001">
+                                            <input type="text" name="mb008">
+                                            <input type="text" name="mb015">
+                                            <input type="text" name="mb020">
+                                            <!-- <input type="text" name="mb023"> -->
+                                            <input type="text" name="id">
+                                            <input type="text" name="modi_date">
+                                            <input type="button" class="btn btn-primary" id="Cataloguemodelbtn">
+                                        </div>
+                                        <div class="col-12 col-sm-4">
+                                            <div id="technicid"></div>
+                                        </div>
+                                        <div class="col-12 col-sm-4">
+                                            <div id="technicDate"></div>
+                                        </div>
+                                        <div class="col-12 col-sm-4">
+                                            <div id="technicContact"></div>
+                                        </div>
+                                        <div class="col-12 col-sm-4">
+                                            <div id="category"></div>
+                                        </div>
+                                        <div class="col-12 col-sm-4">
+                                            <div id="area"></div>
+                                        </div>
+                                        <div class="col-12 col-sm-4">
+                                            <div id="subarea"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="technicDetail">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div id="technicTopic"></div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div id="theory"></div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div id="technicSteps" class="form-group">
+                                                <div class="d-flex align-items-center justify-content-between">
+                                                    <label class="col-form-label caption" for="technic_steps">{% trans "Implementation Procedure/Steps" %}</label>
+                                                    <!-- <span id="addStep" class="text-danger" style="cursor: pointer;"
+                                                        data-toggle="tooltip" data-placement="right"
+                                                        data-original-title="Add Step">{% trans "Add Step" %}</span> -->
+                                                </div>
+                                                <div id="Stepstab">
+                                                    <div id="myModal">
+                                                        <div class="modal-body" style="padding: inherit;">
+                                                            <div class="publisher publisher-alt">
+                                                                <div class="publisher-input">
+                                                                    <textarea id="technic_steps" name="typefirst[0001].mc005" class="form-control h-auto"rows="5"></textarea>
+                                                                    <div class="position-relative m-4 imgcontainer">
+                                                                        <img name="modalimg" class="mw-100" src="">
+                                                                        <span class="btn btn-icon btn-secondary btn-floated shadow btn_img_close" onclick="Deleteimgclick(0001)">
+                                                                            <i class="fa fa-times"></i>
+                                                                        </span>
+                                                                    </div>
+                                                                    
+                                                                    <!-- <div class="card card-figure">
+                                                                        <figure class="figure">
+                                                                            <div class="figure-img">
+                                                                                <img name="modalimg" class="mw-100" src="">
+                                                                                <a href="#" class="img-link" onclick="Deleteimgclick(0001)">
+                                                                                    <span class="tile tile-circle bg-danger">
+                                                                                        <span class="far fa-trash-alt"></span>
+                                                                                    </span> 
+                                                                                </a>
+                                                                            </div>
+                                                                        </figure>
+                                                                    </div> -->
+                                                                    <!-- <img name="modalimg" class="mw-100" src=""> -->
+                                                                </div>
+                                                                <div class="publisher-actions flex-wrap">
+                                                                    <div class="publisher-tools mr-auto">
+                                                                        <div class="btn btn-light btn-icon fileinput-button"><i class="far fa-image"></i>
+                                                                            <input type="file" id="attachment3" class="getFile" name="modalimginput" onchange="imgChange(this)"accept="image/jpg" multiple="">
+                                                                        </div>
+                                                                    </div>
+                                                                    <!-- <button type="button" class="btn btn-sm btn-subtle-danger" onclick="Deletedataclick(0001)" id="Deletedatabtn">删除数据</button>
+                                                                    <button type="button" class="btn btn-sm btn-subtle-info ml-2" onclick="Deleteimgclick(0001)" id="Deleteimgbtn">删除图片</button>
+                                                                    <button type="button" class="btn btn-sm btn-subtle-primary ml-2" onclick="Enterclick(0001)" id="Enterbtn">确定</button>
+                                                                    <button type="button" class="btn btn-sm btn-secondary ml-2" onclick="modalhidden(0001)" id="modalhiddenbtn">取消</button> -->
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div id="technicReference"></div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div id="video"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <div class="el-example">
+                    <button class="btn btn-primary save" type="submit" id="quick_techinc_form_submit"><i class="far fa-save mr-1"></i>{% trans "Save" %}</button>
+                    <button type="button"  class="btn btn-secondary"  data-dismiss="modal" aria-label="Close">{% trans "Cancel" %}</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<a href="#" class="tile-wrapper" data-toggle="modal" hidden id ='quick_category_btn' data-target="#quick_category"></a>
+<div class="modal fade" id="quick_category" tabindex="-1" role="dialog" aria-labelledby="form" aria-hidden="true"
+    style="display: none;z-index: 1100;">
+    <div class="modal-dialog modal-lg modal-dialog-scrollable " role="document">
+        <div class="modal-content" id="quick_category_form_div">
+            <div class="modal-header">
+                <h5 class="modal-title">
+                    {% trans "Create Category" %}
+                </h5>
+                <button type="button" class="close text-dark" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body px-1 px-sm-3">
+                <form id="quick_category_form" name="categoryForm" class="pd-0" method="post" enctype="multipart/form-data">
+                    <div class="card card-reflow">
+                        <div class="card-body p-0 ">
+                            <fieldset class="scrollbar mb-3">
+                                <div class="technicInfo">
+                                    <div hidden>
+                                        <input type="text" name="mb020">
+                                        <input type="text" name="ma007">
+                                        <input type="text" name="ma001">
+                                        <input type="button" class="btn btn-primary" id="selectCategorybtn">
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12 col-sm-6">
+                                            <div id="edtMA002"></div>
+                                        </div>
+                                        <div class="col-12 col-sm-6">
+                                            <div id="edtMA002C"></div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div id="edtMA003"></div>
+                                        </div>
+                                        <div class="col-12 col-sm-4">
+                                            <div id="edtMA005"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <div class="el-example">
+                    <button class="btn btn-primary save" type="submit" id="quick_category_form_submit"><i class="far fa-save mr-1"></i>{% trans "Save" %}</button>
+                    <button type="button"  class="btn btn-secondary"  data-dismiss="modal" aria-label="Close">{% trans "Cancel" %}</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

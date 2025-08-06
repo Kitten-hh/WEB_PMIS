@@ -1,0 +1,1683 @@
+{% extends 'PMISLooper/index.html' %}
+{%load static %}
+{% load i18n %}
+{% load md5url %}
+{%block form_css%}
+{{block.super}}
+<link rel="stylesheet" href="{% static 'PMISLooper/assets/vendor/icofont/icofont.min.css'%}">
+<link rel="stylesheet" href="{% static 'PMISLooper/assets/stylesheets/goal/overall/quarterly_goal.css'%}" data-skin="default">
+<link rel="stylesheet" href="{% static 'PMISLooper/assets/stylesheets/goal/overall/quarterly_goal_dark.css'%}" data-skin="dark">
+{%endblock%}
+{%block content %}
+{{block.super}}
+<div class="page-inner">
+    <div id="qGoals_pc" class="page-content quarterly_Goals_pc d-lg-block d-none">
+        <div class="container-fluid">
+            <!-- start page title -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="page-title-box">
+                        <h5 class="mb-3 goal_title">{% trans "Quarterly Goal"%}</h5>
+                        <div class="d-flex align-items-center justify-content-between">
+                        <div class="page-title-left"></div>
+                        <div class="page-title-right">
+                            <ol class="breadcrumb m-0">
+                                <li class="breadcrumb-item d-flex align-items-center">
+                                    <a href="javascript: void(0);">{% trans "Goals for"%} 2020</a>
+                                </li>
+                                <li class="breadcrumb-item period"></li>
+                            </ol>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- end page title -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="card goals_wrap">
+                        <div class="card-body">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-10 monthly">
+                                    <div class="row quaGoal">
+                                        <div class="col-lg-12 col-xl-5">
+                                            <div class="home-img text-center">
+                                                <div class="animation-2"></div>
+                                                <div class="animation-3"></div>
+                                                <img src="../../../../static/PMISLooper/assets/images/img-3.png"
+                                                    alt="">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12 col-xl-7">
+                                            <div class="manager_quarterly_goal">
+                                                <div class="row m-0 justify-content-between align-items-center">
+                                                    <span class="goals_ti">{% trans "Quarterly Goals"%}</span>
+                                                    <div class="goals_ti_right form-inline">
+                                                    <div class="text-right">
+                                                        <span class="save"></span>
+                                                        <a href="javascript:void(0);" class="lookup mr-2">
+                                                            <i class="fas fa-book-open"></i>
+                                                        </a>
+                                                        <a href="javascript:void(0);" class="edit mr-2">
+                                                            <i class="fas fa-edit"></i>
+                                                        </a>
+                                                        <a href="javascript:void(0);" class="expandGoals">
+                                                            <i class="fas fa-expand-alt"></i>
+                                                        </a>
+                                                    </div>
+                                                    </div>
+                                                </div>
+                                                <ul class="all_goals">
+                                                    <!--
+                                                    <li class="mb-2 pl-3 pr-3 d-flex justify-content-start">
+                                                        <span class="task_num">01 <i class="fas fa-arrow-right pl-2"></i></span>
+                                                        <p class="task_contents">Create Rest Api Services. (hb)</p>
+                                                    </li>
+                                                    -->
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <ul class="nav nav-pills justify-content-center monthly-tab" role="tablist">
+                                        <li class="nav-item mr-2"><a class="nav-link active" data-toggle="pill"
+                                                href="#June" role="tab"> {% trans "June"%} </a></li>
+                                        <li class="nav-item mr-2"><a class="nav-link" data-toggle="pill" href="#Aug"
+                                                role="tab"> {% trans "August"%} </a></li>
+                                        <li class="nav-item"><a class="nav-link" data-toggle="pill" href="#Sept"
+                                                role="tab"> {% trans "September"%} </a></li>
+                                    </ul>
+                                    <div class="tab-content"> 
+                                        <div class="tab-pane fade show active month-1" id="June" role="tabpanel">
+                                            <div class="monthly-1 blog-quota mt-4">
+                                                <div class="row align-items-center">
+                                                    <div class="col-lg-3 col-xl-4">
+                                                        <h2 class="mb-0 month text-lg-left text-center">June</h2>
+                                                    </div>
+                                                    <div class="col-lg-9 col-xl-8">
+                                                        <ul class="week-filter nav justify-content-center justify-content-xl-end"
+                                                            id="week">
+                                                            <li class="nav-item">
+                                                                <a class="nav-link" id="week1"
+                                                                    href="#week1_st">
+                                                                    {% trans "Week1"%}
+                                                                </a>
+                                                            </li>
+                                                            <li class="nav-item">
+                                                                <a class="nav-link" id="week2"
+                                                                    href="#week2_st">
+                                                                    {% trans "Week2"%}
+                                                                </a>
+                                                            </li>
+                                                            <li class="nav-item">
+                                                                <a class="nav-link" id="week3"
+                                                                    href="#week3_st">
+                                                                    {% trans "Week3"%}
+                                                                </a>
+                                                            </li>
+                                                            <li class="nav-item">
+                                                                <a class="nav-link" id="week4"
+                                                                    href="#week4_st">
+                                                                    {% trans "Week4"%}
+                                                                </a>
+                                                            </li>
+                                                            <li class="nav-item">
+                                                                <a class="nav-link" id="week5"
+                                                                    href="#week5_st">
+                                                                    {% trans "Week5"%}
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="monthly-1_goals">
+                                                    <div class="row">
+                                                        <div class="col-12">
+                                                            <div class="month_goals">
+                                                                <div class="row m-0 justify-content-between">
+                                                                    <div class="d-flex" style="flex: 1 0 auto;justify-content: center;">
+                                                                        <h5 class="text-center text-primary">{% trans "Monthly Goals"%}</h5>
+                                                                    </div>                                                                    
+                                                                    <div class="text-right">
+                                                                        <span class="save"></span>
+                                                                        <a href="javascript:void(0);" class="edit">
+                                                            <i class="fas fa-edit"></i>
+                                                        </a>
+                                                                    </div>
+                                                                </div>
+                                                                <ul class="task-inner">
+                                                                    <!--
+                                                                    <li class="task d-flex mb-2">
+                                                                        <span>1. 00188 Knowledge Based System</span>
+                                                                    </li>
+                                                                    -->
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="mt-50 desc_week1">
+                                                    <div class="weekly_task">
+                                                        <div class="widget weekly_task_widget">
+                                                            <div class="row m-0 justify-content-between">
+                                                                <h5 id="week1_st" class="widget-title mb-4">{% trans "Week1"%}</h5>
+                                                                <div class="text-right">
+                                                                    <a href="javascript:void(0);" class="list">
+                                                                        <i class="fas fa-list"></i>
+                                                                    </a>
+                                                                    <span class="save"></span>
+                                                                    <a href="javascript:void(0);" class="edit">
+                                                                        <i class="fas fa-edit"></i>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                            <div class="task">
+                                                                <ul class="task-inner">
+                                                                    <!--
+                                                                    <li class="task-item">
+                                                                        <span class="mr-2">1.討論需求及設計自動排期</span>
+                                                                        <i class="far fa-times-circle"></i>
+                                                                    </li>
+                                                                    -->
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                        <div class="widget weekly_task_widget">
+                                                            <div class="row m-0 justify-content-between">
+                                                                <h5 id="week2_st" class="widget-title mb-4">{% trans "Week2"%}</h5>
+                                                                <div class="text-right">
+                                                                    <a href="javascript:void(0);" class="list">
+                                                                        <i class="fas fa-list"></i>
+                                                                    </a>
+                                                                    <span class="save"></span>
+                                                                    <a href="javascript:void(0);" class="edit">
+                                                                        <i class="fas fa-edit"></i>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                            <div class="task">
+                                                                <ul class="task-inner">
+                                                                    <!--
+                                                                    <li class="task-item">
+                                                                        <span
+                                                                            class="mr-2">1.開始模擬排期及完成參數定義介面及Session內排期的邏</span>
+                                                                        <i class="far fa-times-circle"></i>
+                                                                    </li>
+                                                                    -->
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                        <div class="widget weekly_task_widget">
+                                                            <div class="row m-0 justify-content-between">
+                                                                <h5 id="week3_st" class="widget-title mb-4">{% trans "Week3"%}</h5>
+                                                                <div class="text-right">
+                                                                    <a href="javascript:void(0);" class="list">
+                                                                        <i class="fas fa-list"></i>
+                                                                    </a>
+                                                                    <span class="save"></span>
+                                                                    <a href="javascript:void(0);" class="edit">
+                                                                        <i class="fas fa-edit"></i>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                            <div class="task">
+                                                                <ul class="task-inner">
+                                                                    <!--
+                                                                    <li class="task-item">
+                                                                        <span class="mr-2">1.Have both the real time
+                                                                            PIMS with lower version available</span>
+                                                                        <i class="far fa-times-circle"></i>
+                                                                    </li>
+                                                                    -->
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="weekly_task">
+                                                        <div class="widget weekly_task_widget">
+                                                            <div class="row m-0 justify-content-between">
+                                                                <h5 id="week4_st" class="widget-title mb-4">{% trans "Week4"%}</h5>
+                                                                <div class="text-right">
+                                                                    <a href="javascript:void(0);" class="list">
+                                                                        <i class="fas fa-list"></i>
+                                                                    </a>
+                                                                    <span class="save"></span>
+                                                                    <a href="javascript:void(0);" class="edit">
+                                                                        <i class="fas fa-edit"></i>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                            <div class="task">
+                                                                <ul class="task-inner">
+                                                                    <!--
+                                                                    <li class="task-item">
+                                                                        <span class="mr-2">1.完成模擬排期的工具頁面</span>
+                                                                        <i class="far fa-times-circle"></i>
+                                                                    </li>
+                                                                    -->
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                        <div class="widget weekly_task_widget">
+                                                            <div class="row m-0 justify-content-between">
+                                                                <h5 id="week5_st" class="widget-title mb-4">{% trans "Week5"%}</h5>
+                                                                <div class="text-right">
+                                                                    <a href="javascript:void(0);" class="list">
+                                                                        <i class="fas fa-list"></i>
+                                                                    </a>
+                                                                    <span class="save"></span>
+                                                                    <a href="javascript:void(0);" class="edit">
+                                                                        <i class="fas fa-edit"></i>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                            <div class="task">
+                                                                <ul class="task-inner">
+                                                                    <!--
+                                                                    <li class="task-item">
+                                                                        <span
+                                                                            class="mr-2">1.開始進行Schedule的編程工作</span>
+                                                                        <i class="far fa-times-circle"></i>
+                                                                    </li>
+                                                                    -->
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane fade month-2" id="Aug" role="tabpanel">
+                                            <div class="monthly-1 blog-quota mt-4">
+                                                <div class="row align-items-center">
+                                                    <div class="col-lg-3 col-xl-4">
+                                                        <h2 class="mb-0 month">{% trans "August"%}</h2>
+                                                    </div>
+                                                    <div class="col-lg-9 col-xl-8">
+                                                        <ul class="week-filter nav justify-content-center justify-content-lg-end"
+                                                            id="week">
+                                                            <li class="nav-item">
+                                                                <a class="nav-link"
+                                                                    href="#week1_nd">
+                                                                    {% trans "Week1"%}
+                                                                </a>
+                                                            </li>
+                                                            <li class="nav-item">
+                                                                <a class="nav-link" id="week2"
+                                                                    href="#week2_nd">
+                                                                    {% trans "Week2"%}
+                                                                </a>
+                                                            </li>
+                                                            <li class="nav-item">
+                                                                <a class="nav-link" id="week3"
+                                                                    href="#week3_nd">
+                                                                    {% trans "Week3"%}
+                                                                </a>
+                                                            </li>
+                                                            <li class="nav-item">
+                                                                <a class="nav-link" id="week4"
+                                                                    href="#week4_nd">
+                                                                    {% trans "Week4"%}
+                                                                </a>
+                                                            </li>
+                                                            <li class="nav-item">
+                                                                <a class="nav-link" id="week5"
+                                                                    href="#week5_nd">
+                                                                    {% trans "Week5"%}
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="monthly-1_goals">
+                                                    <div class="row">
+                                                        <div class="col-12">
+                                                            <div class="month_goals">
+                                                                <div class="row m-0 justify-content-between">
+                                                                    <div class="d-flex" style="flex: 1 0 auto;justify-content: center;">
+                                                                        <h5 class="text-center text-primary">{% trans "Monthly Goals"%}</h5>
+                                                                    </div>                                                                     
+                                                                    <span class="goals_ti"></span>
+                                                                    <div class="text-right">
+                                                                        <span class="save"></span>
+                                                                        <a href="javascript:void(0);" class="edit">
+                                                            <i class="fas fa-edit"></i>
+                                                        </a>
+                                                                    </div>
+                                                                </div>
+                                                                <ul class="task-inner">
+                                                                    <!--
+                                                                    <li class="task d-flex mb-2">
+                                                                        <span>What can be accomplished of the new
+                                                                            scheduling at the end of the month</span>
+                                                                        <div class="ml-auto">
+                                                                            <a href="javascript:void(0);"
+                                                                                class="text-info" data-toggle="tooltip"
+                                                                                data-placement="top" title=""
+                                                                                data-original-title="Delete">
+                                                                                <i class="far fa-times-circle"></i>
+                                                                            </a>
+                                                                        </div>
+                                                                    </li>
+                                                                    -->
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="mt-50 desc_week1">
+                                                    <div class="weekly_task">
+                                                        <div class="widget weekly_task_widget">
+                                                            <div class="row m-0 justify-content-between">
+                                                                <h5 id="week1_nd" class="widget-title mb-4">{% trans "Week1"%}</h5>
+                                                                <div class="text-right">
+                                                                    <a href="javascript:void(0);" class="list">
+                                                                        <i class="fas fa-list"></i>
+                                                                    </a>
+                                                                    <span class="save"></span>
+                                                                    <a href="javascript:void(0);" class="edit">
+                                                                        <i class="fas fa-edit"></i>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                            <div class="task">
+                                                                <ul class="task-inner">
+                                                                    <!--
+                                                                    <li class="task-item">
+                                                                        <span class="mr-2">1.完成Single
+                                                                            Page基類的通用新增，修改，刪除保存功能</span>
+                                                                        <i class="far fa-times-circle"></i>
+                                                                    </li>
+                                                                    -->
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                        <div class="widget weekly_task_widget">
+                                                            <div class="row m-0 justify-content-between">
+                                                                <h5 id="week2_nd" class="widget-title mb-4">{% trans "Week2"%}</h5>
+                                                                <div class="text-right">
+                                                                    <a href="javascript:void(0);" class="list">
+                                                                        <i class="fas fa-list"></i>
+                                                                    </a>
+                                                                    <span class="save"></span>
+                                                                    <a href="javascript:void(0);" class="edit">
+                                                                        <i class="fas fa-edit"></i>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                            <div class="task">
+                                                                <ul class="task-inner">
+                                                                    <!--
+                                                                    <li class="task-item">
+                                                                        <span class="mr-2">1.完善設置參數功能及Get Priority
+                                                                            in Session邏輯</span>
+                                                                        <i class="far fa-times-circle"></i>
+                                                                    </li>
+                                                                    -->
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                        <div class="widget weekly_task_widget">
+                                                            <div class="row m-0 justify-content-between">
+                                                                <h5 id="week3_nd" class="widget-title mb-4">{% trans "Week3"%}</h5>
+                                                                <div class="text-right">
+                                                                    <a href="javascript:void(0);" class="list">
+                                                                        <i class="fas fa-list"></i>
+                                                                    </a>
+                                                                    <span class="save"></span>
+                                                                    <a href="javascript:void(0);" class="edit">
+                                                                        <i class="fas fa-edit"></i>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                            <div class="task">
+                                                                <ul class="task-inner">
+                                                                    <!--
+                                                                    <li class="task-item">
+                                                                        <span class="mr-2">1. 完善Get Priority in
+                                                                            Session邏輯及Quarterly Schedule及Fixed Day
+                                                                            Schedule</span>
+                                                                        <i class="far fa-times-circle"></i>
+                                                                    </li>
+                                                                    -->
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="weekly_task">
+                                                        <div class="widget weekly_task_widget">
+                                                            <div class="row m-0 justify-content-between">
+                                                                <h5 id="week4_nd" class="widget-title mb-4">{% trans "Week4"%}</h5>
+                                                                <div class="text-right">
+                                                                    <a href="javascript:void(0);" class="list">
+                                                                        <i class="fas fa-list"></i>
+                                                                    </a>
+                                                                    <span class="save"></span>
+                                                                    <a href="javascript:void(0);" class="edit">
+                                                                        <i class="fas fa-edit"></i>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                            <div class="task">
+                                                                <ul class="task-inner">
+                                                                    <!--
+                                                                    <li class="task-item">
+                                                                        <span class="mr-2">1.完成Quarterly
+                                                                            Schedule及分配計畫日期的邏輯</span>
+                                                                        <i class="far fa-times-circle"></i>
+                                                                    </li>
+                                                                    -->
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                        <div class="widget weekly_task_widget">
+                                                            <div class="row m-0 justify-content-between">
+                                                                <h5 id="week5_nd" class="widget-title mb-4">{% trans "Week5"%}</h5>
+                                                                <div class="text-right">
+                                                                    <a href="javascript:void(0);" class="list">
+                                                                        <i class="fas fa-list"></i>
+                                                                    </a>
+                                                                    <span class="save"></span>
+                                                                    <a href="javascript:void(0);" class="edit">
+                                                                        <i class="fas fa-edit"></i>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                            <div class="task">
+                                                                <ul class="task-inner">
+                                                                    <!--
+                                                                    <li class="task-item">
+                                                                        <span class="mr-2">1. 完成排期顯示結果頁面</span>
+                                                                        <i class="far fa-times-circle"></i>
+                                                                    </li>
+                                                                    -->
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane fade month-3" id="Sept" role="tabpanel">
+                                            <div class="monthly-1 blog-quota mt-4">
+                                                <div class="row align-items-center">
+                                                    <div class="col-lg-3 col-xl-4">
+                                                        <h2 class="mb-0 month">{% trans "September"%}</h2>
+                                                    </div>
+                                                    <div class="col-lg-9 col-xl-8">
+                                                        <ul class="week-filter nav justify-content-center justify-content-lg-end"
+                                                            id="week">
+                                                            <li class="nav-item">
+                                                                <a class="nav-link" id="week1"
+                                                                    href="#week1_rd">
+                                                                    {% trans "Week1"%}
+                                                                </a>
+                                                            </li>
+                                                            <li class="nav-item">
+                                                                <a class="nav-link" id="week2"
+                                                                    href="#week2_rd">
+                                                                    {% trans "Week2"%}
+                                                                </a>
+                                                            </li>
+                                                            <li class="nav-item">
+                                                                <a class="nav-link" id="week3"
+                                                                    href="#week3_rd">
+                                                                    {% trans "Week3"%}
+                                                                </a>
+                                                            </li>
+                                                            <li class="nav-item">
+                                                                <a class="nav-link" id="week4"
+                                                                    href="#week4_rd">
+                                                                    {% trans "Week4"%}
+                                                                </a>
+                                                            </li>
+                                                            <li class="nav-item">
+                                                                <a class="nav-link" id="week5"
+                                                                    href="#week5_rd">
+                                                                    {% trans "Week5"%}
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="monthly-1_goals">
+                                                    <div class="row">
+                                                        <div class="col-12">
+                                                            <div class="month_goals">
+                                                                <div class="row m-0 justify-content-between">
+                                                                    <div class="d-flex" style="flex: 1 0 auto;justify-content: center;">
+                                                                        <h5 class="text-center text-primary">{% trans "Monthly Goals"%}</h5>
+                                                                    </div>                                                                    
+                                                                    <div class="text-right">
+                                                                        <span class="save"></span>
+                                                                        <a href="javascript:void(0);" class="edit">
+                                                            <i class="fas fa-edit"></i>
+                                                        </a>
+                                                                    </div>
+                                                                </div>
+                                                                <ul class="task-inner">
+                                                                    <!--
+                                                                    <li class="task d-flex mb-2">
+                                                                        <span>Cater for Django Solution Type and tidy up
+                                                                            and standardized at least 3 technical
+                                                                            daily.</span>
+                                                                        <div class="ml-auto">
+                                                                            <a href="javascript:void(0);"
+                                                                                class="text-info" data-toggle="tooltip"
+                                                                                data-placement="top" title=""
+                                                                                data-original-title="Delete">
+                                                                                <i class="far fa-times-circle"></i>
+                                                                            </a>
+                                                                        </div>
+                                                                    </li>
+                                                                    -->
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="mt-50 desc_week1">
+                                                    <div class="weekly_task">
+                                                        <div class="widget weekly_task_widget">
+                                                            <div class="row m-0 justify-content-between">
+                                                                <h5 id="week1_rd" class="widget-title mb-4">{% trans "Week1"%}</h5>
+                                                                <div class="text-right">
+                                                                    <a href="javascript:void(0);" class="list">
+                                                                        <i class="fas fa-list"></i>
+                                                                    </a>
+                                                                    <span class="save"></span>
+                                                                    <a href="javascript:void(0);" class="edit">
+                                                                        <i class="fas fa-edit"></i>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                            <div class="task">
+                                                                <ul class="task-inner">
+                                                                    <!--
+                                                                    <li class="task-item">
+                                                                        <span class="mr-2">1. Fixed Day
+                                                                            Schedule的邏輯及修改原Java
+                                                                            Schedule生成Appraisal和Goal及TaskEnquiry_Frm中Past
+                                                                            8 Day表</span>
+                                                                        <i class="far fa-times-circle"></i>
+                                                                    </li>
+                                                                    -->
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                        <div class="widget weekly_task_widget">
+                                                            <div class="row m-0 justify-content-between">
+                                                                <h5 id="week2_rd" class="widget-title mb-4">{% trans "Week2"%}</h5>
+                                                                <div class="text-right">
+                                                                    <a href="javascript:void(0);" class="list">
+                                                                        <i class="fas fa-list"></i>
+                                                                    </a>
+                                                                    <span class="save"></span>
+                                                                    <a href="javascript:void(0);" class="edit">
+                                                                        <i class="fas fa-edit"></i>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                            <div class="task">
+                                                                <ul class="task-inner">
+                                                                    <!--
+                                                                    <li class="task-item">
+                                                                        <span
+                                                                            class="mr-2">1.完成任務變更時Schedule邏輯</span>
+                                                                        <i class="far fa-times-circle"></i>
+                                                                    </li>
+                                                                    -->
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                        <div class="widget weekly_task_widget">
+                                                            <div class="row m-0 justify-content-between">
+                                                                <h5 id="week3_rd" class="widget-title mb-4">{% trans "Week3"%}</h5>
+                                                                <div class="text-right">
+                                                                    <a href="javascript:void(0);" class="list">
+                                                                        <i class="fas fa-list"></i>
+                                                                    </a>
+                                                                    <span class="save"></span>
+                                                                    <a href="javascript:void(0);" class="edit">
+                                                                        <i class="fas fa-edit"></i>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                            <div class="task">
+                                                                <ul class="task-inner">
+                                                                    <li class="task-item">
+                                                                        <!-- <span class="mr-2"></span>
+                                                                        <i class="far fa-times-circle"></i> -->
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="weekly_task">
+                                                        <div class="widget weekly_task_widget">
+                                                            <div class="row m-0 justify-content-between">
+                                                                <h5 id="week4_rd" class="widget-title mb-4">{% trans "Week4"%}</h5>
+                                                                <div class="text-right">
+                                                                    <a href="javascript:void(0);" class="list">
+                                                                        <i class="fas fa-list"></i>
+                                                                    </a>
+                                                                    <span class="save"></span>
+                                                                    <a href="javascript:void(0);" class="edit">
+                                                                        <i class="fas fa-edit"></i>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                            <div class="task">
+                                                                <ul class="task-inner">
+                                                                    <li class="task-item">
+                                                                        <!-- <span class="mr-2"></span>
+                                                                        <i class="far fa-times-circle"></i> -->
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                        <div class="widget weekly_task_widget">
+                                                            <div class="row m-0 justify-content-between">
+                                                                <h5 id="week5_rd" class="widget-title mb-4">{% trans "Week5"%}</h5>
+                                                                <div class="text-right">
+                                                                    <a href="javascript:void(0);" class="list">
+                                                                        <i class="fas fa-list"></i>
+                                                                    </a>
+                                                                    <span class="save"></span>
+                                                                    <a href="javascript:void(0);" class="edit">
+                                                                        <i class="fas fa-edit"></i>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                            <div class="task">
+                                                                <ul class="task-inner">
+                                                                    <li class="task-item">
+                                                                        <!-- <span class="mr-2">(5 of 5)App Server(00298)</span>
+                                                                        <i class="far fa-times-circle"></i> -->
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- end row -->
+        </div><!-- container-fluid -->
+    </div>
+
+    <div id="qGoals_mobile" class="page-content quarterly_Goals_m d-block d-lg-none">
+        <div class="container-fluid">
+            <!-- start page title -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="page-title-box d-flex align-items-center justify-content-between">
+                        <div class="mb-0 page-title-left"></div>
+                        <div class="page-title-right">
+                            <ol class="breadcrumb m-0">
+                                <li class="breadcrumb-item period"></li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- end page title -->
+            <div class="row">
+                <div class="col-12 p-2">
+                    <div class="manager_quarterly_goal">
+                        <div class="row m-0 mb-2 justify-content-between align-items-center">
+                            <span class="goals_ti">{% trans "Quarterly Goals"%}</span>
+                            <div class="goals_ti_right form-inline">
+                            <div class="text-right">
+                                <span class="save"></span>
+                                <a href="javascript:void(0);" class="lookup mr-1">
+                                    <i class="fas fa-book-open"></i>
+                                </a>                                
+                                <a href="javascript:void(0);" class="edit mr-1">
+                                    <i class="fas fa-edit"></i>
+                                </a>
+                                <a href="javascript:void(0);" class="expandGoals">
+                                    <i class="fas fa-expand-alt"></i>
+                                </a>
+                            </div>
+                            </div>
+                        </div>
+                        <ul class="all_goals">
+                            <!--
+                            <li class="mb-2 d-flex justify-content-start">
+                                <i class="icofont-tick-mark mr-2"></i>
+                                <p class="mb-0">Create Rest Api Services. (hb)</p>
+                            </li>
+                            -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 p-2">
+                    <div class="card goals_wrap">
+                        <div class="card-header ">
+                            <ul class="nav nav-tabs card-header-tabs justify-content-center monthly-tab">
+                                <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#june">
+                                        <h6 class="mb-0">{% trans "June"%}</h6>
+                                    </a></li>
+                                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#aug">
+                                        <h6 class="mb-0">{% trans "August"%}</h6>
+                                    </a></li>
+                                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#sept">
+                                        <h6 class="mb-0">{% trans "September"%}</h6>
+                                    </a></li>
+                            </ul>
+                        </div>
+                        <div class="card-body">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-10 monthly">
+                                    <div class="tab-content">
+                                        <div class="tab-pane fade show active month-1" id="june" role="tabpanel">
+                                            <div class="monthly-1 blog-quota">
+                                                <div class="row align-items-center mt-3">
+                                                    <div class="col-lg-6">
+                                                        <div class="week-filter-wrap">
+                                                            <ul class="week-filter nav justify-content-center justify-content-lg-end"
+                                                                id="week">
+                                                                <li class="nav-item">
+                                                                    <a class="nav-link week-item" id="week1" href="#week1_st_mobile">
+                                                                        {% trans "Week1"%}
+                                                                    </a>
+                                                                </li>
+                                                                <li class="nav-item">
+                                                                    <a class="nav-link week-item" id="week2" href="#week2_st_mobile">
+                                                                        {% trans "Week2"%}
+                                                                    </a>
+                                                                </li>
+                                                                <li class="nav-item">
+                                                                    <a class="nav-link week-item" id="week3" href="#week3_st_mobile">
+                                                                        {% trans "Week3"%}
+                                                                    </a>
+                                                                </li>
+                                                                <li class="nav-item">
+                                                                    <a class="nav-link week-item" id="week4" href="#week4_st_mobile">
+                                                                        {% trans "Week4"%}
+                                                                    </a>
+                                                                </li>
+                                                                <li class="nav-item">
+                                                                    <a class="nav-link week-item" id="week5" href="#week5_st_mobile">
+                                                                        {% trans "Week5"%}
+                                                                    </a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="monthly-1_goals">
+                                                    <div class="row">
+                                                        <div class="col-12">
+                                                            <div class="month_goals">
+                                                                <div class="row m-0 justify-content-between">
+                                                                    <div class="d-flex" style="flex: 1 0 auto;justify-content: center;">
+                                                                        <h5 class="text-center text-primary">{% trans "Monthly Goals"%}</h5>
+                                                                    </div>                                                                     
+                                                                    <div class="text-right">
+                                                                        <span class="save"></span>
+                                                                        <a href="javascript:void(0);" class="edit">
+                                                            <i class="fas fa-edit"></i>
+                                                        </a>
+                                                                    </div>
+                                                                </div>
+                                                                <ul class="task-inner">
+                                                                    <!--
+                                                                    <li class="task d-flex mb-2">
+                                                                        <span>1. 00188 Knowledge Based System</span>
+                                                                    </li>
+                                                                    -->
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="mt-50 desc_week1">
+                                                    <div class="row align-items-center">
+                                                        <div class="col-12">
+                                                            <div id="accordion1" class="card-expansion">
+                                                                <!-- .card -->
+                                                                <div class="card card-expansion-item expanded mb-24">
+                                                                    <div class="card-header border-0" id="week1_st_mobile">
+                                                                        <button
+                                                                            class="btn btn-reset d-flex justify-content-between w-100"
+                                                                            data-toggle="collapse"
+                                                                            data-target="#collapseOne1"
+                                                                            aria-expanded="true"
+                                                                            aria-controls="collapseOne1">
+                                                                            <span
+                                                                                class="week_title text-primary">{% trans "Week1"%}<span>01</span></span>
+                                                                            <span class="collapse-indicator"><i
+                                                                                    class="fa fa-fw fa-chevron-down"></i></span>
+                                                                        </button>
+                                                                    </div>
+                                                                    <div id="collapseOne1" class="collapse show"
+                                                                        aria-labelledby="weekly1"
+                                                                        data-parent="#accordion1">
+                                                                        <div class="card-body">
+                                                                            <div class="text-right">
+                                                                                <a href="javascript:void(0);" class="list" title="" aria-describedby="popover587759">
+                                                                                    <i class="fas fa-list"></i>
+                                                                                </a>
+                                                                                <span class="save"></span>
+                                                                                <a href="javascript:void(0);" class="edit" title="" aria-describedby="popover587759">
+                                                                                    <i class="fas fa-edit"></i>
+                                                                                </a>
+                                                                            </div>                                                                            
+                                                                            <ul class="task-inner">
+                                                                                <!--
+                                                                                <li class="task-item">
+                                                                                    <span
+                                                                                        class="mr-2">1.討論需求及設計自動排期</span>
+                                                                                    <i class="far fa-times-circle"></i>
+                                                                                </li>
+                                                                                -->
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+                                                                </div><!-- /.card -->
+                                                                <!-- .card -->
+                                                                <div class="card card-expansion-item mb-24">
+                                                                    <div class="card-header border-0" id="week2_st_mobile">
+                                                                        <button
+                                                                            class="btn btn-reset d-flex justify-content-between w-100 collapsed"
+                                                                            data-toggle="collapse"
+                                                                            data-target="#collapseTwo1"
+                                                                            aria-expanded="false"
+                                                                            aria-controls="collapseTwo1"><span
+                                                                                class="week_title text-primary">{% trans "Week2"%}
+                                                                                <span>02</span></span> <span
+                                                                                class="collapse-indicator"><i
+                                                                                    class="fa fa-fw fa-chevron-down"></i></span></button>
+                                                                    </div>
+                                                                    <div id="collapseTwo1" class="collapse"
+                                                                        aria-labelledby="weekly2"
+                                                                        data-parent="#accordion1">
+                                                                        <div class="card-body">
+                                                                            <div class="text-right">
+                                                                                <a href="javascript:void(0);" class="list" title="" aria-describedby="popover587759">
+                                                                                    <i class="fas fa-list"></i>
+                                                                                </a>
+                                                                                <span class="save"></span>
+                                                                                <a href="javascript:void(0);" class="edit" title="" aria-describedby="popover587759">
+                                                                                    <i class="fas fa-edit"></i>
+                                                                                </a>
+                                                                            </div>                                                                            
+                                                                            <ul class="task-inner">
+                                                                                <!--
+                                                                                <li class="task-item">
+                                                                                    <span
+                                                                                        class="mr-2">1.開始模擬排期及完成參數定義介面及Session內排期的邏</span>
+                                                                                    <i class="far fa-times-circle"></i>
+                                                                                </li>
+                                                                                -->
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+                                                                </div><!-- /.card -->
+                                                                <!-- .card -->
+                                                                <div class="card card-expansion-item mb-24">
+                                                                    <div class="card-header border-0" id="week3_st_mobile">
+                                                                        <button
+                                                                            class="btn btn-reset d-flex justify-content-between w-100 collapsed"
+                                                                            data-toggle="collapse"
+                                                                            data-target="#collapseThree1"
+                                                                            aria-expanded="false"
+                                                                            aria-controls="collapseThree1"><span
+                                                                                class="week_title text-primary">{% trans "Week3"%}
+                                                                                <span>03</span></span> <span
+                                                                                class="collapse-indicator"><i
+                                                                                    class="fa fa-fw fa-chevron-down"></i></span></button>
+                                                                    </div>
+                                                                    <div id="collapseThree1" class="collapse"
+                                                                        aria-labelledby="weekly3"
+                                                                        data-parent="#accordion1">
+                                                                        <div class="card-body">
+                                                                            <div class="text-right">
+                                                                                <a href="javascript:void(0);" class="list" title="" aria-describedby="popover587759">
+                                                                                    <i class="fas fa-list"></i>
+                                                                                </a>
+                                                                                <span class="save"></span>
+                                                                                <a href="javascript:void(0);" class="edit" title="" aria-describedby="popover587759">
+                                                                                    <i class="fas fa-edit"></i>
+                                                                                </a>
+                                                                            </div>                                                                            
+                                                                            <ul class="task-inner">
+                                                                                <!--
+                                                                                <li class="task-item">
+                                                                                    <span class="mr-2">1.Have both the
+                                                                                        real time PIMS with lower
+                                                                                        version available</span>
+                                                                                    <i class="far fa-times-circle"></i>
+                                                                                </li>
+                                                                                -->
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+                                                                </div><!-- /.card -->
+                                                                <div class="card card-expansion-item mb-24">
+                                                                    <div class="card-header border-0" id="week4_st_mobile">
+                                                                        <button
+                                                                            class="btn btn-reset d-flex justify-content-between w-100 collapsed"
+                                                                            data-toggle="collapse"
+                                                                            data-target="#collapseFour1"
+                                                                            aria-expanded="false"
+                                                                            aria-controls="collapseFour1"><span
+                                                                                class="week_title text-primary">{% trans "Week4"%}
+                                                                                <span>04</span></span> <span
+                                                                                class="collapse-indicator"><i
+                                                                                    class="fa fa-fw fa-chevron-down"></i></span></button>
+                                                                    </div>
+                                                                    <div id="collapseFour1" class="collapse"
+                                                                        aria-labelledby="weekly4"
+                                                                        data-parent="#accordion1">
+                                                                        <div class="card-body">
+                                                                            <div class="text-right">
+                                                                                <a href="javascript:void(0);" class="list" title="" aria-describedby="popover587759">
+                                                                                    <i class="fas fa-list"></i>
+                                                                                </a>
+                                                                                <span class="save"></span>
+                                                                                <a href="javascript:void(0);" class="edit" title="" aria-describedby="popover587759">
+                                                                                    <i class="fas fa-edit"></i>
+                                                                                </a>
+                                                                            </div>                                                                             
+                                                                            <ul class="task-inner">
+                                                                                <!--
+                                                                                <li class="task-item">
+                                                                                    <span
+                                                                                        class="mr-2">1.完成模擬排期的工具頁面</span>
+                                                                                    <i class="far fa-times-circle"></i>
+                                                                                </li>
+                                                                                -->
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+                                                                </div><!-- /.card -->
+                                                                <div class="card card-expansion-item mb-24">
+                                                                    <div class="card-header border-0" id="week5_st_mobile">
+                                                                        <button
+                                                                            class="btn btn-reset d-flex justify-content-between w-100 collapsed"
+                                                                            data-toggle="collapse"
+                                                                            data-target="#collapseFive1"
+                                                                            aria-expanded="false"
+                                                                            aria-controls="collapseFive1"><span
+                                                                                class="week_title text-primary">{% trans "Week5"%}
+                                                                                <span>05</span></span> <span
+                                                                                class="collapse-indicator"><i
+                                                                                    class="fa fa-fw fa-chevron-down"></i></span></button>
+                                                                    </div>
+                                                                    <div id="collapseFive1" class="collapse"
+                                                                        aria-labelledby="weekly5"
+                                                                        data-parent="#accordion1">
+                                                                        <div class="card-body">
+                                                                            <div class="text-right">
+                                                                                <a href="javascript:void(0);" class="list" title="" aria-describedby="popover587759">
+                                                                                    <i class="fas fa-list"></i>
+                                                                                </a>
+                                                                                <span class="save"></span>
+                                                                                <a href="javascript:void(0);" class="edit" title="" aria-describedby="popover587759">
+                                                                                    <i class="fas fa-edit"></i>
+                                                                                </a>
+                                                                            </div>                                                                             
+                                                                            <ul class="task-inner">
+                                                                                <!--
+                                                                                <li class="task-item">
+                                                                                    <span
+                                                                                        class="mr-2">1.開始進行Schedule的編程工作</span>
+                                                                                    <i class="far fa-times-circle"></i>
+                                                                                </li>
+                                                                                -->
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+                                                                </div><!-- /.card -->
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane fade month-2" id="aug" role="tabpanel">
+                                            <div class="monthly-1 blog-quota">
+                                                <div class="row align-items-center mt-3 mb-3">
+                                                    <div class="col-lg-6">
+                                                        <div class="week-filter-wrap">
+                                                            <ul class="week-filter nav justify-content-center justify-content-lg-end"
+                                                                id="week">
+                                                                <li class="nav-item">
+                                                                    <a class="nav-link week-item" id="week1" href="#week1_nd_mobile">
+                                                                        {% trans "Week1"%}
+                                                                    </a>
+                                                                </li>
+                                                                <li class="nav-item">
+                                                                    <a class="nav-link week-item" id="week2" href="#week2_nd_mobile">
+                                                                        {% trans "Week2"%}
+                                                                    </a>
+                                                                </li>
+                                                                <li class="nav-item">
+                                                                    <a class="nav-link week-item" id="week3" href="#week3_nd_mobile">
+                                                                        {% trans "Week3"%}
+                                                                    </a>
+                                                                </li>
+                                                                <li class="nav-item">
+                                                                    <a class="nav-link week-item" id="week4" href="#week4_nd_mobile">
+                                                                        {% trans "Week4"%}
+                                                                    </a>
+                                                                </li>
+                                                                <li class="nav-item">
+                                                                    <a class="nav-link week-item" id="week5" href="#week5_nd_mobile">
+                                                                        {% trans "Week5"%}
+                                                                    </a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="monthly-1_goals">
+                                                    <div class="row">
+                                                        <div class="col-12">
+                                                            <div class="month_goals">
+                                                                <div class="row m-0 justify-content-between">
+                                                                    <div class="d-flex" style="flex: 1 0 auto;justify-content: center;">
+                                                                        <h5 class="text-center text-primary">{% trans "Monthly Goals"%}</h5>
+                                                                    </div> 
+                                                                    <div class="text-right">
+                                                                        <span class="save"></span>
+                                                                        <a href="javascript:void(0);" class="edit">
+                                                            <i class="fas fa-edit"></i>
+                                                        </a>
+                                                                    </div>
+                                                                </div>
+                                                                <ul class="task-inner">
+                                                                    <!--
+                                                                    <li class="task d-flex mb-2">
+                                                                        <span>What can be accomplished of the new
+                                                                            scheduling at the end of the month</span>
+                                                                        <div class="ml-auto">
+                                                                            <a href="javascript:void(0);"
+                                                                                class="text-info" data-toggle="tooltip"
+                                                                                data-placement="top" title=""
+                                                                                data-original-title="Delete">
+                                                                                <i class="far fa-times-circle"></i>
+                                                                            </a>
+                                                                        </div>
+                                                                    </li>
+                                                                    -->
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="mt-50 desc_week1">
+                                                    <div class="row align-items-center">
+                                                        <div class="col-12">
+                                                            <div id="accordion2" class="card-expansion">
+                                                                <!-- .card -->
+                                                                <div class="card card-expansion-item expanded mb-24">
+                                                                    <div class="card-header border-0" id="week1_nd_mobile">
+                                                                        <button
+                                                                            class="btn btn-reset d-flex justify-content-between w-100"
+                                                                            data-toggle="collapse"
+                                                                            data-target="#collapseOne2"
+                                                                            aria-expanded="true"
+                                                                            aria-controls="collapseOne2">
+                                                                            <span
+                                                                                class="week_title text-primary">{% trans "Week1"%}<span>01</span></span>
+                                                                            <span class="collapse-indicator"><i
+                                                                                    class="fa fa-fw fa-chevron-down"></i></span>
+                                                                        </button>
+                                                                    </div>
+                                                                    <div id="collapseOne2" class="collapse show"
+                                                                        aria-labelledby="weekly1"
+                                                                        data-parent="#accordion2" style="">
+                                                                        <div class="card-body">
+                                                                            <div class="text-right">
+                                                                                <a href="javascript:void(0);" class="list" title="" aria-describedby="popover587759">
+                                                                                    <i class="fas fa-list"></i>
+                                                                                </a>
+                                                                                <span class="save"></span>
+                                                                                <a href="javascript:void(0);" class="edit" title="" aria-describedby="popover587759">
+                                                                                    <i class="fas fa-edit"></i>
+                                                                                </a>
+                                                                            </div>                                                                             
+                                                                            <ul class="task-inner">
+                                                                                <!--
+                                                                                <li class="task-item">
+                                                                                    <span class="mr-2">1.完成Single
+                                                                                        Page基類的通用新增，修改，刪除保存功能</span>
+                                                                                    <i class="far fa-times-circle"></i>
+                                                                                </li>
+                                                                                -->
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+                                                                </div><!-- /.card -->
+                                                                <!-- .card -->
+                                                                <div class="card card-expansion-item mb-24">
+                                                                    <div class="card-header border-0" id="week2_nd_mobile">
+                                                                        <button
+                                                                            class="btn btn-reset d-flex justify-content-between w-100 collapsed"
+                                                                            data-toggle="collapse"
+                                                                            data-target="#collapseTwo2"
+                                                                            aria-expanded="false"
+                                                                            aria-controls="collapseTwo2"><span
+                                                                                class="week_title text-primary">{% trans "Week2"%}
+                                                                                <span>02</span></span> <span
+                                                                                class="collapse-indicator"><i
+                                                                                    class="fa fa-fw fa-chevron-down"></i></span></button>
+                                                                    </div>
+                                                                    <div id="collapseTwo2" class="collapse"
+                                                                        aria-labelledby="weekly2"
+                                                                        data-parent="#accordion2">
+                                                                        <div class="card-body">
+                                                                            <div class="text-right">
+                                                                                <a href="javascript:void(0);" class="list" title="" aria-describedby="popover587759">
+                                                                                    <i class="fas fa-list"></i>
+                                                                                </a>
+                                                                                <span class="save"></span>
+                                                                                <a href="javascript:void(0);" class="edit" title="" aria-describedby="popover587759">
+                                                                                    <i class="fas fa-edit"></i>
+                                                                                </a>
+                                                                            </div>                                                                             
+                                                                            <ul class="task-inner">
+                                                                                <!--
+                                                                                <li class="task-item">
+                                                                                    <span class="mr-2">1.完善設置參數功能及Get
+                                                                                        Priority in Session邏輯</span>
+                                                                                    <i class="far fa-times-circle"></i>
+                                                                                </li>
+                                                                                -->
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+                                                                </div><!-- /.card -->
+                                                                <!-- .card -->
+                                                                <div class="card card-expansion-item mb-24">
+                                                                    <div class="card-header border-0" id="week3_nd_mobile">
+                                                                        <button
+                                                                            class="btn btn-reset d-flex justify-content-between w-100 collapsed"
+                                                                            data-toggle="collapse"
+                                                                            data-target="#collapseThree2"
+                                                                            aria-expanded="false"
+                                                                            aria-controls="collapseThree2"><span
+                                                                                class="week_title text-primary">{% trans "Week3"%}
+                                                                                <span>03</span></span> <span
+                                                                                class="collapse-indicator"><i
+                                                                                    class="fa fa-fw fa-chevron-down"></i></span></button>
+                                                                    </div>
+                                                                    <div id="collapseThree2" class="collapse"
+                                                                        aria-labelledby="weekly3"
+                                                                        data-parent="#accordion2">
+                                                                        <div class="card-body">
+                                                                            <div class="text-right">
+                                                                                <a href="javascript:void(0);" class="list" title="" aria-describedby="popover587759">
+                                                                                    <i class="fas fa-list"></i>
+                                                                                </a>
+                                                                                <span class="save"></span>
+                                                                                <a href="javascript:void(0);" class="edit" title="" aria-describedby="popover587759">
+                                                                                    <i class="fas fa-edit"></i>
+                                                                                </a>
+                                                                            </div>                                                                             
+                                                                            <ul class="task-inner">
+                                                                                <!--
+                                                                                <li class="task-item">
+                                                                                    <span class="mr-2">1. 完善Get Priority
+                                                                                        in Session邏輯及Quarterly
+                                                                                        Schedule及Fixed Day
+                                                                                        Schedule</span>
+                                                                                    <i class="far fa-times-circle"></i>
+                                                                                </li>
+                                                                                -->
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+                                                                </div><!-- /.card -->
+                                                                <div class="card card-expansion-item mb-24">
+                                                                    <div class="card-header border-0" id="week4_nd_mobile">
+                                                                        <button
+                                                                            class="btn btn-reset d-flex justify-content-between w-100 collapsed"
+                                                                            data-toggle="collapse"
+                                                                            data-target="#collapseFour2"
+                                                                            aria-expanded="false"
+                                                                            aria-controls="collapseFour2"><span
+                                                                                class="week_title text-primary">{% trans "Week4"%}
+                                                                                <span>04</span></span> <span
+                                                                                class="collapse-indicator"><i
+                                                                                    class="fa fa-fw fa-chevron-down"></i></span></button>
+                                                                    </div>
+                                                                    <div id="collapseFour2" class="collapse"
+                                                                        aria-labelledby="weekly4"
+                                                                        data-parent="#accordion2">
+                                                                        <div class="card-body">
+                                                                            <div class="text-right">
+                                                                                <a href="javascript:void(0);" class="list" title="" aria-describedby="popover587759">
+                                                                                    <i class="fas fa-list"></i>
+                                                                                </a>
+                                                                                <span class="save"></span>
+                                                                                <a href="javascript:void(0);" class="edit" title="" aria-describedby="popover587759">
+                                                                                    <i class="fas fa-edit"></i>
+                                                                                </a>
+                                                                            </div>                                                                             
+                                                                            <ul class="task-inner">
+                                                                                <!--
+                                                                                <li class="task-item">
+                                                                                    <span class="mr-2">1.完成Quarterly
+                                                                                        Schedule及分配計畫日期的邏輯</span>
+                                                                                    <i class="far fa-times-circle"></i>
+                                                                                </li>
+                                                                                -->
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+                                                                </div><!-- /.card -->
+                                                                <div class="card card-expansion-item mb-24">
+                                                                    <div class="card-header border-0" id="week5_nd_mobile">
+                                                                        <button
+                                                                            class="btn btn-reset d-flex justify-content-between w-100 collapsed"
+                                                                            data-toggle="collapse"
+                                                                            data-target="#collapseFive2"
+                                                                            aria-expanded="false"
+                                                                            aria-controls="collapseFive2"><span
+                                                                                class="week_title text-primary">{% trans "Week5"%}
+                                                                                <span>05</span></span> <span
+                                                                                class="collapse-indicator"><i
+                                                                                    class="fa fa-fw fa-chevron-down"></i></span></button>
+                                                                    </div>
+                                                                    <div id="collapseFive2" class="collapse"
+                                                                        aria-labelledby="weekly5"
+                                                                        data-parent="#accordion2">
+                                                                        <div class="card-body">
+                                                                            <div class="text-right">
+                                                                                <a href="javascript:void(0);" class="list" title="" aria-describedby="popover587759">
+                                                                                    <i class="fas fa-list"></i>
+                                                                                </a>
+                                                                                <span class="save"></span>
+                                                                                <a href="javascript:void(0);" class="edit" title="" aria-describedby="popover587759">
+                                                                                    <i class="fas fa-edit"></i>
+                                                                                </a>
+                                                                            </div>                                                                             
+                                                                            <ul class="task-inner">
+                                                                                <!--
+                                                                                <li class="task-item">
+                                                                                    <span
+                                                                                        class="mr-2">1.完成排期顯示結果頁面</span>
+                                                                                    <i class="far fa-times-circle"></i>
+                                                                                </li>
+                                                                                -->
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+                                                                </div><!-- /.card -->
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane fade month-3" id="sept" role="tabpanel">
+                                            <div class="monthly-1 blog-quota">
+                                                <div class="row align-items-center mt-3 mb-3">
+                                                    <div class="col-lg-6">
+                                                        <div class="week-filter-wrap">
+                                                            <ul class="week-filter nav justify-content-center justify-content-lg-end"
+                                                                id="week">
+                                                                <li class="nav-item">
+                                                                    <a class="nav-link week-item" id="week1" href="#week1_rd_mobile">
+                                                                        {% trans "Week1"%}
+                                                                    </a>
+                                                                </li>
+                                                                <li class="nav-item">
+                                                                    <a class="nav-link week-item" id="week2" href="#week2_rd_mobile">
+                                                                        {% trans "Week2"%}
+                                                                    </a>
+                                                                </li>
+                                                                <li class="nav-item">
+                                                                    <a class="nav-link week-item" id="week3" href="#week3_rd_mobile">
+                                                                        {% trans "Week3"%}
+                                                                    </a>
+                                                                </li>
+                                                                <li class="nav-item">
+                                                                    <a class="nav-link week-item" id="week4" href="#week4_rd_mobile">
+                                                                        {% trans "Week4"%}
+                                                                    </a>
+                                                                </li>
+                                                                <li class="nav-item">
+                                                                    <a class="nav-link week-item" id="week5" href="#week5_rd_mobile">
+                                                                        {% trans "Week5"%}
+                                                                    </a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="monthly-1_goals">
+                                                    <div class="row">
+                                                        <div class="col-12">
+                                                            <div class="month_goals">
+                                                                <div class="row m-0 justify-content-between">
+                                                                    <div class="d-flex" style="flex: 1 0 auto;justify-content: center;">
+                                                                        <h5 class="text-center text-primary">{% trans "Monthly Goals"%}</h5>
+                                                                    </div>
+                                                                    <div class="text-right">
+                                                                        <span class="save"></span>
+                                                                        <a href="javascript:void(0);" class="edit">
+                                                            <i class="fas fa-edit"></i>
+                                                        </a>
+                                                                    </div>
+                                                                </div>
+                                                                <ul class="task-inner">
+                                                                    <!--
+                                                                    <li class="task d-flex mb-2">
+                                                                        <span>Cater for Django Solution Type and tidy up
+                                                                            and standardized at least 3 technical
+                                                                            daily.</span>
+                                                                        <div class="ml-auto">
+                                                                            <a href="javascript:void(0);"
+                                                                                class="text-info" data-toggle="tooltip"
+                                                                                data-placement="top" title=""
+                                                                                data-original-title="Delete">
+                                                                                <i class="far fa-times-circle"></i>
+                                                                            </a>
+                                                                        </div>
+                                                                    </li>-->
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="mt-50 desc_week1">
+                                                    <div class="row align-items-center">
+                                                        <div class="col-12">
+                                                            <div id="accordion3" class="card-expansion">
+                                                                <!-- .card -->
+                                                                <div class="card card-expansion-item expanded mb-24">
+                                                                    <div class="card-header border-0" id="week1_rd_mobile">
+                                                                        <button
+                                                                            class="btn btn-reset d-flex justify-content-between w-100"
+                                                                            data-toggle="collapse"
+                                                                            data-target="#collapseOne3"
+                                                                            aria-expanded="true"
+                                                                            aria-controls="collapseOne3">
+                                                                            <span
+                                                                                class="week_title text-primary">{% trans "Week1"%}<span>01</span></span>
+                                                                            <span class="collapse-indicator"><i
+                                                                                    class="fa fa-fw fa-chevron-down"></i></span>
+                                                                        </button>
+                                                                    </div>
+                                                                    <div id="collapseOne3" class="collapse show"
+                                                                        aria-labelledby="weekly1"
+                                                                        data-parent="#accordion3" style="">
+                                                                        <div class="card-body">
+                                                                            <div class="text-right">
+                                                                                <a href="javascript:void(0);" class="list" title="" aria-describedby="popover587759">
+                                                                                    <i class="fas fa-list"></i>
+                                                                                </a>
+                                                                                <span class="save"></span>
+                                                                                <a href="javascript:void(0);" class="edit" title="" aria-describedby="popover587759">
+                                                                                    <i class="fas fa-edit"></i>
+                                                                                </a>
+                                                                            </div>                                                                             
+                                                                            <ul class="task-inner">
+                                                                                <!--
+                                                                                <li class="task-item">
+                                                                                    <span class="mr-2">1. Fixed Day
+                                                                                        Schedule的邏輯及修改原Java
+                                                                                        Schedule生成Appraisal和Goal及TaskEnquiry_Frm中Past
+                                                                                        8 Day表</span>
+                                                                                    <i class="far fa-times-circle"></i>
+                                                                                </li>
+                                                                                -->
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+                                                                </div><!-- /.card -->
+                                                                <!-- .card -->
+                                                                <div class="card card-expansion-item mb-24">
+                                                                    <div class="card-header border-0" id="week2_rd_mobile">
+                                                                        <button
+                                                                            class="btn btn-reset d-flex justify-content-between w-100 collapsed"
+                                                                            data-toggle="collapse"
+                                                                            data-target="#collapseTwo3"
+                                                                            aria-expanded="false"
+                                                                            aria-controls="collapseTwo3"><span
+                                                                                class="week_title text-primary">{% trans "Week2"%}
+                                                                                <span>02</span></span> <span
+                                                                                class="collapse-indicator"><i
+                                                                                    class="fa fa-fw fa-chevron-down"></i></span></button>
+                                                                    </div>
+                                                                    <div id="collapseTwo3" class="collapse"
+                                                                        aria-labelledby="weekly2"
+                                                                        data-parent="#accordion3">
+                                                                        <div class="card-body">
+                                                                            <div class="text-right">
+                                                                                <a href="javascript:void(0);" class="list" title="" aria-describedby="popover587759">
+                                                                                    <i class="fas fa-list"></i>
+                                                                                </a>
+                                                                                <span class="save"></span>
+                                                                                <a href="javascript:void(0);" class="edit" title="" aria-describedby="popover587759">
+                                                                                    <i class="fas fa-edit"></i>
+                                                                                </a>
+                                                                            </div>                                                                             
+                                                                            <ul class="task-inner">
+                                                                                <!--
+                                                                                <li class="task-item">
+                                                                                    <span
+                                                                                        class="mr-2">1.完成任務變更時Schedule邏輯</span>
+                                                                                    <i class="far fa-times-circle"></i>
+                                                                                </li>
+                                                                                -->
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+                                                                </div><!-- /.card -->
+                                                                <!-- .card -->
+                                                                <div class="card card-expansion-item mb-24">
+                                                                    <div class="card-header border-0" id="week3_rd_mobile">
+                                                                        <button
+                                                                            class="btn btn-reset d-flex justify-content-between w-100 collapsed"
+                                                                            data-toggle="collapse"
+                                                                            data-target="#collapseThree3"
+                                                                            aria-expanded="false"
+                                                                            aria-controls="collapseThree3"><span
+                                                                                class="week_title text-primary">{% trans "Week3"%}
+                                                                                <span>03</span></span> <span
+                                                                                class="collapse-indicator"><i
+                                                                                    class="fa fa-fw fa-chevron-down"></i></span></button>
+                                                                    </div>
+                                                                    <div id="collapseThree3" class="collapse"
+                                                                        aria-labelledby="weekly3"
+                                                                        data-parent="#accordion3">
+                                                                        <div class="card-body">
+                                                                            <div class="text-right">
+                                                                                <a href="javascript:void(0);" class="list" title="" aria-describedby="popover587759">
+                                                                                    <i class="fas fa-list"></i>
+                                                                                </a>
+                                                                                <span class="save"></span>
+                                                                                <a href="javascript:void(0);" class="edit" title="" aria-describedby="popover587759">
+                                                                                    <i class="fas fa-edit"></i>
+                                                                                </a>
+                                                                            </div>                                                                             
+                                                                            <ul class="task-inner">
+                                                                                <li class="task-item">
+                                                                                    <!-- <span class="mr-2">(3 of 5)App Server(00298)</span>
+                                                                                    <i class="far fa-times-circle"></i> -->
+                                                                                </li>
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+                                                                </div><!-- /.card -->
+                                                                <div class="card card-expansion-item mb-24">
+                                                                    <div class="card-header border-0" id="week4_rd_mobile">
+                                                                        <button
+                                                                            class="btn btn-reset d-flex justify-content-between w-100 collapsed"
+                                                                            data-toggle="collapse"
+                                                                            data-target="#collapseFour3"
+                                                                            aria-expanded="false"
+                                                                            aria-controls="collapseFour3"><span
+                                                                                class="week_title text-primary">{% trans "Week4"%}
+                                                                                <span>04</span></span> <span
+                                                                                class="collapse-indicator"><i
+                                                                                    class="fa fa-fw fa-chevron-down"></i></span></button>
+                                                                    </div>
+                                                                    <div id="collapseFour3" class="collapse"
+                                                                        aria-labelledby="weekly4"
+                                                                        data-parent="#accordion3">
+                                                                        <div class="card-body">
+                                                                            <div class="text-right">
+                                                                                <a href="javascript:void(0);" class="list" title="" aria-describedby="popover587759">
+                                                                                    <i class="fas fa-list"></i>
+                                                                                </a>
+                                                                                <span class="save"></span>
+                                                                                <a href="javascript:void(0);" class="edit" title="" aria-describedby="popover587759">
+                                                                                    <i class="fas fa-edit"></i>
+                                                                                </a>
+                                                                            </div>                                                                             
+                                                                            <ul class="task-inner">
+                                                                                <li class="task-item">
+                                                                                    <!-- <span class="mr-2">(4 of 5)App Server(00298)</span>
+                                                                                    <i class="far fa-times-circle"></i> -->
+                                                                                </li>
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+                                                                </div><!-- /.card -->
+                                                                <div class="card card-expansion-item mb-24">
+                                                                    <div class="card-header border-0" id="week5_rd_mobile">
+                                                                        <button
+                                                                            class="btn btn-reset d-flex justify-content-between w-100 collapsed"
+                                                                            data-toggle="collapse"
+                                                                            data-target="#collapseFive3"
+                                                                            aria-expanded="false"
+                                                                            aria-controls="collapseFive3"><span
+                                                                                class="week_title text-primary">{% trans "Week5"%}
+                                                                                <span>05</span></span> <span
+                                                                                class="collapse-indicator"><i
+                                                                                    class="fa fa-fw fa-chevron-down"></i></span></button>
+                                                                    </div>
+                                                                    <div id="collapseFive3" class="collapse"
+                                                                        aria-labelledby="weekly5"
+                                                                        data-parent="#accordion3">
+                                                                        <div class="card-body">
+                                                                            <div class="text-right">
+                                                                                <a href="javascript:void(0);" class="list" title="" aria-describedby="popover587759">
+                                                                                    <i class="fas fa-list"></i>
+                                                                                </a>
+                                                                                <span class="save"></span>
+                                                                                <a href="javascript:void(0);" class="edit" title="" aria-describedby="popover587759">
+                                                                                    <i class="fas fa-edit"></i>
+                                                                                </a>
+                                                                            </div>                                                                             
+                                                                            <ul class="task-inner">
+                                                                                <li class="task-item">
+                                                                                    <!-- <span class="mr-2">(5 of 5)App Server(00298)</span>
+                                                                                    <i class="far fa-times-circle"></i> -->
+                                                                                </li>
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+                                                                </div><!-- /.card -->
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- end row -->
+        </div><!-- container-fluid -->
+    </div>
+</div>
+<div id="task_template" class="d-none">
+    <div class="list-group list-group-messages list-group-flush list-group-bordered">
+        <div class="list-group-item p-1">
+            <div class="list-group-item-figure task-info pr-0" pk="[[DT_RowId]]">
+                <div class="tile tile-circle tile-sm bg-blue">[[progress]]</div>
+            </div>
+            <div class="list-group-item-body task-info pl-2 pr-1" pk="[[DT_RowId]]">[[task]]
+            </div>
+            <a href="javascript:void(0);" class="unlink" taskno="[[taskno]]" taskid="[[taskid]]" title='{% trans "unlink" %}'>
+                <i class="oi oi-link-broken"></i>
+            </a>
+        </div>        
+    </div>
+</div>
+<div class="modal fade" id="relation_task" tabindex="-1" role="dialog" aria-labelledby="SWSelectqueryLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header align-items-center">
+                <h6 class="modal-title">{% trans "SessionTasks"%}</h6>
+                <button type="button" class="close text-dark" data-dismiss="modal" aria-label="Close" style="font-size: 1rem;"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body">
+                <div class="card-body card related_tasks">
+                    
+                </div>
+                <div class="card card-expansion-item mb-3">
+                    <div class="card-header"> <button class="btn btn-reset d-flex justify-content-between w-100" data-toggle="collapse"
+                            data-target="#source_tasks" aria-expanded="false" aria-controls="#all_subject-0"><span
+                                class="font-weight-bold"><i class="oi oi-chat text-dark mr-2"></i>{% trans "Select RelationID"%}</span><span
+                                class="collapse-indicator"><i class="fa fa-fw fa-chevron-down"></i></span></button></div>
+                    <div id="source_tasks" class="collapse" style=""> 
+                        <div class="card-header p-1">
+                            <fieldset class="col-12 taskSearch card-expansion-item">
+                                <legend class="mb-0">
+                                    <button class="btn btn-reset d-flex justify-content-between prevent-default pl-0" data-toggle="collapse" data-target="#source_tasks_search_collapse" aria-expanded="true" aria-controls="source_tasks_search_collapse">
+                                        <span class="collapse-indicator"><i class="fa fa-fw fa-caret-right mr-1"></i></span><span>{% trans "Task Query" %}</span></button>
+                                </legend>                                
+                                <div class="filter row m-0 collapse" id="source_tasks_search_collapse">
+                                    <div class="filter_f col-6 my-2 px-0 f_progress"></div>
+                                    <div class="filter_p col-6 my-2 px-0 f_priority"></div>
+                                    <div class="filter_c col-6 mb-2 px-0 f_class"></div>
+                                    <div class="filter_p col-6 mb-2 px-0 f_hoperation"></div>
+                                    <div class="filter_t d-flex mb-2 align-items-center col-12 px-0 f_planDate">
+                                        <label class="col-form-label caption col-auto px-0" for="planBDates">{% trans "PlanBDate" %}</label>
+                                        <div class="input-group input-group-alt m-0">
+                                            <input id="planBDates" name = 'planBDates' type="text" class="form-control flatpickr-input col" data-toggle="flatpickr" data-disable-mobile="true" />
+                                            <div class="input-group-append" style="margin-right: -1px;">
+                                                <span class="input-group-text custom-text font-weight-bold">{% trans "To" %}</span>
+                                            </div>
+                                            <input id="planBDatee" name = 'planBDatee' type="text" class="form-control flatpickr-input col" data-toggle="flatpickr" data-disable-mobile="true" />
+                                        </div>
+                                    </div>
+                                    <div class="filter_t mb-2 col px-0 f_task_desc"></div>
+                                    <div class="toolbar col-auto mb-2 order-8">
+                                        <button type="button" class="btn btn-primary btn-clear"><i class="fa fa-broom d-xxxl-none"></i><span class="d-none d-xxxl-inline-block">{% trans "Clear" %}</span></button>
+                                        <button type="button" class="btn btn-primary btn-search"><i class="oi oi-magnifying-glass d-xxxl-none"></i><span class="d-none d-xxxl-inline-block">{% trans "Search" %}</span></button>
+                                    </div>
+                                </div>        
+                            </fieldset>                            
+                        </div>
+                        <div class="card-body p-0">
+                        </div>
+                        <div class="card-footer justify-content-end p-2">
+                            <button class="relation_btn btn btn-primary">{% trans "Confirm"%}</button>    
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{%endblock%}
+
+{%block form_js%}
+{{block.super}}
+<script src="{% md5url 'PMISLooper/assets/javascript/goal/overall/quarterly_goal.js' %}"
+    type="text/javascript"></script>
+<script src="{% md5url 'PMISLooper/assets/javascript/goal/overall/quarterly_goal_modal.js' %}"
+    type="text/javascript"></script>
+{% endblock%}

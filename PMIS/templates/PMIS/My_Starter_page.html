@@ -1,0 +1,306 @@
+{% load static %}
+<!DOCTYPE html>
+<!-- 
+Theme: Keen - The Ultimate Bootstrap Admin Theme
+Author: KeenThemes
+Website: http://www.keenthemes.com/
+Contact: support@keenthemes.com
+Follow: www.twitter.com/keenthemes
+Dribbble: www.dribbble.com/keenthemes
+Like: www.facebook.com/keenthemes
+License: You must have a valid license purchased only from https://themes.getbootstrap.com/product/keen-the-ultimate-bootstrap-admin-theme/ in order to legally use the theme for your project.
+-->
+<html lang="en">
+<!-- begin::Head -->
+
+<head>
+  <meta charset="utf-8" />
+  <title>Keen | Flotcharts</title>
+  <meta name="description" content="Flotcharts examples">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+  <!--<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">-->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!--begin::Fonts -->
+  <link href="{% static 'BaseProject/vendor/keen/gfont/font.css' %}" rel="stylesheet" type="text/css"/>
+  <link rel="stylesheet" href="{% static 'BaseProject/vendor/datatables-1.10.20/datatables.min.css' %}" type="text/css">  
+  <!--begin::Global Theme Styles(used by all pages) -->
+  <link href="{% static 'BaseProject/vendor/keen/assets/vendors/base/vendors.bundle.css' %}" rel="stylesheet" type="text/css" />
+  <!--RTL version:<link href="assets/vendors/base/vendors.bundle.rtl.css" rel="stylesheet" type="text/css" />-->
+  <link href="{% static 'BaseProject/vendor/keen/assets/demo/default/base/style.bundle.css' %}" rel="stylesheet" type="text/css" />
+  <!--RTL version:<link href="assets/demo/default/base/style.bundle.rtl.css" rel="stylesheet" type="text/css" />-->
+  <!--end::Global Theme Styles -->
+  <!--begin::Layout Skins(used by all pages) -->
+  <link href="{% static 'BaseProject/vendor/keen/assets/demo/default/skins/header/base/light.css' %}" rel="stylesheet" type="text/css" />
+  <!--RTL version:<link href="assets/demo/default/skins/header/base/light.rtl.css" rel="stylesheet" type="text/css" />-->
+  <link href="{% static 'BaseProject/vendor/keen/assets/demo/default/skins/header/menu/light.css' %}" rel="stylesheet" type="text/css" />
+  <!--RTL version:<link href="assets/demo/default/skins/header/menu/light.rtl.css" rel="stylesheet" type="text/css" />-->
+  <link href="{% static 'BaseProject/vendor/keen/assets/demo/default/skins/brand/navy.css' %}" rel="stylesheet" type="text/css" />
+  <!--RTL version:<link href="assets/demo/default/skins/brand/navy.rtl.css" rel="stylesheet" type="text/css" />-->
+  <link href="{% static 'BaseProject/vendor/keen/assets/demo/default/skins/aside/navy.css' %}" rel="stylesheet" type="text/css" />
+  <!--RTL version:<link href="assets/demo/default/skins/aside/navy.rtl.css" rel="stylesheet" type="text/css" />-->
+  <!--end::Layout Skins -->
+
+  <link href="{% static 'BaseProject/vendor/treegrid/jquery/jquery.treegrid.min.css' %}" rel="stylesheet">
+  <link href="{% static 'BaseProject/vendor/treegrid/bootstrap-table.min.css' %}" rel="stylesheet">  
+  <link rel="shortcut icon" href="{% static 'BaseProject/vendor/keen/assets/media/logos/favicon.ico'}" />
+  <style type="text/css">
+    #DataTables_Table_0 {
+      font-weight: 400;
+    }
+    body {
+      font-size: 14px;
+    }
+  </style>  
+  {%block header_jscss%}
+  {%endblock%}
+</head>
+<!-- end::Head -->
+
+<body
+  class="k-header--fixed k-header-mobile--fixed k-subheader--enabled k-subheader--transparent k-aside--enabled k-aside--fixed k-page--loading">
+  <!-- begin:: Header Mobile -->
+  <div id="k_header_mobile" class="k-header-mobile k-header-mobile--fixed ">
+    <div class="k-header-mobile__logo">
+      <a href="index.html">
+        <img alt="Logo" src="{% static 'BaseProject/vendor/keen/assets/media/logos/logo-6.png'%}" />
+      </a>
+    </div>
+    <div class="k-header-mobile__toolbar">
+      <button class="k-header-mobile__toolbar-toggler k-header-mobile__toolbar-toggler--left"
+        id="k_aside_mobile_toggler"><span></span></button>
+      <button class="k-header-mobile__toolbar-toggler" id="k_header_mobile_toggler"><span></span></button>
+      <button class="k-header-mobile__toolbar-topbar-toggler" id="k_header_mobile_topbar_toggler"><i
+          class="flaticon-more"></i></button>
+    </div>
+  </div>
+  <!-- end:: Header Mobile -->
+  <!-- begin:: Root -->
+  <div class="k-grid k-grid--hor k-grid--root">
+    <!-- begin:: Page -->
+    <div class="k-grid__item k-grid__item--fluid k-grid k-grid--ver k-page">
+      <!-- begin:: Aside -->
+      <button class="k-aside-close " id="k_aside_close_btn"><i class="la la-close"></i></button>
+      <div class="k-aside k-aside--fixed k-grid__item k-grid k-grid--desktop k-grid--hor-desktop" id="k_aside">
+        <!-- begin::Aside Brand -->
+        <div class="k-aside__brand k-grid__item " id="k_aside_brand">
+          <div class="k-aside__brand-logo">
+            <a href="index.html">
+              <img alt="Logo" src="{% static 'BaseProject/vendor/keen/assets/media/logos/logo-6.png'%}" />
+            </a>
+          </div>
+          <div class="k-aside__brand-tools">
+            <button class="k-aside__brand-aside-toggler k-aside__brand-aside-toggler--left"
+              id="k_aside_toggler"><span></span></button>
+          </div>
+        </div>
+        <!-- end:: Aside Brand -->
+        <!-- begin:: Aside Menu -->
+        <div class="k-aside-menu-wrapper k-grid__item k-grid__item--fluid" id="k_aside_menu_wrapper">
+          <div id="k_aside_menu" class="k-aside-menu " data-kmenu-vertical="1" data-kmenu-scroll="1"
+            data-kmenu-dropdown-timeout="500">
+            <ul class="k-menu__nav ">
+              <li class="k-menu__item k-menu__item--submenu" aria-haspopup="true"
+              data-kmenu-submenu-toggle="hover">
+              <a href="javascript:;" class="k-menu__link k-menu__toggle">
+                <i class="k-menu__link-icon flaticon2-layers-1"></i>
+                <span class="k-menu__link-text">銷售管理</span>
+                <i class="k-menu__ver-arrow la la-angle-right"></i>
+              </a>
+              <div class="k-menu__submenu ">
+                <span class="k-menu__arrow"></span>
+                <ul class="k-menu__subnav">
+                  <li class="k-menu__item k-menu__item--submenu" aria-haspopup="true"
+                    data-kmenu-submenu-toggle="hover">
+                    <a href="/PMIS/sale/sales_dashboard" class="k-menu__link k-menu__toggle" dest="">
+                      <i class="k-menu__link-bullet k-menu__link-bullet--dot"><span></span></i>
+                      <span class="k-menu__link-text">DashBoard</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </li>              
+              <li class="k-menu__item k-menu__item--submenu k-menu__item--open k-menu__item--here" aria-haspopup="true"
+                data-kmenu-submenu-toggle="hover">
+                <a href="javascript:;" class="k-menu__link k-menu__toggle">
+                  <i class="k-menu__link-icon flaticon2-layers-1"></i>
+                  <span class="k-menu__link-text">PMIS</span>
+                  <i class="k-menu__ver-arrow la la-angle-right"></i>
+                </a>
+                <div class="k-menu__submenu ">
+                  <span class="k-menu__arrow"></span>
+                  <ul class="k-menu__subnav">
+                    <li class="k-menu__item k-menu__item--submenu k-menu__item--here" aria-haspopup="true"
+                      data-kmenu-submenu-toggle="hover">
+                      <a href="/PMIS/goal_master_form" class="k-menu__link k-menu__toggle" dest="">
+                        <i class="k-menu__link-bullet k-menu__link-bullet--dot"><span></span></i>
+                        <span class="k-menu__link-text">目標管理</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <!--<li class="k-menu__item k-menu__item--submenu k-menu__item--open k-menu__item--here" aria-haspopup="true"
+                data-kmenu-submenu-toggle="hover">
+                <a href="javascript:;" class="k-menu__link k-menu__toggle">
+                  <i class="k-menu__link-icon flaticon2-graphic"></i>
+                  <span class="k-menu__link-text">Keen Demo</span>
+                  <i class="k-menu__ver-arrow la la-angle-right"></i>
+                </a>              
+                <div class="k-menu__submenu">
+                    <span class="k-menu__arrow"></span>
+                    <ul class="k-menu__subnav">
+                      <li class="k-menu__item k-menu__item--submenu k-menu__item--here" aria-haspopup="true"
+                        data-kmenu-submenu-toggle="hover">
+                        <a href="javascript:;" class="k-menu__link k-menu__toggle">
+                          <i class="k-menu__link-bullet k-menu__link-bullet--dot"><span></span></i>
+                          <span class="k-menu__link-text">DashBoard</span>
+                          <i class="k-menu__ver-arrow la la-angle-right"></i>
+                        </a>
+                        <div class="k-menu__submenu ">
+                            <span class="k-menu__arrow"></span>
+                            <ul class="k-menu__subnav">
+                              <li class="k-menu__item k-menu__item--submenu k-menu__item--here" aria-haspopup="true"
+                                data-kmenu-submenu-toggle="hover">
+                                <a href="javascript:;" class="k-menu__link k-menu__toggle" dest="widgets.html">
+                                  <i class="k-menu__link-bullet k-menu__link-bullet--dot"><span></span></i>
+                                  <span class="k-menu__link-text">widgets</span>
+                                </a>
+                              </li>
+                              <ul class="k-menu__subnav">
+                                <li class="k-menu__item k-menu__item--submenu k-menu__item--here" aria-haspopup="true"
+                                  data-kmenu-submenu-toggle="hover">
+                                  <a href="javascript:;" class="k-menu__link k-menu__toggle" dest="dashboard_widget_1.html">
+                                    <i class="k-menu__link-bullet k-menu__link-bullet--dot"><span></span></i>
+                                    <span class="k-menu__link-text">widget 柱狀圖</span>
+                                  </a>
+                                </li>
+                                <li class="k-menu__item k-menu__item--submenu k-menu__item--here" aria-haspopup="true"
+                                  data-kmenu-submenu-toggle="hover">
+                                  <a href="javascript:;" class="k-menu__link k-menu__toggle" dest="dashboard_widget_2.html">
+                                    <i class="k-menu__link-bullet k-menu__link-bullet--dot"><span></span></i>
+                                    <span class="k-menu__link-text">widget 餅狀圖</span>
+                                  </a>
+                                </li>
+                                <li class="k-menu__item k-menu__item--submenu k-menu__item--here" aria-haspopup="true"
+                                  data-kmenu-submenu-toggle="hover">
+                                  <a href="javascript:;" class="k-menu__link k-menu__toggle">
+                                    <i class="k-menu__link-bullet k-menu__link-bullet--dot"><span></span></i>
+                                    <span class="k-menu__link-text">widget tab2</span>
+                                  </a>
+                                </li>
+                              </ul>
+                          </div>                        
+                      </li>                                      
+                      <li class="k-menu__item k-menu__item--submenu k-menu__item--here" aria-haspopup="true"
+                        data-kmenu-submenu-toggle="hover">
+                        <a href="javascript:;" class="k-menu__link k-menu__toggle">
+                          <i class="k-menu__link-bullet k-menu__link-bullet--dot"><span></span></i>
+                          <span class="k-menu__link-text">Portlet</span>
+                          <i class="k-menu__ver-arrow la la-angle-right"></i>
+                        </a>
+                        <div class="k-menu__submenu">
+                          <span class="k-menu__arrow"></span>
+                          <ul class="k-menu__subnav">
+                            <li class="k-menu__item k-menu__item--submenu k-menu__item--here" aria-haspopup="true"
+                              data-kmenu-submenu-toggle="hover">
+                              <a href="javascript:;" class="k-menu__link k-menu__toggle" dest="portleft_footer.html">
+                                <i class="k-menu__link-bullet k-menu__link-bullet--dot"><span></span></i>
+                                <span class="k-menu__link-text">With Footer</span>
+                              </a>
+                            </li>
+                          </ul>
+                        </div>
+                      </li>
+                      <li class="k-menu__item k-menu__item--submenu k-menu__item--here" aria-haspopup="true"
+                        data-kmenu-submenu-toggle="hover">
+                        <a href="javascript:;" class="k-menu__link k-menu__toggle">
+                          <i class="k-menu__link-bullet k-menu__link-bullet--dot"><span></span></i>
+                          <span class="k-menu__link-text">Blog</span>
+                          <i class="k-menu__ver-arrow la la-angle-right"></i>
+                        </a>
+                        <div class="k-menu__submenu">
+                          <span class="k-menu__arrow"></span>
+                          <ul class="k-menu__subnav">
+                            <li class="k-menu__item k-menu__item--submenu k-menu__item--here" aria-haspopup="true"
+                              data-kmenu-submenu-toggle="hover">
+                              <a href="javascript:;" class="k-menu__link k-menu__toggle" dest="blog_post.html">
+                                <i class="k-menu__link-bullet k-menu__link-bullet--dot"><span></span></i>
+                                <span class="k-menu__link-text">post</span>
+                              </a>
+                            </li>
+                          </ul>
+                        </div>
+                      </li>                      
+                    </ul>
+                </div>
+              --></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="k-grid__item k-grid__item--fluid k-grid k-grid--hor k-wrapper" id="k_wrapper">
+          <!-- Block content to be placed here-->
+          {% block content %}
+          {% endblock %}        
+      </div>
+    </div>
+  </div>
+    <!-- begin::Demo Panel -->
+    <div id="k_demo_panel" class="k-demo-panel">
+    </div>
+    <!-- end::Demo Panel -->
+    <!-- begin::Global Config(global config for global JS sciprts) -->
+    <script>
+      var KAppOptions = {
+        "colors": {
+          "state": {
+            "brand": "#5d78ff",
+            "metal": "#c4c5d6",
+            "light": "#ffffff",
+            "accent": "#00c5dc",
+            "primary": "#5867dd",
+            "success": "#34bfa3",
+            "info": "#36a3f7",
+            "warning": "#ffb822",
+            "danger": "#fd3995",
+            "focus": "#9816f4"
+          },
+          "base": {
+            "label": [
+              "#c5cbe3",
+              "#a1a8c3",
+              "#3d4465",
+              "#3e4466"
+            ],
+            "shape": [
+              "#f0f3ff",
+              "#d9dffa",
+              "#afb4d4",
+              "#646c9a"
+            ]
+          }
+        }
+      };
+    </script>
+    <!-- end::Global Config -->
+    <!--begin::Global Theme Bundle(used by all pages) -->
+    <script src="{% static 'BaseProject/vendor/keen/assets/vendors/base/vendors.bundle.min.js' %}" type="text/javascript"></script>
+    <script src="{% static 'BaseProject/vendor/keen/assets/demo/default/base/scripts.bundle.min.js' %}" type="text/javascript"></script>
+    <!--end::Global Theme Bundle -->
+    <!--end::Page Scripts -->
+    <!--jquery datatable-->
+    <script src="{% static 'BaseProject/vendor/datatables-1.10.20/datatables.min.js' %}" type="text/javascript"></script>
+    <script src="{% static 'BaseProject/vendor/datatables-1.10.20/dataTables.colResize.js' %}" type="text/javascript"></script>
+
+    <!--begin::Global App Bundle(used by all pages) -->
+    <script src="{% static 'BaseProject/vendor/keen/assets/app/scripts/bundle/app.bundle.js' %}" type="text/javascript"></script>  
+    <script src="{% static 'PMIS/js/datatableview.js' %}" type="text/javascript"></script>
+    <script src="{% static 'BaseProject/vendor/treegrid/jquery/jquery.treegrid.min.js' %}"></script>
+    <script src="{% static 'BaseProject/vendor/treegrid/bootstrap-table.min.js' %}"></script>
+    <script src="{% static 'BaseProject/vendor/treegrid/bootstrap-table-treegrid.min.js' %}"></script>    
+    {% block page_js %}
+    {% endblock %}        
+</body>
+<!-- end::Body -->
+
+</html>

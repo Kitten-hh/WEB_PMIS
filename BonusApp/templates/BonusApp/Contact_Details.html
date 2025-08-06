@@ -1,0 +1,186 @@
+{% extends 'BonusApp/TopBottomBar.html' %}
+
+{% load static %}
+
+{% block solecss %}
+<style>
+    #simple_datatable {
+        background-color: white;
+        font-size: 1.3rem;
+        width: 100% !important;
+    }
+
+    .main {
+        margin: 0 auto;
+        background: white;
+    }
+
+    #app-main {
+        background: rgb(241, 239, 239);
+    }
+
+    .content p {
+        margin: 1rem 0 0 0;
+    }
+
+    #simple_datatable tbody tr:nth-child(odd) {
+        background-color: #F3F3F3;
+    }
+
+    #simple_datatable thead tr th:nth-child(7) {
+        display: none;
+    }
+
+    #simple_datatable tbody tr td:nth-child(7) {
+        display: none;
+    }
+
+    #simple_datatable tbody {
+        font-size: 1.4rem;
+    }
+
+    #simple_datatable tr td {
+        table-layout: fixed;
+    }
+
+    .View_Add {
+        width: 86%;
+        margin: 0 auto;
+        padding-bottom: 2rem !important;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+    }
+
+    .View_Add div {
+        width: 8rem;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .View_Add div a {
+        font-weight: bold;
+        color: orange;
+        font-size: 1.6rem;
+    }
+
+    .phoneNumber_p {
+        display: flex;
+        flex-flow: row;
+        justify-content: space-between;
+    }
+
+    .phone_img {
+        display: flex;
+        width: 8rem;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .email_img {
+        display: flex;
+        width: 2.8rem;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .phone_img,
+    .email_img i {
+        font-size: 1.6rem;
+    }
+
+    #simple_datatable_info {
+        display: none;
+    }
+</style>
+
+{% endblock %}
+
+{% block solenav %}
+<div class="container-fluid Custom_Head">
+    <a class="navbar-brand" id="prev_page" href="javascript:void(0)">
+        <i class="fa fa-arrow-left"></i>
+    </a>
+
+    <ul class="navbar-nav flex-row ml-auto nav_min_pic">
+        <li class="nav-item"><a class="nav-link" href="#"><i class="icon ion-refresh"></i></a></li>
+    </ul>
+</div>
+{% endblock %}
+
+
+
+{% block content %}
+<div class="main">
+    <div class="content">
+        <p style="padding-top: 30px;">
+            <span>Name</span>
+            <h3 class="contact" v-html="Contact.username"></h3>
+        </p>
+
+
+        <div class="phoneNumber_p">
+            <div>
+                <span>phone Number</span>
+                <h3 v-html="Contact.telno"></h3>
+            </div>
+
+            <div class="phone_img">
+                <a href="#"><i style="color: orange;" class="fa fa-phone" aria-hidden="true"></i></a>
+                <a href="#"><i style="color: orange;" class="fa fa-commenting" aria-hidden="true"></i></a>
+            </div>
+        </div>
+
+
+        <div class="phoneNumber_p">
+            <div>
+                <span>Email</span>
+                <h3 v-html="Contact.outeremail"></h3>
+            </div>
+            <div class="email_img">
+                <a href="" onclick="Run('calc')"><i style="color: orange;" class="fa fa-envelope"
+                        aria-hidden="true"></i></a>
+            </div>
+        </div>
+        <p>
+            <span>Existing Customer?</span>
+            <h3 style="border-bottom:0.2rem solid seagreen;display: inline;" v-html="Contact.goalflag"></h3>
+        </p>
+        <p>
+            <span>Contact Name</span>
+            <h3 v-html="Contact.description"></h3>
+        </p>
+    </div>
+
+    <div style="padding-top: 1rem;" id="count">
+        <p>Related Task[Users](v-html="count")</p>
+    </div>
+    <div id="Contact_Details_Div">
+        <table id="simple_datatable" class="table table-striped- table-hover">
+            <thead>
+                <tr>
+                    <th>TaskNo</th>
+                    <th style="width: 15%;">Task Description</th>
+                    <th>Task Type</th>
+                    <th>Date</th>
+                    <th>Score</th>
+                    <th>Lookup Score</th>
+                    <th>inc_id</th>
+                    <th></th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+    <div class="View_Add">
+        <div>
+            <a id="view_contact" href="javascript:void(0)">View</a>
+            <a href="">Add</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block solejs %}
+<!-- 自定义js -->
+<script type="text/javascript" src="{% static 'BonusApp/Task_Management/Contact_Details.js' %}"></script>
+{% endblock %}

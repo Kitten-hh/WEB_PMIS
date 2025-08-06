@@ -1,0 +1,13 @@
+{% extends vue_page|default:'BaseApp/looper_base/base_form1/base.html' %}
+{%load static %}
+{% load i18n %}
+{% load md5url %}
+{%block form_css%}
+{%include "PMISLooper/base.html" with form_css=True%}
+{%endblock%}
+{%block content %}
+{%include "PMISLooper/base.html" with content=True%}
+{%endblock%}
+{%block form_js%}
+{%include "PMISLooper/base.html" with form_js=True%}
+{%endblock%}

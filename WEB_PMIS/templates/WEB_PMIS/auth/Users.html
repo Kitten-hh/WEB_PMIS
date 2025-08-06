@@ -1,0 +1,58 @@
+{% extends 'PMISLooper/index.html' %}
+{%load static %}
+{% load i18n %}
+{%load md5url %}
+{%block form_css%}
+{{block.super}}
+<style>
+.app-main {
+    padding-top: 0;
+}
+.page {
+    /* min-height: calc(100vh - 1rem); */
+    height: calc(100vh - .15rem);
+}
+</style>
+{%endblock%}
+
+{%  block content %}
+{{block.super}}
+<!-- <iframe src="{{salc_server}}/auth/users" frameborder="0" width='100%' class="iframe" style="height:calc(100% - 56px); margin-top:56px;"></iframe> -->
+<iframe frameborder="0" width='100%' class="usersMgn_iframe" style="height:calc(100% - 56px); margin-top:56px;"></iframe>
+
+{% endblock %}
+{%block form_js%}
+{{block.super}}
+<script>
+    const salcServer = "{{ salc_server }}";
+    $(function () {
+        const theme = Looper.skin || 'default'; // 獲取主題模式
+        const langCode = "{{ LANGUAGE_CODE }}"; // Django 模板可取得當前語言
+        const iframeSelector = '.usersMgn_iframe'; // iframe 選擇器
+        const iframeSrc = `${salcServer}/auth/users?theme=${theme}&lang=${langCode}`;
+        const $iframe = $(iframeSelector);
+
+        // 從 iframeSrc 解析出 targetOrigin
+        const targetOrigin = new URL(iframeSrc).origin;
+  
+        // 初始化 iframe src
+        const initIframe = () => {
+            if ($iframe.length > 0) {
+                $iframe.attr('src', iframeSrc);
+            }
+        };
+
+        // 綁定事件
+        const bindEvents = () => {
+            // 若 handleMessage 已定義，綁定 message 事件
+            if (typeof handleMessage === 'function') {
+                window.addEventListener('message', handleMessage);
+            }
+        };
+
+        // 初始化函數調用
+        initIframe();
+        bindEvents();
+    });
+</script>
+{%endblock%}

@@ -1,0 +1,20 @@
+{% extends 'PMISLooper/vue_index.html' %}
+{%load static %}
+{% load render_bundle from webpack_loader %}
+
+{%block form_css%}
+{{block.super}}
+
+{%endblock%}
+
+{% block content%}
+{{block.super}}
+
+{%endblock%}   
+
+
+{%block form_js%}
+{{block.super}}
+{% render_bundle 'PMISLooper/dist/javascript/projectFollowUp' %} 
+
+{%endblock%}     

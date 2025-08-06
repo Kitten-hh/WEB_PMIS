@@ -1,0 +1,120 @@
+{% extends 'WEB_PMIS/main.html' %}
+{% load static %}
+{% block header_jscss%}
+    <!-- BEGIN PLUGINS STYLES -->
+    <link rel="stylesheet" href="{% static 'BaseProject/vendor/Looper/assets/vendor/open-iconic/font/css/open-iconic-bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'BaseProject/vendor/Looper/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css' %}"><!-- END PLUGINS STYLES -->
+{% endblock%}
+{% block content %}
+          <!-- .page -->
+          <div class="page">
+            <!-- .page-inner -->
+            <div class="page-inner page-inner-fill">
+              <!-- .page-navs -->
+              <header class="page-navs shadow-sm pr-3">
+                <!-- .btn-account-->
+                <a href="page-project.html" class="btn-account">
+                  <div class="has-badge">
+                    <span class="tile bg-pink text-white">SP</span> <span class="user-avatar user-avatar-xs"><img src="{% static 'BaseProject/vendor/Looper/assets/images/avatars/team4.jpg' %}" alt=""></span>
+                  </div>
+                  <div class="account-summary">
+                    <h1 class="card-title"> Syrena Project </h1>
+                    <h6 class="card-subtitle text-muted"> 4 deadline · 2 overdue </h6>
+                  </div>
+                </a> <!-- .btn-account -->
+                <!-- right actions -->
+                <div class="ml-auto">
+                  <button type="button" class="btn btn-light btn-icon" data-toggle="modal" data-target="#modalBoardConfig" title="Show menu"><i class="fa fa-cog fa-fw"></i></button> 
+                  <button type="button" class="btn btn-light" id="addTask">Add task</button>
+                </div><!-- /right actions -->
+              </header><!-- /.page-navs -->
+              <!-- .board -->
+              <div class="board d-flex flex-column overflow-x-auto">
+                <div class="btn-group btn-group-toggle mb-3" data-toggle="buttons">
+                  <!-- <label class="btn btn-secondary"><input type="radio" name="ganttView" value="Quarter Day">Quarter Day</label>
+        <label class="btn btn-secondary"><input type="radio" name="ganttView" value="Half Day">Half Day</label> -->
+                  <label class="btn btn-secondary active"><input type="radio" name="ganttView" value="Day" checked>Day</label> <label class="btn btn-secondary"><input type="radio" name="ganttView" value="Week">Week</label> <label class="btn btn-secondary"><input type="radio" name="ganttView" value="Month">Month</label>
+                </div>
+                <div class="gantt-container flex-grow-1">
+                  <svg id="gantt-target"></svg>
+                </div>
+              </div><!-- /.board -->
+            </div><!-- /.page-inner -->
+          </div><!-- /.page -->
+
+          <div class="modal fade" id="modalBoardConfig" tabindex="-1" role="dialog" aria-labelledby="editModalTitle" style="display: none;" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                      <h5 class="modal-title" id="editModalTitle">Set Gannt</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">×</span> </button>
+                </div>
+                <form class="site-form" method="GET" action="/PMIS/looper_gantt">        
+                  {% csrf_token %}
+                  {% if type %}
+                    <input type='hidden' id="calendar_param_type" name="type" value="{{type}}"/>
+                    <input type='hidden' id="calendar_param_id" name="id" value="{{id}}"/>
+                    {% if type == 'goal' and show_level %}
+                        <input type='hidden' id="calendar_param_show_level" name="show_level" value="{{show_level}}"/>
+                    {%endif%}
+                  {% endif %}                  
+                  <div class="modal-body">  
+                    <ul class="list-group list-group-flush">
+                        {% if type == 'goal' %}
+                        <li class="list-group-item">
+                          <!-- Default checked -->
+                          <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" name="show_q" id="check1" {%if not show_level or '1' in show_level %} checked {%endif%}>
+                            <label class="custom-control-label" for="check1">Show Quarterly</label>
+                          </div>
+                        </li>
+                        <li class="list-group-item">
+                          <!-- Default checked -->
+                          <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" name="show_m" id="check2" {%if not show_level or '2' in show_level %} checked {%endif%}>
+                            <label class="custom-control-label" for="check2">Show Monthly</label>
+                          </div>
+                        </li>
+                        <li class="list-group-item">
+                          <!-- Default checked -->
+                          <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" name="show_w" id="check3" {%if not show_level or '3' in show_level %} checked {%endif%}>
+                            <label class="custom-control-label" for="check3">Show Weekly</label>
+                          </div>
+                        </li>
+                        <li class="list-group-item">
+                          <!-- Default checked -->
+                          <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" name="show_t" id="check4" {%if not show_level or '4' in show_level %} checked {%endif%}>
+                            <label class="custom-control-label" for="check4">Show Task</label>
+                          </div>
+                        </li>
+                        {%endif%}
+                      </ul>                      
+                  </div>
+                  <div class='modal-footer'>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button id="apply_btn" type="submit" class="btn btn-secondary">apply</button>
+                  </div>        
+                </form>        
+              </div>
+            </div>
+          </div>            
+{% endblock %}
+{% block footer_jscss%}
+    <!-- BEGIN PLUGINS JS -->
+    <script src="{% static 'BaseProject/vendor/Looper/assets/vendor/pace-progress/pace.min.js' %}"></script>
+    <script src="{% static 'BaseProject/vendor/Looper/assets/vendor/stacked-menu/js/stacked-menu.min.js' %}"></script>
+    <script src="{% static 'BaseProject/vendor/Looper/assets/vendor/perfect-scrollbar/perfect-scrollbar.min.js' %}"></script>
+    <script src="{% static 'BaseProject/vendor/Looper/assets/vendor/moment/min/moment.min.js' %}"></script>
+    <script src="{% static 'BaseProject/vendor/Looper/assets/vendor/snapsvg/snap.svg-min.js' %}"></script>
+    <script src="{% static 'BaseProject/vendor/Looper/assets/vendor/frappe-gantt-v2/frappe-gantt.min.js' %}"></script> <!-- END PLUGINS JS -->
+    <!-- BEGIN PAGE LEVEL JS -->
+    <script src="{% static 'BaseProject/vendor/Looper/assets/javascript/pages/gantt-view-demo.js' %}"></script> <!-- END PAGE LEVEL JS -->
+    <script type="text/javascript">
+        $("#apply_btn").on('click', function(){
+            location.replace("/PMIS/looper_gantt?" + $("form").serialize());
+            return false;
+        })
+    </script>
+{% endblock %}

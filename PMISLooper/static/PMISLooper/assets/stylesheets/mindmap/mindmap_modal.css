@@ -1,0 +1,34 @@
+#splitter2 {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	border: 10px solid rgba(48,79,71,0.1);
+}
+
+#splitter2 #right_content{
+	padding: 0;
+}
+
+.vsplitter {
+    background: #cbe1fb url(./../../images/panev.gif) 0% 50%;
+}
+
+/* 滾動條樣式 */
+.modal-body #right_content::-webkit-scrollbar, .modal-body #left_content::-webkit-scrollbar{
+	width: 8px;
+	height: 8px;
+}
+
+.modal-body #right_content::-webkit-scrollbar-track, .modal-body #left_content::-webkit-scrollbar-track{
+	background: #f1f1f1;
+	border-radius: 6px;
+}
+
+.modal-body #right_content::-webkit-scrollbar-thumb, .modal-body #left_content::-webkit-scrollbar-thumb{
+	background: #e1e1e1;
+	border-radius: 5px;
+}
+
+.modal-body #right_content::-webkit-scrollbar-thumb:hover, .modal-body #left_content::-webkit-scrollbar-thumb:hover{
+	background: #c0c0c0;
+}

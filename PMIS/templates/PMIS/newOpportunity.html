@@ -1,0 +1,276 @@
+{% extends 'PMISLooper/index.html' %}
+{%load static %}
+{% load i18n %}
+{%block form_css%}
+{{block.super}}
+<style>
+    /* .jstree-container-ul li {
+        list-style: none;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        position: relative;
+        left: -30px;
+        margin-left: 40px;
+        word-break: keep-all;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+
+    .jstree-container-ul {
+        position: relative;
+        top: 40px;
+        padding-bottom: 10px;
+        left: -20px;
+        margin-left: 0px;
+        padding-right: 20px;
+    } */
+    .float-l{
+        float: left;
+    }
+    .search_more {
+        margin-left: 20px;
+    }
+    .search_more i {
+        margin-right: .25rem;
+    }
+    [name="quickTec"]+.custom-control-label:after, 
+    [name="quickTec"]+.custom-control-label:before {
+        top: .25rem !important;
+    }
+    .tech_title {
+        flex: 1;
+        margin-bottom: 0;
+    }
+    #Main_Page.SWDataTable .dataTables_wrapper {
+        /* font-family: 'Andika', "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif; */
+    }
+    #Main_Page.SWDataTable #Technictable_length>label,
+    #Main_Page.SWDataTable #Technictable_filter>label {
+        margin-bottom: 0;
+    }
+
+    @media (min-width: 768px) and (max-width: 991.98px) {
+        #Main_Page #Technictable_wrapper>.row:first-child {
+            align-items: center;
+        }
+
+        #Main_Page #Technictable_wrapper>.row:first-child>div:first-child {
+            flex: 0 0 33.333333%;
+            max-width: 33.333333%;
+        }
+
+        #Main_Page #Technictable_wrapper>.row:first-child>div:last-child {
+            flex: 0 0 66.666667%;
+            max-width: 66.666667%;
+        }
+
+        .search_more {
+            margin-left: 6px;
+        }
+
+        #Main_Page.SWDataTable #Technictable_length>label{
+            margin-top: 0;
+        }
+    }
+</style>
+{% endblock %}
+{%load customer_filter%}
+{%  block content %}
+{{block.super}}
+<div class="row">
+    <!-- <div class="col-2 ">
+        <h6 style="color: rgb(52, 108, 176);">新技術文檔目錄</h6>
+        <div id="jstree_div" class="jstree"></div>
+    </div> -->
+    <div class="col-12">
+        <div class="card mb-1">
+            <div class="card-header d-flex align-items-center">
+                <button class="btn btn-primary float-l" id="createbtn"><i class="fas fa-plus"></i></button>
+                <h5 class="text-center tech_title">{% trans "Technical Table"%}</h5>
+            </div>
+            <div class="card-body p-0" id="stepper_from_div">
+                <div id="Main_Page"></div>
+            </div>
+        </div>
+    </div>
+</div>
+{%endblock%}
+<!--定義Detail對話框的顯示內容-->
+
+{%block form_js%}
+{{block.super}}
+<script src="{% static 'BaseProject/vendor/Looper/assets/vendor/jstree/jstree.min.js' %}"></script>
+<script>
+    var gettext_SearchMiniTechnial = '{% trans "Search Mini Technial" %}';
+    var gettext_parentid = '{% trans "Parent Mind Map ID" %}';
+
+    $('#createbtn').on('click',()=>{
+        window.location.href="/PMIS/Technical_Material_create";
+    })
+    //技術文檔表格創建
+    var technicTable = new SWDataTable("#Main_Page", "Technictable"); //創建SWDataTable對象
+    technicTable.pageLength = 10; //設置每頁顯示的數量為20
+    technicTable.paging = true; //設置分頁顯示
+    technicTable.searching = true; //設置不顯示查詢框
+
+    technicTable.orderBy = [['mb023', 'desc']]; //設置按taskno 升序排序
+    //設置顯示字段
+    technicTable.columns = [
+        { field: "mb023", label: gettext('Technic Id') },
+        { field: "mb004", label: gettext('Technical Topic'), width: checkMediaQuery() ? '40rem' : '', },
+        { field: "parentid", label: gettext_parentid },
+        { field: "mb001", label: gettext('Type Id') },
+        { field: "mb005", label: gettext('Contact') },
+        { field: "mb019", label: gettext('Compulsory'), visible:false },
+        
+        {
+            field: "mb006", label: gettext('Create Date'), render:
+                function (data) {
+                    if (data === null) return "";
+                    return data.replace(/^(\d{4})(\d{2})(\d{2})$/, "$1-$2-$3");
+                }
+        },
+        { field: "mb008", label: gettext('Usage'), width: checkMediaQuery() ? '20rem' : '', },
+        { field: "inc_id", label: gettext('inc_id'), visible:false},
+    ];
+
+    technicTable.setOptions({
+        responsive: true,  
+        autoWidth: !checkMediaQuery(),
+        scrollX: checkMediaQuery(),
+        columnDefs: [
+            {"responsivePriority": 1, "className":"all", "targets": 0 },
+            {"responsivePriority": 1, "className":"all",  "targets": 1 },
+            {"responsivePriority": 2, "className":"min-tablet-p", "targets": 2 },
+            {"responsivePriority": 3, "className":"min-tablet-p", "targets": 3 },
+            {"responsivePriority": 5, "className":"min-tablet-p", "targets": 4 },
+            {"responsivePriority": 3, "className":"min-tablet-p", "targets": 5 },
+            {"responsivePriority": 5, "className":"min-tablet-p", "targets": 6 },
+        ]
+
+    });
+    $.fn.DataTable.ext.pager.numbers_length = 5;
+
+    
+    var bdate = getParamFromUrl("bdate");
+    var edate = getParamFromUrl("edate");
+    if (bdate !=null  && bdate != '' && edate !=null  && edate != ''){
+        technicTable.init('/PMIS/TechnicalDatatable?bdate='+bdate+'&edate='+edate);
+    }else{
+        technicTable.init('/PMIS/TechnicalDatatable');
+    }
+
+    var btnhtml = '<button class="btn btn-sm btn-primary search_more"><i class="fas fa-book d-inline-block d-sm-none"></i> '+ '{% trans "Search" %}' +'</button>'
+
+    $('#Technictable_filter').append(btnhtml)
+    if (SWApp.os.isMobile) {
+        $("#Technictable_length").hide();
+        $('#Technictable_filter').addClass("d-flex");
+        $('#Technictable_filter').addClass("justify-content-between");
+        $('#Technictable_filter').addClass("align-items-center");
+        $('#Technictable_filter label').css("marginBottom", "0px");
+        $('#Technictable_filter button').css("marginLeft", "0px");
+        $('#Technictable_filter input').css("width", "150px");
+    }
+
+    var test_search = new SWAdvancedsearch(".search_more"); //設置Search按鈕為觸發標籤
+    var group = new SWAdvancedsearch.Group(SWAdvancedsearch.Condition.AND);
+    var mb004 = new SWAdvancedsearch.Rule("mb004", SWAdvancedsearch.Type.STRING,
+        SWAdvancedsearch.Operator.CONTAINS, gettext('Technical Topic'));
+    var mb005 = new SWAdvancedsearch.Rule("mb005", SWAdvancedsearch.Type.STRING,
+        SWAdvancedsearch.Operator.CONTAINS, gettext('Contact'));
+    var mb023 = new SWAdvancedsearch.Rule("technicalid_search", SWAdvancedsearch.Type.STRING,
+        SWAdvancedsearch.Operator.CONTAINS, gettext('Technical Id'));
+    var mb015 = new SWAdvancedsearch.Rule("mb015", SWAdvancedsearch.Type.STRING,
+        SWAdvancedsearch.Operator.CONTAINS, gettext('Type Id'));
+    var mb016 = new SWAdvancedsearch.Rule("mb016", SWAdvancedsearch.Type.STRING,
+        SWAdvancedsearch.Operator.CONTAINS, gettext('Area'));
+    var mb019 = new SWAdvancedsearch.Rule("mb019", SWAdvancedsearch.Type.STRING,
+        SWAdvancedsearch.Operator.CONTAINS, gettext('Compulsory'));
+    // var mb006 = new SWAdvancedsearch.Rule("mb006", SWAdvancedsearch.Type.DATE_TO_STR,
+    //     SWAdvancedsearch.Operator.GREATER_OR_EQUAL, gettext('Create Date'));
+    
+    group.addRule(mb004);
+    group.addRule(mb005);
+    group.addRule(mb023);
+    group.addRule(mb015);
+    group.addRule(mb016);
+    group.addRule(mb019);
+    // group.addRule(mb006);
+    test_search.addGroup(group);
+    test_search.on_search_event = function (filter) {
+        var quictfilter = JSON.parse(filter)
+        if(quictfilter == null)
+            quictfilter ={"condition":"AND","rules":[],"not":false,"valid":true}
+        for(var item of quictfilter['rules']){
+            if(item['id']=='technicalid_search'){
+                item['id']="mb023"
+                item['field']="mb023"
+            } 
+        }
+        
+        if($('#SWAdvancedsearch-Modal-1 .modal-body input[name="quickTec"]')[0].checked){
+            quictfilter['rules'].push({
+                'condition': 'OR',
+                'rules': [
+                    {"id":"mb023","field":"mb023","type":"string","input":"text","operator":"is_null","value":""},
+                    {"id":"mb023","field":"mb023","type":"string","input":"text","operator":"contains","value":"Tem-Tem"}
+                ],"not":false,"valid":true
+            })
+        }
+        if($('#SWAdvancedsearch-Modal-1 .modal-body input[name="bmb006"]').val()!=''){
+            quictfilter['rules'].push({"id": "mb006","field": "mb006","type": "string","input": "text",
+            "operator": "greater_or_equal","value":$('#SWAdvancedsearch-Modal-1 .modal-body input[name="bmb006"]').val().replaceAll('-','')})
+        }
+        if($('#SWAdvancedsearch-Modal-1 .modal-body input[name="emb006"]').val()!=''){
+            quictfilter['rules'].push({"id": "mb006","field": "mb006","type": "string","input": "text",
+            "operator": "less_or_equal","value":$('#SWAdvancedsearch-Modal-1 .modal-body input[name="emb006"]').val().replaceAll('-','')})
+        }
+        
+        //czz240919 
+        if($('#SWAdvancedsearch-Modal-1 .modal-body select[name="tec_status"]').val()!=''){
+            quictfilter['rules'].push({"id": "udf03","field": "udf03","type": "string","input": "text",
+            "operator": "equal","value":$('#SWAdvancedsearch-Modal-1 .modal-body select[name="tec_status"]').val()})
+        }
+        filter = JSON.stringify(quictfilter)
+        console.log(quictfilter)
+        $('#Technictable').DataTable().search('form-search:' + filter).draw();
+        $('#Technictable_filter input').val('')
+    }
+
+    var create_data = '<div class="form-group SWDate">'+
+    '<label class="col-form-label caption">'+gettext('Create Date')+'</label><div class="input-group input-group-alt m-0">'+
+    '<input class="form-control control col" type="date" value="" name="bmb006" required><div class="input-group-append" style="margin-right: -1px;"><span class="input-group-text custom-text">'+gettext('To')+'</span></div>'+'<input class="form-control control col" type="date" value="" name="emb006" required></div></div>'
+    $('#SWAdvancedsearch-Modal-1 .modal-body').append(create_data);     
+
+    
+    //czz240919
+    var tec_status = new SWCombobox("tec_status", gettext('Status'), 
+    [{ 'value': 'S', 'label': 'S:'+gettext('SatisFied') },{ 'value': 'A', 'label': 'A:'+gettext('Alternative') },
+    { 'value': 'N', 'label': 'N:'+gettext('UnKnown')},{ 'value': 'T', 'label': 'T:'+gettext('Need to Test') },
+    { 'value': 'I', 'label': 'I:'+gettext('Checking') },{ 'value': 'C', 'label': 'C:'+gettext('Confirmed') }]);
+    tec_status.setHorizontalDisplay(true)
+    $('#SWAdvancedsearch-Modal-1 .modal-body').append(tec_status.dom.removeClass("input-group input-group-alt col-auto").addClass('form-group'));   
+    
+
+    var dayjoy_cmpt = new SWCheckbox("quickTec", gettext_SearchMiniTechnial, false)
+    $('#SWAdvancedsearch-Modal-1 .modal-body').append(dayjoy_cmpt.dom);  
+
+    $('#Technictable tbody').on('dblclick', 'tr', function () {
+        var strmb023 = $('#Technictable').DataTable().row(this).data()['mb023'];
+        var inc_id = $('#Technictable').DataTable().row(this).data()['inc_id'];
+        strmb023 = strmb023==null?'':strmb023.trim()
+        window.open('/PMIS/opportunity/Technical_Material?param=' + strmb023+'&inc_id='+inc_id)
+    })
+
+    $(window).on('orientationchange', function () {
+        location.reload();
+    });
+
+    function checkMediaQuery() {
+        var mediaQuery = window.matchMedia("(min-width: 768px) and (max-width: 1499.98px)");
+        return mediaQuery.matches;
+    }
+
+</script>
+{%endblock%}

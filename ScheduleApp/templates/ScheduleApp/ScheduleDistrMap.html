@@ -1,0 +1,25 @@
+
+{% extends 'PMISLooper/vue_index.html' %}
+{%load static %}
+{% load md5url %}
+{% load render_bundle from webpack_loader %}
+{% block form_css%}
+{{block.super}}
+    <link rel="stylesheet" type="text/css" href="{% md5url 'ScheduleApp/assets/stylesheets/ScheduleDistrMap.css' %}"/>    
+    <link rel="stylesheet" type="text/css" href="{% md5url 'ScheduleApp/assets/stylesheets/ScheduleDistrMap_dark.css' %}" data-skin="dark"/>    
+{%endblock%}
+
+{% block content%}
+{{block.super}}
+    
+{%endblock%}   
+
+
+{%block form_js%}
+{{block.super}}
+<script type="text/javascript" src="{% static 'BaseApp/vendor/gojs/2.3.10/go.js' %}"></script>
+<script type="text/javascript" src="{% static 'BaseApp/vendor/gojs/Figures.js' %}"></script>
+<script type="text/javascript" src="{% static 'BaseApp/vendor/gojs/DataInspector.js' %}"></script>
+<script type="text/javascript" src="{% static 'BaseApp/vendor/gojs/OrthogonalLinkReshapingTool.js' %}"></script>
+{% render_bundle 'ScheduleApp/dist/javascript/ScheduleDistrMap' %} 
+{%endblock%}     

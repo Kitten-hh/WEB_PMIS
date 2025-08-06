@@ -1,0 +1,39 @@
+{% load i18n %}
+<div class="modal fade" id="chatAI_modal" tabindex="-1" role="dialog" aria-labelledby="form" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-scrollable has-sidebar">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">{% trans "Chat With AI" %}</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <div id="ai-com-box" class="card mt-3 mb-0">
+                <div class="card-header w-100">
+                  <ul class="nav nav-tabs card-header-tabs scrollbar">
+                    <li class="nav-item">
+                      <!-- <button class="btn btn-sm btn-light btn-icon text-darkblue toggle-ai-box">
+                        <i class="fas fa-expand-alt" style="font-size: 15px;"></i>
+                      </button> -->
+                    </li>
+                    <li class="nav-item dropdown ml-auto">
+                      <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false">
+                        Preset Question
+                      </a>
+                      <div class="dropdown-menu dropdown-scroll scrollbar questionSelect">
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div class="card-body scrollbar right_pane w-100">
+                  <iframe frameborder="0" class="iframe mb-0" id="ChatAI_iframe" src=""></iframe>
+                </div>
+              </div>
+        </div>
+        <div class="modal-footer">    
+            <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="far fa-times-circle mr-1"></i>{% trans "Close"%}</button>
+        </div>
+      </div>
+    </div>
+</div>  

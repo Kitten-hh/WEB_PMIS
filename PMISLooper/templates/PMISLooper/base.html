@@ -1,0 +1,495 @@
+{%load static %}
+{% load i18n %}
+{% load md5url %}
+{% if form_css%}
+<!-- <link rel="stylesheet" type="text/css" href="{% md5url 'BaseApp/vendor/Looper/assets/vendor/jstree/themes/default/style.min.css' %}" data-skin="default" /> -->
+<link rel="stylesheet" type="text/css" href="{% static 'PMISLooper/assets/stylesheets/quick-add-task.css' %}" data-skin="default" />
+<link rel="stylesheet" type="text/css" href="{% static 'PMISLooper/assets/stylesheets/quick-add-task_dark.css' %}" data-skin="dark" />
+<link rel="stylesheet" type="text/css" href="{% static 'PMISLooper/assets/stylesheets/user/index_login.css' %}" />
+
+<link rel="stylesheet" type="text/css" href="{% md5url 'PMISLooper/assets/stylesheets/quick-add-technic.css' %}" data-skin="default" />
+<link rel="stylesheet" type="text/css" href="{% md5url 'PMISLooper/assets/stylesheets/quick-add-technic_dark.css' %}" data-skin="dark" />
+<link rel="stylesheet" type="text/css" href="{% md5url 'PMISLooper/assets/stylesheets/ai/AIComBox.css' %}" data-skin="default" />
+<link rel="stylesheet" type="text/css" href="{% md5url 'BaseApp/assets/stylesheets/looper_base/components/SWDataTable.css' %}" data-skin="default"/>    
+<link rel="stylesheet" type="text/css" href="{% md5url 'BaseApp/assets/stylesheets/looper_base/components/SWDataTable_dark.css' %}" data-skin="dark"/>  
+<link rel="stylesheet" type="text/css" href="{% md5url 'BaseApp/assets/stylesheets/app/components/SWSelectquery.css' %}" data-skin="default" />
+<link rel="stylesheet" type="text/css" href="{% md5url 'BaseApp/assets/stylesheets/app/components/SWSelectquery_dark.css' %}" data-skin="dark"/>  
+<link rel="stylesheet" type="text/css" href="{% static 'BaseApp/vendor/jquery_contextmenu/jquery.contextMenu.min.css'%}" />   
+<style>
+    .base-footer {
+        z-index: 2;
+    }
+    body {
+        font-family: 'Andika', "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif !important;
+    }
+    .fa_add_tasks {
+        font-size: 1.25rem;
+        /* margin-top: 3px; */
+    }
+    .top-0 {
+        top: 0 !important;
+    }
+    @media (min-width: 768px) {
+        .fa_add_tasks {
+            font-size: 18px;
+            /* margin-top: 2px; */
+        }
+    }
+</style>
+{%endif%}
+{%if content%}
+<div class="dropdown" style="display: none;">
+    <button class="btn btn-secondary dropdown-toggle caption" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown button</button>
+    <div class="dropdown-menu control" aria-labelledby="dropdownMenuButton" style>
+        <a class="dropdown-item" href="#">Action</a>
+        <a class="dropdown-item" href="#">Another action</a>
+        <a class="dropdown-item" href="#">Something else here</a>
+    </div>
+</div>
+{%include "BaseApp/looper_base/components/SWToast1.html"%}
+{%include "PMISLooper/task/quick-add-task.html"%}
+{%include "PMISLooper/technic/quickAddTechnic.html"%}
+{%include "PMISLooper/ai/AIComBox.html"%}
+
+<div class="d-none">
+{%include "BaseApp/looper_base/components/SWDataTable.html"%}
+{%include "BaseApp/app/components/SWSelectquery.html"%}
+</div>
+<div id="back_menu" class="d-none">
+    <div class="top-bar-item top-bar-item-left px-0">
+        <!-- .nav -->
+        <ul class="header-nav nav">
+            <!-- .nav-item -->
+            <li class="nav-item ">
+                <a class="nav-link back_link" href="#"><span class="menu-icon fas fa-home"
+                        style="font-size: 1.05rem;top:0px;"></span></a>
+            </li>
+            <li class="nav-item ">
+                <a class="nav-link devplat_link" href="#"><span class="menu-icon fas fa-users-cog"
+                        style="font-size: 1.05rem;top:0px;"></span></a>
+            </li>
+        </ul>
+    </div>
+</div>
+<div id="lang_menu" class="d-none">
+    <li class="nav-item dropdown lang_menu">
+        {% get_current_language as LANGUAGE_CODE %}
+        <input id="curr_language_code" value="{{LANGUAGE_CODE}}" type="hidden"/>
+        {% get_available_languages as LANGUAGES %}
+        {% get_language_info_list for LANGUAGES as languages %}
+        {% for language in languages %}
+            {% if language.code == LANGUAGE_CODE %} 
+                <a class="nav-link" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class="">{{language.name_translated}}</span>
+                </a>
+            {% endif %}
+        {% endfor %}            
+        
+        <div class="dropdown-menu dropdown-menu-right">
+            <div class="dropdown-arrow"></div>
+            {% for language in languages %}
+                <a class="dropdown-item" href="#" lang_code="{{language.code}}"> {{ language.name_translated }}</a>
+            {% endfor %}                        
+        </div>  
+        <form class="form-inline ml-3-md d-none" action="{% url 'set_language' %}" method="post">
+            {% csrf_token %}
+            <input name="next" type="hidden" value="{{ redirect_to }}" />
+            <input name="language" type="hidden" value=""/>
+            <div class="input-group-append">
+                <button type="submit" class="btn btn-inline btn-sm bg-warning">
+                </button>
+            </div>
+        </form>                  
+    </li>
+</div>
+<div id="all_menu" class="d-none">
+    <li class="nav-item dropdown header-nav-dropdown">
+        <a class="nav-link" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="fas fa-tasks fa_add_tasks"></span></a>
+        
+        <div class="dropdown-menu dropdown-menu-rich dropdown-menu-right" style>
+            <div class="dropdown-arrow d-none d-sm-block"></div>
+            <div class="dropdown-sheets">
+                <div class="dropdown-sheet-item" style="width: 33.33333%;">
+                    <!-- <a href="http://183.63.205.83:3000" class="tile-wrapper"><span class="tile tile-lg bg-teal"><i class="fas fa-robot top-0"></i></span> <span class="tile-peek">{% trans "Chat with Ai" %}</span></a> -->
+                    <a href="http://183.63.205.83:3000" class="tile-wrapper">
+                        <span class="tile tile-lg bg-teal chatWithAiBtn">
+                            <img src="{% static 'DevPlat/assets/images/Ai.png' %}" alt="AI" class="chatWithAiBtnIcon">
+                        </span> 
+                        <span class="tile-peek">{% trans "Chat with Ai" %}</span>
+                    </a>
+                </div>             
+                <div class="dropdown-sheet-item" style="width: 33.33333%;">
+                    <a href="#" class="tile-wrapper addTasks" data-toggle="modal"><span class="tile tile-lg bg-info"><i class="fa-fw oi oi-document"></i></span> <span class="tile-peek">{% trans "New Task" %}</span></a>
+                </div>
+                <div class="dropdown-sheet-item" id="addTechnic_menu"  style="width: 33.33333%;">
+                    <a href="#" class="tile-wrapper"  data-toggle="modal" data-target="#quick-add-technic">
+                        <span class="tile tile-lg bg-indigo"><i class="menu-icon oi oi-pencil"></i></span> 
+                        <span class="tile-peek">{% trans "Mini Technical" %}</span>
+                    </a>
+                </div>
+                <div class="dropdown-sheet-item" style="width: 33.33333%;">
+                    <a href="/devplat/sessions?recordid=00331&menu_id=mi_00001-18008#Session_Log" class="tile-wrapper"><span class="tile tile-lg bg-cyan"><i class="fa fa-fw fa-comment top-0"></i></span> <span class="tile-peek">{% trans "Log" %}</span></a>
+                </div>
+                <div class="dropdown-sheet-item" style="width: 33.33333%;">
+                    <a href="#" class="tile-wrapper devplat_link"><span class="tile tile-lg bg-pink"><i class="fab fa-kickstarter-k"></i></span> <span class="tile-peek">{% trans "Knowledge Based" %}</span></a>
+                </div>
+                <div class="dropdown-sheet-item" style="width: 33.33333%;">
+                    <a href="/looper/goal/goal_management" class="tile-wrapper"><span class="tile tile-lg bg-yellow"><i class="fab fa-gofore"></i></span> <span class="tile-peek">{% trans "Goal Management" %}</span></a>
+                </div>
+                <div class="dropdown-sheet-item" style="width: 33.33333%;">
+                    <a href="/devplat/session/question" class="tile-wrapper"><span class="tile tile-lg bg-cyan"><i class="oi oi-magnifying-glass"></i></span> <span class="tile-peek">{% trans "Question" %}</span></a>
+                </div>
+                <div class="dropdown-sheet-item" style="width: 33.33333%;">
+                    <a href="/systembugrpt" class="tile-wrapper"><span class="tile tile-lg bg-teal"><i class="fas fa-clipboard-list top-0"></i></span> <span class="tile-peek">{% trans "System Bug Rpt" %}</span></a>
+                </div>   
+                <div class="dropdown-sheet-item" style="width: 33.33333%;">
+                    <a href="#" id="message_summary_link" class="tile-wrapper"><span class="tile tile-lg bg-info"><i class="fas fa-sms top-0"></i></span> <span class="tile-peek">{% trans "Message Summay" %}</span></a>
+                </div>   
+            </div>
+        </div>
+    </li>
+</div>
+<!-- <div id="addTasks_menu" class="d-none">
+    <li class="nav-item addTasks_li">
+        <a class="nav-link" href="#" data-toggle="modal"><span class="fas fa-tasks fa_add_tasks"></span></a>
+    </li>
+</div> -->
+<!-- <div id="addTechnic_menu" class="d-none">
+    <li class="nav-item addTechnic_li">
+        <a class="nav-link" href="#" data-toggle="modal"><span class="menu-icon oi oi-pencil"></span></a>
+    </li>
+</div> -->
+<div id="Comments_menu" class="d-none">
+    <div class="dropdown-menu dropdown-menu-rich dropdown-menu-right stop-propagation prevent-default" style>
+        <div class="dropdown-arrow d-none d-sm-block"></div>
+        <div id="lightSlider">
+            <div class="dropdown-sheets">
+                <div class="dropdown-sheet-item" style="width: 33.33333%;">
+                    <a href="/looper/task/today_task" class="tile-wrapper"><span class="tile tile-lg bg-primary"><i class="fa fa-calendar-day top-0"></i></span><span class="tile-peek">{% trans "Today's Tasks" %}</span></a>
+                </div>
+                <div class="dropdown-sheet-item" style="width: 33.33333%;">
+                    <a href="/looper/staff_dashboard" class="tile-wrapper" target="staff_dashboard"><span class="tile tile-lg bg-teal"><i class="fas fa-home top-0"></i></span> <span class="tile-peek">{% trans "Dashboard" %}</span></a>
+                </div>
+                <div class="dropdown-sheet-item" style="width: 33.33333%;">
+                    <a href="#" id="headernav_act_tasks" class="tile-wrapper"><span class="tile tile-lg bg-danger"><i class="oi oi-pulse top-0"></i></span> <span class="tile-peek">{% trans "Activity-Task" %}</span></a>
+                </div>
+                <div class="dropdown-sheet-item" style="width: 33.33333%;">
+                    <a href="/bonus/main_page" class="tile-wrapper"><span class="tile tile-lg bg-yellow"><i class="fab fa-stripe-s"></i></span> <span class="tile-peek">{% trans "Scoring" %}</span></a>
+                </div>
+                <div class="dropdown-sheet-item" style="width: 33.33333%;">
+                    <a href="#" id="headernav_goal_link" class="tile-wrapper"><span class="tile tile-lg bg-cyan"><i class="oi oi-flag"></i></span> <span class="tile-peek">{% trans "Goal" %}</span></a>
+                </div>
+                <div class="dropdown-sheet-item" style="width: 33.33333%;">
+                    <a href="/looper/metting/newMeeting" class="tile-wrapper" target="meeting"><span class="tile tile-lg bg-primary"><i class="far fa-comment-dots"></i></span> <span class="tile-peek">{% trans "Meeting" %}</span></a>
+                </div>
+                <div class="dropdown-sheet-item" style="width: 33.33333%;">
+                    <a href="/looper/user/top5_projects" class="tile-wrapper" target="top_project"><span class="tile tile-lg bg-teal"><i class="fas fa-sort-numeric-up top-0"></i></span> <span class="tile-peek">{% trans "Milestone" %}</span></a>
+                </div>
+                <div class="dropdown-sheet-item" style="width: 33.33333%;">
+                    <a href="http://121.13.252.164:8010/Forum" class="tile-wrapper"><span class="tile tile-lg bg-danger"><i class="fab fa-foursquare"></i></span> <span class="tile-peek">{% trans "Forum" %}</span></a>
+                </div>
+                <div class="dropdown-sheet-item" style="width: 33.33333%;">
+                    <a href="/devplat/project/overview" class="tile-wrapper" target="project"><span class="tile tile-lg bg-yellow"><i class="oi oi-fork"></i></span> <span class="tile-peek">{% trans "Projects-SDLC" %}</span></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{%include "PMISLooper/user/index_login.html"%}
+{%endif%}
+{%if form_js%}
+<script src="{% url 'javascript-catalog' %}"></script>
+<script src="{% static 'BaseApp/vendor/jquery/ajaxhook.min.js' %}" type="text/javascript"></script>
+<script src="{% md5url 'PMIS/js/syspublic.js'%}"></script>
+<script>
+    $(function () {
+        // 設置logo
+        $(".logo").text("PMIS");
+        $(".logo").attr("href", "/looper").css("font-size","35px");
+        //設置Menu菜單的MenuItem
+        $(".app .top-bar-list .top-bar-item:first").after($("#back_menu").html());
+        $(".app .top-bar-item-right .header-nav").prepend($("#all_menu").html());
+        // $(".app .top-bar-item-right .header-nav li:last-child").before($("#addTechnic_menu").html());
+        $(".app .top-bar-item-right li:last-child a").attr({"data-toggle":"dropdown","aria-haspopup":"true","aria-expanded":"false"});
+        $(".app .top-bar-item-right li:last-child").addClass("dropdown header-nav-dropdown quickLink").append($("#Comments_menu").html());
+        var username = get_username();
+        var quarterly = "{0}-{1}".format(new Date().toString("yyyy"), Math.ceil((new Date().getMonth() + 1)/3));
+        $("#headernav_goal_link").attr("href", `/looper/goal/overall/quarterly_goal?contact=${username}&period=${quarterly}`);
+        $("#headernav_goal_link").attr("target","goal");
+        $("#headernav_act_tasks").attr("href", `/looper/user/activites?contact=${username}`);
+        $("#message_summary_link").attr("href", `/ntfy/message_summary?contact=${username}`);
+        $(".app .top-bar-item-right .header-nav").append($("#lang_menu").html());
+        $(".app .top-bar-item-right .header-nav .lang_menu").on("click", ".dropdown-item", function(e){
+            e.preventDefault();
+            e.stopPropagation();
+            var container = $(".app .top-bar-item-right .header-nav .lang_menu");
+            var lang_code = $(this).attr("lang_code");
+            container.find("input[name='language']").val(lang_code);
+            container.find("button[type='submit']").click();
+        });
+        $(".app .top-bar-item-right").append($("#auth_info").html());
+        $(".top-bar-list .back_link").attr("href", "/looper/staff_dashboard");
+        $(".top-bar-list .back_link").attr("target","staff_dashboard");
+        {%if user.username != ""%}
+            $(".top-bar-list .devplat_link").attr("href", "/devplat/course?recordid=00331&menu_id=mi_3&contact={{user.username}}");
+        {% else %}
+            $(".top-bar-list .devplat_link").attr("href", "/devplat/course?recordid=00331&menu_id=mi_3&contact=sing");
+        {% endif %}
+
+        // 快捷導航鏈接窗口-引用lightSlider插件
+        var quickLink_container = $('.quickLink #lightSlider>.dropdown-sheets');
+        var quickLink_children = quickLink_container.children();
+        var count = quickLink_children.length;
+        var perContainer = 9;
+
+        if (count > perContainer) {
+            if(count % perContainer == 0){
+                var numContainers= Math.trunc(count / perContainer) - 1;
+            }else{
+                var numContainers = Math.trunc(count / perContainer);
+            }
+            console.log(numContainers)
+
+            for (var i = 0; i < numContainers; i++) {
+                var newContainer = $('<div class="dropdown-sheets"></div>');
+                quickLink_container.after(newContainer);
+
+                for (var j = perContainer; j < count; j++) {
+                    newContainer.append(quickLink_children.eq(j-1).nextAll());
+                }
+            }
+
+            var slider = $("#lightSlider").lightSlider({item: 1, controls: false, slideMargin: 0,}); 
+        }
+        
+        $('.app').on("click",".quickLink>a[data-toggle='dropdown']", function () {
+            $(window).resize();
+        }).on("shown.bs.dropdown",".quickLink>a[data-toggle='dropdown']", function () {
+            slider.refresh();
+        });
+        
+        $(".top-bar-item-right .header-nav .quickLink").on("click", ".dropdown-menu .dropdown-sheet-item", function(e){
+            e.stopPropagation();
+        });
+        SWNavigationBar.setMenuItem("mi_0", '{% trans "Operation FlowChart" %}', "/looper/mindmap?pk=2383&hideMenu=Y");
+        $("#mi_0 .menu-icon").removeClass("fa-home").addClass("fa-sitemap");
+        var mi_0_parent = $("#mi_0").closest(".menu");
+        $("#mi_0").detach().prependTo(mi_0_parent);
+        
+        SWNavigationBar.setMenuItem("mi_600", '{% trans "Chat with Ai" %}', "http://183.63.205.83:3000");
+        $("#mi_600 a").attr("target", "_blank");
+        // $("#mi_600 .menu-icon").removeClass("fa-home").addClass("fa-robot");
+        $("#mi_600 a").addClass("chatWithAiMenuBtn");
+        $("#mi_600 .menu-icon").append(`<img src="{% static 'DevPlat/assets/images/Ai.png' %}" alt="AI" class="chatWithAiMenuBtnIcon">`);
+        $(".chatWithAiMenuBtnIcon").unwrap(".menu-icon");
+        $("#mi_600").detach().insertAfter(mi_0_parent.find("#mi_0"));
+
+        SWNavigationBar.setMenuItem("mi_1", '{% trans "Dashboard" %}', "/looper");
+        SWNavigationBar.addSubMenu("mi_1_1", "mi_1", '{% trans "Team Dashboard" %}', "/looper/team_dashboard", true);
+        SWNavigationBar.addSubMenu("mi_1_2", "mi_1", '{% trans "Staff Dashboard" %}', "/looper/staff_dashboard");
+        $("#mi_1_2 a").attr("target", "staff_dashboard");
+        SWNavigationBar.addSubMenu("mi_1_3", "mi_1", '{% trans "Task DashBoard" %}', "/looper/task_dashboard");
+        SWNavigationBar.setMenuItem("mi_2", '{% trans "Projects" %}', "#");
+        SWNavigationBar.addSubMenu("mi_20", "mi_2", '{% trans "Overview" %}', "/devplat/project/overview");
+        $("#mi_20 a").attr("target", "project");
+        SWNavigationBar.addSubMenu("mi_20_1", "mi_2", '{% trans "Milestone Activiites" %}', "/looper/user/top5_projects");
+        $("#mi_20_1 a").attr("target", "top_project");
+        SWNavigationBar.addSubMenu("mi_21", "mi_2", '{% trans "Goal Master" %}', "/looper/goal/goal_master");
+        SWNavigationBar.addSubMenu("mi_21_1", "mi_2", '{% trans "Outstanding Goal" %}', "/looper/goal/goal_management");
+        SWNavigationBar.addSubMenu("mi_21_2", "mi_2", '{% trans "Goal Management" %}', "/looper/goal/goal_management_old");
+        SWNavigationBar.addSubMenu("mi_22", "mi_2", '{% trans "Sessions" %}', "/looper/user/sessions");
+
+        SWNavigationBar.addSubMenu("mi_23", "mi_2", '{% trans "Session Query" %}', "/looper/session_manager");  
+        SWNavigationBar.addSubMenu("mi_23_1", "mi_2", '{% trans "AI Condition Manager" %}', "/looper/aicondition_manager"); 
+
+        SWNavigationBar.addSubMenu("mi_24", "mi_2", '{% trans "MindMap" %}', "/looper/mindmap?type=1");
+        SWNavigationBar.addSubMenu("mi_25", "mi_2", '{% trans "Gantt Chart" %}', "/project/project_milestone");
+        SWNavigationBar.addSubMenu("mi_26", "mi_2", '{% trans "SystemBugRpt" %}', "/systembugrpt"); //系統問題上報
+        $("#mi_24 a").attr("target", "mindmap");
+
+        SWNavigationBar.setMenuItem("mi_3", '{% trans "Management" %}', "#");
+        SWNavigationBar.addSubMenu("mi_3_1", "mi_3", '{% trans "Chatbot Question Management Overview" %}', "/looper/chatbot_question_manager"); 
+        $("#mi_3_1 a").attr("target", "_blank");         
+        SWNavigationBar.addSubMenu("mi_3_2", "mi_3", '{% trans "Open Web UI" %}', "http://183.63.205.83:3010"); 
+        $("#mi_3_2 a").attr("target", "_blank");         
+
+        SWNavigationBar.setMenuItem("mi_4", '{% trans "Auth" %}', "#");
+        SWNavigationBar.addSubMenu("mi_41", "mi_4", '{% trans "Auth Users" %}', "/auth/users");
+        SWNavigationBar.addSubMenu("mi_42", "mi_4", '{% trans "Auth Roles" %}', "/auth/roles");
+        SWNavigationBar.addSubMenu("mi_43", "mi_4", '{% trans "Auth Permissions" %}', "/auth/permissions");
+        SWNavigationBar.addSubMenu("mi_44", "mi_4", '{% trans "Message Permissions" %}', "/auth/role_permissions_pmis");
+
+        SWNavigationBar.setMenuItem("mi_5", '{% trans "User" %}', "#");
+        SWNavigationBar.addSubMenu("mi_51", "mi_5", '{% trans "Activites" %}', "/looper/user/activites");
+        SWNavigationBar.addSubMenu("mi_52", "mi_5", '{% trans "Teams" %}', "/looper/user/teams");
+
+
+        SWNavigationBar.setMenuItem("mi_6", '{% trans "Tasks" %}', "#");
+        SWNavigationBar.addSubMenu("mi_61", "mi_6", gettext("Today's Tasks"), "/looper/task/today_task");
+        SWNavigationBar.addSubMenu("mi_62", "mi_6", '{% trans "Task Enquiry" %}', "/looper/task/enquiry");
+        SWNavigationBar.addSubMenu("mi_63", "mi_6", '{% trans "FAQ Analysis Task" %}', "/looper/task/faqAnalysisTask");
+
+        SWNavigationBar.setMenuItem("mi_7", '{% trans "Technical" %}', "#");
+        SWNavigationBar.addSubMenu("mi_71", "mi_7", '{% trans "Technical Daily Planner" %}', "/looper/technic/selectdailyplanner");
+        SWNavigationBar.addSubMenu("mi_711", "mi_7",'{% trans "Temp technical analysis" %}', "/looper/technicalUseRecord");
+        SWNavigationBar.addSubMenu("mi_72", "mi_7", '{% trans "Analysis TaskType" %}', "/looper/technic/tasktypeTable");
+        SWNavigationBar.addSubMenu("mi_73", "mi_7", '{% trans "SolutionType" %}', "#", false);
+        SWNavigationBar.addSubMenu("mi_73_1", "mi_73", '{% trans "MindMap" %}', "/looper/mindmap?type=2");
+        $("#mi_73_1 a").attr("target", "mindmap");
+        SWNavigationBar.addSubMenu("mi_73_2", "mi_73", '{% trans "Analysis SolutionType" %}', "/looper/technic/solutiontypeTable");
+        SWNavigationBar.addSubMenu("mi_74", "mi_7", '{% trans "Technical Enquiry" %}', "/PMIS/newOpportunity");
+        SWNavigationBar.addSubMenu("mi_75", "mi_7", '{% trans "Abnormal Daily Planner" %}', "/looper/technic/AnomalyDailyPlannerTable");
+
+        SWNavigationBar.addSubMenu("mi_77", "mi_7", '{% trans "SALC Follow Up" %}', "/looper/technic/SALCFollowUp");
+        $("#mi_77 a").attr("target", "_blank");    
+        //SWNavigationBar.addSubMenu("mi_76", "mi_7", '{% trans "Frame Update" %}', "/looper/frame/FrameUpdate");
+        
+        SWNavigationBar.setMenuItem("mi_8", '{% trans "Schedule" %}', "#");
+        SWNavigationBar.addSubMenu("mi_81", "mi_8", '{% trans "Set Priority" %}', "/schedule/set_sch_priority");
+        SWNavigationBar.addSubMenu("mi_82", "mi_8", '{% trans "Schedule Dashboard" %}', "/schedule/schedule_dashboard");
+        
+
+        SWNavigationBar.setMenuItem("mi_9", '{% trans "MindMap" %}', "/looper/mindmap");
+        $("#mi_9 a").attr("target", "mindmap");
+        SWNavigationBar.setMenuItem("mi_10", '{% trans "FlowChart" %}', "/flowchart/preview");
+        SWNavigationBar.setMenuItem("mi_11", '{% trans "Meeting" %}', "/looper/metting/newMeeting");
+        $("#mi_11 a").attr("target", "meeting");
+        SWNavigationBar.setMenuItem("mi-12", '{% trans "Testing" %}', "/looper/testing");  
+        
+
+        SWNavigationBar.setMenuItem("mi-15", '{% trans "Application" %}', "#");
+        SWNavigationBar.addSubMenu("mi_14", "mi-15", '{% trans "Developing" %}', "#");
+        SWNavigationBar.addSubMenu("mi_130b", "mi_14", '{% trans "Accounting" %}', "https://183.63.205.83:8056");        
+        $("#mi_130b a").attr("target", "_blank");
+        SWNavigationBar.addSubMenu("mi_183", "mi_14", '{% trans "Set Priority(Schedule)" %}', "http://183.63.205.83:8051/en/schedule/set_sch_priority");
+        SWNavigationBar.addSubMenu("mi_124", "mi_14", '{% trans "Lead App" %}', "http://121.13.252.164:8012/Lead");
+        $("#mi_124 a").attr("target", "_blank");
+        SWNavigationBar.addSubMenu("mi_125", "mi_14", '{% trans "CRM" %}', "http://121.13.252.164:8011");
+        $("#mi_125 a").attr("target", "_blank");        
+        SWNavigationBar.addSubMenu("mi_126", "mi_14", '{% trans "CRM Backend" %}', "http://183.63.205.83:8008");
+        $("#mi_126 a").attr("target", "_blank");
+        //SWNavigationBar.addSubMenu("mi_126a", "mi_14", '{% trans "Orderwise" %}', "http://183.63.205.83:8006");
+        //SWNavigationBar.addSubMenu("mi_126a", "mi_14", '{% trans "Orderwise" %}', "http://183.63.205.83:8004");
+        //$("#mi_126a a").attr("target", "_blank");
+        //SWNavigationBar.addSubMenu("mi_126h", "mi_14", '{% trans "Orderwise(SZ)" %}', "http://183.63.205.83:8041");
+        //$("#mi_126h a").attr("target", "_blank");
+        SWNavigationBar.addSubMenu("mi_126c", "mi_14", '{% trans "VC220 WebSite" %}', "http://183.63.205.83:8061");
+        $("#mi_126c a").attr("target", "_blank");        
+        //SWNavigationBar.addSubMenu("mi_129", "mi_14", '{% trans "ERPBom(Test)" %}', "http://121.13.252.164:5520");
+        //$("#mi_129 a").attr("target", "_blank");
+        //SWNavigationBar.addSubMenu("mi_130", "mi_14", '{% trans "WebSo" %}', "http://183.63.205.83:8018");
+        //SWNavigationBar.addSubMenu("mi_130", "mi_14", '{% trans "WebSo" %}', "http://183.63.205.83:8036");
+        //$("#mi_130 a").attr("target", "_blank");
+        SWNavigationBar.addSubMenu("mi_130a", "mi_14", '{% trans "VC Asia SI System" %}', "http://121.13.252.164:8005");
+        //SWNavigationBar.addSubMenu("mi_130a", "mi_14", '{% trans "WebSo(SI)" %}', "http://183.63.205.83:8005");
+        $("#mi_130a a").attr("target", "_blank");
+        SWNavigationBar.addSubMenu("mi_140", "mi_14", '{% trans "Repository(Bak)" %}', "http://121.13.252.164:8003");
+        $("#mi_140 a").attr("target", "_blank");
+        SWNavigationBar.addSubMenu("mi_150", "mi_14", '{% trans "Co_operate Sales" %}', "http://183.63.205.83:8020/sale_dashboard_HKSO");
+        $("#mi_150 a").attr("target", "_blank");
+
+        SWNavigationBar.addSubMenu("mi_170", "mi_14", '{% trans "Project Follow Up in WPMIS" %}', "/looper/projectFollowUp");
+        SWNavigationBar.addSubMenu("mi_180_1", "mi_14", '{% trans "TenantCloud" %}', "http://183.63.205.83:3001/tenantCloud");
+        $("#mi_180_1 a").attr("target", "_blank");
+        SWNavigationBar.addSubMenu("mi_181", "mi_14", '{% trans "EmpHRPS System" %}', "http://183.63.205.83:8016");
+        $("#mi_181 a").attr("target", "_blank");
+
+        SWNavigationBar.addSubMenu("mi_182", "mi_14", '{% trans "Document Management" %}', "/looper/documentManagement");
+        SWNavigationBar.addSubMenu("mi_184", "mi_14", '{% trans "Chat with Ai" %}', "http://183.63.205.83:3000/?model=test");
+
+        SWNavigationBar.addSubMenu("mi_120", "mi-15", '{% trans "Full Course" %}', "/looper/mindmap?type=3");
+        $("#mi_120 a").attr("target", "mindmap");
+        //SWNavigationBar.addSubMenu("mi_121", "mi-15", '{% trans "SO" %}', "http://218.17.141.166:8033/so");
+        //$("#mi_121 a").attr("target", "_blank");
+        //SWNavigationBar.addSubMenu("mi_122", "mi-15", '{% trans "CRM" %}', "http://218.17.141.166:8033/crm");
+        //$("#mi_122 a").attr("target", "_blank");
+        //SWNavigationBar.addSubMenu("mi_123", "mi-15", '{% trans "Bonus Simulation" %}', "http://121.13.252.164:8012/bonus/");
+        SWNavigationBar.addSubMenu("mi_123", "mi-15", '{% trans "Bonus Simulation" %}', "/bonus");
+        $("#mi_123 a").attr("target", "_blank");    
+
+        SWNavigationBar.addSubMenu("mi_13", "mi-15", '{% trans "Bonus Simulation(Vue)" %}', "#");
+        SWNavigationBar.addSubMenu("mi_13_1", "mi_13", '{% trans "Bonus Simulation" %}', "/bonus/main_page");
+        SWNavigationBar.addSubMenu("mi_13_3", "mi_13", '{% trans "Lookup TaskType" %}', "/bonus/tasktype_page");
+        SWNavigationBar.addSubMenu("mi_13_4", "mi_13", '{% trans "Bonus Debit" %}', "/bonus/userdeduction_page");
+        SWNavigationBar.addSubMenu("mi_13_5", "mi_13", '{% trans "Bonus Credit" %}', "/bonus/bonuscredit_page");
+        //SWNavigationBar.addSubMenu("mi_13_5", "mi_13", '{% trans "Improve Area" %}', "/bonus/improvearea_page");
+
+        SWNavigationBar.addSubMenu("mi_128", "mi-15", '{% trans "ERPBom(YM)" %}', "http://113.106.147.162:8005");
+        $("#mi_128 a").attr("target", "_blank");
+        SWNavigationBar.addSubMenu("mi_128n", "mi-15", '{% trans "ERPBom(Vietnam)" %}', "http://183.63.205.83:8022");
+        $("#mi_128n a").attr("target", "_blank");
+        SWNavigationBar.addSubMenu("mi_126b", "mi-15", '{% trans "WEB SO(Macau)" %}', "http://121.13.252.164:8019");
+        $("#mi_126b a").attr("target", "_blank");
+        SWNavigationBar.addSubMenu("mi_126d", "mi-15", '{% trans "WEB SO(Singapore)" %}', "http://203.198.152.189:8016");
+        $("#mi_126d a").attr("target", "_blank");
+        SWNavigationBar.addSubMenu("mi_126e", "mi-15", '{% trans "WEB SO(SW)" %}', "http://203.198.152.189:8017");
+        $("#mi_126e a").attr("target", "_blank");
+        SWNavigationBar.addSubMenu("mi_126f", "mi-15", '{% trans "WEB SO(Rest)" %}', "http://203.198.152.189:8018");
+        $("#mi_126f a").attr("target", "_blank");
+        SWNavigationBar.addSubMenu("mi_126g", "mi-15", '{% trans "WEB SO(SZ)" %}', "http://121.13.252.164:8110");
+        $("#mi_126g a").attr("target", "_blank");        
+        SWNavigationBar.addSubMenu("mi_126v", "mi-15", '{% trans "WEB SO(Vietnam)" %}', "http://183.63.205.83:8025");
+        $("#mi_126v a").attr("target", "_blank");        
+        SWNavigationBar.addSubMenu("mi_126o", "mi-15", '{% trans "WEB SO(Oudi)" %}', "http://183.63.205.83:8111");
+        $("#mi_126o a").attr("target", "_blank");        
+        SWNavigationBar.addSubMenu("mi_126sh", "mi-15", '{% trans "WEB SO(Shenghui)" %}', "http://183.63.205.83:8116");
+        $("#mi_126sh a").attr("target", "_blank");        
+        SWNavigationBar.addSubMenu("mi_126y", "mi-15", '{% trans "WEB SO(Yongzhen)" %}', "http://183.63.205.83:8117");
+        $("#mi_126y a").attr("target", "_blank");        
+        SWNavigationBar.addSubMenu("mi_126s", "mi-15", '{% trans "VIVC WEB SO(Singapore)" %}', "http://203.198.152.189:8020");
+        $("#mi_126s a").attr("target", "_blank");        
+        SWNavigationBar.addSubMenu("mi_126i", "mi-15", '{% trans "WEB PO" %}', "http://113.106.147.162:8000");
+        $("#mi_126i a").attr("target", "_blank");        
+        SWNavigationBar.addSubMenu("mi_126l", "mi-15", '{% trans "Orderwise" %}', "http://61.145.178.91:8010");
+        $("#mi_126l a").attr("target", "_blank");
+        SWNavigationBar.addSubMenu("mi_127", "mi-15", '{% trans "Forum" %}', "http://121.13.252.164:8010/Forum");
+        $("#mi_127 a").attr("target", "_blank");        
+        SWNavigationBar.addSubMenu("mi_1211", "mi-15", '{% trans "Playground" %}', "http://121.13.252.164:8002");
+        $("#mi_1211 a").attr("target", "_blank");
+        SWNavigationBar.addSubMenu("mi_1212", "mi-15", '{% trans "Repository" %}', "http://121.13.252.164:8015");
+        $("#mi_1212 a").attr("target", "_blank");
+        SWNavigationBar.addSubMenu("mi_1213", "mi-15", '{% trans "VC220 RestApi" %}', "http://218.17.141.166:8042");
+        $("#mi_1213 a").attr("target", "_blank");
+        {%if user.username != ""%}
+            SWNavigationBar.addSubMenu("mi_1214", "mi-15", '{% trans "Development" %}', "/devplat/course?recordid=00331&menu_id=mi_3&contact={{user.username}}");
+        {% else %}
+            SWNavigationBar.addSubMenu("mi_1214", "mi-15", '{% trans "Development" %}', "/devplat/course?recordid=00331&menu_id=mi_3&contact=sing");
+        {% endif %}        
+        $("#mi_1214 a").attr("target", "_blank");
+
+
+        //SWNavigationBar.setMenuItem("mi-15", "Solution", "#");
+        //SWNavigationBar.addSubMenu("mi_121", "mi-15", "Solution Management", "/knowledge/solution_management");
+        $("#stacked-menu>.menu>.menu-item>.menu>.menu-item").find(".menu-icon").remove();
+        SWNavigationBar.selectCurrentMenu();
+
+        $(".aside-menu li.menu-item a.menu-link[target='meeting'] .menu-icon").removeClass().addClass("menu-icon far fa-comment-dots");
+    });
+</script>
+<script src="{% static 'BaseApp/vendor/jquery_contextmenu/jquery.ui.position.min.js'%}"></script>
+<script src="{% static 'BaseApp/vendor/jquery_contextmenu/jquery.contextMenu.min.js'%}"></script>
+<script src="{% md5url 'BaseApp/assets/javascript/app/components/SWSelectquery.js' %}" type="text/javascript"></script>     
+<script src="{% md5url 'PMISLooper/assets/javascript/user/index_login.js' %}" type="text/javascript"></script>
+<script src="{% md5url 'PMISLooper/assets/javascript/quick-add-task.js' %}" type="text/javascript"></script>
+<script src="{% md5url 'PMISLooper/assets/javascript/quick-add-technic.js' %}" type="text/javascript"></script>
+<script src="{% md5url 'PMISLooper/assets/javascript/ai/AIComBox.js' %}" type="text/javascript"></script>
+<script src="{% static 'BaseApp/vendor/Looper/assets/vendor/perfect-scrollbar/perfect-scrollbar.min.js'%}"></script>
+<script src="{% static 'BaseApp/vendor/Looper/assets/vendor/parsleyjs/parsley.min.js'%}"></script>
+<script src="{% static 'BaseApp/vendor/Looper/assets/vendor/vanilla-text-mask/vanillaTextMask.js'%}"></script>
+<script src="{% static 'BaseApp/vendor/Looper/assets/vendor/text-mask-addons/textMaskAddons.js'%}"></script>
+<script src="{% static 'BaseApp/vendor/Looper/assets/vendor/bs-stepper/js/bs-stepper.min.js'%}"></script>
+<script src="{% static 'BaseApp/vendor/Looper/assets/javascript/pages/steps-demo.js'%}"></script>
+<script src="{% static 'BaseApp/vendor/Looper/assets/vendor/jstree/jstree.min.js'%}"></script>
+<script src="{% static 'BaseApp/vendor/jquery-splitter/js/jquery.splitter.js'%}"></script>
+
+<script src="{% md5url 'BaseApp/assets/javascript/looper_base/components/SWDataTable.js' %}" type="text/javascript"></script>    
+
+<script src="{% md5url 'BaseApp/vendor/Looper/assets/vendor/typeahead.js/typeahead.bundle.min.js'%}"></script>
+
+<script src="{% md5url 'BaseApp/assets/javascript/looper_base/components/SWHintMsg.js' %}" type="text/javascript"></script>
+<script>
+    //設置一周第一天為:星期一
+    Date.CultureInfo.firstDayOfWeek = 1;
+</script>
+{%endif%}

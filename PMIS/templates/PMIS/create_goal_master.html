@@ -1,0 +1,144 @@
+{% extends 'PMIS/Starter_page.html'%}
+
+{% block content %}
+<form class="site-form" method="POST" >
+    {% csrf_token %}
+
+    <div class="form-group row">
+        {{form.period.errors}}
+        <label for="period" class="col-4 col-form-label">period</label>
+        <div class="col-12">
+          <input class="form-control" type="text" value="" id={{form.period}}
+        </div>
+      </div>
+
+       <div class="form-group row">
+        {{form.contact.errors}}
+        <label for="contact" class="col-4 col-form-label">contact</label>
+        <div class="col-12">
+          <input class="form-control" type="text" value="" id={{form.contact}}
+        </div>
+      </div>
+
+       <div class="form-group row">
+        {{form.recordid.errors}}
+        <label for="recordid" class="col-4 col-form-label">recordid</label>
+        <div class="col-12">
+          <input class="form-control" type="text" value="" id={{form.recordid}}
+        </div>
+      </div>
+
+       <div class="form-group row">
+        {{form.gtype.errors}}
+        <label for="gtype" class="col-4 col-form-label">gtype</label>
+        <div class="col-12">
+          <input class="form-control" type="text" value="" id={{form.gtype}}
+        </div>
+      </div>
+
+       <div class="form-group row">
+        {{form.itemno.errors}}
+        <label for="itemno" class="col-4 col-form-label">itemno</label>
+        <div class="col-12">
+          <input class="form-control" type="text" value="" id={{form.itemno}}
+        </div>
+      </div>
+
+       <div class="form-group row">
+        {{form.objective.errors}}
+        <label for="objective" class="col-4 col-form-label">objective</label>
+        <div class="col-12">
+          <textarea class="form-control" id={{ form.objective }} </textarea>
+        </div>
+      </div>
+
+       <div class="form-group row">
+        {{form.bdate.errors}}
+        <label for="bdate" class="col-4 col-form-label">bdate</label>
+        <div class="col-12">
+          <input class="form-control" type="date" value="" id={{ form.bdate }} required/>
+        </div>
+      </div>
+
+       <div class="form-group row">
+        {{form.edate.errors}}
+        <label for="edate" class="col-4 col-form-label">edate</label>
+        <div class="col-12">
+          <input class="form-control" type="date" value="" id={{ form.edate }} required/>
+        </div>
+      </div>
+
+       <div class="form-group row">
+        {{form.project.errors}}
+        <label for="project" class="col-4 col-form-label">project</label>
+        <div class="col-12">
+          <input class="form-control" type="text" value="" id={{form.project}}
+        </div>
+      </div>
+
+       <div class="form-group row">
+        {{form.desp.errors}}
+        <label for="desp" class="col-4 col-form-label">desp</label>
+        <div class="col-12">
+          <input class="form-control" type="text" value="" id={{form.desp}}
+        </div>
+      </div>
+
+       <div class="form-group row">
+        {{form.escore.errors}}
+        <label for="escore" class="col-4 col-form-label">escore</label>
+        <div class="col-12">
+          <input class="form-control" type="text" value="" id={{form.escore}}
+        </div>
+      </div>
+
+       <div class="form-group row">
+        {{form.ascore.errors}}
+        <label for="ascore" class="col-4 col-form-label">ascore</label>
+        <div class="col-12">
+          <input class="form-control" type="text" value="" id={{form.ascore}}
+        </div>
+      </div>
+
+       <div class="form-group row">
+        {{form.management.errors}}
+        <label for="management" class="col-4 col-form-label">management</label>
+        <div class="col-12">
+          <input class="form-control" type="text" value="" id={{form.management}}
+        </div>
+      </div>
+
+       <div class="form-group row">
+        {{form.performance.errors}}
+        <label for="performance" class="col-4 col-form-label">performance</label>
+        <div class="col-12">
+          <input class="form-control" type="text" value="" id={{form.performance}}
+        </div>
+      </div>
+
+       <div class="form-group row">
+        {{form.comment.errors}}
+        <label for="comment" class="col-4 col-form-label">comment</label>
+        <div class="col-12">
+          <input class="form-control" type="text" value="" id={{form.comment}}
+        </div>
+      </div>
+
+       <div class="form-group row">
+        {{form.manday.errors}}
+        <label for="manday" class="col-4 col-form-label">manday</label>
+        <div class="col-12">
+          <input class="form-control" type="text" value="" id={{form.manday}}
+        </div>
+      </div>
+
+       <div class="form-group row">
+        {{form.difficulty.errors}}
+        <label for="difficulty" class="col-4 col-form-label">difficulty</label>
+        <div class="col-12">
+          <input class="form-control" type="text" value="" id={{form.difficulty}}
+        </div>
+      </div>
+<button type="submit" class="btn btn-primary" value="">Submit</button> 
+</form>
+{% endblock %}

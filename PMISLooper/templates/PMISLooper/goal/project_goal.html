@@ -1,0 +1,856 @@
+{% extends 'PMISLooper/index.html' %}
+{%load static %}
+{% load i18n %}
+{% load md5url %}
+{%block form_css%}
+{{block.super}}
+<link rel="stylesheet" href="{% md5url 'PMISLooper/assets/stylesheets/goal/project_goal.css'%}" data-skin="default">
+<link rel="stylesheet" href="{% md5url 'PMISLooper/assets/stylesheets/goal/project_goal_dark.css'%}" data-skin="dark">
+{%endblock%}
+{%block content %}
+{{block.super}}
+<div class="page-inner page-inner-fill project_goal_wrapper">
+    <div class="sidebar-backdrop"></div>
+    <div class="project_goal message">
+        <div class="message-header">
+            <div class="d-flex justify-content-between align-items-center">
+                <a class="btn btn-light btn-icon" href="#" id="close_back"><i class="fa fa-flip-horizontal fa-share"></i></a>
+                <h4 class="message-title"> {% trans "Project Goals"%} </h4>
+            </div>
+            <div class="message-header-actions">
+                <div class="dropdown d-inline-block">
+                    <button class="btn btn-secondary" data-toggle="modal" data-target="#add_goal">{% trans "Add Goals"%}</button>                    
+                </div>
+                <button type="button" class="btn btn-light btn-icon d-xl-none" id="expend_task_list" data-toggle="sidebar"><i
+                        class="fa fa-angle-double-left"></i></button>
+            </div>
+        </div>
+        <div class="message-body">
+            <div class="card card-fluid mb-4">
+                <div class="card-body">
+                    <div class="d-none" id="goal_form">
+                        <form class="form"></form>
+                    </div>
+                    <ul class="timeline timeline2 p-0" container_name="goal">
+                        <!--
+                        <li class="timeline-item">
+                            <div class="timeline-figure timeline-figure-light-primary">
+                                <span class="tile tile-circle tile-sm bg-light">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none">
+                                        <path opacity="0.3"
+                                            d="M2 4V16C2 16.6 2.4 17 3 17H13L16.6 20.6C17.1 21.1 18 20.8 18 20V17H21C21.6 17 22 16.6 22 16V4C22 3.4 21.6 3 21 3H3C2.4 3 2 3.4 2 4Z"
+                                            fill="black"></path>
+                                        <path
+                                            d="M18 9H6C5.4 9 5 8.6 5 8C5 7.4 5.4 7 6 7H18C18.6 7 19 7.4 19 8C19 8.6 18.6 9 18 9ZM16 12C16 11.4 15.6 11 15 11H6C5.4 11 5 11.4 5 12C5 12.6 5.4 13 6 13H15C15.6 13 16 12.6 16 12Z"
+                                            fill="black"></path>
+                                    </svg>
+                                </span>
+                            </div>
+                            <div class="timeline-body item_flex">
+                                <div class="media">
+                                    <div class="media-body timeline-content">
+                                        <div class="mb-3">
+                                            <div class="d-flex justify-content-between align-items-center mb-2 sm-align">
+                                                <h3 class="alert-heading text-primary goal_title">G1. Knowledge
+                                                    based system</h3>
+                                                <a class="btn btn-sm btn-outline-primary d-flex align-items-center" id="link_session" href="#"
+                                                    data-toggle="modal" data-target="#SWSelectquery-Modal-1" title=""
+                                                    aria-describedby="popover184572"><i
+                                                        class="fa fa-link"></i> <span class="d-none d-md-block">Relate Session</span> </a>
+                                            </div>
+                                            <div class="alert alert-soft-dark mb-3" role="alert">
+                                                <div class="d-flex align-items-center">
+                                                    <img class="avatar avatar-xl mr-3 d-none d-lg-block"
+                                                        src="../../../static/PMISLooper/assets/images/yelling-reverse.svg"
+                                                        alt="Image Description">
+                                                    <div class="goals_contents" style="height: 100px;overflow: auto;">
+                                                        <p>1. Ensure the basic and fundamental of solution type is
+                                                            single path and get every one up and ready
+                                                            for a solid start
+                                                            up.(00358 00500-81025)
+                                                        </p>
+                                                        <p>2. The form based must be ready.（已經完成）(00188 00500-78)</p>
+                                                        <p>
+                                                            3. The general development standard must be done.(00351
+                                                            00500-50015)
+                                                        </p>
+                                                        <p>
+                                                            4. Repository must be in sync with these requirements.(00351
+                                                            00500-50016)
+                                                        </p>
+                                                        <p>
+                                                            5. All staffs should have the similar skill learn from
+                                                            course or technical approve to approach our
+                                                            development.
+                                                            (Dango, JavaScript, ORM, DOM Manipulation.(00188 00500-80)
+                                                        </p>
+                                                        <p>
+                                                            6. Important technical structure standardization (e.g. Rest
+                                                            API structure, ORM, etc)(00188 00500-80)
+                                                        </p>
+                                                        <p>
+                                                            7. 一個月內完成Vue Compoonent*
+                                                        </p>
+                                                        <p>(Target : Review weekly)</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="goal_sessions">
+                                            <div class="list-group list-group-messages">
+                                                <div class="list-group-item unread session_border py-2 px-3 mb-3 position-relative">
+                                                    <div class="list-group-item-body">
+                                                        <div class="row">
+                                                            <div class="col-12 col-lg-5 d-none d-lg-block">
+                                                                <h4 class="list-group-item-title text-truncate">00358
+                                                                    00500-81025</h4>
+                                                            </div>
+                                                            <div class="col-12 col-lg-7">
+                                                                <h4 class="list-group-item-title text-truncate">
+                                                                    <a href="#" class="text-dark text-hover-primary">UR
+                                                                        - Technical Cycle Management</a>
+                                                                </h4>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="list-group-item-figure">
+                                                        <a href="#" class="btn btn-sm btn-subtle-primary">View</a>
+                                                    </div>
+                                                    <a href="javascript:void(0);" class="unlink session_link" sessionid="00001-14016"><i class="fa fa-unlink"></i></a>
+                                                </div>
+                                                <div class="list-group-item unread session_border py-2 px-3 mb-3 position-relative">
+                                                    <div class="list-group-item-body">
+                                                        <div class="row">
+                                                            <div class="col-12 col-lg-5 d-none d-lg-block">
+                                                                <h4 class="list-group-item-title text-truncate">00331
+                                                                    00001-14016
+                                                                </h4>
+                                                            </div>
+                                                            <div class="col-12 col-lg-7">
+                                                                <h4 class="list-group-item-title text-truncate">
+                                                                    <a href="#" class="text-dark text-hover-primary">UR
+                                                                        - Second Stage of PMIS enhancement</a>
+                                                                </h4>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="list-group-item-figure">
+                                                        <a href="#" class="btn btn-sm btn-subtle-primary">View</a>
+                                                    </div>
+                                                    <a href="javascript:void(0);" class="unlink session_link" sessionid="00001-14016"><i class="fa fa-unlink"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="timeline-item">
+                            <div class="timeline-figure timeline-figure-light-primary">
+                                <span class="tile tile-circle tile-sm bg-light">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none">
+                                        <path opacity="0.3"
+                                            d="M5.78001 21.115L3.28001 21.949C3.10897 22.0059 2.92548 22.0141 2.75004 21.9727C2.57461 21.9312 2.41416 21.8418 2.28669 21.7144C2.15923 21.5869 2.06975 21.4264 2.0283 21.251C1.98685 21.0755 1.99507 20.892 2.05201 20.7209L2.886 18.2209L7.22801 13.879L10.128 16.774L5.78001 21.115Z"
+                                            fill="black"></path>
+                                        <path
+                                            d="M21.7 8.08899L15.911 2.30005C15.8161 2.2049 15.7033 2.12939 15.5792 2.07788C15.455 2.02637 15.3219 1.99988 15.1875 1.99988C15.0531 1.99988 14.92 2.02637 14.7958 2.07788C14.6717 2.12939 14.5589 2.2049 14.464 2.30005L13.74 3.02295C13.548 3.21498 13.4402 3.4754 13.4402 3.74695C13.4402 4.01849 13.548 4.27892 13.74 4.47095L14.464 5.19397L11.303 8.35498C10.1615 7.80702 8.87825 7.62639 7.62985 7.83789C6.38145 8.04939 5.2293 8.64265 4.332 9.53601C4.14026 9.72817 4.03256 9.98855 4.03256 10.26C4.03256 10.5315 4.14026 10.7918 4.332 10.984L13.016 19.667C13.208 19.859 13.4684 19.9668 13.74 19.9668C14.0115 19.9668 14.272 19.859 14.464 19.667C15.3575 18.77 15.9509 17.618 16.1624 16.3698C16.374 15.1215 16.1932 13.8383 15.645 12.697L18.806 9.53601L19.529 10.26C19.721 10.452 19.9814 10.5598 20.253 10.5598C20.5245 10.5598 20.785 10.452 20.977 10.26L21.7 9.53601C21.7952 9.44108 21.8706 9.32825 21.9221 9.2041C21.9737 9.07995 22.0002 8.94691 22.0002 8.8125C22.0002 8.67809 21.9737 8.54505 21.9221 8.4209C21.8706 8.29675 21.7952 8.18392 21.7 8.08899Z"
+                                            fill="black"></path>
+                                    </svg>
+                                </span>
+                            </div>
+                            <div class="timeline-body item_flex">
+                                <div class="media">
+                                    <div class="media-body timeline-content">
+                                        <div class="mb-3">
+                                            <div class="d-flex justify-content-between align-items-center mb-2 sm-align">
+                                                <h3 class="alert-heading text-primary goal_title">G2.PIMS(P10 ) (Progress 10% )</h3>
+                                                <a class="btn btn-sm btn-outline-primary d-flex align-items-center" id="link_session" href="#"
+                                                    data-toggle="modal" data-target="#SWSelectquery-Modal-1" title=""
+                                                    aria-describedby="popover184572"><i
+                                                        class="fa fa-link"></i><span class="d-none d-md-block">Relate Session</span></a>
+                                            </div>
+                                            <div class="alert alert-soft-dark mb-3" role="alert">
+                                                <div class="d-flex align-items-center">
+                                                    <img class="avatar avatar-xl mr-3 d-none d-lg-block"
+                                                        src="../../../static/PMISLooper/assets/images/yelling-reverse.svg"
+                                                        alt="Image Description">
+                                                    <div class="goals_contents" style="height: 100px;overflow: auto;">
+                                                        <p>1. Ensure the basic and fundamental of solution type is
+                                                            single path and get every one up and ready
+                                                            for a solid start
+                                                            up.(00358 00500-81025)
+                                                        </p>
+                                                        <p>2. The form based must be ready.（已經完成）(00188 00500-78)</p>
+                                                        <p>
+                                                            3. The general development standard must be done.(00351
+                                                            00500-50015)
+                                                        </p>
+                                                        <p>
+                                                            4. Repository must be in sync with these requirements.(00351
+                                                            00500-50016)
+                                                        </p>
+                                                        <p>
+                                                            5. All staffs should have the similar skill learn from
+                                                            course or technical approve to approach our
+                                                            development.
+                                                            (Dango, JavaScript, ORM, DOM Manipulation.(00188 00500-80)
+                                                        </p>
+                                                        <p>
+                                                            6. Important technical structure standardization (e.g. Rest
+                                                            API structure, ORM, etc)(00188 00500-80)
+                                                        </p>
+                                                        <p>
+                                                            7. 一個月內完成Vue Compoonent*
+                                                        </p>
+                                                        <p>(Target : Review weekly)</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="goal_sessions">
+                                            <div class="list-group list-group-messages">
+                                                <div class="list-group-item unread session_border py-2 px-3 mb-3 position-relative">
+                                                    <div class="list-group-item-body">
+                                                        <div class="row">
+                                                            <div class="col-12 col-lg-5 d-none d-lg-block">
+                                                                <h4 class="list-group-item-title text-truncate">00358
+                                                                    00500-81025
+                                                                </h4>
+                                                            </div>
+                                                            <div class="col-12 col-lg-7">
+                                                                <h4 class="list-group-item-title text-truncate">
+                                                                    <a href="#" class="text-dark text-hover-primary">UR
+                                                                        - Technical Cycle
+                                                                        Management</a>
+                                                                </h4>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="list-group-item-figure">
+                                                        <a href="#" class="btn btn-sm btn-subtle-primary">View</a>
+                                                    </div>
+                                                    <a href="javascript:void(0);" class="unlink session_link" sessionid="00001-14016"><i class="fa fa-unlink"></i></a>
+                                                </div>
+                                                <div class="list-group-item unread session_border py-2 px-3 mb-3 position-relative">
+                                                    <div class="list-group-item-body">
+                                                        <div class="row">
+                                                            <div class="col-12 col-lg-5 d-none d-lg-block">
+                                                                <h4 class="list-group-item-title text-truncate">00331
+                                                                    00001-14016
+                                                                </h4>
+                                                            </div>
+                                                            <div class="col-12 col-lg-7">
+                                                                <h4 class="list-group-item-title text-truncate">
+                                                                    <a href="#" class="text-dark text-hover-primary">UR
+                                                                        - Second Stage of PMIS
+                                                                        enhancement</a>
+                                                                </h4>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="list-group-item-figure">
+                                                        <a href="#" class="btn btn-sm btn-subtle-primary">View</a>
+                                                    </div>
+                                                    <a href="javascript:void(0);" class="unlink session_link" sessionid="00001-14016"><i class="fa fa-unlink"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="timeline-item">
+                            <div class="timeline-figure timeline-figure-light-primary">
+                                <span class="tile tile-circle tile-sm bg-light">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none">
+                                        <path opacity="0.3"
+                                            d="M4.425 20.525C2.525 18.625 2.525 15.525 4.425 13.525L14.825 3.125C16.325 1.625 18.825 1.625 20.425 3.125C20.825 3.525 20.825 4.12502 20.425 4.52502C20.025 4.92502 19.425 4.92502 19.025 4.52502C18.225 3.72502 17.025 3.72502 16.225 4.52502L5.82499 14.925C4.62499 16.125 4.62499 17.925 5.82499 19.125C7.02499 20.325 8.82501 20.325 10.025 19.125L18.425 10.725C18.825 10.325 19.425 10.325 19.825 10.725C20.225 11.125 20.225 11.725 19.825 12.125L11.425 20.525C9.525 22.425 6.425 22.425 4.425 20.525Z"
+                                            fill="black"></path>
+                                        <path
+                                            d="M9.32499 15.625C8.12499 14.425 8.12499 12.625 9.32499 11.425L14.225 6.52498C14.625 6.12498 15.225 6.12498 15.625 6.52498C16.025 6.92498 16.025 7.525 15.625 7.925L10.725 12.8249C10.325 13.2249 10.325 13.8249 10.725 14.2249C11.125 14.6249 11.725 14.6249 12.125 14.2249L19.125 7.22493C19.525 6.82493 19.725 6.425 19.725 5.925C19.725 5.325 19.525 4.825 19.125 4.425C18.725 4.025 18.725 3.42498 19.125 3.02498C19.525 2.62498 20.125 2.62498 20.525 3.02498C21.325 3.82498 21.725 4.825 21.725 5.925C21.725 6.925 21.325 7.82498 20.525 8.52498L13.525 15.525C12.325 16.725 10.525 16.725 9.32499 15.625Z"
+                                            fill="black"></path>
+                                    </svg>
+                                </span>
+                            </div>
+                            <div class="timeline-body item_flex">
+                                <div class="media">
+                                    <div class="media-body timeline-content">
+                                        <div class="mb-3">
+                                            <div class="d-flex justify-content-between align-items-center mb-2 sm-align">
+                                                <h3 class="alert-heading text-primary goal_title">G3.Web Technical Cycle Management(P30 ) (Progress 10% )</h3>
+                                                <a class="btn btn-sm btn-outline-primary d-flex align-items-center" id="link_session" href="#"
+                                                    data-toggle="modal" data-target="#SWSelectquery-Modal-1" title=""
+                                                    aria-describedby="popover184572"><i
+                                                        class="fa fa-link"></i><span class="d-none d-md-block">Relate Session</span></a>
+                                            </div>
+                                            <div class="alert alert-soft-dark mb-3" role="alert">
+                                                <div class="d-flex align-items-center">
+                                                    <img class="avatar avatar-xl mr-3 d-none d-lg-block"
+                                                        src="../../../static/PMISLooper/assets/images/yelling-reverse.svg"
+                                                        alt="Image Description">
+                                                    <div class="goals_contents" style="height: 100px;overflow: auto;">
+                                                        <p>1. Ensure the basic and fundamental of solution type is
+                                                            single path and get every one up and ready
+                                                            for a solid start
+                                                            up.(00358 00500-81025)
+                                                        </p>
+                                                        <p>2. The form based must be ready.（已經完成）(00188 00500-78)</p>
+                                                        <p>
+                                                            3. The general development standard must be done.(00351
+                                                            00500-50015)
+                                                        </p>
+                                                        <p>
+                                                            4. Repository must be in sync with these requirements.(00351
+                                                            00500-50016)
+                                                        </p>
+                                                        <p>
+                                                            5. All staffs should have the similar skill learn from
+                                                            course or technical approve to approach our
+                                                            development.
+                                                            (Dango, JavaScript, ORM, DOM Manipulation.(00188 00500-80)
+                                                        </p>
+                                                        <p>
+                                                            6. Important technical structure standardization (e.g. Rest
+                                                            API structure, ORM, etc)(00188 00500-80)
+                                                        </p>
+                                                        <p>
+                                                            7. 一個月內完成Vue Compoonent*
+                                                        </p>
+                                                        <p>(Target : Review weekly)</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="goal_sessions">
+                                            <div class="list-group list-group-messages">
+                                                <div class="list-group-item unread session_border py-2 px-3 mb-3 position-relative">
+                                                    <div class="list-group-item-body">
+                                                        <div class="row">
+                                                            <div class="col-12 col-lg-5 d-none d-lg-block">
+                                                                <h4 class="list-group-item-title text-truncate">00358
+                                                                    00500-81025
+                                                                </h4>
+                                                            </div>
+                                                            <div class="col-12 col-lg-7">
+                                                                <h4 class="list-group-item-title text-truncate">
+                                                                    <a href="#" class="text-dark text-hover-primary">UR
+                                                                        - Technical Cycle
+                                                                        Management</a>
+                                                                </h4>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="list-group-item-figure">
+                                                        <a href="#" class="btn btn-sm btn-subtle-primary">View</a>
+                                                    </div>
+                                                    <a href="javascript:void(0);" class="unlink session_link" sessionid="00001-14016"><i class="fa fa-unlink"></i></a>
+                                                </div>
+                                                <div class="list-group-item unread session_border py-2 px-3 mb-3 position-relative">
+                                                    <div class="list-group-item-body">
+                                                        <div class="row">
+                                                            <div class="col-12 col-lg-5 d-none d-lg-block">
+                                                                <h4 class="list-group-item-title text-truncate">00331
+                                                                    00001-14016
+                                                                </h4>
+                                                            </div>
+                                                            <div class="col-12 col-lg-7">
+                                                                <h4 class="list-group-item-title text-truncate">
+                                                                    <a href="#" class="text-dark text-hover-primary">UR
+                                                                        - Second Stage of PMIS
+                                                                        enhancement</a>
+                                                                </h4>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="list-group-item-figure">
+                                                        <a href="#" class="btn btn-sm btn-subtle-primary">View</a>
+                                                    </div>
+                                                    <a href="javascript:void(0);" class="unlink session_link" sessionid="00001-14016"><i class="fa fa-unlink"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="timeline-item">
+                            <div class="timeline-figure timeline-figure-light-primary">
+                                <span class="tile tile-circle tile-sm bg-light">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                        <path opacity="0.3"
+                                            d="M21.25 18.525L13.05 21.825C12.35 22.125 11.65 22.125 10.95 21.825L2.75 18.525C1.75 18.125 1.75 16.725 2.75 16.325L4.04999 15.825L10.25 18.325C10.85 18.525 11.45 18.625 12.05 18.625C12.65 18.625 13.25 18.525 13.85 18.325L20.05 15.825L21.35 16.325C22.35 16.725 22.35 18.125 21.25 18.525ZM13.05 16.425L21.25 13.125C22.25 12.725 22.25 11.325 21.25 10.925L13.05 7.62502C12.35 7.32502 11.65 7.32502 10.95 7.62502L2.75 10.925C1.75 11.325 1.75 12.725 2.75 13.125L10.95 16.425C11.65 16.725 12.45 16.725 13.05 16.425Z"
+                                            fill="black"></path>
+                                        <path
+                                            d="M11.05 11.025L2.84998 7.725C1.84998 7.325 1.84998 5.925 2.84998 5.525L11.05 2.225C11.75 1.925 12.45 1.925 13.15 2.225L21.35 5.525C22.35 5.925 22.35 7.325 21.35 7.725L13.05 11.025C12.45 11.325 11.65 11.325 11.05 11.025Z"
+                                            fill="black"></path>
+                                    </svg>
+                                </span>
+                            </div>
+                            <div class="timeline-body item_flex">
+                                <div class="media">
+                                    <div class="media-body timeline-content">
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="timeline-item">
+                            <div class="timeline-figure timeline-figure-light-primary">
+                                <span class="tile tile-circle tile-sm bg-light">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                        <path opacity="0.3"
+                                            d="M21.4 8.35303L19.241 10.511L13.485 4.755L15.643 2.59595C16.0248 2.21423 16.5426 1.99988 17.0825 1.99988C17.6224 1.99988 18.1402 2.21423 18.522 2.59595L21.4 5.474C21.7817 5.85581 21.9962 6.37355 21.9962 6.91345C21.9962 7.45335 21.7817 7.97122 21.4 8.35303ZM3.68699 21.932L9.88699 19.865L4.13099 14.109L2.06399 20.309C1.98815 20.5354 1.97703 20.7787 2.03189 21.0111C2.08674 21.2436 2.2054 21.4561 2.37449 21.6248C2.54359 21.7934 2.75641 21.9115 2.989 21.9658C3.22158 22.0201 3.4647 22.0084 3.69099 21.932H3.68699Z"
+                                            fill="black"></path>
+                                        <path
+                                            d="M5.574 21.3L3.692 21.928C3.46591 22.0032 3.22334 22.0141 2.99144 21.9594C2.75954 21.9046 2.54744 21.7864 2.3789 21.6179C2.21036 21.4495 2.09202 21.2375 2.03711 21.0056C1.9822 20.7737 1.99289 20.5312 2.06799 20.3051L2.696 18.422L5.574 21.3ZM4.13499 14.105L9.891 19.861L19.245 10.507L13.489 4.75098L4.13499 14.105Z"
+                                            fill="black"></path>
+                                    </svg>
+                                </span>
+                            </div>
+                            <div class="timeline-body item_flex">
+                                <div class="media">
+                                    <div class="media-body timeline-content">
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="timeline-item">
+                            <div class="timeline-figure timeline-figure-light-primary">
+                                <span class="tile tile-circle tile-sm bg-light">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                        <path d="M6 8.725C6 8.125 6.4 7.725 7 7.725H14L18 11.725V12.925L22 9.725L12.6 2.225C12.2 1.925 11.7 1.925 11.4 2.225L2 9.725L6 12.925V8.725Z" fill="black"></path>
+                                        <path opacity="0.3" d="M22 9.72498V20.725C22 21.325 21.6 21.725 21 21.725H3C2.4 21.725 2 21.325 2 20.725V9.72498L11.4 17.225C11.8 17.525 12.3 17.525 12.6 17.225L22 9.72498ZM15 11.725H18L14 7.72498V10.725C14 11.325 14.4 11.725 15 11.725Z" fill="black"></path>
+                                    </svg>
+                                </span>
+                            </div>
+                            <div class="timeline-body item_flex">
+                                <div class="media">
+                                    <div class="media-body timeline-content">
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="timeline-item">
+                            <div class="timeline-figure timeline-figure-light-primary">
+                                <span class="tile tile-circle tile-sm bg-light">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                        <path d="M21 10H13V11C13 11.6 12.6 12 12 12C11.4 12 11 11.6 11 11V10H3C2.4 10 2 10.4 2 11V13H22V11C22 10.4 21.6 10 21 10Z" fill="black"></path>
+                                        <path opacity="0.3" d="M12 12C11.4 12 11 11.6 11 11V3C11 2.4 11.4 2 12 2C12.6 2 13 2.4 13 3V11C13 11.6 12.6 12 12 12Z" fill="black"></path>
+                                        <path opacity="0.3" d="M18.1 21H5.9C5.4 21 4.9 20.6 4.8 20.1L3 13H21L19.2 20.1C19.1 20.6 18.6 21 18.1 21ZM13 18V15C13 14.4 12.6 14 12 14C11.4 14 11 14.4 11 15V18C11 18.6 11.4 19 12 19C12.6 19 13 18.6 13 18ZM17 18V15C17 14.4 16.6 14 16 14C15.4 14 15 14.4 15 15V18C15 18.6 15.4 19 16 19C16.6 19 17 18.6 17 18ZM9 18V15C9 14.4 8.6 14 8 14C7.4 14 7 14.4 7 15V18C7 18.6 7.4 19 8 19C8.6 19 9 18.6 9 18Z" fill="black"></path>
+                                    </svg>
+                                </span>
+                            </div>
+                            <div class="timeline-body item_flex">
+                                <div class="media">
+                                    <div class="media-body timeline-content">
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="page-sidebar">
+    <header class="sidebar-header d-sm-none">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item active">
+                    <a href="#" onclick="Looper.toggleSidebar()"><i
+                            class="breadcrumb-icon fa fa-angle-left mr-2"></i>{% trans "Back"%}</a>
+                </li>
+            </ol>
+        </nav>
+    </header>
+    <div class="sidebar-section-fill">
+        <div class="card card-reflow">
+            <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                    <h4 class="card-title mb-0"> {% trans "Sessions's Task"%} </h4>
+                    <div class="dropdown">
+                        <button type="button" class="btn btn-icon btn-light" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false"><i class="fas fa-filter"></i></button>
+                        <div class="dropdown-menu dropdown-menu-right task_filter">
+                            <div class="dropdown-arrow"></div>
+                            <a href="#" class="dropdown-item" name="mh">Must Have</a> 
+                            <a href="#" class="dropdown-item" name="nf">NF</a> 
+                            <a href="#" class="dropdown-item" name="cf">C|F</a> 
+                        </div>
+                    </div>
+                </div>
+                <div class="task_wrap" container_name="Task">
+                    <!--
+                    <div class="card wrap-primary mb-2" container_name="Task">
+                        <div class="card-body">
+                            <div class="card-content d-flex mb-1">
+                                <div class="font-weight-bolder">(Fixed)Project Goal支持關聯從個Session, Project Goal支持調整優先級</div>
+                            </div>
+                            <ul class="list-inline text-dark">
+                                <li class="list-inline-item">
+                                    <span class="menu-text"><i class="far fa-clipboard mr-2"></i> 00500-81025-130</span>
+                                </li>
+                                <li class="list-inline-item">
+                                    <span class=""><i class="far fa-list-alt mr-2"></i>3737</span>
+                                </li>
+                                <li class="list-inline-item">
+                                    <span class="alert-link"><i class="far fa-file mr-2"></i>C</span>
+                                </li>
+                            </ul>
+                            <div class="d-flex border-top">
+                                <span class="menu-text pt-2"><i class="far fa-calendar-alt text-success mr-2"></i> 2021-11-24 / 2021-11-25</span>
+                                <div class="ml-auto pt-2">
+                                    <span class="badge badge-subtle badge-primary"><i class="far fa-user mr-2"></i>hb</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="templates" style="display:none">
+    <li class="timeline-item" tmpl_name="goal">
+        <div class="timeline-figure timeline-figure-light-primary">
+            <span class="tile tile-circle tile-sm bg-light" solt_name="goal_icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                    fill="none">
+                    <path opacity="0.3"
+                        d="M2 4V16C2 16.6 2.4 17 3 17H13L16.6 20.6C17.1 21.1 18 20.8 18 20V17H21C21.6 17 22 16.6 22 16V4C22 3.4 21.6 3 21 3H3C2.4 3 2 3.4 2 4Z"
+                        fill="black"></path>
+                    <path
+                        d="M18 9H6C5.4 9 5 8.6 5 8C5 7.4 5.4 7 6 7H18C18.6 7 19 7.4 19 8C19 8.6 18.6 9 18 9ZM16 12C16 11.4 15.6 11 15 11H6C5.4 11 5 11.4 5 12C5 12.6 5.4 13 6 13H15C15.6 13 16 12.6 16 12Z"
+                        fill="black"></path>
+                </svg>
+            </span>
+        </div>
+        <div class="timeline-body item_flex">
+            <div class="media">
+                <div class="media-body timeline-content">
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <h3 class="alert-heading text-primary goal_title mb-0 pr-2">[[goal_header]]</h3>
+                            <div class="d-flex flex-shrink-0">
+                            <a class="btn btn-sm btn-outline-primary d-flex align-items-center" tmpl_action="link_session" href="#"><i
+                                    class="fa fa-link mr-md-2"></i> <span class="d-none d-md-block">{% trans "Link Session"%}</span> </a>
+                            <a class="btn btn-sm btn-outline-primary d-flex align-items-center ml-1" href="#" tmpl_action="del_goal"><i class="fa fa-trash-alt"></i></a>
+                            </div>
+                        </div>
+                        <div class="alert alert-soft-dark mb-3" role="alert">
+                            <div class="d-flex align-items-center" tmpl_action="edit_goal">
+                                <img class="avatar avatar-xl mr-3 d-none d-lg-block"
+                                    src="../../../static/PMISLooper/assets/images/yelling-reverse.svg"
+                                    alt="Image Description">
+                                <div class="goals_contents" style="height: 100px;overflow: auto;flex: 1;" solt_name="goal_body">
+                                    <p>1. Ensure the basic and fundamental of solution type is
+                                        single path and get every one up and ready
+                                        for a solid start
+                                        up.(00358 00500-81025)
+                                    </p>
+                                    <p>2. The form based must be ready.（已經完成）(00188 00500-78)</p>
+                                    <p>
+                                        3. The general development standard must be done.(00351
+                                        00500-50015)
+                                    </p>
+                                    <p>
+                                        4. Repository must be in sync with these requirements.(00351
+                                        00500-50016)
+                                    </p>
+                                    <p>
+                                        5. All staffs should have the similar skill learn from
+                                        course or technical approve to approach our
+                                        development.
+                                        (Dango, JavaScript, ORM, DOM Manipulation.(00188 00500-80)
+                                    </p>
+                                    <p>
+                                        6. Important technical structure standardization (e.g. Rest
+                                        API structure, ORM, etc)(00188 00500-80)
+                                    </p>
+                                    <p>
+                                        7. 一個月內完成Vue Compoonent*
+                                    </p>
+                                    <p>(Target : Review weekly)</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="accordion_session" class="goal_sessions card-expansion">
+                        <div class="card card-expansion-item expanded">
+                            <div class="card-header border-0" id="headingOne2">
+                                <button class="btn btn-reset d-flex justify-content-between w-100" data-toggle="collapse"
+                                   aria-expanded="true"
+                                    aria-controls="collapse_session" tmpl_action="collapse"><span>{% trans "Sessions"%}</span>
+                                    <span class="collapse-indicator"><i class="fa fa-fw fa-chevron-down"></i></span></button>
+                            </div>
+                            <div class="collapse show" aria-labelledby="headingOne2" data-parent="#accordion_session">
+                                <div class="card-body pt-0">
+                                    <div class="list-group list-group-messages" solt_name="sessions">
+                                        <div class="list-group-item unread session_border py-2 px-3 mb-3 position-relative"
+                                            tmpl_name="session" tmpl_params="sessionid">
+                                            <div class="list-group-item-body">
+                                                <div class="row">
+                                                    <div class="col-12 col-lg-5 d-none d-lg-block">
+                                                        <h4 class="list-group-item-title text-truncate">[[recordid]]
+                                                            [[sessionid]]</h4>
+                                                    </div>
+                                                    <div class="col-12 col-lg-7">
+                                                        <h4 class="list-group-item-title text-truncate">
+                                                            <a href="#" class="text-dark text-hover-primary">[[sdesp]]</a>
+                                                        </h4>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="list-group-item-figure pl-3">
+                                                <a href="#" class="btn btn-sm btn-subtle-primary" tmpl_action="view">View</a>
+                                            </div>
+                                            <div class="list-group-item-figure align-self-center">
+                                                <a href="javascript:void(0);" class="unlink" tmpl_action="unlink">
+                                                    <i class="oi oi-link-broken"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
+    <div class="card wrap-primary mb-2" tmpl_name="task">
+        <div class="card-body">
+            <div class="card-content d-flex mb-1">
+                <div class="font-weight-bolder" style="min-width: 0;">[[task]]</div>
+            </div>
+            <ul class="list-inline text-dark">
+                <li class="list-inline-item">
+                    <span class="menu-text"><i class="far fa-clipboard mr-2"></i> [[taskno]]</span>
+                </li>
+                <li class="list-inline-item">
+                    <span class=""><i class="far fa-list-alt mr-2"></i>[[schpriority]]</span>
+                </li>
+                <li class="list-inline-item">
+                    <span class="alert-link"><i class="far fa-file mr-2"></i>[[progress]]</span>
+                </li>
+            </ul>    
+            <div class="d-flex border-top">
+                <span class="menu-text pt-2"><i class="far fa-calendar-alt text-success mr-2"></i> [[planbdate]] / [[planedate]]</span>
+                <div class="ml-auto pt-2">
+                    <span class="badge badge-subtle badge-primary"><i class="far fa-user mr-2"></i>[[contact]]</span>
+                </div>
+            </div>        
+        </div>
+    </div>
+    <div tmpl_name="edit_goal">
+        <div class="card">
+            <div class="card-body" solt_name="body">
+
+            </div>
+            <div class="card-footer" style="flex: 1 1 auto;min-height: 1px;padding: 1rem;justify-content: center;">
+                <button class="btn btn-subtle-danger mr-5 save" tmpl_action="save">{% trans "Save"%}</button>
+                <button type="reset" class="btn btn-subtle-info" tmpl_action="calcel">{% trans "Cancel"%}</button>
+            </div>
+        </div>        
+    </div>
+    <div tmpl_name="simulation">
+        <div class="d-flex justify-content-center" style="margin-top: -10px;;margin-bottom: -20px;">
+            <img src="../../../static/PMISLooper/assets/images/review-5-star.svg" class="avatar avatar-xl">
+        </div>
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="card ribbon-box">
+                    <div class="card-body">
+                        <div class="ribbon-two ribbon-two-primary"><span>{% trans "Estimated"%}</span></div>
+                        <div class="ribbon-content">
+                            <div class="list-group list-group-flush">
+                                <div class="list-group-item">
+                                    <div class="row align-items-center">
+                                        <div class="col">
+                                            <span class="card-subtitle">{% trans "Total Qty"%}:</span>
+                                        </div>
+                                        <div class="col-auto">
+                                            <h5 class="badge badge-soft-primary mb-0">[[total_qty]]</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="list-group-item">
+                                    <div class="row align-items-center">
+                                        <div class="col">
+                                            <span class="card-subtitle">{% trans "Finish Qty"%}:</span>
+                                        </div>
+                                        <div class="col-auto">
+                                            <h5 class="badge badge-soft-primary mb-0">[[finish_qty]]</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="list-group-item">
+                                    <div class="row align-items-center">
+                                        <div class="col">
+                                            <span class="card-subtitle">{% trans "UnFinish Qty"%}:</span>
+                                        </div>
+                                        <div class="col-auto">
+                                            <h5 class="badge badge-soft-primary mb-0">[[unfinish_qty]]</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="list-group-item">
+                                    <div class="row align-items-center">
+                                        <div class="col">
+                                            <span class="card-subtitle">{% trans "Left Days"%}:</span>
+                                        </div>
+                                        <div class="col-auto">
+                                            <h5 class="badge badge-soft-primary mb-0">[[left_days]]</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="list-group-item">
+                                    <div class="row align-items-center">
+                                        <div class="col">
+                                            <span class="card-subtitle">{% trans "Expected Date"%}:</span>
+                                        </div>
+                                        <div class="col-auto">
+                                            <h5 class="badge badge-soft-primary mb-0">[[expected_date]]</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="list-group-item">
+                                    <div class="row align-items-center">
+                                        <div class="col">
+                                            <span class="card-subtitle">{% trans "Ratio"%}:</span>
+                                        </div>
+                                        <div class="col-auto">
+                                            <h5 class="badge badge-soft-primary mb-0">[[ratio]]%</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="card ribbon ribbon-top">
+                    <div class="card-body">
+                        <div class="ribbon-target" style="top: -2px; right: 20px; background: #5671f0;"><span>{% trans "Simulation"%}</span></div>
+                        <div class="ribbon-content">
+                            <div class="list-group list-group-flush">
+                                <div class="list-group-item">
+                                    <div class="row align-items-center">
+                                        <div class="col">
+                                            <span class="card-subtitle">{% trans "Total Qty"%}:</span>
+                                        </div>
+                                        <div class="col-auto">
+                                            <h5 class="badge badge-soft-primary mb-0">[[total_qty_simu]]</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="list-group-item">
+                                    <div class="row align-items-center">
+                                        <div class="col">
+                                            <span class="card-subtitle">{% trans "Finish Qty"%}:</span>
+                                        </div>
+                                        <div class="col-auto">
+                                            <h5 class="badge badge-soft-primary mb-0">[[finish_qty_simu]]</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="list-group-item">
+                                    <div class="row align-items-center">
+                                        <div class="col">
+                                            <span class="card-subtitle">{% trans "UnFinish Qty"%}:</span>
+                                        </div>
+                                        <div class="col-auto">
+                                            <h5 class="badge badge-soft-primary mb-0">[[unfinish_qty_simu]]</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="list-group-item">
+                                    <div class="row align-items-center">
+                                        <div class="col">
+                                            <span class="card-subtitle">{% trans "Left Days"%}:</span>
+                                        </div>
+                                        <div class="col-auto">
+                                            <h5 class="badge badge-soft-primary mb-0">[[left_days_simu]]</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="list-group-item">
+                                    <div class="row align-items-center">
+                                        <div class="col">
+                                            <span class="card-subtitle">{% trans "Expected Date"%}:</span>
+                                        </div>
+                                        <div class="col-auto">
+                                            <h5 class="badge badge-soft-primary mb-0">[[expected_date_simu]]</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="list-group-item">
+                                    <div class="row align-items-center">
+                                        <div class="col">
+                                            <span class="card-subtitle">{% trans "Ratio"%}:</span>
+                                        </div>
+                                        <div class="col-auto">
+                                            <h5 class="badge badge-soft-primary mb-0">[[ratio_simu]]%</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>     
+</div>
+<div id="add_goal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="SWSelectqueryLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">
+        <form class="form">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h6 class="modal-title">{% trans "Add Goal"%}</h6>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><i class="fas fa-times" style="font-size: 20px;color: #000;"></i></button>
+            </div>
+            <div class="modal-body">
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary save">{% trans "Save"%}</button> 
+                <button type="button" class="btn btn-light cancel" data-dismiss="modal">{% trans "Cancel"%}</button>
+            </div>
+        </div>
+        </form>
+    </div>  
+</div>
+<div id="goal_simulation" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="SWSelectqueryLabel" aria-hidden="true">
+    <div class="modal-dialog  modal-lg modal-dialog-scrollable modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">{% trans "Goal Simulation"%}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><i class="fas fa-times" style="font-size: 20px;color: #000;"></i></button>
+            </div>            
+            <div class="modal-body">
+            </div>
+        </div>
+    </div>  
+</div>
+{%endblock%}
+
+{%block form_js%}
+{{block.super}}
+<script>
+    $(function () {
+        $(".project_goal_wrapper").parent().addClass("has-sidebar has-sidebar-expand-xl goal-project-page");
+    });
+</script>
+<script src="{% static 'BaseApp/vendor/Looper/assets/vendor/chart.js/Chart.min.js' %}"></script> <!-- END PLUGINS JS -->    
+<script src="{% md5url 'PMIS/js/looper/components.js' %}"></script>     
+<script src="{% md5url 'PMISLooper/assets/javascript/goal/project_goal.js' %}"
+    type="text/javascript"></script>
+{% endblock%}

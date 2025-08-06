@@ -1,0 +1,288 @@
+{% extends 'BaseProject/base/looper_base/simple_template_nobar.html' %}
+{%load static %}
+{%load customer_filter%}
+{%block header_jscss%}
+  {{block.super}}  
+  <link rel="stylesheet" href="{% static 'BaseProject/vendor/bootstrap-datepicker/css/bootstrap-datepicker.min.css' %}">
+  <link rel="stylesheet" href="{% static 'BaseProject/vendor/Looper/assets/vendor/select2/css/select2.min.css' %}">
+{%endblock%}
+{%block addoredit_content %}
+<div class="row" v-show="modify_table == 'MasterView'">
+  <div class="form-group row align-middle col-12">
+    <label class="col-form-label text-right col-sm-4" for="id_period">Period </label>
+    <div class="input-group col-sm-7">
+      <input class="form-control" id="id_period" maxlength="20" name="period" v-model="MasterView_CurData.period" :readonly="modify_status == 'edit'"
+        type="text" required />
+    </div>
+  </div>
+  <div class="form-group row align-middle col-12">
+    <label class="col-form-label text-right col-sm-4" for="id_from_field">From </label>
+    <div class="input-group col-sm-7">
+      <input class="form-control" id="id_from_field" maxlength="16" name="from_field"
+        v-model="MasterView_CurData.from_field" type="time" />
+    </div>
+  </div>
+  <div class="form-group row align-middle col-12">
+    <label class="col-form-label text-right col-sm-4" for="id_to">To </label>
+    <div class="input-group col-sm-7">
+      <input class="form-control" id="id_to" maxlength="16" name="to" v-model="MasterView_CurData.to" type="time" />
+    </div>
+  </div>
+  <div class="form-group row align-middle col-12">
+    <label class="col-form-label text-right col-sm-4" for="id_hour">Hour </label>
+    <div class="input-group col-sm-7">
+      <input class="form-control" id="id_hour" name="hour" v-model="MasterView_CurData.hour" step="any" type="number" readonly/>
+    </div>
+  </div>
+  <div class="form-group row align-middle col-12">
+    <label class="col-form-label text-right col-sm-4" for="id_logic">Logic </label>
+    <div class="input-group col-sm-7">
+      <input class="form-control" id="period_logic" maxlength="255" name="logic" v-model="MasterView_CurData.logic"
+        type="text" readonly />
+        <div class="input-group-append">
+          <button type="button" class="btn btn-secondary"  data-toggle="modal" data-target="#period_dlg"><i class="fa fa-bars"></i></button>
+        </div>    
+    </div>
+  </div>
+  <div class="form-group row align-middle col-12">
+    <label class="col-form-label text-right col-sm-4" for="id_prefix">Prefix </label>
+    <div class="input-group col-sm-7">
+      <input class="form-control" id="id_prefix" maxlength="1" name="prefix" v-model="MasterView_CurData.prefix"
+        type="text" />
+    </div>
+  </div>
+  <div class="form-group row align-middle col-12">
+    <label class="col-form-label text-right col-sm-4" for="id_completion">Completion </label>
+    <div class="input-group col-sm-7">
+      <input class="form-control" id="id_completion" name="completion" v-model="MasterView_CurData.completion"
+        step="any" type="number" />
+    </div>
+  </div>
+</div>
+<div class="row" v-show="modify_table == 'SchType'">
+  <div class="form-group row align-middle col-12">
+    <label class="col-form-label text-right col-sm-4" for="id_typeno">TypeNo </label>
+   <div class="input-group col-sm-7">
+    <input class="form-control" id="id_typeno" name="typeno" v-model="SchType_CurData.typeno" step="any" type="number" required readonly/>
+  </div>
+</div>
+<div class="form-group row align-middle col-12">
+    <label class="col-form-label text-right col-sm-4" for="id_typename">Name </label>
+   <div class="input-group col-sm-7">
+    <input class="form-control" id="id_typename" maxlength="50" name="typename" v-model="SchType_CurData.typename" type="text" />
+  </div>
+</div>
+<div class="form-group row align-middle col-12">
+    <label class="col-form-label text-right col-sm-4" for="id_logic">Logic </label>
+   <div class="input-group col-sm-7">
+    <input class="form-control" id="id_logic" maxlength="255" name="logic" v-model="SchType_CurData.logic" type="text" />
+    <div class="input-group-append">
+      <button type="button" class="btn btn-secondary"  data-toggle="modal" data-target="#type_dlg"><i class="fa fa-bars"></i></button>
+    </div>    
+  </div>
+</div>
+<div class="form-group row align-middle col-12">
+    <label class="col-form-label text-right col-sm-4" for="id_formula">Formula </label>
+   <div class="input-group col-sm-7">
+    <input class="form-control" id="id_formula" maxlength="255" name="formula" v-model="SchType_CurData.formula" type="text" />
+  </div>
+</div>
+<div class="form-group row align-middle col-12">
+  <label class="col-form-label text-right col-sm-4" for="id_typeno">Order </label>
+ <div class="input-group col-sm-7">
+  <input class="form-control" id="id_udf02" name="typeno" v-model="SchType_CurData.udf02" step="any" type="number"/>
+</div>
+</div>
+<div class="form-group row align-middle col-12">
+    <label class="col-form-label text-right col-sm-4" for="id_remark">Remark </label>
+   <div class="input-group col-sm-7">
+    <input class="form-control" id="id_remark" maxlength="255" name="remark" v-model="SchType_CurData.remark" type="text" />
+  </div>
+</div>  
+</div>
+{%endblock%}
+
+{%  block content_body %}
+<div class="modal fade" id="period_dlg"  tabindex="-1" role="dialog" aria-labelledby="period_dlgLabel">
+  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">設置Logic</h5>
+          <button type="button" class="close modal_dismiss" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+              <div class="builder-plugins"></div>            
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary btn_ok" >OK</button>
+          <button type="button" class="btn btn-secondary modal_dismiss">Cancel</button>
+        </div>
+      </div>            
+  </div>
+</div>
+<div class="modal fade" id="type_dlg"  tabindex="-1" role="dialog" aria-labelledby="type_dlgLabel">
+  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">設置Logic</h5>
+          <button type="button" class="close modal_dismiss" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+              <div class="builder-plugins"></div>            
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary btn_ok" >OK</button>
+          <button type="button" class="btn btn-secondary modal_dismiss">Cancel</button>
+        </div>
+      </div>            
+  </div>
+</div>
+  <div class="card">
+      <div class="card-body">
+          <h3 class="card-title text-center">System Level Configuration</h3>
+          <div class="Period">
+            {{block.super}}
+          </div>
+          <h3 class="card-title mt-2"><u>TaskType</u></h3>
+          <div>
+            {{SchType_datatable}}
+          </div>
+          <h3 class="card-title mt-2"><u>System Parameters</u></h3>
+          <div class="form-row ml-1">
+            <div class="form-group row align-middle mb-3 col-sm-12 col-md-6 col-lg-4 col-xl-3">
+              <label class="col-form-label text-sm-right text-left col-sm-4" for="id_mc001">一周的天數</label>
+              <div class="input-group col-sm-7">
+                <input class="form-control" type="text" v-model="sys_params.WeeklyDay">
+              </div>
+            </div>            
+            <div class="form-group row align-middle mb-3 col-sm-12 col-md-6 col-lg-4 col-xl-3">
+              <label class="col-form-label text-sm-right text-left col-sm-4" for="id_mc001">任務間隔</label>
+              <div class="input-group col-sm-7">
+                <input class="form-control" type="text" v-model="sys_params.IntervalSchPriority">
+              </div>
+            </div>            
+            <div class="form-group row align-middle mb-3 col-sm-12 col-md-6 col-lg-4 col-xl-3">
+              <label class="col-form-label text-sm-right text-left col-sm-4" for="id_mc001">Session默認產能</label>
+              <div class="input-group col-sm-7">
+                <input class="form-control" type="text" v-model="sys_params.DefaultCapacity">
+              </div>
+            </div>            
+            <div class="form-group row align-middle mb-3 col-sm-12 col-md-6 col-lg-4 col-xl-3">
+              <label class="col-form-label text-sm-right text-left col-sm-4" for="id_mc001">新任務排期間隔</label>
+              <div class="input-group col-sm-7">
+                <input class="form-control" type="text" v-model="sys_params.AutoSchTime">
+              </div>
+              <div class="input-group-append">
+                <label class="col-form-label text-left">分鐘</label>
+              </div>              
+            </div>            
+            <div class="form-group row align-middle mb-3 col-sm-12 col-md-6 col-lg-4 col-xl-3">
+              <label class="col-form-label text-sm-right text-left col-sm-4" for="id_mc001">緩衝計算公式</label>
+              <div class="input-group col-sm-7">
+                <input class="form-control" type="text" v-model="sys_params.InsertBufferLogic">
+              </div>
+            </div>                      
+            <div class="form-group row align-middle mb-3 col-sm-12">
+              <label class="col-form-label text-left col-auto" for="id_mc001">任務升級公式</label>
+              <div class="input-group col-sm-7">
+                <input class="form-control" type="text" v-model="sys_params.TaskUpgradeLogic">
+              </div>
+            </div>
+          </div>
+      </div>
+  </div>
+  <div class="card mb-2">
+    <div class="card-body">
+        <div class="row justify-content-between">
+          <div>
+            <h3 class="card-title">Individual Level</h3>
+          </div>
+          <div>
+          <select id="curr_user" class="custom-select custom-select-sm" v-model="cur_user">
+            <option v-for="user in user_list" v-bind:value="user" v-html="user">
+            </option>
+          </select>
+          </div>
+        </div>
+        <div class="form-row ml-1">  
+          <div class="form-group row align-middle col-12">
+            <label class="col-form-label text-sm-right text-left col-sm-4">本季度Period:</label>
+            <div class="col-sm-7 col-sm-7 pl-0 pr-0">
+              <select id="curr_periods" v-model="curr_user_params.periods" class="form-control col-sm-7" data-toggle="select2" data-placeholder="Select a state" data-maximum-selection-length="4" multiple v-select2>
+                <option v-for="p in periods" v-bind:value="p" v-html="p"></option>
+              </select>
+            </div>
+          </div>          
+          <div class="form-group row align-middle col-12">
+            <label class="col-form-label text-sm-right text-left col-sm-4">下季度Period:</label>
+            <div class="input-group col-sm-7">
+              <input class="form-control" type="text" value="[Normal]">
+            </div>
+          </div>          
+          <div class="form-group row align-middle col-12">
+            <label class="col-form-label text-sm-right text-left col-sm-4">Daily Short Period Completions:</label>
+            <div class="input-group col-sm-7">
+              <input class="form-control" type="text" v-model="curr_user_params.Short">
+            </div>
+          </div>          
+          <div class="form-group row align-middle col-12">
+            <label class="col-form-label text-sm-right text-left col-sm-4" for="id_mc001">Daily Normal Period Completions:</label>
+            <div class="input-group col-sm-7">
+              <input class="form-control" type="text" v-model="curr_user_params.Normal">
+            </div>
+          </div>          
+          <div class="form-group row align-middle col-12">
+            <label class="col-form-label text-sm-right text-left col-sm-4" for="id_mc001">Min No Task Completions:</label>
+            <div class="input-group col-sm-7">
+              <input class="form-control" type="text" v-model="curr_user_params.mincpt">
+            </div>
+          </div>          
+
+          <div class="form-group row align-middle col-12">
+            <label class="col-form-label text-sm-right text-left col-sm-4" for="id_mc001">Max No Task Completions:</label>
+            <div class="input-group col-sm-7">
+              <input class="form-control" type="text" v-model="curr_user_params.maxcpt">
+            </div>
+          </div>          
+        </div>
+        <div class="form-row mt-6 ml-1">
+          <div class="form-group row align-middle col-12">
+            <label class="col-form-label text-sm-right text-left col-sm-4" for="id_mc001">Avg. Completions from History:</label>
+            <div class="input-group col-sm-7">
+              <input class="form-control" type="text" value="3">
+            </div>
+          </div>              
+        </div>
+    </div>
+  </div>
+  <div class="col-md-12 text-right">
+      <button id="btn-save" type="button" class="btn btn-primary mr-1" @click="save_params">Save</button>
+  </div>
+</div>
+{%endblock%}
+
+
+{% block form_js %}          
+    <script src="{% static 'BaseProject/vendor/Looper/assets/vendor/moment/moment.js' %}" type="text/javascript"></script>
+    <script src="{% static 'BaseProject/vendor/bootstrap-datepicker/js/bootstrap-datepicker.min.js' %}" type="text/javascript"></script>
+    <script src="{% static 'WEB_PMIS/js/date_fns.min.js' %}" type="text/javascript"></script>
+    <script src="{% static 'WEB_PMIS/js/lodash.min.js' %}" type="text/javascript"></script>
+    <script src="{% static 'BaseProject/vendor/Looper/assets/vendor/select2/js/select2.min.js' %}" type="text/javascript"></script>
+    <!-- BEGIN PLUGINS JS -->
+    <script>
+      var init_sys_param = {{sys_params|safe}}
+      var init_curr_user_params = {{curr_user_params|safe}}
+      var init_next_user_params = {{next_user_params|safe}}
+      var type_list = {{type_list|safe}}
+      var user_list = {{user_list|safe}}
+      var periods = {{periods|safe}}
+      var cur_user = "{{user}}"
+      $(function(){
+      });      
+    </script>
+    <script src="{% static 'PMIS/js/schedule/params.js' %}" type="text/javascript"></script>    
+{% endblock%}

@@ -1,0 +1,1166 @@
+.LPTreegrid table tr.selected {
+    background-color: #0275d8;
+    color: #fff;
+}
+
+.PmsSessionManager {
+    position: relative;
+}
+
+.PmsSessionManager .select2-container {
+    min-width: 0;
+    width: 100% !important;
+}
+
+.PmsSessionManager>.card {
+    box-shadow: 0 0 2rem #2930421a;
+}
+
+.PmsSessionManager>.card>.search-scope {
+    padding-top: 10px;
+}
+
+.PmsSessionManager .search-scope>.form-group,
+.PmsSessionManager .detailInfo .tab-content .search_list>.form-group {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.PmsSessionManager .search-scope>.form-group,
+.PmsSessionManager .detailInfo.card .search_list>.form-group {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.PmsSessionManager .detailInfo.card .tab-content .sqlScriptRow>.form-group {
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-bottom: 10px;
+}
+
+.PmsSessionManager .detailInfo.card .tab-content .sqlScriptRow>.form-group:not(:first-child) {
+    display: flex;
+    align-items: center;
+}
+
+.PmsSessionManager .search-scope .select2-contact-mul+span.select2 {
+    flex-basis: 0;
+    flex-grow: 1;
+    min-width: 0;
+    max-width: 100%;
+    padding: 0;
+    position: relative;
+}
+
+.PmsSessionManager .search-scope .select2-contact-mul+span.select2 .select2-selection__rendered {
+    display: flex !important;
+    overflow-x: auto !important;
+}
+
+.PmsSessionManager .search-scope .select2-contact-mul+span.select2 .select2-selection__choice {
+    flex-shrink: 0;
+}
+
+.PmsSessionManager .search-scope .select2-contact-mul+span.select2.select2-container--default .select2-selection--multiple .select2-selection__choice__remove {
+    line-height: 0.9rem;
+}
+
+.PmsSessionManager .cardShadow {
+    border: 1px solid #edf2f9;
+    border-radius: 12px;
+    box-shadow: 0 0.75rem 1.5rem rgba(18, 38, 63, 0.03);
+}
+
+.PmsSessionManager .sessionSearchCard>.card-body {
+    overflow-y: auto;
+}
+
+.PmsSessionManager .split-pane.topPane .tab-content,
+.PmsSessionManager .split-pane.topPane .tab-content .tab-pane,
+.PmsSessionManager .cardShadow .LPTreegrid,
+.PmsSessionManager .cardShadow .LPTreegrid>.bootstrap-table,
+.PmsSessionManager .cardShadow .LPTreegrid>.bootstrap-table .fixed-table-container {
+    height: 100%;
+}
+
+.PmsSessionManager .cardShadow .LPTreegrid>.bootstrap-table .fixed-table-container {
+    border-radius: 12px;
+}
+
+.PmsSessionManager .cardShadow .LPTreegrid .fixed-table-header {
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    background-color: #f9fafc;
+}
+
+.PmsSessionManager .cardShadow .LPTreegrid .fixed-table-body {
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+}
+
+.PmsSessionManager .cardShadow .LPTreegrid>.bootstrap-table .fixed-table-container.fixed-height:not(.has-footer) {
+    border-bottom: 0;
+}
+
+.PmsSessionManager .detailInfo.card>.nav.skinableNavTab {
+    font-weight: 600;
+    flex-wrap: nowrap;
+    padding-bottom: 0;
+    overflow-x: auto;
+    text-align: center;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+}
+
+.PmsSessionManager .detailInfo.card>.skinableNavTab.nav-tabs .nav-item {
+    margin-bottom: 0;
+}
+
+.PmsSessionManager .detailInfo.card>.skinableNavTab .nav-tabs .nav-link {
+    padding: .8rem 1rem;
+}
+
+.PmsSessionManager .detailInfo.card>.card-body {
+    padding: .5rem;
+    overflow-y: auto;
+}
+
+.PmsSessionManager .detailInfo.card .dropdownMenuScroll.dropdown {
+    width: 100%;
+}
+
+.PmsSessionManager .detailInfo.card .dropdownMenuScroll.dropdown .dropdown-menu.show {
+    position: relative;
+    overflow-y: auto;
+    max-height: 263px;
+}
+
+.PmsSessionManager .LPDataTable .dataTables_scrollHeadInner>table {
+    margin-top: 0 !important;
+}
+
+.subLabelMB>label {
+    margin-bottom: 0;
+}
+
+.PmsSessionManager .page-inner {
+    overflow-y: auto;
+}
+
+@media (max-width: 991.98px) {
+    .PmsSessionManager:not(.lang_en) .search-scope.meetting-search-scope>.form-group:nth-child(1) label {
+        min-width: 66px;
+    }
+}
+
+@media (max-width: 767.98px) {
+
+    .PmsSessionManager:not(.lang_en) .detailInfo.card .tab-content .sqlScriptRow>.form-group:nth-child(2)>label,
+    .PmsSessionManager:not(.lang_en) .detailInfo.card .tab-content .sqlScriptRow>.form-group:nth-child(3)>label {
+        min-width: 77px;
+    }
+
+    .PmsSessionManager.lang_en .detailInfo.card .tab-content .sqlScriptRow>.form-group:nth-child(2)>label,
+    .PmsSessionManager.lang_en .detailInfo.card .tab-content .sqlScriptRow>.form-group:nth-child(3)>label {
+        min-width: 106.5px;
+    }
+
+    .PmsSessionManager:not(.lang_en) .search-scope.goal-search-scope>.form-group:nth-child(1) label,
+    .PmsSessionManager:not(.lang_en) .search-scope.goal-search-scope>.form-group:nth-child(3) label {
+        min-width: 58px;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .PmsSessionManager .page-inner {
+        padding: 1rem .5rem;
+        height: 1000px;
+    }
+
+    .PmsSessionManager .search-scope:not(.meetting-search-scope) {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    .PmsSessionManager #sessionSearchHeading {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+    }
+
+    .PmsSessionManager #sessionSearchHeading>.btn-reset {
+        background-color: white;
+        min-width: 3.5rem;
+        position: absolute;
+        top: 0;
+        border-bottom-left-radius: 8px;
+        border-bottom-right-radius: 8px;
+    }
+
+    .PmsSessionManager .sessionSearchCard:not(.expanded) #sessionSearchHeading {
+        justify-content: flex-end;
+        padding-right: 0 !important;
+    }
+
+    .PmsSessionManager .sessionSearchCard.card-expansion-item:first-child.expanded {
+        margin-bottom: .2rem;
+    }
+
+    .PmsSessionManager .tabs-border-card>.tabs_header .nav-tabs .nav-link,
+    .PmsSessionManager .detailInfo .nav-tabs .nav-link {
+        padding: .65rem .5rem;
+    }
+
+    .PmsSessionManager.lang_en .detailInfo .nav-tabs .nav-link {
+        padding: .65rem .8rem;
+    }
+
+    .PmsSessionManager .detailInfo.card .dropdownMenuScroll.dropdown .dropdown-menu.show {
+        width: 20rem !important;
+    }
+
+    .PmsSessionManager .search-scope .btn_search {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .PmsSessionManager .search-scope.session-search-scope>.form-group:nth-child(n+1):nth-child(-n+2) {
+        flex: 0 0 50%;
+        max-width: 50%
+    }
+
+    .PmsSessionManager .search-scope.meetting-search-scope>.form-group:nth-child(1) {
+        flex-basis: 0;
+        flex-grow: 1;
+        max-width: 100%;
+    }
+
+    .PmsSessionManager .search-scope:not(.goal-search-scope):not(.technical-search-scope) .form-group:nth-child(3) {
+        flex-basis: 0;
+        flex-grow: 1;
+        max-width: 100%;
+
+        width: calc(100% - 100px);
+    }
+
+    .PmsSessionManager:not(.lang_en) .search-scope .form-group:nth-child(1)>label,
+    .PmsSessionManager:not(.lang_en) .search-scope .form-group:nth-child(3)>label {
+        min-width: 90px;
+    }
+
+    .PmsSessionManager.lang_en .search-scope .form-group:nth-child(1)>label,
+    .PmsSessionManager.lang_en .search-scope .form-group:nth-child(3)>label {
+        min-width: 93px;
+    }
+
+    .PmsSessionManager .detailInfo .tab-content .search_list>.form-group:last-child {
+        width: 100%;
+        justify-content: flex-end;
+    }
+
+    .PmsSessionManager .detailInfo.card .tab-content .sqlScriptRow>.form-group:last-child {
+        flex: 1;
+        justify-content: flex-end;
+    }
+
+    .PmsSessionManager:not(.lang_en) .detailInfo .tab-content .search_list>.form-group>label,
+    .PmsSessionManager:not(.lang_en) .search-scope.technical-search-scope>.form-group>label {
+        min-width: 74px;
+    }
+
+    .PmsSessionManager.lang_en .detailInfo .tab-content .search_list>.form-group>label {
+        min-width: 85px;
+    }
+
+    .PmsSessionManager .custom-control:not(.custom-switch) .custom-control-label:after,
+    .PmsSessionManager .custom-control:not(.custom-switch) .custom-control-label:before {
+        top: .25rem;
+    }
+
+    .PmsSessionManager .search-scope.goal-search-scope>.form-group:nth-child(1) {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    .PmsSessionManager .search-scope.goal-search-scope>.form-group:nth-child(n+2):nth-child(-n+3) {
+        flex: 0 0 50%;
+        max-width: 50%
+    }
+
+    .PmsSessionManager .search-scope.goal-search-scope>.form-group:nth-child(4) {
+        flex: 0 0 calc(100% - 98px);
+        max-width: calc(100% - 98px);
+    }
+
+    .PmsSessionManager:not(.lang_en) .search-scope.goal-search-scope>.form-group:not(:nth-child(3)) label {
+        min-width: 58px;
+    }
+
+    .PmsSessionManager .search-scope.goal-search-scope>.form-group:nth-child(3) label {
+        min-width: auto !important;
+    }
+
+    .PmsSessionManager.lang_en .search-scope.goal-search-scope>.form-group:not(:nth-child(3)) label {
+        min-width: 78px;
+    }
+
+    .PmsSessionManager.lang_en .search-scope.technical-search-scope>.form-group>label {
+        min-width: 104px;
+    }
+}
+
+@media (min-width: 350px) and (max-width: 575.98px) {
+    .PmsSessionManager .search-scope.technical-search-scope .form-group:nth-child(2) {
+        order: 1;
+        flex-basis: 0;
+        flex-grow: 1;
+        max-width: 100%;
+
+        width: calc(100% - 100px);
+    }
+
+    .PmsSessionManager .search-scope.technical-search-scope .form-group:nth-last-child(1) {
+        order: 2;
+    }
+}
+
+@media (min-width: 360px) and (max-width: 575.98px) {
+    .PmsSessionManager .detailInfo .tab-content .search_list>.form-group:nth-child(1),
+    .PmsSessionManager .detailInfo .tab-content .search_list>.form-group:nth-child(2),
+    .PmsSessionManager .detailInfo .tab-content .search_list>.prompt_sql_tab_show:nth-child(8),
+    .PmsSessionManager .detailInfo .tab-content .search_list>.prompt_sql_tab_show:nth-child(7) {
+        flex: 0 0 55%;
+        max-width: 55%
+    }
+
+    .PmsSessionManager .detailInfo .tab-content .search_list>.form-group:nth-child(3),
+    .PmsSessionManager .detailInfo .tab-content .search_list>.form-group:nth-child(5):not(.isTaskTab),
+    .PmsSessionManager .detailInfo .tab-content .search_list>.prompt_sql_tab_show:nth-child(9),
+    .PmsSessionManager .detailInfo .tab-content .search_list>.prompt_sql_tab_show:nth-child(11) {
+        flex: 0 0 45%;
+        max-width: 45%
+    }
+
+    .PmsSessionManager .detailInfo .tab-content .search_list>.form-group:not(:nth-child(n+1):nth-child(-n+3)):not(:nth-child(5)):not(:nth-child(7)):not(:nth-child(8)):not(:nth-child(9)):not(:nth-child(11)):not(:last-child) {
+        flex: 0 0 100%;
+        max-width: 100%
+    }
+
+    .PmsSessionManager .detailInfo .tab-content .search_list>.form-group:nth-child(n+2):nth-child(-n+4),
+    .PmsSessionManager .detailInfo .tab-content .search_list>.prompt_sql_tab_show:nth-child(n+8):nth-child(-n+10) {
+        order: -1;
+    }
+
+    .PmsSessionManager .detailInfo .tab-content .search_list>.form-group:nth-child(2)>label {
+        min-width: auto;
+    }
+
+    .PmsSessionManager:not(.lang_en) .detailInfo .tab-content .search_list>.form-group:not(:nth-child(3)):not(:nth-child(5):not(.isTaskTab)):not(:nth-child(9)):not(:nth-child(11))>label {
+        min-width: 74px;
+    }
+
+    .PmsSessionManager:not(.lang_en) .detailInfo .tab-content .search_list>.form-group:nth-child(3)>label,
+    .PmsSessionManager:not(.lang_en) .detailInfo .tab-content .search_list>.form-group:nth-child(5)>label,
+    .PmsSessionManager:not(.lang_en) .detailInfo .tab-content .search_list>.prompt_sql_tab_show:nth-child(9)>label,
+    .PmsSessionManager:not(.lang_en) .detailInfo .tab-content .search_list>.prompt_sql_tab_show:nth-child(11)>label {
+        min-width: 58px;
+    }
+
+    .PmsSessionManager.lang_en .detailInfo .tab-content .search_list>.form-group:nth-child(3)>label,
+    .PmsSessionManager.lang_en .detailInfo .tab-content .search_list>.form-group:nth-child(5)>label,
+    .PmsSessionManager.lang_en .detailInfo .tab-content .search_list>.prompt_sql_tab_show:nth-child(9)>label,
+    .PmsSessionManager.lang_en .detailInfo .tab-content .search_list>.prompt_sql_tab_show:nth-child(11)>label {
+        min-width: 69px;
+    }
+
+    .PmsSessionManager.lang_en .detailInfo .tab-content .search_list>.form-group:not(:nth-child(3)):not(:nth-child(5):not(.isTaskTab)):not(:nth-child(9)):not(:nth-child(11))>label {
+        min-width: 85px;
+    }
+}
+
+/* @media (max-width: 379.98px) {
+
+    .PmsSessionManager .detailInfo .nav-tabs .nav-link,
+    .PmsSessionManager.lang_en .detailInfo .nav-tabs .nav-link {
+        padding: .8rem .3rem;
+        font-size: 15px;
+    }
+} */
+
+/* @media (max-width: 360px) {
+    .PmsSessionManager .detailInfo .nav-tabs .nav-link {
+        padding: .8rem .4rem;
+    }
+
+    .PmsSessionManager.lang_en .detailInfo .nav-tabs .nav-link {
+        padding: .8rem .2rem;
+    }
+} */
+
+@media (min-width: 354px) and (max-width: 390.98px) {
+    .PmsSessionManager:not(.lang_en) .detailInfo.card>.skinableNavTab.nav-tabs .nav-link {
+        padding: .8rem .3rem;
+    }
+}
+
+@media (max-width: 349.98px) {
+    .PmsSessionManager .search-scope>.form-group {
+        flex: 0 0 100%;
+        max-width: 100%
+    }
+
+    .PmsSessionManager .search-scope>.form-group:nth-child(n+1):nth-child(-n+3),
+    .PmsSessionManager .search-scope.goal-search-scope>.form-group:nth-child(n+1):nth-child(-n+4) {
+        flex: 0 0 100% !important;
+        max-width: 100% !important
+    }
+
+    .PmsSessionManager .search-scope>.form-group:last-child {
+        justify-content: flex-end;
+    }
+
+    .PmsSessionManager .search-scope.session-search-scope>.form-group label {
+        min-width: 90px !important;
+    }
+
+    .PmsSessionManager:not(.lang_en) .search-scope.goal-search-scope>.form-group label {
+        min-width: 58px !important;
+    }
+    .PmsSessionManager.lang_en .search-scope.goal-search-scope>.form-group label {
+        min-width: 78px !important;
+    }
+}
+
+@media (min-width: 576px) {
+    .PmsSessionManager .page-inner {
+        padding: .5rem;
+        padding-bottom: 1rem;
+        height: calc(100vh - 3.5rem);
+    }
+
+    .PmsSessionManager .detailInfo .tab-content .search_list {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .PmsSessionManager .tabs-border-card>.tabs_header .nav-tabs .nav-link,
+    .PmsSessionManager .detailInfo .nav-tabs .nav-link {
+        padding: .8rem 1rem;
+    }
+
+    .PmsSessionManager .custom-control:not(.custom-switch) .custom-control-label:after,
+    .PmsSessionManager .custom-control:not(.custom-switch) .custom-control-label:before {
+        top: .125rem;
+    }
+}
+
+@media (min-width: 576px) and (max-width: 1199.98px) {
+    .PmsSessionManager .btn_search {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+
+    .PmsSessionManager:not(.lang_en) .search-scope .form-group:nth-child(1)>label,
+    .PmsSessionManager:not(.lang_en) .search-scope .form-group:nth-child(3)>label {
+        min-width: 90px;
+    }
+
+    .PmsSessionManager.lang_en .search-scope .form-group:nth-child(1)>label,
+    .PmsSessionManager.lang_en .search-scope .form-group:nth-child(3)>label {
+        min-width: 93px;
+    }
+
+    .PmsSessionManager.lang_en .search-scope.goal-search-scope .form-group:nth-child(1)>label,
+    .PmsSessionManager.lang_en .search-scope.goal-search-scope .form-group:nth-child(3)>label {
+        min-width: 69px;
+    }
+
+    .PmsSessionManager:not(.lang_en) .detailInfo .tab-content .search_list>.form-group>label {
+        min-width: 74px;
+    }
+
+    .PmsSessionManager.lang_en .detailInfo .tab-content .search_list>.form-group>label {
+        min-width: 85px;
+    }
+
+    .PmsSessionManager .detailInfo .tab-content .search_list>.form-group:last-child {
+        flex: 1;
+        justify-content: flex-end;
+    }
+
+    .PmsSessionManager:not(.lang_en) .search-scope.technical-search-scope>.form-group:not(:nth-child(2)):not(:nth-child(4))>label {
+        min-width: 74px;
+    }
+
+    .PmsSessionManager.lang_en .search-scope.technical-search-scope>.form-group:not(:nth-child(2)):not(:nth-child(4))>label {
+        min-width: 104px;
+    }
+
+    .PmsSessionManager .search-scope.technical-search-scope>.form-group:nth-child(2)>label,
+    .PmsSessionManager .search-scope.technical-search-scope>.form-group:nth-child(4)>label {
+        min-width: auto;
+    }
+}
+
+@media (min-width: 992px) {
+    .lpAIComBox.modal .modal-dialog {
+        max-width: 900px;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    .PmsSessionManager .search-scope {
+        padding-left: .5rem;
+        padding-right: .5rem;
+    }
+}
+
+@media (min-width: 768px) {
+
+    .PmsSessionManager.lang_en .detailInfo .tab-content .search_list>.form-group:nth-child(1)>label,
+    .PmsSessionManager.lang_en .detailInfo .tab-content .search_list>.form-group:nth-child(4)>label,
+    .PmsSessionManager.lang_en .detailInfo .tab-content .search_list>.form-group:nth-child(7)>label {
+        min-width: 73.5px;
+    }
+
+    .PmsSessionManager.lang_en .detailInfo .tab-content .search_list>.form-group:nth-child(3)>label,
+    .PmsSessionManager.lang_en .detailInfo .tab-content .search_list>.form-group:nth-child(5)>label,
+    .PmsSessionManager.lang_en .detailInfo .tab-content .search_list>.form-group:nth-child(6)>label {
+        min-width: 75.8px;
+    }
+
+    .PmsSessionManager:not(.lang_en) .detailInfo.card .tab-content .sqlScriptRow>.form-group:nth-child(2)>label,
+    .PmsSessionManager:not(.lang_en) .detailInfo.card .tab-content .sqlScriptRow>.form-group:nth-child(3)>label {
+        min-width: 68.5px;
+    }
+
+    .PmsSessionManager.lang_en .detailInfo.card .tab-content .sqlScriptRow>.form-group:nth-child(2)>label,
+    .PmsSessionManager.lang_en .detailInfo.card .tab-content .sqlScriptRow>.form-group:nth-child(3)>label {
+        min-width: 95px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+
+    .PmsSessionManager:not(.lang_en) .search-scope>.form-group:nth-child(1)>label,
+    .PmsSessionManager:not(.lang_en) .search-scope>.form-group:nth-child(3)>label {
+        min-width: 80px;
+    }
+
+    .PmsSessionManager.lang_en .search-scope>.form-group:nth-child(1)>label,
+    .PmsSessionManager.lang_en .search-scope>.form-group:nth-child(3)>label {
+        min-width: 83px;
+    }
+
+    .PmsSessionManager .detailInfo .tab-content .search_list>.form-group:nth-child(6),
+    .PmsSessionManager .detailInfo .tab-content .search_list>.form-group:nth-last-child(5),
+    .PmsSessionManager .detailInfo .tab-content .search_list>.form-group:nth-last-child(n+1):nth-last-child(-n+3) {
+        order: 1;
+    }
+
+    .PmsSessionManager .detailInfo .tab-content .search_list>.form-group:nth-child(2)>label {
+        min-width: auto;
+    }
+
+    .PmsSessionManager:not(.lang_en) .detailInfo .tab-content .search_list>.form-group:not(:nth-child(2)):not(:nth-child(8))>label {
+        min-width: 66px;
+    }
+
+    .PmsSessionManager.lang_en .detailInfo .tab-content .search_list>.form-group:not(:nth-child(2))>label {
+        min-width: 73.5px;
+    }
+
+    .PmsSessionManager .detailInfo .tab-content .search_list>.form-group:last-child {
+        width: 100%;
+        justify-content: flex-end;
+    }
+
+    .PmsSessionManager:not(.lang_en) .search-scope.goal-search-scope>.form-group:nth-child(2) label,
+    .PmsSessionManager:not(.lang_en) .search-scope.goal-search-scope>.form-group:nth-child(3) label {
+        min-width: 38px;
+    }
+
+    .PmsSessionManager:not(.lang_en) .search-scope.goal-search-scope>.form-group:nth-child(1) label,
+    .PmsSessionManager:not(.lang_en) .search-scope.goal-search-scope>.form-group:nth-child(4) label,
+    .PmsSessionManager.lang_en .search-scope.goal-search-scope>.form-group:nth-child(2) label,
+    .PmsSessionManager.lang_en .search-scope.goal-search-scope>.form-group:nth-child(3) label {
+        min-width: 52px;
+    }
+
+    .PmsSessionManager.lang_en .search-scope.goal-search-scope>.form-group:nth-child(1) label,
+    .PmsSessionManager.lang_en .search-scope.goal-search-scope>.form-group:nth-child(4) label {
+        min-width: 70px;
+    }
+
+    .PmsSessionManager .search-scope.goal-search-scope>.form-group:nth-child(2) {
+        order: -1;
+    }
+
+    .PmsSessionManager:not(.lang_en) .search-scope.technical-search-scope>.form-group:not(:nth-child(2)):not(:nth-child(4))>label {
+        min-width: 66px;
+    }
+
+    .PmsSessionManager.lang_en .search-scope.technical-search-scope>.form-group:not(:nth-child(2)):not(:nth-child(4))>label {
+        min-width: 92.5px;
+    }
+    
+    .PmsSessionManager .search-scope.technical-search-scope>.form-group:nth-child(2)>label,
+    .PmsSessionManager .search-scope.technical-search-scope>.form-group:nth-child(4)>label {
+        min-width: auto;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1499.98px) {
+    .PmsSessionManager .detailInfo .tab-content .search_list>.form-group:nth-child(4),
+    .PmsSessionManager .detailInfo .tab-content .search_list>.prompt_sql_tab_show:nth-child(10) {
+        order: -1;
+    }
+
+    .PmsSessionManager.lang_en .detailInfo .tab-content .search_list>.form-group:nth-child(2)>label,
+    .PmsSessionManager.lang_en .detailInfo .tab-content .search_list>.prompt_sql_tab_show:nth-child(8)>label,
+    .PmsSessionManager.lang_en .detailInfo .tab-content .search_list>.form-group:nth-child(13)>label {
+        min-width: 73.5px;
+    }
+
+    .PmsSessionManager:not(.lang_en) .detailInfo .tab-content .search_list>.form-group:not(:nth-child(3)):not(:nth-child(5)):not(:nth-child(9)):not(:nth-child(11)):not(:nth-child(14))>label {
+        min-width: 66px;
+    }
+
+    .PmsSessionManager.lang_en .detailInfo .tab-content .search_list>.form-group:nth-child(3)>label,
+    .PmsSessionManager.lang_en .detailInfo .tab-content .search_list>.form-group:nth-child(5)>label,
+    .PmsSessionManager .detailInfo .tab-content .search_list>.prompt_sql_tab_show:nth-child(9)>label,
+    .PmsSessionManager .detailInfo .tab-content .search_list>.prompt_sql_tab_show:nth-child(11)>label,
+    .PmsSessionManager .detailInfo .tab-content .search_list>.form-group:nth-child(14)>label {
+        min-width: auto;
+    }
+
+    .PmsSessionManager.lang_en .detailInfo .tab-content .search_list>.form-group:nth-child(1)>label,
+    .PmsSessionManager.lang_en .detailInfo .tab-content .search_list>.form-group:nth-child(6)>label,
+    .PmsSessionManager.lang_en .detailInfo .tab-content .search_list>.prompt_sql_tab_show:nth-child(7)>label,
+    .PmsSessionManager.lang_en .detailInfo .tab-content .search_list>.prompt_sql_tab_show:nth-child(12)>label {
+        min-width: 75.8px;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+
+    .PmsSessionManager .detailInfo .tab-content .search_list>.form-group:not(.prompt_sql_tab_show):nth-child(7),
+    .PmsSessionManager .detailInfo .tab-content .search_list>.form-group:not(.prompt_sql_tab_show):nth-child(8) {
+        flex: 0 0 50%;
+        max-width: 50%
+    }
+
+    .PmsSessionManager:not(.lang_en) .detailInfo .tab-content .search_list>.form-group:nth-child(5)>label, 
+    .PmsSessionManager:not(.lang_en) .detailInfo .tab-content .search_list>.form-group:not(.prompt_sql_tab_show):nth-child(8)>label,
+    .PmsSessionManager:not(.lang_en) .detailInfo .tab-content .search_list>.prompt_sql_tab_show:nth-child(2)>label {
+        min-width: 54.5px;
+    }
+
+    .PmsSessionManager.lang_en .detailInfo .tab-content .search_list>.form-group:nth-child(5)>label, 
+    /* .PmsSessionManager.lang_en .detailInfo .tab-content .search_list>.form-group:nth-child(8)>label, */
+    .PmsSessionManager.lang_en .detailInfo .tab-content .search_list>.prompt_sql_tab_show:nth-child(2)>label,
+    .PmsSessionManager.lang_en .detailInfo .tab-content .search_list>.prompt_sql_tab_show:nth-child(11)>label {
+        min-width: 62px;
+    }
+
+    .PmsSessionManager .detailInfo.card .tab-content #sessionMgnTaskSearchCollapse>.form-group:last-child {
+        flex: 1;
+        justify-content: flex-end;
+    }
+
+    .PmsSessionManager:not(.lang_en) .search-scope.technical-search-scope>.form-group:nth-child(1)>label,
+    .PmsSessionManager:not(.lang_en) .search-scope.technical-search-scope>.form-group:nth-child(4)>label {
+        min-width: 66px;
+    }
+    .PmsSessionManager:not(.lang_en) .search-scope.technical-search-scope>.form-group:nth-child(5)>label {
+        min-width: 52px;
+    }
+
+    .PmsSessionManager.lang_en .search-scope.technical-search-scope>.form-group:nth-child(1)>label,
+    .PmsSessionManager.lang_en .search-scope.technical-search-scope>.form-group:nth-child(4)>label {
+        min-width: 85px;
+    }
+    .PmsSessionManager.lang_en .search-scope.technical-search-scope>.form-group:nth-child(5)>label {
+        min-width: 62px;
+    }
+    
+    .PmsSessionManager .search-scope.technical-search-scope>.form-group:nth-child(2)>label,
+    .PmsSessionManager .search-scope.technical-search-scope>.form-group:nth-child(3)>label {
+        min-width: auto;
+    }
+}
+
+@media (max-width: 1199.98px) {
+    .PmsSessionManager .btn_clear {
+        padding-left: 9px;
+        padding-right: 9px;
+    }
+}
+
+@media (min-width: 1200px) and (max-width: 1499.98px) {
+    .PmsSessionManager .detailInfo .isSpecialTabCard .search_list>.form-group:not(.prompt_sql_tab_show):nth-child(7),
+    .PmsSessionManager .detailInfo .isSpecialTabCard .search_list>.prompt_sql_tab_show:nth-child(13) {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+    .PmsSessionManager .detailInfo .isSpecialTabCard .search_list>.form-group:nth-child(5)>label,
+    .PmsSessionManager .detailInfo .isSpecialTabCard .search_list>.form-group:nth-child(8)>label,
+    .PmsSessionManager .detailInfo .isSpecialTabCard .search_list>.prompt_sql_tab_show:nth-child(11) {
+        min-width: 62px;
+    }
+
+    .PmsSessionManager .search-scope.technical-search-scope>.form-group:nth-child(3),
+    .PmsSessionManager .search-scope.technical-search-scope>.form-group:nth-child(4) {
+        flex: 0 0 25%;
+        max-width: 25%
+    }
+
+    .PmsSessionManager .search-scope.technical-search-scope>.form-group:nth-last-child(2) {
+        flex-basis: 0;
+        flex-grow: 1;
+        max-width: 100%;
+    }
+
+    .PmsSessionManager:not(.lang_en) .search-scope.technical-search-scope>.form-group:nth-child(1)>label,
+    .PmsSessionManager:not(.lang_en) .search-scope.technical-search-scope>.form-group:nth-child(5)>label {
+        min-width: 66px;
+    }
+    .PmsSessionManager.lang_en .search-scope.technical-search-scope>.form-group:nth-child(1)>label,
+    .PmsSessionManager.lang_en .search-scope.technical-search-scope>.form-group:nth-child(5)>label {
+        min-width: 85px;
+    }
+}
+
+@media (min-width: 1500px) {
+
+    /* .PmsSessionManager .detailInfo .tab-content .search_list>.form-group:nth-child(2),
+    .PmsSessionManager .detailInfo .tab-content .search_list>.form-group:nth-child(3) {
+        flex: 0 0 10.5%;
+        max-width: 10.5%
+    } */
+
+    .PmsSessionManager:not(.lang_en) .detailInfo .tab-content .search_list>.form-group:nth-child(2)>label,
+    .PmsSessionManager:not(.lang_en) .detailInfo .tab-content .search_list>.form-group:nth-child(6)>label,
+    .PmsSessionManager:not(.lang_en) .detailInfo .tab-content .search_list>.prompt_sql_tab_show:nth-child(8)>label,
+    .PmsSessionManager:not(.lang_en) .detailInfo .tab-content .search_list>.prompt_sql_tab_show:nth-child(12)>label {
+        min-width: 66px;
+    }
+
+    .PmsSessionManager:not(.lang_en) .detailInfo .tab-content .search_list>.form-group:nth-child(1)>label,
+    .PmsSessionManager:not(.lang_en) .detailInfo .tab-content .search_list>.form-group:nth-child(5)>label,
+    .PmsSessionManager:not(.lang_en) .detailInfo .tab-content .search_list>.prompt_sql_tab_show:nth-child(7)>label,
+    .PmsSessionManager:not(.lang_en) .detailInfo .tab-content .search_list>.prompt_sql_tab_show:nth-child(11)>label {
+        min-width: 52px;
+    }
+
+    .PmsSessionManager.lang_en .detailInfo .tab-content .search_list>.form-group:nth-child(1)>label,
+    .PmsSessionManager.lang_en .detailInfo .tab-content .search_list>.form-group:nth-child(5)>label,
+    .PmsSessionManager.lang_en .detailInfo .tab-content .search_list>.prompt_sql_tab_show:nth-child(7)>label,
+    .PmsSessionManager.lang_en .detailInfo .tab-content .search_list>.prompt_sql_tab_show:nth-child(11)>label {
+        min-width: 66.5px;
+    }
+
+    .PmsSessionManager.lang_en .detailInfo .tab-content .search_list>.form-group:nth-child(2)>label,
+    .PmsSessionManager.lang_en .detailInfo .tab-content .search_list>.form-group:nth-child(6)>label,
+    .PmsSessionManager.lang_en .detailInfo .tab-content .search_list>.prompt_sql_tab_show:nth-child(8)>label,
+    .PmsSessionManager.lang_en .detailInfo .tab-content .search_list>.prompt_sql_tab_show:nth-child(12)>label {
+        min-width: 76px;
+    }
+}
+
+@media (min-width: 1500px) and (max-width: 1799.98px) {
+
+    .PmsSessionManager .detailInfo .tab-content .search_list>.form-group:nth-child(1),
+    .PmsSessionManager .detailInfo .tab-content .search_list>.form-group:nth-child(5),
+    .PmsSessionManager .detailInfo .tab-content .search_list>.prompt_sql_tab_show:nth-child(7),
+    .PmsSessionManager .detailInfo .tab-content .search_list>.prompt_sql_tab_show:nth-child(11) {
+        flex: 0 0 15%;
+        max-width: 15%
+    }
+
+    .PmsSessionManager .detailInfo .tab-content .search_list>.form-group:nth-child(2),
+    .PmsSessionManager .detailInfo .tab-content .search_list>.prompt_sql_tab_show:nth-child(8) {
+        flex: 0 0 14.5%;
+        max-width: 14.5%
+    }
+
+    .PmsSessionManager .detailInfo .tab-content .search_list>.form-group:nth-child(3),
+    .PmsSessionManager .detailInfo .tab-content .search_list>.prompt_sql_tab_show:nth-child(9) {
+        flex: 0 0 11.5%;
+        max-width: 11.5%
+    }
+
+    .PmsSessionManager .detailInfo .tab-content .search_list>.form-group:nth-child(4),
+    .PmsSessionManager .detailInfo .tab-content .search_list>.prompt_sql_tab_show:nth-child(10) {
+        flex: 0 0 59%;
+        max-width: 59%
+    }
+
+    .PmsSessionManager .detailInfo .tab-content .search_list>.form-group:nth-child(6),
+    .PmsSessionManager .detailInfo .tab-content .search_list>.prompt_sql_tab_show:nth-child(12) {
+        flex: 0 0 14.5%;
+        max-width: 14.5%
+    }
+
+    .PmsSessionManager:not(.lang_en) .detailInfo .tab-content .search_list>.form-group:nth-child(1)>label,
+    .PmsSessionManager:not(.lang_en) .detailInfo .tab-content .search_list>.form-group:nth-child(5)>label,
+    .PmsSessionManager:not(.lang_en) .detailInfo .tab-content .search_list>.prompt_sql_tab_show:nth-child(7)>label,
+    .PmsSessionManager:not(.lang_en) .detailInfo .tab-content .search_list>.prompt_sql_tab_show:nth-child(11)>label {
+        min-width: 52px;
+    }
+
+    .PmsSessionManager.lang_en .detailInfo .tab-content .search_list>.form-group:nth-child(1)>label,
+    .PmsSessionManager.lang_en .detailInfo .tab-content .search_list>.form-group:nth-child(5)>label,
+    .PmsSessionManager.lang_en .detailInfo .tab-content .search_list>.prompt_sql_tab_show:nth-child(7)>label,
+    .PmsSessionManager.lang_en .detailInfo .tab-content .search_list>.prompt_sql_tab_show:nth-child(11)>label {
+        min-width: 66.5px;
+    }
+
+    .PmsSessionManager.lang_en .detailInfo .tab-content .search_list>.form-group:nth-child(2)>label,
+    .PmsSessionManager.lang_en .detailInfo .tab-content .search_list>.form-group:nth-child(6)>label,
+    .PmsSessionManager.lang_en .detailInfo .tab-content .search_list>.prompt_sql_tab_show:nth-child(8)>label,
+    .PmsSessionManager.lang_en .detailInfo .tab-content .search_list>.prompt_sql_tab_show:nth-child(12)>label {
+        min-width: 76px;
+    }
+
+    .PmsSessionManager.lang_en .detailInfo .tab-content .search_list>.form-group:nth-child(3)>label,
+    .PmsSessionManager.lang_en .detailInfo .tab-content .search_list>.form-group:not(.prompt_sql_tab_show):nth-child(7)>label,
+    .PmsSessionManager.lang_en .detailInfo .tab-content .search_list>.prompt_sql_tab_show:nth-child(9)>label,
+    .PmsSessionManager.lang_en .detailInfo .tab-content .search_list>.form-group:nth-child(13)>label {
+        min-width: 70px;
+    }
+
+    .PmsSessionManager:not(.lang_en) .search-scope.technical-search-scope>.form-group:nth-child(1) {
+        flex: 0 0 calc(38.5% - 126px);
+        max-width: calc(38.5% - 126px)
+    }
+
+    .PmsSessionManager.lang_en .search-scope.technical-search-scope>.form-group:nth-child(1) {
+        flex: 0 0 calc(38.5% - 150px);
+        max-width: calc(38.5% - 150px)
+    }
+
+    .PmsSessionManager .search-scope.technical-search-scope>.form-group:nth-child(2) {
+        flex: 0 0 11.5%;
+        max-width: 11.5%
+    }
+}
+
+.btn_ai_analysis {
+    white-space: nowrap;
+}
+
+@media (min-width: 1600px) {
+    .PmsSessionManager .search-scope:not(.meetting-search-scope)>.form-group:nth-child(2) {
+        flex: 0 0 14%;
+        max-width: 14%
+    }
+
+    .PmsSessionManager .search-scope.technical-search-scope>.form-group:nth-child(1) {
+        flex: 0 0 25%;
+        max-width: 25%
+    }
+
+    .PmsSessionManager .search-scope.technical-search-scope>.form-group:nth-child(2) {
+        flex: 0 0 11.5%;
+        max-width: 11.5%
+    }
+}
+
+@media (min-width: 1800px) and (max-width: 2199.98px) {
+
+    .PmsSessionManager .search-scope:not(.meetting-search-scope)>.form-group:nth-child(n+1):nth-child(-n+2),
+    .PmsSessionManager .detailInfo .tab-content .search_list>.form-group:nth-child(n+1):nth-child(-n+3),
+    .PmsSessionManager .detailInfo .tab-content .search_list>.form-group:nth-child(n+5):nth-child(-n+6),
+    .PmsSessionManager .detailInfo .tab-content .search_list>.prompt_sql_tab_show:nth-child(n+7):nth-child(-n+12):not(:nth-child(10)) {
+        flex: 0 0 11.5% !important;
+        max-width: 11.5% !important
+    }
+
+    .PmsSessionManager .detailInfo .tab-content .search_list>.form-group:not(.prompt_sql_tab_show):nth-child(7) {
+        flex: 0 0 23% !important;
+        max-width: 23% !important
+    }
+
+    .PmsSessionManager .detailInfo .tab-content .search_list>.prompt_sql_tab_show:nth-child(10),
+    .PmsSessionManager .detailInfo .tab-content .search_list>.form-group:nth-child(4) {
+        flex: 0 0 65.5%;
+        max-width: 65.5%
+    }
+
+    .PmsSessionManager .detailInfo .tab-content .search_list>.query_condition>label {
+        min-width: auto !important;
+    }
+
+    .PmsSessionManager .detailInfo .tab-content .search_list>.form-group:nth-last-child(4)>label {
+        min-width: 38px !important;
+    }
+
+    .PmsSessionManager.lang_en .detailInfo .tab-content .search_list>.form-group:nth-child(3)>label,
+    .PmsSessionManager.lang_en .detailInfo .tab-content .search_list>.form-group:nth-last-child(4)>label {
+        min-width: 70px !important;
+    }
+}
+
+@media (min-width: 2200px) {
+
+    .PmsSessionManager .search_list>.form-group.prompt_sql_tab_show,
+    .PmsSessionManager .search-scope:not(.meetting-search-scope)>.form-group:nth-child(n+1):nth-child(-n+2),
+    .PmsSessionManager .detailInfo .tab-content .search_list>.form-group:nth-child(n+1):nth-child(-n+3),
+    .PmsSessionManager .detailInfo .tab-content .search_list>.form-group:nth-child(n+5):nth-child(-n+6),
+    .PmsSessionManager .search-scope.technical-search-scope>.form-group:nth-child(2) {
+        flex: 0 0 8.333333% !important;
+        max-width: 8.333333% !important
+    }
+
+    .PmsSessionManager .search-scope.meetting-search-scope>.form-group:nth-child(1) {
+        flex: 0 0 25% !important;
+        max-width: 25% !important
+    }
+
+    .PmsSessionManager .search_list>.prompt_sql_tab_show:nth-child(10),
+    .PmsSessionManager .detailInfo .tab-content .search_list>.form-group:nth-child(4) {
+        flex: 0 0 75% !important;
+        max-width: 75% !important
+    }
+
+    .PmsSessionManager .detailInfo .tab-content .search_list>.form-group:nth-child(7):not(.prompt_sql_tab_show) {
+        flex: 0 0 16.666667%;
+        max-width: 16.666667%
+    }
+
+    .PmsSessionManager:not(.lang_en) .detailInfo .tab-content .search_list>.form-group:nth-child(2)>label,
+    .PmsSessionManager:not(.lang_en) .detailInfo .tab-content .search_list>.form-group:nth-child(4)>label,
+    .PmsSessionManager:not(.lang_en) .detailInfo .tab-content .search_list>.form-group:nth-child(6)>label,
+    .PmsSessionManager:not(.lang_en) .search_list>.prompt_sql_tab_show:nth-child(8)>label,
+    .PmsSessionManager:not(.lang_en) .search_list>.prompt_sql_tab_show:nth-child(12)>label {
+        min-width: 66px;
+    }
+
+    .PmsSessionManager .detailInfo .tab-content .search_list>.prompt_sql_tab_show:nth-child(7)>label,
+    .PmsSessionManager .detailInfo .tab-content .search_list>.prompt_sql_tab_show:nth-child(11)>label,
+    .PmsSessionManager:not(.lang_en) .detailInfo .tab-content .search_list>.form-group:nth-child(1)>label,
+    .PmsSessionManager:not(.lang_en) .detailInfo .tab-content .search_list>.form-group:nth-child(5)>label {
+        min-width: 52px;
+    }
+
+    .PmsSessionManager:not(.lang_en) .detailInfo .tab-content .search_list>.form-group:nth-child(3)>label,
+    .PmsSessionManager.lang_en .detailInfo .tab-content .search_list>.form-group:nth-child(4)>label,
+    .PmsSessionManager .detailInfo .tab-content .search_list>.form-group:nth-child(n+7):nth-child(-n+8):not(.prompt_sql_tab_show)>label,
+    .PmsSessionManager:not(.lang_en) .search_list>.prompt_sql_tab_show:nth-child(9)>label,
+    .PmsSessionManager:not(.lang_en) .search_list>.prompt_sql_tab_show:nth-child(13)>label {
+        min-width: auto !important;
+    }
+
+    .PmsSessionManager.lang_en .detailInfo .tab-content .search_list>.prompt_sql_tab_show:nth-child(7)>label,
+    .PmsSessionManager.lang_en .detailInfo .tab-content .search_list>.prompt_sql_tab_show:nth-child(11)>label,
+    .PmsSessionManager.lang_en .detailInfo .tab-content .search_list>.form-group:nth-child(1)>label,
+    .PmsSessionManager.lang_en .detailInfo .tab-content .search_list>.form-group:nth-child(5)>label {
+        min-width: 66.5px;
+    }
+
+    .PmsSessionManager.lang_en .search_list>.prompt_sql_tab_show:nth-child(8)>label,
+    .PmsSessionManager.lang_en .search_list>.prompt_sql_tab_show:nth-child(12)>label,
+    .PmsSessionManager.lang_en .detailInfo .tab-content .search_list>.form-group:nth-child(2)>label,
+    .PmsSessionManager.lang_en .detailInfo .tab-content .search_list>.form-group:nth-child(6)>label {
+        min-width: 76px;
+    }
+
+    .PmsSessionManager.lang_en .search_list>.prompt_sql_tab_show:nth-child(9)>label,
+    .PmsSessionManager.lang_en .search_list>.prompt_sql_tab_show:nth-child(13)>label,
+    .PmsSessionManager.lang_en .detailInfo .tab-content .search_list>.form-group:nth-child(3)>label,
+    .PmsSessionManager.lang_en .detailInfo .tab-content .search_list>.form-group:not(.prompt_sql_tab_show):nth-child(7)>label {
+        min-width: 69.5px;
+    }
+}
+
+@media (min-width: 2600px) {
+    .PmsSessionManager .search-scope.meetting-search-scope>.form-group:nth-child(1),
+    .PmsSessionManager .search-scope.technical-search-scope>.form-group:nth-child(1) {
+        flex: 0 0 20% !important;
+        max-width: 20% !important
+    }
+
+    .PmsSessionManager .search-scope.goal-search-scope>.form-group:nth-child(3),
+    .PmsSessionManager .search-scope.goal-search-scope>.form-group:nth-child(4) {
+        flex: 0 0 8% !important;
+        max-width: 8% !important
+    }
+}
+
+@media (min-width: 3400px) {
+    .PmsSessionManager .search-scope.technical-search-scope>.form-group:nth-child(1) {
+        flex: 0 0 12.5% !important;
+        max-width: 12.5% !important
+    }
+}
+
+/* 滾動條樣式 */
+.PmsSessionManager .search-scope .select2-contact-mul+span.select2 .select2-selection__rendered::-webkit-scrollbar,
+.PmsSessionManager .sessionSearchCard>.card-body::-webkit-scrollbar,
+.PmsSessionManager .detailInfo.card>.nav.skinableNavTab::-webkit-scrollbar {
+    width: 8px;
+    height: 4px;
+}
+
+.PmsSessionManager .search-scope .select2-contact-mul+span.select2 .select2-selection__rendered::-webkit-scrollbar-track,
+.PmsSessionManager .cardShadow .LPTreegrid .fixed-table-body::-webkit-scrollbar-track,
+.PmsSessionManager .sessionSearchCard>.card-body::-webkit-scrollbar-track,
+.PmsSessionManager .detailInfo.card>.nav.skinableNavTab::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 6px;
+}
+
+.PmsSessionManager .search-scope .select2-contact-mul+span.select2 .select2-selection__rendered::-webkit-scrollbar-thumb,
+.PmsSessionManager .cardShadow .LPTreegrid .fixed-table-body::-webkit-scrollbar-thumb,
+.PmsSessionManager .sessionSearchCard>.card-body::-webkit-scrollbar-thumb,
+.PmsSessionManager .detailInfo.card>.nav.skinableNavTab::-webkit-scrollbar-thumb {
+    background: #e0e1e5;
+    border-radius: 5px;
+}
+
+.PmsSessionManager .search-scope .select2-contact-mul+span.select2 .select2-selection__rendered::-webkit-scrollbar-thumb:hover,
+.PmsSessionManager .cardShadow .LPTreegrid .fixed-table-body::-webkit-scrollbar-thumb:hover,
+.PmsSessionManager .sessionSearchCard>.card-body::-webkit-scrollbar-thumb:hover,
+.PmsSessionManager .detailInfo.card>.nav.skinableNavTab::-webkit-scrollbar-thumb:hover {
+    background: #c0c0c0;
+}
+
+/* LPTreegrid滾動條樣式 */
+.PmsSessionManager .cardShadow .LPTreegrid .fixed-table-body::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+.PmsSessionManager .split-container .splitpanes__pane {
+    background-color: #fff;
+}
+
+.PmsSessionManager .split-container .split-divider {
+    background-color: #fff;
+}
+
+.PmsSessionManager .split-container .split-divider:before, 
+.PmsSessionManager .split-container .split-divider:after {
+  background-color: #00000026;
+}
+
+.PmsSessionManager .split-container .split-divider:hover:before,
+.PmsSessionManager .split-container .split-divider:hover:after {
+    background-color: #346cb0;
+}
+
+.PmsSessionManager .split-container .topPane.card {
+    margin-bottom: .5rem;
+}
+
+.PmsSessionManager .page-inner.split-container,
+.PmsSessionManager .detailInfo.card,
+.PmsSessionManager .detailInfo.card>.card-body,
+.PmsSessionManager .detailInfo.card .taskSearch,
+.PmsSessionManager .detailInfo.card #sessionMgnTaskSearchCollapse.search_list,
+.PmsSessionManager .query_condition,
+.PmsSessionManager .query_condition .dropdown,
+.PmsSessionManager .detailInfo .tab-content .search_list>.form-group:nth-child(7),
+.PmsSessionManager .detailInfo.card .dropdownMenuScroll.dropdown,
+.PmsSessionManager #sql-script,
+.PmsSessionManager .detailInfo.card .tab-content .sqlScriptRow,
+.PmsSessionManager .detailInfo.card .tab-content .sqlScriptRow>.form-group:nth-child(3) {
+    position: static;
+}
+
+.PmsSessionManager fieldset.taskSearch {
+    border-radius: 8px;
+    padding: .25rem .5rem;
+    background-color: #f8fafd;
+    border: 0.125rem solid rgba(231, 234, 243, .7);
+    border-radius: 0.5rem;
+}
+
+.PmsSessionManager fieldset.taskSearch legend {
+    width: auto;
+    color: #333;
+    font-size: 14px;
+    padding: 0em 0.5em;
+    font-weight: bold;
+}
+
+.PmsSessionManager fieldset.taskSearch legend>.btn {
+    color: #333;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.PmsSessionManager fieldset.taskSearch.card-expansion-item.expanded {
+    margin-bottom: .25rem;
+}
+
+.PmsSessionManager fieldset.taskSearch.card-expansion-item:not(.expanded) {
+    border: 0;
+    background-color: transparent;
+    position: relative;
+    margin-top: .25rem;
+}
+
+.PmsSessionManager fieldset.taskSearch.card-expansion-item:not(.expanded)::before {
+    content: "";
+    position: absolute;
+    top: -29px;
+    left: 0;
+    width: 100%;
+    height: 37px;
+    border-radius: .5rem;
+    border: 0.125rem solid rgba(231, 234, 243, .7);
+    pointer-events: none;
+}
+
+.PmsSessionManager fieldset.taskSearch.card-expansion-item:not(.expanded)>legend {
+    padding-top: .25rem;
+}
+
+.PmsSessionManager .LPDataTable .dataTables_info {
+    padding-left: 0;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.PmsSessionManager label.cursor-pointer {
+    margin-bottom: 0;
+}
+
+.PmsSessionManager #top-task .LPDataTable .dataTables_wrapper>.row {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+/* 新增tab選項卡查詢 */
+.PmsSessionManager .tabs-border-card {
+    border-radius: 12px;
+}
+
+.PmsSessionManager .tabs-border-card>.card-body {
+    padding: .5rem;
+}
+
+.PmsSessionManager .tabs-border-card #session .LPTreegrid,
+.PmsSessionManager .tabs-border-card #meetting .LPDataTable,
+.PmsSessionManager .tabs-border-card #goal .LPDataTable {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.PmsSessionManager .tabs-border-card #meetting .LPDataTable th,
+.PmsSessionManager .tabs-border-card #goal .LPDataTable th {
+    white-space: nowrap;
+}
+
+.PmsSessionManager .technical-search-scope>.form-group:nth-child(1) .input-group-append {
+    margin-right: -1px;
+}

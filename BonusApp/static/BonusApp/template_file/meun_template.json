@@ -1,0 +1,42 @@
+{   
+    "logo_link": "http://192.168.2.83:8016",      
+    "children":
+    [{       
+        "link": "http://192.168.2.83:8016",
+        "label": "Home",
+        "icon": "flaticon-home",
+        "children": []
+    },
+    {        
+        "link": "#",
+        "label": "Apps",
+        "icon": "flaticon-squares-1",        
+        "children": [ 
+            {       
+                "link": "/bonus/",
+                "label": "Home",
+                "icon": "flaticon2-next",
+                "children": []
+            },
+            {       
+                "link": "/bonus/spectaculars/",
+                "label": "Board",
+                "icon": "flaticon2-next",
+                "children": []
+            },
+            {
+                "link": "/bonus/tasktype",
+                "label": "TaskType",
+                "icon": "flaticon2-next",
+                "children": []
+            },
+            {
+                "link": "/bonus/get_systemParameters",
+                "label": "SystemParameters",
+                "icon": "flaticon2-next",
+                "children": []
+            }
+        ]       
+    }]    
+}
+         

@@ -1,0 +1,9 @@
+[submodule "BaseApp"]
+	path = BaseApp
+	url = http://222.118.20.235:8888/django/BaseApp.git
+[submodule "vue_project/src/components/public"]
+	path = vue_project/src/components/public
+	url = http://222.118.20.235:8888/vue_project/public.git
+[submodule "LocaleApp"]
+	path = LocaleApp
+	url = http://222.118.20.235:8888/django/LocaleApp.git

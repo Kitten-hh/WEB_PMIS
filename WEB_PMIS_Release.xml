@@ -1,0 +1,17 @@
+<uwsgi>
+<!--<socket>:5530</socket>-->
+<socket>/home/deployment/sock/WEB_PMIS.sock</socket>
+<!--<chown-socket>root:root</chown-socket>-->
+<chmod-socket>666</chmod-socket>
+<!--<http>:5530</http>-->
+<chdir>/home/deployment/deploy/WEB_PMIS</chdir>
+<virtualenv>/share_data/environment/General_Env</virtualenv>
+<env>DJANGO_SETTINGS_MODULE=WEB_PMIS.settings_Release</env>
+<module>WEB_PMIS.wsgi:application</module>
+<daemonize>uwsgi.log</daemonize>
+<listen>4096</listen>
+<buffer-size>65535</buffer-size>
+<enable-threads>true</enable-threads>
+<threads>64</threads>
+<processes>32</processes>
+</uwsgi>

@@ -1,0 +1,9 @@
+{% extends 'PMIS/Starter_page.html' %}
+{% load customer_filter %}
+{%  block content %}
+ <div>{{user|getAttr:"name"}}</div>
+{% endblock %}
+
+
+
+

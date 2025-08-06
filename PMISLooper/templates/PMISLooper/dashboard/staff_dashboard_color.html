@@ -1,0 +1,458 @@
+{% extends 'PMISLooper/index.html' %}
+{%load static %}
+{%load md5url %}
+{%load customer_filter%}
+{%block form_css%}
+{{block.super}}
+<link rel="stylesheet" href="{% md5url 'PMISLooper/assets/stylesheets/dashboard/staff_dashboard_color.css' %}" data-skin="default">
+<link rel="stylesheet" href="{% md5url 'PMISLooper/assets/stylesheets/dashboard/staff_dashboard_dark.css' %}" data-skin="dark">
+<style>
+  .completion_rate .list-group-item-figure {
+    padding-right: 5px;
+  }  
+  .completion_rate .list-group-item-figure span{
+    display: inline-block;
+  }
+  .metric-hide {
+    visibility: hidden;
+  }
+</style>
+{%endblock%}
+{%  block content %}
+{{block.super}}
+  <!-- .page-inner -->
+  <div class="page-inner">
+    <!-- .page-title-bar -->
+    <header class="page-title-bar">
+      <div class="d-flex flex-row">
+        <div class="all_user_container">
+        </div>
+        <div class="ml-auto">
+          <!-- .dropdown -->
+          <div class="dropdown">
+            <button class="dpFilter_dropdown btn btn-secondary" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>This Week</span> <i class="fa fa-fw fa-caret-down"></i></button> <!-- .dropdown-menu -->
+            <div class="dropdown-menu dropdown-menu-right dropdown-menu-md stop-propagation">
+              <div class="dropdown-arrow"></div><!-- .custom-control -->
+              <div class="custom-control custom-radio">
+                <input type="radio" class="custom-control-input" id="dpToday" name="dpFilter" data-start="2019/03/27" data-end="2019/03/27"> <label class="custom-control-label d-flex justify-content-between" for="dpToday"><span>Today</span> <span class="text-dark">Mar 27</span></label>
+              </div><!-- /.custom-control -->
+              <!-- .custom-control -->
+              <div class="custom-control custom-radio">
+                <input type="radio" class="custom-control-input" id="dpYesterday" name="dpFilter" data-start="2019/03/26" data-end="2019/03/26"> <label class="custom-control-label d-flex justify-content-between" for="dpYesterday"><span>Yesterday</span> <span class="text-dark">Mar 26</span></label>
+              </div><!-- /.custom-control -->
+              <!-- .custom-control -->
+              <div class="custom-control custom-radio">
+                <input type="radio" class="custom-control-input" id="dpWeek" name="dpFilter" data-start="2019/03/21" data-end="2019/03/27" checked> <label class="custom-control-label d-flex justify-content-between" for="dpWeek"><span>This Week</span> <span class="text-dark">Mar 21-27</span></label>
+              </div><!-- /.custom-control -->
+              <!-- .custom-control -->
+              <div class="custom-control custom-radio">
+                <input type="radio" class="custom-control-input" id="dpMonth" name="dpFilter" data-start="2019/03/01" data-end="2019/03/27"> <label class="custom-control-label d-flex justify-content-between" for="dpMonth"><span>This Month</span> <span class="text-dark">Mar 1-31</span></label>
+              </div><!-- /.custom-control -->
+              <div class="custom-control custom-radio">
+                <input type="radio" class="custom-control-input" id="dpQuarter" name="dpFilter" data-start="2019/01/01" data-end="2019/12/31"> <label class="custom-control-label d-flex justify-content-between" for="dpQuarter"><span>This Quarter</span> <span class="text-dark">2019</span></label>
+              </div><!-- /.custom-control -->
+              <!-- .custom-control -->
+              <div class="custom-control custom-radio">
+                <input type="radio" class="custom-control-input" id="dpYear" name="dpFilter" data-start="2019/01/01" data-end="2019/12/31"> <label class="custom-control-label d-flex justify-content-between" for="dpYear"><span>This Year</span> <span class="text-dark">2019</span></label>
+              </div><!-- /.custom-control -->
+              <!-- .custom-control -->
+              <div class="custom-control custom-radio">
+                <input type="radio" class="custom-control-input" id="dpCustom" name="dpFilter" data-start="2019/03/27" data-end="2019/03/27"> <label class="custom-control-label" for="dpCustom">Custom</label>
+                <div class="custom-control-hint my-1">
+                  <!-- datepicker:range -->
+                  <input type="text" class="form-control" id="dpCustomInput" data-toggle="flatpickr" data-mode="range" data-disable-mobile="true" data-date-format="Y-m-d"> <!-- /datepicker:range -->
+                </div>
+              </div><!-- /.custom-control -->
+            </div><!-- /.dropdown-menu -->
+          </div><!-- /.dropdown -->
+        </div>
+      </div>
+    </header><!-- /.page-title-bar -->
+    <!-- .page-section -->
+    <div class="page-section">
+      <!-- .section-block -->
+      <div class="section-block">
+        <!-- metric row -->
+        <div class="metric-row">
+          <div class="col-12 col-lg-12 col-xl-9">
+            <div class="metric-row metric-flush custom-metric">
+              <div class="col col-sm-2 col-md-3 col-lg-3 col-xl">
+                <!-- .metric -->
+                <a href="/looper/mindmap?type=1&pk={{mindmap_id}}" id="mindmap_link" class="metric metric-bordered align-items-center">
+                  <h2 class="metric-label"> Mindmap </h2>
+                  <p class="metric-value h3 metric-hide">
+                    <sub><i class="oi oi-people"></i></sub> <span class="value">1</span>
+                  </p>
+                </a> <!-- /.metric -->
+              </div><!-- /metric column -->
+              <div class="col col-sm-2 col-md-3 col-lg-3 col-xl">
+                <!-- .metric -->
+                <a href="#" id="goal_link" class="metric metric-bordered align-items-center">
+                  <h2 class="metric-label"> Goals </h2>
+                  <p class="metric-value h3 metric-hide">
+                    <sub><i class="oi oi-people"></i></sub> <span class="value">1</span>
+                  </p>
+                </a> <!-- /.metric -->
+              </div><!-- /metric column -->              
+              <!-- metric column -->
+              <div class="col col-sm-2 col-md-3 col-lg-3 col-xl">
+                <!-- .metric -->
+                <a href="user/teams" class="metric metric-bordered align-items-center">
+                  <h2 class="metric-label"> Teams </h2>
+                  <p class="metric-value h3">
+                    <sub><i class="oi oi-people"></i></sub> <span class="value">{{teams}}</span>
+                  </p>
+                </a> <!-- /.metric -->
+              </div><!-- /metric column -->
+              <div class="col col-sm-2 col-md-3 col-lg-3 col-xl">
+                <!-- .metric -->
+                <a href="#" id="calendar_link" class="metric metric-bordered align-items-center">
+                  <h2 class="metric-label"> Calendar </h2>
+                  <p class="metric-value h3 metric-hide">
+                    <sub><i class="oi oi-people"></i></sub> <span class="value">1</span>
+                  </p>
+                </a> <!-- /.metric -->
+              </div><!-- /metric column -->
+              <!-- metric column -->
+              <div class="col col-sm-2 col-md-3 col-lg-3 col-xl">
+                <!-- .metric -->
+                <a href="#" class="metric-projects metric metric-bordered align-items-center">
+                  <h2 class="metric-label"> Projects </h2>
+                  <p class="metric-value h3">
+                    <sub><i class="oi oi-fork"></i></sub> <span class="value">{{projects}}</span>
+                  </p>
+                </a> <!-- /.metric -->
+              </div><!-- /metric column -->
+              <!-- metric column -->
+              <div class="col col-sm-2 col-md-3 col-lg-3 col-xl">
+                <!-- .metric -->
+                <a href="/looper/user/sessions" id="session_link" class="metric metric-bordered align-items-center">
+                  <h2 class="metric-label"> Sessions </h2>
+                  <p class="metric-value h3 metric-hide">
+                    <sub><i class="oi oi-people"></i></sub> <span class="value">1</span>
+                  </p>
+                </a> <!-- /.metric -->
+              </div><!-- /metric column -->               
+              <div class="col col-sm-6 col-md-3 col-lg-3 col-xl">
+                <!-- .metric -->
+                <a href="user/activites" id="act_tasks_link" class="metric metric-bordered align-items-center boderWrap">
+                  <h2 class="metric-label"> Active Tasks </h2>
+                  <p class="metric-value h3">
+                    <sub><i class="fa fa-tasks"></i></sub> <span class="value">{{active_tasks}}</span>
+                  </p>
+                </a> <!-- /.metric -->
+              </div><!-- /metric column -->
+              <!-- metric column -->
+              <div class="col col-md-3 d-none d-sm-block d-xl-none ongoing_wrap">
+                <!-- .metric -->
+                <a href="/looper/task/today_task" class="today_task_link metric metric-bordered ongoingTasks">
+                  <div class="metric-badge">
+                    <span class="badge badge-lg badge-success"><span class="oi oi-media-record pulse mr-1"></span> ONGOING TASKS</span>
+                  </div>
+                  <p class="metric-value h3">
+                    <sub><i class="oi oi-timer"></i></sub> <span class="value">{{ongoing_tasks}}</span>
+                  </p>
+                </a> <!-- /.metric -->
+              </div><!-- /metric column -->
+            </div>
+          </div><!-- metric column -->
+          <div class="col-12 col-xl-3 d-block d-sm-none d-xl-block">
+            <!-- .metric -->
+            <a href="/looper/task/today_task" class="today_task_link metric metric-bordered ongoingTasks">
+              <div class="metric-badge">
+                <span class="badge badge-lg badge-success"><span class="oi oi-media-record pulse mr-1"></span> ONGOING TASKS</span>
+              </div>
+              <p class="metric-value h3">
+                <sub><i class="oi oi-timer"></i></sub> <span class="value">{{ongoing_tasks}}</span>
+              </p>
+            </a> <!-- /.metric -->
+          </div><!-- /metric column -->
+        </div><!-- /metric row -->
+      </div><!-- /.section-block -->
+      <!-- grid row -->
+      <div class="row">
+        <!-- grid column -->
+        <div class="col-12 col-lg-6 col-xl-6">
+          <!-- .card -->
+          <div class="card card-fluid" style="height: 367px;">
+            <!-- .card-body -->
+            <div class="card-body">
+              <h3 class="card-title mb-4"> Completion Tasks </h3>
+              <div class="chartjs" style="height: 292px">
+                <canvas id="completion-tasks"></canvas>
+              </div>
+            </div><!-- /.card-body -->
+          </div><!-- /.card -->
+        </div><!-- /grid column -->
+        <!-- grid column -->
+        <div class="col-12 col-lg-6 col-xl-6">
+          <!-- .card -->
+          <div class="card card-fluid" style="height: 367px;">
+            <!-- .card-body -->
+            <div class="card-body">
+              <h3 class="card-title"> Tasks Performance </h3><!-- easy-pie-chart -->
+              <div class="text-center pt-3">
+                <div class="chart-inline-group" style="height:214px">
+                  <div class="easypiechart" data-percent="{{task_performance.assigned_percent}}" data-size="214" data-bar-color="#0074a5" data-track-color="false" data-scale-color="false" data-rotate="225"></div>
+                  <div class="easypiechart" data-percent="{{task_performance.completed_percent}}" data-size="174" data-bar-color="#5f4b8b" data-track-color="false" data-scale-color="false" data-rotate="225"></div>
+                  <div class="easypiechart" data-percent="{{task_performance.active_percent}}" data-size="134" data-bar-color="#eacf51" data-track-color="false" data-scale-color="false" data-rotate="225"></div>
+                </div>
+              </div><!-- /easy-pie-chart -->
+            </div><!-- /.card-body -->
+            <!-- .card-footer -->
+            <div class="card-footer">
+              <div class="card-footer-item">
+                <i class="fa fa-fw fa-circle text-assign"></i> 100% <div class="text-dark small"> Assigned </div>
+              </div>
+              <div class="card-footer-item">
+                <i class="fa fa-fw fa-circle text-complete"></i> {{task_performance.completed_percent_r}}% <div class="text-dark small"> Completed </div>
+              </div>
+              <div class="card-footer-item">
+                <i class="fa fa-fw fa-circle text-active"></i> {{task_performance.active_percent_r}}% <div class="text-dark small"> Active </div>
+              </div>
+            </div><!-- /.card-footer -->
+          </div><!-- /.card -->
+        </div><!-- /grid column -->
+        <!-- grid column -->
+        <div class="col-12 col-lg-6 col-xl-6">
+          <!-- .card -->
+          <div class="card card-fluid" style="height: 500px;">
+            <!-- .card-body -->
+            <div class="card-body pb-0" style="flex: 0 0 auto;">
+              <h3 class="card-title"> Projects </h3><!-- legend -->
+              <ul class="list-inline small">
+                <li class="list-inline-item">
+                  <i class="fa fa-fw fa-circle text-tasks"></i> Tasks </li>
+                <li class="list-inline-item">
+                  <i class="fa fa-fw fa-circle text-complete"></i> Completed </li>
+                <li class="list-inline-item">
+                  <i class="fa fa-fw fa-circle text-active"></i> Active </li>
+                <li class="list-inline-item">
+                  <i class="fa fa-fw fa-circle text-overdue"></i> Overdue </li>
+              </ul><!-- /legend -->
+            </div><!-- /.card-body -->
+            <!-- .list-group -->
+            <div class="list-group list-group-flush projects_overflow" style="max-height: 400px;overflow-y: auto;">
+
+                {%for key, value in leader_board.items%}
+              <!-- .list-group-item -->
+              <div class="list-group-item">
+                <!-- .list-group-item-figure -->
+                <div class="list-group-item-figure">
+                  <!--<a href="#" class="user-avatar" data-toggle="tooltip" title="{{key}}"><span class="oi oi-person"></span></a>-->
+                  <a href="#" class="user-avatar" data-toggle="tooltip" title="{{value.desc}}" style="background-color: rgb(255, 255, 255); color: rgb(31, 61, 157);font-weight: 600;font-size:1rem;width:auto;height:auto;">
+                    <span>{{key}}</span>
+                  </a>
+                  
+                </div><!-- /.list-group-item-figure -->                
+                <!-- .list-group-item-body -->
+                <div class="list-group-item-body">
+                  <!-- .progress -->
+                  <div class="progress progress-animated rounded-0 projects_progress" data-toggle="tooltip" data-html="true" title='&lt;div class="text-left small"&gt;&lt;i class="fa fa-fw fa-circle text-tasks"&gt;&lt;/i&gt; {{value.All_Qty}}&lt;br&gt;&lt;i class="fa fa-fw fa-circle text-complete"&gt;&lt;/i&gt; {{value.Completed_Qty}}&lt;br&gt;&lt;i class="fa fa-fw fa-circle text-active"&gt;&lt;/i&gt; {{value.Active_Qty}}&lt;br&gt;&lt;i class="fa fa-fw fa-circle text-overdue"&gt;&lt;/i&gt; {{value.Overdue_Qty}}&lt;/div&gt;'>
+                    <div class="progress-bar bg-complete" role="progressbar" aria-valuenow="{{value.Completed}}" aria-valuemin="0" aria-valuemax="100" style="width: {{value.Completed}}%">
+                      <span class="sr-only">{{value.Completed}}% Complete</span>
+                    </div>
+                    <div class="progress-bar bg-active" role="progressbar" aria-valuenow="{{value.Active}}" aria-valuemin="0" aria-valuemax="100" style="width:{{value.Active}}%">
+                      <span class="sr-only">{{value.Active}}% Complete</span>
+                    </div>
+                    <div class="progress-bar bg-overdue" role="progressbar" aria-valuenow="{{value.Overdue}}" aria-valuemin="0" aria-valuemax="100" style="width: {{value.Overdue}}%">
+                      <span class="sr-only">{{value.Overdue}}% Complete</span>
+                    </div>
+                  </div><!-- /.progress -->
+                </div><!-- /.list-group-item-body -->
+              </div><!-- /.list-group-item -->                
+                {%endfor%}
+            </div><!-- /.list-group -->
+          </div><!-- /.card -->
+        </div><!-- /grid column -->
+        <div class="col-12 col-lg-6 col-xl-6 completion_rate">
+          <!-- .card -->
+          <div class="card card-fluid" style="height: 500px;">
+            <!-- .card-body -->
+            <div class="card-body pb-0" style="flex: 0 0 auto;">
+              <h3 class="card-title"> Completion Rate </h3><!-- legend -->
+              <ul class="list-inline small">
+                <li class="list-inline-item">
+                  <i class="fa fa-fw fa-circle text-assign"></i> Assign </li>
+                <li class="list-inline-item">
+                  <i class="fa fa-fw fa-circle text-complete"></i> Completed </li>
+                <li class="list-inline-item">
+                  <i class="fa fa-fw fa-circle text-actualuncomplete"></i> Actual Uncomplete </li>
+                <li class="list-inline-item">
+                  <i class="fa fa-fw fa-circle text-unassigncomplete"></i> Unassign Complete </li>
+              </ul><!-- /legend -->              
+            </div><!-- /.card-body -->
+            <!-- .list-group -->
+            <div class="list-group list-group-flush projects_overflow">
+
+                {%for item in completion_rate%}
+              <!-- .list-group-item -->
+              <div class="list-group-item">
+                <!-- .list-group-item-figure -->
+                <div class="list-group-item-figure">
+                  <a href="#" class="user-avatar" data-toggle="tooltip" title="{{item.ratio}}%" style="background-color: rgb(255, 255, 255); color: rgb(31, 61, 157);font-weight: 600;font-size:1rem;width:auto;height:auto;">
+                    <span>{{item.contact}} {{item.ratio|floatformat:0}}%</span>
+                  </a>
+                  
+                </div><!-- /.list-group-item-figure -->                
+                <!-- .list-group-item-body -->
+                <div class="list-group-item-body">
+                  <!-- .progress -->
+                  <div class="progress progress-animated bg-transparent rounded-0" data-toggle="tooltip" data-html="true" title='&lt;div class="text-left small"&gt;&lt;i class="fa fa-fw fa-circle text-assign"&gt;&lt;/i&gt; {{item.assign}}&lt;br&gt;&lt;i class="fa fa-fw fa-circle text-complete"&gt;&lt;/i&gt; {{item.complete}}&lt;br&gt;&lt;i class="fa fa-fw fa-circle text-actualuncomplete"&gt;&lt;/i&gt; {{item.actualuncomplete}}&lt;br&gt;&lt;i class="fa fa-fw fa-circle text-unassigncomplete"&gt;&lt;/i&gt; {{item.unassigncomplete}}&lt;/div&gt;'>
+                    <div class="progress-bar bg-complete" role="progressbar" aria-valuenow="{{item.ratio}}" aria-valuemin="0" aria-valuemax="100" style="width: {{item.ratio}}%">
+                      <span class="sr-only">{{item.ratio}}% Complete</span>
+                    </div>
+                    <div class="progress-bar bg-actualuncomplete" role="progressbar" aria-valuenow="{{item.actualuncomplete_ratio}}" aria-valuemin="0" aria-valuemax="100" style="width:{{item.actualuncomplete_ratio}}%">
+                      <span class="sr-only">{{item.actualuncomplete_ratio}}% Complete</span>
+                    </div>
+                    <div class="progress-bar bg-unassigncomplete" role="progressbar" aria-valuenow="{{item.unassigncomplete_ratio}}" aria-valuemin="0" aria-valuemax="100" style="width: {{item.unassigncomplete_ratio}}%">
+                      <span class="sr-only">{{item.unassigncomplete_ratio}}% Complete</span>
+                    </div>
+                  </div><!-- /.progress -->
+                </div><!-- /.list-group-item-body -->
+              </div><!-- /.list-group-item -->                
+                {%endfor%}
+            </div><!-- /.list-group -->
+              <div class="analysis_container d-flex flex-row projects_overflow px-3" style="overflow-y: auto;box-shadow: none;justify-content: space-around;flex:1 1 auto;font-size:14px;">
+                <div class="list-group list-group-flush list-group-bordered task_type d-flex flex-column"></div>  
+                <div class="list-group list-group-flush list-group-bordered solution_type d-flex flex-column"></div>  
+              </div>
+              <div class="row m-0 description_completion_rate" style="justify-content: space-evenly;align-items: center;">
+                {%for item in completion_rate%}     
+                  {%for key,value in item.items%}
+                    {% if key in "assign,complete,actualuncomplete,unassigncomplete,ratio" %}         
+                    <!-- metric column -->
+                    <div class="col p-0" id="{{key}}">
+                      <div class="metric" style="text-align: center;">
+                        {% if key == "ratio" %}
+                          <h5 class="metric-value">{{value|floatformat:0}}%</h5>
+                        {%else%}
+                          <h5 class="metric-value">{{value}}</h5>
+                        {%endif%}                        
+                        {% if key == "assign" %}
+                        <p class="metric-label"> Assign </p>
+                        {%endif%}
+                        {% if key == "complete" %}
+                        <p class="metric-label"> Complete </p>
+                        {%endif%}
+                        {% if key == "actualuncomplete" %}
+                        <p class="metric-label"> Actual Uncomplete </p>
+                        {%endif%}
+                        {% if key == "unassigncomplete" %}
+                        <p class="metric-label"> Unassign Complete </p>
+                        {%endif%}
+                        {% if key == "ratio" %}
+                        <p class="metric-label"> Ratio </p>
+                        {%endif%}
+                      </div>
+                    </div>  
+                    {%endif%}
+                  {%endfor%}
+                {%endfor%}
+              </div> 
+              <div class="d-flex card-footer flex-column">
+                  <div class="d-flex flex-row" style="justify-content: space-evenly;align-items: center;">
+                  <div class="metric flex-row" style="border-right:1px dashed rgba(20, 20, 31, .12); border-radius: 0;flex-basis: 0;">
+                    <p class="metric-label mb-0 mr-2"><span class="oi oi-dashboard mr-2"></span> Frame </p>
+                    <h5 class="metric-value">{{frame_qty}}</h5>
+                  </div>
+                  <div class="metric flex-row" style="flex-basis: 0;">
+                    <p class="metric-label mb-0 mr-2"><span class="oi oi-pin mr-2"></span> Function </p>
+                    <h5 class="metric-value">{{func_qty}}</h5>
+                  </div>         
+                  </div>
+                  <div class="d-flex flex-row" style="justify-content: space-evenly;align-items: center;border-top:1px dashed rgba(20, 20, 31, .12); border-radius: 0;">
+                  <div class="metric flex-row" id="bonus_score" style="border-right:1px dashed rgba(20, 20, 31, .12); border-radius: 0;text-align: center;flex-basis: 0;">                    
+                    <p class="metric-label mb-0 mr-2"><span class="oi oi-pulse mr-2"></span> Score </p>                    
+                    <h5 class="metric-value">0</h5>                                           
+                  </div>
+                  <div class="metric flex-row" id="bonus_tscore" style="text-align: center;flex-basis: 0;">                    
+                    <p class="metric-label mb-0 mr-2"><span class="oi oi-sun mr-2"></span> TScore </p>
+                    <h5 class="metric-value">0</h5>                                            
+                  </div>
+                  </div>
+                  <div class="d-flex flex-row" style="justify-content: space-evenly;align-items: center;border-top:1px dashed rgba(20, 20, 31, .12); border-radius: 0;">
+                    <div class="metric flex-row" style="text-align: center;flex-basis: 0;">                    
+                    </div>
+                    <div class="metric flex-row" id="bonus_tscore_ss" style="border-left:1px dashed rgba(20, 20, 31, .12); border-radius: 0;text-align: center;flex-basis: 0;">                    
+                      <p class="metric-label mb-0 mr-2"><span class="oi oi-cloudy mr-2"></span> Simulate Score </p>
+                      <h5 class="metric-value">0</h5>                                            
+                    </div>
+                  </div>  
+              </div> 
+                     
+          </div><!-- /.card -->
+        </div><!-- /grid column -->         
+      </div><!-- /grid row -->
+      <!-- card-deck-xl -->
+      <div class="card-deck-xl">
+        <!-- .card -->
+        <div class="card card-fluid" id="Active_Sessions">
+        </div><!-- /.card -->
+        <!-- .card -->
+        <div class="card card-fluid fixedHeight">
+          <div class="card-header card-title"> Active Tasks: To-Dos </div><!-- .card-body -->
+          <div class="card-body" id="today_tasks">
+          </div><!-- /.card-body -->
+          <!-- .card-footer -->
+          <div class="card-footer">
+            <a href="#" class="card-footer-item">back to top <i class="fa fa-fw fa-angle-right"></i></a>
+          </div><!-- /.card-footer -->
+        </div><!-- /.card -->
+      </div><!-- /card-deck-xl -->
+    </div><!-- /.page-section -->
+  </div><!-- /.page-inner -->
+  <div id="tasklist" class="collapse task-collapse" style="display: none;">
+    <div class="row task_wap task-item">
+      <span class="d-none pk">[[inc_id]]</span>
+      <div class="col-12">
+        <div class="card wrap-primary">
+          <div class="card-body">
+            <div class="card-title d-flex align-content-center">
+              <span class="task-num">
+                <h4 class="card-subtitle"><i class="fas fa-circle circle-dot"></i>[[taskno]]</h4>
+              </span>
+              <span class="ml-auto alert-link">[[progress]]</span>
+            </div>
+            <div class="card-content d-flex pl-2">
+              <div class="font-weight-bolder">[[task]]</div>
+            </div>
+          </div>
+          <div class="footer_wrap text-dark">
+              <ul class="list d-flex justify-content-around pl-0 flex-wrap">
+                <li class="list-item">
+                  <span class="menu-text"> [[planbdate]] / [[planedate]]</span>
+                </li>
+                <li class="list-item">
+                  <span class="">[[schpriority]]</span>
+                </li>
+                <li class="list-item">
+                  <span class="badge badge-subtle badge-primary">[[process]]</span>
+                </li>
+                <li class="list-item">
+                  <span class="badge badge-subtle badge-primary">[[contact]]</span>
+                </li>
+              </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{%  endblock %}
+
+{%block form_js%}
+    {{ block.super }} 
+    <script>
+      window.completion_tasks = {{completion_tasks|safe}}
+      window.projects = {{leader_board|safe}}
+    </script>
+    <script src="{% static 'BaseApp/vendor/Looper/assets/vendor/pace-progress/pace.min.js' %}"></script>
+    <script src="{% static 'BaseApp/vendor/Looper/assets/vendor/perfect-scrollbar/perfect-scrollbar.min.js' %}"></script>
+    <!-- <script src="{% static 'BaseApp/vendor/Looper/assets/vendor/flatpickr/flatpickr.min.js' %}"></script> -->
+    <script src="{% static 'BaseApp/vendor/Looper/assets/vendor/easy-pie-chart/jquery.easypiechart.min.js' %}"></script>
+    <script src="{% static 'BaseApp/vendor/Looper/assets/vendor/chart.js/Chart.min.js' %}"></script> <!-- END PLUGINS JS -->
+    <!-- BEGIN PAGE LEVEL JS -->
+    <!--<script src="{% static 'BaseProject/vendor/Looper/assets/javascript/pages/dashboard-demo.js' %}"></script>--> <!-- END PAGE LEVEL JS -->    
+    <script src="{% md5url 'PMIS/js/looper/components.js' %}"></script> 
+    <script src="{% md5url 'PMISLooper/assets/javascript/dashboard/staff_dashboard.js' %}"></script>     
+{%endblock%}

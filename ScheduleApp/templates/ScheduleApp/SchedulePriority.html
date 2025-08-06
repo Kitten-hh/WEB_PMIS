@@ -1,0 +1,21 @@
+
+{% extends 'PMISLooper/vue_index.html' %}
+{%load static %}
+{% load md5url %}
+{% load render_bundle from webpack_loader %}
+{% block form_css%}
+{{block.super}}
+    <link rel="stylesheet" type="text/css" href="{% md5url 'ScheduleApp/assets/stylesheets/SchedulePriority.css' %}"/>    
+    <link rel="stylesheet" type="text/css" href="{% md5url 'ScheduleApp/assets/stylesheets/SchedulePriority_dark.css' %}" data-skin="dark"/>    
+{%endblock%}
+
+{% block content%}
+{{block.super}}
+    
+{%endblock%}   
+
+
+{%block form_js%}
+{{block.super}}
+{% render_bundle 'ScheduleApp/dist/javascript/SchedulePriority' %} 
+{%endblock%}     

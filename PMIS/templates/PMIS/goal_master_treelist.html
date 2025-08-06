@@ -1,0 +1,352 @@
+{% extends 'PMIS/My_Starter_page.html' %}
+{%load static%}
+{%block content%}
+    <div class="k-grid__item k-grid__item--fluid k-grid k-grid--hor">
+        <div class="k-grid__item k-grid__item--fluid">
+          <div class="k-portlet k-portlet--mobile">
+            <ul class="nav nav-tabs nav-tabs-line" role="tablist" style="display:none;">
+                <li class="nav-item"><a class="nav-link" href="#goal_tree" data-toggle="tab" role="tab" aria-selected="true">goal_tree</a></li>
+                <li class="nav-item"><a class="nav-link" href="#task_detail" data-toggle="tab" role="tab" aria-selected="false">task_detail</a></li>
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane fade  active show" role="tabpanel" id="goal_tree">
+                    <div class="k-portlet__head">
+                    <h5 class="k-portlet__head-label">Goal Tree List</h5>
+                    </div>
+                    <table id="table"></table>
+                </div>
+                <div class="tab-pane fade" role="tabpanel" id="task_detail">
+                    <div class="k-portlet__head">
+                        <h5 class="k-portlet__head-label">編輯任務</h5>
+                    </div>
+                    <div class="k-portlet__body">
+                        <div id="tasak_detail_content" class="k-portlet__content">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+          </div>
+        </div>
+    </div>
+{% endblock %}
+
+{%block page_js%}
+
+<script src="{% static 'BaseProject/vendor/jquery/jquery.longpress.js' %}" type="text/javascript"></script>
+<script type="text/javascript">    
+    var os = function (){
+        var ua = navigator.userAgent,
+        isWindowsPhone = /(?:Windows Phone)/.test(ua),
+        isSymbian = /(?:SymbianOS)/.test(ua) || isWindowsPhone,
+        isAndroid = /(?:Android)/.test(ua),
+        isFireFox = /(?:Firefox)/.test(ua),
+        isChrome = /(?:Chrome|CriOS)/.test(ua),
+        isTablet = /(?:iPad|PlayBook)/.test(ua) || (isAndroid && !/(?:Mobile)/.test(ua)) || (isFireFox && /(?:Tablet)/.test(ua)),
+        isPhone = /(?:iPhone)/.test(ua) && !isTablet,
+        isPc = !isPhone && !isAndroid && !isSymbian;
+        return {
+            isTablet: isTablet,
+            isPhone: isPhone,
+            isAndroid: isAndroid,
+            isPc: isPc
+        };	
+    }();
+
+    var data = {{data|safe}}
+    var $table = $('#table')
+    var csrf_token = "{{ csrf_token }}"
+    $(function() {
+        $table.bootstrapTable({
+        //url: 'json/treegrid.json',
+        data:data,
+        //striped: true,
+        //sidePagination: 'server',
+        dataType:'jsonp',
+        idField: 'TaskNo',
+        showColumns: true,
+        columns: [
+            /**{
+            field: 'ck',
+            checkbox: true
+            },*/
+            {
+                field: 'Task',
+                title: '任務描述',
+                formatter:'taskFormatter'
+            },              
+            {
+            field: 'TaskNo',
+            title: '任務編號',
+            sortable: true,
+            width: '170',
+            visible:!(os.isAndroid || os.isPhone)
+            /**formatter:function(value, row, index) {
+                return `<span style="overflow:hidden">`+value +`</span>`;
+            }*/
+            },
+            {
+            field: 'Contact',
+            title: '聯繫人',
+            sortable: true,
+            align: 'center',
+            width:'40',
+            visible:!(os.isAndroid || os.isPhone)
+            },
+            {
+              field:'PlanBDate',
+              title:'計畫開始',
+              sortable: true,
+              formatter: 'dateFormatter',
+              visible:!(os.isAndroid || os.isPhone)
+            },
+            {
+                field:'PlanEDate',
+                title:'計畫結束',
+                sortable: true,
+                formatter: 'dateFormatter',
+                visible:!(os.isAndroid || os.isPhone)
+            },
+            {
+                field:'Progress',
+                title:'進度',
+                visible:!(os.isAndroid || os.isPhone)
+            },
+            {
+                field:'operate',
+                title:'操作',
+                width:"50",
+                formatter:'operateFormatter'
+            }
+        ],
+        "order": [[ 1, "desc" ]],
+        treeShowField: 'Task',
+        parentIdField: 'RelationGoalId',
+        onPostBody: function() {
+            //var columns = $table.bootstrapTable('getOptions').columns
+            var columns = this.columns
+            if (columns && columns[0][0].visible) {
+            $table.treegrid({
+                treeColumn: 0,
+                onChange: function() {
+                $table.bootstrapTable('resetWidth')
+                }
+            })
+            }
+            $(".task-desp").each(function(){
+                var parent = $(this).parent("td")
+                var indent_with  = (parent.find('span').length - 1) * 16;
+                $(this).width(parent.innerWidth() - indent_with - 30);
+            });
+            $("td:has('.task-desp')")
+            var buttons = $(".fixed-table-toolbar .columns");
+            if (buttons.length == 1) {
+                $(".fixed-table-toolbar").append(`
+                    <div class="columns columns-left btn-group float-left">
+                        <div class="keep-open btn-group" title="Columns">
+                            <button class="btn btn-secondary" id="add_quarterly" type="button" data-toggle="dropdown" aria-label="Columns" title="Columns" appraisal_id="{{appraisal_id}}">
+                                <i class="flaticon2-plus"></i>
+                                添加Quarterly目標
+                            </button>
+                        </div>
+                    </div>            
+                `);
+
+
+                $("#add_quarterly").on("click", function(){
+                    var appraisal_id = $(this).attr("appraisal_id");
+                    $.get("/PMIS/task_detail_from/create?appraisal_id="+ appraisal_id, function(html){
+                        var data = $(html).find("#task_detail_simple");
+                        $("#tasak_detail_content").html(data);
+                        $(".nav-item a[href='#task_detail']").tab("show");
+                        
+                        $("#tasak_detail_content button[data-dismiss='modal']").on("click", function(){
+                            $(".nav-item a[href='#goal_tree']").tab("show");
+                        });
+
+                        $("#tasak_detail_content button:submit").on("click", function(){
+                            var form = $($("#tasak_detail_content form")[0]);
+                            $.ajax({
+                                type:"POST",
+                                url:form.attr("action"),
+                                data:form.serialize(),
+                                success:function(data){
+                                    $(".nav-item a[href='#goal_tree']").tab("show");
+                                    location.reload(true);
+                                },
+                                error:function(data){
+                                    alert(data)
+                                }
+                            });
+                            return false;
+                        });
+                    });
+                });
+            }
+        }
+        });
+    
+
+        var startTime, endTime, longpress;
+
+        function modify_desc(self) {
+            if ($(".modify_desc").length == 0) {
+                var desp = $(self).find('.task-desp')[0];
+                var text = $(desp).text();
+                var id = $(desp).attr("id");
+                var width = Math.trunc($(self).width() - (($(self).find("span").length - 1) * 16))
+                var height = Math.trunc($(desp).height()) + 5;
+                var input_obj = $(`<textarea type="text" class="modify_desc" style="width:`+ width+`px;">`+ text + `</textarea>`);
+                input_obj.css("height", height + "px");
+                $(desp).hide();
+                input_obj.appendTo(self);
+                input_obj.on("focusout", function() {
+                    var value = $(this).val();
+                    $.ajax({
+                        type:"POST",
+                        url:"/PMIS/goal_master_form/update_goal/" + id,
+                        headers: {'X-CSRFToken': '{{ csrf_token }}'},
+                        data:{task:value},
+                        success:function(){
+                            input_obj.remove();
+                            $(desp).text(value);
+                            $(desp).show();        
+                        },
+                        error:function(){
+                            alert('保存失敗');
+                        }
+                    })
+            });
+            }
+        }
+
+        $("td:has('.task-desp')").on(
+            {
+                dblclick:function(){
+                    modify_desc(this);
+                },
+                longpress:function() {
+                    modify_desc(this);
+                }
+            }
+        );
+
+        $(".edit_task").on("click", function(){
+            var pk = $(this).attr("pk");
+            $.get("/PMIS/task_detail_from/edit/"+ pk, function(html){
+                var data = $(html).find("#task_detail_simple");
+                $("#tasak_detail_content").html(data);
+                $(".nav-item a[href='#task_detail']").tab("show");
+                
+                $("#tasak_detail_content button[data-dismiss='modal']").on("click", function(){
+                    $(".nav-item a[href='#goal_tree']").tab("show");
+                });
+
+                $("#tasak_detail_content button:submit").on("click", function(){
+                    var form = $($("#tasak_detail_content form")[0]);
+                    $.ajax({
+                        type:"POST",
+                        url:form.attr("action"),
+                        data:form.serialize(),
+                        success:function(data){
+                            $(".nav-item a[href='#goal_tree']").tab("show");
+                            location.reload(true);
+                        },
+                        error:function(data){
+                            alert(data)
+                        }
+                    });
+                    return false;
+                })
+            })
+        });
+
+        $(".del_task").on("click", function(){
+            var pk = $(this).attr("pk");
+            $.get("/PMIS/task_detail_from/del/"+ pk, function(html){
+                alert('刪除成功')
+            });
+        });
+
+        
+
+        $(".create_task").on("click", function(){
+            var parent_goal = $(this).attr("parent_goal");
+            $.get("/PMIS/task_detail_from/create?parent_goal="+ parent_goal, function(html){
+                var data = $(html).find("#task_detail_simple");
+                $("#tasak_detail_content").html(data);
+                $(".nav-item a[href='#task_detail']").tab("show");
+                
+                $("#tasak_detail_content button[data-dismiss='modal']").on("click", function(){
+                    $(".nav-item a[href='#goal_tree']").tab("show");
+                });
+
+                $("#tasak_detail_content button:submit").on("click", function(){
+                    var form = $($("#tasak_detail_content form")[0]);
+                    $.ajax({
+                        type:"POST",
+                        url:form.attr("action"),
+                        data:form.serialize(),
+                        success:function(data){
+                            $(".nav-item a[href='#goal_tree']").tab("show");
+                            location.reload(true);
+                        },
+                        error:function(data){
+                            alert(data)
+                        }
+                    });
+                    return false;
+                });
+            });
+        });
+    })
+
+    function operateFormatter(value, row, index) {
+        var result_Str = `<div class="dropdown dropdown-inline">
+                                    <button type="button" class="btn btn-hover-brand btn-elevate-hover btn-icon btn-icon-md" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="flaticon-more"></i> </button>
+                                          <div class="dropdown-menu dropdown-menu-right" x-placement="bottom-end" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(29px, 29px, 0px);">
+                                            <a class="dropdown-item edit_task" href="javascript:void(0)" pk ="` + row.inc_id +`"><i class="flaticon-edit-1"></i>編輯</a>
+                                            <a class="dropdown-item del_task" href="javascript:void(0)" pk ="` + row.inc_id +`"><i class="flaticon-edit-1"></i>刪除</a>
+                                            `;
+        if (row.LevelNum == 1) {
+            result_Str += `<a class="dropdown-item create_task" parent_goal="`+ row.TaskNo + `"><i class="la la-plus"></i>添加Monthly Goal</a>`;
+        }
+        else if (row.LevelNum == 2) {
+            var tid = row.Tid.toString().replace(/55$/, "57")
+            result_Str += `<a class="dropdown-item create_task" parent_goal="`+ row.TaskNo + `"><i class="la la-plus"></i>添加Weekly Goal</a>`;
+        }
+        else if (row.LevelNum == 3)
+            result_Str += `<a class="dropdown-item create_task" parent_goal="`+ row.TaskNo + `"><i class="la la-plus"></i>添加任務</a>`;
+            result_Str += `                   </div>
+                        </div>`;
+        return result_Str;
+    }
+    function typeFormatter(value, row, index) {
+        if (value === 'menu') {
+        return '菜单'
+        }
+        if (value === 'button') {
+        return '按钮'
+        }
+        if (value === 'api') {
+        return '接口'
+        }
+        return '-'
+    }
+
+    function dateFormatter(value, row, index) {
+        if (value != null)
+            return value.substr(0,10);
+    }
+
+    function statusFormatter(value, row, index) {
+        if (value === 1) {
+        return '<span class="label label-success">正常</span>'
+        }
+        return '<span class="label label-default">锁定</span>'
+    }        
+    function taskFormatter(value, row, index) {
+        return '<span class="task-desp" style="font-weight:450;width: 80% !important;display:inline-block;" id="' + row.inc_id + '">' + value + '</span>';
+    }
+</script>
+{%endblock%}

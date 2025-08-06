@@ -1,0 +1,358 @@
+{% extends 'PMIS/Technical_Material_modal.html' %}
+{%load static %}
+{% load md5url %}
+    {%block body_block%}
+   
+    <div class="technical">
+        <div class="container">
+            <div class="intro">
+                <h2>Detail Technical Topic Description</h2>
+            </div>
+            
+            <div class="card-body pd-0" id="stepper_from_div">
+                <form id="stepper-form" name="stepperForm" class="pd-0" method="post" enctype="multipart/form-data">
+                          {% csrf_token %}
+                    <div class="row">
+                        <div id="keyData" hidden="hidden">
+                            <input type="text" name="inc_id">
+                            <input type="text" name="mb001">
+                            <input type="text" name="mb015">
+                            <input type="text" name="modi_date">
+                            <!-- <input type="button" class="btn btn-primary" id="Cataloguemodelbtn"> -->
+                        </div>
+                        <div class="item">
+                            <div class="id"><strong>Technical ID:</strong><input type="text" name="mb023" readonly="readonly" class="col-7 bder-0 pad-0"></div>
+                            <div class="date"><strong>Date:<input type="text" name="mb006"  disabled="disabled" class="col-7 bder-0 pad-0"></strong></div>
+                            <div class="contact"><strong>Contact:</strong> <input type="text" name="mb005"  disabled="disabled" class="col-4 bder-0 pad-0"></div>
+                            <div class="score">
+                                <div class="row">
+
+                                    <strong class="col-3">Score:</strong>
+                                    <div class="col-9" id="score">
+                                        <!-- <input type="text" name="mb020" class="col-12 bder-0"> -->
+                                    </div>
+                                </div>
+                                <!-- <select data-toggle="selectpicker" data-size="5" data-width="100%" class="control" data-none-selected-text="" tabindex="-98" name="mb026">
+                                    <option></option>
+                                    <option selected="1">1</option>
+                                    <option selected="2">2</option>
+                                    <option selected="3">3</option>
+                                    <option selected="4">4</option>
+                                    <option selected="5">5</option>
+                                    <option selected="6">6</option>
+                                    <option selected="7">7</option>
+                                    <option selected="8">8</option>
+                                    <option selected="9">9</option>
+                                    <option selected="10">10</option>
+                                </select> -->
+                            </div>
+                        </div>
+                        <div class="col-12   ">
+                            <div class="conBox">
+                                <h3 class="title"><strong>Topic</strong></h3>
+                                <div class="sdescription"> 
+                                    <textarea name="mb004"  cols="30" rows="10" class="col-12 formtextaret textareafont"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12   ">
+                            <div class="conBox">
+                                <h3 class="title"><strong>Concept/Theory</strong></h3>
+                                <div class="sdescription ">
+                                    <textarea name="mb007"  cols="30" rows="10" class="col-12 formtextaret textareafont"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12   ">
+                            <div class="conBox">
+                                <h3 class="title"><strong>Usage(作用)</strong></h3>
+                                <div class="sdescription ">
+                                        <textarea name="mb008"  cols="30" rows="10" class="col-12 formtextaret textareafont"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12   ">
+                            <div class="conBox">
+                                <h3 class="title"><strong>Pre-requist/Dependancy (需要的依賴)</strong></h3>
+                                <div class="sdescription ">
+                                        <textarea name="mb009"  cols="30" rows="10" class="col-12 formtextaret textareafont"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12   ">
+                            <div class="conBox">
+                                <h3 class="title"><strong>Control (控件信息)</strong></h3>
+                                <div class="sdescription ">
+                                        <textarea name="mb025"  cols="30" rows="10" class="col-12 formtextaret textareafont"></textarea>
+                                    </div>
+                            </div>
+                        </div>
+                        <div class="col-12   ">
+                            <div class="conBox">
+                                <h3 class="title"><strong>Properties (類中重要的屬性作用)</strong></h3>
+                                <div class="sdescription">
+                                        <textarea name="mb024"  cols="30" rows="10" class="col-12 formtextaret textareafont"></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12 ">
+                            <div class="conBox">
+                                <h3 class="title"><strong>Implementation Procedure/Steps (實現思路)</strong></h3>
+                                <div class="sdescription " id="Steps" style=" list-style: none;">
+                                    <div id="Stepshidden" hidden='hidden'> 
+                                    </div>
+                                        
+                                    <div id="Stepstab"> 
+                                    </div>
+                                    <div>
+                                        <input class="btn btn-primary" type="button" id="stepsAddbtn" value="Add Steps"> 
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 ">
+                            <div class="conBox">
+                                <h3 class="title"><strong>Example(應用舉例)</strong></h3>
+                                <div class="sdescription " id="Example" style=" list-style: none;">
+    
+                                        <div id="Examplehidden" hidden='hidden'> 
+                                        </div>
+
+                                        <div id="Exampletab"> 
+
+                                        </div>  
+                                        <div>
+                                            <input class="btn btn-primary" type="button" id="exampleAddbtn" value="Add Exampletab"> 
+                                        </div>
+    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 ">
+                            <div class="conBox">
+                                <h3 class="title"><strong>Precaution (注意事項)</strong></h3>
+                                <div class="sdescription " id="Precaution" style=" list-style: none;">
+                                    <div id="Precautionhidden" hidden='hidden'> 
+                                    </div>
+                                        
+                                    
+                                    <div id="Precautiontab"> 
+
+                                    </div>  
+                                    <div>
+                                        <input class="btn btn-primary" type="button" id="precautionAddbtn" value="Add Precaution"> 
+                                    </div>
+    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 ">
+                            <div class="conBox">
+                                <h3 class="title"><strong>Questions</strong></h3>
+                                <div class="sdescription ">
+                                    <textarea name="mb013"  cols="30" rows="10" class="col-12 formtextaret textareafont"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-12">
+                            <div class="conBox">
+                                <h3 class="title"><strong>Video</strong></h3>
+                                <div class="sdescription ">
+                                    <!-- <input type="text" name="mb018"  class="col-12 bder-0"> -->
+                                    <textarea name="mb018"  cols="30" rows="10" class="col-12 formtextaret textareafont"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6 col-lg-3">
+                            <div class="conBox">
+                                <h3 class="title"><strong>Category</strong></h3>
+                                <div class="sdescription ">
+                                    <input type="text" name="mb015c" class="col-12 bder-0">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6 col-lg-3">
+                            <div class="conBox">
+                                <h3 class="title"><strong>Area</strong></h3>
+                                <div class="sdescription ">
+                                    <input type="text" name="mb016"  class="col-12 bder-0">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6 col-lg-3">
+                            <div class="conBox">
+                                <h3 class="title"><strong>Sub Area</strong></h3>
+                                <div class="sdescription ">
+                                    <input type="text" name="mb026" class="col-12 bder-0">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6 col-lg-3">
+                            <div class="conBox">
+                                <h3 class="title"><strong>Reference</strong></h3>
+                                <div class="sdescription ">
+                                    <input type="text" name="mb017" class="col-12 bder-0">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6 col-lg-3">
+                            <div class="conBox">
+                                <h3 class="title"><strong>Compulsory</strong></h3>
+                                <div class="sdescription ">
+                                    <input type="text" name="mb019" class="col-12 bder-0">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6 col-lg-3">
+                            <div class="conBox">
+                                <h3 class="title"><strong>Status</strong></h3>
+                                <div class="sdescription " id="statusdiv">
+                                    <!-- <input type="text" name="mb020" class="col-12 bder-0"> -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6 col-lg-3">
+                            <div class="conBox">
+                                <h3 class="title"><strong>Mind Map ID</strong></h3>
+                                <div class="sdescription ">
+                                    <input type="text" name="id" readonly="readonly" class="col-12 bder-0">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6 col-lg-3">
+                            <div class="conBox">
+                                <h3 class="title"><strong>Parent Mind Map ID</strong></h3>
+                                <div class="sdescription ">
+                                    <input type="text" name="parentid" disabled="disabled" class="col-12 bder-0"><br><br></div>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit" id="stepper_form_submit" class=" btn btn-primary ml-auto save"
+                    data-validate="agreement">Save</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="quick_category" tabindex="-1" role="dialog" aria-labelledby="form" aria-hidden="true"
+        style="display: none;z-index: 1200;">
+        <div class="modal-dialog modal-lg modal-dialog-scrollable " role="document">
+            <div class="modal-content" id="quick_category_form_div">
+                <div class="modal-header">
+                    <h5 class="modal-title">
+                        Create Category
+                    </h5>
+                    <button type="button" class="close text-dark" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body px-1 px-sm-3">
+                    <form id="quick_category_form" name="categoryForm" class="pd-0" method="post" enctype="multipart/form-data">
+                        <div class="card card-reflow">
+                            <div class="card-body p-0 ">
+                                <fieldset class="scrollbar mb-3">
+                                    <div class="technicInfo">
+                                        <div hidden>
+                                            <input type="text" name="ma007">
+                                            <input type="text" name="ma001">
+                                            <input type="text" name="inc_id">
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-12 col-sm-6" hidden>
+                                                <div id="edtMA002"></div>
+                                            </div>
+                                            <div class="col-12 col-sm-12">
+                                                <div id="edtMA002C"></div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div id="edtMA003"></div>
+                                            </div>
+                                            <div class="col-12 col-sm-4">
+                                                <div id="edtMA005"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <div class="el-example">
+                        <button class="btn btn-primary save" type="submit" id="quick_category_form_submit"><i class="far fa-save mr-1"></i>Save</button>
+                        <button type="button"  class="btn btn-secondary"  data-dismiss="modal" aria-label="Close">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade" id="quick_category_tree" tabindex="-1" role="dialog" aria-labelledby="form" aria-hidden="true"
+        style="display: none;z-index: 1100;">
+        <div class="modal-dialog modal-lg modal-dialog-scrollable " style="min-height: -webkit-fill-available;" role="document">
+            <div class="modal-content" id="quick_category_tree_div">
+                <div class="modal-header">
+                    <h5 class="modal-title">
+                        Selected Category
+                    </h5>
+                    <button type="button" class="close text-dark" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body px-1 px-sm-3">  
+                    <div class="row"> <!-- 这是第一行 -->
+                        <div class="col-11"> <!-- 这是第一行的第一个列，占用11列的宽度（整个行占用12列） -->
+                            <div class="form-group SWText row">
+                                <div class="col"> <!-- 这是第一个表单输入框列，占用整个行的宽度 -->
+                                    <div class="d-flex justify-content-between"> <!-- 使用 d-flex 和 justify-content-between 来实现并排和靠右 -->
+                                        <span class="mr-2">Category:</span> <!-- 使用 mr-2 来设置 span 元素的右外边距 -->
+                                        <input type="text" id="category_tree_q" class="form-control control" placeholder="" value="">
+                                        <input type="text" id="category_tree_q_old" hidden class="form-control control" placeholder="" value="">
+                                    </div>
+                                </div>
+                                <div class="col"> <!-- 这是第二个表单输入框列，占用整个行的宽度 -->
+                                    <div class="d-flex justify-content-between"> <!-- 使用 d-flex 和 justify-content-between 来实现并排和靠右 -->
+                                        <span class="mr-2">Area:</span> <!-- 使用 mr-2 来设置 span 元素的右外边距 -->
+                                        <input type="text" id="category_tree_area" class="form-control control" placeholder="" value="">
+                                        <input type="text" id="category_tree_area_old" hidden class="form-control control" placeholder="" value="">
+                                    </div>
+                                </div>
+                                <div class="col"> <!-- 这是第三个表单输入框列，占用整个行的宽度 -->
+                                    <div class="d-flex justify-content-between"> <!-- 使用 d-flex 和 justify-content-between 来实现并排和靠右 -->
+                                        <span class="mr-2">Sub Area:</span> <!-- 使用 mr-2 来设置 span 元素的右外边距 -->
+                                        <input type="text" id="category_tree_subarea" class="form-control control" placeholder="" value="">
+                                        <input type="text" id="category_tree_subarea_old" hidden class="form-control control" placeholder="" value="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <div class="col-1">
+                            <button class="btn btn-primary float-l" id="addRoot" title="Add Category"><i class="fas fa-plus"></i></button>
+                        </div>
+                    </div>
+                    
+                    <div id="category_tree" class="tree-demo">
+    
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="el-example">
+                        <button class="btn btn-primary save" type="submit" id="category_Confirm"><i class="far fa-save mr-1"></i>Confirm</button>
+                        <button type="button"  class="btn btn-secondary"  data-dismiss="modal" aria-label="Close">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+ 
+    {%endblock%}   
+    
+
+{%block script_block%}
+    
+<script src="{% static 'PMIS/assets/javascript/technic/Technical_Material_update_show.js'%}"></script>
+    
+{%endblock%}   

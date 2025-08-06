@@ -1,0 +1,183 @@
+{% load static %}
+{% load md5url %}
+{% load i18n %}
+<!DOCTYPE html>
+<html>
+<!--不需要Top Menu和Left Menu-->
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>tab</title>
+    <link rel="stylesheet" href="{% static 'BaseApp/vendor/bootstrap/css/bootstrap.min.css'%}" type="text/css">
+    <link rel="stylesheet" href="{% static 'BaseApp/vendor/Looper/assets/stylesheets/theme.min.css'%}" data-skin="default">
+    <link rel="stylesheet" href="{% static 'BaseApp/vendor/Looper/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css'%}">
+    <link rel="stylesheet" href="{% static 'BaseApp/vendor/Looper/assets/vendor/open-iconic/font/css/open-iconic-bootstrap.min.css'%}">    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cagliostro" type="text/css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Andika" type="text/css">
+    <link rel="stylesheet" href="{% static 'PMIS/css/Technical_Material.css' %}" type="text/css">
+    <link rel="stylesheet" type="text/css" href="{% static 'BaseApp/assets/stylesheets/looper_base/components/SWCombobox.css' %}" />    
+    <link rel="stylesheet" type="text/css" href="{% static 'BaseApp/assets/stylesheets/looper_base/components/SWBoardlist.css' %}" />    
+    <link rel="stylesheet" type="text/css" href="{% static 'BaseApp/assets/stylesheets/looper_base/components/SWTodolist.css' %}" />    
+    <link rel="stylesheet" type="text/css" href="{% static 'BaseApp/assets/stylesheets/looper_base/components/SWTimeline2.css' %}" />  
+    <link rel="stylesheet" type="text/css" href="{% static 'BaseApp/assets/stylesheets/looper_base/components/SWDataTable.css' %}" />      
+    <link rel="stylesheet" type="text/css" href="{% static 'BaseApp/assets/stylesheets/looper_base/components/SWRow.css' %}" />    
+    <link rel="stylesheet" type="text/css" href="{% static 'BaseApp/assets/stylesheets/looper_base/components/SWImage.css' %}" /> 
+    <link rel="stylesheet" type="text/css" href="{% static 'BaseApp/assets/stylesheets/looper_base/components/SWBorder.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'BaseApp/assets/stylesheets/looper_base/components/SWBorder2.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'BaseApp/assets/stylesheets/looper_base/components/SWLabel.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'BaseApp/assets/stylesheets/app/components/SWSelectquery.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'BaseApp/assets/stylesheets/looper_base/components/SWCalendar.css' %}" />    
+    <link rel="stylesheet" type="text/css" href="{% static 'BaseApp/assets/stylesheets/looper_base/components/SWCard.css' %}" />   
+    <link rel="stylesheet" type="text/css" href="{% static 'BaseApp/assets/stylesheets/app/components/SWMindmap.css' %}" />    
+    <link rel="stylesheet" type="text/css" href="{% static 'BaseApp/vendor/Looper/assets/vendor/jstree/themes/default/style.min.css' %}" data-skin="default" />
+    <style>
+        .pd-0{
+            padding: 0px;
+        }
+        .formtextaret{
+            /* resize:none; */
+            padding:10px;
+            border: 0px;
+            /* outline-style:none; */
+        }
+        .bder-0{
+            border: 0px;
+        }
+        .pad-0{
+            padding: 0px;
+        }
+        .fileinput-button{
+            position: relative;
+            display: inline-block;
+            overflow: hidden;
+        }
+        .fileinput-button input{
+            position: absolute;
+            left: 0;
+            top: 0;
+            opacity: 0;
+        }
+        .ishidden{
+            display: none;
+        }
+
+        .textareafont{
+            font-family: 'Didact Gothic';
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 25px;
+            padding: 10px;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            border-radius: 0.25rem;
+        }        
+    </style>
+    {%block style_block%}
+
+
+    {%endblock%}    
+    
+</head>
+
+<body>
+    {% get_current_language as LANGUAGE_CODE %}
+    <input id="curr_language_code" value="{{LANGUAGE_CODE}}" type="hidden"/>
+    <div class="d-none">
+            {%include "BaseApp/looper_base/components/SWCheckbox.html"%}
+            {%include "BaseApp/looper_base/components/SWCombobox.html"%}
+            {%include "BaseApp/looper_base/components/SWDate.html"%}
+            {%include "BaseApp/looper_base/components/SWFilebrowser.html"%}
+            {%include "BaseApp/looper_base/components/SWForm.html"%}
+            {%include "BaseApp/looper_base/components/SWProgress.html"%}
+            {%include "BaseApp/looper_base/components/SWRadiobox.html"%}
+            {%include "BaseApp/looper_base/components/SWSwitch.html"%}
+            {%include "BaseApp/looper_base/components/SWText.html"%}
+            {%include "BaseApp/looper_base/components/SWTextarea.html"%}
+            {%include "BaseApp/looper_base/components/SWDropdown.html"%}
+            {%include "BaseApp/looper_base/components/SWTimeline2.html"%}
+            {%include "BaseApp/looper_base/components/SWBoardlist.html"%}
+            {%include "BaseApp/looper_base/components/SWTodolist.html"%}
+            {%include "BaseApp/looper_base/components/SWTreegrid.html"%}
+            {%include "BaseApp/looper_base/components/SWDataTable.html"%}
+            {%include "BaseApp/app/components/SWShowCode.html"%}
+            {%include "BaseApp/looper_base/components/SWButton.html"%}
+            {%include "BaseApp/looper_base/components/SWRow.html"%}
+            {%include "BaseApp/looper_base/components/SWImage.html"%}
+            {%include "BaseApp/looper_base/components/SWBorder.html"%}
+            {%include "BaseApp/looper_base/components/SWBorder2.html"%}
+            {%include "BaseApp/looper_base/components/SWLabel.html"%}
+            {%include "BaseApp/looper_base/components/SWListbox.html"%}
+            {%include "BaseApp/app/components/SWSelectquery.html"%}
+            {%include "BaseApp/looper_base/components/SWCalendar.html"%}    
+            {%include "BaseApp/app/components/SWAdvancedsearch.html"%}
+            {%include "BaseApp/looper_base/components/SWCard.html"%}   
+            {%include "BaseApp/looper_base/components/SWTab.html"%}       
+            {%include "BaseApp/app/components/SWMindmap.html"%} 
+            {%include "BaseApp/looper_base/components/SWToast1.html"%}
+            {%include "BaseApp/looper_base/components/SWToast2.html"%}
+            {%include "BaseApp/app/components/SWRichText.html"%}
+            {%block default_components%}
+            {%endblock%}
+        </div>   
+    <div class="technical_continer">
+    {%block body_block%}
+  
+ 
+    {%endblock%}      
+    </div>
+</body>
+<script src="{% static 'BaseApp/vendor/jquery/jquery.min.js' %}" type="text/javascript"></script>
+<script src="{% static 'BaseApp/vendor/bootstrap/js/bootstrap.min.js' %}" type="text/javascript"></script>
+    <!--begin::Page Scripts-->
+    <script src="{% md5url 'BaseApp/assets/javascript/app/app.js' %}" type="text/javascript"></script>
+    <script src="{% md5url 'BaseApp/assets/javascript/app/public.js' %}" type="text/javascript"></script>
+    <script src="{% md5url 'BaseApp/assets/javascript/looper_base/base_form1/base_form1.js'%}"></script>    
+    <script src="{% md5url 'BaseApp/assets/javascript/looper_base/base_form1/menu.js'%}"></script>    
+    <!--end::Page Scripts-->
+    <!--控件的js-->
+
+    <script src="{% url 'javascript-catalog' %}"></script>
+    <script src="{% md5url 'BaseApp/assets/javascript/looper_base/components/SWCheckbox.js' %}" type="text/javascript"></script>   
+    <script src="{% md5url 'BaseApp/assets/javascript/looper_base/components/SWCombobox.js' %}" type="text/javascript"></script>   
+    <script src="{% md5url 'BaseApp/assets/javascript/looper_base/components/SWDate.js' %}" type="text/javascript"></script>   
+    <script src="{% md5url 'BaseApp/assets/javascript/looper_base/components/SWFilebrowser.js' %}" type="text/javascript"></script>   
+    <script src="{% md5url 'BaseApp/assets/javascript/looper_base/components/SWForm.js' %}" type="text/javascript"></script>   
+    <script src="{% md5url 'BaseApp/assets/javascript/looper_base/components/SWProgress.js' %}" type="text/javascript"></script>   
+    <script src="{% md5url 'BaseApp/assets/javascript/looper_base/components/SWRadiobox.js' %}" type="text/javascript"></script>   
+    <script src="{% md5url 'BaseApp/assets/javascript/looper_base/components/SWSwitch.js' %}" type="text/javascript"></script>   
+    <script src="{% md5url 'BaseApp/assets/javascript/looper_base/components/SWText.js' %}" type="text/javascript"></script>   
+    <script src="{% md5url 'BaseApp/assets/javascript/looper_base/components/SWDropdown.js' %}" type="text/javascript"></script>   
+    <script src="{% md5url 'BaseApp/assets/javascript/looper_base/components/SWTextarea.js' %}" type="text/javascript"></script>   
+    <script src="{% md5url 'BaseApp/assets/javascript/looper_base/components/SWTimeline2.js' %}" type="text/javascript"></script>   
+    <script src="{% md5url 'BaseApp/assets/javascript/looper_base/components/SWBoardlist.js' %}" type="text/javascript"></script>   
+    <script src="{% md5url 'BaseApp/assets/javascript/looper_base/components/SWTodolist.js' %}" type="text/javascript"></script> 
+    <script src="{% md5url 'BaseApp/assets/javascript/looper_base/components/SWButton.js' %}" type="text/javascript"></script>
+    <script src="{% md5url 'BaseApp/assets/javascript/looper_base/components/SWRow.js' %}" type="text/javascript"></script>
+    <script src="{% md5url 'BaseApp/assets/javascript/looper_base/components/SWDataTable.js' %}" type="text/javascript"></script>    
+    <script src="{% md5url 'BaseApp/assets/javascript/app/components/SWShowCode.js' %}" type="text/javascript"></script>    
+    <script src="{% md5url 'BaseApp/assets/javascript/looper_base/components/SWTreegrid.js' %}" type="text/javascript"></script>   
+    <script src="{% md5url 'BaseApp/assets/javascript/looper_base/components/SWImage.js' %}" type="text/javascript"></script> 
+    <script src="{% md5url 'BaseApp/assets/javascript/looper_base/components/SWCalendar.js' %}" type="text/javascript"></script>    
+    <script src="{% md5url 'BaseApp/assets/javascript/looper_base/components/SWBorder.js' %}" type="text/javascript"></script> 
+    <script src="{% md5url 'BaseApp/assets/javascript/looper_base/components/SWBorder2.js' %}" type="text/javascript"></script> 
+    <script src="{% md5url 'BaseApp/assets/javascript/looper_base/components/SWLabel.js' %}" type="text/javascript"></script>
+    <script src="{% md5url 'BaseApp/assets/javascript/looper_base/components/SWListbox.js' %}" type="text/javascript"></script>
+    <script src="{% md5url 'BaseApp/assets/javascript/app/components/SWSelectquery.js' %}" type="text/javascript"></script>     
+    <script src="{% md5url 'BaseApp/assets/javascript/app/components/SWAdvancedsearch.js' %}" type="text/javascript"></script>     
+    <script src="{% md5url 'BaseApp/assets/javascript/looper_base/components/SWCard.js' %}" type="text/javascript"></script>      
+    <script src="{% md5url 'BaseApp/assets/javascript/looper_base/components/SWTab.js' %}" type="text/javascript"></script> 
+    <script src="{% static 'BaseApp/vendor/Looper/assets/vendor/jstree/jstree.min.js'%}"></script>
+    <script src="{% md5url 'BaseApp/assets/javascript/app/components/SWMindmap.js' %}" type="text/javascript"></script>  
+    <script src="{% md5url 'BaseApp/assets/javascript/app/components/SWTextAreaHref.js' %}" type="text/javascript"></script>  
+    <script src="{% md5url 'BaseApp/assets/javascript/looper_base/components/SWHintMsg.js' %}" type="text/javascript"></script>
+    <script src="{% md5url 'BaseApp/assets/javascript/app/components/SWRichText.js' %}" type="text/javascript"></script>
+    <script src="{% static 'PMIS/js/navScroll.js' %}" type="text/javascript"></script>
+    <script src="{% static 'BaseApp/vendor/jquery/ajaxhook.min.js' %}" type="text/javascript"></script>
+    <script src="{% md5url 'PMIS/js/syspublic.js'%}"></script>    
+    <script src="{% md5url 'PMISLooper/assets/javascript/user/index_login.js' %}" type="text/javascript"></script>
+    
+    {%block script_block%}
+    
+    
+    {%endblock%}    
+</html>

@@ -1,0 +1,168 @@
+{% extends 'PMISLooper/index.html' %}
+{%load static %}
+{% load md5url %}
+{%block form_css%}
+{{block.super}}
+<link rel="stylesheet" href="{% static 'PMISLooper/assets/vendor/icofont/icofont.min.css'%}">
+<link rel="stylesheet" href="{% static 'PMISLooper/assets/stylesheets/goal/overall/project_goal.css'%}" data-skin="default">
+{%endblock%}
+{%block content %}
+{{block.super}}
+<div class="card">
+    <div class="card-header"> 
+        <h5 class="mb-0">Project Goal</h5></div>
+    <div class="card-body">
+        <div class="card" id="Goal">
+            <div class="card-header d-flex justify-content-between">
+                <h1 class="task-title mr-auto title">Goal</h1>
+                <a class="btn btn-sm btn-outline-primary" id="link_session" href="#"><i class="fa fa-link mr-2"></i>Relate Session</a>
+            </div>
+            <div class="card-body">
+                <form class="form"></form>
+            </div>
+        </div>        
+        <div class="card" id="Sessions">
+            <div class="card-header"> <h1 class="task-title mr-auto title">Sessions</h1> </div>
+            <div class="card-body p-0">
+                
+            </div>
+        </div>        
+        <div class="card" id="Simulation">
+            <div class="card-header"> <h1 class="task-title mr-auto title">Goal Simulation</h1>  </div>
+            <div class="card-body">
+            </div>
+        </div>        
+    </div>
+</div>
+<div id="tasklist" class="collapse task-colhblapse" style="display: none;">
+    <div class="row task_wap task-item">
+      <span class="d-none pk">[[inc_id]]</span>
+      <div class="col-12">
+        <div class="card wrap-primary">
+          <div class="card-body">
+            <div class="card-title d-flex align-content-center">
+              <span class="task-num">
+                <h4 class="card-subtitle"><i class="fas fa-circle circle-dot"></i>[[taskno]]</h4>
+              </span>
+              <span class="ml-auto alert-link">[[progress]]</span>
+            </div>
+            <div class="card-content d-flex pl-2">
+              <div class="font-weight-bolder">[[task]]</div>
+            </div>
+          </div>
+          <div class="footer_wrap text-dark">
+              <ul class="list d-flex justify-content-around pl-0 flex-wrap">
+                <li class="list-item">
+                  <span class="menu-text"> [[planbdate]] / [[planedate]]</span>
+                </li>
+                <li class="list-item">
+                  <span class="">[[schpriority]]</span>
+                </li>
+                <li class="list-item">
+                  <span class="badge badge-subtle badge-primary">[[process]]</span>
+                </li>
+                <li class="list-item">
+                  <span class="badge badge-subtle badge-primary">[[contact]]</span>
+                </li>
+              </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+<div id="simulation_item" style="display: none;">
+    <div class="row">
+        <!-- .col -->
+        <div class="col">
+          <!-- .metric -->
+          <div class="metric">
+            <p class="metric-label"> Total Qty </p>
+            <h5 class="metric-value"> [[total_qty]]</sup>
+            </h5>
+          </div><!-- /.metric -->
+        </div><!-- /.col -->
+        <!-- .col -->
+        <div class="col">
+          <!-- .metric -->
+          <div class="metric">
+            <p class="metric-label"> Finish Qty </p>
+            <h5 class="metric-value"> [[finish_qty]] </h5>
+          </div><!-- .metric -->
+        </div><!-- /.col -->
+        <!-- .col -->
+        <div class="col">
+          <!-- .metric -->
+          <div class="metric">
+            <p class="metric-label"> UnFinish Qty </p>
+            <h5 class="metric-value"> [[unfinish_qty]] </h5>
+          </div><!-- .metric -->
+        </div><!-- /.col -->
+        <!-- .col -->
+        <div class="col">
+          <!-- .metric -->
+          <div class="metric">
+            <p class="metric-label"> Active Qty </p>
+            <h5 class="metric-value"> [[active_qty]]</sup>
+            </h5>
+          </div><!-- .metric -->
+        </div><!-- /.col -->
+        <!-- .col -->
+        <div class="col">
+          <!-- .metric -->
+          <div class="metric">
+            <p class="metric-label"> Ratio </p>
+            <h5 class="metric-value"> [[qty_ratio]]%</h5>
+          </div><!-- .metric -->
+        </div><!-- /.col -->
+      </div>    
+      <div class="row">
+        <!-- .col -->
+        <div class="col">
+          <!-- .metric -->
+          <div class="metric">
+            <p class="metric-label"> Total Day </p>
+            <h5 class="metric-value"> [[total_day]] </sup>
+            </h5>
+          </div><!-- /.metric -->
+        </div><!-- /.col -->
+        <!-- .col -->
+        <div class="col">
+          <!-- .metric -->
+          <div class="metric">
+            <p class="metric-label"> Actived Day </p>
+            <h5 class="metric-value"> [[actived_day]] </h5>
+          </div><!-- .metric -->
+        </div><!-- /.col -->
+        <div class="col">
+            <!-- .metric -->
+            <div class="metric">
+              <p class="metric-label"> Lave Day </p>
+              <h5 class="metric-value"> [[lave_day]]</sup>
+              </h5>
+            </div><!-- .metric -->
+          </div><!-- /.col -->                    
+        <!-- .col -->
+        <div class="col">
+          <!-- .metric -->
+          <div class="metric">
+            <p class="metric-label"> Expected Date</p>
+            <h5 class="metric-value"> [[expected_date]] </h5>
+          </div><!-- .metric -->
+        </div><!-- /.col -->
+        <!-- .col -->
+        <div class="col">
+          <!-- .metric -->
+          <div class="metric">
+            <p class="metric-label"> Ratio </p>
+            <h5 class="metric-value"> [[day_ratio]]%</h5>
+          </div><!-- .metric -->
+        </div><!-- /.col -->
+      </div>       
+</div>
+{%endblock%}
+
+{%block form_js%}
+{{block.super}}
+<script src="{% md5url 'PMISLooper/assets/javascript/goal/overall/project_goal.js' %}"
+    type="text/javascript"></script>
+{% endblock%}

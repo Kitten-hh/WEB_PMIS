@@ -1,0 +1,113 @@
+{% extends 'BonusApp/TopBottomBar.html' %}
+
+{% load static %}
+
+{% block solecss %}
+<style>
+    .main {
+        margin: 0 auto;
+        background: white;
+    }
+
+    #app-main {
+        background: rgb(241, 239, 239);
+    }
+
+    .content {
+        width: 96%;
+        margin: 0 auto;
+    }
+
+    .content p {
+        margin: 0 1rem 0 0;
+    }
+
+
+    .Update_TaskType {
+        position: fixed;
+        right: 5%;
+        bottom: 10%;
+    }
+
+    .Update_TaskType div {
+        width: 6rem;
+        height: 6rem;
+        border-radius: 50%;
+        background-color: orange;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .Update_TaskType div i {
+        font-size: 3rem;
+        color: white;
+    }
+
+    #app-footer li {
+        display: none;
+    }
+</style>
+
+{% endblock %}
+
+
+{% block solenav %}
+<div class="container-fluid Custom_Head">
+    <a class="navbar-brand" id="prev_page" href="/bonus/tasktype">
+        <i class="fa fa-arrow-left"></i>
+    </a>
+
+    <ul class="navbar-nav flex-row ml-auto nav_min_pic">
+        <li class="nav-item">
+            <a class="nav-link" href="/bonus/tasktype">
+                <svg style="color: white;" width="5em" height="2em" viewBox="0 0 16 16" class="bi bi-house-fill"
+                    fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd"
+                        d="M8 3.293l6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6zm5-.793V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z" />
+                    <path fill-rule="evenodd"
+                        d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z" />
+                </svg>
+            </a>
+        </li>
+        <li class="nav-item"><a class="nav-link" id="del_TaskType" href="#"><i class="fa fa-trash"
+                    aria-hidden="true"></i></a>
+        <li class="nav-item"><a class="nav-link" href="#"><i class="icon ion-refresh"></i></a></li>
+        <li class="nav-item"><a class="nav-link" href="#"><i class="fa fa-ellipsis-v"></i></a></li>
+    </ul>
+</div>
+{% endblock %}
+
+
+{% block content %}
+<div class="main">
+    <input type="hidden" id="taskType_Id" value="{{taskType.id}}">
+    <div class="content" style="padding: 2rem 0rem 2rem 0;">
+        <p>
+            <span>Task Type</span>
+            <h3>{{taskType.tasktype}}</h3>
+        </p>
+
+        <p>
+            <span>Description</span>
+            <h3>{{taskType.description}}</h3>
+        </p>
+        <p>
+            <span>Score</span>
+            <h3>{{taskType.score}}</h3>
+        </p>
+    </div>
+
+</div>
+
+<div class="Update_TaskType">
+    <div>
+        <a href="/bonus/tasktype/edit?taskType_Id={{taskType.id}}"><i class="fa fa-pencil-square-o"></i></a>
+    </div>
+</div>
+{% endblock %}
+{% block solejs %}
+<!-- 自定义JS -->
+<script type="text/javascript" src="{% static 'BonusApp/TaskType_Management/TaskType_Details.js' %}"></script>
+<script type="text/javascript" src="{% static 'BonusApp/TaskType_Management/TaskType_Public.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,18 @@
+table.dataTable tbody tr.selected a.dropdown-item {
+    color: #191927;
+}
+
+table.dataTable tbody tr.selected a.dropdown-item.active, 
+table.dataTable tbody tr.selected a.dropdown-item:active, 
+table.dataTable tbody tr.selected a.dropdown-item:focus, 
+table.dataTable tbody tr.selected a.dropdown-item:hover {
+    color: #fff;
+}
+
+#sea-container .SWCombobox label {
+    padding-right: 5px;
+}
+
+#goal_master_table.SWDataTable tbody tr>td:last-child {
+    white-space: nowrap;
+}

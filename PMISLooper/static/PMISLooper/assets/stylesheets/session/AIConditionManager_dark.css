@@ -1,0 +1,18 @@
+.AIConditionManagerPage .masterQuery.border-bottom>.card.toolbox {
+    border: 0;
+}
+
+.AIConditionManagerPage .tabs-border-card.AIConditionManagerTab {
+    border: 0;
+    background: #222230;
+}
+
+.AIConditionManagerPage .tabs-border-card.AIConditionManagerTab>.tabs_header {
+    background-color: #222230 !important;
+    border-bottom: 1px solid #2d2e3b !important
+}
+
+.AIConditionManagerPage .tabs-border-card.AIConditionManagerTab>.tabs_header .nav-tabs .nav-item.show .nav-link, 
+.AIConditionManagerPage .tabs-border-card.AIConditionManagerTab>.tabs_header .nav-tabs .nav-link.active {
+    color: #e6e8ed;
+}

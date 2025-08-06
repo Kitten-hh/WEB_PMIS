@@ -1,0 +1,214 @@
+.fullScreenModal .modal-dialog {
+    max-width: none;
+    height: 100%;
+    margin: 0;
+    max-height: calc(100% - 2px);
+  }
+  
+  .fullScreenModal .modal-content {
+    height: 100%;
+    border-radius: 0.42rem;
+    max-height: calc(100% - 2px);
+  }
+  
+  .fullScreenModal .modal-header {
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+    align-items: center;
+  }
+  
+  .fullScreenModal .modal-header>h5.modal-title {
+    font-size: 1rem;
+  }
+  
+  .fullScreenModal .message-header-actions {
+    display: flex;
+    align-items: center;
+    min-width: auto;
+  }
+  
+  .status_select_sm.bootstrap-select>.dropdown-toggle {
+    height: 1.8125rem;
+    font-size: .8125rem;
+  }
+  
+  .status_select_sm.bootstrap-select .dropdown-toggle .filter-option {
+    height: auto;
+  }
+  
+  .fullScreenModal .bootstrap-select .dropdown-toggle .filter-option-inner-inner {
+    font-weight: 600;
+  }
+  
+  .crmDashboardModal .LPDataTable table {
+    border-radius: 0;
+  }
+  
+  .fullScreenModal .LPDataTable .dataTables_wrapper .dataTable th,
+  .fullScreenModal .LPDataTable .dataTables_wrapper .dataTable td {
+    font-size: 14px;
+  }
+  
+  .crmDashboardModal .section-block label.caption {
+    font-size: 1rem;
+  }
+  
+  /* dataTable */
+  .LPDataTable table.dataTable thead .sorting:before,
+  .LPDataTable table.dataTable thead .sorting_asc:before,
+  .LPDataTable table.dataTable thead .sorting_desc:before,
+  .LPDataTable table.dataTable thead .sorting_asc_disabled:before,
+  .LPDataTable table.dataTable thead .sorting_desc_disabled:before {
+    content: "\f0de" !important;
+    right: 0 !important;
+    top: 10px !important;
+  }
+  
+  .LPDataTable table.dataTable thead .sorting:after,
+  .LPDataTable table.dataTable thead .sorting_asc:after,
+  .LPDataTable table.dataTable thead .sorting_desc:after,
+  .LPDataTable table.dataTable thead .sorting_asc_disabled:after,
+  .LPDataTable table.dataTable thead .sorting_desc_disabled:after {
+    content: "\f0dd" !important;
+    right: 0 !important;
+    top: 10px !important;
+  }
+  
+  .LPDataTable .dataTables_info {
+    display: none;
+  }
+  .LPTreegrid .fixed-table-toolbar {
+    display:none;
+  }
+  .LPTreegrid .fixed-table-body {
+    height: 495.59px !important;
+  }
+  .LPTreegrid th {
+      position: sticky;
+      top: 0;
+      background-color: #282839 !important;
+      background-clip: border-box;
+      z-index: 1;
+  }
+  
+  .crmDashboardModal .tasks {
+    display: flex;
+    width: 100%;
+    height: calc(100% - 60px);
+  }
+  
+  .text_darkBlue {
+    color: #346cb0;
+    min-width: 56px;
+  }
+  
+  .crmDashboardModal .task-body .status_select .custom-select {
+    color: #346cb0;
+  }
+  
+  .flex-stack {
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .py-05 {
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+  }
+  
+  /* new */
+  .crmDashboardModal .card-item {
+    list-style-type: none;
+  }
+  
+  .crmDashboardModal .tasks .card {
+    background-color: #222230;
+    border: 1px solid #42425d;
+    border-radius: 10px;
+    box-shadow: 0 .1875rem .75rem #42425d;
+    margin-bottom: .5rem;
+    transition: all .3s cubic-bezier(.4, 0, .2, 1), z-index 0s .12s;
+  }
+  
+  /* 重疊模式 */
+  .overlapModel .card-item {
+    position: absolute;
+    width: 1100px;
+    height: 560px;
+    background-color: #222230;
+    transition: transform 0.9s cubic-bezier(0.23, 1, 0.32, 1) 0s;
+  }
+  
+  .overlapModel .card-item .card {
+    width: 100%;
+    height: 100%;
+    margin-bottom: 0;
+  }
+  
+  .overlapModel .card-item.active {
+    z-index: 6;
+    box-shadow: -8px 8px 0 0 #42425d;
+    border-radius: 10px;
+    border: 1px solid #222230;
+  }
+  
+  /* twoLineStyle */
+  .twoLineStyle .overlapModel .card-item {
+    width: 650px;
+    height: 560px;
+  }
+  
+  .crmDashboardModal .card-item.page-expanded {
+    position: fixed !important;
+    max-width: 100vW !important;
+    width: 100vw;
+    height: 100vh;
+    background-color: #2d2d3f;
+    z-index: 1030;
+    transform: translate3d(0px, 0px, 0px) scale(1) !important;
+  }
+  
+  .crmDashboardModal .card-item.page-expanded .card_select .dropdown-menu.show {
+    top: 100% !important;
+  }
+  
+  /* 平鋪模式 */
+  .tilemode .card-item {
+    position: relative;
+    padding-right: 5px;
+    padding-left: 5px;
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%;
+  }
+  
+  .tilemode .card-item.page-expanded .card {
+    width: 100%;
+    height: calc(100% - 2rem);
+    margin-top: 1rem;
+    transition: all .3s cubic-bezier(.4, 0, .2, 1), z-index 0s .12s;
+  }
+  
+  .tilemode .card-item:nth-last-child(-n+3)>.card {
+    margin-bottom: 0;
+  }
+  .LPDataTable .text-truncate {
+    text-overflow:clip;
+  }
+  .LPDataTable label.text-truncate {
+    margin-bottom: 0px !important;
+  }
+  .card-item-single-col {
+    width:1100px !important;
+  }
+  .LPDataTable table.dataTable.table-sm>thead>tr>th {
+    padding-right: 10px !important;
+  }
+  
+  .LPTreegrid th {
+    top: -1px;
+  }
+  .LPTreegrid .table>thead tr:first-child>td:first-child, 
+  .LPTreegrid .table>thead tr:first-child>th:first-child {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }

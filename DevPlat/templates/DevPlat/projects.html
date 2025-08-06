@@ -1,0 +1,199 @@
+{% extends 'PMISLooper/index.html' %}
+{%load static %}
+{% load i18n %}
+{% load md5url %}
+{%block form_css%}
+{{block.super}}
+<link rel="stylesheet" type="text/css" href="{% md5url 'DevPlat/assets/stylesheets/projects.css' %}"
+    data-skin="default" />
+<link rel="stylesheet" type="text/css" href="{% md5url 'DevPlat/assets/stylesheets/projects_dark.css' %}" data-skin="dark" />
+<link rel="stylesheet" type="text/css" href="{% static 'BaseApp/vendor/jquery_contextmenu/jquery.contextMenu.min.css'%}" /> 
+{%endblock%}
+{%block default_components%}
+{{block.super}}
+{%include "BaseApp/looper_base/components/SWProjectlist.html"%}
+{%endblock%}
+{%block content %}
+{{block.super}}
+<div class="sidebar-backdrop"></div>
+<div class="page-inner">
+    <div id="project_list"></div>
+</div>
+<div class="page-sidebar musthave_sidebar">
+    <header class="sidebar-header d-sm-none">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item active">
+                    <a href="#" onclick="Looper.toggleSidebar()"><i
+                            class="breadcrumb-icon fa fa-flip-horizontal fa-share mr-2"></i>{% trans "Back"%}</a>
+                </li>
+            </ol>
+        </nav>
+    </header>
+    <div class="sidebar-section-fill">
+        <div class="card card-reflow musthave">
+            <div class="card-body p-0">
+                <button type="button" class="close mt-n1 d-none d-xl-none d-sm-block" onclick="Looper.toggleSidebar()"
+                    aria-label="Close"><span aria-hidden="true">×</span></button>
+                <h4 class="card-title" id="must_tasks_h"></h4>
+                <ul class="timeline px-0" id="must_tasks">
+                    <!-- <li class="timeline-item">
+                        <div class="timeline-figure">
+                            <span class="tile tile-circle tile-sm tile-custom"></span>
+                        </div>
+                        <div class="timeline-body">
+                            <div class="media">
+                                <div class="media-body">
+                                    <div
+                                        class="d-flex justify-content-between align-items-center mb-2 font-weight-bolder">
+                                        <p class="mb-0 timeline-date text-black">2021-12-16 / 2021-12-16</p>
+                                        <span class="timeline-date text-dark mr-2"><i
+                                                class="far fa-file mr-2"></i>C</span>
+                                    </div>
+                                    <h5 class="step-title">(Fixed)修改Bonus Simulation中讀取任務的邏輯，不要只讀取LookupScore>0</h5>
+                                    <div class="mb-2">
+                                        <span class="text-purple"><i
+                                                class="far fa-clipboard mr-2"></i>00001-14016-590</span>
+                                        <span class="ml-2 text-purple"><i class="far fa-list-alt mr-1"></i>3773</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li> -->
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="summary_template" class="d-none">
+    <div class="summary_wrap card-body">
+        <h4 class="card-title sum_title py-2 mb-0">
+        <i class="fas fa-thumbtack mr-2"></i>{% trans "Summary"%} </h4>
+        <div class="d-flex justify-content-between align-items-center mb-2 pl-2 pt-2">
+            <div class="text-left left-date-title" data-toggle="tooltip" data-placement="top"
+                data-original-title="Actual completion time">
+                <span class="sr-only">Actual completion time</span>
+                <i class="far fa-calendar-check text-dark mr-2"></i>[[planedate]]</div>
+            <div class="text-dark"><strong class="text-primary">[[Completed_Qty]]</strong> / <span>[[All_Qty]]</span></div>
+        </div>
+        <div class="d-flex flex-column pl-2">
+            <div class="row justify-content-start mb-2">
+                <div class="col-auto">
+                    <span class="oi oi-media-record text-complete mark_icon"></span>
+                    Completed ([[Completed_Qty]])
+                </div>
+                <div class="col-auto">
+                    On time ([[Complete_on_time_Qty]])
+                </div>
+                <div class="col-auto">
+                    Overdue ([[Overdue_Completed_Qty]])
+                </div>
+            </div>
+            <div class="row justify-content-start mb-2">
+                <div class="col-auto">
+                    <span class="oi oi-media-record text-au mark_icon"></span>
+                    Uncompleted ([[Uncompleted_Qty]])
+                </div>
+                <div class="col-auto">
+                    Unoverdue ([[Unoverdue_Qty]])
+                </div>                
+                <div class="col-auto">
+                    Overdue ([[Overdue_Qty]])
+                </div>
+                <div class="col-auto">
+                    Active ([[Active_Qty]])
+                </div>
+            </div>            
+            <div class="progress progress-sm mb-2">
+                <div class="progress-bar bg-complete progress-bar-striped progress-bar-animated" role="progressbar" style="width: [[Completed]]%" aria-valuenow="[[Completed]]"
+                    aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar bg-au progress-bar-striped progress-bar-animated" role="progressbar" style="width: [[Uncompleted]]%" aria-valuenow="[[Uncompleted]]"
+                    aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+        </div>
+    </div>    
+</div>
+<div id="title_template" class="d-none">
+    <div class="d-flex justify-content-between align-items-center">
+        <h4 class="card-title mb-0">[[title]]</h4>
+        <div class="d-flex">
+        <button type="button" class="btn btn-sm btn-icon btn-light btn_mindmap_diagram" recordid="[[recordid]]"><i class="fas fa-sitemap"></i></button>
+        <button type="button" class="btn btn-sm btn-icon btn-light btn_project_diagram" recordid="[[recordid]]"><i class="fas fa-project-diagram"></i></button>
+        <div class="dropdown goal_content">
+            <button type="button" class="btn btn-sm btn-icon btn-light" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false"><i class="fas fa-book fa-book-open"></i></button>
+            <div class="dropdown-menu dropdown-menu-rich dropdown-menu-right px-2 pt-2" style="">
+                <div class="dropdown-arrow"></div>
+                <div class="form-group SWTextarea" style="">
+                    <label class="col-form-label caption" for="tf6" style="display: none;"></label>
+                    <textarea readonly class="form-control control" id="tf6" rows="10" name="goaldesc">[[goaldesc]]</textarea>
+                </div>                
+            </div>
+        </div> 
+        <div class="dropdown filter_session">
+            <button type="button" class="btn btn-sm btn-icon btn-light" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false"><i class="fas fa-filter"></i></button>
+            <div class="dropdown-menu dropdown-menu-rich dropdown-menu-right">
+                <div class="dropdown-arrow"></div>
+                <div class="session_treegrid scrollbar"></div>
+                <div class="session_treegrid_operation d-flex justify-content-between px-1 py-2">
+                <button class="btn btn-sm btn-subtle-light text-primary clear">{% trans "Clear" %}</button>
+                <button class="btn btn-sm btn-subtle-danger apply">{% trans "OK" %}</button></div>
+            </div>
+        </div>          
+        <div class="dropdown filter_goal">
+            <button type="button" class="btn btn-sm btn-icon btn-light" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false"><i class="fas fa-ellipsis-v"></i></button>
+            <div class="dropdown-menu dropdown-menu-right task_filter">
+                <div class="dropdown-arrow"></div>
+                <h6 class="dropdown-header">{% trans "Task Category"%}</h6>
+                <a href="#" class="dropdown-item pl-4" filter_type="category" name="MF">Must Finish</a> 
+                <a href="#" class="dropdown-item pl-4" filter_type="category" name="MH">Must Have</a> 
+                <a href="#" class="dropdown-item pl-4" filter_type="category" name="all">All</a> 
+                <h6 class="dropdown-header">{% trans "Users"%}</h6>
+            </div>
+        </div>    
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="project_gantt" tabindex="-1" role="dialog" aria-labelledby="form" aria-hidden="true"
+    style="display: none;">
+    <div class="modal-dialog modal-xl modal-dialog-scrollable " role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">
+                    {% trans "Gantt View" %}
+                </h5>
+                <button type="button" class="close text-dark" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body"   style="overflow-y: hidden;">
+                <div class="iframe_wrapper">
+                    <iframe src="" frameborder="0" width='100%' id="pciframe" class="iframe" style="height:100%"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{%endblock%}
+{%block form_js%}
+{{block.super}}
+<script src="{% md5url 'BaseApp/assets/javascript/looper_base/components/SWProjectlist.js' %}"
+    type="text/javascript"></script>
+<script src="{% static 'BaseApp/vendor/jquery_contextmenu/jquery.ui.position.min.js'%}"></script>
+<script src="{% static 'BaseApp/vendor/jquery_contextmenu/jquery.contextMenu.min.js'%}"></script>
+<script src="{% md5url 'DevPlat/assets/javascript/projects.js' %}" type="text/javascript"></script>
+<script>
+    $(function () {
+        // must have
+        $(".filter").append(`<button type="button" class="btn btn-light btn-icon nav-link d-xl-none" data-toggle="sidebar"><i class="fa fa-angle-double-left"></i></button>`);
+
+        $(".projects_page #project_list .SWProjectlist").find(".page-section").addClass("py-1 scrollbar");
+        $(function () {
+            $("title").html('{% trans "Project" %}');
+        });    
+    });
+</script>
+
+{%endblock%}

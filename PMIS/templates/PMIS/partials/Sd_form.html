@@ -1,0 +1,110 @@
+<!--  This is a complete template of a form in a card, you need to change your own fields -->
+{% extends 'PMIS/Starter_page.html' %}
+
+{%  block content %}
+
+        <!-- This is the whole form embedded in a Card with search and the table fields -->
+
+        <!-- This is to limit the width of the card
+             <div class="col-sm-16 col-md-8">  
+        -->
+        <div class="card">
+          <div class="card-header">
+            <h6 class="card-title">Technical Detail Form</h6>
+          </div>
+          <div class="card-block">
+
+            <!-- Fields for the Technical -->
+
+            <!-- This is a search text for query-->
+            <div class="form-group row">
+              <label for="example-search-input" class="col-4 col-form-label">Search</label>
+              <div class="col-12">
+                <input class="form-control" type="search" value="" id="example-search-input">
+              </div>
+            </div>
+            <hr>
+
+            <!-- Embedded in a form -->
+            <!-- 
+            <form class="site-form" action="{ % url 'Knowledge:Add_tech_form'%}" method="POST">
+            -->
+            <form class="site-form" method="POST" >
+                   {% csrf_token%} 
+
+            <div class="form-group row">
+              <label for="Techid" class="col-4 col-form-label">Techid</label>
+              <div class="col-12">
+                <input class="form-control" type="text" value="" id={{form.techID}}
+              </div>
+            </div>
+
+             <div class="form-group row">
+              <label for="Category" class="col-4 col-form-label">Category</label>
+              <div class="col-12">
+                <input class="form-control" type="text" value="" id={{form.category}}
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label for="Area" class="col-4 col-form-label">Area</label>
+              <div class="col-12">
+                <input class="form-control" type="text" value="" id={{form.area}}
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label for="Topic" class="col-4 col-form-label">Topic</label>
+              <div class="col-12">
+                <textarea class="form-control" id={{form.topic}} </textarea>
+              </div>
+            </div>
+
+           
+            <div class="form-group row">
+              <label for="Contact" class="col-4 col-form-label">Contact</label>
+              <div class="col-12">
+                <input class="form-control" type="text" value="" id={{form.contact}}>
+              </div>
+            </div>
+
+            <!-- Tdate in date format-->
+            <div class="form-group row">
+              <label for="Tdate" class="col-4 col-form-label">Tdate</label>
+              <div class="col-12">
+                <input class="form-control" type="date" value="" id={{form.tdate}}> required/>
+              </div>
+            </div>
+
+            <!-- Desp use editiable field-->
+            <div class="form-group row">
+              <label for="Desp" class="col-4 col-form-label">Desp</label>
+              <div class="col-12">
+                <textarea class="form-control" id={{form.desp}} rows="5"></textarea>
+              </div>
+            </div>
+
+
+           
+
+            
+
+           
+
+            <button type="submit" class="btn btn-primary" value="">Submit</button> 
+
+            <!--  <input type="submit" value="" -->
+            </form> 
+            <!-- End of Fields for the Technical -->
+
+          </div>
+        </div>
+      </div>
+
+
+
+        <!-- End of the form fields-->
+
+
+
+{%  endblock %}

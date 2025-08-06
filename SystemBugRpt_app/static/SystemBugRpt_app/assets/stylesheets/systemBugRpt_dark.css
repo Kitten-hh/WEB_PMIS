@@ -1,0 +1,1234 @@
+.text_deepblue {
+    color: #346cb0;
+}
+
+.card {
+    margin-bottom: 6px;
+}
+
+.tools_wrap div.border-bottom {
+    border-bottom: 0 !important;
+}
+
+.card.toolbox {
+    background-color: transparent;
+    margin-bottom: 0;
+    box-shadow: none;
+    padding: 0 !important;
+}
+
+.search_list>div:not(.btn) {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.mx_5 {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.customModal .modal-body {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.customModal .modal-footer {
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+}
+
+.select2-container--open .select2-results__option {
+    word-wrap: break-word;
+}
+
+.search_list:not(#sessionMgnTaskSearchCollapse):not(.lang_en) .col-form-label {
+    min-width: 132px;
+}
+
+.search_list:not(#sessionMgnTaskSearchCollapse).lang_en .col-form-label {
+    min-width: 132px;
+}
+
+.search_list .productidWrap>.dropdown {
+    width: 100%;
+}
+
+.search_list .tile.bg-success {
+    flex-shrink: 0;
+    margin-left: .5rem;
+}
+
+#otherDept .search_list .tile.bg-success {
+    margin-left: 0;
+    margin-top: 2px;
+}
+
+.systemBugRptCard {
+    border-radius: 0;
+    border-bottom: 0;
+}
+
+.systemBugRptCard .admrpDetail .rightPane,
+.systemBugRptCard .manageMemberInfo .rightPane {
+    border-left: 1px solid rgba(34, 34, 48, .1);
+}
+
+/* dataTable */
+.LPDataTable table.dataTable thead .sorting:before {
+    content: "\f0de" !important;
+    right: 0.5em !important;
+}
+
+.LPDataTable table.dataTable thead .sorting:after {
+    content: "\f0dd" !important;
+}
+
+.systemBugRptCard .LPDataTable table.dataTable th,
+.associatedTaskModals .LPDataTable table.dataTable th {
+    white-space: nowrap;
+}
+
+.admrpDetail .search_list,
+.manageMemberInfo .search_list {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+#computerDept>.search_list.lang_en .col-form-label {
+    min-width: 146px;
+}
+
+.admrpDetail .search_list .col-form-label,
+.manageMemberInfo .search_list .col-form-label,
+#taskDetailSetting .search_list .col-form-label,
+#taskSimpleSetup .search_list .col-form-label {
+    padding-left: 0;
+}
+
+.admrpDetail .leftPane .search_list :nth-last-child(4) {
+    margin-top: -.5rem;
+}
+
+.admrpDetail .rightPane .nav-tabs .nav-link,
+.manageMemberInfo .nav-tabs .nav-link {
+    padding: .8rem 1rem;
+}
+
+/* normal */
+.search_list .select2-container,
+.search_list input[type="date"] {
+    min-width: 0;
+}
+
+.search_list input[type="date"] {
+    padding: .375rem .5rem;
+}
+
+.cardWrap {
+    width: 148px;
+    height: 148px;
+}
+
+.systemBugRptCard .admrpDetail .leftPane .card.card-reflow,
+.systemBugRptCard>.card-header li.tools_wrap .card.toolbox {
+    border: 0;
+}
+
+/* Admrp_list */
+#Admrp_list>.LPDataTable .dataTables_scrollBody label {
+    margin-bottom: 0;
+}
+
+/* manageMemberInfo */
+.manageMemberInfo .leftPane .search_list:not(.lang_en) .col-form-label {
+    min-width: 80px;
+}
+
+.manageMemberInfo .rightPane .search_list .form-group {
+    margin-bottom: .5rem;
+}
+
+.manageMemberInfo .rightPane .search_list:not(.lang_en) .col-form-label {
+    min-width: auto;
+}
+
+.manageMemberInfo .leftPane .search_list.lang_en .form-group:nth-child(6),
+.manageMemberInfo .leftPane .search_list.lang_en .form-group:nth-last-child(4) {
+    order: 1;
+}
+
+.manageMemberInfo .leftPane .search_list.lang_en .form-group:nth-last-child(2) {
+    order: 2;
+}
+
+.manageMemberInfo .leftPane .search_list.lang_en .form-group:nth-last-child(3),
+.manageMemberInfo .leftPane .search_list.lang_en .form-group:nth-last-child(5),
+.manageMemberInfo .leftPane .search_list.lang_en .form-group:last-child {
+    order: 3;
+}
+
+/* Task */
+#taskDetailSetting .search_list:not(.lang_en) .col-form-label {
+    min-width: 66px;
+}
+
+#setDefaultProject .search_list .col-form-label {
+    min-width: auto;
+}
+
+/* taskSimpleSetup */
+#taskSimpleSetup .search_list .col-form-label {
+    min-width: auto;
+}
+
+#taskSimpleSetup .search_list:not(.lang_en) .col-form-label.V_Task_contact_label {
+    min-width: 66px;
+}
+
+#taskSimpleSetup .search_list.lang_en .col-form-label.V_Task_task_label {
+    min-width: 62px;
+}
+
+/*  */
+.systemBugRptCard .filelist .list-group-item-title {
+    line-height: normal;
+}
+
+.systemBugRptCard>.card-header .card-header-tabs.nav-tabs .tools_wrap>.order-button {
+    margin-right: 2px;
+}
+
+@media (max-width: 649.98px),
+(min-width: 768px) and (max-width: 849.98px) {
+    .systemBugRptCard>.card-header .card-header-tabs.nav-tabs .nav-link {
+        padding: 1rem .5rem;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .admrpDetail .leftPane .search_list .col-form-label {
+        min-width: 90px;
+    }
+    
+    .admrpDetail .leftPane .search_list.lang_en .col-form-label {
+        min-width: 113.6px;
+    }
+
+    .admrpDetail .search_list.lang_en .fileinput-button {
+        margin-right: 0 !important;
+    }
+
+    .admrpDetail .search_list.lang_en :not(.admrp_addAttachment) .fileinput-button>i,
+    .admrpDetail .search_list.lang_en [name="showFiles"]>i {
+        display: none;
+    }
+
+    .manageMemberInfo .leftPane .search_list:not(.lang_en) .col-form-label {
+        min-width: 106px;
+    }
+
+    .manageMemberInfo .rightPane .search_list:not(.lang_en) .col-form-label {
+        min-width: 74px;
+    }
+
+    .manageMemberInfo .leftPane .search_list.lang_en .col-form-label {
+        min-width: 187px;
+    }
+    .manageMemberInfo .rightPane .search_list.lang_en .col-form-label {
+        min-width: 110.5px;
+    }
+    
+    /* 手機版新增上報界面 */
+    .isNewSIR .admrpDetail .leftPane {
+        border: 1px solid rgba(34, 34, 48, .1);
+        border-radius: .25rem;
+    }
+
+    .isNewSIR .admrpDetail .leftPane .search_list {
+        margin-bottom: 0 !important;
+        margin-top: 1rem;
+    }
+
+    .isNewSIR .admrpDetail .leftPane .search_list .form-group {
+        margin-bottom: 1rem;
+    }
+
+    .isNewSIR .admrpDetail .query_issueDescp {
+        order: -1;
+    }
+
+    .isNewSIR .admrpDetail .leftPane .search_list .query_issueType,
+    .isNewSIR .admrpDetail .leftPane .search_list .admrp_addAttachment {
+        order: 1;
+        margin-bottom: .5rem !important;
+    }
+
+    .isNewSIR .admrpDetail .leftPane .search_list .query_issueType,
+    .isNewSIR .admrpDetail .leftPane .search_list .form-group:nth-child(6) {
+        flex: 0 0 52%;
+        max-width: 52%;
+    }
+
+    .isNewSIR .admrpDetail .leftPane .search_list:not(.lang_en) .admrp_addAttachment .fileinput-button {
+        width: 100%;
+    }
+    .isNewSIR .admrpDetail .leftPane .search_list .admrp_addAttachment .fileinput-button {
+        height: calc(1.5em + .75rem + 2px);
+        padding: .375rem .75rem;
+        font-size: 1rem;
+    }
+
+    .isNewSIR .admrpDetail .leftPane h5.text_deepblue,
+    .isNewSIR .admrpDetail .leftPane .search_list:not(.lang_en) .admrp_addAttachment .fileinput-button>span {
+        display: none;
+    }
+
+    .isNewSIR .admrpDetail .leftPane .search_list .admrp_addAttachment,
+    .isNewSIR .admrpDetail .leftPane .search_list .form-group:nth-child(7) {
+        flex: 0 0 48%;
+        max-width: 48%
+    }
+    .isNewSIR .admrpDetail .leftPane .search_list.lang_en .admrp_addAttachment,
+    .isNewSIR .admrpDetail .leftPane .search_list.lang_en .query_issueType {
+        flex: 0 0 100%;
+        max-width: 100%
+    }
+    .isNewSIR .admrpDetail .leftPane .search_list.lang_en .query_issueType {
+        margin-bottom: 1rem !important;
+    }
+
+    .isNewSIR .admrpDetail .leftPane .search_list .modal-body {
+        order: 1;
+    }
+
+    .isNewSIR .admrpDetail .leftPane .search_list:not(.lang_en) .form-group:not(:nth-child(7)):not(.admrp_addAttachment) .col-form-label {
+        min-width: 74px;
+    }
+
+    .isNewSIR .admrpDetail .leftPane .search_list .form-group .col-form-label {
+        min-width: 78.5px;
+    }
+    .isNewSIR .admrpDetail .leftPane .search_list.lang_en .form-group .col-form-label {
+        min-width: 90.3px;
+    }
+    .isNewSIR .admrpDetail .leftPane .search_list:not(.lang_en) .form-group.admrp_addAttachment .col-form-label {
+        min-width: 90px;
+    }
+    .isNewSIR .admrpDetail .leftPane .search_list.lang_en .form-group:nth-child(7) .col-form-label {
+        min-width: auto;
+    }
+
+    .isNewSIR .admrpDetail .leftPane>.card.card-reflow {
+        margin-bottom: 10px;
+    }
+
+    /* 手機版新增相關圖片時樣式 */
+    .isNewSIR .admrpDetail .leftPane .UploadImage .imageupload-list-card:empty+.imageupload-card {
+        width: 100%;
+        height: 120px;
+        line-height: 128px;
+    }
+
+    /* 處理結果樣式 */
+    .isNewSIR .admrpDetail .rightPane {
+        border: 1px solid rgba(34, 34, 48, .1);
+        border-radius: .25rem;
+    }
+
+    .isNewSIR .admrpDetail .rightPane>.nav-tabs>li.nav-item,
+    .isNewSIR .admrpDetail .rightPane .computerDept,
+    .isNewSIR .admrpDetail .rightPane .results_otherDept,
+    .isNewSIR .admrpDetail .rightPane .results_otherDept+p.text_deepblue,
+    .isNewSIR .admrpDetail .rightPane div:last-child.LPDataTable {
+        display: none;
+    }
+
+    .isNewSIR .admrpDetail .rightPane #otherDept .search_list>div:not(:first-child):not(:nth-child(2)) {
+        display: none !important;
+    }
+
+    .isNewSIR .admrpDetail .rightPane #otherDept .search_list>div:first-child {
+        flex: 0 0 42%;
+        max-width: 42%
+    }
+
+    .isNewSIR .admrpDetail .rightPane #otherDept .search_list>div:nth-child(2) {
+        flex: 0 0 58%;
+        max-width: 58%
+    }
+
+    .isNewSIR .admrpDetail .rightPane .search_list .form-group:first-child .col-form-label,
+    .isNewSIR .admrpDetail .rightPane .search_list .form-group:nth-child(2) .col-form-label {
+        min-width: auto !important;
+    }
+
+    .isNewSIR .admrpDetail .rightPane .search_list .form-group:nth-child(2) {
+        order: -1;
+    }
+}
+
+@media (min-width: 380px) and (max-width: 575.98px), (min-width: 576px) and (max-width: 991.98px), (min-width: 1400px) and (max-width: 1599.98px)  {
+    #otherDept .search_list .tile.bg-success {
+        margin-right: 5px;
+    }
+}
+
+@media (min-width: 576px) {
+    .admrpDetail .leftPane .search_list:not(.lang_en) .col-form-label {
+        min-width: 66px;
+    }
+
+    .admrpDetail .leftPane .search_list.lang_en .col-form-label {
+        min-width: 68px;
+    }
+}
+
+@media (min-width: 768px) {
+    .admrpDetail .rightPane .search_list:not(.lang_en) .col-form-label {
+        min-width: 66px;
+    }
+
+    #computerDept .search_list:not(.lang_en) .col-form-label {
+        min-width: 94px;
+    }
+
+    .manageMemberInfo .leftPane .search_list.lang_en .col-form-label {
+        min-width: 70px;
+    }
+    
+    .admrpDetail .rightPane .results_otherDept.search_list:not(.lang_en) .col-form-label {
+        min-width: 94px;
+    }
+
+    .detailInfo:not(.lang_en) .tab-content .sqlScriptRow>.form-group:nth-child(2)>label,
+    .detailInfo:not(.lang_en) .tab-content .sqlScriptRow>.form-group:nth-child(3)>label {
+        min-width: 68.5px;
+    }
+
+    .detailInfo.lang_en .tab-content .sqlScriptRow>.form-group:nth-child(2)>label,
+    .detailInfo.lang_en .tab-content .sqlScriptRow>.form-group:nth-child(3)>label {
+        min-width: 95px;
+    }
+    
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .admrpDetail .leftPane .search_list:not(.lang_en) :nth-child(3n+1) .col-form-label {
+        min-width: 90px;
+    }
+
+    .admrpDetail .leftPane .search_list.lang_en .col-form-label {
+        min-width: 76px;
+    }
+
+    .admrpDetail .leftPane .search_list.lang_en :nth-child(1) .col-form-label,
+    .admrpDetail .leftPane .search_list.lang_en :nth-child(4) .col-form-label,
+    .admrpDetail .leftPane .search_list.lang_en :nth-child(7) .col-form-label {
+        min-width: 90.5px;
+    }
+    .admrpDetail .leftPane .search_list.lang_en :nth-child(2) .col-form-label,
+    .admrpDetail .leftPane .search_list.lang_en :nth-child(5) .col-form-label {
+        min-width: 113.6px;
+    }
+
+    .manageMemberInfo .leftPane .search_list:not(.lang_en) .col-form-label {
+        min-width: 90px;
+    }
+
+    .manageMemberInfo .leftPane .search_list:not(.lang_en) :nth-child(2n) .col-form-label {
+        min-width: 106px;
+    }
+
+    .manageMemberInfo .leftPane .search_list.lang_en .form-group:nth-last-child(2) {
+        order: 1;
+    }
+
+    .manageMemberInfo .leftPane .search_list.lang_en .form-group:nth-child(6),
+    .manageMemberInfo .leftPane .search_list.lang_en .form-group:nth-last-child(3),
+    .manageMemberInfo .leftPane .search_list.lang_en .form-group:nth-last-child(4) {
+        order: 2;
+    }
+
+    .manageMemberInfo .leftPane .search_list.lang_en .col-form-label {
+        min-width: 90.3px;
+    }
+
+    .manageMemberInfo .leftPane .search_list.lang_en .form-group:nth-child(6) .col-form-label {
+        min-width: 165px;
+    }
+
+    .manageMemberInfo .leftPane .search_list.lang_en .form-group:nth-last-child(4) .col-form-label {
+        min-width: 187px;
+    }
+    
+    .manageMemberInfo .leftPane .search_list.lang_en .form-group:nth-child(2) .col-form-label,
+    .manageMemberInfo .leftPane .search_list.lang_en .form-group:nth-child(4) .col-form-label,
+    .manageMemberInfo .leftPane .search_list.lang_en .form-group:nth-child(7) .col-form-label,
+    .manageMemberInfo .leftPane .search_list.lang_en .form-group:nth-child(9) .col-form-label,
+    .manageMemberInfo .leftPane .search_list.lang_en .form-group:nth-child(11) .col-form-label,
+    .manageMemberInfo .leftPane .search_list.lang_en .form-group:nth-child(14) .col-form-label {
+        min-width: 113.6px;
+    }
+}
+
+@media (min-width: 576px) and (max-width: 991.98px) {
+    #otherDept>.search_list.lang_en .form-group:not(.query_relationTask):not(:nth-last-child(2)):not(:last-child) {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+
+    #otherDept>.search_list.lang_en .form-group.query_relationTask {
+        flex-basis: 0;
+        flex-grow: 1;
+        max-width: 100%;
+    }
+
+    .manageMemberInfo .rightPane .search_list.lang_en .col-form-label {
+        min-width: auto;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .admrpDetail .rightPane .search_list:not(.lang_en) .col-form-label {
+        min-width: 74px;
+    }
+
+    #computerDept .search_list:not(.lang_en) .col-form-label {
+        min-width: 106px;
+    }
+
+    #otherDept>.search_list.lang_en .col-form-label {
+        min-width: 132px;
+    }
+
+    #computerDept .search_list.lang_en .col-form-label,
+    .results_otherDept.search_list.lang_en .col-form-label {
+        min-width: 169px;
+    }
+}
+/* <-- 頂部tab標籤的寬度自適應 --> */
+@media (max-width: 767.98px) {
+    .systemBugRptCard .card-header-tabs .tools_wrap {
+        width: 100%;
+        order: -1;
+        margin-top: .5rem;
+    }
+
+    .systemBugRptCard>.card-header .card-header-tabs.nav-tabs .nav-link {
+        padding: .5rem;
+    }
+}
+@media (min-width: 768px) and (max-width: 959.98px) {
+    .lang_en .systemBugRptCard .card-header-tabs .tools_wrap {
+        width: 100%;
+        order: -1;
+        margin-top: .5rem;
+    }
+}
+/* <!-- 頂部tab標籤的寬度自適應 --> */
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .admrpDetail .leftPane .search_list:not(.lang_en) :nth-child(3n+1) .col-form-label {
+        min-width: 80px;
+    }
+
+    .admrpDetail .leftPane .search_list.lang_en :nth-child(1) .col-form-label,
+    .admrpDetail .leftPane .search_list.lang_en :nth-child(4) .col-form-label,
+    .admrpDetail .leftPane .search_list.lang_en :nth-child(7) .col-form-label {
+        min-width: 80.6px;
+    }
+    .admrpDetail .leftPane .search_list.lang_en :nth-child(2) .col-form-label,
+    .admrpDetail .leftPane .search_list.lang_en :nth-child(5) .col-form-label {
+        min-width: 100.7px;
+    }
+
+    .results_otherDept.search_list.lang_en .col-form-label {
+        min-width: 150px;
+    }
+
+    .manageMemberInfo .leftPane .search_list.lang_en .form-group:nth-last-child(2) {
+        order: 1;
+    }
+
+    .manageMemberInfo .leftPane .search_list.lang_en .form-group:nth-child(6),
+    .manageMemberInfo .leftPane .search_list.lang_en .form-group:nth-last-child(3),
+    .manageMemberInfo .leftPane .search_list.lang_en .form-group:nth-last-child(4) {
+        order: 2;
+    }
+
+    .manageMemberInfo .leftPane .search_list.lang_en .form-group .col-form-label {
+        min-width: 80.5px;
+    }
+
+    .manageMemberInfo .leftPane .search_list.lang_en .form-group:nth-child(6) .col-form-label {
+        min-width: 146px;
+    }
+
+    .manageMemberInfo .leftPane .search_list.lang_en .form-group:nth-last-child(4) .col-form-label {
+        min-width: 165px;
+    }
+    
+    .manageMemberInfo .leftPane .search_list.lang_en .form-group:nth-child(2) .col-form-label,
+    .manageMemberInfo .leftPane .search_list.lang_en .form-group:nth-child(4) .col-form-label,
+    .manageMemberInfo .leftPane .search_list.lang_en .form-group:nth-child(7) .col-form-label,
+    .manageMemberInfo .leftPane .search_list.lang_en .form-group:nth-child(9) .col-form-label,
+    .manageMemberInfo .leftPane .search_list.lang_en .form-group:nth-child(11) .col-form-label,
+    .manageMemberInfo .leftPane .search_list.lang_en .form-group:nth-child(14) .col-form-label {
+        min-width: 100.7px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1059.98px) {
+    .lang_en .systemBugRptCard>.card-header .card-header-tabs.nav-tabs .nav-link {
+        padding: .5rem;
+    }
+}
+/* <-- 頂部tab標籤的寬度自適應 --> */
+@media (min-width: 768px) and (max-width: 1099.98px) {
+    .systemBugRptCard>.card-header .card-header-tabs.nav-tabs .tools_wrap .order-button {
+        height: calc(1.5em + .5rem + 2px);
+        padding: .25rem .5rem;
+        font-size: .875rem;
+        line-height: 1.5;
+        border-radius: .2rem;
+    }
+}
+/* <!-- 頂部tab標籤的寬度自適應 --> */
+
+@media (max-width: 991.98px) {
+    .admrpDetail .rightPane,
+    .manageMemberInfo .rightPane {
+        margin-top: 1rem;
+    }
+
+    .admrpDetail .rightPane>h5,
+    .manageMemberInfo .rightPane>h5 {
+        margin-top: .5rem;
+    }
+}
+
+@media (min-width: 992px) {
+    .associatedTaskModals .modal-dialog {
+        max-width: 70%;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1399.98px) {
+    .admrpDetail .leftPane .search_list:not(.lang_en) :nth-child(odd) .col-form-label {
+        min-width: 80px;
+    }
+
+    #otherDept .search_list .tile.bg-success {
+        margin-right: 5px;
+    }
+
+    .admrpDetail .leftPane .search_list.lang_en :nth-child(1) .col-form-label,
+    .admrpDetail .leftPane .search_list.lang_en :nth-child(3) .col-form-label,
+    .admrpDetail .leftPane .search_list.lang_en :nth-child(5) .col-form-label,
+    .admrpDetail .leftPane .search_list.lang_en :nth-child(7) .col-form-label {
+        min-width: 80.6px;
+    }
+    .admrpDetail .leftPane .search_list.lang_en :nth-child(2) .col-form-label,
+    .admrpDetail .leftPane .search_list.lang_en :nth-child(4) .col-form-label,
+    .admrpDetail .leftPane .search_list.lang_en :nth-child(6) .col-form-label  {
+        min-width: 100.7px;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    #otherDept>.search_list.lang_en .form-group:not(:nth-last-child(3)),
+    #computerDept .search_list.lang_en .form-group {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    #otherDept>.search_list.lang_en .form-group:nth-last-child(3) {
+        flex-basis: 0;
+        flex-grow: 1;
+        max-width: 100%;
+    }
+
+    #otherDept>.search_list.lang_en .form-group .col-form-label,
+    #computerDept .search_list.lang_en .form-group .col-form-label,
+    .results_otherDept.lang_en .col-form-label {
+        min-width: 150px;
+    }
+
+    .admrpDetail .search_list.lang_en .fileinput-button {
+        margin-right: 0 !important;
+    }
+
+    .admrpDetail .search_list.lang_en .fileinput-button>i,
+    .admrpDetail .search_list.lang_en [name="showFiles"]>i {
+        display: none;
+    }
+
+    .manageMemberInfo .leftPane .search_list:not(.lang_en) .col-form-label {
+        min-width: 94px;
+    }
+
+    .manageMemberInfo .rightPane .search_list:not(.lang_en) .col-form-label {
+        min-width: 66px;
+    }
+
+    .manageMemberInfo .leftPane .search_list.lang_en .form-group .col-form-label {
+        min-width: 165px;
+    }
+
+    .manageMemberInfo .rightPane .search_list.lang_en .form-group .col-form-label {
+        min-width: auto;
+    }
+
+    .manageMemberInfo .rightPane .search_list.lang_en .form-group:nth-child(2) .col-form-label {
+        min-width: 61.5px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .manageMemberInfo .rightPane .search_list.lang_en .form-group .col-form-label {
+        min-width: auto;
+    }
+}
+
+@media (min-width: 1200px) and (max-width: 1599.98px) {
+
+    #otherDept>.search_list.lang_en>div:not(:last-child):not(:nth-last-child(2)):not(.query_relationTask):not(.query_relationTaskTile),
+    #computerDept .search_list.lang_en .form-group {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+
+    #otherDept>.search_list.lang_en .query_relationTask {
+        flex-basis: 0;
+        flex-grow: 1;
+        max-width: 100%;
+    }
+
+    #otherDept>.search_list.lang_en .form-group .col-form-label {
+        min-width: 117px;
+    }
+
+    #computerDept .search_list.lang_en .form-group .col-form-label {
+        min-width: 127px;
+    }
+
+    #computerDept .search_list.lang_en .form-group .col-form-label,
+    .results_otherDept.lang_en .col-form-label {
+        min-width: 150px;
+    }
+}
+
+@media (min-width: 1200px) and (max-width: 1399.98px) {
+    .lang_en .systemBugRptCard>.card-header .tools_wrap .order-button>span {
+        display: none !important;
+    }
+
+    .manageMemberInfo .leftPane .search_list.lang_en .form-group:nth-last-child(2) {
+        order: 1;
+    }
+
+    .manageMemberInfo .leftPane .search_list.lang_en .form-group:nth-child(6),
+    .manageMemberInfo .leftPane .search_list.lang_en .form-group:nth-last-child(3),
+    .manageMemberInfo .leftPane .search_list.lang_en .form-group:nth-last-child(4) {
+        order: 2;
+    }
+
+    .manageMemberInfo .leftPane .search_list.lang_en .form-group .col-form-label {
+        min-width: 80.5px;
+    }
+
+    .manageMemberInfo .leftPane .search_list.lang_en .form-group:nth-child(6) .col-form-label {
+        min-width: 146px;
+    }
+
+    .manageMemberInfo .leftPane .search_list.lang_en .form-group:nth-last-child(4) .col-form-label {
+        min-width: 165px;
+    }
+    
+    .manageMemberInfo .leftPane .search_list.lang_en .form-group:nth-child(2) .col-form-label,
+    .manageMemberInfo .leftPane .search_list.lang_en .form-group:nth-child(4) .col-form-label,
+    .manageMemberInfo .leftPane .search_list.lang_en .form-group:nth-child(7) .col-form-label,
+    .manageMemberInfo .leftPane .search_list.lang_en .form-group:nth-child(9) .col-form-label,
+    .manageMemberInfo .leftPane .search_list.lang_en .form-group:nth-child(11) .col-form-label,
+    .manageMemberInfo .leftPane .search_list.lang_en .form-group:nth-child(14) .col-form-label {
+        min-width: 100.7px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px),
+(min-width: 1200px) and (max-width: 1399.98px) {
+    .manageMemberInfo .leftPane .search_list:not(.lang_en) :nth-child(2n) .col-form-label {
+        min-width: 94px;
+    }
+}
+
+@media (min-width: 1600px) and (max-width: 1799.98px) {
+    #otherDept>.search_list.lang_en>div:not(:nth-last-child(1)):not(:nth-last-child(2)):not(.query_relationTaskTile) {
+        flex: 0 0 33.333333%;
+        max-width: 33.333333%;
+    }
+
+    #otherDept>.search_list.lang_en .form-group:not(:nth-child(1)):not(:nth-child(4)):not(:nth-child(7)):not(:nth-child(10)):not(:nth-child(12)) .col-form-label {
+        min-width: 82px;
+    }
+
+    #otherDept>.search_list.lang_en .form-group:nth-child(1) .col-form-label,
+    #otherDept>.search_list.lang_en .form-group:nth-child(4) .col-form-label,
+    #otherDept>.search_list.lang_en .form-group:nth-child(7) .col-form-label,
+    #otherDept>.search_list.lang_en .form-group:nth-child(10) .col-form-label,
+    #otherDept>.search_list.lang_en .form-group:nth-child(12) .col-form-label {
+        min-width: 111px;
+    }
+}
+
+@media (min-width: 1400px) and (max-width: 1799.98px) {
+    .admrpDetail .leftPane .search_list:not(.lang_en) .form-group:nth-child(3n+1) .col-form-label {
+        min-width: 80px;
+    }
+
+    .admrpDetail .leftPane .search_list:not(.lang_en) :nth-child(3) .col-form-label {
+        min-width: 66px;
+    }
+
+    .admrpDetail .leftPane .search_list.lang_en :nth-child(1) .col-form-label,
+    .admrpDetail .leftPane .search_list.lang_en :nth-child(4) .col-form-label,
+    .admrpDetail .leftPane .search_list.lang_en :nth-child(7) .col-form-label {
+        min-width: 80.5px;
+    }
+    .admrpDetail .leftPane .search_list.lang_en :nth-child(2) .col-form-label,
+    .admrpDetail .leftPane .search_list.lang_en :nth-child(5) .col-form-label {
+        min-width: 100.7px;
+    }
+
+    .manageMemberInfo .leftPane .search_list:not(.lang_en) :nth-child(3n-1) .col-form-label {
+        min-width: 94px;
+    }
+
+    .manageMemberInfo .leftPane .search_list:not(.lang_en) :nth-child(3n) .col-form-label {
+        min-width: auto;
+    }
+
+    .manageMemberInfo .leftPane .search_list.lang_en .form-group:nth-last-child(2) {
+        order: 1;
+    }
+
+    .manageMemberInfo .leftPane .search_list.lang_en .form-group:nth-last-child(3) {
+        order: 2;
+        flex: 0 0 66.666667%;
+        max-width: 66.666667%
+    }
+
+    .manageMemberInfo .leftPane .search_list.lang_en .form-group:nth-child(6),
+    .manageMemberInfo .leftPane .search_list.lang_en .form-group:nth-last-child(4) {
+        order: 3;
+    }
+
+    .manageMemberInfo .leftPane .search_list.lang_en .form-group:nth-child(6),
+    .manageMemberInfo .leftPane .search_list.lang_en .form-group:nth-last-child(4),
+    .manageMemberInfo .leftPane .search_list.lang_en .form-group:nth-last-child(5) {
+        flex: 0 0 50%;
+        max-width: 50%
+    }
+
+    .manageMemberInfo .leftPane .search_list.lang_en .form-group:nth-child(6) .col-form-label {
+        min-width: 138px;
+    }
+    
+    .manageMemberInfo .leftPane .search_list.lang_en .form-group:nth-child(2) .col-form-label,
+    .manageMemberInfo .leftPane .search_list.lang_en .form-group:nth-child(5) .col-form-label,
+    .manageMemberInfo .leftPane .search_list.lang_en .form-group:nth-child(9) .col-form-label {
+        min-width: 100.7px;
+    }
+    .manageMemberInfo .leftPane .search_list.lang_en .form-group:nth-child(3) .col-form-label,
+    .manageMemberInfo .leftPane .search_list.lang_en .form-group:nth-child(7) .col-form-label,
+    .manageMemberInfo .leftPane .search_list.lang_en .form-group:nth-child(10) .col-form-label {
+        min-width: 80.5px;
+    }
+}
+
+@media (min-width: 1600px) {
+    .results_otherDept.lang_en .col-form-label {
+        min-width: 140px;
+    }
+
+    .results_otherDept.lang_en :nth-child(2n) .col-form-label {
+        min-width: 150px;
+    }
+
+    #computerDept>.search_list:not(.lang_en) :nth-child(3) .col-form-label,
+    #computerDept>.search_list:not(.lang_en) :nth-child(6) .col-form-label,
+    #computerDept>.search_list:not(.lang_en) :nth-child(9) .col-form-label {
+        min-width: 80px;
+    }
+
+    #computerDept>.search_list.lang_en :nth-child(1) .col-form-label,
+    #computerDept>.search_list.lang_en :nth-child(4) .col-form-label,
+    #computerDept>.search_list.lang_en :nth-child(7) .col-form-label,
+    #computerDept>.search_list.lang_en :nth-child(10) .col-form-label {
+        min-width: 127px;
+    }
+    
+    #otherDept .search_list .tile.bg-success {
+        margin-left: .5rem;
+    }
+}
+
+@media (min-width: 1800px) {
+    .admrpDetail .leftPane .search_list:not(.lang_en) :nth-child(3) .col-form-label {
+        min-width: 80px;
+    }
+    .admrpDetail .leftPane .search_list.lang_en :nth-child(1) .col-form-label,
+    .admrpDetail .leftPane .search_list.lang_en :nth-child(5) .col-form-label {
+        min-width: 81px;
+    }
+    .admrpDetail .leftPane .search_list.lang_en :nth-child(2) .col-form-label,
+    .admrpDetail .leftPane .search_list.lang_en :nth-child(6) .col-form-label {
+        min-width: 100.7px;
+    }
+
+    #otherDept>.search_list.lang_en .col-form-label {
+        min-width: 66px;
+    }
+
+    #otherDept>.search_list.lang_en .form-group:nth-child(3) .col-form-label,
+    #otherDept>.search_list.lang_en .form-group:nth-child(7) .col-form-label,
+    #otherDept>.search_list.lang_en .form-group:nth-child(11) .col-form-label {
+        min-width: 126px;
+    }
+
+    /* #otherDept>.search_list.lang_en .form-group:nth-child(12) .col-form-label {
+        min-width: 140px;
+    } */
+
+    #otherDept>.search_list.lang_en :nth-child(1) .col-form-label,
+    #otherDept>.search_list.lang_en :nth-child(5) .col-form-label,
+    #otherDept>.search_list.lang_en :nth-child(9) .col-form-label,
+    #otherDept>.search_list.lang_en :nth-child(12) .col-form-label {
+        min-width: 75.5px;
+    }
+    #otherDept>.search_list.lang_en :nth-child(2) .col-form-label,
+    #otherDept>.search_list.lang_en :nth-child(6) .col-form-label,
+    #otherDept>.search_list.lang_en :nth-child(10) .col-form-label {
+        min-width: 98px;
+    }
+    #otherDept>.search_list.lang_en :nth-child(3) .col-form-label,
+    #otherDept>.search_list.lang_en :nth-child(7) .col-form-label {
+        min-width: 80.6px;
+    }
+
+    /* #otherDept>.search_list.lang_en :nth-last-child(6) .col-form-label {
+        min-width: 110.1px;
+    } */
+
+    .manageMemberInfo .leftPane .search_list:not(.lang_en) :nth-child(4n+2) .col-form-label {
+        min-width: 94px;
+    }
+
+    .manageMemberInfo .leftPane .search_list:not(.lang_en) :nth-child(4n+3) .col-form-label {
+        min-width: 80px;
+    }
+    .manageMemberInfo .leftPane .search_list.lang_en :nth-child(1) .col-form-label,
+    .manageMemberInfo .leftPane .search_list.lang_en :nth-child(5) .col-form-label,
+    .manageMemberInfo .leftPane .search_list.lang_en :nth-child(9) .col-form-label,
+    .manageMemberInfo .leftPane .search_list.lang_en :nth-child(14) .col-form-label {
+        min-width: 80.5px;
+    }
+
+    .manageMemberInfo .leftPane .search_list.lang_en .form-group:nth-child(6),
+    .manageMemberInfo .leftPane .search_list.lang_en .form-group:nth-last-child(5) {
+        flex: 0 0 41.666667%;
+        max-width: 41.666667%;
+    }
+
+    .manageMemberInfo .leftPane .search_list.lang_en .form-group:nth-last-child(3),
+    .manageMemberInfo .leftPane .search_list.lang_en .form-group:nth-last-child(4) {
+        flex: 0 0 33.333333%;
+        max-width: 33.333333%;
+    }
+
+    .manageMemberInfo .leftPane .search_list.lang_en .form-group:nth-child(6) .col-form-label {
+        min-width: 165px;
+    }
+
+    .manageMemberInfo .leftPane .search_list.lang_en .form-group:nth-last-child(3) .col-form-label,
+    .manageMemberInfo .leftPane .search_list.lang_en .form-group:nth-last-child(4) .col-form-label {
+        min-width: 145px;
+    }
+
+    .manageMemberInfo .leftPane .search_list.lang_en .form-group:nth-child(2) .col-form-label,
+    .manageMemberInfo .leftPane .search_list.lang_en .form-group:nth-child(7) .col-form-label {
+        min-width: 100.7px;
+    }
+
+    .manageMemberInfo .leftPane .search_list.lang_en .form-group:nth-child(4) .col-form-label,
+    .manageMemberInfo .leftPane .search_list.lang_en .form-group:nth-child(9) .col-form-label {
+        min-width: 80.6px;
+    }
+}
+
+.date-hidden {
+    color: transparent;
+}
+
+.page.lang_en .systemBugRptCard .order-button i.oi.oi-reload {
+    top: 2px;
+}
+
+.mr_40 {
+    margin-right: 40px;
+}
+
+@media (min-width: 2400px) {
+    .problemCategory {
+        flex: 0 0 25%;
+        max-width: 25%;
+    }
+}
+
+.flowChartWrap {
+    position: relative;
+}
+
+.flowChartWrap>.btn {
+    position: absolute;
+    top: 6px;
+    z-index: 10;
+}
+
+#Admrp_ai.active {
+    height: calc(100vh - 3.5rem - 160px);
+}
+
+#sessionMgnTaskSearchCollapse>.form-group:not(:last-child) {
+    display: flex;
+    align-items: center;
+}
+/* #sessionMgnTaskSearchCollapse:not(.lang_en)>.form-group label {
+    min-width: 52px;
+} */
+#sessionMgnTaskSearchCollapse:not(.lang_en)>.form-group .dropdown {
+    width: 100%;
+    position: static;
+}
+
+.dropdownMenuScroll.dropdown .dropdown-menu.show {
+    position: relative;
+    overflow-y: auto;
+    max-height: 263px;
+}
+
+@media (max-width: 575.98px) {
+    #sessionMgnTaskSearchCollapse:not(.lang_en)>.form-group label {
+        min-width: 58px;
+    }
+}
+
+@media (min-width: 2000px) {
+    #sessionMgnTaskSearchCollapse>.form-group:first-child {
+        flex: 0 0 8.333333%;
+        max-width: 8.333333%
+    }
+    #sessionMgnTaskSearchCollapse>.form-group:nth-child(2),
+    #sessionMgnTaskSearchCollapse>.form-group:nth-child(3) {
+        flex: 0 0 16.666667%;
+        max-width: 16.666667%;
+    }
+}
+
+@media (max-height: 992px) {
+    .page {
+        min-height: calc(100vh - 3.5rem);
+    }
+}
+
+
+/* new styles */
+.cardShadow {
+    border: 1px solid #edf2f959;
+    border-radius: 12px;
+    box-shadow: 0 0.75rem 1.5rem rgba(18, 38, 63, 0.03);
+}
+
+fieldset.taskSearch {
+    border-radius: 8px;
+    padding: .25rem .5rem;
+    border: 0.125rem solid rgba(231, 234, 243, .2);
+    border-radius: 0.5rem;
+}
+
+fieldset.taskSearch legend {
+    width: auto;
+    color: #d6d8e1;
+    font-size: 14px;
+    padding: 0em 0.5em;
+    font-weight: bold;
+}
+
+fieldset.taskSearch legend>.btn {
+    color: #d6d8e1;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+fieldset.taskSearch.card-expansion-item.expanded {
+    margin-bottom: .25rem;
+}
+
+fieldset.taskSearch.card-expansion-item:not(.expanded) {
+    border: 0;
+    background-color: transparent;
+    position: relative;
+    margin-top: .25rem;
+}
+
+fieldset.taskSearch.card-expansion-item:not(.expanded)::before {
+    content: "";
+    position: absolute;
+    top: -29px;
+    left: 0;
+    width: 100%;
+    height: 37px;
+    border-radius: .5rem;
+    border: 0.125rem solid rgba(231, 234, 243, .7);
+    pointer-events: none;
+}
+
+fieldset.taskSearch.card-expansion-item:not(.expanded)>legend {
+    padding-top: .25rem;
+}
+
+
+@media (min-width: 1500px) {
+
+    .detailInfo .tab-content .search_list>.form-group:nth-child(2),
+    .detailInfo .tab-content .search_list>.form-group:nth-child(3) {
+        flex: 0 0 10.5%;
+        max-width: 10.5%
+    }
+
+    .detailInfo:not(.lang_en) .tab-content .search_list>.form-group:nth-child(2)>label,
+    .detailInfo:not(.lang_en) .tab-content .search_list>.form-group:nth-child(6)>label {
+        min-width: 66px !important;
+    }
+
+    .detailInfo:not(.lang_en) .tab-content .search_list>.form-group:nth-child(3)>label,
+    .detailInfo.lang_en .tab-content .search_list>.form-group:nth-child(4)>label {
+        min-width: auto !important;
+    }
+
+    .detailInfo:not(.lang_en) .tab-content .search_list>.form-group:nth-child(1)>label,
+    .detailInfo:not(.lang_en) .tab-content .search_list>.form-group:nth-child(5)>label {
+        min-width: 52px;
+    }
+
+    .detailInfo.lang_en .tab-content .search_list>.form-group:nth-child(1)>label,
+    .detailInfo.lang_en .tab-content .search_list>.form-group:nth-child(5)>label {
+        min-width: 66.5px;
+    }
+
+    .detailInfo.lang_en .tab-content .search_list>.form-group:nth-child(2)>label,
+    .detailInfo.lang_en .tab-content .search_list>.form-group:nth-child(6)>label,
+    .detailInfo.lang_en .tab-content .search_list>.form-group:nth-child(8)>label,
+    .detailInfo.lang_en .tab-content .search_list>.form-group:nth-child(10)>label,
+    .detailInfo.lang_en .tab-content .search_list>.form-group:nth-child(12)>label {
+        min-width: 76px;
+    }
+}
+
+@media (min-width: 1500px) and (max-width: 1799.98px) {
+
+    .detailInfo .tab-content .search_list>.form-group:nth-child(1),
+    .detailInfo .tab-content .search_list>.form-group:nth-child(5) {
+        flex: 0 0 15%;
+        max-width: 15%
+    }
+
+    .detailInfo .tab-content .search_list>.form-group:nth-child(2) {
+        flex: 0 0 14.5%;
+        max-width: 14.5%
+    }
+
+    .detailInfo .tab-content .search_list>.form-group:nth-child(3) {
+        flex: 0 0 11.5%;
+        max-width: 11.5%
+    }
+
+    .detailInfo .tab-content .search_list>.form-group:nth-child(4) {
+        flex: 0 0 59%;
+        max-width: 59%
+    }
+
+    .detailInfo .tab-content .search_list>.form-group:nth-child(6) {
+        flex: 0 0 14.5%;
+        max-width: 14.5%
+    }
+
+    .detailInfo:not(.lang_en) .tab-content .search_list>.form-group:nth-child(1)>label,
+    .detailInfo:not(.lang_en) .tab-content .search_list>.form-group:nth-child(5)>label {
+        min-width: 52px;
+    }
+
+    .detailInfo.lang_en .tab-content .search_list>.form-group:nth-child(1)>label,
+    .detailInfo.lang_en .tab-content .search_list>.form-group:nth-child(5)>label {
+        min-width: 66.5px;
+    }
+
+    .detailInfo.lang_en .tab-content .search_list>.form-group:nth-child(2)>label,
+    .detailInfo.lang_en .tab-content .search_list>.form-group:nth-child(6)>label,
+    .lang_en.detailInfo .tab-content .search_list>:nth-child(8)>label,
+    .lang_en.detailInfo .tab-content .search_list>:nth-child(12)>label {
+        min-width: 76px;
+    }
+
+    .detailInfo.lang_en .tab-content .search_list>.form-group:nth-child(7)>label,
+    .detailInfo.lang_en .tab-content .search_list>.form-group:nth-child(11)>label {
+        min-width: 62px;
+    }
+
+    .detailInfo.lang_en .tab-content .search_list>.form-group:nth-child(3)>label,
+    .detailInfo.lang_en .tab-content .search_list>.form-group:nth-child(7)>label,
+    .lang_en.detailInfo .tab-content .search_list>:nth-child(9)>label,
+    .lang_en.detailInfo .tab-content .search_list>.form-group:nth-child(13)>label {
+        min-width: 70px;
+    }
+}
+
+@media (min-width: 1800px) and (max-width: 2199.98px) {
+    .detailInfo .tab-content .search_list>.form-group:nth-child(n+1):nth-child(-n+3),
+    .detailInfo .tab-content .search_list>.form-group:nth-child(n+5):nth-child(-n+6),
+    .detailInfo .tab-content .search_list>:nth-child(n+7):nth-child(-n+12):not(:nth-child(10)) {
+        flex: 0 0 11.5% !important;
+        max-width: 11.5% !important
+    }
+
+    .detailInfo .tab-content .search_list>.form-group:nth-child(4),
+    .detailInfo .tab-content .search_list>.form-group:nth-child(10) {
+        flex: 0 0 65.5%;
+        max-width: 65.5%
+    }
+
+    .detailInfo .tab-content .search_list>.query_condition>label {
+        min-width: auto !important;
+    }
+
+    .detailInfo .tab-content .search_list>.form-group:nth-last-child(4)>label {
+        min-width: 38px !important;
+    }
+
+    .detailInfo.lang_en .tab-content .search_list>.form-group:nth-child(3)>label,
+    .detailInfo.lang_en .tab-content .search_list>.form-group:nth-child(9)>label,
+    .detailInfo.lang_en .tab-content .search_list>.form-group:nth-last-child(4)>label {
+        min-width: 70px !important;
+    }
+
+    .detailInfo:not(.lang_en) .tab-content .search_list>.form-group:nth-child(7)>label {
+        min-width: 52px;
+    }
+    .detailInfo.lang_en .tab-content .search_list>.form-group:nth-child(7)>label {
+        min-width: 62px;
+    }
+    .detailInfo:not(.lang_en) .tab-content .search_list>.form-group:nth-child(8)>label {
+        min-width: 66px;
+    }
+
+}

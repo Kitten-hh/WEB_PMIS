@@ -1,0 +1,92 @@
+{% extends 'PMISLooper/index.html' %}
+{%load static %}
+{% load customer_filter %}
+{%block form_css%}
+{{block.super}}
+<style>
+    .quarterly  .row .col, .quarterly .row [class^=col-] {
+        border: 1px solid rgba(86, 61, 124, .2);
+    }
+    .quarterly .row {
+        min-height: 25px;
+    }
+    .quarterly .c-h {
+        min-height: 200px;
+    }
+    .quarterly .task {
+        padding: 5px 5px 5px 0px;
+    }
+
+    .quarterly .weekly .task {
+        padding: 5px 5px 5px 10px;
+    }
+</style>    
+{%endblock%}
+{%block content %}
+{{block.super}}
+<div class="quarterly">
+<div class="row">
+    <div class="col-12 col-md-2"></div>
+    <div class="col-12 col-md-10"></div>
+</div>
+<div class="row">
+    <div class="col-12 col-md-2"><h5>January</h5></div>
+    <div class="col-12 col-md-10 monthly_1">    
+        <div class="row m-1">
+            <div class="col">Week1</div>
+            <div class="col">Week2</div>
+            <div class="col">Week3</div>
+            <div class="col">Week4</div>
+            <div class="col">Week5</div>
+        </div>
+        <div class="row c-h m-1 monthly">
+        </div>
+        <div class="row c-h m-1 weekly">
+            <div class="col-12 col-md-6 mb-1 weekly_1"></div>
+            <div class="col-12 col-md-6 weekly_2"></div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12 col-md-2"><h5>February</h5></div>
+    <div class="col-12 col-md-10 monthly_2">    
+        <div class="row m-1">
+            <div class="col">Week1</div>
+            <div class="col">Week2</div>
+            <div class="col">Week3</div>
+            <div class="col">Week4</div>
+            <div class="col">Week5</div>
+        </div>
+        <div class="row c-h m-1 monthly">
+        </div>
+        <div class="row c-h m-1 weekly">
+            <div class="col-12 col-md-6 mb-1 weekly_1"></div>
+            <div class="col-12 col-md-6 weekly_2"></div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12 col-md-2"><h5>March</h5></div>
+    <div class="col-12 col-md-10 monthly_3">    
+        <div class="row m-1">
+            <div class="col">Week1</div>
+            <div class="col">Week2</div>
+            <div class="col">Week3</div>
+            <div class="col">Week4</div>
+            <div class="col">Week5</div>
+        </div>
+        <div class="row c-h m-1 monthly">
+        </div>
+        <div class="row c-h m-1 weekly">
+            <div class="col-12 col-md-6 mb-1 weekly_1"></div>
+            <div class="col-12 col-md-6 weekly_2"></div>
+        </div>
+    </div>
+</div>
+</div>
+{%endblock%}
+
+{%block form_js%}
+{{block.super}}
+<script src="{% static 'PMISLooper/assets/javascript/goal/overall/quarterly_goal_bak.js' %}" type="text/javascript"></script>
+{% endblock%}

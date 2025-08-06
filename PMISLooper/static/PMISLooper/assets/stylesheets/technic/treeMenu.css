@@ -1,0 +1,126 @@
+.sidebar_cust .vakata-context, .vakata-context ul {
+    z-index: 99999;
+}
+
+.sidebar_cust #splitter{
+    height: calc(100vh - 3.5rem) !important;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+.splitter_panel .vsplitter {
+    background-color: #333;
+    cursor: col-resize!important;
+    z-index: 900;
+    width: 4px;
+}  
+
+.sidebar_cust .sidebar-section {
+    padding: 0;
+}
+
+.sidebar_cust .card-header.sidebar_header {
+    padding: .5rem;
+    background: #9ac0e5;
+}
+
+.sidebar_cust .page-sidebar,.sidebar_cust #rightPane{
+    background: #E8F3FF;
+}
+
+.jstree-default-contextmenu {
+    z-index: 1300;
+}
+
+.ps-20{
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#Optiondiv .SWCombobox.col-auto {
+    padding-left: 5px;
+    padding-right: 5px;
+} 
+
+#Optiondiv .SWCombobox .caption {
+    margin-right: 8px;
+}
+
+.sidebar_cust #rightPane .jstree-container-ul {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 25px;
+}
+
+/* 三角形圖標 */
+.jstree-default .jstree-node, .jstree-default .jstree-icon {
+    background-image: none!important;
+}
+
+/* 文字換行 */
+.jstree-anchor {
+    display: inline;
+    white-space: pre-wrap!important;
+    vertical-align: baseline!important;
+}
+
+.vsplitter {
+    background: #cbe1fb url(./../../images/panev.gif) 0% 50%;
+}
+
+#techtree.jstree-default .jstree-wholerow.jstree-wholerow-clicked {
+    background: linear-gradient(to bottom, #dcf6ff 0, #bfd5ea 100%);
+}
+
+#techtree.jstree-default li[aria-level="3"] .jstree-wholerow.jstree-wholerow-clicked {
+    background: none;
+    box-shadow: none
+}
+
+#techtree.jstree-default .jstree-wholerow-ul li[aria-level="3"] .jstree-clicked {
+    background: linear-gradient(to bottom, #dcf6ff 0, #bfd5ea 100%);
+    box-shadow: none
+}
+
+@media screen and (max-width: 768px) {
+    .splitter_panel .vsplitter {
+        width: 4px;
+    }  
+}
+
+@media screen and (max-width: 576px) {
+    #Optiondiv {
+        padding: 0 8px;
+    }
+
+    #Optiondiv .SWCombobox .caption:nth-child(1) {
+        padding-left: 5px;
+    }
+}
+
+/* 滾動條樣式 */
+.sidebar_cust #rightPane::-webkit-scrollbar {
+	width: 8px;
+	height: 8px;
+}
+
+.sidebar_cust #rightPane::-webkit-scrollbar-track {
+	background: #f1f1f1;
+	border-radius: 6px;
+}
+
+.sidebar_cust #rightPane::-webkit-scrollbar-thumb {
+	background: #e0e1e5;
+	border-radius: 5px;
+}
+
+.sidebar_cust #rightPane::-webkit-scrollbar-thumb:hover {
+	background: #c0c0c0;
+}
+
+/* 右鍵菜單部分 */
+ul.jstree-default-contextmenu.vakata-context li>a .vakata-contextmenu-sep {
+    border-left: 0
+}

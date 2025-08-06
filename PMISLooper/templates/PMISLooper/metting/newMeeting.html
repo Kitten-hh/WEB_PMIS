@@ -1,0 +1,26 @@
+{% extends 'PMISLooper/vue_index.html' %}
+{%load static %}
+{% load render_bundle from webpack_loader %}
+
+{%block form_css%}
+{{block.super}}
+<link rel="stylesheet" type="text/css" href="{% static 'PMISLooper/assets/stylesheets/meeting/meeting.css' %}"  data-skin="default"/>  
+<link rel="stylesheet" type="text/css" href="{% static 'PMISLooper/assets/stylesheets/meeting/meeting_dark.css' %}"  data-skin="dark"/>
+{%endblock%}
+
+{% block content%}
+{{block.super}}
+
+{%endblock%}   
+
+
+{%block form_js%}
+{{block.super}}
+{% render_bundle 'PMISLooper/dist/javascript/newMeeting' %} 
+<script>
+    $(function () {
+        $("title").html(gettext('Meeting'));
+    });
+</script>
+
+{%endblock%}     

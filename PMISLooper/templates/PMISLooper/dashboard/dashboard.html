@@ -1,0 +1,989 @@
+{% extends 'PMISLooper/index.html' %}
+{%load static %}
+{% load i18n %}
+{%load md5url %}
+{%load customer_filter%}
+{%block form_css%}
+{{block.super}}
+<link rel="stylesheet" href="{% md5url 'PMISLooper/assets/stylesheets/dashboard/dashboard.css' %}"
+  data-skin="default">
+<link rel="stylesheet" href="{% md5url 'PMISLooper/assets/stylesheets/dashboard/dashboard_dark.css' %}"
+  data-skin="dark">
+{%endblock%}
+{%  block content %}
+{{block.super}}
+<!-- .page-inner -->
+<div class="page-inner">
+  <!-- .page-title-bar -->
+  <header class="page-title-bar">
+    <div class="d-flex flex-row">
+      <p class="lead">
+        <span class="font-weight-bold">{% trans "Hi"%}, {{user.username}}</span>
+      </p>
+      <div class="ml-auto">
+        <!-- .dropdown -->
+        <div class="dropdown">
+          <button class="dpFilter_dropdown btn btn-secondary" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false"><span>{% trans "This Week"%}</span> <i class="fa fa-fw fa-caret-down"></i></button>
+          <!-- .dropdown-menu -->
+          <div class="dropdown-menu dropdown-menu-right dropdown-menu-md stop-propagation">
+            <div class="dropdown-arrow"></div><!-- .custom-control -->
+            <div class="custom-control custom-radio">
+              <input type="radio" class="custom-control-input" id="dpToday" name="dpFilter" data-start="2019/03/27"
+                data-end="2019/03/27"> <label class="custom-control-label d-flex justify-content-between"
+                for="dpToday"><span>{% trans "Today"%}</span> <span class="text-dark">Mar 27</span></label>
+            </div><!-- /.custom-control -->
+            <!-- .custom-control -->
+            <div class="custom-control custom-radio">
+              <input type="radio" class="custom-control-input" id="dpYesterday" name="dpFilter" data-start="2019/03/26"
+                data-end="2019/03/26"> <label class="custom-control-label d-flex justify-content-between"
+                for="dpYesterday"><span>{% trans "Yesterday"%}</span> <span class="text-dark">Mar 26</span></label>
+            </div><!-- /.custom-control -->
+            <!-- .custom-control -->
+            <div class="custom-control custom-radio">
+              <input type="radio" class="custom-control-input" id="dpWeek" name="dpFilter" data-start="2019/03/21"
+                data-end="2019/03/27" checked> <label class="custom-control-label d-flex justify-content-between"
+                for="dpWeek"><span>{% trans "This Week"%}</span> <span class="text-dark">Mar 21-27</span></label>
+            </div><!-- /.custom-control -->
+            <!-- .custom-control -->
+            <div class="custom-control custom-radio">
+              <input type="radio" class="custom-control-input" id="dpMonth" name="dpFilter" data-start="2019/03/01"
+                data-end="2019/03/27"> <label class="custom-control-label d-flex justify-content-between"
+                for="dpMonth"><span>{% trans "This Month"%}</span> <span class="text-dark">Mar 1-31</span></label>
+            </div><!-- /.custom-control -->
+            <!-- .custom-control -->
+            <div class="custom-control custom-radio">
+              <input type="radio" class="custom-control-input" id="dpYear" name="dpFilter" data-start="2019/01/01"
+                data-end="2019/12/31"> <label class="custom-control-label d-flex justify-content-between"
+                for="dpYear"><span>{% trans "This Year" %}</span> <span class="text-dark">2019</span></label>
+            </div><!-- /.custom-control -->
+            <!-- .custom-control -->
+            <div class="custom-control custom-radio">
+              <input type="radio" class="custom-control-input" id="dpCustom" name="dpFilter" data-start="2019/03/27"
+                data-end="2019/03/27"> <label class="custom-control-label" for="dpCustom">{% trans "Custom" %}</label>
+              <div class="custom-control-hint my-1">
+                <!-- datepicker:range -->
+                <input type="text" class="form-control" id="dpCustomInput" data-toggle="flatpickr" data-mode="range"
+                  data-disable-mobile="true" data-date-format="Y-m-d"> <!-- /datepicker:range -->
+              </div>
+            </div><!-- /.custom-control -->
+          </div><!-- /.dropdown-menu -->
+        </div><!-- /.dropdown -->
+      </div>
+    </div>
+  </header><!-- /.page-title-bar -->
+  <!-- .page-section -->
+  <div class="page-section">
+    <!-- .section-block -->
+    <div class="section-block">
+      <!-- metric row -->
+      <div class="metric-row">
+        <div class="col-lg-9">
+          <div class="metric-row metric-flush">
+            <!-- metric column -->
+            <div class="col">
+              <!-- .metric -->
+              <a href="user/teams" class="metric metric-bordered align-items-center">
+                <h2 class="metric-label"> {% trans "Teams"%} </h2>
+                <p class="metric-value h3">
+                  <sub><i class="oi oi-people"></i></sub> <span class="value">{{teams}}</span>
+                </p>
+              </a> <!-- /.metric -->
+            </div><!-- /metric column -->
+            <!-- metric column -->
+            <div class="col">
+              <!-- .metric -->
+              <a href="/devplat/project/overview" class="metric metric-bordered align-items-center" target="project">
+                <h2 class="metric-label"> {% trans "Projects" %} </h2>
+                <p class="metric-value h3">
+                  <sub><i class="oi oi-fork"></i></sub> <span class="value">{{projects}}</span>
+                </p>
+              </a> <!-- /.metric -->
+            </div><!-- /metric column -->
+            <!-- metric column -->
+            <div class="col">
+              <!-- .metric -->
+              <a href="user/activites" class="metric metric-bordered align-items-center">
+                <h2 class="metric-label"> {% trans "Active Tasks"%} </h2>
+                <p class="metric-value h3">
+                  <sub><i class="fa fa-tasks"></i></sub> <span class="value">{{active_tasks}}</span>
+                </p>
+              </a> <!-- /.metric -->
+            </div><!-- /metric column -->
+          </div>
+        </div><!-- metric column -->
+        <div class="col-lg-3">
+          <!-- .metric -->
+          <a href="/looper/task/today_task" class="metric metric-bordered">
+            <div class="metric-badge">
+              <span class="badge badge-lg badge-success"><span class="oi oi-media-record pulse mr-1"></span> {% trans "ONGOING TASKS" %}</span>
+            </div>
+            <p class="metric-value h3">
+              <sub><i class="oi oi-timer"></i></sub> <span class="value">{{ongoing_tasks}}</span>
+            </p>
+          </a> <!-- /.metric -->
+        </div><!-- /metric column -->
+      </div><!-- /metric row -->
+    </div><!-- /.section-block -->
+    <!-- grid row -->
+    <div class="row">
+      <!-- grid column -->
+      <div class="col-12 col-lg-6 col-xl-6">
+        <!-- .card -->
+        <div class="card card-fluid">
+          <!-- .card-body -->
+          <div class="card-body">
+            <h3 class="card-title mb-4"> {% trans "Completion Tasks"%} </h3>
+            <div class="chartjs" style="height: 292px">
+              <canvas id="completion-tasks"></canvas>
+            </div>
+          </div><!-- /.card-body -->
+        </div><!-- /.card -->
+      </div><!-- /grid column -->
+      <!-- grid column -->
+      <div class="col-12 col-lg-6 col-xl-6">
+        <!-- .card -->
+        <div class="card card-fluid">
+          <!-- .card-body -->
+          <div class="card-body">
+            <h3 class="card-title"> {% trans "Tasks Performance"%} </h3><!-- easy-pie-chart -->
+            <div class="text-center pt-3">
+              <div class="chart-inline-group" style="height:214px">
+                <div class="easypiechart"
+                  data-percent="{{task_performance.assigned_percent}}" data-size="214" data-bar-color="#a0d8ef"
+                  data-track-color="false" data-scale-color="false" data-rotate="225"></div>
+                <div class="easypiechart"
+                  data-percent="{{task_performance.completed_percent}}" data-size="174" data-bar-color="#f8e58c"
+                  data-track-color="false" data-scale-color="false" data-rotate="225"></div>
+                <div class="easypiechart" data-percent="{{task_performance.active_percent}}"
+                  data-size="134" data-bar-color="#a99af0" data-track-color="false" data-scale-color="false"
+                  data-rotate="225"></div>
+              </div>
+            </div><!-- /easy-pie-chart -->
+          </div><!-- /.card-body -->
+          <!-- .card-footer -->
+          <div class="card-footer">
+            <div class="card-footer-item">
+              <i class="fa fa-fw fa-circle text-assign"></i> 100% <div class="text-dark small"> {% trans "Assigned"%} </div>
+            </div>
+            <div class="card-footer-item">
+              <i class="fa fa-fw fa-circle text-complete"></i> {{task_performance.completed_percent_r}}% <div
+                class="text-dark small"> {% trans "Completed"%} </div>
+            </div>
+            <div class="card-footer-item">
+              <i class="fa fa-fw fa-circle text-active"></i> {{task_performance.active_percent_r}}% <div
+                class="text-dark small"> {% trans "Active"%} </div>
+            </div>
+          </div><!-- /.card-footer -->
+        </div><!-- /.card -->
+      </div><!-- /grid column -->
+      <!-- grid column -->
+      <div class="col-12 col-lg-6 col-xl-6">
+        <!-- .card -->
+        <div class="card card-fluid">
+          <!-- .card-body -->
+          <div class="card-body pb-0">
+            <h3 class="card-title"> {% trans "Projects"%} </h3><!-- legend -->
+            <ul class="list-inline small">
+              <li class="list-inline-item">
+                <i class="fa fa-fw fa-circle text-tasks"></i> {% trans "Tasks"%} </li>
+              <li class="list-inline-item">
+                <i class="fa fa-fw fa-circle text-complete"></i> {% trans "Completed"%} </li>
+              <li class="list-inline-item">
+                <i class="fa fa-fw fa-circle text-active"></i> {% trans "Active"%} </li>
+              <li class="list-inline-item">
+                <i class="fa fa-fw fa-circle text-overdue"></i> {% trans "Overdue"%} </li>
+            </ul><!-- /legend -->
+          </div><!-- /.card-body -->
+          <!-- .list-group -->
+          <div class="list-group list-group-flush" style="max-height: 285px;overflow-y: auto;">
+
+            {%for key, value in leader_board.items%}
+            <!-- .list-group-item -->
+            <div class="list-group-item">
+              <!-- .list-group-item-figure -->
+              <div class="list-group-item-figure">
+                <!--<a href="#" class="user-avatar" data-toggle="tooltip" title="{{key}}"><span class="oi oi-person"></span></a>-->
+                <a href="#" class="user-avatar" data-toggle="tooltip" title="{{value.desc}}"
+                  style="background-color: rgb(255, 255, 255); color: rgb(31, 61, 157);font-weight: 600;font-size:1rem;width:auto;height:auto;">
+                  <span>{{key}}</span>
+                </a>
+
+              </div><!-- /.list-group-item-figure -->
+              <!-- .list-group-item-body -->
+              <div class="list-group-item-body">
+                <!-- .progress -->
+                <div class="progress progress-animated rounded-0 projects_progress" data-toggle="tooltip" data-html="true"
+                  title='&lt;div class="text-left small"&gt;&lt;i class="fa fa-fw fa-circle text-tasks"&gt;&lt;/i&gt; {{value.All_Qty}}&lt;br&gt;&lt;i class="fa fa-fw fa-circle text-complete"&gt;&lt;/i&gt; {{value.Completed_Qty}}&lt;br&gt;&lt;i class="fa fa-fw fa-circle text-active"&gt;&lt;/i&gt; {{value.Active_Qty}}&lt;br&gt;&lt;i class="fa fa-fw fa-circle text-overdue"&gt;&lt;/i&gt; {{value.Overdue_Qty}}&lt;/div&gt;'>
+                  <div class="progress-bar bg-complete" role="progressbar" aria-valuenow="{{value.Completed}}"
+                    aria-valuemin="0" aria-valuemax="100" style="width: {{value.Completed}}%">
+                    <span class="sr-only">{{value.Completed}}% Complete</span>
+                  </div>
+                  <div class="progress-bar bg-active" role="progressbar" aria-valuenow="{{value.Active}}"
+                    aria-valuemin="0" aria-valuemax="100" style="width:{{value.Active}}%">
+                    <span class="sr-only">{{value.Active}}% Complete</span>
+                  </div>
+                  <div class="progress-bar bg-overdue" role="progressbar" aria-valuenow="{{value.Overdue}}"
+                    aria-valuemin="0" aria-valuemax="100" style="width: {{value.Overdue}}%">
+                    <span class="sr-only">{{value.Overdue}}% Complete</span>
+                  </div>
+                </div><!-- /.progress -->
+              </div><!-- /.list-group-item-body -->
+            </div><!-- /.list-group-item -->
+            {%endfor%}
+          </div><!-- /.list-group -->
+        </div><!-- /.card -->
+      </div><!-- /grid column -->
+      <div class="col-12 col-lg-6 col-xl-6 completion_rate">
+        <!-- .card -->
+        <div class="card card-fluid">
+          <!-- .card-body -->
+          <div class="card-body pb-0">
+            <h3 class="card-title"> {% trans "Completion Rate" %} </h3><!-- legend -->
+            <ul class="list-inline small">
+              <li class="list-inline-item">
+                <i class="fa fa-fw fa-circle text-assign"></i> {% trans "Assign"%} </li>
+              <li class="list-inline-item">
+                <i class="fa fa-fw fa-circle text-complete"></i> {% trans "Completed" %} </li>
+              <li class="list-inline-item">
+                <i class="fa fa-fw fa-circle text-actualuncomplete"></i> {% trans "Actual Uncomplete"%} </li>
+              <li class="list-inline-item">
+                <i class="fa fa-fw fa-circle text-unassigncomplete"></i> {% trans "Unassign Complete"%} </li>
+            </ul><!-- /legend -->
+          </div><!-- /.card-body -->
+          <!-- .list-group -->
+          <div class="list-group list-group-flush" style="max-height: 285px;overflow-y: auto;">
+
+            {%for item in completion_rate%}
+            <!-- .list-group-item -->
+            <div class="list-group-item">
+              <!-- .list-group-item-figure -->
+              <div class="list-group-item-figure">
+                <a href="#" class="user-avatar" data-toggle="tooltip" title="{{item.ratio}}%"
+                  style="background-color: rgb(255, 255, 255); color: rgb(31, 61, 157);font-weight: 600;font-size:1rem;width:auto;height:auto;">
+                  <span>{{item.contact}} {{item.ratio|floatformat:0}}%</span>
+                </a>
+
+              </div><!-- /.list-group-item-figure -->
+              <!-- .list-group-item-body -->
+              <div class="list-group-item-body">
+                <!-- .progress -->
+                <div class="progress progress-animated bg-transparent rounded-0" data-toggle="tooltip" data-html="true"
+                  title='&lt;div class="text-left small"&gt;&lt;i class="fa fa-fw fa-circle text-assign"&gt;&lt;/i&gt; {{item.assign}}&lt;br&gt;&lt;i class="fa fa-fw fa-circle text-complete"&gt;&lt;/i&gt; {{item.complete}}&lt;br&gt;&lt;i class="fa fa-fw fa-circle text-actualuncomplete"&gt;&lt;/i&gt; {{item.actualuncomplete}}&lt;br&gt;&lt;i class="fa fa-fw fa-circle text-unassigncomplete"&gt;&lt;/i&gt; {{item.unassigncomplete}}&lt;/div&gt;'>
+                  <div class="progress-bar bg-complete" role="progressbar" aria-valuenow="{{item.ratio}}"
+                    aria-valuemin="0" aria-valuemax="100" style="width: {{item.ratio}}%">
+                    <span class="sr-only">{{item.ratio}}% Complete</span>
+                  </div>
+                  <div class="progress-bar bg-actualuncomplete" role="progressbar"
+                    aria-valuenow="{{item.actualuncomplete_ratio}}" aria-valuemin="0" aria-valuemax="100"
+                    style="width:{{item.actualuncomplete_ratio}}%">
+                    <span class="sr-only">{{item.actualuncomplete_ratio}}% Complete</span>
+                  </div>
+                  <div class="progress-bar bg-unassigncomplete" role="progressbar"
+                    aria-valuenow="{{item.unassigncomplete_ratio}}" aria-valuemin="0" aria-valuemax="100"
+                    style="width: {{item.unassigncomplete_ratio}}%">
+                    <span class="sr-only">{{item.unassigncomplete_ratio}}% Complete</span>
+                  </div>
+                </div><!-- /.progress -->
+              </div><!-- /.list-group-item-body -->
+            </div><!-- /.list-group-item -->
+            {%endfor%}
+          </div><!-- /.list-group -->
+        </div><!-- /.card -->
+      </div><!-- /grid column -->
+      <div class="col-12">
+        <div class="card card-fluid">
+          <div class="weekgoal_header d-flex flex-column flex-sm-row justify-content-between align-items-center px-3 py-2"
+            style="font-size: 16px;">
+            <h3 class="card-title mb-0"> {% trans "Weekly Goals" %} </h3>
+            <ul class="nav nav-segment">
+              <li class="nav-item">
+                <a class="nav-link active" data-toggle="tab" href="#last_week"><i
+                    class="far fa-calendar-alt d-none d-sm-inline-block mr-1"></i>{% trans "Last Week" %}</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link show" data-toggle="tab" href="#this_week"><i
+                    class="far fa-calendar-check d-none d-sm-inline-block mr-1"></i>{% trans "This Week" %}</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link show" data-toggle="tab" href="#next_week"><i
+                    class="far fa-calendar d-none d-sm-inline-block mr-1"></i>{% trans "Next Week" %}</a>
+              </li>
+            </ul>
+          </div>
+          <div class="card-body">
+            <div id="weekGoalCard" class="tab-content">
+              <div class="tab-pane fade active show" id="last_week">
+                <div class="card-horizontal-lg">
+                  <div class="card card-fluid infocard">
+                    <div class="card-body inner-box">
+                      <div class="text">
+                        <figure class="icon-1"><i class="fas fa-quote-left"></i></figure>
+                        <figure class="icon-2"><i class="fas fa-quote-right"></i></figure>
+                        <div class="text_wrap goals_col p-2">
+                          <div class="task">
+                            <ul class="task-inner">
+                              <li class="d-flex"><span>G2.完成Project Simulation must have Schedule支持,
+                                  完成Bonus
+                                  Simulation模擬功能</span></li>
+                              <li class="d-flex"><span>G4.實現WEB ERP報表服務器</span></li>
+                              <li class="d-flex"><span>G6.根據Backend Site Map及Technical
+                                  Requirement分析需要完成的時間，補充缺失的Solution
+                                  Type及Technical,
+                                  分配任務</span></li>
+                              <li class="d-flex"><span>G6.根據Backend Site Map及Technical
+                                  Requirement分析需要完成的時間，補充缺失的Solution
+                                  Type及Technical,
+                                  分配任務</span></li>
+                            </ul>
+                          </div>
+                          <div class="task_progress mt-3">
+                            <div class="progress progress-sm">
+                              <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75"
+                                aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
+                            </div>
+                            <span class="todos pl-3">3/4</span>
+                          </div>
+                          <div class="author-box">
+                            <h4>hb</h4>
+                          </div>
+                        </div>
+                        <div class="text_wrap task_wrap p-2 d-none">
+                          <div id="btnBack">
+                            <img src="../../../static/PMISLooper/assets/images/close.png" alt="" style="cursor:pointer;">
+                          </div>
+                          <div class="card mx-0 mb-2">
+                            <div class="card-body">
+                              <div class="d-flex align-items-center">
+                                <h4 class="mb-0">00001-14026-450</h4>
+                                <div class="hs-unfold ml-auto">C</div>
+                              </div>
+                              <p class="font-weight-bolder tasks_details mb-2">(Fixed)Goal Simulation頁面根據Must Have任務的計畫時間統計分析進度</p>
+                              <div class="tasks_info text-primary">
+                                <div class="tsi-3 user_wrap">
+                                  <div class="us-1 d-flex justify-content-between align-items-center">
+                                    <i class="fas fa-user-tie mr-2"></i>
+                                    <div class="d-flex fw-boldest">hb</div>
+                                  </div>
+                                  <div class="us-1 d-flex justify-content-between align-items-center">
+                                    <i class="far fa-list-alt mr-2 mt-1"></i>
+                                    <div class="d-flex fw-boldest">3792</div>
+                                  </div>
+                                </div>
+                                <div class="tsi-3">
+                                  <div class="task_date fw-bold">Date:</div>
+                                  <div class="d-flex fw-boldest">2021-12-23 / 2021-12-23</div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="card mx-0 mb-2">
+                            <div class="card-body">
+                              <div class="d-flex align-items-center">
+                                <h4 class="mb-0">00001-14026-450</h4>
+                                <div class="hs-unfold ml-auto">C</div>
+                              </div>
+                              <p class="font-weight-bolder tasks_details mb-2">(Fixed)Goal Simulation頁面根據Must Have任務的計畫時間統計分析進度</p>
+                              <div class="tasks_info text-primary">
+                                <div class="tsi-3 user_wrap">
+                                  <div class="us-1 d-flex justify-content-between align-items-center">
+                                    <i class="fas fa-user-tie mr-2"></i>
+                                    <div class="d-flex fw-boldest">hb</div>
+                                  </div>
+                                  <div class="us-1 d-flex justify-content-between align-items-center">
+                                    <i class="far fa-list-alt mr-2 mt-1"></i>
+                                    <div class="d-flex fw-boldest">3792</div>
+                                  </div>
+                                </div>
+                                <div class="tsi-3">
+                                  <div class="task_date fw-bold">Date:</div>
+                                  <div class="d-flex fw-boldest">2021-12-23 / 2021-12-23</div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card card-fluid infocard">
+                    <div class="card-body inner-box">
+                      <div class="text">
+                        <figure class="icon-1"><i class="fas fa-quote-left"></i></figure>
+                        <figure class="icon-2"><i class="fas fa-quote-right"></i></figure>
+                        <div class="text_wrap p-2">
+                          <div class="task">
+                            <ul class="task-inner">
+                              <li class="d-flex"><span>G2.完成Project Simulation must have Schedule支持,
+                                  完成Bonus
+                                  Simulation模擬功能</span></li>
+                              <li class="d-flex"><span>G4.實現WEB ERP報表服務器</span></li>
+                              <li class="d-flex"><span>G6.根據Backend Site Map及Technical
+                                  Requirement分析需要完成的時間，補充缺失的Solution
+                                  Type及Technical,
+                                  分配任務</span></li>
+                              <li class="d-flex"><span>G6.根據Backend Site Map及Technical
+                                  Requirement分析需要完成的時間，補充缺失的Solution
+                                  Type及Technical,
+                                  分配任務</span></li>
+                            </ul>
+                          </div>
+                          <div class="task_progress mt-3">
+                            <div class="progress progress-sm">
+                              <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75"
+                                aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
+                            </div>
+                            <span class="todos pl-3">3/4</span>
+                          </div>
+                          <div class="author-box">
+                            <h4>hb</h4>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card card-fluid infocard">
+                    <div class="card-body inner-box">
+                      <div class="text">
+                        <figure class="icon-1"><i class="fas fa-quote-left"></i></figure>
+                        <figure class="icon-2"><i class="fas fa-quote-right"></i></figure>
+                        <div class="text_wrap p-2">
+                          <div class="task">
+                            <ul class="task-inner">
+                              <li class="d-flex"><span>G2.完成Project Simulation must have Schedule支持,
+                                  完成Bonus
+                                  Simulation模擬功能</span></li>
+                              <li class="d-flex"><span>G4.實現WEB ERP報表服務器</span></li>
+                              <li class="d-flex"><span>G6.根據Backend Site Map及Technical
+                                  Requirement分析需要完成的時間，補充缺失的Solution
+                                  Type及Technical,
+                                  分配任務</span></li>
+                              <li class="d-flex"><span>G6.根據Backend Site Map及Technical
+                                  Requirement分析需要完成的時間，補充缺失的Solution
+                                  Type及Technical,
+                                  分配任務</span></li>
+                            </ul>
+                          </div>
+                          <div class="task_progress mt-3">
+                            <div class="progress progress-sm">
+                              <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75"
+                                aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
+                            </div>
+                            <span class="todos pl-3">3/4</span>
+                          </div>
+                          <div class="author-box">
+                            <h4>hb</h4>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card card-fluid infocard">
+                    <div class="card-body inner-box">
+                      <div class="text">
+                        <figure class="icon-1"><i class="fas fa-quote-left"></i></figure>
+                        <figure class="icon-2"><i class="fas fa-quote-right"></i></figure>
+                        <div class="text_wrap p-2">
+                          <div class="task">
+                            <ul class="task-inner">
+                              <li class="d-flex"><span>G2.完成Project Simulation must have Schedule支持,
+                                  完成Bonus
+                                  Simulation模擬功能</span></li>
+                              <li class="d-flex"><span>G4.實現WEB ERP報表服務器</span></li>
+                              <li class="d-flex"><span>G6.根據Backend Site Map及Technical
+                                  Requirement分析需要完成的時間，補充缺失的Solution
+                                  Type及Technical,
+                                  分配任務</span></li>
+                              <li class="d-flex"><span>G6.根據Backend Site Map及Technical
+                                  Requirement分析需要完成的時間，補充缺失的Solution
+                                  Type及Technical,
+                                  分配任務</span></li>
+                            </ul>
+                          </div>
+                          <div class="task_progress mt-3">
+                            <div class="progress progress-sm">
+                              <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75"
+                                aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
+                            </div>
+                            <span class="todos pl-3">3/4</span>
+                          </div>
+                          <div class="author-box">
+                            <h4>hb</h4>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card card-fluid infocard">
+                    <div class="card-body inner-box">
+                      <div class="text">
+                        <figure class="icon-1"><i class="fas fa-quote-left"></i></figure>
+                        <figure class="icon-2"><i class="fas fa-quote-right"></i></figure>
+                        <div class="text_wrap p-2">
+                          <div class="task">
+                            <ul class="task-inner">
+                              <li class="d-flex"><span>G2.完成Project Simulation must have Schedule支持,
+                                  完成Bonus
+                                  Simulation模擬功能</span></li>
+                              <li class="d-flex"><span>G4.實現WEB ERP報表服務器</span></li>
+                              <li class="d-flex"><span>G6.根據Backend Site Map及Technical
+                                  Requirement分析需要完成的時間，補充缺失的Solution
+                                  Type及Technical,
+                                  分配任務</span></li>
+                              <li class="d-flex"><span>G6.根據Backend Site Map及Technical
+                                  Requirement分析需要完成的時間，補充缺失的Solution
+                                  Type及Technical,
+                                  分配任務</span></li>
+                            </ul>
+                          </div>
+                          <div class="task_progress mt-3">
+                            <div class="progress progress-sm">
+                              <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75"
+                                aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
+                            </div>
+                            <span class="todos pl-3">3/4</span>
+                          </div>
+                          <div class="author-box">
+                            <h4>hb</h4>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane fade" id="this_week">
+                <div class="card-horizontal-lg">
+                  <div class="card card-fluid infocard">
+                    <div class="card-body inner-box">
+                      <div class="text">
+                        <figure class="icon-1"><i class="fas fa-quote-left"></i></figure>
+                        <figure class="icon-2"><i class="fas fa-quote-right"></i></figure>
+                        <div class="text_wrap goals_col p-2">
+                          <div class="task">
+                            <ul class="task-inner">
+                              <li class="d-flex"><span>G2.完成Project Simulation must have Schedule支持,
+                                  完成Bonus
+                                  Simulation模擬功能</span></li>
+                              <li class="d-flex"><span>G4.實現WEB ERP報表服務器</span></li>
+                              <li class="d-flex"><span>G6.根據Backend Site Map及Technical
+                                  Requirement分析需要完成的時間，補充缺失的Solution
+                                  Type及Technical,
+                                  分配任務</span></li>
+                              <li class="d-flex"><span>G6.根據Backend Site Map及Technical
+                                  Requirement分析需要完成的時間，補充缺失的Solution
+                                  Type及Technical,
+                                  分配任務</span></li>
+                            </ul>
+                          </div>
+                          <div class="task_progress mt-3">
+                            <div class="progress progress-sm">
+                              <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75"
+                                aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
+                            </div>
+                            <span class="todos pl-3">3/4</span>
+                          </div>
+                          <div class="author-box">
+                            <h4>hb</h4>
+                          </div>
+                        </div>
+                        <div class="text_wrap task_wrap p-2 d-none">
+                          <div id="btnBack">
+                            <img src="../../../static/PMISLooper/assets/images/close.png" alt="" style="cursor:pointer;">
+                          </div>
+                          <div class="card mx-0 mb-2">
+                            <div class="card-body">
+                              <div class="d-flex align-items-center">
+                                <h4 class="mb-0">00001-14026-450</h4>
+                                <div class="hs-unfold ml-auto">C</div>
+                              </div>
+                              <p class="font-weight-bolder tasks_details mb-2">(Fixed)Goal Simulation頁面根據Must Have任務的計畫時間統計分析進度</p>
+                              <div class="tasks_info text-primary">
+                                <div class="tsi-3 user_wrap">
+                                  <div class="us-1 d-flex justify-content-between align-items-center">
+                                    <i class="fas fa-user-tie mr-2"></i>
+                                    <div class="d-flex fw-boldest">hb</div>
+                                  </div>
+                                  <div class="us-1 d-flex justify-content-between align-items-center">
+                                    <i class="far fa-list-alt mr-2 mt-1"></i>
+                                    <div class="d-flex fw-boldest">3792</div>
+                                  </div>
+                                </div>
+                                <div class="tsi-3">
+                                  <div class="task_date fw-bold">Date:</div>
+                                  <div class="d-flex fw-boldest">2021-12-23 / 2021-12-23</div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="card mx-0 mb-2">
+                            <div class="card-body">
+                              <div class="d-flex align-items-center">
+                                <h4 class="mb-0">00001-14026-450</h4>
+                                <div class="hs-unfold ml-auto">C</div>
+                              </div>
+                              <p class="font-weight-bolder tasks_details mb-2">(Fixed)Goal Simulation頁面根據Must Have任務的計畫時間統計分析進度</p>
+                              <div class="tasks_info text-primary">
+                                <div class="tsi-3 user_wrap">
+                                  <div class="us-1 d-flex justify-content-between align-items-center">
+                                    <i class="fas fa-user-tie mr-2"></i>
+                                    <div class="d-flex fw-boldest">hb</div>
+                                  </div>
+                                  <div class="us-1 d-flex justify-content-between align-items-center">
+                                    <i class="far fa-list-alt mr-2 mt-1"></i>
+                                    <div class="d-flex fw-boldest">3792</div>
+                                  </div>
+                                </div>
+                                <div class="tsi-3">
+                                  <div class="task_date fw-bold">Date:</div>
+                                  <div class="d-flex fw-boldest">2021-12-23 / 2021-12-23</div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card card-fluid infocard">
+                    <div class="card-body inner-box">
+                      <div class="text">
+                        <figure class="icon-1"><i class="fas fa-quote-left"></i></figure>
+                        <figure class="icon-2"><i class="fas fa-quote-right"></i></figure>
+                        <div class="text_wrap p-2">
+                          <div class="task">
+                            <ul class="task-inner">
+                              <li class="d-flex"><span>G2.完成Project Simulation must have Schedule支持,
+                                  完成Bonus
+                                  Simulation模擬功能</span></li>
+                              <li class="d-flex"><span>G4.實現WEB ERP報表服務器</span></li>
+                              <li class="d-flex"><span>G6.根據Backend Site Map及Technical
+                                  Requirement分析需要完成的時間，補充缺失的Solution
+                                  Type及Technical,
+                                  分配任務</span></li>
+                              <li class="d-flex"><span>G6.根據Backend Site Map及Technical
+                                  Requirement分析需要完成的時間，補充缺失的Solution
+                                  Type及Technical,
+                                  分配任務</span></li>
+                            </ul>
+                          </div>
+                          <div class="task_progress mt-3">
+                            <div class="progress progress-sm">
+                              <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75"
+                                aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
+                            </div>
+                            <span class="todos pl-3">3/4</span>
+                          </div>
+                          <div class="author-box">
+                            <h4>hb</h4>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card card-fluid infocard">
+                    <div class="card-body inner-box">
+                      <div class="text">
+                        <figure class="icon-1"><i class="fas fa-quote-left"></i></figure>
+                        <figure class="icon-2"><i class="fas fa-quote-right"></i></figure>
+                        <div class="text_wrap p-2">
+                          <div class="task">
+                            <ul class="task-inner">
+                              <li class="d-flex"><span>G2.完成Project Simulation must have Schedule支持,
+                                  完成Bonus
+                                  Simulation模擬功能</span></li>
+                              <li class="d-flex"><span>G4.實現WEB ERP報表服務器</span></li>
+                              <li class="d-flex"><span>G6.根據Backend Site Map及Technical
+                                  Requirement分析需要完成的時間，補充缺失的Solution
+                                  Type及Technical,
+                                  分配任務</span></li>
+                              <li class="d-flex"><span>G6.根據Backend Site Map及Technical
+                                  Requirement分析需要完成的時間，補充缺失的Solution
+                                  Type及Technical,
+                                  分配任務</span></li>
+                            </ul>
+                          </div>
+                          <div class="task_progress mt-3">
+                            <div class="progress progress-sm">
+                              <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75"
+                                aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
+                            </div>
+                            <span class="todos pl-3">3/4</span>
+                          </div>
+                          <div class="author-box">
+                            <h4>hb</h4>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane fade" id="next_week">
+                <div class="card-horizontal-lg">
+                  <div class="card card-fluid infocard">
+                    <div class="card-body inner-box">
+                      <div class="text">
+                        <figure class="icon-1"><i class="fas fa-quote-left"></i></figure>
+                        <figure class="icon-2"><i class="fas fa-quote-right"></i></figure>
+                        <div class="text_wrap goals_col p-2">
+                          <div class="task">
+                            <ul class="task-inner">
+                              <li class="d-flex"><span>G2.完成Project Simulation must have Schedule支持,
+                                  完成Bonus
+                                  Simulation模擬功能</span></li>
+                              <li class="d-flex"><span>G4.實現WEB ERP報表服務器</span></li>
+                              <li class="d-flex"><span>G6.根據Backend Site Map及Technical
+                                  Requirement分析需要完成的時間，補充缺失的Solution
+                                  Type及Technical,
+                                  分配任務</span></li>
+                              <li class="d-flex"><span>G6.根據Backend Site Map及Technical
+                                  Requirement分析需要完成的時間，補充缺失的Solution
+                                  Type及Technical,
+                                  分配任務</span></li>
+                            </ul>
+                          </div>
+                          <div class="task_progress mt-3">
+                            <div class="progress progress-sm">
+                              <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75"
+                                aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
+                            </div>
+                            <span class="todos pl-3">3/4</span>
+                          </div>
+                          <div class="author-box">
+                            <h4>hb</h4>
+                          </div>
+                        </div>
+                        <div class="text_wrap task_wrap p-2 d-none">
+                          <div id="btnBack">
+                            <img src="../../../static/PMISLooper/assets/images/close.png" alt="" style="cursor:pointer;">
+                          </div>
+                          <div class="card mx-0 mb-2">
+                            <div class="card-body">
+                              <div class="d-flex align-items-center">
+                                <h4 class="mb-0">00001-14026-450</h4>
+                                <div class="hs-unfold ml-auto">C</div>
+                              </div>
+                              <p class="font-weight-bolder tasks_details mb-2">(Fixed)Goal Simulation頁面根據Must Have任務的計畫時間統計分析進度</p>
+                              <div class="tasks_info text-primary">
+                                <div class="tsi-3 user_wrap">
+                                  <div class="us-1 d-flex justify-content-between align-items-center">
+                                    <i class="fas fa-user-tie mr-2"></i>
+                                    <div class="d-flex fw-boldest">hb</div>
+                                  </div>
+                                  <div class="us-1 d-flex justify-content-between align-items-center">
+                                    <i class="far fa-list-alt mr-2 mt-1"></i>
+                                    <div class="d-flex fw-boldest">3792</div>
+                                  </div>
+                                </div>
+                                <div class="tsi-3">
+                                  <div class="task_date fw-bold">Date:</div>
+                                  <div class="d-flex fw-boldest">2021-12-23 / 2021-12-23</div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="card mx-0 mb-2">
+                            <div class="card-body">
+                              <div class="d-flex align-items-center">
+                                <h4 class="mb-0">00001-14026-450</h4>
+                                <div class="hs-unfold ml-auto">C</div>
+                              </div>
+                              <p class="font-weight-bolder tasks_details mb-2">(Fixed)Goal Simulation頁面根據Must Have任務的計畫時間統計分析進度</p>
+                              <div class="tasks_info text-primary">
+                                <div class="tsi-3 user_wrap">
+                                  <div class="us-1 d-flex justify-content-between align-items-center">
+                                    <i class="fas fa-user-tie mr-2"></i>
+                                    <div class="d-flex fw-boldest">hb</div>
+                                  </div>
+                                  <div class="us-1 d-flex justify-content-between align-items-center">
+                                    <i class="far fa-list-alt mr-2 mt-1"></i>
+                                    <div class="d-flex fw-boldest">3792</div>
+                                  </div>
+                                </div>
+                                <div class="tsi-3">
+                                  <div class="task_date fw-bold">Date:</div>
+                                  <div class="d-flex fw-boldest">2021-12-23 / 2021-12-23</div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card card-fluid infocard">
+                    <div class="card-body inner-box">
+                      <div class="text">
+                        <figure class="icon-1"><i class="fas fa-quote-left"></i></figure>
+                        <figure class="icon-2"><i class="fas fa-quote-right"></i></figure>
+                        <div class="text_wrap p-2">
+                          <div class="task">
+                            <ul class="task-inner">
+                              <li class="d-flex"><span>G2.完成Project Simulation must have Schedule支持,
+                                  完成Bonus
+                                  Simulation模擬功能</span></li>
+                              <li class="d-flex"><span>G4.實現WEB ERP報表服務器</span></li>
+                              <li class="d-flex"><span>G6.根據Backend Site Map及Technical
+                                  Requirement分析需要完成的時間，補充缺失的Solution
+                                  Type及Technical,
+                                  分配任務</span></li>
+                              <li class="d-flex"><span>G6.根據Backend Site Map及Technical
+                                  Requirement分析需要完成的時間，補充缺失的Solution
+                                  Type及Technical,
+                                  分配任務</span></li>
+                            </ul>
+                          </div>
+                          <div class="task_progress mt-3">
+                            <div class="progress progress-sm">
+                              <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75"
+                                aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
+                            </div>
+                            <span class="todos pl-3">3/4</span>
+                          </div>
+                          <div class="author-box">
+                            <h4>hb</h4>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card card-fluid infocard">
+                    <div class="card-body inner-box">
+                      <div class="text">
+                        <figure class="icon-1"><i class="fas fa-quote-left"></i></figure>
+                        <figure class="icon-2"><i class="fas fa-quote-right"></i></figure>
+                        <div class="text_wrap p-2">
+                          <div class="task">
+                            <ul class="task-inner">
+                              <li class="d-flex"><span>G2.完成Project Simulation must have Schedule支持,
+                                  完成Bonus
+                                  Simulation模擬功能</span></li>
+                              <li class="d-flex"><span>G4.實現WEB ERP報表服務器</span></li>
+                              <li class="d-flex"><span>G6.根據Backend Site Map及Technical
+                                  Requirement分析需要完成的時間，補充缺失的Solution
+                                  Type及Technical,
+                                  分配任務</span></li>
+                              <li class="d-flex"><span>G6.根據Backend Site Map及Technical
+                                  Requirement分析需要完成的時間，補充缺失的Solution
+                                  Type及Technical,
+                                  分配任務</span></li>
+                            </ul>
+                          </div>
+                          <div class="task_progress mt-3">
+                            <div class="progress progress-sm">
+                              <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75"
+                                aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
+                            </div>
+                            <span class="todos pl-3">3/4</span>
+                          </div>
+                          <div class="author-box">
+                            <h4>hb</h4>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div><!-- /grid row -->
+    <!-- card-deck-xl -->
+    <div class="card-deck-xl">
+      <!-- .card -->
+      <div class="card card-fluid" id="Active_Sessions">
+      </div><!-- /.card -->
+      <!-- .card -->
+      <div class="card card-fluid fixedHeight todo_part" id="today_tasks">
+        <div class="card-header" style="font-size: 16px;"> {% trans "Active Tasks: To-Dos" %} </div><!-- .card-body -->
+        <div class="card-body" style="overflow-y: auto;">
+          <!-- .todo-list -->
+          <div class="todo-list">
+            {% for key, value in to_dos.items%}
+            <div class="todo-header" style="font-size: 16px;"> {{value.0.project_desc}}</div><!-- /.todo-header -->
+            {%for sub_value in value%}
+            <div class="todo" pk="{{sub_value.inc_id}}">
+              <!-- .custom-control -->
+              <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="todo{{iterator.next}}"> <label
+                  class="custom-control-label" for="todo{{iterator.current}}">{{sub_value.task}}</label>
+              </div><!-- /.custom-control -->
+            </div><!-- /.todo -->
+            {%endfor%}
+            {%endfor%}
+          </div><!-- /.todo-list -->
+        </div><!-- /.card-body -->
+        <!-- .card-footer -->
+        <div class="card-footer">
+          <a href="#" class="card-footer-item">{% trans "back to top" %} <i class="fa fa-fw fa-angle-up"></i></a>
+        </div><!-- /.card-footer -->
+      </div><!-- /.card -->
+    </div><!-- /card-deck-xl -->
+  </div><!-- /.page-section -->
+</div><!-- /.page-inner -->
+<div id="tasklist" class="collapse task-collapse" style="display: none;">
+  <div class="row task_wap task-item">
+    <span class="d-none pk">[[inc_id]]</span>
+    <div class="col-12">
+      <div class="card wrap-primary">
+        <div class="card-body">
+          <div class="card-title d-flex align-content-center">
+            <span class="task-num">
+              <h4 class="card-subtitle"><i class="fas fa-circle circle-dot"></i>[[taskno]]</h4>
+            </span>
+            <span class="ml-auto alert-link">[[progress]]</span>
+          </div>
+          <div class="card-content d-flex pl-2">
+            <div class="font-weight-bolder">[[task]]</div>
+          </div>
+        </div>
+        <div class="footer_wrap text-dark">
+            <ul class="list d-flex justify-content-around pl-0 flex-wrap">
+              <li class="list-item">
+                <span class="menu-text"> [[planbdate]] / [[planedate]]</span>
+              </li>
+              <li class="list-item">
+                <span class="">[[schpriority]]</span>
+              </li>
+              <li class="list-item">
+                <span class="badge badge-subtle badge-primary">[[process]]</span>
+              </li>
+              <li class="list-item">
+                <span class="badge badge-subtle badge-primary">[[contact]]</span>
+              </li>
+            </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{%  endblock %}
+
+{%block form_js%}
+{{ block.super }}
+<script src="{% static 'BaseApp/vendor/Looper/assets/vendor/pace-progress/pace.min.js' %}"></script>
+<script src="{% static 'BaseApp/vendor/Looper/assets/vendor/perfect-scrollbar/perfect-scrollbar.min.js' %}"></script>
+<!-- <script src="{% static 'BaseApp/vendor/Looper/assets/vendor/flatpickr/flatpickr.min.js' %}"></script> -->
+<script src="{% static 'BaseApp/vendor/Looper/assets/vendor/easy-pie-chart/jquery.easypiechart.min.js' %}"></script>
+<script src="{% static 'BaseApp/vendor/Looper/assets/vendor/chart.js/Chart.min.js' %}"></script> <!-- END PLUGINS JS -->
+<!-- BEGIN PAGE LEVEL JS -->
+<!--<script src="{% static 'BaseProject/vendor/Looper/assets/javascript/pages/dashboard-demo.js' %}"></script>-->
+<!-- END PAGE LEVEL JS -->
+<script src="{% static 'PMIS/js/looper/components.js' %}"></script>
+<script src="{% md5url 'PMISLooper/assets/javascript/dashboard/dashboard.js' %}"></script>
+<script>
+  $(function () {
+    $("#weekGoalCard").on("dblclick",".text_wrap.goals_col .task-inner li", function(){
+      $(this).parents(".text_wrap.goals_col").addClass("d-none");
+      $(this).parents(".text_wrap.goals_col").next(".text_wrap.task_wrap").removeClass("d-none");
+    })  
+    $("#weekGoalCard").on("click","#btnBack", function(){
+      $(this).parent(".text_wrap.task_wrap").addClass("d-none");
+      $(this).parent(".text_wrap.task_wrap").prev(".text_wrap.goals_col").removeClass("d-none");        
+    })  
+  })
+</script>
+{%endblock%}

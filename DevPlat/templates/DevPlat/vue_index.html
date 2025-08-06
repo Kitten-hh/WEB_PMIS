@@ -1,0 +1,51 @@
+{% extends 'BaseApp/vue_looper_base/base_form2/index.html' %}
+{%load static %}
+{% load i18n %}
+{% load md5url %}
+{% load render_bundle from webpack_loader %}
+{%block form_css%}
+<link rel="stylesheet" type="text/css" href="{% static 'BaseApp/assets/stylesheets/looper_base/components/SWCombobox.css' %}" />  
+<link rel="stylesheet" type="text/css" href="{% md5url 'BaseApp/assets/stylesheets/looper_base/components/SWTimeline2.css' %}" />    
+{%include "PMISLooper/base.html" with form_css=True%}
+{%endblock%}
+{%block default_components%}
+{%include "BaseApp/looper_base/components/SWCombobox.html"%}
+{%include "BaseApp/looper_base/components/SWDate.html"%}
+{%include "BaseApp/looper_base/components/SWRadiobox.html"%}
+{%include "BaseApp/looper_base/components/SWText.html"%}
+{%include "BaseApp/looper_base/components/SWTextarea.html"%}
+{%include "BaseApp/looper_base/components/SWCheckbox.html"%}
+{%include "BaseApp/looper_base/components/SWForm.html"%}
+{%include "BaseApp/looper_base/components/SWTimeline2.html"%}
+{%endblock%}
+{%block content %}
+{{block.super}}
+{%include "PMISLooper/base.html" with content=True%}
+{%endblock%}
+{%block js_vendor%}
+    <!--引用第三步生成的vendor.js文件, 可以在項目中定義一個index頁面引用vendor.js其他頁面繼承它的方式
+       讓繼承它的頁面不需要引用vendor.js-->
+    <script src="{% static 'WEB_PMIS/dist/javascript/vendor.js'%}"></script>    
+    <script>
+        getCookie = (function(_super) {
+            return function() {
+                if (arguments != undefined && arguments.length > 0 && arguments[0] == 'csrftoken')
+                    arguments[0] = "csrftoken_WEB_PMIS";
+                return _super.apply(this, arguments);
+            };         
+        })(getCookie);        
+    </script>
+{%endblock%}
+{%block form_js%}
+<script src="{% md5url 'BaseApp/assets/javascript/looper_base/components/SWCombobox.js' %}" type="text/javascript"></script>   
+<script src="{% md5url 'BaseApp/assets/javascript/looper_base/components/SWDate.js' %}" type="text/javascript"></script>   
+<script src="{% md5url 'BaseApp/assets/javascript/looper_base/components/SWRadiobox.js' %}" type="text/javascript"></script>   
+<script src="{% md5url 'BaseApp/assets/javascript/looper_base/components/SWText.js' %}" type="text/javascript"></script>   
+<script src="{% md5url 'BaseApp/assets/javascript/looper_base/components/SWTextarea.js' %}" type="text/javascript"></script>   
+<script src="{% md5url 'BaseApp/assets/javascript/looper_base/components/SWCheckbox.js' %}" type="text/javascript"></script>   
+<script src="{% md5url 'BaseApp/assets/javascript/app/components/SWTextAreaHref.js' %}" type="text/javascript"></script>  
+<script src="{% md5url 'BaseApp/assets/javascript/looper_base/components/SWForm.js' %}" type="text/javascript"></script> 
+<script src="{% md5url 'BaseApp/assets/javascript/looper_base/components/SWTimeline2.js' %}" type="text/javascript"></script>   
+{%include "PMISLooper/base.html" with form_js=True%}
+{% render_bundle 'PMISLooper/dist/javascript/vue_index' %}
+{%endblock%}

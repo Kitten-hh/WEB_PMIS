@@ -1,0 +1,313 @@
+
+{% extends 'BonusApp/index.html' %}
+{%load static %}
+{% load customer_filter %}
+{%block form_css%}
+{{block.super}}
+<style>
+    .fontRed {
+        color: red;
+    }
+    .fontBlue {
+        color: blue;
+    }
+    #search_advanced .pre-scrollable { 
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 1px solid rgba(20, 20, 31, .2);
+        border-radius: .3rem;            
+        height: 145px !important;
+    }    
+    #search_advanced .list-group-item {
+        padding: .35rem 1rem;
+    }
+
+    #search_advanced .list-group-item-action {
+        color: rgb(58, 58, 58);
+    }    
+    #search_advanced .tile {
+        display: inline-block;
+        width: 2rem;
+        height: 2rem;
+        color: #5063a0;
+        font-weight: 600;
+        font-size: 1rem;
+        background-color: #fff;
+        line-height: 2rem;
+        text-align: center;
+        vertical-align: middle;
+        border-radius: .25rem;
+    }
+    #search_advanced .list-group-item-body {
+        flex: 1;
+        min-width: 0;
+        align-self: center;
+        font-size: .875rem;        
+    }
+    #search_advanced .list-group-item.active {
+        background-color: #EBEDF3 !important;
+        border-color: #EBEDF3
+    }
+
+    #search_advanced .checkbox > input:checked ~ span {
+        background-color: #4ea4fd;
+    }
+    #search_advanced #search_filter_btn {
+        background-color: #4ea4fd !important;
+        border-color: #4ea4fd !important;
+    }
+    
+</style>
+{%endblock%}
+
+{%block content%}
+{{block.super}}
+<div id="app">
+    <div class="subheader">
+        <div class="container-fluid d-flex align-items-center justify-content-between flex-wrap pl-2">
+            <!--begin::Toolbar-->
+            <div class="d-flex align-items-center flex-wrap py-2"> 
+                <!--begin::Dropdown-->
+                 
+                <div class="card-title dropdown m-0" id="task_search_box">                    
+                    <div class="input-group mt-2 form-inline">
+                        <!--
+                        <div class="flex-shrink-0 dropdown dropdown-inline py-1 mr-2" data-placement="top">
+                            <a href="#" class="btn btn-fixed-height btn-danger font-weight-bolder font-size-sm px-5 search_more"
+                                aria-haspopup="true" aria-expanded="false">Bonus查詢</a>
+                        </div>
+                        -->
+                        <button class="btn btn-fixed-height btn-danger font-weight-bolder font-size-sm px-5 search_more mr-2">獎金查詢
+                        </button>
+                        <button class="btn btn-fixed-height btn-danger font-weight-bolder font-size-sm px-5 search_lastweek mr-2">上周
+                        </button>  
+                        <button class="btn btn-fixed-height btn-danger font-weight-bolder font-size-sm px-5 search_today mr-2">當天
+                        </button>  
+                        <button class="btn btn-fixed-height btn-danger font-weight-bolder font-size-sm px-5 search_week mr-2">本周
+                        </button>  
+                        <button class="btn btn-fixed-height btn-danger font-weight-bolder font-size-sm px-5 search_month mr-2">本月
+                        </button>  
+                        <button class="btn btn-fixed-height btn-danger font-weight-bolder font-size-sm px-5 search_quarter mr-2">本季度
+                        </button>                      
+                    </div>
+                </div>          
+                <!--end::Dropdown-->
+            </div>
+            <!--end::Toolbar-->
+        </div>
+    </div>
+    <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalTitle"
+        style="display: none;" aria-hidden="true">
+        <div id="form-wapper"> <!--form將生成到這個div中，需要設置id-->
+        </div>
+    </div>
+
+
+    <div class="modal fade" id="tasktypeModal" tabindex="-1" role="dialog" aria-labelledby="tasktypeModalTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalCenterTitle">任務分類分析</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div id="db_tasktype"></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-cancel" data-dismiss="modal">Close</button>                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="selectUserModal" tabindex="-1" role="dialog" aria-labelledby="selectUserModalTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">請輸入聯繫人</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <i class="fas fa-times text-dark" style="font-size: 20px;"></i>
+                    </button>
+                </div>
+                <div class="modal-body">                                    
+                    <div class="col">
+                        <input type="text" class="form-control" id="txtContact" name="contact"
+                            placeholder="联系人">
+                    </div>              
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary bonus_analysis">確認</button>                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="d-flex flex-column">
+        <!--begin::Container-->
+                         
+                <!--begin::Card-->
+                <div class="card card-custom ml-2 mr-2 mt-2" style="display:none" id="card_para">
+                    <div class="card-header">
+                        <h3 class="card-title"><label name="lb_contact"></label>獎金參數</h3>                        
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <label class="col-form-label col-8 col-lg-1">Budget Allowance %:</label>
+                            <label class="col-form-label col-4 col-lg-1" id="BudgetAllowance">0</label>
+                            <label class="col-form-label col-8 col-lg-1">Perfect Scoring:</label>
+                            <label class="col-form-label col-4 col-lg-1" id="PerfectScoring">0</label>
+                            <label class="col-form-label col-8 col-lg-1">Ratio Of M:</label>
+                            <label class="col-form-label col-4 col-lg-1" id="RatioOFM">0</label>
+                            <label class="col-form-label col-8 col-lg-1">Ratio Of S:</label>
+                            <label class="col-form-label col-4 col-lg-1" id="RatioOFS">0</label>
+                            <label class="col-form-label col-8 col-lg-1">Ratio Of P:</label>
+                            <label class="col-form-label col-4 col-lg-1" id="RatioOFP">0</label>
+                            <label class="col-form-label col-8 col-lg-1">Management S:</label>
+                            <label class="col-form-label col-4 col-lg-1" id="ManagementS">0</label>
+                            <label class="col-form-label col-8 col-lg-1">Performance. S:</label>
+                            <label class="col-form-label col-4 col-lg-1" id="PerformanceS">0</label>
+                            <label class="col-form-label col-8 col-lg-1">Quarter Working Day:</label>
+                            <label class="col-form-label col-4 col-lg-1" id="QuarterWorkingDay">0</label>
+                            <label class="col-form-label col-8 col-lg-1">Working Day:</label>
+                            <label class="col-form-label col-4 col-lg-1" id="WorkingDay">0</label>
+                            <label class="col-form-label col-8 col-lg-1">Mag %:</label>
+                            <label class="col-form-label col-4 col-lg-1" id="ManagementRatio">0</label>
+                            <label class="col-form-label col-8 col-lg-1">Per %:</label>
+                            <label class="col-form-label col-4 col-lg-1" id="PerformanaceRatio">0</label>
+                            <label class="col-form-label col-8 col-lg-1">Salary $:</label>
+                            <label class="col-form-label col-4 col-lg-1" id="Salary">0</label>
+                        </div>
+                    </div>
+                </div>
+                <!--end::Card--> 
+                           
+                <div class="card card-custom ml-2 mr-2 mt-2" style="display:none">
+                        <div class="card-header">
+                            <h3 class="card-title"><label name="lb_contact"></label><label>任務分類分析</label></h3>
+                        </div>
+                        <div class="card-body">
+                            <div id="db_tasktype"></div>
+                        </div>
+                </div>
+                <div class="card card-custom ml-2 mt-2 mr-2">
+                    <div class="card-header">
+                        <h3 class="card-title"><label name="lb_contact"></label><label>任務列表</label><label name="lb_condition"></label></h3>
+                        <div class="card-toolbar">
+                            <button id="btn_showTaskType" class="btn btn-fixed-height btn-primary font-weight-bolder font-size-sm px-5 mr-2" style="display:none">任務分類
+                            </button>  
+                            <button id="btn_auditScore" class="btn btn-fixed-height btn-danger font-weight-bolder font-size-sm px-5" style="display:none">審核績效分
+                            </button>  
+                        </div>
+                    </div>                    
+                    <div class="card-body no-drag grid-item-body">
+                        <div id="db_wapper" class="datatable datatable-bordered datatable-head-custom datatable-default datatable-primary datatable-loaded"></div>                        
+                    </div>
+                </div>
+                <!--begin::Card-->
+                <div class="card card-custom ml-2 mr-2 mt-2" style="display:none" id="card_result">
+                    <div class="card-header">
+                        <h3 class="card-title"><label name="lb_contact"></label>獎金分析結果</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <label class="col-form-label col-6 col-lg-1" id="c1"></label>
+                            <label class="col-form-label col-3 col-lg-1" id="c2" style="color:blue;">Score</label>
+                            <label class="col-form-label col-3 col-lg-1" id="c3" style="color:red;">LScore</label>
+                            <label class="col-form-label col-6 col-lg-1" id="c4"></label>
+                            <label class="col-form-label col-4 col-lg-1" id="c5"></label>
+                            <label class="col-form-label col-6 col-lg-1" id="c6"></label>
+                            <label class="col-form-label col-4 col-lg-1" id="c7"></label>
+                            <label class="col-form-label col-6 col-lg-1" id="c8"></label>
+                            <label class="col-form-label col-3 col-lg-1" id="c9" style="color:blue;">Score</label>
+                            <label class="col-form-label col-3 col-lg-1" id="c10" style="color:red;">LScore</label>
+                            <label class="col-form-label col-4 col-lg-1" id="c11"></label>
+                            <label class="col-form-label col-6 col-lg-1" id="c12"></label>
+                            <hr class="col-lg-11 col-11" style="border:1px solid darkgray;" />
+                
+                
+                            <label class="col-form-label col-6 col-lg-1">Total Score:</label>
+                            <label class="col-form-label col-3 col-lg-1" style="color:blue;" id="Score">0</label>
+                            <label class="col-form-label col-3 col-lg-1" style="color:red;" id="LookupScore">0</label>
+                            <label class="col-form-label col-6 col-lg-1">Avg:</label>
+                            <label class="col-form-label col-4 col-lg-1" id="ScoreAvg">0</label>
+                            <label class="col-form-label col-6 col-lg-1">Sugg.Avg:</label>
+                            <label class="col-form-label col-4 col-lg-1" id="SuggAvg">0</label>
+                            <label class="col-form-label col-6 col-lg-1">S Score for the quarter.S:</label>
+                            <label class="col-form-label col-3 col-lg-1" style="color:blue;" id="QuarterScore">0</label>
+                            <label class="col-form-label col-3 col-lg-1" style="color:red;" id="QuarterLookupScore">0</label>
+                            <label class="col-form-label col-6 col-lg-1">Simulate Score:</label>
+                            <label class="col-form-label col-4 col-lg-1" id="SimulateScore">0</label>
+                
+                            <label class="col-form-label col-6 col-lg-1">S Bonus:</label>
+                            <label class="col-form-label col-3 col-lg-1" style="color:blue;" id="ScoreBonus">0</label>
+                            <label class="col-form-label col-3 col-lg-1" style="color:red;" id="LookupScoreBonus">0</label>
+                            <label class="col-form-label col-6 col-lg-1">Simulate $per mth:</label>
+                            <label class="col-form-label col-4 col-lg-1" id="SimulatePerMth">0</label>
+                            <label class="col-form-label col-6 col-lg-1">Act in $ per mth:</label>
+                            <label class="col-form-label col-4 col-lg-1" id="ActInPerMth">0</label>
+                            <label class="col-form-label col-6 col-lg-1">S Actual Quarter:</label>
+                            <label class="col-form-label col-3 col-lg-1" style="color:blue;" id="ScoreActualQuarter">0</label>
+                            <label class="col-form-label col-3 col-lg-1" style="color:red;" id="LookupScoreActualQuarter">0</label>
+                        </div>
+                    </div>
+                </div>
+                <!--end::Card-->
+            
+       
+        <!--end::Container-->
+    </div>  
+    <div id="search_tab" class="d-none">
+        <ul class="nav nav-tabs nav-tabs-line mb-5 fs-6" style="font-size:14px;">
+            <li class="nav-item">
+                <a class="nav-link show active" data-toggle="tab" href="#search_basic">一般查詢</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#search_advanced">高級查詢</a>
+            </li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane fade active show" id="search_basic"></div>
+            <div class="tab-pane fade" id="search_advanced">
+                <div class="form-inline mb-1 cust_filter align-items-center" style="flex-wrap: nowrap;">
+                    <div class="input-group" style="flex:1 1 auto">
+                        <input type="text" id="template-users" class="form-control" placeholder="input filter"/>
+                        <div class="input-group-append">
+                            <button id="search_filter_btn" class="btn mr-2 btn-primary no-caret"><span class="fa fa-search"></span></button>
+                        </div>                
+                    </div>                
+                    <div class="checkbox-inline">
+                        <label class="checkbox">
+                            <input class="control" id="IsDaily" type="checkbox" name="Checkboxes2" checked />
+                            <span></span>
+                            Daily
+                        </label>
+                    </div>                
+                </div>
+                <div class="pre-scrollable">
+
+                </div>             
+            </div>                
+        </div>
+    </div>    
+</div>
+<div id="SWListgroup" class="list-group list-group-bordered mb-3" style="display: none;">
+    <a href="#" class="list-group-item list-group-item-action d-flex" pk="[[qf025]]">                                                                                                                                                                      
+      <div class="pr-2">
+        <div class="tile">
+          <span class="">[[qf012 ]]</span>
+        </div>
+      </div>
+      <div class="list-group-item-body">[[qf003]]</div>
+    </a>
+</div>
+{%endblock%}
+
+{%block form_js%}
+{{block.super}}
+<script type="text/javascript" src="{% static 'BonusApp/js/common.js' %}"></script>
+<script type="text/javascript" src="{% static 'BonusApp/js/bonus_analysis.js' %}"></script>
+{% endblock%}

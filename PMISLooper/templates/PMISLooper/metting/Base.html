@@ -1,0 +1,18 @@
+{% extends 'BaseApp/vue_looper_base/base_form2/index.html' %}
+{%load static %}
+{% load render_bundle from webpack_loader %}
+{% load md5url %}
+
+
+{%block js_vendor%}
+    <!--可以在項目的主頁面中引用vendor.js其他頁面繼承它的方式, 讓繼承它的頁面不需要引用vendor.js-->
+<script src="{% static 'WEB_PMIS/dist/javascript/vendor.js'%}"></script>    
+
+{%endblock%}
+
+
+{%block form_js%}
+
+{% render_bundle 'PMISLooper/dist/javascript/Base' %}  
+
+{%endblock%}     

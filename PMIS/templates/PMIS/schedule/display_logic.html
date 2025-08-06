@@ -1,0 +1,199 @@
+{% extends 'WEB_PMIS/main.html' %}
+{%load static%}
+{%block header_jscss%}
+<link rel="stylesheet" href="{% static 'BaseProject/vendor/datatables-1.10.20/datatables.min.css' %}" type="text/css">  
+<link rel="stylesheet" href="{% static 'BaseProject/vendor/Looper/assets/vendor/bootstrap-select/css/bootstrap-select.min.css' %}">
+<link rel="stylesheet" href="{% static 'BaseProject/vendor/jquery-querybuilder-dev/css/query-builder.default.min.css' %}">
+<style>
+    .overflow_td{
+        max-width: 120px;
+        overflow: hidden;        
+        text-overflow:ellipsis;
+        white-space: nowrap;
+    }	    
+</style>
+{%endblock%}
+
+{%block content %}
+<div id="Main_Page" class="mt-3">
+<table class="datatable table table-striped- table-bordered table-hover table-checkable dt-responsive" id="session">
+    <thead>
+        <tr>
+        <th>RecordID</th>
+        <th>SessionId</th>
+        <th>Desp</th>
+        <th>Contact</th>
+        <th>Progress</th>
+        <th>FLType</th>
+        <th>ProjectScore</th>
+        <th>Weight</th>
+        <th>Capacity</th>
+        <th>DjCapacity</th>
+        <th>SchRate</th>    
+        </tr>
+    </thead>
+</table>    
+
+<div class="row ml-2 mb-2">
+    <div class="form-inline">
+    <label for="period" class="col-form-label">Period</label>
+    <select id="period" class="form-control custom-select">
+        <option value="--">--</option>
+        <option value="Normal">Normal</option>
+        <option value="Short">Short</option>
+    </select>
+    </div>
+</div>
+<table class="datatable table table-striped- table-bordered table-hover table-checkable dt-responsive" id="tasks">
+<thead>
+    <tr>
+    <th>TaskNo </th>
+    <th>Task</th>
+    <th>Contact</th>
+    <th>Progress</th>
+    <th>Period</th>
+    <th>TypeNo</th>
+    <th>TaskTypePriority</th>
+    <th>FlPriority</th>    
+    <th>SessPriority</th>
+    <th>SchPriority</th>    
+    <th>SchBDate</th>
+    <th>SchEDate</th>
+    <th>TaskType</th>    
+    <th>PlanBDate</th>
+    <th>PlanEDate</th>
+    <th>UDF09</th>    
+    <th>HOperation</th>    
+    <th>Class</th>    
+    <th>Priority</th>    
+    <th>CycleTask</th>
+    <th>DayJob</th>
+    </tr>
+</thead>
+</table>
+</div>
+{%endblock%}
+
+{%block footer_jscss%}
+<script src="{% static 'BaseProject/vendor/datatables-1.10.20/datatables.min.js' %}" type="text/javascript"></script>
+<script src="{% static 'BaseProject/vendor/datatables-1.10.20/dataTables.colResize.js' %}" type="text/javascript"></script>
+<script src="{% static 'BaseProject/js/components/datatableview.js' %}" type="text/javascript"></script>
+<script src="{% static 'BaseProject/vendor/Looper/assets/vendor/bootstrap-select/js/bootstrap-select.min.js' %}"></script> <!-- END BASE JS -->
+<script src="{% static 'BaseProject/vendor/jquery-querybuilder-dev/js/query-builder.standalone.js' %}"></script>
+<script src="{% static 'BaseProject/js/components/vue_component.js' %}"></script>
+<script>
+    var tasks = {{tasks|safe}}
+    var sessions = {{sessions|safe}}
+    var Local_Form = Vue.extend({
+        data() {
+            return {
+                tasks:tasks,
+                sessions:sessions,
+                table_tasks:{},
+                table_session:{}
+            }
+        },
+        mounted() {
+            var self = this;
+            this.table_tasks = $('#tasks').DataTable({
+                dom: `<'row'<'col-sm-6 text-left'f><'col-sm-6 text-right'B>>
+                <'row'<'col-sm-12'tr>>
+                <'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7 dataTables_pager'lp>>`,                
+                buttons: [
+                'colvis'
+                ],    
+                select: {       //啟用和配置DataTables的select擴展, 支持選擇一行或多行
+                    style:'os' //api 只能api選擇， single 單行， multi 多行,  os 不按ctrl時是單選 按住時是多先 multi+shift 按住shift 選擇範圍
+                },                
+                order: [],
+                responsive: false,
+                scrollX:        true,
+                scrollCollapse: true,                
+                data:tasks,
+                columns:[
+                    {data:'taskno'},
+                    {data:'task'},
+                    {data:'contact'},
+                    {data:'progress'},
+                    {data:'Period'},
+                    {data:'TypeNo'},
+                    {data:'TaskTypePriority'},
+                    {data:'fl_priority'},                    
+                    {data:'sess_priority'},
+                    {data:'SchPriority'},                    
+                    {data:'SchBDate'},
+                    {data:'SchEDate'},
+                    {data:'realtasktype'},
+                    {data:'planbdate'},
+                    {data:'planedate'},
+                    {data:'udf09'},    
+                    {data:'hoperation'},    
+                    {data:'class_field'},    
+                    {data:'priority'},    
+                    {data:'cycletask'},
+                    {data:'dayjob'}
+                ],
+                columnDefs: [
+                { width: '100px', className: "overflow_td", targets: 1 }
+                ],                
+            });
+            basicDataTableStyle.defaultHandleStyle(this.table_tasks);
+            
+            this.table_session = $('#session').DataTable({
+                dom: `<'row'<'col-sm-12'tr>>
+                <'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7 dataTables_pager'lp>>`,                
+                buttons: [
+                'colvis'
+                ],    
+                select: {       //啟用和配置DataTables的select擴展, 支持選擇一行或多行
+                    style:'os' //api 只能api選擇， single 單行， multi 多行,  os 不按ctrl時是單選 按住時是多先 multi+shift 按住shift 選擇範圍
+                },                
+                order: [],
+                responsive: false,
+                scrollX: false, 
+                data:sessions,
+                columns:[
+                    {data:'recordid'},
+                    {data:'sessionid'},
+                    {data:'sdesp'},
+                    {data:'contact'},
+                    {data:'progress'},
+                    {data:'fltype'},
+                    {data:'projectscore'},
+                    {data:'weight'},
+                    {data:'capacity'},
+                    {data:'djcapacity'},
+                    {data:'schrate'}
+                ]});
+            basicDataTableStyle.defaultHandleStyle(this.table_session);
+            $("#session").DataTable().on('select', this.session_select_event);
+            $("#session").DataTable().on('deselect', this.session_deselect_event);
+            $('#period').on('change', function(){
+                var period = $(this).val()
+                if (period != '--')
+                    self.table_tasks.column(4).search(period).draw();
+                else
+                    self.table_tasks.column(4).search('').draw();
+            })
+        },
+        methods: {
+            session_select_event(e, dt, type, indexes ){
+                var self = this;
+                if (type == 'row') {
+                    var rowData = dt.rows(indexes).data().toArray()[0];
+                    var session = rowData.sessionid.trim();
+                    self.table_tasks.column(0).search(session).draw();
+                }
+            },
+            session_deselect_event(e, dt, type, indexes ){
+                var self = this;
+                if (type == 'row') {
+                    self.table_tasks.column(0).search('').draw();
+                }
+            }
+        }
+    });
+    var Form = new Local_Form().$mount("#Main_Page");
+</script>
+
+{%endblock%}

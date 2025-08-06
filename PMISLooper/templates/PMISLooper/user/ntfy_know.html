@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Centered Text</title>
+<style>
+  /* 设置 body 的高度为视口高度，使得我们可以垂直居中内容 */
+  body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center; /* 水平居中 */
+    align-items: start; /* 垂直居中 */
+    font-family: Arial, sans-serif; /* 设置字体 */
+  }
+</style>
+</head>
+<body>
+<div style="margin-top:20vh">{{message}}</div>
+<script>
+    setTimeout(function(){
+        window.close();
+    },3000)
+</script>
+</body>
+</html>

@@ -1,0 +1,407 @@
+
+{% extends 'PMIS/Starter_page.html' %}
+
+{%  block content %}
+
+
+    <!-- 
+    <form method ="post">
+        <button class="btn btn-primary" <a href="http://121.13.252.163:8001/Knowledge/knowledge"</a> value="">Search</button> 
+    -->
+    <H5>SystemBug Form </H5>
+
+
+
+
+    <form class="site-form"  action="srh">
+        {% csrf_token %}
+        
+        <div class="row  align-items-center justify-content-between">
+            <button type="submit" class="btn btn-primary" value="">Search</button> 
+            <div class="col-12">
+                <input class="form-control" type="text" value="" id="Search" name="srh">
+                <!-- 
+                <button type="submit" class="btn btn-primary" value="" name="srh">Submit</button> 
+                -->
+            </div>
+        </div>   
+    
+    </form>
+    <hr>
+
+
+
+    <form class="site-form" method="POST" >
+        {% csrf_token %}
+        <!-- 
+        <div class="fieldWrapper">
+        -->
+        <!-- -->
+
+        <div class="form-group row">
+            {{ form.RP016.errors }}
+            <label for="form.RP016.id_for_label }}" class="col-4 col-form-label">單別</label>
+            <div class="col-12">
+                <input class="form-control" type="text" value="" id={{ form.RP016 }}
+            </div>
+        </div>
+
+        <div class="form-group row">
+            {{ form.RP017.errors }}
+            <label for="form.RP017.id_for_label }}" class="col-4 col-form-label">單號</label>
+            <div class="col-12">
+                <input class="form-control" type="text" value="" id={{ form.RP017 }}
+            </div>
+        </div>
+
+        <div class="form-group row">
+            {{ form.RP001.errors }}
+            <label for="form.RP001.id_for_label }}" class="col-4 col-form-label">版本號</label>
+            <div class="col-12">
+                <input class="form-control" type="text" value="" id={{ form.RP001 }}
+            </div>
+        </div>
+
+        <div class="form-group row">
+            {{ form.RP002.errors }}
+            <label for="form.RP002.id_for_label }}" class="col-4 col-form-label">提出日期</label>
+            <div class="col-12">
+                <input class="form-control" type="date" value="" id={{ form.RP002 }} required/>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            {{ form.RP003.errors }}
+            <label for="form.RP003.id_for_label }}" class="col-4 col-form-label">提出部門</label>
+            <div class="col-12">
+                <input class="form-control" type="text" value="" id={{ form.RP003 }}
+            </div>
+        </div>
+
+        <div class="form-group row">
+            {{ form.RP004.errors }}
+            <label for="form.RP004.id_for_label }}" class="col-4 col-form-label">提出人員</label>
+            <div class="col-12">
+                <input class="form-control" type="text" value="" id={{ form.RP004 }}
+            </div>
+        </div>
+
+        <div class="form-group row">
+            {{ form.RP005.errors }}
+            <label for="form.RP005.id_for_label }}" class="col-4 col-form-label">問題描述</label>
+            <div class="col-12">
+                <textarea class="form-control" id={{ form.RP005 }} </textarea>
+            </div>
+        </div> 
+
+        <div class="form-group row">
+            {{ form.RP006.errors }}
+            <label for="form.RP006.id_for_label }}" class="col-4 col-form-label">附件</label>
+            <div class="col-12">
+                <input class="form-control" type="text" value="" id={{ form.RP006 }}
+            </div>
+        </div>
+
+        <div class="form-group row">
+            {{ form.RP007.errors }}
+            <label for="form.RP007.id_for_label }}" class="col-4 col-form-label">處理方式結果</label>
+            <div class="col-12">
+                <input class="form-control" type="text" value="" id={{ form.RP007 }}
+            </div>
+        </div>
+
+        <div class="form-group row">
+            {{ form.RP008.errors }}
+            <label for="form.RP008.id_for_label }}" class="col-4 col-form-label">發生問題原因</label>
+            <div class="col-12">
+                <input class="form-control" type="text" value="" id={{ form.RP008 }}
+            </div>
+        </div>
+
+        <div class="form-group row">
+            {{ form.RP009.errors }}
+            <label for="form.RP009.id_for_label }}" class="col-4 col-form-label">跟進部門</label>
+            <div class="col-12">
+                <input class="form-control" type="text" value="" id={{ form.RP009 }}
+            </div>
+        </div>
+
+        <div class="form-group row">
+            {{ form.RP010.errors }}
+            <label for="form.RP010.id_for_label }}" class="col-4 col-form-label">跟進人</label>
+            <div class="col-12">
+                <input class="form-control" type="text" value="" id={{ form.RP010 }}
+            </div>
+        </div>
+
+        <div class="form-group row">
+            {{ form.RP011.errors }}
+            <label for="form.RP011.id_for_label }}" class="col-4 col-form-label">狀態</label>
+            <div class="col-12">
+                <input class="form-control" type="text" value="" id={{ form.RP011 }}
+            </div>
+        </div>
+
+        <div class="form-group row">
+            {{ form.RP012.errors }}
+            <label for="form.RP012.id_for_label }}" class="col-4 col-form-label">處理開始日期</label>
+            <div class="col-12">
+                <input class="form-control" type="date" value="" id={{ form.RP012 }} required/>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            {{ form.RP013.errors }}
+            <label for="form.RP013.id_for_label }}" class="col-4 col-form-label">處理結束日期</label>
+            <div class="col-12">
+                <input class="form-control" type="date" value="" id={{ form.RP013 }} required/>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            {{ form.RP014.errors }}
+            <label for="form.RP014.id_for_label }}" class="col-4 col-form-label">備註</label>
+            <div class="col-12">
+                <textarea class="form-control" id={{ form.RP014 }} </textarea>
+            </div>
+        </div> 
+        <div class="form-group row">
+            {{ form.RP015.errors }}
+            <label for="form.RP015.id_for_label }}" class="col-4 col-form-label">轉電腦部處理</label>
+            <div class="col-12">
+                <input class="form-control" type="text" value="" id={{ form.RP015 }}
+            </div>
+        </div>
+
+        <div class="form-group row">
+            {{ form.RP018.errors }}
+            </div>
+            <label for="{{ form.RP018.id_for_label}} " class="col-4 col-form-label">自訂</label>
+            <div class="col-12">
+                <input class="form-control" type="text" value="" id={{ form.RP018 }}
+            </div>
+        </div>
+
+        <div class="form-group row">
+            {{ form.RP019.errors }}
+            <label for="form.RP019.id_for_label }}" class="col-4 col-form-label">自訂</label>
+            <div class="col-12">
+                <input class="form-control" type="text" value="" id={{ form.RP019 }}
+            </div>
+        </div>
+
+        <div class="form-group row">
+            {{ form.RP020.errors }}
+            <label for="form.RP020.id_for_label }}" class="col-4 col-form-label">系統名稱</label>
+            <div class="col-12">
+                <input class="form-control" type="text" value="" id={{ form.RP020 }}
+            </div>
+        </div>
+
+        <div class="form-group row">
+            {{ form.RP021.errors }}
+            <label for="form.RP021.id_for_label }}" class="col-4 col-form-label">問題類型</label>
+            <div class="col-12">
+                <input class="form-control" type="text" value="" id={{ form.RP021 }}
+            </div>
+        </div>
+
+        <div class="form-group row">
+            {{ form.RP022.errors }}
+            <label for="form.RP022.id_for_label }}" class="col-4 col-form-label">表單名稱</label>
+            <div class="col-12">
+                <input class="form-control" type="text" value="" id={{ form.RP022 }}
+            </div>
+        </div>
+            
+        <div class="form-group row">
+            {{ form.RP023.errors }}
+            <label for="form.RP023.id_for_label }}" class="col-4 col-form-label">問題所屬專案</label>
+            <div class="col-12">
+                <input class="form-control" type="text" value="" id={{ form.RP023 }}
+            </div>
+        </div>
+            
+        <div class="form-group row">
+            {{ form.RP024.errors }}
+            <label for="form.RP024.id_for_label }}" class="col-4 col-form-label">關聯Task</label>
+            <div class="col-12">
+                <input class="form-control" type="text" value="" id={{ form.RP024 }}
+            </div>
+        </div>
+            
+        <div class="form-group row">
+            {{ form.RP025.errors }}
+            <label for="form.RP025.id_for_label }}" class="col-4 col-form-label">更新穩定版本</label>
+            <div class="col-12">
+                <input class="form-control" type="text" value="" id={{ form.RP025 }}
+            </div>
+        </div>
+            
+        <div class="form-group row">
+            {{ form.RP026.errors }}
+            <label for="form.RP026.id_for_label }}" class="col-4 col-form-label">更新開發版本</label>
+            <div class="col-12">
+                <input class="form-control" type="text" value="" id={{ form.RP026 }}
+            </div>
+        </div>
+            
+        <div class="form-group row">
+            {{ form.RP027.errors }}
+            <label for="form.RP027.id_for_label }}" class="col-4 col-form-label">功能名稱</label>
+            <div class="col-12">
+                <input class="form-control" type="text" value="" id={{ form.RP027 }}
+            </div>
+        </div>
+            
+        <div class="form-group row">
+            {{ form.RP028.errors }}
+            <label for="form.RP028.id_for_label }}" class="col-4 col-form-label">功能依賴物件</label>
+            <div class="col-12">
+                <input class="form-control" type="text" value="" id={{ form.RP028 }}
+            </div>
+        </div>
+            
+        <div class="form-group row">
+            {{ form.RP029.errors }}
+            <label for="form.RP029.id_for_label }}" class="col-4 col-form-label">問題級別</label>
+            <div class="col-12">
+                <input class="form-control" type="text" value="" id={{ form.RP029 }}
+            </div>
+        </div>
+            
+        <div class="form-group row">
+            {{ form.RP030.errors }}
+            <label for="form.RP030.id_for_label }}" class="col-4 col-form-label">是否重要視窗</label>
+            <div class="col-12">
+                <input class="form-control" type="text" value="" id={{ form.RP030 }}
+            </div>
+        </div>
+
+        <div class="form-group row">
+            {{ form.RP031.errors }}
+            <label for="form.RP031.id_for_label }}" class="col-4 col-form-label">計畫開始日期</label>
+            <div class="col-12">
+                <input class="form-control" type="date" value="" id={{ form.RP031 }} required/>
+            </div>
+        </div>
+            
+        <div class="form-group row">
+            {{ form.RP032.errors }}
+            <label for="form.RP032.id_for_label }}" class="col-4 col-form-label">計畫結束日期</label>
+            <div class="col-12">
+                <input class="form-control" type="date" value="" id={{ form.RP032 }} required/>
+            </div>
+        </div>
+        <div class="form-group row">
+            {{ form.RP033.errors }}
+            <label for="form.RP033.id_for_label }}" class="col-4 col-form-label">優先順序</label>
+            <div class="col-12">
+                <input class="form-control" type="text" value="" id={{ form.RP033 }}
+            </div>
+        </div>
+        <div class="form-group row">
+            {{ form.RP034.errors }}
+            <label for="form.RP034.id_for_label }}" class="col-4 col-form-label">備用欄位</label>
+            <div class="col-12">
+                <input class="form-control" type="text" value="" id={{ form.RP034 }}
+            </div>
+        </div>
+            
+        <div class="form-group row">
+            {{ form.RP035.errors }}
+            <label for="form.RP035.id_for_label }}" class="col-4 col-form-label">匯出標記</label>
+            <div class="col-12">
+                <input class="form-control" type="text" value="" id={{ form.RP035 }}
+            </div>
+        </div>
+
+        <div class="form-group row">
+            {{ form.RP036.errors }}
+            <label for="form.RP036.id_for_label }}" class="col-4 col-form-label">備用欄位</label>
+            <div class="col-12">
+                <input class="form-control" type="text" value="" id={{ form.RP036 }}
+            </div>
+        </div>
+            
+        <div class="form-group row">
+            {{ form.RP037.errors }}
+            <label for="form.RP037.id_for_label }}" class="col-4 col-form-label">處理分類</label>
+            <div class="col-12">
+                <input class="form-control" type="text" value="" id={{ form.RP037 }}
+            </div>
+        </div>
+            
+        <div class="form-group row">
+            {{ form.RP038.errors }}
+            <label for="form.RP038.id_for_label }}" class="col-4 col-form-label">處理方式</label>
+            <div class="col-12">
+                <input class="form-control" type="text" value="" id={{ form.RP038 }}
+            </div>
+        </div>
+            
+        <div class="form-group row">
+            {{ form.RP039.errors }}
+            <label for="form.RP039.id_for_label }}" class="col-4 col-form-label">上報時間</label>
+            <div class="col-12">
+                <input class="form-control" type="date" value="" id={{ form.RP039 }} required/>
+            </div>
+        </div>
+            
+        <div class="form-group row">
+            {{ form.RP040.errors }}
+            <label for="form.RP040.id_for_label }}" class="col-4 col-form-label">設備編號</label>
+            <div class="col-12">
+                <input class="form-control" type="text" value="" id={{ form.RP040 }}
+            </div>
+        </div>
+            
+        <div class="form-group row">
+            {{ form.RP041.errors }}
+            <label for="form.RP041.id_for_label }}" class="col-4 col-form-label">固定資產編號:</label>
+            <div class="col-12">
+                <input class="form-control" type="text" value="" id={{ form.RP041 }}
+            </div>
+        </div>        
+
+        <button type="submit" class="btn btn-primary" value="">Submit</button> 
+
+    </form>
+
+<!-- 
+        <button onclick="Test()" class="btn btn-primary" value="">Test</button> 
+-->
+
+
+    <script>
+        function Test(){
+            var request = new XMLHttpRequest()
+
+            //request.open('GET','http://121.13.252.163:8001/PMIS/Trial',true)
+            request.open('GET','https://ghibliapi.herokuapp.com/films',true)
+
+            alert('About to do the onload')
+
+            request.onload = function () {
+
+                var data = JSON.parse(this.response)
+
+
+                alert('request was done'+str(request.status))
+
+                if( request.status >= 200 && request.status < 400){
+                    console.log('Working')
+                } else {
+                    console.log('Does not work')
+                }
+            }
+            console.log('Test')
+        }
+
+    </script>
+
+{% endblock %}
+
+
+
+

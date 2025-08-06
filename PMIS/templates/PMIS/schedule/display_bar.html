@@ -1,0 +1,301 @@
+{% extends 'WEB_PMIS/main.html' %}
+{%load static%}
+{%block header_jscss%}
+<link rel="stylesheet" href="{% static 'BaseProject/vendor/datatables-1.10.20/datatables.min.css' %}" type="text/css">  
+<link rel="stylesheet" href="{% static 'BaseProject/vendor/Looper/assets/vendor/bootstrap-select/css/bootstrap-select.min.css' %}">
+<link rel="stylesheet" href="{% static 'BaseProject/vendor/jquery-querybuilder-dev/css/query-builder.default.min.css' %}">
+<style>
+    .overflow_td{
+        max-width: 140px;
+        overflow: hidden;        
+        text-overflow:ellipsis;
+        white-space: nowrap;
+    }	    
+</style>
+{%endblock%}
+
+{%block content %}
+<div id="Main_Page" class="mt-3">
+<div class="row">
+    <div class="col-3">
+<table class="datatable table table-striped- table-bordered table-hover table-checkable dt-responsive" id="session">
+    <thead>
+        <tr>
+        <th>Sel</th>
+        <th>SessionId</th>
+        <th>Desp</th>
+        </tr>
+    </thead>
+</table>    
+</div>
+<div class="col-9">
+    <div id="myDiagramDiv" style="border: solid 1px black;width:600px;height:600px;"></div>    
+</div>
+</div>
+</div>
+{%endblock%}
+
+{%block footer_jscss%}
+<script src="{% static 'BaseProject/vendor/datatables-1.10.20/datatables.min.js' %}" type="text/javascript"></script>
+<script src="{% static 'BaseProject/vendor/datatables-1.10.20/dataTables.colResize.js' %}" type="text/javascript"></script>
+<script src="{% static 'BaseProject/js/components/datatableview.js' %}" type="text/javascript"></script>
+<script src="{% static 'BaseProject/vendor/Looper/assets/vendor/bootstrap-select/js/bootstrap-select.min.js' %}"></script> <!-- END BASE JS -->
+<script src="{% static 'BaseProject/vendor/jquery-querybuilder-dev/js/query-builder.standalone.js' %}"></script>
+<script src="{% static 'BaseProject/js/components/vue_component.js' %}"></script>
+<script src="{% static 'BaseProject/vendor/gojs/go.js' %}"></script> <!-- END PLUGINS JS -->
+<script>
+    var tasks = {{tasks|safe}}
+    var sessions = {{sessions|safe}}
+    var Local_Form = Vue.extend({
+        data() {
+            return {
+                tasks:tasks,
+                sessions:sessions,
+                table_session:{}
+            }
+        },
+        mounted() {
+            var self = this;            
+            this.table_session = $('#session').DataTable({
+                dom: `<'row'<'col-sm-12'tr>>
+                <'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7 dataTables_pager'lp>>`,                
+                buttons: [
+                'colvis'
+                ],    
+                select: {       //啟用和配置DataTables的select擴展, 支持選擇一行或多行
+                    style:'os' //api 只能api選擇， single 單行， multi 多行,  os 不按ctrl時是單選 按住時是多先 multi+shift 按住shift 選擇範圍
+                },                
+                order: [],
+                responsive: false,
+                scrollX: false, 
+                scrollY: 600,
+                paging:   false,
+                data:sessions,
+                columns:[
+                    {   data: null,
+                        name:'sel_flag',
+                        defaultContent: "",
+                        orderable: false,
+                        render: function (data, type, full, meta){
+                            var color = '#'+Math.random().toString(16).substr(2,6);
+                            return '<div style="background-color:' + color +';"><input class="cb_sel" color="'+ color + '" sessionid="' + data.sessionid + '" type="checkbox"></div>';
+                        }                        
+                    },
+                    {data:'sessionid'},
+                    {data:'sdesp'}
+                ],
+                columnDefs: [
+                { width: '100px', className: "overflow_td", targets: 2 }
+                ],                   
+            });
+            basicDataTableStyle.defaultHandleStyle(this.table_session);
+            $("#session").DataTable().on('select', this.session_select_event);
+            $("#session").DataTable().on('deselect', this.session_deselect_event);
+            $(".cb_sel").on('click',function(){
+                var sessionid = $(this).attr("sessionid");
+                var color = $(this).attr('color')
+                loadSample('Normal', sessionid, color);
+            });
+        },
+        methods: {
+            session_select_event(e, dt, type, indexes ){
+                /**if (type == 'row') {
+                    var rowData = dt.rows(indexes).data().toArray()[0];
+                    loadSample('Normal', rowData.sessionid)
+                }*/
+                /**var self = this;
+                if (type == 'row') {
+                    var rowData = dt.rows(indexes).data().toArray()[0];
+                    var session = rowData.sessionid.trim();
+                    self.table_tasks.column(0).search(session).draw();
+                }*/
+            },
+            session_deselect_event(e, dt, type, indexes ){
+                /**if (type == 'row') {
+                    var rowData = dt.rows(indexes).data().toArray()[0];
+                    loadSample('Normal', rowData.sessionid)
+                }*/
+                /*var self = this;
+                if (type == 'row') {
+                    self.table_tasks.column(0).search('').draw();
+                }*/
+            }
+        }
+    });
+    var Form = new Local_Form().$mount("#Main_Page");
+</script>
+<script>
+// two dimensional array which will represent the board state
+// this will be filled with Nodes once they are created
+var goLGrid = [];
+
+// the size of the board
+var rows = 0
+var cols = 0
+var schpriority = []
+var interval = 15; // the interval between steps in ms when the simulation is enabled
+var initializing = true;
+var enabled = false; // flag to turn the simulation on or off
+var myDiagram;
+var sampleData = []
+function init(period) {
+    var max_schpriority = 0
+    for (task of tasks)
+        if (task.Period == period) {
+            schpriority.push(task.SchPriority);
+        }
+    schpriority.sort(function(a,b){return b-a;});
+    max_schpriority = schpriority[0]
+    rows = Math.ceil(Math.sqrt(schpriority.length));
+    cols = rows
+    var $ = go.GraphObject.make;
+
+    myDiagram =
+    $(go.Diagram, "myDiagramDiv",
+        {
+        "animationManager.isEnabled": false,
+        // disable movement/edit controls, since the myDiagram is a static grid
+        "panningTool.isEnabled": false,
+        isReadOnly: true,
+        allowZoom: false,
+        allowSelect: false,
+        hasHorizontalScrollbar: false,
+        hasVerticalScrollbar: false,
+        initialAutoScale: go.Diagram.Uniform
+        });
+
+    var nodeSize = 25;
+    var nodeDataArray = []; // array to hold Node data for the model
+    // populate data array by initializing Nodes in a grid and setting their "isAlive" state to false
+    for (var i = 0; i < rows; i++) {
+    var row = new Array(cols);
+    sampleData.push(new Array(cols).fill(0))
+    for (var j = 0; j < cols; j++) {
+        nodeDataArray.push({ location: new go.Point(j * nodeSize, i * nodeSize), row: i, col: j, isAlive: false });
+    }
+    goLGrid.push(row);
+    }
+
+    // stroke color and width of the grid lines
+    var gridStroke = "#A2A2A2";
+    var gridStrokeWidth = 1;
+
+    // define the node template, which also includes interactive functionality, such as clicking to toggle a node's state
+    myDiagram.nodeTemplate =
+    $(go.Part, {
+        isLayoutPositioned: false,
+        mouseEnter: function(e, part, prev) {  // set mouseover border
+        if (!initializing && !enabled) {
+            var shape = part.elt(0);
+            if (shape) {
+            shape.stroke = "steelblue";
+            shape.strokeWidth = 3;
+            }
+            part.zOrder = 2; // ensure that the selection border is in front of all other Nodes by increasing its zOrder
+
+            // drag with a button down to add or erase cells
+            if ((e.buttons === 1 && !part.data.isAlive) || (e.buttons === 2 && part.data.isAlive)) {
+            select(part);
+            }
+        }
+        },
+        mouseLeave: function(e, part, next) {  // restore to original borders
+        var shape = part.elt(0);
+        if (shape) {
+            shape.stroke = gridStroke;
+            shape.strokeWidth = gridStrokeWidth
+        }
+        part.zOrder = 1;
+        },
+        click: function(e, part) { // left click to toggle cell
+        initializing = false;
+        if (!enabled) {
+            select(part);
+        }
+        },
+        contextClick: function(e, part) { // right click to clear cell
+        initializing = false;
+        if (!enabled && part.data.isAlive) {
+            select(part);
+        }
+        },
+        zOrder: 1
+    },
+    $(go.Shape,
+        {
+        figure: "Rectangle",
+        fill: "white",
+        stroke: gridStroke,
+        strokeWidth: gridStrokeWidth,
+        width: nodeSize,
+        height: nodeSize
+        }),
+    new go.Binding("location")
+    );
+
+    // use a simple model for our node data
+    myDiagram.model = new go.Model(nodeDataArray);
+
+    // myDiagram.parts is populated after a model is assigned;
+    // populate the internal gamestate array with the newly created nodes
+    for (var it = myDiagram.parts.iterator; it.next(); ) {
+        var part = it.value;
+        goLGrid[part.data.row][part.data.col] = part;
+    }
+
+    // load the default sample
+    //loadSample(period);
+}
+function goLClear() {
+    if (enabled) {
+      toggleSimulation();
+    }
+    for (var i = 0; i < rows; i++) {
+      for (var j = 0; j < cols; j++) {
+        var part = goLGrid[i][j];
+        if (part.data.isAlive) {
+          select(part);
+        }
+      }
+    }
+}
+function select(part,color) {
+    var shape = part.elt(0);
+    if (shape) {
+      if (shape.fill === "white") {
+        if (color != undefined)
+            shape.fill = color
+        else
+            shape.fill = "steelblue";
+      } else {
+        shape.fill = "white";
+      }
+    };
+    part.data.isAlive = !part.data.isAlive;
+}
+function loadSample(period,value, color) {
+    //goLClear(); // clear the board first, stopping the simulation if it's enabled
+    // select the correct sample data based on the option value passed to the function
+    var session_priority = []
+    for (task of tasks)
+        if (task.Period == period && task.tasklistno == value) {
+            var index = schpriority.indexOf(task.SchPriority);
+            var i = Math.floor(index/cols); //表示行數
+            var j = index - i * rows; //表示列數
+            sampleData[i][j] = 1;
+            select(goLGrid[i][j], color)
+        }
+    // draw the sample pattern in the middle of the board
+    /**for (var i = 0; i < sampleData.length; i++) {
+      for (var j = 0; j < sampleData[0].length; j++) {
+        if (sampleData[i][j] === 1) {
+          select(goLGrid[i][j]);
+        }
+      }
+    }*/
+}
+$(function(){
+    init('Normal');
+})
+</script>
+{%endblock%}

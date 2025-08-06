@@ -1,0 +1,416 @@
+body{
+    font-family: 'Andika';
+}
+
+/* Android */
+.quick-add-task .modal,.modal{
+    padding-right: 0px!important;
+}
+
+.quick-add-task .modal-content{
+    background: linear-gradient(to top, #dcdfeb 10%, #346cb0 100%);
+    padding: 10px;
+    border-radius: 16px;
+    border: 0;
+    /* border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0; */
+    padding-bottom: 0;
+}
+
+.quick-add-task.modal.show .modal-dialog {
+    min-height: 100%;
+}
+
+.modal-backdrop {
+    background-color: #14141f !important;
+}
+
+.quick-add-task .modal-header{
+    padding: 0 0 0.5rem 1rem;
+}
+
+.quick-add-task .modal-body{
+    padding: 0;
+    padding-bottom: 0;
+}
+
+.quick-add-task.form{
+    padding: 2px;
+    box-shadow:1px 3px 10px 0px rgba(59, 89, 152, 0.78);
+}
+
+.quick-add-task .card{
+    background-color: inherit;
+    box-shadow: none;
+    margin-bottom: 0px;
+
+}
+
+.quick-add-task .card-body{
+    overflow-y: auto;
+    overflow-x: hidden;
+    border-radius: 16px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+.quick-add-task .form-control {
+    color: #f7c46c;
+    font-weight: bold;
+    background-color: #f6f7fb;
+}
+
+.quick-add-task .form-control:focus {
+    background-color: #f6f7fb;
+}
+
+.quick-add-task .cust_control{
+    color:#f7c46c;
+    font-size: 20px;
+    font-weight: bold;
+    border: 0;
+    border-radius: 16px;
+    background-color: initial;
+    box-shadow: 0 0 0 2px #fff
+}
+
+.quick-add-task .cust_control:focus {
+    background-color: initial;
+    border-color: initial;
+    box-shadow: 0 0 0 2px #fff
+}
+
+.quick-add-task label{
+    color: #f7c46c;
+    font-weight: 700;
+}
+
+.quick-add-task textarea::-webkit-input-placeholder {
+    color: #f7c46c!important;
+    font-size: 17px;
+}
+
+.quick-add-task .nav-link {
+    color: #3b5998;
+}
+
+.quick-add-task .nav-tabs .nav-link:focus,
+.quick-add-task .nav-tabs .nav-link:hover {
+    color: #000
+}
+
+.quick-add-task .nav-tabs .nav-item.show .nav-link,
+.quick-add-task .nav-tabs .nav-link.active {
+    color: #000;
+    border-color: #000
+}
+
+.quick-add-task .card-footer{
+    border-top: 1px solid rgba(34, 34, 48, .1);
+    padding: .5rem 0;
+}
+
+.quick-add-task .card-footer .custom-tabs {
+    border-bottom: 0;
+    align-items: center;
+    padding-left: .5rem;
+}
+
+.quick-add-task .card-footer .custom-tabs.nav-tabs .nav-link {
+    padding: 0.5rem 0.8rem;
+}
+
+.quick-add-task .card-footer .custom-tabs.nav-tabs .nav-link i {
+    font-size: 16px;
+}
+
+.quick-add-task .btn-light {
+    border-color: #c6c9d5;
+}
+
+.quick-add-task .btn-cust{
+    color:#fff;
+    background-color:#3b5998;
+    border-color:#3b5998
+}
+
+.quick-add-task .btn-cust:hover{
+    color:#000;
+    background-color:#5872a7;
+    border-color:#5872a7
+}
+
+a.cart{
+    text-decoration: none;
+}
+
+.floating-button {
+    color: #000;
+    background: #f7c46c;
+    position: absolute;
+    left: 0px;
+    top: -25px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    z-index: 1500;
+    box-shadow: 0 10px 20px rgba(0,0,0,.19), 0 6px 6px rgba(0,0,0,.23);
+    overflow: hidden;
+    transition-duration: .3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.floating-button :hover{
+    color: #fff;
+}
+
+.quick-add-task #user .form-group,
+.quick-add-task #taskType .form-group,
+.quick-add-task #task_switch_m .form-group {
+    margin-bottom: .5rem;
+}
+
+
+/* PC */
+#add-task .close {
+    color: #fff;
+    opacity: 1;
+    font-size: 20px;
+}
+
+.normal-add-task .modal-content{
+    border-radius: 16px;
+    border: 3px solid #346cb0;
+    box-shadow: 1px 3px 10px 0px rgba(59, 89, 152, 0.78);
+}
+
+.normal-add-task .modal-header{
+    padding: 0.5rem 1rem;
+    background: #5c84b3;
+    color: #fff;
+}
+
+.normal-add-task .modal-body{
+    padding: 0;
+}
+
+.normal-add-task .card{
+    border: 0;
+    margin-bottom: 0px;
+    box-shadow:none;
+    background: #edf0f5;
+}
+
+.normal-add-task form .card-body{
+    padding-top: 0;
+}
+
+.normal-add-task .card-body.custom_body{
+    overflow-y: auto;
+}
+
+.normal-add-task .form-control {
+    color: #000;
+    font-size: 15px;
+}
+
+.normal-add-task .custom-control-input {
+    z-index: 9;
+}
+
+.normal-add-task label{
+    color: #333;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.normal-add-task .btn-light {
+    border-color: #c6c9d5;
+}
+
+.normal-add-task .btn-primary:hover{
+    color:#fff;
+    background-color:#3579ff;
+    border-color:#2870ff
+}
+
+.fileinput-button, .fileinput-dropzone {
+    overflow: visible;
+}
+
+.fileinput-button [data-action=change] {
+    right: -5px;
+    padding: 0;
+    margin: 0;
+}
+
+.fileupBtn {
+    height: 24px;
+    width: 24px;
+    position: absolute;
+    border-radius: 50%;
+    background: white;
+    cursor: pointer;
+    -webkit-box-shadow: 0px 9px 16px 0px rgb(24 28 50 / 25%) !important;
+    box-shadow: 0px 9px 16px 0px rgb(24 28 50 / 25%) !important;
+}
+
+.btn:not(:disabled):not(.disabled) {
+    cursor: pointer;
+}
+
+.fileinput-button i {
+    font-size: 26px;
+}
+
+.normal-add-task .modal-footer {
+    position: relative;
+    padding: .5rem 1rem;
+    justify-content: center;
+    background-color: #edf0f5;
+}
+
+/* 滾動條樣式 */
+#add-task .modal-dialog-scrollable .modal-body::-webkit-scrollbar {
+	width: 8px;
+}
+
+#add-task .modal-dialog-scrollable .modal-body::-webkit-scrollbar-track {
+	background: #f1f1f1;
+	border-radius: 6px;
+}
+
+#add-task .modal-dialog-scrollable .modal-body::-webkit-scrollbar-thumb {
+	background: #e0e1e5;
+	border-radius: 5px;
+}
+
+#add-task .modal-dialog-scrollable .modal-body::-webkit-scrollbar-thumb:hover {
+	background: #c0c0c0;
+}
+
+/* new */
+#add-task .modal-dialog-scrollable .modal-body {
+    overflow-x: hidden;
+    background: #edf0f5;
+}
+
+#add-task .has-sidebar-open.modal-dialog {
+    max-width: 1400px;
+}
+
+#add-task .has-sidebar-open .modal-body {
+    display: flex;
+}
+
+#add-task .has-sidebar-open form {
+    flex-grow: 1;
+    overflow-y: auto;
+}
+
+#add-task .btn-switchTask {
+    border-color: transparent !important;
+}
+
+#add-task .switchTaskWrap.page-sidebar {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: auto;
+    width: 100%;
+    width: 37.5rem;
+    max-width: 37.5rem;
+    background-color: #edf0f5;
+    border-right: 1px solid rgba(34, 34, 48, .1);
+    box-shadow: none;
+    overflow: hidden;
+    z-index: 1;
+    transform: translate3d(-100%, 0, 0);
+    transition: transform .2s ease-in-out;
+    border-radius: 0
+}
+
+/* has-sidebar-open */
+#add-task .has-sidebar-open .switchTaskWrap.page-sidebar {
+    transform: translateZ(0);
+    display: flex;
+    flex-shrink: 0;
+    flex-direction: column;
+    top: 0;
+    position: relative;
+}
+
+#add-task .has-sidebar-open .btn-switchTask i::before {
+    content: "\f101";
+}
+
+#add-task .has-sidebar-open .modal-footer {
+    justify-content: space-between;
+    box-shadow: 0 -2px 0 0 rgb(20 20 31 / 13%);
+}
+
+#add-task .form-group {
+    margin-bottom: .5rem;
+}
+
+#add-task .form-group .caption {
+    padding-top: 0;
+}
+
+#add-task .switchTask_tools {
+    display: none;
+}
+
+#add-task .has-sidebar-open .switchTask_tools {
+    display: flex;
+    align-items: center;
+}
+
+/* 转任务tree */
+#add-task .task_wrap.jstree-default .jstree-icon.jstree-themeicon-hidden {
+    display: none
+}
+
+#add-task .task_wrap.jstree-default .jstree-anchor {
+    font-size: 1rem;
+    display: inline;
+    white-space: pre-wrap!important;
+    vertical-align: baseline!important;
+}
+
+#add-task .task_wrap.jstree-default .jstree-clicked, #add-task .task_wrap.jstree-default .jstree-wholerow-clicked {
+    background: transparent;
+    box-shadow: none;
+    border-radius: 0;
+}
+
+#add-task .task_wrap.jstree-default>.jstree-wholerow-ul .jstree-clicked {
+    background: rgba(52, 108, 176, .2);
+    box-shadow: inset 0 0 1px #346cb0;
+    background-image: none;
+}
+
+#add-task fieldset {
+    border: solid 1px #CCC;
+    border-radius: 8px;
+    padding: 0 1rem;
+    height: 100%;
+    overflow-y: auto;
+}
+
+#add-task legend {
+    width: auto;
+    color: #333;
+    font-size: 14px;
+    padding: 0em 0.5em;
+    font-weight: bold;
+}
+
+.normal-add-task .task_switch_container label {
+    color: #333;
+    font-size: 14px;
+    font-weight: 700;
+}

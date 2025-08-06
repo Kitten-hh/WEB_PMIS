@@ -1,0 +1,27 @@
+#goal_calendar .SWCalendar .fc .fc-list-event:hover td {
+    background-color: rgb(164 200 255 / 30%);
+}
+
+#goal_calendar .SWCalendar .fc .fc-scrollgrid-section-sticky>* {
+    background: linear-gradient(180deg,#2d2d3f,#222230);
+}
+
+@media (max-width: 576px) {
+    #goal_calendar .SWCalendar .fc-toolbar-title.mobile {
+        font-size: 1rem;
+    }
+}
+
+#goal_calendar .SWCalendar .table-active, .table-active>td, .table-active>th {
+    background-color: #42425d;
+}
+
+#goal_calendar .SWCalendar .fc-h-event {
+    border: 1px solid #42425d;
+    background-color: #42425d;
+}
+
+#goal_calendar .SWCalendar .fc-v-event {
+    border: 1px solid #42425d;
+    background-color: #42425d;
+}

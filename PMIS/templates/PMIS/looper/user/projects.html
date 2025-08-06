@@ -1,0 +1,216 @@
+{% extends 'WEB_PMIS/main.html' %}
+{%load static %}
+{%load customer_filter%}
+{% block header_jscss%}
+    <!-- BEGIN PLUGINS STYLES -->
+    <link rel="stylesheet" href="{% static 'BaseProject/vendor/Looper/assets/vendor/open-iconic/font/css/open-iconic-bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'BaseProject/vendor/Looper/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css' %}">
+{% endblock%}
+{%block content%}
+<div class="page">
+    <!-- .page-cover -->
+    <header class="page-cover">
+      <div class="text-center">
+        <a href="/looper" class="user-avatar user-avatar-xl"><img src="assets/images/avatars/profile.jpg" alt=""></a>
+        <h2 class="h4 mt-2 mb-0"> Beni Arisandi </h2>
+        <div class="my-1">
+          <i class="fa fa-star text-yellow"></i> <i class="fa fa-star text-yellow"></i> <i class="fa fa-star text-yellow"></i> <i class="fa fa-star text-yellow"></i> <i class="far fa-star text-yellow"></i>
+        </div>
+        <p class="text-muted"> Project Manager @CreativeDivision </p>
+        <p> Huge fan of HTML, CSS and Javascript. Web design and open source lover. </p>
+      </div><!-- .cover-controls -->
+      <div class="cover-controls cover-controls-bottom">
+        <a href="#" class="btn btn-light" data-toggle="modal" data-target="#followersModal">2,159 Followers</a> <a href="#" class="btn btn-light" data-toggle="modal" data-target="#followingModal">136 Following</a>
+      </div><!-- /.cover-controls -->
+    </header><!-- /.page-cover -->
+    <!-- Followers Modal -->
+    <!-- .modal -->
+    <!-- /Following Modal -->
+    <!-- .page-navs -->
+    <nav class="page-navs">
+      <!-- .nav-scroller -->
+      <div class="nav-scroller">
+        <!-- .nav -->
+        <div class="nav nav-center nav-tabs">
+          <a class="nav-link" href="#">Overview</a> <a class="nav-link" href="#">Activities <span class="badge">16</span></a> <a class="nav-link" href="user-teams.html">Teams</a> <a class="nav-link active" href="/devplat/project/overview" target="project">Projects</a> <a class="nav-link" href="user-tasks.html">Tasks</a> <a class="nav-link" href="/looper">Settings</a>
+        </div><!-- /.nav -->
+      </div><!-- /.nav-scroller -->
+    </nav><!-- /.page-navs -->
+    <!-- .page-inner -->
+    <div class="page-inner" id="modal_user">
+      <!-- .page-title-bar -->
+      <header class="page-title-bar">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item active">
+              <a href="/looper"><i class="breadcrumb-icon fa fa-angle-left mr-2"></i>Overview</a>
+            </li>
+          </ol>
+        </nav>
+        <h1 class="page-title"> Projects <small class="badge">{{data.items|length}} Totals</small>
+        </h1>
+      </header><!-- /.page-title-bar -->
+      <!-- .page-section -->
+      <div class="page-section">
+        <!-- grid row -->
+        <div class="row">
+          <!-- grid column -->
+          {% for k,v in data.items%}
+          {% set color = 'bg-indigo'%}
+          {%if v.progress > 20 and v.progress <= 40%}
+            {%set color = 'bg-blue'%}
+          {%endif%}
+
+          {%if v.progress > 40 and v.progress <= 60%}
+            {%set color = 'bg-teal'%}
+          {%endif%}
+
+          {%if v.progress > 60 and v.progress <= 80%}
+            {%set color = 'bg-pink'%}
+          {%endif%}
+
+          {%if v.progress > 80%}
+            {%set color = 'bg-yellow'%}
+          {%endif%}                    
+          <div class="col-lg-6 col-xl-4">
+            <!-- .card -->
+            <div class="card card-fluid">
+              <!-- .card-header -->
+              <div class="card-header border-0">
+                <div class="d-flex justify-content-between align-items-center">
+                  <span class="badge bg-muted" data-toggle="tooltip" data-placement="bottom" title="Deadline"><span class="sr-only">Deadline</span> <i class="fa fa-calendar-alt text-muted mr-1"></i> {{v.deadline}}</span>
+                  <div class="dropdown">
+                    <button type="button" class="btn btn-icon btn-light" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></button>
+                    <div class="dropdown-menu dropdown-menu-right">
+                      <div class="dropdown-arrow"></div><a href="#" class="dropdown-item">View Project</a> <a href="#" class="dropdown-item">Add Member</a> <a href="#" class="dropdown-item">Edit</a> <a href="#" class="dropdown-item">Remove</a>
+                    </div>
+                  </div>
+                </div>
+              </div><!-- /.card-header -->
+              <!-- .card-body -->
+              <div class="card-body text-center">
+                <!-- avatars -->
+                <div class="has-badge mb-3">
+                  <a href="page-project.html" class="tile tile-lg {{color}}">{{v.s_title}}</a> <a href="#team" class="user-avatar user-avatar-xs"><img src="assets/images/avatars/team4.jpg" alt=""></a>
+                </div><!-- /avatars -->
+                <!-- /.media -->
+                <h5 class="card-title">
+                  <a href="page-project.html">{{v.title}}</a>
+                </h5>
+                <p class="card-subtitle text-muted"> Progress in {{v.progress}}% - Last update {{v.last_update}} </p><!-- .my-3 -->
+                <div class="my-3">
+                  <!-- team members -->
+                  <div class="avatar-group">
+                    {%for user in v.contacts|slice:":5"%}
+                        <a href="#" class="user-avatar user-avatar-sm" data-toggle="tooltip" title="{{user}}"><img src="{% static ''%}PMIS/vendor/Looper/assets/images/avatars/uifaces{{ forloop.counter }}.jpg" alt=""></a>
+                    {%endfor%}
+                    {%if v.contacts|length > 5%}
+                    <a href="#" class="tile tile-sm tile-circle" data-users="{%for user in v.contacts|slice:"5:"%}{{user}},{%endfor%}" data-toggle="modal" data-target="#membersModal" @click.capture="showUsers($event)">+{{v.contacts|length|add:-5}}</a>
+                    {%endif%}
+                  </div><!-- /team members -->
+                </div><!-- /.my-3 -->
+                <!-- grid row -->
+                <div class="row">
+                  <!-- grid column -->
+                  <div class="col">
+                    <strong>Budget</strong> <span class="d-block">40,000$</span>
+                  </div><!-- /grid column -->
+                  <!-- grid column -->
+                  <div class="col">
+                    <strong>Tasks</strong> <span class="d-block">{{v.no_complate}}</span>
+                  </div><!-- /grid column -->
+                </div><!-- /grid row -->
+              </div><!-- /.card-body -->
+              <!-- .progress -->
+              <div class="progress progress-xs" data-toggle="tooltip" title="{{v.progress}}%">
+                <div class="progress-bar {{color}}" role="progressbar" aria-valuenow="2181" aria-valuemin="0" aria-valuemax="100" style="width: {{v.progress}}%">
+                  <span class="sr-only">{{v.progress}}% Complete</span>
+                </div>
+              </div><!-- /.progress -->
+            </div><!-- /.card -->
+          </div><!-- /grid column -->
+          {%endfor%}}
+          <!-- grid column -->
+        </div><!-- /grid row -->
+        <!-- Modal Members List -->
+        <!-- .modal -->
+        <div class="modal fade" id="membersModal" tabindex="-1" role="dialog" aria-hidden="true">
+          <!-- .modal-dialog -->
+          <div class="modal-dialog modal-dialog-scrollable" role="document">
+            <!-- .modal-content -->
+            <div class="modal-content">
+              <!-- .modal-header -->
+              <div class="modal-header">
+                <!-- .input-group -->
+                <div class="input-group has-clearable">
+                  <button type="button" class="close" aria-label="Close"><i class="fa fa-times-circle"></i></button>
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><span class="oi oi-magnifying-glass"></span></span>
+                  </div><input type="text" class="form-control" placeholder="Search Members">
+                </div><!-- /.input-group -->
+              </div><!-- /.modal-header -->
+              <!-- .modal-body -->
+              <div class="modal-body px-0">
+                <!-- .list-group -->
+                <div class="list-group list-group-flush">
+                  <!-- .list-group-item -->
+                  <div v-for="user in users" class="list-group-item">
+                    <!-- .list-group-item-figure -->
+                    <div class="list-group-item-figure">
+                      <a href="#" class="user-avatar"><img src="{% static ''%}PMIS/vendor/Looper/assets/images/avatars/uifaces2.jpg" alt=""></a>
+                    </div><!-- /.list-group-item-figure -->
+                    <!-- .list-group-item-body -->
+                    <div class="list-group-item-body">
+                      <h4 class="list-group-item-title">
+                        <a href="#" v-text="user"></a>
+                      </h4>
+                      <p class="list-group-item-text"> Software Developer </p>
+                    </div><!-- /.list-group-item-body -->
+                    <!-- .list-group-item-figure -->
+                    <div class="list-group-item-figure dropdown">
+                      <button class="btn btn-sm btn-icon btn-light" data-toggle="dropdown"><i class="fa fa-fw fa-ellipsis-v"></i></button>
+                      <div class="dropdown-menu dropdown-menu-right">
+                        <div class="dropdown-arrow mr-n1"></div><button type="button" class="dropdown-item">Message</button> <button type="button" class="dropdown-item">Invite to a team</button> <button type="button" class="dropdown-item">Copy member ID</button>
+                        <div class="dropdown-divider"></div><button type="button" class="dropdown-item">Remove</button>
+                      </div>
+                    </div><!-- /.list-group-item-figure -->
+                  </div><!-- /.list-group-item -->
+                </div>
+              </div><!-- /.modal-body -->
+              <!-- .modal-footer -->
+              <div class="modal-footer">
+                <button type="button" class="btn btn-light" data-dismiss="modal">Close</button>
+              </div><!-- /.modal-footer -->
+            </div><!-- /.modal-content -->
+          </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+        <!-- /Modal Members List -->
+      </div><!-- /.page-section -->
+    </div><!-- /.page-inner -->
+  </div><!-- /.page -->
+{%endblock%}
+{% block footer_jscss %}          
+    <!-- BEGIN PLUGINS JS -->
+    <script src="{% static 'BaseProject/vendor/Looper/assets/vendor/pace-progress/pace.min.js' %}"></script>
+    <script src="{% static 'BaseProject/vendor/Looper/assets/vendor/stacked-menu/js/stacked-menu.min.js' %}"></script>
+    <script src="{% static 'BaseProject/vendor/Looper/assets/vendor/perfect-scrollbar/perfect-scrollbar.min.js' %}"></script>
+    <script src="{% static 'BaseProject/vendor/Vue/vue.js' %}"></script>
+    <script src="{% static 'BaseProject/vendor/Vue/vue-super.js' %}"></script>
+    <script>
+        var Vue_form = new Vue({
+            el:"#modal_user",
+            data() {
+                return {
+                    users:[]
+                }
+            },
+            methods: {
+                showUsers(event) {
+                    var users = $(event.target).attr('data-users');
+                    users = users.substr(0, users.length - 1);
+                    this.users = users.split(',')
+                }
+            }
+        })
+    </script>
+{% endblock%}

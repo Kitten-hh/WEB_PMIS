@@ -1,0 +1,14 @@
+{% extends 'BaseApp/vue_looper_base/base_form2/index.html' %}
+{%load static %}
+{% load render_bundle from webpack_loader %}
+{% load md5url %}
+{%block js_vendor%}
+<script src="{% static 'WEB_PMIS/dist/javascript/vendor.js'%}"></script>    
+{%endblock%}
+{%block form_js%}
+<script type="text/javascript" src="{% static 'BaseApp/vendor/gojs/go.js' %}"></script>
+<script type="text/javascript" src="{% static 'BaseApp/vendor/gojs/Figures.js' %}"></script>
+<script type="text/javascript" src="{% static 'BaseApp/vendor/gojs/DataInspector.js' %}"></script>
+<script type="text/javascript" src="{% static 'BaseApp/vendor/gojs/OrthogonalLinkReshapingTool.js' %}"></script>
+{% render_bundle 'FlowChartApp/dist/javascript/index' %}
+{%endblock%}   

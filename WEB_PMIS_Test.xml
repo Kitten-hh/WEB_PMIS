@@ -1,0 +1,19 @@
+<uwsgi>
+<!--<socket>:5530</socket>-->
+<socket>/home/hb/sock/WEB_PMIS.sock</socket>-->
+<!--<chown-socket>root:root</chown-socket>-->
+<chmod-socket>666</chmod-socket>
+<!--<http>:8051</http>-->
+<chdir>/home/hb/work/projects/WEB_PMIS</chdir>
+<virtualenv>/share_data/environment/General_Env</virtualenv>
+<env>DJANGO_SETTINGS_MODULE=WEB_PMIS.settings_Test</env>
+<module>WEB_PMIS.wsgi:application</module>
+<daemonize>uwsgi.log</daemonize>
+<listen>4096</listen>
+<buffer-size>65535</buffer-size>
+<enable-threads>true</enable-threads>
+<!-- 启用自动线程配置 -->
+<!---<threads-auto>true</threads-auto>-->
+<threads>2</threads>
+<processes>4</processes>
+</uwsgi>

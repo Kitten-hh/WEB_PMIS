@@ -1,0 +1,130 @@
+{% extends 'PMISLooper/index.html' %}
+{%load static %}
+{% load i18n %}
+{%load customer_filter%}
+{%load md5url%}
+{%block form_css%}
+{{block.super}}
+<link rel="stylesheet" href="{% md5url 'PMISLooper/assets/stylesheets/goal/goalManagement.css'%}" data-skin="default">
+<link rel="stylesheet" href="{% md5url 'PMISLooper/assets/stylesheets/goal/goalManagement_dark.css'%}" data-skin="dark">
+<link rel="stylesheet" type="text/css" href="{% static 'BaseApp/vendor/jquery_contextmenu/jquery.contextMenu.min.css'%}" />    
+{%endblock%}
+{% block content %}
+{{block.super}}                  
+<div class="page-inner top5_mustHave p-0 goalMag_MH">
+    <div class="card">
+        <div class="card-header">
+            <h5 class="text-center mb-0">{% trans "Outstanding Goal Management"%}</h5>            
+        </div>
+        <div class="card-body">
+            <div class="userlist form-row mb-2">
+                <div class="col-auto query_tools order-sm-5">
+                    <button type="button" class="btn btn-primary mr-0 mr-sm-2" id="btn_clear">{% trans "Clear" %}</button>
+                    <button class="btn btn-primary" type="button" id="btn_search">{% trans "Search" %}</button>
+                </div>                
+            </div>
+            <div class="row" id="projectList">
+            </div>    
+        </div>
+    </div>
+</div>
+<div id="summary_template" class="d-none">
+    <div class="summary_wrap card-body">
+        <h4 class="card-title sum_title py-2 mb-0">
+        <i class="fas fa-thumbtack mr-2"></i>{% trans "Summary"%} </h4>
+        <div class="d-flex justify-content-between align-items-center mb-2 pl-2 pt-2">
+            <div class="text-left left-date-title" data-toggle="tooltip" data-placement="top"
+                data-original-title="Actual completion time">
+                <span class="sr-only">Actual completion time</span>
+                <i class="far fa-calendar-check text-dark mr-2"></i>[[planedate]]</div>
+            <div class="text-dark"><strong class="text-primary">[[Completed_Qty]]</strong> / <span>[[All_Qty]]</span></div>
+        </div>
+        <div class="d-flex flex-column pl-2">
+            <div class="row justify-content-start mb-2">
+                <div class="col-auto">
+                    <span class="oi oi-media-record text-complete mark_icon"></span>
+                    Completed ([[Completed_Qty]])
+                </div>
+                <div class="col-auto">
+                    On time ([[Complete_on_time_Qty]])
+                </div>
+                <div class="col-auto">
+                    Overdue ([[Overdue_Completed_Qty]])
+                </div>
+            </div>
+            <div class="row justify-content-start mb-2">
+                <div class="col-auto">
+                    <span class="oi oi-media-record text-au mark_icon"></span>
+                    Uncompleted ([[Uncompleted_Qty]])
+                </div>
+                <div class="col-auto">
+                    Unoverdue ([[Unoverdue_Qty]])
+                </div>                
+                <div class="col-auto">
+                    Overdue ([[Overdue_Qty]])
+                </div>
+                <div class="col-auto">
+                    Active ([[Active_Qty]])
+                </div>
+            </div>            
+            <div class="progress progress-sm mb-2">
+                <div class="progress-bar bg-complete progress-bar-striped progress-bar-animated" role="progressbar" style="width: [[Completed]]%" aria-valuenow="[[Completed]]"
+                    aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar bg-au progress-bar-striped progress-bar-animated" role="progressbar" style="width: [[Uncompleted]]%" aria-valuenow="[[Uncompleted]]"
+                    aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+        </div>
+    </div>    
+</div>
+<div id="title_template" class="d-none">
+    <div class="d-flex justify-content-between align-items-center">
+        <h4 class="card-title mb-0">[[title]]</h4>
+        <div class="d-flex">
+        <button type="button" class="btn btn-sm btn-icon btn-light btn_project_diagram" recordid="[[recordid]]"><i class="fas fa-project-diagram"></i></button>
+        <button type="button" class="btn btn-sm btn-icon btn-light btn_mindmap_diagram" recordid="[[recordid]]"><i class="fas fa-sitemap"></i></button>
+        <div class="dropdown goal_content">
+            <button type="button" class="btn btn-sm btn-icon btn-light" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false"><i class="fas fa-book fa-book-open"></i></button>
+            <div class="dropdown-menu dropdown-menu-rich dropdown-menu-right px-2 pt-2" style="">
+                <div class="dropdown-arrow"></div>
+                <div class="form-group SWTextarea" style="">
+                    <label class="col-form-label caption" for="tf6" style="display: none;"></label>
+                    <textarea readonly class="form-control control" id="tf6" rows="10" name="goaldesc">[[goaldesc]]</textarea>
+                </div>                
+            </div>
+        </div>        
+        <div class="dropdown filter_session">
+            <button type="button" class="btn btn-sm btn-icon btn-light" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false"><i class="fas fa-filter"></i></button>
+            <div class="dropdown-menu dropdown-menu-rich dropdown-menu-right">
+                <div class="dropdown-arrow"></div>
+                <div class="session_treegrid scrollbar"></div>
+                <div class="session_treegrid_operation d-flex justify-content-between px-1 py-2">
+                <button class="btn btn-sm btn-subtle-light text-primary clear">{% trans "Clear" %}</button>
+                <button class="btn btn-sm btn-subtle-danger apply">{% trans "OK" %}</button></div>
+            </div>
+        </div>    
+        <div class="dropdown filter_goal">
+            <button type="button" class="btn btn-sm btn-icon btn-light" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false"><i class="fas fa-ellipsis-v"></i></button>
+            <div class="dropdown-menu dropdown-menu-right task_filter">
+                <div class="dropdown-arrow"></div>
+                <h6 class="dropdown-header">{% trans "Task Category" %}</h6>
+                <a href="#" class="dropdown-item pl-4" filter_type="category" name="MF">Must Finish</a> 
+                <a href="#" class="dropdown-item pl-4" filter_type="category" name="MH">Must Have</a> 
+                <a href="#" class="dropdown-item pl-4" filter_type="category" name="all">All</a> 
+                <h6 class="dropdown-header">{% trans "Users" %}</h6>
+            </div>
+        </div>    
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{%block form_js%}
+{{ block.super }}
+<script src="{% static 'DevPlat/assets/javascript/data.js' %}" type="text/javascript"></script>
+<script src="{% static 'BaseApp/vendor/jquery_contextmenu/jquery.ui.position.min.js'%}"></script>
+<script src="{% static 'BaseApp/vendor/jquery_contextmenu/jquery.contextMenu.min.js'%}"></script>
+<script src="{% md5url 'PMISLooper/assets/javascript/goal/goalManagement.js' %}" type="text/javascript"></script>
+{%endblock%}

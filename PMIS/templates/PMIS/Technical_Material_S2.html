@@ -1,0 +1,213 @@
+{% load static %}
+{% load md5url %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>tab</title>
+    <link rel="stylesheet" href="{% static 'BaseApp/vendor/bootstrap/css/bootstrap.min.css'%}" type="text/css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cagliostro" type="text/css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Andika" type="text/css">
+    <link rel="stylesheet" href="{% static 'PMIS/css/Technical_Material.css' %}" type="text/css">
+</head>
+
+<body>
+    
+    {% csrf_token %}
+    <div class="d-none">
+        {%include "BaseApp/looper_base/components/SWButton.html"%}
+        {%include "BaseApp/looper_base/components/SWRow.html"%}
+    </div>   
+    <div class="technical">
+        <div class="container">
+            <div class="intro">
+                <h2>Detail Technical Topic Description</h2>
+                <div class=""><div id="btnVessel" class=""></div></div>
+                
+                <div><img src="../../static/PMIS/img/State{{tecmb.udf03}}.jpg"
+                    onerror="$(this).parent().remove();" alt="" class="mw-100"></div>
+            </div>
+            <div class="row">
+                <div class="item">
+                    <div class="id"><strong>Technical ID:</strong>&nbsp {{tecmb.mb023}}</div>
+
+                    <div class="date"><strong>Date:&nbsp {{tecmb.mb006|slice:"0:4"}}-{{tecmb.mb006|slice:"4:6"}}-{{tecmb.mb006|slice:"6:8"}}</strong></div>
+                    <div class="contact"><strong>Contact:&nbsp{{tecmb.mb005}}</strong> </div>
+                </div>
+                <div class="col-12   ">
+                    <div class="conBox">
+                        <h3 class="title"><strong>Topic:</strong></h3>
+                        <div class="sdescription">
+                            <pre>{{tecmb.mb004}}</pre><br><br><br><br></div>
+                    </div>
+                </div>
+                <div class="col-12   ">
+                    <div class="conBox">
+                        <h3 class="title"><strong>Concept/Theory:</strong></h3>
+                        <div class="sdescription ">
+                            <pre>{{tecmb.mb007}}</pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12   ">
+                    <div class="conBox">
+                        <h3 class="title"><strong>Usage(作用):</strong></h3>
+                        <div class="sdescription ">
+                            <pre>{{tecmb.mb008}}</pre><br><br><br></div>
+                    </div>
+                </div>
+                <div class="col-12   ">
+                    <div class="conBox">
+                        <h3 class="title"><strong>Pre-requist/Dependancy (需要的依賴)：</strong></h3>
+                        <div class="sdescription ">
+                            <pre>{{tecmb.mb009}}</pre><br><br>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12   ">
+                    <div class="conBox">
+                        <h3 class="title"><strong>Control (控件信息):</strong></h3>
+                        <div class="sdescription ">
+                            <pre>{{tecmb.mb025}}</pre><br><br><br></div>
+                    </div>
+                </div>
+                <div class="col-12   ">
+                    <div class="conBox">
+                        <h3 class="title"><strong>Properties (類中重要的屬性作用):</strong></h3>
+                        <div class="sdescription">
+                            <pre>{{tecmb.mb024}}</pre><br><br><br></div>
+                    </div>
+                </div>
+
+                <div class="col-12 ">
+                    <div class="conBox">
+                        <h3 class="title"><strong>Implementation Procedure/Steps (實現思路):</strong></h3>
+                        <div class="sdescription " style=" list-style: none;">
+
+                            {%  for row in steps %}
+                            <li>
+                                <pre>{{row.mc005}}</pre>
+                            </li>
+                            <li><img src="/PMIS/opportunity/Technical_Image?id={{row.id}}-{{row.mc003}}-{{row.mc004}}"
+                                    onerror="$(this).parent().remove();" alt="" class="mw-100"></li>
+                            {% endfor %}
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 ">
+                    <div class="conBox">
+                        <h3 class="title"><strong>Example(應用舉例):</strong></h3>
+                        <div class="sdescription " style=" list-style: none;">
+
+                            {%  for row in example %}
+                            <li>
+                                <pre>{{row.mc005}}</pre>
+                            </li>
+                            <li><img src="/PMIS/opportunity/Technical_Image?id={{row.id}}-{{row.mc003}}-{{row.mc004}}"
+                                    onerror="$(this).parent().remove();" alt="" class="mw-100"></li>
+                            {% endfor %}
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 ">
+                    <div class="conBox">
+                        <h3 class="title"><strong>Precaution (注意事項)：</strong></h3>
+                        <div class="sdescription " style=" list-style: none;">
+
+                            {%  for row in precaution_list %}
+                            <li>
+                                <pre>{{row.mc005}}</pre>
+                            </li>
+                            <li><img src="/PMIS/opportunity/Technical_Image?id={{row.mc001}}-{{row.mc002}}-{{row.mc003}}-{{row.mc004}}"
+                                    onerror="$(this).parent().remove();" alt="" class="mw-100"></li>
+                            {% endfor %}
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 ">
+                    <div class="conBox">
+                        <h3 class="title"><strong>Questions:</strong></h3>
+                        <div class="sdescription ">
+                            <pre>{{tecmb.mb013}}</pre><br><br><br></div>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-3">
+                    <div class="conBox">
+                        <h3 class="title"><strong>Category:</strong></h3>
+                        <div class="sdescription ">
+                            <pre>{{tecmb.mb015c}}</pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-3">
+                    <div class="conBox">
+                        <h3 class="title"><strong>Area:</strong></h3>
+                        <div class="sdescription ">
+                            <pre>{{tecmb.mb016}}</pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-3">
+                    <div class="conBox">
+                        <h3 class="title"><strong>Reference:</strong></h3>
+                        <div class="sdescription ">
+                            <pre>{{tecmb.mb017}}</pre><br></div>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-3">
+                    <div class="conBox">
+                        <h3 class="title"><strong>Video:</strong></h3>
+                        <div class="sdescription ">
+                            <pre>{{tecmb.mb018}}</pre><br></div>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-3">
+                    <div class="conBox">
+                        <h3 class="title"><strong>Compulsory:</strong></h3>
+                        <div class="sdescription ">
+                            <pre>{{tecmb.mb019}}</pre><br></div>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-3">
+                    <div class="conBox">
+                        <h3 class="title"><strong>Status:</strong></h3>
+                        <div class="sdescription ">
+                            <pre>{{tecmb.mb020}}</pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-3">
+                    <div class="conBox">
+                        <h3 class="title"><strong>Mind Map ID:</strong></h3>
+                        <div class="sdescription ">
+                            <pre>{{tecmb.id}}</pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-3">
+                    <div class="conBox">
+                        <h3 class="title"><strong>Parent Mind Map ID:</strong></h3>
+                        <div class="sdescription ">
+                            <pre>{{tecmb.parentid}}</pre><br><br></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+    <script src="{% static 'BaseApp/vendor/jquery/jquery.min.js' %}" type="text/javascript"></script>
+    <script src="{% static 'BaseApp/vendor/bootstrap/js/bootstrap.min.js' %}" type="text/javascript"></script>
+    <script src="{% static 'BaseApp/assets/javascript/app/public.js' %}" type="text/javascript"></script>
+    <script src="{% static 'BaseApp/assets/javascript/looper_base/components/SWRow.js' %}" type="text/javascript"></script>
+    <script src="{% static 'BaseApp/assets/javascript/looper_base/components/SWButton.js' %}" type="text/javascript"></script>
+    <script src="{% static 'PMIS/assets/javascript/technic/Technical_Material.js'%}"></script>
+    <script src="{% static 'PMIS/js/navScroll.js' %}" type="text/javascript"></script>
+</body>
+
+</html>

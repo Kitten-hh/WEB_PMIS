@@ -1,0 +1,265 @@
+#SolutionType {
+    border-radius: 0.25rem;
+    box-shadow: rgb(0 64 128 / 20%) 0px 0px 20px;
+}
+
+#Mindmap #myDiagramDiv-1 {
+    border-radius: 0.25rem;
+}
+
+#edit_solution .modal-body form .card-body {
+    padding-top: 0;
+}
+
+.course_wrap {
+    border-radius: 0.25rem;
+    box-shadow: 0 0 0 1px rgb(20 20 31 / 5%), 0 1px 3px 0 rgb(20 20 31 / 15%);
+}
+
+/* Looper樣式的dataTable */
+.SWDataTable .dataTables_wrapper {
+    font-family: 'Andika'!important;
+    padding: 0 !important;
+}
+
+#solution_table_wrapper {
+    padding-top: 10px !important;
+}
+
+.SWDataTable #course_table1 td.min-tablet-p:last-child {
+    padding-right: 0 !important;
+    display: flex;
+    justify-content: space-between;
+}
+
+.SWDataTable .dataTables_wrapper .dataTable tbody tr.active th, .dataTables_wrapper .dataTable tbody tr.active td, .dataTables_wrapper .dataTable tbody tr.selected th, .dataTables_wrapper .dataTable tbody tr.selected td {
+    background-color: transparent !important; 
+    border-left-color: transparent!important;
+    border-right-color: transparent!important;
+    color: #d6d8e1;
+}
+
+table.dataTable tbody>tr.selected, table.dataTable tbody>tr>.selected {
+    color: #d6d8e1 !important;
+    background-color: #282839 !important;
+}
+
+.SWDataTable table.dataTable thead>tr>th.sorting {
+    padding-right: 30px !important;
+}
+
+.SWDataTable table.dataTable thead .sorting:before,
+.SWDataTable table.dataTable thead .sorting_asc:before, 
+.SWDataTable table.dataTable thead .sorting_desc:before, 
+.SWDataTable table.dataTable thead .sorting_asc_disabled:before, 
+.SWDataTable table.dataTable thead .sorting_desc_disabled:before {
+    content: "\f0de" !important;
+    right: 0.5em !important;
+}
+
+.SWDataTable table.dataTable thead .sorting:after, 
+.SWDataTable table.dataTable thead .sorting_asc:after, 
+.SWDataTable table.dataTable thead .sorting_desc:after, 
+.SWDataTable table.dataTable thead .sorting_asc_disabled:after, 
+.SWDataTable table.dataTable thead .sorting_desc_disabled:after {
+    content: "\f0dd" !important;
+    right: 0.5em !important;
+}
+
+.course_nav {
+    border-bottom: 0;
+}
+
+#solution_table_wrapper {
+    display: flex;
+    flex-direction: column;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+#solution_table_wrapper .btn-edit{
+    margin-left: auto;
+}
+
+#course_table1_filter label {
+    margin-bottom: 0;
+}
+
+@media (max-width: 375px) {
+    #myDiagramDiv-1 {
+        height: 45vh!important;
+    }
+
+    #course_table1_wrapper .text-left {
+        position: relative;
+        display: inline-flex;
+        vertical-align: middle;
+        flex-wrap: wrap;
+        width: 100%;
+        text-align: center !important;
+    }
+
+    #course_table1_wrapper .text-left>.btn {
+        position: relative;
+        flex: 1 1 auto
+    }
+
+    #course_table1_wrapper .text-left>.btn i {
+        display: none;
+    }
+
+    #course_table1_filter label {
+        display: flex;
+    }
+    #course_table1_filter label>input {
+        min-width: 0;
+    }
+}
+
+@media (max-width: 465px) {
+    #course_table1_wrapper .text-left {
+        flex: 0 0 100%;
+        max-width: 100%
+    }
+    #course_table1_wrapper .text-right {
+        flex: 0 0 100%;
+        max-width: 100%
+    }
+
+    #course_table1_wrapper .text-right {
+        margin-top: 10px;
+    }
+
+    #course_table1_wrapper .text-left {
+        position: relative;
+        display: inline-flex;
+        vertical-align: middle;
+        flex-wrap: wrap;
+        width: 100%;
+        text-align: center !important;
+    }
+
+    #course_table1_wrapper .text-left>.btn {
+        position: relative;
+        flex: 1 1 auto
+    }
+
+    #course_table1_wrapper .text-left>.btn i {
+        display: none;
+    }
+
+    #course_table1_filter label {
+        display: flex;
+    }
+
+    #course_table1_filter label>input {
+        min-width: 0;
+        width: 100%;
+    }
+}
+
+@media (min-width: 465px) and (max-width: 575px) {
+    #course_table1_wrapper .text-left {
+        flex: 0 0 41.666667%;
+        max-width: 41.666667%
+    }
+    
+    #course_table1_wrapper .text-right {
+        flex: 0 0 58.333333%;
+        max-width: 58.333333%
+    }
+
+    #course_table1_filter label {
+        display: flex;
+    }
+
+    #course_table1_filter label>input {
+        min-width: 0;
+    }
+}
+
+@media (max-width: 576px) {
+    #myDiagramDiv-1 {
+        height: 45vh!important;
+    }
+
+    #course_table1_wrapper .text-left .search_more {
+        margin-left: 0 !important;
+    }
+
+    #course_table1_wrapper .text-left>.btn i {
+        display: none;
+    }
+}
+
+@media (min-width: 576px) and (max-width:600px){
+    #course_table1_filter label {
+        display: flex;
+    }
+
+    #course_table1_filter label>input {
+        min-width: 0;
+    }
+}
+
+@media (max-width: 767px) {
+    #course_table1_filter {
+        text-align: right !important;
+    }
+
+    .SWDataTable table.dataTable thead>tr>th.sorting {
+        padding-top: 0 !important;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 818px) { 
+    #course_table1_filter label {
+        display: flex;
+    }
+    #course_table1_filter label>input {
+        min-width: 0;
+    }
+}
+
+@media (max-width: 1200px) {
+    #SolutionType {
+        margin-top: 10px;
+    }
+    #Mindmap {
+        padding-right: 0;
+        padding-left: 0;
+    }
+}
+
+/* 滾動條樣式 */
+#solution_table_wrapper .dataTables_scrollBody::-webkit-scrollbar, 
+#myDiagramDiv-1 div:nth-child(2)::-webkit-scrollbar,
+#edit_course .modal-body::-webkit-scrollbar {
+	width: 8px;
+	height: 8px;
+}
+
+#solution_table_wrapper .dataTables_scrollBody::-webkit-scrollbar-track, 
+#myDiagramDiv-1 div:nth-child(2)::-webkit-scrollbar-track,
+#edit_course .modal-body::-webkit-scrollbar-track {
+	background: transparent!important;
+	border-radius: 6px;
+}
+
+#solution_table_wrapper .dataTables_scrollBody::-webkit-scrollbar-thumb, 
+#myDiagramDiv-1 div:nth-child(2)::-webkit-scrollbar-thumb,
+#edit_course .modal-body::-webkit-scrollbar-thumb {
+	background: rgba(230,232,237,.12)!important;
+	border-radius: 5px;
+}
+
+#solution_table_wrapper .dataTables_scrollBody::-webkit-scrollbar-thumb:hover, 
+#myDiagramDiv-1 div:nth-child(2)::-webkit-scrollbar-thumb:hover,
+#edit_course .modal-body::-webkit-scrollbar-thumb:hover {
+	background: rgba(230,232,237,.12)!important;
+}
+
+/*  */
+.SWMindmap>div[id] {
+    background-color: #2d2d3f !important;
+}

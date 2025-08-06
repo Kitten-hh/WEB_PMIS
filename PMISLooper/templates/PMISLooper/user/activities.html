@@ -1,0 +1,157 @@
+{% extends 'PMISLooper/index.html' %}
+{%load static %}
+{% load i18n %}
+{%load customer_filter%}
+{%load md5url%}
+{%block form_css%}
+{{block.super}}
+<style>
+  .page-inner.activites_body {
+    padding-bottom: 0;
+    padding-top: 1rem;
+  }
+
+  .activites_page .userlist .form-group {
+    margin-bottom: .5rem;
+  }
+
+  .activites_page .card.SWTimeline2 .caption {
+    cursor: pointer;
+  }
+
+  .activites_page .card.SWTimeline2 .card-body {
+    height: 480px;
+    overflow-y: auto;
+  }
+
+  .activites_page .card.SWTimeline2 h4.title, 
+  .activites_page .card.SWTimeline2 .section-block h2.section-title {
+    margin-bottom: 0;
+  }
+
+  .activites_page .card.SWTimeline2 .section-block {
+    margin-top: 0;
+  }
+
+  .activites_page .card.SWTimeline2 .example-preview {
+    padding: 0 1rem;
+  }
+  /*  */
+  .SWTimeline2 .card-body::-webkit-scrollbar{
+	width: 8px;
+}
+
+.SWTimeline2 .card-body::-webkit-scrollbar-track{
+	background: #f1f1f1;
+	border-radius: 6px;
+}
+
+.SWTimeline2 .card-body::-webkit-scrollbar-thumb{
+	background: #e1e1e1;
+	border-radius: 5px;
+}
+
+.SWTimeline2 .card-body::-webkit-scrollbar-thumb:hover{
+	background: #c0c0c0;
+}
+
+#yesterday_task .timeline.timeline2>.timeline-item:last-of-type .timeline-figure.timeline-figure-light-primary:before{
+  height: calc(100% - 16px);
+}
+#comming_week_task .timeline.timeline2>.timeline-item:last-of-type .timeline-figure.timeline-figure-light-primary:before{
+  height: calc(100% - 16px);
+}
+</style>
+{%endblock%}
+{% block content %}
+{{block.super}}
+<header class="page-cover flex-row justify-content-between activites_header">
+  <div class="d-none d-sm-flex align-items-center text-center col-auto p-3 border-right" style="border-right-style: dashed !important;">
+    <a href="javascript:;" class="user-avatar user-avatar-lg custShadow"><img src="{% static 'PMISLooper/assets/images/timg.jpg' %}" alt=""></a>
+    <div class="pl-2">
+      <h2 class="h4 mb-0 username">sing</h2>
+      <div class="mt-1">
+        <i class="fa fa-star text-yellow"></i> <i class="fa fa-star text-yellow"></i> <i class="fa fa-star text-yellow"></i> <i class="fa fa-star text-yellow"></i> <i class="far fa-star text-yellow"></i>
+      </div>
+    </div>
+  </div>
+  <div class="metric-row w-100 m-0 flex-nowrap customer_metric_row scrollbar">
+    <a href="javascript:;" class="metric align-items-center customer_metric">
+      <p class="metric-value h5 value">5</p>
+      <h2 class="metric-label"> {% trans "Projects" %} </h2>
+    </a>
+    <a href="javascript:;" id="session_link" class="metric align-items-center customer_metric">
+      <p class="metric-value h5 value">35</p>
+      <h2 class="metric-label"> {% trans "Sessions" %} </h2>
+    </a>
+    <a href="javascript:;" id="act_tasks_link" class="metric align-items-center customer_metric">
+      <p class="metric-value h5 value">14</p>
+      <h2 class="metric-label"><span class="ml-2">{% trans "Tasks" %}</span></h2>
+    </a>
+    <a href="javascript:;" id="new_technicals" class="metric align-items-center customer_metric">
+      <p class="metric-value h5 value">14</p>
+      <h2 class="metric-label"> {% trans "New Technicals" %} </h2>
+    </a>
+    <a href="javascript:;" id="new_questions" class="metric align-items-center customer_metric">
+      <p class="metric-value h5 value">3</p>
+      <h2 class="metric-label"> {% trans "New Questions" %} </h2>
+    </a>
+    <a href="javascript:;" id="project_goal" class="metric align-items-center customer_metric">
+      <p class="metric-value h5 value"><span class="text-primary pgoal_total">31</span> / <span
+          class="pgoal_completed">53</span></p>
+      <h2 class="metric-label"> {% trans "Project Goal" %} </h2>
+    </a>
+    <a href="javascript:;" id="week_goal" class="metric align-items-center customer_metric">
+      <p class="metric-value h5 value"><span class="text-primary pgoal_total">6</span> / <span
+          class="pgoal_completed">10</span></p>
+      <h2 class="metric-label"> {% trans "Week Goal" %} </h2>
+    </a>
+    <a href="javascript:;" id="must_finish" class="metric align-items-center customer_metric">
+      <p class="metric-value h5 value"><span class="text-primary pgoal_total">23</span> / <span
+          class="pgoal_completed">30</span></p>
+      <h2 class="metric-label"> {% trans "Must Finish" %} </h2>
+    </a>
+    <a href="javascript:;" id="must_have" class="metric align-items-center customer_metric">
+      <p class="metric-value h5 value"><span class="text-primary pgoal_total">10</span> / <span
+          class="pgoal_completed">20</span></p>
+      <h2 class="metric-label">{% trans "Must Have" %} </h2>
+    </a>
+  </div>
+</header>
+<nav class="page-navs">
+  <div class="nav-scroller">
+    <div class="nav nav-center nav-tabs">
+      <a class="nav-link" href="/looper">{% trans "Overview"%}</a> 
+      <a class="nav-link active" href="/looper/user/activites">{% trans "Activities"%}</a> 
+      <a class="nav-link" href="/looper/user/teams">{% trans "Teams"%}</a> 
+      <a class="nav-link" href="/devplat/project/overview" target="project">{% trans "Projects"%}</a> 
+      <a class="nav-link" href="/looper/user/top5_projects" target="top_project">{% trans "Milestone"%}</a>
+      <a class="nav-link" href="/looper/user/sessions">{% trans "Sessions"%}</a> 
+      <a class="nav-link" href="/looper">{% trans "Settings"%}</a>
+    </div>
+  </div>
+</nav>
+<div class="page-inner activites_body">
+  <div class="">
+    <div class="userlist  col-12"></div>
+    <div class="row activites_page">
+      <div class="col-12 col-lg-12 col-xl-4" id="daily_pattern">
+      </div>
+      <div class="col-12 col-lg-12 col-xl-4" id="today_task">
+      </div>
+      <div class="col-12 col-lg-12 col-xl-4" id="class1_task">
+      </div>
+      <div class="col-12 col-lg-12 col-xl-4" id="yesterday_task">
+      </div>
+      <div class="col-12 col-lg-12 col-xl-4" id="comming_week_task">
+      </div>
+      <div class="col-12 col-lg-12 col-xl-4" id="activites_schedule_priority">
+      </div>
+    </div>
+  </div>
+  {% endblock %}
+
+  {%block form_js%}
+  {{ block.super }}
+  <script src="{% md5url 'PMISLooper/assets/javascript/user/activities.js' %}" type="text/javascript"></script>
+  {%endblock%}

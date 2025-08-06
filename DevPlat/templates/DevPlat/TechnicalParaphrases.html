@@ -1,0 +1,69 @@
+{% load i18n %}
+<div class="modal" id="paraphrase-modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">{% trans "Generate Paraphrases" %}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <!-- 生成中提示信息 -->
+                <div id="loadingMessage"  class="justify-content-center align-items-center px-3 py-3" style="display: none;">
+                    <span class="spinner-border spinner-border-sm mr-2" role="status" aria-hidden="true"></span>
+                    {% trans "Generating, please wait..."%}
+                </div> 
+                <div class="row">
+                    <!-- 选择 paraphrase 方法 -->
+                    <div class="form-group col-4">
+                        <label for="paraphrase_method">{% trans "Paraphrase Method" %}</label><br>
+                        <select id="paraphrase_method" class="form-control">
+                            <option value="paraphrase_method_gpt">{% trans "GPT Generate" %}</option>
+                            <option value="paraphrase_method_custom">{% trans "Custom" %}</option>
+                        </select>
+                    </div>
+                    <!-- 生成 paraphrases 的数量 -->
+                    <div class="form-group col-4">
+                        <label for="paraphrase-count">{% trans "Number of Paraphrases" %}</label>
+                        <input type="number" id="paraphrase-count" class="form-control" min="3" max="10" value="3">
+                    </div>
+                    <!-- 选择 GPT 版本 -->
+                    <div class="form-group col-4">
+                        <label for="gpt_model">{% trans "GPT Version" %}</label>
+                        <select id="gpt_model" class="form-control">
+                            <option value="gpt3">GPT-3.5</option>
+                            <option value="gpt4">GPT-4</option>
+                        </select>
+                    </div>
+
+                </div>
+                <!-- 显示 topic 字段 -->
+                <div class="form-group">
+                    <label for="paraphrase-topic">{% trans "Topic" %}</label>
+                    <textarea id="paraphrase-topic" rows="3" class="form-control" readonly></textarea>
+                </div>
+
+                <h6 class="d-flex"><label class="mr-2">{% trans "English Paraphrases" %}</label> <a
+                        href="javascript:void(0)" class="" id="add-english-paraphrase"><i class="fas fa-plus"></i></a>
+                </h6>
+                <ul class="list-group py-1" id="english-paraphrase-list">
+                    <!-- Existing English paraphrases will be listed here -->
+                </ul>
+
+                <!-- Chinese Paraphrases Section -->
+                <h6 class="mt-4 d-flex"><label class="mr-2">{% trans "Chinese Paraphrases" %}</label> <a
+                        href="javascript:void(0)" class="" id="add-chinese-paraphrase"><i class="fas fa-plus"></i></a>
+                </h6>
+                <ul class="list-group py-1" id="chinese-paraphrase-list">
+                    <!-- Existing Chinese paraphrases will be listed here -->
+                </ul>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">{% trans "Close" %}</button>
+                <button type="button" class="btn btn-primary" id="generate-paraphrases-btn">{% trans "Generate"%}</button>
+            </div>
+        </div>
+    </div>
+</div>

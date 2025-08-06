@@ -1,0 +1,48 @@
+{% extends 'PMISLooper/index.html' %}
+{%load static %}
+{% load i18n %}
+{%load customer_filter%}
+{%load md5url%}
+{%block form_css%}
+{{block.super}}
+<link rel="stylesheet" href="{% md5url 'PMISLooper/assets/stylesheets/user/top5_projects.css' %}">
+{%endblock%}
+{% block content %}
+{{block.super}}
+<header class="page-cover">
+    <div class="ml-auto text-center">
+        <a href="#" class="user-avatar user-avatar-xl"><img src="{% static 'PMISLooper/assets/images/timg.jpg' %}"
+                alt=""></a>
+        <h2 class="h4 mt-2 mb-0 username">sing</h2>
+        <div class="my-1">
+            <i class="fa fa-star text-yellow"></i> <i class="fa fa-star text-yellow"></i> <i
+                class="fa fa-star text-yellow"></i> <i class="fa fa-star text-yellow"></i> <i
+                class="far fa-star text-yellow"></i>
+        </div>
+    </div>
+</header>
+<nav class="page-navs">
+    <div class="nav-scroller">
+        <div class="nav nav-center nav-tabs">
+            <a class="nav-link" href="/looper">{% trans "Overview"%}</a>
+            <a class="nav-link" href="/looper/user/activites">{% trans "Activities"%}</a>
+            <a class="nav-link" href="/looper/user/teams">{% trans "Teams"%}</a>
+            <a class="nav-link" href="/devplat/project/overview">{% trans "Projects"%}</a>
+            <a class="nav-link active" href="/looper/user/top5_projects">{% trans "Top5_projects"%}</a>
+            <a class="nav-link" href="/looper/user/sessions">{% trans "Sessions"%}</a>
+            <a class="nav-link" href="/looper">{% trans "Settings"%}</a>
+        </div>
+    </div>
+</nav>
+<div class="page-inner top5_mustHave">
+    <div class="userlist col-12"></div>
+    <div class="row" id="projectList">
+    </div>
+</div>
+{% endblock %}
+
+{%block form_js%}
+{{ block.super }}
+<script src="{% md5url 'PMISLooper/assets/javascript/user/top5_projects.js' %}" type="text/javascript"></script>
+<script src="{% static 'DevPlat/assets/javascript/data.js' %}" type="text/javascript"></script>
+{%endblock%}

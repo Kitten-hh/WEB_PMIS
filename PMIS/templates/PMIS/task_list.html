@@ -1,0 +1,25 @@
+{% extends 'PMIS/My_Starter_page.html' %}
+{% load customer_filter %}
+{%  block content %}
+    <div class="k-grid__item k-grid__item--fluid k-grid k-grid--hor">
+        <div class="k-content k-grid__item k-grid__item--fluid">
+          <div class="k-portlet k-portlet--mobile">
+            <div class="k-portlet__head">
+              <h5 class="k-portlet__head-label">Goal Master Form</h5>
+            </div>
+            <div class="k-portlet__body">
+                <div class="table-responsive">
+                    {{ datatable }}
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
+
+{% block page_js %}
+    {% load static %}
+  <script src="{% static 'PMIS/js/datatables.js' %}" type="text/javascript"></script>
+{% endblock %}

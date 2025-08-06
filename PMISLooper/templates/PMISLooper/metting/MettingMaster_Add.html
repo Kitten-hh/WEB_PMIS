@@ -1,0 +1,67 @@
+    {% extends 'PMISLooper/vue_index.html' %}
+    {%load static %}
+    {% load render_bundle from webpack_loader %}
+
+
+    {% block content%}
+    {{block.super}}
+
+    <div hidden id="subhtml">
+        <input name="company([[index]])" readonly class="form-control " style="min-width:100%;">
+        <input name="creator([[index]])" readonly class="form-control " style="min-width:100%;">
+        <input name="usr_group([[index]])" readonly class="form-control " style="min-width:100%;">
+        <input name="modifier([[index]])" readonly class="form-control " style="min-width:100%;">
+        <input name="create_date([[index]])" readonly class="form-control " style="min-width:100%;">
+        <input name="modi_date([[index]])" readonly class="form-control " style="min-width:100%;">
+        <input name="flag([[index]])" readonly class="form-control " style="min-width:100%;">
+        <input name="pid([[index]])" readonly class="form-control " style="min-width:100%;">
+        <input name="tid([[index]])" readonly class="form-control " style="min-width:100%;">
+        <input name="taskid([[index]])" readonly class="form-control " style="min-width:100%;">
+        <input name="contact([[index]])" readonly class="form-control " style="min-width:100%;">
+        <input name="inc_id([[index]])" readonly class="form-control " style="min-width:100%;">
+    </div>
+    <!-- <div id="subhtml" hidden> 
+        <div class="form-group col-3">
+            <div class="form-inline">
+                <label class="col-form-label text-lg-right col-lg-3">議題[[index]]：</label>
+                <div class="col-lg-9">
+                    <input name="inc_id([[index]])" class="form-control " hidden style="min-width:100%;">
+                    <input name="subject([[index]])" class="form-control " style="min-width:100%;">
+                </div>
+            </div>
+        </div>
+        <div class="form-group col-3">
+            <div class="form-inline">
+                <label class="col-form-label text-lg-right col-lg-3">討論過程</label>
+                <div class="col-lg-9">
+                    <input name="discussprocess([[index]])" class="form-control " style="min-width:100%;">
+                </div>
+            </div>
+        </div>
+        <div class="form-group col-3">
+            <div class="form-inline">
+                <label class="col-form-label text-lg-right col-lg-3">議題結論</label>
+                <div class="col-lg-9">
+                    <textarea name="conclusion([[index]])" cols="85" rows="5"></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="form-group col-3">
+            <div class="form-inline">
+                <label class="col-form-label text-lg-right col-lg-3">後續安排</label>
+                <div class="col-lg-9">
+                    <textarea name="arrange([[index]])" cols="85" rows="5"></textarea>
+                </div>
+            </div>
+        </div>
+
+    </div>
+         -->
+    {%endblock%}   
+
+
+    {%block form_js%}
+    {{block.super}}
+    {% render_bundle 'PMISLooper/dist/javascript/MettingMaster_Add' %} 
+    
+    {%endblock%}     

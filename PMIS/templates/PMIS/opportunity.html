@@ -1,0 +1,82 @@
+<!-- 繼承simple_template_nobar.html頁面 -->
+{% extends 'BaseProject/base/looper_base/simple_template_nobar.html' %}
+{%load static %}
+{%block header_jscss%}
+<style>
+    .jstree-container-ul li {
+        list-style: none;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        position: relative;
+        left: -30px;
+        margin-left: 40px;
+        word-break: keep-all;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+
+    .jstree-container-ul {
+        position: relative;
+        top: 40px;
+        padding-bottom: 10px;
+        left: -20px;
+        margin-left: 0px;
+        padding-right: 20px;
+    }
+
+</style>
+{% endblock %}
+{%load customer_filter%}
+{%block content_body%}
+<div class="row">
+    <div class="col-2 ">
+        <h6 style="color: rgb(52, 108, 176);">新技術文檔目錄</h6>
+        <div id="jstree_div" class="jstree"></div>
+    </div>
+    <div class="col-10">
+        {{block.super}}
+    </div>
+</div>
+{%endblock%}
+<!--定義Detail對話框的顯示內容-->
+
+{%block form_js%}
+<script>
+    var Form = new SimpleTemplateNoBar_Vue().$mount("#Main_Page"); 
+</script>
+<script src="{% static 'BaseProject/vendor/Looper/assets/vendor/jstree/jstree.min.js' %}"></script>
+<script>
+    $("#jstree_div").jstree({
+        "core": {
+            "check_callback": false,
+            'data': function (obj, callback) {
+                var jsonarray = new Array();
+                $.ajax({
+                    type: "GET",
+                    url: "/PMIS/opportunity/tree",
+                    dataType: "json",
+                    async: false,
+                    success: function (result) {
+                        var arrays = result.data;
+                        for (var i = 0; i < arrays.length; i++) {
+                            var arr = {
+                                "id": arrays[i].ma001,
+                                "parent": arrays[i].ma002 == 0 ? "#" : arrays[i].ma002,
+                                "text": arrays[i].ma003,
+                                'state': {
+                                    'opened': false
+                                },
+                            }
+                            jsonarray.push(arr);
+                        }
+                    }
+                });
+                callback.call(this, jsonarray);
+            }
+        },
+        "state": { "key": "demo" },
+        "plugins": ["state", "contextmenu"]
+    })
+
+</script>
+{%endblock%}

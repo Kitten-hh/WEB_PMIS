@@ -1,0 +1,196 @@
+{% extends 'BonusApp/TopBottomBar.html' %}
+
+{% load static %}
+
+{% block solecss %}
+<style>
+    .main {
+        margin: 0 auto;
+        background: white;
+    }
+
+    .content {
+        width: 96%;
+        margin: 0 auto;
+        padding: 2rem 0 2rem 0;
+    }
+
+    .content p {
+        margin: 0 0 1rem 0;
+    }
+
+    .myForm input {
+        border: 0rem;
+        outline: none;
+        font-size: 1.7rem;
+        margin-left: 1rem;
+        width: 100%;
+    }
+
+    .myForm p {
+        border-bottom: gray 1px dashed;
+    }
+
+    .myForm label {
+        font-size: 1.6rem;
+    }
+
+
+    .realtasktype {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .realtasktype i {
+        font-size: 3rem;
+        color: black;
+        font-weight: bold;
+        margin-right: 1rem;
+    }
+
+    .modal-body {
+        height: 60rem;
+        overflow: auto;
+    }
+
+    .modal_TaskType_Table {
+        width: 100%;
+        font-size: 2rem;
+        table-layout: fixed;
+    }
+
+    .modal_TaskType_Table tbody tr {
+        height: 3rem;
+    }
+
+    .modal_TaskType_Table tbody tr:hover {
+        background-color: grey;
+    }
+
+    .modal_TaskType_Table tbody tr td {
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        /* word-break: break-word; */
+    }
+</style>
+
+{% endblock %}
+
+
+{% block solenav %}
+<div class="container-fluid Custom_Head">
+    <a class="navbar-brand" id="prev_page" href="javascript:void(0)">
+        <i class="fa fa-arrow-left"></i>
+    </a>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="main" id="Modif_Task">
+    <div class="content">
+        <form action="" class="myForm">
+            <input type="hidden" id="task_id" name="inc_id" v-model="task.inc_id" />
+            {% csrf_token %}
+            <label for="contact">Contact</label>
+            <p class="contact">
+                <input type="text" name="contact" v-model="task.contact" readonly="true">
+            </p>
+
+            <label for="">Tid</label>
+            <p class="taskno">
+                <input type="text" name="taskno" v-model="task.taskno" readonly="true">
+            </p>
+
+            <label for="">Task Type</label>
+            <p class="realtasktype">
+                <input type="text" name="realtasktype" v-model="task.realtasktype" readonly="true">
+                <a href="" data-toggle="modal" data-target="#myModal_TaskType"><i class="fa fa-angle-down"></i></a>
+            </p>
+
+            <label for="">SubTaskTypeDesc</label>
+            <p class="subtasktypedesc">
+                <input type="text" name="subtasktypedesc" v-model="task.subtasktypedesc" readonly="true">
+            </p>
+
+            <label for="">Date</label>
+            <p class="edate">
+                <input type="text" name="edate" v-model="task.edate" readonly="true">
+            </p>
+
+            <label for="">Score</label>
+            <p class="tasktypescore">
+                <input type="text" name="tasktypescore" v-model="task.tasktypescore" readonly="true">
+            </p>
+
+            <label for="">Task</label>
+            <p class="task">
+                <input type="text" name="task" v-model="task.task" readonly="true">
+            </p>
+        </form>
+    </div>
+
+    <div class="modal fade" id="myModal_TaskType" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="myModalLabel">Task Type</h4>
+
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <!-- 标题 -->
+                    <button type="button" @click="new_TaskType" class="btn btn-primary">New Task Type</button>
+                    <!-- 搜索框 -->
+                    <div style="display: flex;justify-content: flex-end;">
+                        <div class="input-group" style="width: 50%;height: 3rem;margin-right: 2rem;">
+                            <span class="input-group-addon btn" style="font-size: 1.4rem;">Search</span>
+                            <input @input="taskTypeSearch(search_values)" v-model="search_values" type="text"
+                                class="form-control input-lg" style="height: 100%;font-size: 1.6rem;">
+                        </div>
+
+                    </div>
+
+                    <!-- Table数据 -->
+                    <table class="modal_TaskType_Table">
+                        <thead>
+                            <tr>
+                                <th>TaskType</th>
+                                <th style="width: 55%;">Description</th>
+                                <th style="width: 20%;">Score</th>
+                            </tr>
+                        </thead>
+                        <tbody v-for="taskType in taskTypes">
+                            <tr @click="selectTaskType(taskType)">
+                                <td v-html="taskType.tasktype"></td>
+                                <td v-html="taskType.description"></td>
+                                <td v-html="taskType.score"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- 关闭按钮 -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">关闭</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+<!-- 重寫腳步導航欄 -->
+{% block footernav %}
+<div class="container-fluid justify-content-center">
+    <ul class="nav">
+        <li class="nav-item ml-4 mr-4"><button class="btn btn-warning" value="Cancel" id="cancel" type="button">Cancel</button></li>
+        <li class="nav-item ml-4 mr-4"><button class="btn btn-warning" value="Save" @click="TaskModif" type="button">Save</button></li>
+    </ul>
+</div>
+{% endblock %}
+
+{% block solejs %}
+<script type="text/javascript" src="{% static 'BonusApp/Task_Management/Task_Modif.js' %}"></script>
+{% endblock %}

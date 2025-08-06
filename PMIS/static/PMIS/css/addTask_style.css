@@ -1,0 +1,95 @@
+body{
+    font-family: 'Raleway', Arial, sans-serif;
+}
+
+form{
+    padding: 2px;
+    box-shadow:1px 3px 10px 0px rgba(59, 89, 152, 0.78);
+}
+
+.form, .card{
+    border-radius: 16px;
+    margin-bottom: 0px;
+}
+
+.card{
+    background: linear-gradient(to top, #e3f1ff 10%, #3b5998 100%);
+}
+
+.card-body{
+    overflow-y: auto;
+    border-radius: 16px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+.form-control {
+    border-radius: 0;
+    color: #000;
+    background-color: #f6f7fb;
+}
+
+.form-control:focus {
+    color: #000;
+    background-color: #f6f7fb;
+}
+
+.cust_control{
+    color: #fff;
+    border: 0;
+    border-radius: 16px;
+    background-color: initial;
+    box-shadow: 0 0 0 2px #fff
+}
+
+.cust_control:focus {
+    color: #fff;
+    background-color: initial;
+    border-color: initial;
+    box-shadow: 0 0 0 2px #fff
+}
+
+label{
+    color: #000;
+    font-weight: 700;
+}
+
+.card-footer {
+    padding: 10px 15px;
+    border-top: 1px solid rgba(0,0,0,0.125);
+}
+
+.card-footer:last-child {
+    border-radius: 0 0 16px 16px;
+}
+
+.nav-link {
+    color: #3b5998;
+}
+
+.nav-tabs .nav-link:focus,
+.nav-tabs .nav-link:hover {
+    color: #000
+}
+
+.nav-tabs .nav-item.show .nav-link,
+.nav-tabs .nav-link.active {
+    color: #000;
+    border-color: #000
+}
+
+.btn-light {
+    border-color: #c6c9d5;
+}
+
+.btn-cust{
+    color:#fff;
+    background-color:#3b5998;
+    border-color:#3b5998
+}
+
+.btn-cust:hover{
+    color:#000;
+    background-color:#5872a7;
+    border-color:#5872a7
+}

@@ -1,0 +1,90 @@
+            {% if appraisal_id %}
+            <input name = "appraisal_id" value={{appraisal_id}} type="hidden"/>
+            {% endif %}
+            <div class="form-group row">
+              {{form.pid.errors}}
+              <label for="{{form.pid.name}}" class="col-4 col-form-label">{{form.pid.label}}</label>
+              <div class="col-12">
+                <input class="form-control" type="text" value="{{form.pid.initial|default_if_none:''}}" id={{form.pid}}
+              </div>
+            </div>
+
+            <div class="form-group row">
+              {{form.tid.errors}}
+              <label for="{{form.tid.name}}" class="col-4 col-form-label">{{form.tid.label}}</label>
+              <div class="col-12">
+                <input class="form-control" type="text" value="{{form.tid.initial|default_if_none:''}}" id={{form.tid}}
+              </div>
+            </div>
+
+            <div class="form-group row">
+              {{form.taskid.errors}}
+              <label for="{{form.taskid.name}}" class="col-4 col-form-label">{{form.taskid.label}}</label>
+              <div class="col-12">
+                <input class="form-control" type="text" value="{{form.taskid.initial|default_if_none:''}}" id={{form.taskid}}
+              </div>
+            </div>
+
+            <div class="form-group row">
+              {{form.task.errors}}
+              <label for="{{form.task.name}}" class="col-4 col-form-label">{{form.task.label}}</label>
+              <div class="col-12">
+                <textarea class="form-control" style="height:200px;" id={{form.task}}{{form.task.initial|default_if_none:''}}</textarea>
+              </div>
+            </div>
+
+            <div class="form-group row">
+              {{form.contact.errors}}
+              <label for="{{form.contact.name}}" class="col-4 col-form-label">{{form.contact.label}}</label>
+              <div class="col-12">
+                <input class="form-control" type="text" value="{{form.contact.initial|default_if_none:''}}" id={{form.contact}}
+              </div>
+            </div>
+
+            <div class="form-group row">
+              {{form.progress.errors}}
+              <label for="{{form.progress.name}}" class="col-4 col-form-label">{{form.progress.label}}</label>
+              <div class="col-12">
+                <input class="form-control" type="text" value="{{form.progress.initial|default_if_none:''}}" id={{form.progress}}
+              </div>
+            </div>
+
+            <div class="form-group row">
+              {{form.planbdate.errors}}
+              <label for="{{form.planbdate.name}}" class="col-4 col-form-label">{{form.planbdate.label}}</label>
+              <div class="col-12">
+                <input class="form-control" type="date" value="{{form.planbdate.initial|date:'Y-m-d'}}" id={{form.planbdate}} required/>
+              </div>
+            </div>
+
+            <div class="form-group row">
+              {{form.planedate.errors}}
+              <label for="{{form.planedate.name}}" class="col-4 col-form-label">{{form.planedate.label}}</label>
+              <div class="col-12">
+                <input class="form-control" type="date" value="{{form.planedate.initial|date:'Y-m-d'}}" id={{form.planedate}} required/>
+              </div>
+            </div>
+
+            <div class="form-group row">
+              {{form.relationgoalid.errors}}
+              <label for="{{form.relationgoalid.name}}" class="col-4 col-form-label">{{form.relationgoalid.label}}</label>
+              <div class="col-12">
+                <input class="form-control" type="text" value="{{form.relationgoalid.initial|default_if_none:''}}" id={{form.relationgoalid}}
+              </div>
+            </div>
+
+            <div class="form-group row">
+              {{form.tasktype.errors}}
+              <label for="{{form.tasktype.name}}" class="col-4 col-form-label">{{form.tasktype.label}}</label>
+              <div class="col-12">
+                <input class="form-control" type="text" value="{{form.tasktype.initial|default_if_none:''}}" id={{form.tasktype}}
+              </div>
+            </div>
+
+            <div class="form-group row">
+              {{form.class_field.errors}}
+              <label for="{{form.class_field.name}}" class="col-4 col-form-label">{{form.class_field.label}}</label>
+              <div class="col-12">
+                <input class="form-control" type="text" value="{{form.class_field.initial|default_if_none:''}}" id={{form.class_field}}
+              </div>
+            </div>

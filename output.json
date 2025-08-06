@@ -1,0 +1,1502 @@
+{
+    "class": "TreeModel",
+    "nodeDataArray": [
+        {
+            "key": 0,
+            "text": "React Boostrap Production Course",
+            "brush": "#adc2ff",
+            "loc": "0 0"
+        },
+        {
+            "text": "Components and Props",
+            "brush": "#adc2ff",
+            "parent": 0,
+            "key": -4,
+            "loc": "375.9962704752962 55.87203581538745",
+            "dir": "right",
+            "url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Rea-Sty-00019"
+        },
+        {
+            "text": "RBInput控件的用法：\nDoc：Rea-Com-00013",
+            "brush": "#0dfbfa",
+            "parent": -29,
+            "key": -6,
+            "loc": "827.0885353105858 -2781.540726812909",
+            "url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Rea-Com-00013",
+            "dir": "right",
+            "color": "#0dfbfa"
+        },
+        {
+            "text": "RBCheckbox控件的用法\nDoc：Rea-Com-00014",
+            "brush": "#adc2ff",
+            "parent": -29,
+            "key": -7,
+            "loc": "827.0885353105858 -2844.849314466622",
+            "url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Rea-Com-00014",
+            "dir": "right"
+        },
+        {
+            "text": "RBRadios控件的用法\nDoc：Rea-Com-00015",
+            "brush": "#adc2ff",
+            "parent": -29,
+            "key": -8,
+            "loc": "827.0885353105858 -2718.2321391591977",
+            "url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Rea-Com-00015",
+            "dir": "right"
+        },
+        {
+            "text": "RBSelect控件的用法：\nDoc：Rea-Com-00016",
+            "brush": "#adc2ff",
+            "parent": -29,
+            "key": -9,
+            "loc": "827.0885353105858 -2908.1579021203324",
+            "url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Rea-Com-00016",
+            "dir": "right"
+        },
+        {
+            "text": "RBInputGroup控件的用法\nDoc：Rea-Com-00017",
+            "brush": "#adc2ff",
+            "parent": -29,
+            "key": -10,
+            "loc": "827.0885353105858 -2654.9235515054856",
+            "url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Rea-Com-00017",
+            "dir": "right"
+        },
+        {
+            "text": "RBFileInput控件的用法\nDoc：Rea-Com-00018",
+            "brush": "#0dfbfa",
+            "parent": -29,
+            "key": -11,
+            "loc": "827.0885353105858 -2971.4664897740445",
+            "url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Rea-Com-00018",
+            "dir": "right",
+            "color": "#0dfbfa"
+        },
+        {
+            "text": "RBFlatpickerDate控件的用法\nDoc：Rea-Com-00019",
+            "brush": "#adc2ff",
+            "parent": -29,
+            "key": -12,
+            "loc": "827.0885353105858 -2591.6149638517736",
+            "url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Rea-Com-00019",
+            "dir": "right"
+        },
+        {
+            "text": "Introduction of React Bootstrap",
+            "brush": "#adc2ff",
+            "parent": 0,
+            "key": -16,
+            "loc": "375.996270475296 -855.180485016066",
+            "dir": "right"
+        },
+        {
+            "text": "Layouts and Grid System",
+            "brush": "#adc2ff",
+            "parent": 0,
+            "key": -19,
+            "loc": "375.9962704752962 245.77391412507268",
+            "dir": "right"
+        },
+        {
+            "text": "如何使用React Boostrap來創建一個Base Layout\nDoc:Rea-Sty-00012",
+            "brush": "#adc2ff",
+            "parent": -43,
+            "key": -20,
+            "loc": "827.2980079668358 41.40899864250218",
+            "url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Rea-Sty-00012",
+            "dir": "right"
+        },
+        {
+            "text": "What is React Bootstrap?\nDoc:Rea-Int-00001",
+            "brush": "#adc2ff",
+            "parent": -16,
+            "key": -21,
+            "loc": "638.8634478148158 -855.1804850160669",
+            "url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Rea-Int-00001",
+            "dir": "right"
+        },
+        {
+            "text": "Key Features\nDoc:Rea-Int-00002",
+            "brush": "#adc2ff",
+            "parent": -16,
+            "key": -22,
+            "loc": "638.8634478148158 -791.8718973623575",
+            "url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Rea-Int-00002",
+            "dir": "right"
+        },
+        {
+            "text": "Installation and Setup\nDoc:Rea-Int-00003",
+            "brush": "#ff0000",
+            "parent": -24,
+            "key": -23,
+            "loc": "538.0436235960658 -665.2547220549327",
+            "url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Rea-Int-00003",
+            "dir": "right",
+            "color": "#ff0000"
+        },
+        {
+            "text": "Getting Started",
+            "brush": "#adc2ff",
+            "parent": 0,
+            "key": -24,
+            "loc": "375.996270475296 -399.6542246003356",
+            "dir": "right"
+        },
+        {
+            "text": "Creating a Basic React Bootstrap App\nDoc:Rea-Get-00012",
+            "brush": "#0dfbfa",
+            "parent": -24,
+            "key": -25,
+            "loc": "538.0436235960658 -601.9461344012183",
+            "url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Rea-Get-00012",
+            "dir": "right",
+            "color": "#0dfbfa"
+        },
+        {
+            "text": "Component Hierarchy and Structure\nDoc:Rea-Get-00013",
+            "brush": "#adc2ff",
+            "parent": -24,
+            "key": -26,
+            "loc": "538.0436235960658 -538.6375467475068",
+            "url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Rea-Get-00013",
+            "dir": "right"
+        },
+        {
+            "text": "Theming and Styling",
+            "brush": "#adc2ff",
+            "parent": -24,
+            "key": -27,
+            "loc": "538.0436235960658 -418.9064279622534",
+            "dir": "right"
+        },
+        {
+            "text": "Buttons and Button Groups",
+            "brush": "#adc2ff",
+            "parent": -4,
+            "key": -28,
+            "loc": "602.2946001585661 -3099.4536876608636",
+            "dir": "right"
+        },
+        {
+            "text": "Forms and Form Controls",
+            "brush": "#adc2ff",
+            "parent": -4,
+            "key": -29,
+            "loc": "602.2946001585661 -2613.6431559976736",
+            "dir": "right"
+        },
+        {
+            "text": "Navigation",
+            "brush": "#adc2ff",
+            "parent": -4,
+            "key": -30,
+            "loc": "602.2946001585661 -2144.344782537609",
+            "dir": "right"
+        },
+        {
+            "text": "Alerts and Badges",
+            "brush": "#adc2ff",
+            "parent": -4,
+            "key": -31,
+            "loc": "602.2946001585661 -2009.4715281286217",
+            "dir": "right"
+        },
+        {
+            "text": "Navbar",
+            "brush": "#adc2ff",
+            "parent": -30,
+            "key": -32,
+            "loc": "737.2184181230862 -2184.255155466027",
+            "dir": "right"
+        },
+        {
+            "text": "Navs",
+            "brush": "#adc2ff",
+            "parent": -30,
+            "key": -33,
+            "loc": "737.2184181230862 -2104.43440960919",
+            "dir": "right"
+        },
+        {
+            "text": "Modals and Overlays",
+            "brush": "#adc2ff",
+            "parent": -4,
+            "key": -34,
+            "loc": "602.2946001585661 -1882.8543528211978",
+            "dir": "right"
+        },
+        {
+            "text": "Carousels and Slideshows",
+            "brush": "#adc2ff",
+            "parent": -4,
+            "key": -35,
+            "loc": "602.2946001585661 -1796.1475504421926",
+            "dir": "right"
+        },
+        {
+            "text": "Cards and Panels",
+            "brush": "#adc2ff",
+            "parent": -4,
+            "key": -36,
+            "loc": "602.2946001585661 -1511.2589060004896",
+            "dir": "right"
+        },
+        {
+            "text": "Typography and Text Elements",
+            "brush": "#adc2ff",
+            "parent": -4,
+            "key": -37,
+            "loc": "602.2946001585661 -1226.3702615587854",
+            "dir": "right"
+        },
+        {
+            "text": "Icons and Glyphs",
+            "brush": "#adc2ff",
+            "parent": -4,
+            "key": -38,
+            "loc": "602.2946001585661 -1163.0616739050747",
+            "dir": "right"
+        },
+        {
+            "text": "Tables and Data Display",
+            "brush": "#adc2ff",
+            "parent": -4,
+            "key": -39,
+            "loc": "602.2946001585661 -964.8798318423761",
+            "dir": "right"
+        },
+        {
+            "text": "Pagination and Pagination Links",
+            "brush": "#adc2ff",
+            "parent": -4,
+            "key": -40,
+            "loc": "602.2946001585661 -783.2101479828024",
+            "dir": "right"
+        },
+        {
+            "text": "Media and Images",
+            "brush": "#adc2ff",
+            "parent": -4,
+            "key": -41,
+            "loc": "602.2946001585661 -728.1576394306531",
+            "dir": "right"
+        },
+        {
+            "text": "Forms and Input Handling",
+            "brush": "#adc2ff",
+            "parent": 0,
+            "key": -42,
+            "loc": "375.9962704752962 487.30915737727355",
+            "dir": "right"
+        },
+        {
+            "text": "Grid Layout and Container\nDoc: Rea-Sty-00011",
+            "brush": "#f4fc0d",
+            "parent": -19,
+            "key": -43,
+            "loc": "596.435713439816 97.83152977404563",
+            "dir": "right",
+            "url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Rea-Sty-00011",
+            "color": "#f4fc0d"
+        },
+        {
+            "text": "Rows and Columns",
+            "brush": "#adc2ff",
+            "parent": -19,
+            "key": -44,
+            "loc": "596.435713439816 330.4077108223879",
+            "dir": "right"
+        },
+        {
+            "text": "Responsive Design with Grid\nDoc: Rea-Sty-00014",
+            "brush": "#f4fc0d",
+            "parent": -19,
+            "key": -45,
+            "loc": "596.435713439816 377.2041402729748",
+            "dir": "right",
+            "url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Rea-Sty-00014",
+            "color": "#f4fc0d"
+        },
+        {
+            "text": "Input Types and Validation",
+            "brush": "#adc2ff",
+            "parent": -42,
+            "key": -46,
+            "loc": "605.963545471066 -534.6227489936892",
+            "dir": "right"
+        },
+        {
+            "text": "Form Layout and Styling",
+            "brush": "#adc2ff",
+            "parent": -42,
+            "key": -47,
+            "loc": "605.963545471066 -487.82631954310233",
+            "dir": "right"
+        },
+        {
+            "text": "Form Groups and Control",
+            "brush": "#adc2ff",
+            "parent": -42,
+            "key": -48,
+            "loc": "605.963545471066 -441.0298900925164",
+            "dir": "right"
+        },
+        {
+            "text": "Form Components",
+            "brush": "#adc2ff",
+            "parent": -42,
+            "key": -49,
+            "loc": "605.963545471066 -306.1566356835304",
+            "dir": "right"
+        },
+        {
+            "text": "Custom Form Controls",
+            "brush": "#adc2ff",
+            "parent": -42,
+            "key": -50,
+            "loc": "605.963545471066 -222.76214987353157",
+            "dir": "right"
+        },
+        {
+            "text": "Themes and Styling",
+            "brush": "#adc2ff",
+            "parent": 0,
+            "key": -51,
+            "loc": "375.9962704752962 534.1055868278597",
+            "dir": "right"
+        },
+        {
+            "text": "Theming with Bootstrap Themes",
+            "brush": "#adc2ff",
+            "parent": -51,
+            "key": -52,
+            "loc": "564.437178283566 -331.89601998302396",
+            "dir": "right"
+        },
+        {
+            "text": "Customizing Styles and Overrides",
+            "brush": "#adc2ff",
+            "parent": -51,
+            "key": -53,
+            "loc": "564.437178283566 -285.0995905324362",
+            "dir": "right"
+        },
+        {
+            "text": "Global and Local Styles",
+            "brush": "#adc2ff",
+            "parent": -51,
+            "key": -54,
+            "loc": "564.437178283566 -238.3031610818484",
+            "dir": "right"
+        },
+        {
+            "text": "Advanced Topics",
+            "brush": "#adc2ff",
+            "parent": 0,
+            "key": -55,
+            "loc": "375.9962704752962 580.902016278447",
+            "dir": "right"
+        },
+        {
+            "text": "Accessibility and ARIA Attributes",
+            "brush": "#adc2ff",
+            "parent": -55,
+            "key": -56,
+            "loc": "546.657393127316 -238.30316108184934",
+            "dir": "right"
+        },
+        {
+            "text": "Using React Bootstrap with Redux or Context",
+            "brush": "#adc2ff",
+            "parent": -55,
+            "key": -57,
+            "loc": "546.657393127316 -191.50673163126348",
+            "dir": "right"
+        },
+        {
+            "text": "Server-Side Rendering (SSR) Considerations",
+            "brush": "#adc2ff",
+            "parent": -55,
+            "key": -58,
+            "loc": "546.657393127316 -128.19814397755056",
+            "dir": "right"
+        },
+        {
+            "text": "Guides and Best Practices",
+            "brush": "#adc2ff",
+            "parent": 0,
+            "key": -59,
+            "loc": "375.9962704752962 627.6984457290339",
+            "dir": "right"
+        },
+        {
+            "text": "Responsive Design Techniques",
+            "brush": "#adc2ff",
+            "parent": -59,
+            "key": -60,
+            "loc": "601.9327837523163 -167.42350561627313",
+            "dir": "right"
+        },
+        {
+            "text": "Creating Modal Dialogs",
+            "brush": "#adc2ff",
+            "parent": -59,
+            "key": -61,
+            "loc": "601.9327837523163 -120.62707616568717",
+            "dir": "right"
+        },
+        {
+            "text": "Handling State and Props",
+            "brush": "#adc2ff",
+            "parent": -59,
+            "key": -62,
+            "loc": "601.9327837523163 -73.8306467150985",
+            "dir": "right"
+        },
+        {
+            "text": "Using Third-Party Libraries with React Bootstrap",
+            "brush": "#adc2ff",
+            "parent": -59,
+            "key": -63,
+            "loc": "601.9327837523163 -27.034217264512847",
+            "dir": "right"
+        },
+        {
+            "text": "API Reference",
+            "brush": "#adc2ff",
+            "parent": 0,
+            "key": -64,
+            "loc": "375.9962704752962 674.4948751796207",
+            "dir": "right"
+        },
+        {
+            "text": "Component APIs and Props",
+            "brush": "#adc2ff",
+            "parent": -64,
+            "key": -65,
+            "loc": "528.985518127316 108.5240484341727",
+            "dir": "right"
+        },
+        {
+            "text": "Styling and Theming APIs",
+            "brush": "#adc2ff",
+            "parent": -64,
+            "key": -66,
+            "loc": "528.985518127316 155.32047788475722",
+            "dir": "right"
+        },
+        {
+            "text": "Event Handling and Callbacks",
+            "brush": "#adc2ff",
+            "parent": -64,
+            "key": -67,
+            "loc": "528.985518127316 426.43700928212496",
+            "dir": "right"
+        },
+        {
+            "text": "Troubleshooting and FAQs",
+            "brush": "#adc2ff",
+            "parent": 0,
+            "key": -68,
+            "loc": "375.9962704752962 721.2913046302081",
+            "dir": "right"
+        },
+        {
+            "text": "Common Issues and Solutions",
+            "brush": "#adc2ff",
+            "parent": -68,
+            "key": -69,
+            "loc": "607.366377502316 441.5791449058568",
+            "dir": "right"
+        },
+        {
+            "text": "Troubleshooting Component Behavior",
+            "brush": "#adc2ff",
+            "parent": -68,
+            "key": -70,
+            "loc": "607.366377502316 488.37557435644464",
+            "dir": "right"
+        },
+        {
+            "text": "Community Q&A",
+            "brush": "#adc2ff",
+            "parent": -68,
+            "key": -71,
+            "loc": "607.366377502316 535.1720038070301",
+            "dir": "right"
+        },
+        {
+            "text": "Changelog",
+            "brush": "#adc2ff",
+            "parent": 0,
+            "key": -72,
+            "loc": "375.996270475296 768.0877340807972",
+            "dir": "right"
+        },
+        {
+            "text": "Version History and Release Notes",
+            "brush": "#adc2ff",
+            "parent": -72,
+            "key": -73,
+            "loc": "510.43131890856597 768.0877340807972",
+            "dir": "right"
+        },
+        {
+            "text": "Additional Resources",
+            "brush": "#adc2ff",
+            "parent": 0,
+            "key": -74,
+            "loc": "375.9962704752962 814.8841635313813",
+            "dir": "right"
+        },
+        {
+            "text": "Examples of Apps Built with React Bootstrap",
+            "brush": "#adc2ff",
+            "parent": -74,
+            "key": -75,
+            "loc": "573.565107971066 605.3666479829112",
+            "dir": "right"
+        },
+        {
+            "text": "Community Showcases and Contributions",
+            "brush": "#adc2ff",
+            "parent": -74,
+            "key": -76,
+            "loc": "573.565107971066 668.6752356366233",
+            "dir": "right"
+        },
+        {
+            "text": "Recommended Tutorials and Articles",
+            "brush": "#adc2ff",
+            "parent": -74,
+            "key": -77,
+            "loc": "573.565107971066 731.9838232903355",
+            "dir": "right"
+        },
+        {
+            "text": "Support and Community",
+            "brush": "#adc2ff",
+            "parent": 0,
+            "key": -78,
+            "loc": "375.9962704752962 861.6805929819691",
+            "dir": "right"
+        },
+        {
+            "text": "Official Documentation Website",
+            "brush": "#adc2ff",
+            "parent": -78,
+            "key": -79,
+            "loc": "597.1339556273158 711.5626489706237",
+            "dir": "right"
+        },
+        {
+            "text": "GitHub Repository and Issue Tracker",
+            "brush": "#adc2ff",
+            "parent": -78,
+            "key": -80,
+            "loc": "597.1339556273158 758.359078421213",
+            "dir": "right"
+        },
+        {
+            "text": "Stack Overflow and Online Forums",
+            "brush": "#adc2ff",
+            "parent": -78,
+            "key": -81,
+            "loc": "597.1339556273158 805.1555078717998",
+            "dir": "right"
+        },
+        {
+            "text": "Social Media and Communication Channels",
+            "brush": "#adc2ff",
+            "parent": -78,
+            "key": -82,
+            "loc": "597.1339556273158 851.9519373223877",
+            "dir": "right"
+        },
+        {
+            "text": "Alerts 組件：\nDOC：Rea-Sty-00003",
+            "brush": "#adc2ff",
+            "dir": "right",
+            "parent": -31,
+            "key": -83,
+            "loc": "781.8868751543356 -2049.3819010570423",
+            "url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Rea-Sty-00003"
+        },
+        {
+            "text": "使用React Boostrap中的Navbars 組件來創建一個導航欄\n\nDoc：Rea-Sty-00006",
+            "brush": "#adc2ff",
+            "dir": "right",
+            "parent": -32,
+            "key": -84,
+            "loc": "848.8717282751062 -2209.0233927707145",
+            "url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Rea-Sty-00006"
+        },
+        {
+            "text": "Accordion 組件：\nDOC：Rea-Sty-00004",
+            "brush": "#adc2ff",
+            "dir": "right",
+            "parent": -4,
+            "key": -85,
+            "loc": "602.2946001585661 -680.2658248797756",
+            "url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Rea-Sty-00004"
+        },
+        {
+            "text": "Table 組件：\nDoc：Rea-Sty-00010",
+            "brush": "#f4fc0d",
+            "dir": "right",
+            "parent": -39,
+            "key": -86,
+            "loc": "816.786289216836 -1099.7530862513622",
+            "url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Rea-Sty-00010",
+            "color": "#f4fc0d"
+        },
+        {
+            "text": "Stack 組件：\nDoc：Rea-Sty-00015",
+            "brush": "#adc2ff",
+            "dir": "right",
+            "parent": -4,
+            "key": -87,
+            "loc": "602.2946001585661 -490.34006191863995",
+            "url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Rea-Sty-00015"
+        },
+        {
+            "text": "如何使用React Boostrap中的Button組件來創建按鈕？\n\nDoc：Rea-Sty-00016",
+            "brush": "#f4fc0d",
+            "dir": "right",
+            "parent": -28,
+            "key": -88,
+            "loc": "839.2569923418356 -3180.644456097095",
+            "url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Rea-Sty-00016",
+            "color": "#f4fc0d"
+        },
+        {
+            "text": "如何使用React Boostrap中的ButtonGroup組件來創建一個按鈕組？\n\nDoc：Rea-Sty-00017",
+            "brush": "#adc2ff",
+            "dir": "right",
+            "parent": -28,
+            "key": -89,
+            "loc": "839.2569923418356 -3084.3115520371325",
+            "url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Rea-Sty-00017"
+        },
+        {
+            "text": "Badge 組件：\nDoc：Rea-Sty-00018",
+            "brush": "#adc2ff",
+            "dir": "right",
+            "parent": -31,
+            "key": -90,
+            "loc": "781.8868751543356 -1986.0733134033278",
+            "url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Rea-Sty-00018"
+        },
+        {
+            "text": "Modal 組件：\nDoc：Rea-Sty-00019",
+            "brush": "#adc2ff",
+            "dir": "right",
+            "parent": -34,
+            "key": -91,
+            "loc": "799.4698829668356 -1922.7647257496171",
+            "url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Rea-Sty-00019",
+            "color": "#adc2ff"
+        },
+        {
+            "text": "Card 組件：\nDoc：Rea-Sty-00020",
+            "brush": "#0dfbfa",
+            "dir": "right",
+            "parent": -36,
+            "key": -92,
+            "loc": "774.8536720293362 -1749.351120991605",
+            "url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Rea-Sty-00020",
+            "color": "#0dfbfa"
+        },
+        {
+            "text": "React Boostrap中如何創建並使用上中下的單列佈局\nDoc: Rea-Sty-00013",
+            "brush": "#0dfbfa",
+            "dir": "right",
+            "parent": -43,
+            "key": -93,
+            "loc": "827.2980079668358 121.22974449933906",
+            "url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Rea-Sty-00013",
+            "color": "#0dfbfa"
+        },
+        {
+            "text": "Breadcrumb 組件：\nDoc：Rea-Sty-00021",
+            "brush": "#f4fc0d",
+            "dir": "right",
+            "parent": -4,
+            "key": -94,
+            "loc": "602.2946001585661 -427.0314742649279",
+            "url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Rea-Sty-00021",
+            "color": "#f4fc0d"
+        },
+        {
+            "text": "自定義 PropertyCard 組件\nDoc：Rea-Sty-00022",
+            "brush": "#adc2ff",
+            "dir": "right",
+            "parent": -36,
+            "key": -95,
+            "loc": "774.8536720293362 -1686.0425333378942",
+            "url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Rea-Sty-00022"
+        },
+        {
+            "text": "React常用的樣式設置方式\nDoc：Rea-Sty-00023",
+            "brush": "#adc2ff",
+            "dir": "right",
+            "parent": -27,
+            "key": -96,
+            "loc": "732.8766212480856 -475.3289590937984",
+            "url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Rea-Sty-00023"
+        },
+        {
+            "text": "如何在React應用中使用Styled-Components來為組件設置樣式\nDoc：Rea-Sty-00024",
+            "brush": "#adc2ff",
+            "dir": "right",
+            "parent": -53,
+            "key": -97,
+            "loc": "839.276035310586 -301.61174873556195",
+            "url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Rea-Sty-00024"
+        },
+        {
+            "text": "Image 組件\nDoc：Rea-Sty-00025",
+            "brush": "#adc2ff",
+            "dir": "right",
+            "parent": -41,
+            "key": -98,
+            "loc": "784.2418556230859 -736.4137185322157",
+            "url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Rea-Sty-00025"
+        },
+        {
+            "text": "React中如何在頁面動態顯示json數據\nDoc：Rea-Pag-00001",
+            "brush": "#adc2ff",
+            "dir": "right",
+            "parent": -39,
+            "key": -99,
+            "loc": "816.786289216836 -1036.4444985976506",
+            "url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Rea-Pag-00001"
+        },
+        {
+            "text": "Nav 組件：\nDoc：Rea-Sty-00026",
+            "brush": "#adc2ff",
+            "dir": "right",
+            "parent": -33,
+            "key": -100,
+            "loc": "834.6212399938555 -2112.690488710752",
+            "url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Rea-Sty-00026"
+        },
+        {
+            "text": "Tabs 組件\nDoc：Rea-Sty-00027",
+            "brush": "#adc2ff",
+            "dir": "right",
+            "parent": -102,
+            "key": -101,
+            "loc": "696.5743751543358 -616.9572372260637",
+            "url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Rea-Sty-00027"
+        },
+        {
+            "text": "Tabs",
+            "brush": "#adc2ff",
+            "dir": "right",
+            "parent": -4,
+            "key": -102,
+            "loc": "602.2946001585661 -577.0468642976452"
+        },
+        {
+            "text": "RBTabs 控件的用法\nDoc：Rea-Com-00024",
+            "brush": "#f4fc0d",
+            "dir": "right",
+            "parent": -102,
+            "key": -103,
+            "loc": "696.5743751543358 -553.6486495723518",
+            "url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Rea-Com-00024",
+            "color": "#f4fc0d"
+        },
+        {
+            "text": "Form 組件\nDoc：Rea-Sty-00028",
+            "brush": "#adc2ff",
+            "dir": "right",
+            "parent": -49,
+            "key": -104,
+            "loc": "788.875644685586 -354.3230877135098",
+            "url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Rea-Sty-00028"
+        },
+        {
+            "text": "FormControl 組件\nDoc：Rea-Sty-00029",
+            "brush": "#adc2ff",
+            "dir": "right",
+            "parent": -48,
+            "key": -105,
+            "loc": "831.4747657793356 -417.6316753672225",
+            "url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Rea-Sty-00029"
+        },
+        {
+            "text": "React Bootstrap中如何創建一個基本的表單\nDoc：Rea-Sty-00030",
+            "brush": "#adc2ff",
+            "dir": "right",
+            "parent": -49,
+            "key": -106,
+            "loc": "788.875644685586 -291.0145000597975",
+            "url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Rea-Sty-00030"
+        },
+        {
+            "text": "FormGroup 組件\nDoc：Rea-Sty-00031",
+            "brush": "#adc2ff",
+            "dir": "right",
+            "parent": -48,
+            "key": -107,
+            "loc": "831.4747657793356 -480.9402630209344",
+            "url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Rea-Sty-00031"
+        },
+        {
+            "text": "RBCard控件的用法\nDoc：Rea-Com-00025",
+            "brush": "#adc2ff",
+            "dir": "right",
+            "parent": -36,
+            "key": -108,
+            "loc": "774.8536720293362 -1622.7339456841821",
+            "url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Rea-Com-00025"
+        },
+        {
+            "text": "Dropdown 組件：\nDoc：Rea-Sty-00032",
+            "brush": "#f4fc0d",
+            "dir": "right",
+            "parent": -110,
+            "key": -109,
+            "loc": "735.206211091836 -363.72288661121587",
+            "url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Rea-Sty-00032",
+            "color": "#f4fc0d"
+        },
+        {
+            "text": "Dropdown",
+            "brush": "#adc2ff",
+            "dir": "right",
+            "parent": -4,
+            "key": -110,
+            "loc": "602.2946001585661 -323.81251368279766"
+        },
+        {
+            "text": "RBDropdown 控件的用法\nDoc：Rea-Com-00027",
+            "brush": "#adc2ff",
+            "dir": "right",
+            "parent": -110,
+            "key": -111,
+            "loc": "735.206211091836 -300.41429895750406",
+            "url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Rea-Com-00027"
+        },
+        {
+            "text": "ProgressBar",
+            "brush": "#adc2ff",
+            "dir": "right",
+            "parent": -4,
+            "key": -112,
+            "loc": "602.2946001585661 -197.19533837537392"
+        },
+        {
+            "text": "ProgressBar組件：\nDoc：Rea-Sty-00033",
+            "brush": "#adc2ff",
+            "dir": "right",
+            "parent": -112,
+            "key": -113,
+            "loc": "742.9122657793356 -237.10571130379242",
+            "url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Rea-Sty-00033"
+        },
+        {
+            "text": "Tooltips",
+            "brush": "#adc2ff",
+            "dir": "right",
+            "parent": -4,
+            "key": -114,
+            "loc": "602.2946001585661 -102.23245689480608"
+        },
+        {
+            "text": "RBTooltips 控件的用法\nDoc：Rea-Com-00029",
+            "brush": "#adc2ff",
+            "dir": "right",
+            "parent": -114,
+            "key": -115,
+            "loc": "717.7184181230862 -110.48853599636858",
+            "url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Rea-Com-00029"
+        },
+        {
+            "text": "RBProgressBar 控件的用法\nDoc：Rea-Com-00028",
+            "brush": "#adc2ff",
+            "dir": "right",
+            "parent": -112,
+            "key": -116,
+            "loc": "742.9122657793356 -173.79712365008044",
+            "url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Rea-Com-00028"
+        },
+        {
+            "text": "ListGroup組件：\nDoc：Rea-Sty-00035",
+            "brush": "#0dfbfa",
+            "dir": "right",
+            "parent": -122,
+            "key": -118,
+            "loc": "690.0934181230859 -47.17994834265642",
+            "url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Rea-Sty-00035",
+            "color": "#0dfbfa"
+        },
+        {
+            "text": "RBListCard控件的用法\nDoc：Rea-Com-00036",
+            "brush": "#adc2ff",
+            "dir": "right",
+            "parent": -36,
+            "key": -119,
+            "loc": "774.8536720293362 -1559.425358030471",
+            "url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Rea-Com-00036"
+        },
+        {
+            "text": "RBTabbedCard控件的用法\nDoc：Rea-Com-00038",
+            "brush": "#adc2ff",
+            "dir": "right",
+            "parent": -36,
+            "key": -120,
+            "loc": "774.8536720293362 -1496.116770376758",
+            "url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Rea-Com-00038"
+        },
+        {
+            "text": "RBMediaCard控件的用法\nDoc：Rea-Com-00037",
+            "brush": "#adc2ff",
+            "dir": "right",
+            "parent": -36,
+            "key": -121,
+            "loc": "774.8536720293362 -1432.808182723047",
+            "url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Rea-Com-00037"
+        },
+        {
+            "text": "List",
+            "brush": "#adc2ff",
+            "dir": "right",
+            "parent": -4,
+            "key": -122,
+            "loc": "602.2946001585661 24.384718412618"
+        },
+        {
+            "text": "RBSearchItemList 控件的用法\nDoc：Rea-Com-00039",
+            "brush": "#f4fc0d",
+            "dir": "right",
+            "parent": -122,
+            "key": -123,
+            "loc": "690.0934181230859 16.12863931105548",
+            "url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Rea-Com-00039",
+            "color": "#f4fc0d"
+        },
+        {
+            "text": "RBTodolist 控件的用法\nDoc：Rea-Com-00044",
+            "brush": "#adc2ff",
+            "dir": "right",
+            "parent": -122,
+            "key": -124,
+            "loc": "690.0934181230859 79.43722696476729",
+            "url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Rea-Com-00044"
+        },
+        {
+            "text": "RBDrawer 控件的用法\nDoc：Rea-Com-00043",
+            "brush": "#adc2ff",
+            "dir": "right",
+            "parent": -34,
+            "key": -125,
+            "loc": "799.4698829668356 -1859.4561380959037",
+            "url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Rea-Com-00043"
+        },
+        {
+            "text": "Layout and Grid System",
+            "brush": "#adc2ff",
+            "dir": "right",
+            "parent": -4,
+            "key": -126,
+            "loc": "602.2946001585661 405.60626691428337"
+        },
+        {
+            "text": "React中如何創建固定頁頭和底部導航布局控件\nDoc：Rea-Com-00057",
+            "brush": "#adc2ff",
+            "dir": "right",
+            "parent": -126,
+            "key": -127,
+            "loc": "816.7164649980859 206.05440227219117",
+            "url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Rea-Com-00057"
+        },
+        {
+            "text": "React中如何使用基於Boostrap的FixedLayout（固定頁頭和底部導航）佈局控件\nDoc：Rea-Com-00058",
+            "brush": "#adc2ff",
+            "dir": "right",
+            "parent": -126,
+            "key": -128,
+            "loc": "816.7164649980859 285.8751481290281",
+            "url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Rea-Com-00058"
+        },
+        {
+            "text": "React 中如何創建堆疊佈局（Stack Layout）控件\nDoc：Rea-Com-00061",
+            "brush": "#adc2ff",
+            "dir": "right",
+            "parent": -126,
+            "key": -129,
+            "loc": "816.7164649980859 365.6958939858647",
+            "url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Rea-Com-00061"
+        },
+        {
+            "text": "React中如何使用基於Boostrap的StackLayout（堆疊佈局）控件\nDoc：Rea-Com-00062",
+            "brush": "#adc2ff",
+            "dir": "right",
+            "parent": -126,
+            "key": -130,
+            "loc": "816.7164649980859 445.5166398427019",
+            "url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Rea-Com-00062"
+        },
+        {
+            "text": "Component composition and reusability",
+            "brush": "#adc2ff",
+            "dir": "right",
+            "parent": -4,
+            "key": -131,
+            "loc": "602.2946001585661 1019.4039964642911"
+        },
+        {
+            "text": "React中如何使用基於Boostrap的RBImageView控件\nDoc：Rea-Com-00064",
+            "brush": "#adc2ff",
+            "dir": "right",
+            "parent": -131,
+            "key": -132,
+            "loc": "851.844394685586 731.7753068637987",
+            "url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Rea-Com-00064"
+        },
+        {
+            "text": "React中如何創建基於Bootstrap的自定義圖片（RBImageView）控件\nDoc：Rea-Com-00063",
+            "brush": "#adc2ff",
+            "dir": "right",
+            "parent": -131,
+            "key": -133,
+            "loc": "851.844394685586 651.9545610069623",
+            "url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Rea-Com-00063"
+        },
+        {
+            "text": "Spinner",
+            "brush": "#adc2ff",
+            "dir": "right",
+            "parent": -4,
+            "key": -134,
+            "loc": "602.2946001585661 151.0018937200415"
+        },
+        {
+            "text": "Spinner 組件\nDoc：Rea-Sty-00038",
+            "brush": "#f4fc0d",
+            "dir": "right",
+            "parent": -134,
+            "key": -135,
+            "loc": "716.7281837480856 142.74581461847907",
+            "url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Rea-Sty-00038",
+            "color": "#f4fc0d"
+        },
+        {
+            "text": "React中如何創建基於Bootstrap的自定義上下文菜單（RBContextMenu）控件\nDoc：Rea-Com-00065",
+            "brush": "#adc2ff",
+            "dir": "right",
+            "parent": -131,
+            "key": -136,
+            "loc": "851.844394685586 811.5960527206357",
+            "url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Rea-Com-00065"
+        },
+        {
+            "text": "React中如何使用基於Boostrap的RBContextMenu 控件\nDoc：Rea-Com-00066",
+            "brush": "#adc2ff",
+            "dir": "right",
+            "parent": -131,
+            "key": -137,
+            "loc": "851.844394685586 891.4167985774731",
+            "url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Rea-Com-00066"
+        },
+        {
+            "text": "React 頁面中如何使用Font Awesome 6圖標（React Icons）\nDoc：Rea-Sty-00039",
+            "brush": "#adc2ff",
+            "dir": "right",
+            "parent": -38,
+            "key": -138,
+            "loc": "775.2726173418362 -1179.5738321081988",
+            "url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Rea-Sty-00039"
+        },
+        {
+            "text": "React中如何創建基於Bootstrap的自定義富文本編輯器控件（RBRichText）\nDoc：Rea-Com-00067",
+            "brush": "#adc2ff",
+            "dir": "right",
+            "parent": -131,
+            "key": -139,
+            "loc": "851.844394685586 971.2375444343097",
+            "url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Rea-Com-00067"
+        },
+        {
+            "text": "React中如何使用基於Boostrap的RBRichText控件\nDoc：Rea-Com-00068",
+            "brush": "#adc2ff",
+            "dir": "right",
+            "parent": -131,
+            "key": -140,
+            "loc": "851.844394685586 1051.0582902911476",
+            "url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Rea-Com-00068"
+        },
+        {
+            "text": "React中如何創建基於Bootstrap的自定義日曆控件（RBFullCalendar）\nDoc：Rea-Com-00069",
+            "brush": "#adc2ff",
+            "dir": "right",
+            "parent": -131,
+            "key": -141,
+            "loc": "851.844394685586 1130.8790361479835",
+            "url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Rea-Com-00069",
+            "color": "#adc2ff"
+        },
+        {
+            "text": "React中如何使用基於Boostrap的RBFullCalendar控件\nDoc：Rea-Com-00070",
+            "brush": "#adc2ff",
+            "dir": "right",
+            "parent": -131,
+            "key": -142,
+            "loc": "851.844394685586 1210.69978200482",
+            "url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Rea-Com-00070",
+            "color": "#adc2ff"
+        },
+        {
+            "text": "React中如何創建基於Bootstrap的自定義指標顯示控件（RBMetrics）\nDoc：Rea-Com-00071",
+            "brush": "#adc2ff",
+            "dir": "right",
+            "parent": -131,
+            "key": -143,
+            "loc": "851.844394685586 1290.5205278616577",
+            "url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Rea-Com-00071"
+        },
+        {
+            "text": "React中如何使用基於Boostrap的RBMetrics控件\nDoc：Rea-Com-00072",
+            "brush": "#adc2ff",
+            "dir": "right",
+            "parent": -131,
+            "key": -144,
+            "loc": "851.844394685586 1370.3412737184944",
+            "url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Rea-Com-00072"
+        },
+        {
+            "text": "在RestApi中通過預設條件查詢數據\nDoc:Dja-Vie-00027",
+            "brush": "#adc2ff",
+            "dir": "right",
+            "parent": -65,
+            "key": -145,
+            "loc": "767.0524024980856 138.80831968163253",
+            "url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Dja-Vie-00027"
+        },
+        {
+            "text": "自定義批量新增或更新數據\nDoc:Dja-Mod-00068",
+            "brush": "#adc2ff",
+            "dir": "right",
+            "parent": -65,
+            "key": -146,
+            "loc": "767.0524024980856 -114.4260309332144",
+            "url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Dja-Mod-00068"
+        },
+        {
+            "text": "在Django中手動管理數據庫事務\nDoc:Dja-tra-00001",
+            "brush": "#adc2ff",
+            "dir": "right",
+            "parent": -67,
+            "key": -147,
+            "loc": "779.4938087480854 378.270557252143",
+            "url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Dja-tra-00001"
+        },
+        {
+            "text": "在React中使用DataTable組件\nDoc:Rea-Dat-00010",
+            "brush": "#f4fc0d",
+            "dir": "right",
+            "parent": -39,
+            "key": -148,
+            "loc": "816.786289216836 -909.8273232902268",
+            "url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Rea-Dat-00010",
+            "color": "#f4fc0d"
+        },
+        {
+            "text": "在React應用中使用Fetch進行HTTP請求\nDoc:Rea-Fet-00001",
+            "brush": "#f4fc0d",
+            "dir": "right",
+            "parent": -39,
+            "key": -149,
+            "loc": "816.786289216836 -846.5187356365146",
+            "url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Rea-Fet-00001",
+            "color": "#f4fc0d"
+        },
+        {
+            "text": "Django中實現Excel文件導入\nDoc:Dja-Exc-00006",
+            "brush": "#adc2ff",
+            "dir": "right",
+            "parent": -151,
+            "key": -150,
+            "loc": "647.7926368730862 584.7084784164033",
+            "url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Dja-Exc-00006"
+        },
+        {
+            "text": "文件處理",
+            "brush": "#adc2ff",
+            "dir": "right",
+            "parent": -64,
+            "key": -151,
+            "loc": "528.985518127316 624.6188513448199"
+        },
+        {
+            "text": "React Bootstrap應用中實現文件上傳\nDoc:Rea-Fil-00002",
+            "brush": "#adc2ff",
+            "dir": "right",
+            "parent": -151,
+            "key": -152,
+            "loc": "647.7926368730862 521.3998907626925",
+            "url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Rea-Fil-00002"
+        },
+        {
+            "text": "React Bootstrap應用中實現文件下載\nDoc:Rea-Fil-00001",
+            "brush": "#adc2ff",
+            "dir": "right",
+            "parent": -151,
+            "key": -153,
+            "loc": "647.7926368730862 648.017066070116",
+            "url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Rea-Fil-00001"
+        },
+        {
+            "text": "Django中實現Excel文件導出\nDoc:Dja-Exc-00005",
+            "brush": "#adc2ff",
+            "dir": "right",
+            "parent": -151,
+            "key": -154,
+            "loc": "647.7926368730862 711.325653723825",
+            "url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Dja-Exc-00005"
+        },
+        {
+            "text": "如何創建一個React JS項目\nDoc:Rea-Get-00009",
+            "brush": "#ff0000",
+            "dir": "right",
+            "parent": -24,
+            "key": -156,
+            "loc": "538.0436235960658 -728.5633097086421",
+            "url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Rea-Get-00009",
+            "color": "#ff0000"
+        },
+        {
+            "text": "創建一個React Bootstrap 卡片編輯功能組件（EditableCard）\nDoc:Rea-Com-00078",
+            "brush": "#adc2ff",
+            "dir": "right",
+            "parent": -36,
+            "key": -157,
+            "loc": "774.8536720293362 -1369.4995950693346",
+            "url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Rea-Com-00078",
+            "color": "#adc2ff"
+        },
+        {
+            "text": "使用 EditableCard 卡片編輯功能組件\nDoc:Rea-Com-00080",
+            "brush": "#adc2ff",
+            "dir": "right",
+            "parent": -36,
+            "key": -158,
+            "loc": "774.8536720293362 -1289.678849212498",
+            "url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Rea-Com-00080",
+            "color": "#adc2ff"
+        },
+        {
+            "text": "使用React進行POST請求來新增數據\nDoc:Rea-Dat-00012",
+            "brush": "#adc2ff",
+            "dir": "right",
+            "parent": -65,
+            "key": -159,
+            "loc": "767.0524024980856 -51.11744327950126",
+            "url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Rea-Dat-00012",
+            "color": "#adc2ff"
+        },
+        {
+            "text": "使用React進行DELETE請求來刪除數據\nDoc:Rea-Dat-00014",
+            "brush": "#adc2ff",
+            "dir": "right",
+            "parent": -65,
+            "key": -160,
+            "loc": "767.0524024980856 75.49973202792279",
+            "url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Rea-Dat-00014",
+            "color": "#adc2ff"
+        },
+        {
+            "text": "使用React進行POST請求來修改數\nDoc:Rea-Dat-00013",
+            "brush": "#adc2ff",
+            "dir": "right",
+            "parent": -65,
+            "key": -161,
+            "loc": "767.0524024980856 12.191144374208022",
+            "url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Rea-Dat-00013",
+            "color": "#adc2ff"
+        },
+        {
+            "text": "Authentication and permission handling",
+            "brush": "#adc2ff",
+            "dir": "right",
+            "parent": 0,
+            "key": -162,
+            "loc": "375.99627047529617 440.51272792668647"
+        },
+        {
+            "text": "React如何實現權限控制(實現基於權限的組件訪問控制)\nDoc:Rea-Pow-00001",
+            "brush": "#adc2ff",
+            "dir": "right",
+            "parent": -162,
+            "key": -163,
+            "loc": "692.621748596066 -606.1874157489657",
+            "url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Rea-Pow-00001",
+            "color": "#adc2ff"
+        },
+        {
+            "text": "RBTable控件的用法: \nDoc:Rea-Com-00034",
+            "brush": "#f4fc0d",
+            "dir": "right",
+            "parent": -39,
+            "key": -164,
+            "loc": "816.786289216836 -973.1359109439386",
+            "url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Rea-Com-00034",
+            "color": "#f4fc0d"
+        },
+        {
+            "text": "在 React 中使用 Axios 進行 POST 請求獲取數據\nDoc:Rea-Dat-00011",
+            "brush": "#f4fc0d",
+            "dir": "right",
+            "parent": -65,
+            "key": -165,
+            "loc": "767.0524024980856 202.11690733534476",
+            "url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Rea-Dat-00011",
+            "color": "#f4fc0d"
+        },
+        {
+            "text": "在React應用中實現後台數據初始化後的獲取與展示\nDoc:Rea-Sta-00003",
+            "brush": "#0dfbfa",
+            "dir": "right",
+            "parent": -67,
+            "key": -166,
+            "loc": "779.4938087480854 441.5791449058545",
+            "url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Rea-Sta-00003",
+            "color": "#0dfbfa"
+        },
+        {
+            "text": "TopBar組件\nDoc:Rea-Com-00021",
+            "brush": "#f4fc0d",
+            "dir": "right",
+            "parent": -126,
+            "key": -167,
+            "loc": "816.7164649980859 525.3373856995387",
+            "url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Rea-Com-00021",
+            "color": "#f4fc0d"
+        },
+        {
+            "text": "SideBar組件\nDoc:Rea-Com-00022",
+            "brush": "#f4fc0d",
+            "dir": "right",
+            "parent": -126,
+            "key": -168,
+            "loc": "816.7164649980859 588.6459733532505",
+            "url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Rea-Com-00022",
+            "color": "#f4fc0d"
+        },
+        {
+            "text": "在 React 項目中如何編寫頁面樣式（包括樣式文件結構設計）\nDoc：Rea-Get-00021",
+            "brush": "#adc2ff",
+            "dir": "right",
+            "parent": -27,
+            "key": -169,
+            "loc": "732.8766212480856 -412.02037144008443",
+            "url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Rea-Get-00021"
+        },
+        {
+            "text": "React中基於Boostrap的RBInputWithButton 組件創建與使用\nDoc:Rea-Com-00092",
+            "brush": "#adc2ff",
+            "dir": "right",
+            "parent": -29,
+            "key": -170,
+            "loc": "827.0885353105858 -2528.306376198062",
+            "url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Rea-Com-00092"
+        },
+        {
+            "text": "React中基於Boostrap的RBQueryModal組件的創建和使用\nDoc:Rea-Com-00091",
+            "brush": "#adc2ff",
+            "dir": "right",
+            "parent": -29,
+            "key": -171,
+            "loc": "827.0885353105858 -2448.4856303412253",
+            "url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Rea-Com-00091"
+        },
+        {
+            "text": "React中基於Boostrap的RBSearchTableInput組件的使用\nDoc:Rea-Com-00090",
+            "brush": "#adc2ff",
+            "dir": "right",
+            "parent": -29,
+            "key": -172,
+            "loc": "827.0885353105858 -2368.664884484389",
+            "url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Rea-Com-00090"
+        },
+        {
+            "text": "React中基於Boostrap的RBSearchTableInput組件創建\nDoc:Rea-Com-00093",
+            "brush": "#adc2ff",
+            "dir": "right",
+            "parent": -29,
+            "key": -173,
+            "loc": "827.0885353105858 -2288.844138627551",
+            "url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Rea-Com-00093"
+        },
+        {
+            "text": "Show me the Introduction of React BootStrap.\nDoc:Sta-Int-00005",
+            "brush": "#adc2ff",
+            "dir": "right",
+            "parent": -16,
+            "key": -174,
+            "loc": "638.8634478148158 -935.001230872909",
+            "url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Sta-Int-00005"
+        },
+        {
+            "text": "如何在 React Bootstrap 項目中集成並使用 react_component_kit自定義組件庫（How to Integrate and Use the react_component_kit Custom Component Library in a React Bootstrap Project）\nDoc:Rea-Com-00096",
+            "brush": "#ff0000",
+            "dir": "right",
+            "parent": -24,
+            "key": -175,
+            "loc": "538.0436235960658 -315.6874673801211",
+            "url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Rea-Com-00096",
+            "color": "#ff0000"
+        },
+        {
+            "text": "如何在 React Bootstrap 項目中集成並使用 authorization_app自定義權限管理組件庫(How to Integrate and Use the authorization_app Custom Authorization Management Component Library in a React Bootstrap Project)\nDoc:Rea-Com-00101",
+            "brush": "#ff0000",
+            "dir": "right",
+            "parent": -24,
+            "key": -176,
+            "loc": "538.0436235960658 -169.81808871078397",
+            "url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Rea-Com-00101",
+            "color": "#ff0000"
+        },
+        {
+            "text": "使用 React 進行 GET 請求獲取數據(Using React to Make GET Requests to Fetch Data)\nDoc:Rea-Dat-00021",
+            "brush": "#f4fc0d",
+            "dir": "right",
+            "parent": -65,
+            "key": -177,
+            "loc": "767.0524024980856 281.937653192181",
+            "url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Rea-Dat-00021",
+            "color": "#f4fc0d"
+        },
+        {
+            "text": "項目中創建一個頁面 (How to Create a Page in a React Bootstrap Project)\nDoc:Rea-Get-00014",
+            "brush": "#f4fc0d",
+            "dir": "right",
+            "parent": -179,
+            "key": -178,
+            "loc": "479.20085015856614 -23.94871004144899",
+            "url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Rea-Get-00014",
+            "color": "#f4fc0d"
+        },
+        {
+            "text": "Pages",
+            "brush": "#adc2ff",
+            "dir": "right",
+            "parent": 0,
+            "key": -179,
+            "loc": "375.9962704752962 -7.436551838324036"
+        },
+        {
+            "text": "如何在 React Bootstrap 中使用 RBCoreLayout 佈局控件來創建一個PMIS風格的頁面基本佈局\nDoc:Rea-Com-00103",
+            "brush": "#adc2ff",
+            "dir": "right",
+            "parent": -19,
+            "key": -180,
+            "loc": "596.435713439816 217.562648559301",
+            "url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Rea-Com-00103",
+            "color": "#adc2ff"
+        }
+    ]
+}

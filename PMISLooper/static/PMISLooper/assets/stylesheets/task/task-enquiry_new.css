@@ -1,0 +1,281 @@
+/* 滾動條樣式 */
+.task-enquiry .card-body::-webkit-scrollbar,
+.taskEnquiryPage .LPDataTable .dataTables_scrollBody::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+.task-enquiry .card-body::-webkit-scrollbar-track,
+.taskEnquiryPage .LPDataTable .dataTables_scrollBody::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 6px;
+}
+
+.task-enquiry .card-body::-webkit-scrollbar-thumb,
+.taskEnquiryPage .LPDataTable .dataTables_scrollBody::-webkit-scrollbar-thumb {
+    background: #e0e1e5;
+    border-radius: 5px;
+}
+
+.task-enquiry .card-body::-webkit-scrollbar-thumb:hover, 
+.taskEnquiryPage .LPDataTable .dataTables_scrollBody::-webkit-scrollbar-thumb:hover {
+    background: #c0c0c0;
+}
+
+/* new Style */
+.enquiryCondition .form-group {
+    margin-bottom: .25rem;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.enquiryCondition .input-group-alt .input-group-append {
+    margin-right: -1px;
+}
+
+.taskEnquiryPage .custom-checkbox  {
+    cursor: pointer;
+}
+
+.taskEnquiryPage .searchBtnTools {
+    white-space: nowrap;
+}
+
+#IsDaily+.custom-control-label:after,
+#IsDaily+.custom-control-label:before {
+    top: .25rem !important
+}
+
+/* dataTable */
+.LPDataTable table.dataTable thead .sorting:before {
+    content: "\f0de" !important;
+    right: 0.5em !important;
+}
+
+.LPDataTable table.dataTable thead .sorting:after {
+    content: "\f0dd" !important;
+}
+
+.LPDataTable .dataTables_wrapper .row:first-child {
+    display: none;
+}
+
+.taskEnquiryPage .LPDataTable th,
+.taskEnquiryPage .LPDataTable td {
+    padding: .3rem;
+    font-size: 14px;
+}
+
+.taskEnquiryPage .LPDataTable th {
+    padding-right: 30px;
+}
+
+.taskEnquiryPage .LPDataTable table.dataTable thead .sorting:before,
+.taskEnquiryPage .LPDataTable table.dataTable thead .sorting_asc:before,
+.taskEnquiryPage .LPDataTable table.dataTable thead .sorting_desc:before,
+.taskEnquiryPage .LPDataTable table.dataTable thead .sorting:after,
+.taskEnquiryPage .LPDataTable table.dataTable thead .sorting_asc:after,
+.taskEnquiryPage .LPDataTable table.dataTable thead .sorting_desc:after {
+    top: 8px;
+}
+
+@media (max-width: 575.98px) {
+    .taskEnquiryPage.page-inner {
+        padding-right: .5rem;
+        padding-left: .5rem;
+    }
+    
+    .conditionCard .card-header>label .custom-control-label {
+        top: -2px;
+    }
+
+    #IsDaily+.custom-control-label:after, 
+    #IsDaily+.custom-control-label:before {
+        top: 0.4rem !important;
+    }
+
+    .conditionCard .card-body>.LPDataTable .dataTables_wrapper .dataTables_scrollBody {
+        height: 326px;
+    }
+}
+
+@media (min-width: 576px) {
+    .conditionCard .card-body>.LPDataTable .dataTables_wrapper .dataTables_scrollBody {
+        height: 326px;
+    }
+}
+
+@media (min-width: 992px) {
+    .taskEnquiryPage.page-inner {
+        padding-right: 1.5rem;
+        padding-left: 1.5rem;
+    }
+}
+
+@media (min-width: 576px) and (max-width: 1199.98px) {
+    .col-sm-22 {
+        flex: 0 0 22%;
+        max-width: 22%;
+    }
+    .col-sm-39 {
+        flex: 0 0 39%;
+        max-width: 39%;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    .enquiryCondition .form-group {
+        display: flex;
+        align-items: center;
+    }
+
+    .enquiryCondition .contactWrap>label,
+    .enquiryCondition .progressWrap>label {
+        min-width: 66px;
+    }
+
+    /* 多語言時字段名寬度設置 */
+}
+
+@media (min-width: 1200px) {
+    .card-deck-xl .card {
+        margin-bottom: 0;
+    }
+}
+
+@media (max-width: 1599.98px) {
+    .taskEnquiryPage .searchBtnTools {
+        overflow-x: auto;
+    }
+}
+
+@media (min-width: 1600px) {
+    .order-xxxl-0 {
+        order: 0
+    }
+
+    .order-xxxl-1 {
+        order: 1
+    }
+
+    .order-xxxl-2 {
+        order: 2
+    }
+
+    .order-xxxl-3 {
+        order: 3
+    }
+
+    .order-xxxl-4 {
+        order: 4
+    }
+
+    .order-xxxl-5 {
+        order: 5
+    }
+
+    /* 2.0 */
+    .col-xxxl-22 {
+        flex: 0 0 22%;
+        max-width: 22%;
+    }
+    .col-xxxl-39 {
+        flex: 0 0 39%;
+        max-width: 39%;
+    }
+
+    .enquiryCard {
+        flex-direction: row !important;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 11px;
+    }
+
+    .enquiryCondition .form-group {
+        display: flex;
+        align-items: center;
+    }
+
+    .enquiryCondition .form-group:nth-last-child(-n+3) {
+        margin-bottom: 0;
+    }
+
+    .enquiryCard .searchBtnTools {
+        flex-direction: column;
+        width: 120px;
+        min-width: 120px;
+        margin-left: 0.5rem;
+    }
+    .enquiryCard .searchBtnTools>.btn {
+        margin: 2px;
+    }
+
+    .enquiryCondition .contactWrap>label,
+    .enquiryCondition .progressWrap>label {
+        min-width: 66px;
+    }
+
+    .conditionCard .card-body>.LPDataTable .dataTables_wrapper .dataTables_scrollBody {
+        height: 128px;
+    }
+
+    /* 多語言時字段名寬度設置 */
+}
+
+@media (min-width: 1600px) and (max-width: 1799.98px) {
+    .col-xxxl-26 {
+        flex: 0 0 26%;
+        max-width: 26%;
+    }
+}
+
+@media (min-width: 1800px) {
+    .col-xxxxl-3 {
+        flex: 0 0 25%;
+        max-width: 25%
+    }
+
+    .col-xxxxl-7 {
+        flex: 0 0 58.333333%;
+        max-width: 58.333333%
+    }
+    
+    .col-xxxxl-16 {
+        flex: 0 0 16%;
+        max-width: 16%;
+    }
+
+    .col-xxxxl-31 {
+        flex: 0 0 31%;
+        max-width: 31%;
+    }
+
+    .col-xxxxl_3 {
+        flex: 0 0 29.666666%;
+        max-width: 29.666666%;
+    }
+
+    .order-xxxxl-0 {
+        order: 0
+    }
+
+    .order-xxxxl-1 {
+        order: 1
+    }
+
+    .order-xxxxl-2 {
+        order: 2
+    }
+
+    .order-xxxxl-3 {
+        order: 3
+    }
+
+    .order-xxxxl-4 {
+        order: 4
+    }
+
+    .order-xxxxl-5 {
+        order: 5
+    }
+}

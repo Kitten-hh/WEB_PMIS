@@ -1,0 +1,342 @@
+        <div class="k-portlet">
+            <div class="k-portlet__head">
+                <div class="k-portlet__head-label">
+                    <h3 class="k-portlet__head-title">
+                        任務明細
+                    </h3>
+                </div>
+            </div>
+            <div class="k-form k-form--fit k-form--label-right">
+                <div class="k-portlet__body">
+                    <div way-scope="Master_CurrentData">
+                        <div class="form-group row mb-2">
+                            <label class="col-form-label col-lg-1 col-sm-12">工程名:</label>
+                            <div class="col-lg-2">
+                                <input way-data="projectname" type="input" class="form-control" disabled="disabled">
+                            </div>
+                            <label class="col-form-label col-lg-1 col-sm-12">项目编号:</label>
+                            <div class="col-lg-2">
+                                <input way-data="subprojectid" type="input" class="form-control" disabled="disabled">
+                            </div>
+                            <label class="col-form-label col-lg-1 col-sm-12">模塊流程圖:</label>
+                            <div class="col-lg-2">
+                                <input way-data="sessionflowchartno"  type="input" class="form-control" disabled="disabled">
+                            </div>
+                            <label class="col-form-label col-lg-1 col-sm-12">模塊名稱:</label>
+                            <div class="col-lg-2">
+                                <input way-data="tiddesc" type="input" class="form-control" disabled="disabled">
+                            </div>
+                        </div>
+                        <div class="form-group row mb-2">
+                            <label class="col-form-label col-lg-1 col-sm-12">工程編號:</label>
+                            <div class="col-lg-2">
+                                <input way-data="pid" type="input" class="form-control">
+                            </div>
+                            <label class="col-form-label col-lg-1 col-sm-12">類別編號:</label>
+                            <div class="col-lg-2">
+                                <input way-data="tid" type="input" class="form-control">
+                            </div>
+                            <label class="col-form-label col-lg-1 col-sm-12">任務編號:</label>
+                            <div class="col-lg-2">
+                                <input way-data="taskid" type="input" class="form-control">
+                            </div>
+                            <label class="col-form-label col-lg-1 col-sm-12">上報人:</label>
+                            <div class="col-lg-2">
+                                <input way-data="udf09" type="input" class="form-control" disabled="disabled">
+                            </div>
+                        </div>
+                        <div class="form-group row mb-2">
+                            <label class="col-form-label col-lg-1 col-sm-12">聯繫人:</label>
+                            <div class="col-lg-2 col-md-9 col-sm-12">
+                                <select way-data="contact" class="form-control k_selectpicker" data-live-search="true">
+                                    <option>hb</option>
+                                    <option>qfq</option>
+                                    <option>lmy</option>
+                                </select>
+                            </div>
+                            <label class="col-form-label col-lg-1 col-sm-12">進度:</label>
+                            <div class="col-lg-2 col-md-9 col-sm-12">
+                                <select way-data="progress" class="form-control k_selectpicker" data-live-search="true">
+                                    <option>S</option>
+                                    <option>F</option>
+                                    <option>I</option>
+                                    <option>C</option>
+                                    <option>NF</option>
+                                    <option>N</option>
+                                    <option>H</option>
+                                    <option>T</option>
+                                </select>
+                            </div>
+                            <label class="col-form-label col-lg-1 col-sm-12">優先級:</label>
+                            <div class="col-lg-2">
+                                <input way-data="priority" class="form-control" type="number" value="" id="example-number-input">
+                            </div>
+                            <label class="col-form-label col-lg-1 col-sm-12">上報人部門:</label>
+                            <div class="col-lg-2">
+                                <input way-data="udf11" type="input" class="form-control" disabled="disabled">
+                            </div>
+                        </div>
+                        <div class="form-group row mb-2">
+                            <label class="col-form-label col-lg-1 col-sm-12">計畫開始:</label>
+                            <div class="col-lg-2">
+                                <div class="input-group date">
+                                    <input way-data="planbdate" type="text" class="form-control" readonly="" value=""
+                                        data-date-format="yyyy/mm/dd" id="k_datepicker_3">
+                                    <div class="input-group-append">
+                                        <span class="input-group-text"> <i class="flaticon-event-calendar-symbol"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <label class="col-form-label col-lg-1 col-sm-12">實際開始:</label>
+                            <div class="col-lg-2">
+                                <div class="input-group date">
+                                    <input way-data="planedate" type="text" class="form-control" readonly="" value=""
+                                        data-date-format="yyyy/mm/dd" id="k_datepicker_3">
+                                    <div class="input-group-append">
+                                        <span class="input-group-text"> <i class="flaticon-event-calendar-symbol"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <label class="col-form-label col-lg-1 col-sm-12">Class:</label>
+                            <div class="col-lg-2 col-md-9 col-sm-12">
+                                <select way-data="class" class="form-control k_selectpicker">
+                                    <option>Class1</option>
+                                    <option>Class2</option>
+                                    <option>Other</option>
+                                </select>
+                            </div> <label class="col-form-label col-lg-1 col-sm-12">關聯任務:</label>
+                            <div class="col-lg-2">
+                                <input way-data="relationid" type="input" class="form-control" disabled="disabled">
+                            </div>
+                        </div>
+                        <div class="form-group row mb-2">
+                            <label class="col-form-label col-lg-1 col-sm-12">計畫結束:</label>
+                            <div class="col-lg-2">
+                                <div class="input-group date">
+                                    <input way-data="planedate" type="text" class="form-control" readonly="" value=""
+                                        data-date-format="yyyy/mm/dd" id="k_datepicker_3">
+                                    <div class="input-group-append">
+                                        <span class="input-group-text"> <i class="flaticon-event-calendar-symbol"></i>
+                                        </span>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <label class="col-form-label col-lg-1 col-sm-12">實際結束:</label>
+                            <div class="col-lg-2">
+                                <div class="input-group date">
+                                    <input way-data="edate" type="text" class="form-control" readonly="" value=""
+                                        data-date-format="yyyy/mm/dd" id="k_datepicker_3">
+                                    <div class="input-group-append">
+                                        <span class="input-group-text"> <i class="flaticon-event-calendar-symbol"></i>
+                                        </span>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <label class="col-form-label col-lg-1 col-sm-12">任務分類:</label>
+                            <div class="col-lg-2">
+                                <div class="input-group">
+                                    <input way-data="tasktype" type="input" class="form-control" disabled="disabled">
+                                    <div class="input-group-append">
+                                        <button type="button" class="btn btn-secondary btn-icon"><i
+                                                class="flaticon2-box-1"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <label class="col-form-label col-lg-1 col-sm-12">關係目標:</label>
+                            <div class="col-lg-2">
+                                <input way-data="relationgoalid" type="input" class="form-control" disabled="disabled">
+                            </div>
+                        </div>
+                        <div class="form-group row mb-2">
+                            <label class="col-form-label col-lg-1 col-sm-12">計畫天數:</label>
+                            <div class="col-lg-2">
+                                <input way-data="etime" type="input" class="form-control" disabled="disabled">
+                            </div>
+                            <label class="col-form-label col-lg-1 col-sm-12">實際天數:</label>
+                            <div class="col-lg-2">
+                                <input way-data="atime" type="input" class="form-control" disabled="disabled">
+                            </div>
+                            <label class="col-form-label col-lg-1 col-sm-12">子任務分類:</label>
+                            <div class="col-lg-2">
+                                <input way-data="subtasktype" type="input" class="form-control" disabled="disabled">
+                            </div>
+                            <label class="col-form-label col-lg-1 col-sm-12">難度:</label>
+                            <div class="col-lg-2">
+                                <input way-data="diff" type="input" class="form-control" disabled="disabled">
+                            </div>
+                        </div>
+                        <div class="form-group row mb-2">
+                            <label for="exampleTextarea" class="col-form-label col-lg-1 col-sm-12">任務描述:</label>
+                            <div class="col-lg-11">
+                                <textarea way-data="task" class="form-control" id="exampleTextarea" rows="10"></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group row mb-2">
+                            <label for="exampleTextarea" class="col-form-label col-lg-1 col-sm-12">備註:</label>
+                            <div class="col-lg-5">
+                                <textarea way-data="remark" class="form-control" id="exampleTextarea" rows="8"></textarea>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group row mb-1">
+                                    <label class="col-form-label col-lg-2 col-sm-12">任務流程圖:</label>
+                                    <div class="col-lg-4">
+                                        <input way-data="flowchartno" type="input" class="form-control" disabled="disabled">
+                                    </div>
+                                    <div class="col-lg-2"></div>
+                                    <div class="col-lg-2">
+                                        <div class="k-checkbox-inline">
+                                            <label class="k-checkbox">
+                                                <input type="checkbox">
+                                                Default <span></span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group row mb-1">
+                                    <label class="col-form-label col-lg-2 col-sm-12">文檔:</label>
+                                    <div class="col-lg-4">
+                                        <select way-data="docflag" class="form-control k_selectpicker">
+                                            <option data-icon="fa fa-file-alt"></option>
+                                            <option data-icon="flaticon-list-1"></option>
+                                        </select>
+                                    </div>
+                                    <div class="col-lg-2">
+                                        <div class="k-checkbox-inline">
+                                            <label class="k-checkbox">
+                                                <input type="checkbox">
+                                                是否排期 <span></span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-2">
+                                        <div class="k-checkbox-inline">
+                                            <label class="k-checkbox">
+                                                <input way-data="schedulestate" type="checkbox">
+                                                是否收費 <span></span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group row mb-1">
+                                    <label class="col-form-label col-lg-2 col-sm-12">窗口名稱:</label>
+                                    <div class="col-lg-4">
+                                        <input way-data="udf04" type="input" class="form-control">
+                                    </div>
+                                    <label class="col-form-label col-lg-2 col-sm-12">參考:</label>
+                                    <div class="col-lg-4">
+                                        <input way-data="reference" type="input" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="form-group row mb-1">
+                                    <label class="col-form-label col-lg-2 col-sm-12">脫期天數:</label>
+                                    <div class="col-lg-4">
+                                        <input way-data="delayday" type="input" class="form-control">
+                                    </div>
+                                    <label class="col-form-label col-lg-2 col-sm-12">需求日期:</label>
+                                    <div class="col-lg-4">
+                                        <div class="input-group date">
+                                            <input way-data="requestdate" type="text" class="form-control" readonly="" value=""
+                                                data-date-format="yyyy/mm/dd" id="k_datepicker_3">
+                                            <div class="input-group-append">
+                                                <span class="input-group-text"> <i
+                                                        class="flaticon-event-calendar-symbol"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="k_quick_panel" class="k-offcanvas-panel">
+                            <div class="k-offcanvas-panel__body pb-2">
+                                <div class="form-group row mb-1 mt-2">
+                                    <label class="col-form-label col-lg-2 col-sm-12">聯繫人:</label>
+                                    <div class="col-lg-3 col-md-9 col-sm-12">
+                                        <select id="s_contact" class="form-control k_selectpicker"
+                                            data-live-search="true">
+                                            <option>hb</option>
+                                            <option>qfq</option>
+                                            <option>lmy</option>
+                                        </select>
+                                    </div>
+                                    <label class="col-form-label col-lg-3 col-sm-12">項目編號:</label>
+                                    <div class="col-lg-4">
+                                        <input id="s_recordId" type="input" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="form-group row mb-1">
+                                    <label class="col-form-label col-lg-2 col-sm-12 pl-0">工程編號:</label>
+                                    <div class="col-lg-3">
+                                        <input id="s_pid" type="input" class="form-control">
+                                    </div>
+                                    <label class="col-form-label col-lg-3 col-sm-12">描述:</label>
+                                    <div class="col-lg-4">
+                                        <input id="s_desc" type="input" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="k-offcanvas-panel__nav p-0 pb-3 m-0" k-hidden-height="78" style="">
+                                <ul class="nav nav-pills" role="tablist">
+                                    <li class="nav-item active" id="s_search"> <a class="nav-link active"
+                                            data-toggle="tab" href="#k_quick_panel_tab_notifications" role="tab">查詢</a>
+                                    </li>
+                                    <li class="nav-item"> <a class="nav-link" data-toggle="tab"
+                                            href="#k_quick_panel_tab_actions" role="tab">清除</a> </li>
+                                </ul>
+                                <button class="k-offcanvas-panel__close" id="k_quick_panel_close_btn"><i
+                                        class="flaticon2-delete"></i></button>
+                            </div>
+                            <div class="k-offcanvas-panel__body p-0">
+                                <div id="kt_tree_4" class="tree-demo jstree jstree-4 jstree-default" role="tree"
+                                    aria-multiselectable="true" tabindex="0" aria-activedescendant="j4_2"
+                                    aria-busy="false">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="k-portlet__foot">
+                    <div class="form-group row mb-2">
+                        <div class="col-lg-1">
+                            <!-- <div class="k-header__topbar-item k-header__topbar-item--quick-panel" data-toggle="k-tooltip" title="" data-placement="left" data-original-title="Quick panel">
+                                        <span class="k-header__topbar-icon" id="k_quick_panel_toggler_btn"> <i class="flaticon2-grids"></i> </span>
+                                </div>                                 -->
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="k-form__actions">
+                                <div class="btn-group" role="group" aria-label="Medium group">
+                                    <button type="button" class="btn btn-secondary"><i
+                                            class="flaticon-add-circular-button"></i> 新增</button>
+                                    <button type="button" class="btn btn-secondary"><i class="flaticon-delete"></i>
+                                        刪除</button>
+                                    <button type="button" class="btn btn-secondary"><i class="flaticon-list-1"></i>
+                                        查看文檔</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-7">
+                            <div class="k-form__actions k-form__actions--right">
+                                <div class="btn-group" role="group" aria-label="Medium group">
+                                    <button type="button" class="btn btn-secondary"><i class="fa fa-save"></i>
+                                        保存</button>
+                                    <button type="button" class="btn btn-secondary"><i class="flaticon-cancel"></i>
+                                        取消</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <ul id="k_quick_panel_toggler_btn" class="k-sticky-toolbar" style="margin-top: 30px;">
+                    <li class="k-sticky-toolbar__item k-sticky-toolbar__item--demo-toggle" data-toggle="k-tooltip"
+                        title="" data-placement="right" data-original-title="Session panel">
+                        <a href="#" class="">Session</a>
+                        <span class="k-header__topbar-icon"> <i class="flaticon2-grids"></i> </span>
+                    </li>
+                </ul>
+            </div>
+        </div>

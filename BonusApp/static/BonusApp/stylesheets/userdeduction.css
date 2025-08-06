@@ -1,0 +1,10 @@
+table.dataTable tbody tr.selected a.dropdown-item {
+    color: #191927;
+}
+
+table.dataTable tbody tr.selected a.dropdown-item.active, 
+table.dataTable tbody tr.selected a.dropdown-item:active, 
+table.dataTable tbody tr.selected a.dropdown-item:focus, 
+table.dataTable tbody tr.selected a.dropdown-item:hover {
+    color: #fff;
+}

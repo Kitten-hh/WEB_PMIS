@@ -1,0 +1,42 @@
+{% extends 'WEB_PMIS/main.html' %}
+{% load static %}
+{% block header_jscss%}
+    <!-- BEGIN PLUGINS STYLES -->
+    <link rel="stylesheet" href="{% static 'BaseProject/vendor/Looper/assets/vendor/open-iconic/font/css/open-iconic-bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'BaseProject/vendor/Looper/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css' %}"><!-- END PLUGINS STYLES -->
+{% endblock%}
+{% block content %}
+    <div class="row">
+        <div class="col-4"></div>
+        <div class="card col-4">
+            <div class="card-body">
+                <h3 class="card-title">Schedule</h3>
+                <form action="/PMIS/schedule/upload" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <input type="hidden" name="file_type" value="1">
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="inputGroupFileAddon01">Upload&nbsp;</span>
+                    </div>
+                    <div class="custom-file">
+                        <input type="file" class="custom-file-input" name="file" id="inputGroupFile01"
+                            aria-describedby="inputGroupFileAddon01">
+                        <label class="custom-file-label" for="inputGroupFile01">&nbsp;請上傳Session內已經排過序的Excel</label>
+                    </div>
+                </div>   
+                <br> 
+                <button type="submit" class="btn btn-primary">提交</button>
+                </form>
+            </div>
+        </div>            
+    </div>
+{%endblock%}
+{% block footer_jscss%}
+    <!-- BEGIN PLUGINS JS -->
+    <script src="{% static 'BaseProject/vendor/Looper/assets/vendor/pace-progress/pace.min.js' %}"></script>
+    <script src="{% static 'BaseProject/vendor/Looper/assets/vendor/stacked-menu/js/stacked-menu.min.js' %}"></script>
+    <script src="{% static 'BaseProject/vendor/Looper/assets/vendor/perfect-scrollbar/perfect-scrollbar.min.js' %}"></script>
+    <script src="{% static 'BaseProject/vendor/Looper/assets/vendor/moment/min/moment.min.js' %}"></script>
+    <script src="{% static 'BaseProject/vendor/Looper/assets/vendor/snapsvg/snap.svg-min.js' %}"></script>
+    <script src="{% static 'BaseProject/vendor/Looper/assets/vendor/frappe-gantt-v2/frappe-gantt.min.js' %}"></script> <!-- END PLUGINS JS -->
+{% endblock %}

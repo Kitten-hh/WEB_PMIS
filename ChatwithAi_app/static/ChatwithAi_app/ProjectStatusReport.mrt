@@ -1,0 +1,132 @@
+{
+  "ReportVersion": "2022.2.3",
+  "ReportGuid": "4503c178bb5f74bef71f027659e0194a",
+  "ReportName": "Report",
+  "ReportAlias": "Report",
+  "ReportFile": "ProjectStatusReport.mrt",
+  "ReportCreated": "/Date(1717821551000+0800)/",
+  "ReportChanged": "/Date(1717822820000+0800)/",
+  "EngineVersion": "EngineV2",
+  "CalculationMode": "Interpretation",
+  "ReportUnit": "Centimeters",
+  "Dictionary": {
+    "Resources": {
+      "0": {
+        "Name": "datasource",
+        "Alias": "datasource",
+        "Type": "Json",
+        "Image": "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"
+      }
+    },
+    "DataSources": {
+      "0": {
+        "Ident": "StiDataTableSource",
+        "Name": "master",
+        "Alias": "master",
+        "Columns": {
+          "0": {
+            "Name": "question",
+            "Index": -1,
+            "NameInSource": "question",
+            "Alias": "question",
+            "Type": "System.String"
+          },
+          "1": {
+            "Name": "result",
+            "Index": -1,
+            "NameInSource": "result",
+            "Alias": "result",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "JSON.master"
+      }
+    },
+    "Databases": {
+      "0": {
+        "Ident": "StiJsonDatabase",
+        "Name": "JSON",
+        "Alias": "JSON",
+        "PathData": "resource://datasource"
+      }
+    }
+  },
+  "Pages": {
+    "0": {
+      "Ident": "StiPage",
+      "Name": "Page1",
+      "Guid": "05e613b90e8b853fb5987c537373e146",
+      "Interaction": {
+        "Ident": "StiInteraction"
+      },
+      "Border": ";;2;;;;;solid:Black",
+      "Brush": "solid:",
+      "Components": {
+        "0": {
+          "Ident": "StiDataBand",
+          "Name": "Datamaster",
+          "ClientRectangle": "0,0.4,19.01,1.6",
+          "Interaction": {
+            "Ident": "StiBandInteraction"
+          },
+          "Border": ";;;;;;;solid:Black",
+          "Brush": "solid:",
+          "Components": {
+            "0": {
+              "Ident": "StiText",
+              "Name": "Datamaster_question",
+              "CanGrow": true,
+              "ClientRectangle": "0,0,19,0.8",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{master.question}"
+              },
+              "VertAlignment": "Center",
+              "Font": "Microsoft YaHei;12;Bold;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "WordWrap": true
+              }
+            },
+            "1": {
+              "Ident": "StiText",
+              "Name": "Datamaster_result",
+              "CanGrow": true,
+              "ClientRectangle": "0,0.8,19,0.8",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{master.result}"
+              },
+              "VertAlignment": "Center",
+              "Font": "Microsoft YaHei;;;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "WordWrap": true
+              }
+            }
+          },
+          "DataSourceName": "master"
+        }
+      },
+      "PageWidth": 21.01,
+      "PageHeight": 29.69,
+      "Watermark": {
+        "TextBrush": "solid:50,0,0,0"
+      },
+      "Margins": {
+        "Left": 1,
+        "Right": 1,
+        "Top": 1,
+        "Bottom": 1
+      }
+    }
+  }
+}

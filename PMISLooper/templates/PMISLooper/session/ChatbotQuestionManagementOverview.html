@@ -1,0 +1,84 @@
+{% extends 'PMISLooper/index.html' %}
+{%load static %}
+{% load i18n %}
+{%load md5url %}
+{%block form_css%}
+{{block.super}}
+<style>
+.app-main {
+    padding-top: 0;
+}
+.page {
+    height: calc(100vh - .15rem);
+}
+</style>
+{%endblock%}
+
+{%  block content %}
+{{block.super}}
+<iframe frameborder="0" width='100%' class="questionMgn_iframe" style="height:calc(100% - 56px); margin-top: 56px;"></iframe>
+<!-- <iframe src="{{salc_server}}/question/home" frameborder="0" width='100%' class="iframe" style="height:100%;"></iframe> -->
+
+{% endblock %}
+{%block form_js%}
+{{block.super}}
+<script>
+    const salcServer = "{{ salc_server }}";
+    $(function () {
+        $("title").html(`{% trans "Chatbot Question Management Overview"%}`);
+
+        const theme = Looper.skin || 'default'; // 獲取主題模式
+        const langCode = "{{ LANGUAGE_CODE }}"; // Django 模板可取得當前語言
+        const iframeSelector = '.questionMgn_iframe'; // iframe 選擇器
+        //測試路徑：const iframeSrc = `http://222.118.20.236:8051/question/home?theme=${theme}&lang=${langCode}`;
+        const iframeSrc = `${salcServer}/question/home?theme=${theme}&lang=${langCode}`;
+        const $iframe = $(iframeSelector);
+
+        // 從 iframeSrc 解析出 targetOrigin
+        const targetOrigin = new URL(iframeSrc).origin;
+  
+        // 初始化 iframe src
+        const initIframe = () => {
+            if ($iframe.length > 0) {
+                $iframe.attr('src', iframeSrc);
+            }
+        };
+
+        // 防抖函數：延遲觸發函數執行，預設延遲 200ms
+        const debounce = (func, wait = 200) => {
+            let timeout;
+            return (...args) => {
+                clearTimeout(timeout);
+                timeout = setTimeout(() => func.apply(this, args), wait);
+            };
+        };
+
+        // 發送窗口寬度信息給 iframe
+        const sendWidthToIframe = () => {
+            const iframeWindow = $iframe[0]?.contentWindow;
+            if (iframeWindow) {
+                iframeWindow.postMessage({
+                    type: 'resize',
+                    width: window.innerWidth,
+                }, targetOrigin); // 設置正確的目標 URL
+            }
+        };
+
+        // 綁定事件
+        const bindEvents = () => {
+            // 若 handleMessage 已定義，綁定 message 事件
+            if (typeof handleMessage === 'function') {
+                window.addEventListener('message', handleMessage);
+            }
+            // resize 事件採用防抖處理，load 事件則直接發送
+            window.addEventListener('resize', debounce(sendWidthToIframe, 200));
+            window.addEventListener('load', sendWidthToIframe);
+        };
+
+        // 初始化函數調用
+        initIframe();
+        bindEvents();
+        sendWidthToIframe(); // 初次執行發送寬度
+    });
+</script>
+{%endblock%}

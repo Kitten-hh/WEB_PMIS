@@ -1,0 +1,32 @@
+{% extends 'PMISLooper/vue_index.html' %}
+{%load static %}
+{% load i18n %}
+{%load md5url %}
+{% load render_bundle from webpack_loader %}
+
+{%block form_css%}
+{{block.super}}
+<link rel="stylesheet" type="text/css" href="{% static 'PMISLooper/assets/stylesheets/session/pmsSessionManager.css' %}"  data-skin="default"/>  
+<link rel="stylesheet" type="text/css" href="{% static 'PMISLooper/assets/stylesheets/session/pmsSessionManager_dark.css' %}"  data-skin="dark"/>
+<link rel="stylesheet" type="text/css" href="{% static 'BaseApp/vendor/jquery_contextmenu/jquery.contextMenu.min.css'%}" />  
+{%endblock%}
+
+{% block content%}
+{{block.super}}
+
+{%endblock%}   
+
+
+{%block form_js%}
+{{block.super}}
+{% render_bundle 'PMISLooper/dist/javascript/PmsSessionManager' %} 
+<!-- <script src="{% md5url 'BaseApp/vendor/Looper/assets/vendor/jquery/jquery.min.js'%}"></script>   加上控件样式变成原始的，且无法查询 -->
+<script src="{% static 'BaseApp/vendor/jquery_contextmenu/jquery.ui.position.min.js'%}"></script>
+<script src="{% static 'BaseApp/vendor/jquery_contextmenu/jquery.contextMenu.min.js'%}"></script>
+<script>
+    $(function () {
+        $("title").html('{% trans "Session Query" %}');
+    });
+</script>
+
+{%endblock%}     

@@ -1,0 +1,28 @@
+
+> django_vue@1.0.0 serve /home/deployment/deploy/WEB_PMIS
+> onchange -i -k --await-write-finish 1500  '**/static/**/source/**/*.{js,vue}' 'BaseApp/static/**/vue_components/**/*.{js,vue}'  -- webpack --config webpack.config.js
+
+BaseApp,BonusApp,ChatwithAi_app,DevPlat,FlowChartApp,Notification_app,PMISLooper,ProjectManagement_app,ScheduleApp,SystemBugRpt_app
+assets by info 8.13 MiB [immutable]
+  assets by path ./PMISLooper/static/PMISLooper/dist/javascript/*.js 2.87 MiB 16 assets
+  assets by path ./FlowChartApp/static/FlowChartApp/dist/javascript/*.js 1.53 MiB 8 assets
+  assets by path ./BonusApp/static/BonusApp/dist/javascript/ 1.37 MiB 7 assets
+  assets by path ./ScheduleApp/static/ScheduleApp/dist/ 608 KiB 4 assets
+  assets by path ./ProjectManagement_app/static/ProjectManagement_app/dist/javascript/*.js 615 KiB 2 assets
+  assets by path ./Notification_app/static/Notification_app/dist/javascript/*.js 176 KiB 2 assets
+  asset ./SystemBugRpt_app/static/SystemBugRpt_app/dist/javascript/SystemBugRpt-c7052953e8363c387bb0.js 618 KiB [emitted] [immutable] (name: ./SystemBugRpt_app/static/SystemBugRpt_app/dist/javascript/SystemBugRpt)
+  asset ./DevPlat/static/DevPlat/dist/javascript/SessionLog-c7052953e8363c387bb0.js 233 KiB [emitted] [immutable] (name: ./DevPlat/static/DevPlat/dist/javascript/SessionLog)
+  asset ./ChatwithAi_app/static/ChatwithAi_app/dist/javascript/ProjectStatus-c7052953e8363c387bb0.js 168 KiB [emitted] [immutable] (name: ./ChatwithAi_app/static/ChatwithAi_app/dist/javascript/ProjectStatus)
+assets by path ./BaseApp/static/BaseApp/assets/javascript/vue_looper_base/ 1.78 MiB
+  asset ./BaseApp/static/BaseApp/assets/javascript/vue_looper_base/base_form2/dist/javascript/index.js 949 KiB [emitted] (name: ./BaseApp/static/BaseApp/assets/javascript/vue_looper_base/base_form2/dist/javascript/index)
+  asset ./BaseApp/static/BaseApp/assets/javascript/vue_looper_base/base_form1/dist/javascript/index.js 872 KiB [emitted] (name: ./BaseApp/static/BaseApp/assets/javascript/vue_looper_base/base_form1/dist/javascript/index)
+runtime modules 39.8 KiB 175 modules
+orphan modules 296 KiB [orphan] 26 modules
+cacheable modules 2.74 MiB 747 modules
+modules by path delegated ./node_modules/ 84 bytes
+  delegated ./node_modules/vue/dist/vue.runtime.esm-bundler.js from dll-re...(truncated) 42 bytes [built] [code generated]
+  delegated ./node_modules/axios/index.js from dll-reference vendor 42 bytes [built] [code generated]
+./node_modules/moment/locale/ sync ^\.\/.*$ 3.21 KiB [optional] [built] [code generated]
+external "vendor" 42 bytes [built] [code generated]
+webpack 5.86.0 compiled successfully in 14488 ms
+Executing additional scripts before exit

@@ -1,0 +1,23 @@
+{% extends 'PMISLooper/index.html' %}
+{%load static %}
+{% load i18n %}
+{%load md5url %}
+{% load customer_filter %}
+{%block form_css%}
+{{block.super}}
+<link rel="stylesheet" href="{% md5url 'PMISLooper/assets/stylesheets/goal/goal_master_treelist_dark.css' %}" data-skin="dark">
+{%endblock%}
+{%block content %}
+{{block.super}}
+<div class="card">
+    <div class="card-header">
+        <h4 class="title">{% trans "Goal Tree List"%}</h4>
+    </div>
+    <div id="treelist" class="card-body p-1">
+    </div>
+</div>
+{%endblock%}
+{%block form_js%}
+    {{block.super}}
+    <script src="{% static 'PMISLooper/assets/javascript/goal/goal_master_treelist.js' %}" type="text/javascript"></script>    
+{%endblock%}

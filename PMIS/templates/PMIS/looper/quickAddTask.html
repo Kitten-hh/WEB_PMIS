@@ -1,0 +1,148 @@
+{% extends "BaseApp/looper_base/base_form1/base.html" %}
+{%load static %}
+{%block form_css%}
+<link rel="stylesheet" href="{% static 'BaseApp/vendor/Looper/assets/vendor/bootstrap-select/css/bootstrap-select.min.css' %}">  
+<link href="{% static 'BaseApp/assets/stylesheets/app/components/card_style.css'%}" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="{% static 'playground/assets/stylesheets/webPMS/easyAddTask2.css' %}" />
+{%endblock%}
+
+{% block content%}
+    <div class="container">
+        <div class="row mt-3">
+            <div class="col-12 col-md-8 col-lg-8 col-xl-4 mx-auto">
+                <form id="form" class="form-1 form">
+                    <div class="card card-custom gutter-b example example-compact">
+                        <div class="card-body">
+                            <div id="myTabCard" class="tab-content">
+                                <div class="tab-pane fade active show" id="task-description">
+                                    <div class="form-group" id="textarea" style>
+                                        <textarea class="form-control control cust_control" id="tf1" rows="20" placeholder="任务描述:"></textarea>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade cHeight" id="user">
+                                    <div id="text" class="form-group" style>
+                                        <label class="col-form-label caption">联系人</label>
+                                        <input class="form-control control" type="text" id="example-text-input"/>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade cHeight" id="priority">
+                                    <div id="combobox" class="form-group" style>
+                                        <label class="col-form-label caption">优先级</label>
+                                        <select class="form-control selectpicker control" data-size="4">
+                                            <option value="250">888</option>
+                                            <option value="260">8888</option>
+                                            <option value="270">8889</option>
+                                        </select>    
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade cHeight" id="taskType">
+                                    <div class="row">
+                                        <div class="col-12 col-md-5">
+                                            <div id="combobox" class="form-group" style>
+                                                <label class="col-form-label caption">任务分类</label>
+                                                <select class="form-control selectpicker control" data-size="4">
+                                                    <option>==Task Type List==</option>
+                                                    <option value="5">Day Job</option>
+                                                    <option value="10">Quick &amp; Easy Task</option>
+                                                    <option value="20">Draf Design</option>
+                                                    <option value="30">Network</option>
+                                                    <option value="40">Installation</option>
+                                                    <option value="50">Trouble Shooting</option>
+                                                    <option value="60">Implementation/Follow Up</option>
+                                                    <option value="70">Reporting</option>
+                                                    <option value="80">Quick Programming</option>
+                                                    <option value="90">Programming</option>
+                                                    <option value="100">Advanced Programming</option>
+                                                    <option value="110">Documentation</option>
+                                                    <option value="120">Planning</option>
+                                                    <option value="130">Management</option>
+                                                    <option value="150">Project</option>
+                                                    <option value="170">Technical</option>
+                                                    <option value="180">DateBase</option>
+                                                    <option value="190">Remote Management</option>
+                                                    <option value="200">Training</option>
+                                                    <option value="210">user requement</option>
+                                                    <option value="220">Test</option>
+                                                    <option value="230">Programming with Problem</option>
+                                                    <option value="240">Server</option>
+                                                    <option value="250">Set Rules</option>
+                                                    <option value="260">Layout</option>
+                                                    <option value="270">Question</option>
+                                                </select>    
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-md-5">
+                                            <div id="text" class="form-group" style>
+                                                <label class="col-form-label caption">子任务分类</label>
+                                                <input class="form-control control" type="text" id="example-text-input"/>   
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-md-2">
+                                            <div id="text" class="form-group" style>
+                                                <label class="col-form-label caption">难度</label>
+                                                <input class="form-control control" type="text" id="example-text-input"/>   
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade cHeight" id="email">
+                                    <div class="row">
+                                        <div class="col-12 col-md-12">
+                                            <label class="col-form-label caption d-block"></label>
+                                            <div class="control">
+                                                <div class="custom-control custom-control-inline custom-radio">
+                                                    <input type="radio" class="custom-control-input" name="rdGroup1" id="rd1">
+                                                    <label class="custom-control-label" for="rd1">sendSMS</label>
+                                                </div>
+                                                <div class="custom-control custom-control-inline custom-radio">
+                                                    <input type="radio" class="custom-control-input" name="rdGroup1" id="rd2">
+                                                    <label class="custom-control-label" for="rd2">Off. hrs</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <div class="col-lg-12 d-flex">
+                                <ul class="nav nav-tabs card-header-tabs">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" data-toggle="tab" href="#task-description"><i class="fas fa-plus" style="font-size: 14px;"></i></a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link show" data-toggle="tab" href="#user"><i class="fas fa-user-edit" style="font-size: 14px;"></i></a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link show" data-toggle="tab" href="#priority"><i class="fas fa-sort-amount-up" style="font-size: 14px;"></i></a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link show" data-toggle="tab" href="#taskType"><i class="fas fa-tasks" style="font-size: 14px;"></i></a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link show" data-toggle="tab" href="#email"><i class="fas fa-at" style="font-size: 14px;"></i></a>
+                                    </li>
+                                </ul>
+                                <div class="ml-auto align-items-center d-flex">
+                                    <button type="reset" class="btn btn-cust save">Save</button> 
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
+                </form> 
+            </div>
+        </div>
+    </div>
+
+    
+{% endblock %}
+{%block form_js%}
+<script src="{% static 'BaseApp/vendor/Looper/assets/vendor/bootstrap-select/js/bootstrap-select.min.js' %}"></script>  
+<script>
+    $(document).ready(function(){
+        $(".nav-link").click(function () {
+            $(".cHeight").css('height',$(".card-body").height());
+        });
+    });
+</script>
+{%endblock%}    

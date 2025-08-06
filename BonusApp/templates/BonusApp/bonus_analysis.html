@@ -1,0 +1,602 @@
+
+{% extends 'BonusApp/index.html' %}
+{%load static %}
+{% load customer_filter %}
+{%block form_css%}
+{{block.super}}
+<link rel="stylesheet" href="{% static 'BonusApp/stylesheets/bonus_analysis.css' %}">
+{%endblock%}
+
+{%block content%}
+{{block.super}}
+<div id="app" class="analysis_page">
+    <div class="subheader">
+        <input type="hidden" id="contact"/>
+        <div class="container-fluid d-flex align-items-center justify-content-between flex-wrap p-sm-0 px-md-4">
+            <!--begin::Toolbar-->
+            <div class="d-flex align-items-center flex-wrap py-2"> 
+                <!--begin::Dropdown-->
+                 
+                <div class="card-title dropdown m-0" id="task_search_box">                    
+                    <div class="input-group form-inline task_search_tools">
+                        <!--
+                        <div class="flex-shrink-0 dropdown dropdown-inline py-1 mr-2" data-placement="top">
+                            <a href="#" class="btn btn-fixed-height btn-danger font-weight-bolder font-size-sm px-5 search_more"
+                                aria-haspopup="true" aria-expanded="false">Bonus查詢</a>
+                        </div>
+                        -->
+                        <button class="btn btn-fixed-height btn-primary font-weight-bolder search_more mr-2"><i class="fa fa-search"></i>獎金查詢</button>
+                        <button class="btn btn-fixed-height btn-bg-white btn-text-dark btn-hover-text-primary font-weight-bolder search_yesterday mr-2">昨天
+                        </button>  
+                        <button class="btn btn-fixed-height btn-bg-white btn-text-dark btn-hover-text-primary font-weight-bolder search_today mr-2">當天
+                        </button>  
+                        <button class="btn btn-fixed-height btn-bg-white btn-text-dark btn-hover-text-primary font-weight-bolder search_lastweek mr-2">上周
+                        </button> 
+                        <button class="btn btn-fixed-height btn-bg-white btn-text-dark btn-hover-text-primary font-weight-bolder search_week mr-2">本周
+                        </button>  
+                        <button class="btn btn-fixed-height btn-bg-white btn-text-dark btn-hover-text-primary font-weight-bolder search_lastmonth mr-2">上月
+                        </button>  
+                        <button class="btn btn-fixed-height btn-bg-white btn-text-dark btn-hover-text-primary font-weight-bolder search_month mr-2">本月
+                        </button>  
+                        <button class="btn btn-fixed-height btn-bg-white btn-text-dark btn-hover-text-primary font-weight-bolder search_lastquarter mr-2">上季度
+                        </button>  
+                        <button class="btn btn-fixed-height btn-bg-white btn-text-dark btn-hover-text-primary font-weight-bolder search_quarter mr-2">本季度
+                        </button>   
+                        <button class="btn btn-fixed-height btn-bg-white btn-text-dark btn-hover-text-primary font-weight-bolder search_summary mr-2">匯總
+                        </button>  
+                        <div class="form-check d-none">
+                            <input class="form-check-input" type="checkbox" checked id="cb_calSat"/>
+                            <label class="form-check-label" for="cb_calSat">
+                                計算周六
+                            </label>
+                        </div>
+                    </div>
+                </div>          
+                <!--end::Dropdown-->
+            </div>
+            <!--end::Toolbar-->
+        </div>
+    </div>
+    <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalTitle"
+        style="display: none;" aria-hidden="true">
+        <div id="form-wapper"> <!--form將生成到這個div中，需要設置id-->
+        </div>
+    </div>
+
+
+    <div class="modal fade" id="tasktypeModal" tabindex="-1" role="dialog" aria-labelledby="tasktypeModalTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalCenterTitle">任務分類分析</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div id="db_tasktype"></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-cancel" data-dismiss="modal">Close</button>                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="selectUserModal" tabindex="-1" role="dialog" aria-labelledby="selectUserModalTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">請輸入聯繫人</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <i class="fas fa-times text-dark" style="font-size: 20px;"></i>
+                    </button>
+                </div>
+                <div class="modal-body">                                    
+                    <div class="col">
+                        <input type="text" class="form-control" id="txtContact" name="contact"
+                            placeholder="联系人">
+                    </div>              
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary bonus_analysis">確認</button>                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="selectDateModal" tabindex="-1" role="dialog" aria-labelledby="selectDateModalTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">請輸入分析日期</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <i class="fas fa-times text-dark" style="font-size: 20px;"></i>
+                    </button>
+                </div>
+                <div class="modal-body">                                    
+                    <div class="col">
+                        <div class="row-container SWRow"><div class="col div-1"><div class="form-group SWDate" style="">
+                            <label class="col-form-label caption">從實際結束時間</label>
+                            <input class="form-control control" type="date" value="" id="edatefrom" required>
+                        </div></div><div class="col div-2"><div class="form-group SWDate" style="">
+                            <label class="col-form-label caption">到實際結束時間</label>
+                            <input class="form-control control" type="date" value="" id="edateto" required>
+                        </div></div></div>
+                    </div>              
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary bonus_summary">確認</button>                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="d-flex flex-column mt-3">
+        <!--begin::Container-->
+        <div class="container-fluid p-sm-0 px-md-4">    
+            <div class="row">
+                <div class="col-12 col-sm-5 col-xxl-3 mb-4 mb-sm-0">
+                    <!--begin::Card-->
+                    <div class="wrapper_test" id="card_para">
+                        <div class="col-12 px-0">
+                            <h3 class="text-dark-75 trm-title-with-divider mb-0">
+                                獎金參數
+                                <label name="lb_contact" class="m-0 text-warning"></label>
+                                <span class="m-0"></span>
+                            </h3>
+                        </div>
+                        <div class="card-body p-4">
+                            <div class="row pc_parameter px-0">
+                                <div class="col-12 mb-4">
+                                    <div class="box boxs">
+                                        <div class="cs_content flex-row-fluid">
+                                            <h4 class="flex-grow-1">Budget Allowance %</h4>
+                                            <!-- <p id="BudgetAllowance" class="mb-0 text-warning text-hover-danger">0</p> -->
+                                            <input class="textEdit form-control" type="text" id="BudgetAllowance" value="0" style="width: 40px;">
+                                        </div>
+                                        <div class="cs_content flex-row-fluid">
+                                            <h4 class="flex-grow-1">Perfect Scoring</h4>
+                                            <p id="PerfectScoring" class="mb-0 text-warning text-hover-danger">0</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-12 mb-4">
+                                    <div class="box boxs">
+                                        <div class="cs_content flex-row-fluid">
+                                            <h4 class="flex-grow-1">Management S</h4>
+                                            <p id="ManagementS" class="mb-0 text-warning text-hover-danger">0</p>
+                                        </div>
+                                        <div class="cs_content flex-row-fluid">
+                                            <h4 class="flex-grow-1">Performance. S</h4>
+                                            <p id="PerformanceS" class="mb-0 text-warning text-hover-danger">0</p>
+                                        </div>
+                                        <div class="cs_content flex-row-fluid">
+                                            <h4 class="flex-grow-1">Working Day</h4>
+                                            <p id="WorkingDay" class="mb-0 text-warning text-hover-danger">0</p>
+                                        </div>
+                                        <div class="cs_content flex-row-fluid">
+                                            <h4 class="flex-grow-1">Quarter Working Day</h4>
+                                            <p id="QuarterWorkingDay" class="mb-0 text-warning text-hover-danger">0</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            
+                                <div class="col-12 mb-4">
+                                    <div class="box flex-row inner-box">
+                                        <div class="cs_content flex-row-fluid">
+                                            <h4 class="flex-grow-1">Ratio of M:S:P</h4>
+                                            <div class="d-flex align-items-center">
+                                                <!-- <p id="RatioOFM" class="mb-0 text-warning text-hover-danger">0</p> -->
+                                                <input class="textEdit form-control" type="text" id="RatioOFM" value="0" style="width: 30px;">
+                                                <span class="mx-2">:</span>
+                                                <!-- <p id="RatioOFS" class="mb-0 text-warning text-hover-danger">0</p> -->
+                                                <input class="textEdit form-control" type="text" id="RatioOFS" value="0" style="width: 30px;">
+                                                <span class="mx-2">:</span>
+                                                <!-- <p id="RatioOFP" class="mb-0 text-warning text-hover-danger">0</p> -->
+                                                <input class="textEdit form-control" type="text" id="RatioOFP" value="0" style="width: 30px;">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-12 mb-4">
+                                    <div class="box boxs">
+                                        <div class="cs_content flex-row-fluid">
+                                            <h4 class="flex-grow-1">Mag %</h4>
+                                            <!-- <p id="ManagementRatio" class="mb-0 text-warning text-hover-danger">0</p> -->
+                                            <input class="textEdit form-control" type="text" id="ManagementRatio" value="0" style="width: 40px;">
+                                        </div>
+                                        <div class="cs_content flex-row-fluid">
+                                            <h4 class="flex-grow-1">Per %</h4>
+                                            <!-- <p id="PerformanaceRatio" class="mb-0 text-warning text-hover-danger">0</p> -->
+                                            <input class="textEdit form-control" type="text" id="PerformanaceRatio" value="0" style="width: 40px;">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-12 mb-4 d-none">
+                                    <div class="box flex-row inner-box" style="height: 100%;">
+                                        <div class="cs_content flex-row-fluid">
+                                            <h4 class="flex-grow-1">Salary %</h4>
+                                            <p id="Salary" class="mb-0 text-warning text-hover-danger" style="visibility: hidden;">0</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="box flex-row inner-box" style="height: 100%;">
+                                        <div class="cs_content flex-row-fluid" style="justify-content: flex-end;">
+                                            <button id="btn_saveParam" class="btn btn-light-primary mr-2" 
+                                            style="font-weight: 900;font-size: larger;">保存</button>
+                                            <button id="btn_restore" class="btn btn-light-primary" 
+                                            style="font-weight: 900;font-size: larger;">還原</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--end::Card--> 
+                </div>
+                <div class="col-12 col-sm-7 col-xxl-9">
+                    <div class="card card-custom gutter-b" style="display:none">
+                            <div class="card-header">
+                                <h3 class="card-title"><label name="lb_contact"></label><label>任務分類分析</label></h3>
+                            </div>
+                            <div class="card-body">
+                                <div id="db_tasktype"></div>
+                            </div>
+                    </div>
+                    <div id="query_wrapper" class="card card-custom gutter-b task_card mb-4 bg-gray-100" data-card="true">
+                        <div class="card-header border-0">
+                            <h3 class="card-title">
+                                <a href="#" class="btn btn-icon btn-sm btn-hover-light-primary mr-1" data-card-tool="toggle" data-toggle="tooltip" data-placement="top"><i class="ki ki-arrow-down icon-nm"></i></a>
+                                <!-- <label name="lb_contact"></label> -->
+                                <label class="text-dark-75 trm-title-with-divider mb-0">任務列表</label>
+                                <label name="lb_condition"></label>
+                            </h3>
+                            <div class="card-toolbar">
+                                <button id="btn_showTaskType" class="btn btn-light-primary font-weight-bolder mr-2 font-size-sm" style="display:none">任務分類
+                                </button>  
+                                <button id="btn_auditScore" class="btn btn-fixed-height btn-primary font-weight-bolder font-size-sm px-5" style="display:none">審核績效分
+                                </button>  
+                            </div>
+                        </div>                    
+                        <div class="card-body no-drag grid-item-body py-0">
+                            <div id="db_wapper" class="datatable datatable-bordered datatable-head-custom datatable-default datatable-primary datatable-loaded"></div>                        
+                        </div>
+                    </div>
+                    <!--begin::Card-->
+                    <div id="card_result">
+                        <div class="pc_parameter">
+                            <div class="card-deck-xxl">
+                                <div class="d-flex flex-column">
+                                    <h3 class="text-dark-75 trm-title-with-divider mt-3">
+                                        獎金分析結果
+                                        <!-- <label name="lb_contact" class="m-0 text-warning"></label> -->
+                                        <span></span>
+                                    </h3>
+                                    <div class="inner-box ad-info-card bg-gray-100">
+                                        <div class="card-body p-0">
+                                            <div class="table-responsive">
+                                                <table class="table table-hover score_wrap">
+                                                    <thead class="thead-">
+                                                        <tr>
+                                                            <th></th>
+                                                            <th class="text-primary"> 
+                                                                <div class="th_wrap light-primary">
+                                                                    <span class="nav-icon d-none d-sm-block d-md-none d-lg-block"><i class="flaticon2-chat-1"></i></span>
+                                                                    <span class="nav-text">Score</span>
+                                                                </div>
+                                                            </th>
+                                                            <th class="text-danger">                                                    
+                                                                <div class="th_wrap light-danger">
+                                                                    <span class="nav-icon d-none d-sm-block d-md-none d-lg-block"><i class="flaticon2-analytics"></i></span>
+                                                                    <span class="nav-text d-none d-xxxsl-block">Lookup Score</span>
+                                                                    <span class="nav-text d-block d-xxxsl-none">LScore</span>
+                                                                </div>
+                                                            </th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td> <span>Total Score</span> </td>
+                                                            <td class="text-center text-primary"> <strong id="Score">0</strong> </td>
+                                                            <td class="text-center text-danger"> <strong id="LookupScore">0</strong> </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td> <span>S Score for the quarter.S</span> </td>
+                                                            <td class="text-center text-primary"> <strong id="QuarterScore">0</strong> </td>
+                                                            <td class="text-center text-danger"> <strong id="QuarterLookupScore">0</strong> </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td> <span>S Bonus</span> </td>
+                                                            <td class="text-center text-primary"> <strong id="ScoreBonus">0</strong> </td>
+                                                            <td class="text-center text-danger"> <strong id="LookupScoreBonus">0</strong> </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td> <span>S Actual Quarter</span> </td>
+                                                            <td class="text-center text-primary"> <strong id="ScoreActualQuarter">0</strong> </td>
+                                                            <td class="text-center text-danger"> <strong id="LookupScoreActualQuarter">0</strong> </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-column">
+                                    <h3 class="text-dark-75 trm-title-with-divider mt-3">
+                                        獎金模擬結果
+                                        <!-- <label name="lb_contact" class="m-0 text-warning"></label> -->
+                                        <span></span>
+                                    </h3>
+                                    <div class="inner-box ad-info-card bg-gray-100">
+                                        <ul class="info-list other mt-5-0">
+                                            <li><strong>Avg</strong><span id="ScoreAvg">0</span></li>
+                                            <li><strong>Sugg.Avg</strong><span id="SuggAvg">0</span></li>
+                                            <li><strong>Simulate Score</strong><span id="SimulateScore">0</span></li>
+                                            <li><strong>Simulate $per mth</strong><span id="SimulatePerMth">0</span></li>
+                                            <li><strong>Actual in $ per mth</strong><span id="ActInPerMth">0</span></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--end::Card-->
+                </div>
+            </div>  
+        </div>       
+        <!--end::Container-->
+    </div> 
+
+    <div id="search_tab" class="d-none">
+        <ul class="nav nav-tabs nav-tabs-line mb-5 fs-6 ml-2" style="font-size:14px;">
+            <li class="nav-item">
+                <a class="nav-link show active" data-toggle="tab" href="#search_basic">一般查詢</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#search_advanced">高級查詢</a>
+            </li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane fade active show" id="search_basic"></div>
+            <div class="tab-pane fade" id="search_advanced">
+                <div class="form-inline mb-1 cust_filter align-items-center" style="flex-wrap: nowrap;">
+                    <div class="input-group" style="flex:1 1 auto">
+                        <input type="text" id="template-users" class="form-control" placeholder="input filter"/>
+                        <div class="input-group-append">
+                            <button id="search_filter_btn" class="btn mr-2 btn-primary no-caret"><span class="fa fa-search"></span></button>
+                        </div>                
+                    </div>                
+                    <div class="checkbox-inline">
+                        <label class="checkbox">
+                            <input class="control" id="IsDaily" type="checkbox" name="Checkboxes2" checked />
+                            <span></span>
+                            Daily
+                        </label>
+                    </div>                
+                </div>
+                <div class="pre-scrollable">
+
+                </div>             
+            </div>                
+        </div>
+    </div>  
+    
+    <!-- summaryModal -->
+    <div class="modal fade summaryModal" id="summaryModal" tabindex="-1" role="dialog" aria-labelledby="summaryModalTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-fullscreen p-3 p-md-1 p-xxl-9" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">匯總
+                        <label id="lb_progress" class="m-0 text-warning"></label>
+                    </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <i aria-hidden="true" class="ki ki-close"></i>
+                    </button>
+                </div>
+                <div class="modal-body p-md-1 p-xl-3">
+                    <div class="table-responsive">
+                        <table id="dt_summary" class="table table-borderless table-hover table-vertical-center mb-0 table-row-dashed">
+                            <thead>
+                                <tr class="text-center">
+                                    <th class="p-0 w-50px"></th>
+                                    <th class="p-0 min-w-110px w-90px-c"></th>
+                                    <th class="p-0 min-w-110px w-50px-c"></th>
+                                    <th class="p-0 min-w-110px w-50px-c"></th>
+                                    <th colspan="4" class="px-0 pt-0 pb-3 min-w-150px text-left"><span
+                                            class="label label-xl label-light-danger label-inline text-uppercase">Calculation</span>
+                                    </th>
+                                    <th colspan="5" class="px-0 pt-0 pb-3 min-w-140px text-left"><span
+                                            class="label label-xl label-light-info label-inline text-uppercase">Simulation</span>
+                                    </th>
+                                    <th class="p-0 min-w-50px"></th>
+                                </tr>
+                                <tr class="text-center th_details">
+                                    <th class="pl-0 w-50px text-dark-75">User</th>
+                                    <th class="min-w-110px w-90px-c text-dark-75">Ratio of M:S:P</th>
+                                    <th class="min-w-110px w-50px-c text-dark-75">Mag %</th>
+                                    <th class="min-w-110px w-50px-c text-dark-75 border-right">Per %</th>
+                                    <th class="min-w-110px w-90px-c text-dark-75">Total Score</th>
+                                    <th class="min-w-110px w-90px-c text-dark-75">S Score for the quarter.S</th>
+                                    <th class="min-w-110px w-90px-c text-dark-75">S Bonus</th>
+                                    <th class="min-w-110px w-90px-c text-dark-75 border-right">S Actual Quarter</th>
+                                    <th class="min-w-110px w-90px-c text-dark-75">Avg</th>
+                                    <th class="min-w-110px w-90px-c text-dark-75">Sugg.Avg</th>
+                                    <th class="min-w-110px w-90px-c text-dark-75">Simulate Score</th>
+                                    <th class="min-w-110px w-90px-c text-dark-75">Simulate $per mth</th>
+                                    <th class="min-w-110px w-90px-c text-dark-75">Act in $ per mth</th>
+                                    <th class="pr-0 min-w-50px"></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="pl-0">
+                                        <div class="symbol symbol-35 symbol-light-info flex-shrink-0 mr-2">
+                                            <span
+                                                class="symbol-label font-weight-bold font-size-lg text-uppercase">hb</span>
+                                        </div>
+                                    </td>
+                                    <td class="text-center">
+                                        <div
+                                            class="d-flex align-items-center justify-content-center font-weight-bold font-size-h5">
+                                            <p class="mb-0 text-warning text-hover-danger">0</p>
+                                            <span class="mx-2">:</span>
+                                            <p class="mb-0 text-warning text-hover-danger">0</p>
+                                            <span class="mx-2">:</span>
+                                            <p class="mb-0 text-warning text-hover-danger">0</p>
+                                        </div>
+                                    </td>
+                                    <td class="text-center">
+                                        <span class="font-weight-bold text-warning text-hover-danger font-size-h5">0</span>
+                                    </td>
+                                    <td class="text-center border-right">
+                                        <span class="font-weight-bold text-warning text-hover-warning font-size-h5">0</span>
+                                    </td>
+                                    <td class="text-center">
+                                        <span class="font-weight-bolder d-block font-size-h5 text-danger text-hover-warning">0</span>
+                                    </td>
+                                    <td class="text-center">
+                                        <span class="font-weight-bolder d-block font-size-h5 text-danger text-hover-warning">0</span>
+                                    </td>
+                                    <td class="text-center">
+                                        <span class="font-weight-bolder d-block font-size-h5 text-danger text-hover-warning">0</span>
+                                    </td>
+                                    <td class="text-center border-right">
+                                        <span class="font-weight-bolder d-block font-size-h5 text-danger text-hover-warning">0</span>
+                                    </td>
+                                    <!-- Simulate -->
+                                    <td class="text-center">
+                                        <span class="font-weight-bolder d-block font-size-h5 text-primary text-hover-warning">0</span>
+                                    </td>
+                                    <td class="text-center">
+                                        <span class="font-weight-bolder d-block font-size-h5 text-primary text-hover-warning">0</span>
+                                    </td>
+                                    <td class="text-center">
+                                        <span class="font-weight-bolder d-block font-size-h5 text-primary text-hover-warning">0</span>
+                                    </td>
+                                    <td class="text-center">
+                                        <span class="font-weight-bolder d-block font-size-h5 text-primary text-hover-warning">0</span>
+                                    </td>
+                                    <td class="text-center">
+                                        <span class="font-weight-bolder d-block font-size-h5 text-primary text-hover-warning">0</span>
+                                    </td>
+                                    <!--  -->
+                                    <td class="text-center pr-0">
+                                        <div class="d-flex align-items-center text-success font-size-h3"> <i
+                                                class="fas fa-caret-up text-success mr-2"></i> 65% </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="pl-0">
+                                        <div class="symbol symbol-35 symbol-light-info flex-shrink-0 mr-2">
+                                            <span
+                                                class="symbol-label font-weight-bold font-size-lg text-uppercase">qfq</span>
+                                        </div>
+                                    </td>
+                                    <td class="text-center">
+                                        <div
+                                            class="d-flex align-items-center justify-content-center font-weight-bold font-size-h5">
+                                            <p class="mb-0 text-warning text-hover-danger">0</p>
+                                            <span class="mx-2">:</span>
+                                            <p class="mb-0 text-warning text-hover-danger">0</p>
+                                            <span class="mx-2">:</span>
+                                            <p class="mb-0 text-warning text-hover-danger">0</p>
+                                        </div>
+                                    </td>
+                                    <td class="text-center">
+                                        <span class="font-weight-bold text-warning text-hover-danger font-size-h5">0</span>
+                                    </td>
+                                    <td class="text-center border-right">
+                                        <span class="font-weight-bold text-warning text-hover-warning font-size-h5">0</span>
+                                    </td>
+                                    <td class="text-center">
+                                        <span class="font-weight-bolder d-block font-size-h5 text-danger text-hover-warning">0</span>
+                                    </td>
+                                    <td class="text-center">
+                                        <span class="font-weight-bolder d-block font-size-h5 text-danger text-hover-warning">0</span>
+                                    </td>
+                                    <td class="text-center">
+                                        <span class="font-weight-bolder d-block font-size-h5 text-danger text-hover-warning">0</span>
+                                    </td>
+                                    <td class="text-center border-right">
+                                        <span class="font-weight-bolder d-block font-size-h5 text-danger text-hover-warning">0</span>
+                                    </td>
+                                    <!-- Simulate -->
+                                    <td class="text-center">
+                                        <span class="font-weight-bolder d-block font-size-h5 text-primary text-hover-warning">0</span>
+                                    </td>
+                                    <td class="text-center">
+                                        <span class="font-weight-bolder d-block font-size-h5 text-primary text-hover-warning">0</span>
+                                    </td>
+                                    <td class="text-center">
+                                        <span class="font-weight-bolder d-block font-size-h5 text-primary text-hover-warning">0</span>
+                                    </td>
+                                    <td class="text-center">
+                                        <span class="font-weight-bolder d-block font-size-h5 text-primary text-hover-warning">0</span>
+                                    </td>
+                                    <td class="text-center">
+                                        <span class="font-weight-bolder d-block font-size-h5 text-primary text-hover-warning">0</span>
+                                    </td>
+                                    <!--  -->
+                                    <td class="text-center pr-0">
+                                        <div class="d-flex align-items-center text-danger font-size-h3"> <i
+                                                class="fas fa-caret-down text-danger mr-2"></i> 25% </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="modal-footer py-3">
+                    <button type="button" class="btn btn-secondary btn-cancel btn-tasktype-sl">任務分類</button>
+                    <button type="button" class="btn btn-secondary btn-cancel" data-dismiss="modal">關閉</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="tasktypeSLModal" tabindex="-1" role="dialog" aria-labelledby="tasktypeModalTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalCenterTitle">任務分類分析</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div id="db_tasktype_SL"></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary btn-cancel btn-bonus-simulation">Bonus Simulation</button>                    
+                    <button type="button" class="btn btn-secondary btn-cancel" data-dismiss="modal">Close</button>                    
+                </div>
+            </div>
+        </div>
+    </div>      
+</div>
+<div id="SWListgroup" class="list-group list-group-bordered mb-3" style="display: none;">
+    <a href="#" class="list-group-item list-group-item-action d-flex" pk="[[qf025]]">                                                                                                                                                                      
+      <div class="pr-2">
+        <div class="tile">
+          <span class="">[[qf012 ]]</span>
+        </div>
+      </div>
+      <div class="list-group-item-body">[[qf003]]</div>
+    </a>
+</div>
+{%endblock%}
+
+{%block form_js%}
+{{block.super}}
+<script type="text/javascript" src="{% static 'BonusApp/js/common.js' %}"></script>
+<script type="text/javascript" src="{% static 'BonusApp/js/bonus_analysis.js' %}"></script>
+{% endblock%}

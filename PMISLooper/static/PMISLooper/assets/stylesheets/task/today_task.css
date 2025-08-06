@@ -1,0 +1,105 @@
+#today_tasks .SWTodolist.card, #today_tasks .SWTodolist.card .card-header h4.title {
+    margin-bottom: 0 !important;
+  }
+  #today_tasks .SWTodolist>.card-body{
+    max-height: 76vh;
+    overflow-y: auto;
+  }
+  #today_tasks .todo .custom-control-label[todayt="Y"] {
+    color:red;
+    font-weight: 600;
+  }  
+  #today_tasks .todo .custom-control-label[outstanding="Y"] {
+    color:#f97d7c;
+  }
+  #today_tasks .todo .custom-control-label[outstanding="Y"][progress="T"] {
+    font-weight: 600;
+  }
+/* new style for Active Tasks: To-Dos */
+.expansionCard.card-expansion-item {
+  border: 2px dashed #b6b9ca;
+  margin: 1.5rem 0;
+  border-radius: .5rem;
+  box-shadow: none;
+}
+
+.expansionCard.card-expansion-item:first-child:not(.expanded) {
+  margin-top: 10px;
+}
+
+.expansionCard .card-header {
+  padding-top: .5rem;
+  padding-bottom: .5rem;
+  border-bottom: 0;
+}
+
+.expansionCard.card-expansion-item.expanded {
+  margin: 1rem 0;
+}
+
+.expansionCard.card-expansion-item.expanded .card-header {
+  padding: 0;
+}
+
+.expansionCard.card-expansion-item.expanded .card-header .btn {
+  margin-top: -12px;
+  margin-left: 10px;
+  background-color: inherit;
+}
+
+.expansionCard.card-expansion-item .btn[data-toggle="collapse"] span:last-child {
+  font-size: 15px;
+  font-weight: 700;
+  /* color: #1f3d9d; */
+}  
+
+.expansionCard .card-header {
+    background: white;
+}
+
+#today_tasks .custom-control-label:after, 
+#today_tasks .custom-control-label:before {
+  top: .25rem !important;
+}
+
+/* 滾動條樣式: scrollbar */
+#today_tasks .SWTodolist>.card-body::-webkit-scrollbar {
+	width: 8px;
+}
+
+#today_tasks .SWTodolist>.card-body::-webkit-scrollbar-track {
+	background: #f1f1f1;
+	border-radius: 6px;
+}
+
+#today_tasks .SWTodolist>.card-body::-webkit-scrollbar-thumb {
+	background: #e0e1e5;
+	border-radius: 5px;
+}
+
+#today_tasks .SWTodolist>.card-body::-webkit-scrollbar-thumb:hover {
+	background: #c0c0c0;
+}
+
+
+.activeTaskNav .nav-link{
+    line-height: 1;
+    padding: 4px;
+    padding-top: 2px;
+    padding-bottom: 7px;
+}
+
+.activeTaskNav .nav-link.active{
+    background-color:#346cb0 !important;
+}
+
+.activeTaskNav .nav-link i.fa-indent{
+    display: inline-block;
+    transform: rotate(90deg);
+}
+
+#today_tasks .task_order_num {
+    background-color: #FFA500 !important;
+    color: white !important;
+    font-size: 1rem !important;
+}

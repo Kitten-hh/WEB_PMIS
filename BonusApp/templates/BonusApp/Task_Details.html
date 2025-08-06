@@ -1,0 +1,537 @@
+{% extends 'BonusApp/TopBottomBar.html' %}
+
+{% load static %}
+
+{% block solecss %}
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    #app-main {
+        background: rgb(241, 239, 239);
+    }
+
+    #content {
+        padding: 1rem 0 1rem 0;
+
+    }
+
+
+    /* 每一行下邊距 */
+    .row {
+        margin-bottom: 0.7rem;
+    }
+
+    /* lable字體統一設置 */
+    .row label {
+        font-size: 1.5rem;
+    }
+
+    /* input統一設置 */
+    .row input {
+        outline: none;
+    }
+
+    .row textarea {
+        outline: none;
+    }
+
+    /* .row裡面的所有列靠右居中 */
+    .row>div {
+        text-align: right;
+    }
+
+    #Contact_Details {
+        position: absolute;
+        right: 0.2rem;
+        top: 0.2rem;
+    }
+
+    #TaskType {
+        position: absolute;
+        margin-left: 5%;
+        top: 0.2rem;
+    }
+
+    /* 描述框設置寬度 */
+    #task_description {
+        width: 100%;
+    }
+
+    /* 下拉框统一设置 */
+    .dropdown-menu {
+        width: 50rem;
+        height: 20rem;
+        margin: 2rem 0 0 10.5rem;
+        overflow: auto;
+    }
+
+    /* Table标签统一设置 */
+    .TaskTypeList_Table {
+        width: 96%;
+        height: 96%;
+        margin: 0 auto;
+        table-layout: fixed;
+    }
+
+    /* 所有的tr设置高度 */
+    .TaskTypeList_Table tr {
+        height: 2rem;
+    }
+
+    /* 鼠标悬停tr的时候背景颜色 */
+    .TaskTypeList_Table tr:hover {
+        background-color: grey;
+    }
+
+    /* td不换行超出范围自动隐藏 */
+    .TaskTypeList_Table tbody tr td {
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        word-break: keep-all;
+        overflow: hidden;
+    }
+
+    /* th不换行超出范围自动隐藏 */
+    .TaskTypeList_Table thead tr th {
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        word-break: keep-all;
+        overflow: hidden;
+    }
+
+    .Update_Task {
+        position: fixed;
+        right: 5%;
+        bottom: 10%;
+    }
+
+    .Update_Task div {
+        width: 6rem;
+        height: 6rem;
+        border-radius: 50%;
+        background-color: orange;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .Update_Task div i {
+        font-size: 3rem;
+        color: white;
+    }
+
+    /* 手機顯示 */
+    @media(max-width: 768px) {
+        .row input {
+            width: 70%;
+        }
+    }
+</style>
+
+
+{% endblock %}
+
+
+{% block solenav %}
+
+<div class="container-fluid Custom_Head">
+    <a class="navbar-brand" id="prev_page" href="javascript:void(0)">
+        <i class="fa fa-arrow-left"></i>
+    </a>
+
+    <ul class="navbar-nav flex-row ml-auto nav_min_pic">
+        <li class="nav-item">
+            <a class="nav-link" href="/bonus/Task_Management">
+                <svg style="color: white;" width="5em" height="2em" viewBox="0 0 16 16" class="bi bi-house-fill"
+                    fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd"
+                        d="M8 3.293l6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6zm5-.793V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z" />
+                    <path fill-rule="evenodd"
+                        d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z" />
+                </svg>
+            </a>
+        </li>
+        <li class="nav-item"><a class="nav-link" href="#"><i class="fa fa-trash" aria-hidden="true"></i></a>
+        <li class="nav-item"><a class="nav-link" href="#"><i class="icon ion-refresh"></i></a></li>
+        <li class="nav-item"><a class="nav-link" href="#"><i class="fa fa-ellipsis-v"></i></a></li>
+    </ul>
+</div>
+{% endblock %}
+
+
+{% block content %}
+
+
+<div id="content" class="content-wrap">
+
+
+    <div class="container">
+        <div class="h2" style="margin-left: 3rem;">任務明細</div>
+        <p></p>
+    </div>
+    <div class="container">
+        <form class="myForm">
+            <input type="hidden" name="inc_id" v-model="Task.inc_id" />
+            <!-- 任務分類id -->
+            <input type="hidden" name="tasktype" v-model="Task.tasktype" />
+            <!-- 子任務分類id -->
+            <input type="hidden" name="subtasktype" v-model="Task.subtasktype" />
+            {% csrf_token %}
+            <!-- 1 -->
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12"><label for="">工程名稱</label><input type="text"
+                        v-model="Task.projectname"></div>
+                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12"><label for="">項目編號</label><input type="text"
+                        v-model="Task.subprojectid"></div>
+                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12"><label for="">模組流程圖</label><input type="text">
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12"><label for="">模組名稱</label><input type="text"
+                        v-model="Task.tiddesc"></div>
+            </div>
+            <!-- 2 -->
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 col-xs-12"><label for="">工程編號</label><input type="text"
+                        v-model="Task.pid"></div>
+                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 col-xs-6"><label for="">類別編號</label><input type="text"
+                        v-model="Task.tid"></div>
+                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 col-xs-6"><label for="">任務編號</label><input type="text"
+                        v-model="Task.taskid"></div>
+                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 col-xs-6"><label for=""
+                        style="letter-spacing: 0.7rem;">上報</label><label for="">人</label><input type="text"
+                        v-model="Task.udf09"></div>
+            </div>
+            <!-- 3 -->
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                    <label for="" style="letter-spacing: 0.3rem;">聯繫</label>
+                    <label for="">人</label>
+                    <input type="text" v-model="Task.contact">
+                    <a class="nav-link" @click="contact_Details(Task.contact)" id="Contact_Details"
+                        href="javascript:void(0)"><i class="fa fa-id-card" aria-hidden="true"></i></a>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12"><label for=""
+                        style="letter-spacing: 2.2rem;">進</label><label for="">度</label><input type="text"
+                        name="progress" id v-model="Task.progress"></div>
+                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12"><label for=""
+                        style="letter-spacing: 0.7rem;">優先</label><label for="">級</label><input type="text"
+                        name="priority" v-model="Task.priority"></div>
+                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12"><label for="">上報人部門</label><input type="text">
+                </div>
+            </div>
+            <!-- 4 -->
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                    <label for="">計劃開始</label><input type="text" name="planbdate" v-model="Task.planbdate">
+                    <!-- <a class="nav-link" id="Contact_Details" href="javascript:void(0)" data-toggle="dropdown">
+                        <i class="fa fa-angle-down" aria-hidden="true"></i>
+                    </a> -->
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12"><label for="">實際開始</label><input type="text"
+                        id="bdate" name="bdate" v-model="Task.bdate"></div>
+                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                    <label for="" style="letter-spacing: 0.5rem;">Clas</label>
+                    <label for="">s</label>
+                    <input type="text" id="class_field" name="class_field" v-model="Task.class_field">
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12"><label for="">關聯任務</label><input type="text">
+                </div>
+            </div>
+            <!-- 5 -->
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12"><label for="">計劃結束</label><input type="text"
+                       id="planedate" v-model="Task.planedate"></div>
+                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12"><label for="">實際結束</label><input type="text"
+                       id="edate" v-model="Task.edate"></div>
+                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                    <label for="">任務分類</label>
+                    <input type="text" v-model="Task.tasktypedesc">
+                    <!-- 下拉框按鈕 -->
+                    <a class="nav-link" id="Contact_Details" href="javascript:void(0)" data-toggle="dropdown">
+                        <i class="fa fa-angle-down" aria-hidden="true"></i>
+                    </a>
+                    <!-- 模態框按鈕 -->
+                    <a class="nav-link" id="TaskType" href="javascript:void(0)" data-toggle="modal"
+                        data-target="#myModal">
+                        <i class="fa fa-search-plus" aria-hidden="true"></i>
+                    </a>
+                    <!-- 模態框 -->
+                    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog modal-lg" style="text-align: left;">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                                    </button>
+                                    <h4 class="modal-title " id="myModalLabel">
+                                        選擇任務分類
+                                    </h4>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="aside-menu">
+                                        <nav id="stacked-menu" class="stacked-menu">
+                                            <ul class="menu">
+                                                <li class="menu-item">
+                                                    <a href="#" class="menu-link">
+                                                        <span class="menu-text">About</span>
+                                                    </a>
+                                                </li>
+                                                <li class="menu-item has-child">
+                                                    <a href="#" class="menu-link">
+                                                        <span class="menu-text">My Apps</span>
+                                                        <ul class="menu">
+                                                            <li class="menu-item">
+                                                                <a href="/bonus/spectaculars/"
+                                                                    class="menu-link">Board</a>
+                                                            </li>
+                                                            <li class="menu-item">
+                                                                <a href="/bonus/tasktype/"
+                                                                    class="menu-link">Task Type</a>
+                                                            </li>
+                                                        </ul>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">
+                                        關閉
+                                    </button>
+                                    <button type="button" class="btn btn-primary">
+                                        提交更改
+                                    </button>
+                                </div>
+                            </div> <!-- /.modal-content -->
+                        </div> <!-- /.modal-dialog -->
+                    </div><!-- /.modal -->
+
+                  
+                    <!-- 下拉框 -->
+                    <div class="dropdown-menu" id="example-id">
+                        <table class="TaskTypeList_Table" border="1">
+                            <thead>
+                                <tr>
+                                    <th>TaskType</th>
+                                    <th style="width: 20%">Description</th>
+                                    <th>Time</th>
+                                    <th>Score</th>
+                                    <th>Difficulty1</th>
+                                    <th>Difficulty2</th>
+                                    <th>Difficulty2</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr @click="selectTaskTypeList(taskType)" v-for="taskType in TaskTypeList">
+                                    <td v-html="taskType.tasktype"></td>
+                                    <td v-html="taskType.description"></td>
+                                    <td v-html="taskType.time"></td>
+                                    <td v-html="taskType.score"></td>
+                                    <td v-html="taskType.difficulties1"></td>
+                                    <td v-html="taskType.difficulties1"></td>
+                                    <td v-html="taskType.difficulties1"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12"><label for="">關聯目標</label><input type="text"
+                        v-model="Task.relationgoalid"></div>
+            </div>
+            <!-- 6 -->
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                    <label for="" style="letter-spacing: 2.2rem;">操</label>
+                    <label for="">作</label><input type="text">
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12"><label for="">排期優先級</label><input type="text"
+                        v-model="Task.schpriority"></div>
+                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                    <label for="">子任務分類</label>
+                    <input type="text" v-model="Task.subtasktypedesc">
+                    <a class="nav-link" id="Contact_Details" href="javascript:void(0)" data-toggle="dropdown">
+                        <i class="fa fa-angle-down" aria-hidden="true"></i>
+                    </a>
+                    <div class="dropdown-menu" id="example-id">
+                        <table class="TaskTypeList_Table" border="1">
+                            <thead>
+                                <tr>
+                                    <th>TaskType</th>
+                                    <th style="width: 20%">Description</th>
+                                    <th>Time</th>
+                                    <th>Score</th>
+                                    <th>Difficulty1</th>
+                                    <th>Difficulty2</th>
+                                    <th>Difficulty2</th>
+                                </tr>
+                            </thead>
+
+                            <tr @click="selectTaskTypeList_son(taskType)" v-for="taskType in TaskTypeList">
+                                <td v-html="taskType.tasktype"></td>
+                                <td v-html="taskType.description"></td>
+                                <td v-html="taskType.time"></td>
+                                <td v-html="taskType.score"></td>
+                                <td v-html="taskType.difficulties1"></td>
+                                <td v-html="taskType.difficulties1"></td>
+                                <td v-html="taskType.difficulties1"></td>
+                            </tr>
+
+                        </table> 
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12"><label for=""
+                        style="letter-spacing: 2.2rem;">難</label><label for="">度</label>
+                    <select name="diff" v-model="Task.diff" style="width: 56.5%;">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                    </select>
+                </div>
+            </div>
+            <!-- 7 -->
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"
+                    style="display: flex;align-items: center;text-align: right;">
+                    <label for="" style="width: 6%;">任务描述</label>
+                    <textarea style="font-size: 1.8rem;" id="task_description" cols="100" rows="7"
+                       name="task" v-model="Task.task"></textarea>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7" style="display: flex;align-items: flex-start;">
+                    <label for="" style="letter-spacing: 2.6rem;">备</label>
+                    <label for="">注</label>
+                    <textarea name="remark" id="task_description" cols="100" rows="7" v-model="Task.remark"></textarea>
+                </div>
+                <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                    <div class="row">
+                        <div class="col-md-7 col-sm-7 col-xs-7 text-left">
+                            <label for="">任务流程图</label>
+                            <input type="text" v-model="Task.flowchartno">
+                        </div>
+                        <div class="col-md-1 col-sm-1 col-xs-1">
+
+                        </div>
+                        <div class="col-md-4 col-sm-4 col-xs-4">
+                            <input type="checkbox" checked v-if="Task.dayjob='Y'">
+                            <label for="">Day job</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6 col-xs-6">
+                            <label for="" style="letter-spacing: 2rem;">文</label>
+                            <label for="">档</label>
+                            <input type="text">
+                        </div>
+                        <div class="col-md-3 col-sm-3 col-xs-3">
+                            <input type="checkbox" checked v-if="Task.schedulestate=='Y'">
+                            <input type="checkbox" v-else>
+                            <label for="">是否排期</label>
+                        </div>
+                        <div class="col-md-3 col-sm-3 col-xs-3">
+                            <input type="checkbox" checked v-if="Task.charge!=null">
+                            <input type="checkbox" v-else>
+                            <label for="">是否付费</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6 col-xs-6">
+                            <label for="">窗口名稱</label>
+                            <input type="text" v-model="Task.udf04">
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-xs-6">
+                            <label for="" style="letter-spacing: 2rem;">参</label>
+                            <label for="">考</label>
+                            <input type="text" v-model="Task.reference">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6 col-xs-6">
+                            <label for="">拖期天数</label>
+                            <input type="text" id="delayday"  name="delayday" v-model="Task.delayday">
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-xs-6">
+                            <label for="">需求日期</label>
+                            <input type="text" name="requestdate" v-model="Task.requestdate">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!-- 8 -->
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                    <label for="">工作天數</label>
+                    <input type="text" v-model="Task.atime">
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-3">
+                    <label for="">難度</label>
+                    <input type="text" v-model="Task.diff">
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-3">
+                    <label for="">預計績效分</label>
+                    <input type="text" name="escore" v-model="Task.escore">
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-3">
+                    <label for="">實際績效分</label>
+                    <input type="text" id="score" name="score" v-model="Task.score">
+                </div>
+
+            </div>
+
+            <!-- 操作按钮 -->
+            <div class="row" class="footer_btn">
+                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+
+                </div>
+                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                    <span class="btn btn-outline-success">新增</span>
+                </div>
+                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                    <input type="button" value="刪除" @click="DeleteTask">
+                </div>
+                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                    <input type="button" value="轉任務">
+                </div>
+                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                    <input type="button" value="查看文檔">
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+
+                </div>
+                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                    <input type="button" value="發短信">
+                </div>
+                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                    <input type="button" value="獲取排期時間">
+                </div>
+                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                    <input type="button" @click="TaskModif" value="保存">
+                </div>
+                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                    <input type="button" value="取消">
+                </div>
+
+            </div>
+
+        </form>
+    </div>
+    <div class="Update_Task">
+        <div>
+            <a href="javascript:void(0)" @click="task_Modif(Task.inc_id)" id="Task_Modif"><i
+                    class="fa fa-pencil-square-o"></i></a>
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock %}
+
+{% block solejs %}
+<script type="text/javascript" src="{% static 'BonusApp/Task_Management/Task_Details.js' %}"></script>
+{% endblock %}

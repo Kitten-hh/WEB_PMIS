@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+{%load static %}
+{% load i18n %}
+{% load md5url %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Web PMIS Login</title>
+    <link rel="stylesheet" href="{% static 'BaseApp/vendor/Looper/assets/stylesheets/theme.min.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static 'PMISLooper/assets/stylesheets/user/login.css' %}" />
+</head>
+<body>
+    <main class="auth login3">
+        <header id="auth-header" class="auth-header d-block d-sm-none">
+            <div class="text-center pt-5">
+                <h3 class="mt-0 mb-3">PMIS登錄</h3>
+            </div>
+        </header>
+        <div class="text-center d-none d-sm-block">
+            <h3 class="mt-0 my-3">PMIS登錄</h3>
+        </div>
+        <div class="auth-form">
+            {% get_current_language as LANGUAGE_CODE %}
+            <form class="form-horizontal" action="/{{LANGUAGE_CODE}}/looper/login" method="POST">
+                {% csrf_token %}
+                <div class="form-group mb-4">
+                    <input type="hidden" name="next" value="{{ request.GET.next }}" />
+                    <div class="form-label-group">
+                        <input type="text" id="inputUser" class="form-control placeholder-shown rounded-lg" name="username"
+                            placeholder="Username" autofocus="">
+                        <label for="inputUser">用戶名稱</label>
+                    </div>
+                </div>
+                <div class="form-group mb-4">
+                    <div class="form-label-group">
+                        <input type="password" id="inputPassword" class="form-control placeholder-shown rounded-lg"
+                            name="password" placeholder="Password">
+                        <label for="inputPassword">登錄密碼</label>
+                    </div>
+                </div>
+                <div class="form-group mb-4">
+                    <button class="btn btn-lg btn-primary btn-block " type="submit">登錄</button>
+                </div>
+                <div class="form-group text-center">
+                    <div class="custom-control custom-control-inline custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="remember-me">
+                        <label class="custom-control-label" for="remember-me">保持登錄</label>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <p class="copyright text-black">© 2022 All Rights Reserved.</p>
+                </div>
+            </form>
+        </div>
+    </main>
+    <script src="{% static 'BaseApp/vendor/Looper/assets/vendor/jquery/jquery.min.js'%}"></script>
+    <script src="{% static 'BaseApp/vendor/Looper/assets/vendor/popper.js/umd/popper.min.js'%}"></script>
+    <script src="{% static 'BaseApp/vendor/Looper/assets/vendor/bootstrap/js/bootstrap.min.js'%}"></script>
+    <script src="{% static 'BaseApp/vendor/Looper/assets/vendor/particles.js/particles.js'%}"></script>
+    <script src="{% static 'BaseApp/vendor/Looper/assets/javascript/theme.min.js'%}"></script>
+    <script>
+        $(document).on('theme:init', () =>
+        {
+            particlesJS.load('auth-header', '/static/BaseApp/vendor/Looper/assets/javascript/pages/particles.json');
+        });
+    </script>
+</body>
+</html>

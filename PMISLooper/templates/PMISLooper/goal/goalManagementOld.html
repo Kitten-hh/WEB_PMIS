@@ -1,0 +1,22 @@
+{% extends 'PMISLooper/vue_index.html' %}
+{%load static %}
+{%load md5url %}
+{% load render_bundle from webpack_loader %}
+{%block form_css%}
+{{block.super}}
+<link rel="stylesheet" href="{% md5url 'PMISLooper/assets/stylesheets/goal/goalManagementOld.css'%}" data-skin="default">
+<link rel="stylesheet" href="{% md5url 'PMISLooper/assets/stylesheets/goal/goalManagementOld_dark.css'%}" data-skin="dark">
+{%endblock%}   
+
+{% block content%}
+{{block.super}}
+
+{%endblock%}   
+
+
+{%block form_js%}
+{{block.super}}
+{% render_bundle 'PMISLooper/dist/javascript/goalManagementOld' %} 
+<script src="{% md5url 'PMISLooper/assets/javascript/goal/overall/quarterly_goal_modal.js' %}"
+    type="text/javascript"></script>
+{%endblock%}     

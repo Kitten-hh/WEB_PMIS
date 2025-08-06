@@ -1,0 +1,587 @@
+{% load i18n %}
+<div class="quick-add-task modal fade" id="add-task-module" tabindex="-1" role="dialog" aria-labelledby="form" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <a class="addtaskbtn cart floating-button" href="#"><i class="fa fa-plus"></i></a>
+                <a class="switchMobileTaskBtn cart floating-button" href="#" data-toggle="modal" data-target="#switchMobileTaskWrapper"><i class="fas fa-random"></i></a>
+                <a class="deltaskbtn cart floating-button" href="#" name="delete_task"><i class="far fa-trash-alt"></i></a>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <i class="far fa-times-circle" style="font-size: 25px;color: #fff;"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="form" class="form-1 form">
+                    <div class="card card-custom gutter-b example example-compact">
+                        <div class="card-body">
+                            <div id="myTabCard" class="tab-content">
+                                <div class="tab-pane fade active show" id="task-description">
+                                    <div class="col-12 col-md-12 d-flex justify-content-start cust_taskId">
+                                        <label class="mr-3">{% trans "TaskID"%}</label>
+                                        <p class="text-yellow">888-100.0-135992.0</p>
+                                    </div>
+                                    <div class="form-group" id="textarea" style>
+                                        <textarea class="form-control control cust_control" id="tf1" rows="12"
+                                            placeholder='{% trans "Task"%}:'></textarea>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade cHeight" id="user"></div>
+                                <div class="tab-pane fade cHeight" id="taskType">
+                                    <div class="row">
+                                        <div class="col-12 col-md-5" id="tasktype_c"></div>
+                                        <div class="col-12 col-md-5" id="subtasktype_c">
+                                        </div>
+                                        <div class="col-12 col-md-2" id="diff_c"></div>
+                                        <div class="col-12 col-md-2" id="process_c"></div>
+                                        <div class="col-12 col-md-2" id="taskcategory_c"></div>
+
+                                        <div class="col-12 col-md-2" id="flowchartno_c"></div>
+                                        <div class="col-12 col-md-2" id="relationMustID_c"></div>
+                                        <div class="col-12 col-md-2" id="udf04_c"></div>
+                                        <div class="col-12 col-md-2" id="reference_c"></div>
+                                        <div class="col-12 col-md-2" id="delayday_c"></div>
+                                        <div class="col-12 col-md-2" id="requestdate_c"></div>
+                                        <div class="col-12 col-md-2" id="manday_c"></div>
+                                        <div class="col-12 col-md-2 mb-3" id="escore_c"></div>
+
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade cHeight" id="planDate">
+                                    <div class="form-group" id="textarea" style>
+                                        <label>{% trans "Remark"%}</label>
+                                        <textarea name="remark" class="form-control control cust_control" id="tf1" rows="6"></textarea>
+                                    </div>                                    
+                                </div>
+                                <div class="d-none" id="actualDate">
+                                    
+                                </div>
+                                <div class="tab-pane fade cHeight" id="email">
+                                    <div class="d-flex flex-wrap align-items-center email_wrapper mb-2"></div>
+                                    <div class="fileinput-button mr-2" style="margin-left: -8px;">
+                                        <button type="button" class="btn btn-sm d-inline-flex align-items-center py-0"><i class="fas fa-cloud-upload-alt text-white mr-2"></i>{% trans "Upload"%}<input id="fileupload-avatar" type="file" name="avatar"></button>
+                                    </div>
+                                    <div class="fileinput-button">
+                                        <div class="btn btn-sm btn-light py-0" name="showFiles" data-toggle="modal">
+                                            <i class="fa fa-paperclip text-white mr-2"></i>{% trans "Attachment"%}
+                                        </div>
+                                    </div>
+                                    <div class="dropdown">
+                                        <button class="btn btn-secondary dropdown-toggle caption" type="button" id="sendNotifDropdownButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-paper-plane mr-1"></i>{% trans "Send Notif"%}</button>
+                                        <div class="dropdown-menu control" aria-labelledby="sendNotifDropdownButton" style>
+                                            <a class="dropdown-item send-instant-notif" href="#"><i class="fas fa-paper-plane mr-1"></i>{% trans "Send Instant Notification"%}</a>
+                                            <a class="dropdown-item setting-notif" href="#"><i class="fas fa-cog mr-1"></i>{% trans "Set Notification"%}</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <div class="col-lg-12 d-flex">
+                                <ul class="nav nav-tabs card-header-tabs my-0">
+                                    <li class="nav-item">
+                                        <a class="nav-link active py-2" data-toggle="tab" href="#task-description">
+                                            <i class="fas fa-file-signature" style="font-size: 16px;"></i></a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link show py-2" data-toggle="tab" href="#user"><i
+                                                class="fas fa-user-edit" style="font-size: 16px;"></i></a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link show py-2" data-toggle="tab" href="#taskType"><i
+                                                class="fas fa-tasks" style="font-size: 16px;"></i></a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link show py-2" data-toggle="tab" href="#planDate"><i
+                                            class="fas fa-clock" style="font-size: 16px;"></i></a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link show py-2" data-toggle="tab" href="#email"><i class="fas fa-at"
+                                                style="font-size: 16px;"></i></a>
+                                    </li>
+                                </ul>
+                                <div class="ml-auto align-items-center d-flex">
+                                    <button type="reset" class="btn btn-cust save">{% trans "Save"%}</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade has-shown" id="switchMobileTaskWrapper" tabindex="-1" role="dialog" style="display: none;" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable mx-0" role="document">
+      <div class="modal-content">
+        <div class="modal-header py-2 bg-primary">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+        </div>
+        <div class="modal-body p-0">
+            <div class="card card-custom switchMobileTaskWrap mb-0">
+                <div class="card-header py-1">
+                    <div class="row task_switch_container">
+                        <div class="col-6" id="ts_session_m"></div>
+                        <div class="col-6" id="ts_recordid_m"></div>
+                    </div>
+                    <div class="row task_switch_container">
+                        <div class="col-4" id="ts_user_m"></div>
+                        <div class="col-8" id="ts_desc_m"></div>
+                    </div>
+                </div>
+                <div class="card-body pt-2 custom_body">
+                    <fieldset>
+                        <legend class="mb-0">{% trans "Query Results"%}</legend>
+                        <div class="tasks_wrap mt-2 mb-3 px-2 scrollbar" id="treeMenu_m">
+            
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" name="create_task"><i class="fas fa-plus mr-1"></i>{% trans "Add"%}</button>
+            <button type="button" class="btn btn-secondary" name="trun_to_task"><i class="fas fa-sliders-h mr-1"></i>{% trans "Task Transfer"%}</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<div class="normal-add-task modal fade" id="add-task" tabindex="-1" role="dialog" aria-labelledby="form" style="display: none;" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-scrollable has-sidebar">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">{% trans "New Task"%}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><i class="far fa-times-circle" style="font-size: 20px;color: #fff;"></i></button>
+            </div>
+            <div class="modal-body">
+                <div class="card card-custom switchTaskWrap page-sidebar">
+                    <div class="card-header py-1">
+                        <div class="row task_switch_container">
+                            <div class="col-md-6 col-lg" id="task_switch_session"></div>
+                            <div class="col-md-6 col-lg-3" id="task_switch_recordid"></div>
+                            <div class="col-md-6 col-lg" id="task_switch_users"></div>
+                            <div class="col-md-6 col-lg" id="task_switch_description"></div>
+                        </div>
+                    </div>
+                    <div class="card-body pt-2 custom_body">
+                        <fieldset class="scrollbar">
+                            <legend class="mb-0">{% trans "Query Results"%}</legend>
+                            <div class="tasks_wrap mt-2 mb-3" id="treeMenu">
+
+                            </div>
+                        </fieldset>
+                    </div>
+                </div> 
+                <form id="form" class="form-1 form scrollbar">
+                    <div class="card card-custom gutter-b example example-compact">
+                        <div class="card-body">
+                            <div class="row">
+                                <button type="button" class="btn btn-light btn-icon btn-switchTask"
+                                    data-toggle="sidebar"><i class="fa fa-angle-double-left"></i></button>
+                                <div class="col-md-11 mx-auto inner quickAddTask_wrapper">
+                                    <div class="card-expansion newTaskGroup mb-2">
+                                        <div class="card card-expansion-item expanded">
+                                          <div class="card-header" id="taskDetailHeading">
+                                            <button class="btn btn-reset d-flex justify-content-between prevent-default text-primary" data-toggle="collapse" data-target="#taskDetailCollapse" aria-expanded="true" aria-controls="taskDetailCollapse"><span class="collapse-indicator"><i class="fa fa-fw fa-caret-right mr-2"></i></span><span>{% trans "Task Detail"%}</span></button>
+                                          </div>
+                                          <div id="taskDetailCollapse" class="collapse show" aria-labelledby="taskDetailHeading">
+                                            <div class="card-body py-0"> 
+                                                <div class="row">
+                                                    <div class="col-12 d-flex align-items-center">
+                                                        <div class="d-flex align-items-center justify-content-between w-100">
+                                                            <div class="cust_taskId d-flex">
+                                                                <label class="mr-3 mb-0">{% trans "TaskID"%}:</label>
+                                                                <p class="text-mute mb-0">888-100.0-135992.0</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12 d-flex align-items-center justify-content-between">
+                                                        <div class="d-flex flex-wrap w-auto">
+                                                            <div class="cust_projectDetails w-auto d-flex flex-shrink-0 mr-3 mt-1">
+                                                                <label class="mr-3 mb-0 flex-shrink-0">{% trans "ProjectName"%}:</label>
+                                                                <span class="text-mute mb-0"></span>
+                                                            </div>
+                                                            <div class="cust_module_name w-auto d-flex mr-3 mt-1">
+                                                                <label class="mr-3 mb-0 flex-shrink-0">{% trans "ModuleName"%}:</label>
+                                                                <span class="text-mute mb-0"></span>
+                                                            </div>
+                                                            <div class="cust_module_flowchart w-auto d-flex mt-1">
+                                                                <label class="mr-3 mb-0 flex-shrink-0">{% trans "ModuleFlowchart"%}:</label>
+                                                                <span class="text-mute mb-0"></span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-12 col-md-12" id="description"></div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-12 col-md-12" id="remark"></div>
+                                                </div>
+                                            </div>
+                                          </div>
+                                        </div>
+
+                                        <!--  -->
+                                        <div class="card card-expansion-item expanded">
+                                          <div class="card-header" id="taskInfoHeading">
+                                            <button class="btn btn-reset d-flex justify-content-between prevent-default text-primary" data-toggle="collapse" data-target="#taskInfoCollapse" aria-expanded="true" aria-controls="taskInfoCollapse"><span class="collapse-indicator"><i class="fa fa-fw fa-caret-right mr-2"></i></span><span>{% trans "Basic Information"%}</span></button>
+                                          </div>
+                                          <div id="taskInfoCollapse" class="collapse show" aria-labelledby="taskInfoHeading">
+                                            <div class="card-body py-0"> 
+                                                <div class="row mb-1 taskInfoWrap">
+                                                    <div class="col-12 col-md-2" id="users"></div>
+                                                    <div class="col-12 col-md-2" id="progress_p"></div>
+                                                    <div class="col-12 col-md-2" id="priority_p"></div>
+                                                    <div class="col-12 col-md-2" id="class"></div>
+                                                    <div class="col-12 col-md-2" id="reference"></div>
+                                                    <div class="col-12 col-md-2" id="operation"></div>
+                                                    <div class="col-12 col-md-2" id="process"></div>
+                                                    <div class="col-12 col-md-4" id="taskcategory_p"></div>
+                                                    <div class="col-12 col-md-2" id="schedule_priority"></div>
+                                                    <div class="col-12 col-md-2" id="report_person"></div>
+                                                    <div class="col-12 col-md-2" id="report_department"></div>
+                                                </div>
+                                            </div>
+                                          </div>
+                                        </div>
+
+                                        <div class="card card-expansion-item expanded">
+                                            <div class="card-header" id="taskDateHeading">
+                                              <button class="btn btn-reset d-flex justify-content-between prevent-default text-primary" data-toggle="collapse" data-target="#taskDateCollapse" aria-expanded="true" aria-controls="taskDateCollapse"><span class="collapse-indicator mr-2"><i class="fa fa-fw fa-caret-right"></i></span> <span>{% trans "Date"%}</span></button>
+                                            </div>
+                                            <div id="taskDateCollapse" class="collapse show" aria-labelledby="taskDateHeading">
+                                              <div class="card-body py-0"> 
+                                                <div class="row mb-1 taskDateWrap">
+                                                    <div class="col-12 col-md-4" id="planbdate"></div>
+                                                    <div class="col-12 col-md-4" id="planedate"></div>
+                                                    <div class="col-12 col-md-4" id="requestdate"></div>
+                                                    <div class="col-12 col-md-4" id="bdate"></div>
+                                                    <div class="col-12 col-md-4" id="edate"></div>
+                                                    <div class="col-12 col-md-2" id="delayday"></div>
+                                                    <div class="col-12 col-md-2" id="manday"></div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+
+                                        <div class="card card-expansion-item">
+                                            <div class="card-header" id="taskRelationHeading">
+                                              <button class="btn btn-reset d-flex justify-content-between prevent-default text-primary collapsed" data-toggle="collapse" data-target="#taskRelationCollapse" aria-expanded="false" aria-controls="taskRelationCollapse"><span class="collapse-indicator mr-2"><i class="fa fa-fw fa-caret-right"></i></span> <span>{% trans "Relation Information"%}</span></button>
+                                            </div>
+                                            <div id="taskRelationCollapse" class="collapse" aria-labelledby="taskRelationHeading">
+                                              <div class="card-body py-0"> 
+                                                <div class="row mb-1 taskRelationWrap">
+                                                    <div class="col-12 col-md-3" id="relationGoalId"></div>
+                                                    <div class="col-12 col-md-3" id="relationid"></div>
+                                                    <div class="col-12 col-md-3" id="udf04"></div>
+                                                    <div class="col-12 col-md-3" id="flowchartno"></div>
+                                                    <div class="col-12 col-md-3" id="relationMustID"></div>
+                                                    <!--20240807 syl-->
+                                                    <div class="col-12 col-md-3" id="users_other"></div>
+                                                    <div class="col-12 col-md-3" id="udf01" style="position: relative; display: inline-block;"></div>
+                                                    <div class="col-12 col-md-3 d-flex align-items-end">
+                                                        <a class="btn btn-secondary users_other_relation mb-2"><i class="fas fa-plus mr-1"></i>{% trans "Add Relation Task"%}</a>
+                                                    </div>
+                                                    <!--20240807 syl-->
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+
+                                        <div class="card card-expansion-item">
+                                            <div class="card-header" id="taskScoreHeading">
+                                              <button class="btn btn-reset d-flex justify-content-between prevent-default text-primary collapsed" data-toggle="collapse" data-target="#taskScoreCollapse" aria-expanded="false" aria-controls="taskScoreCollapse"><span class="collapse-indicator mr-2"><i class="fa fa-fw fa-caret-right"></i></span><span>{% trans "Score"%}</span></button>
+                                            </div>
+                                            <div id="taskScoreCollapse" class="collapse" aria-labelledby="taskScoreHeading">
+                                              <div class="card-body py-0"> 
+                                                <div class="row mb-1 taskScoreWrap">
+                                                    <div class="col-12 col-md-3" id="tasktype_p"></div>
+                                                    <div class="col-12 col-md-3" id="subtasktype_p"></div>
+                                                    <div class="col-12 col-md-2" id="diff_p"></div>
+                                                    <div class="col-12 col-md-2" id="escore"></div>
+                                                    <div class="col-12 col-md-2" id="score"></div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                      </div>
+
+                                    <div class="row otherFilter">
+                                        <div class="col-12 col-md-6 d-flex align-items-center">
+                                            <div id="email_p"></div>
+                                            <div id="dayjoy"></div>
+                                        </div>
+                                        <div class="col-12 col-md-6 d-flex">
+                                            <div class="fileinput-button mr-3">
+                                                <button type="button" class="btn btn-sm d-inline-flex align-items-center btn-light py-0">
+                                                    <i class="fas fa-cloud-upload-alt mr-2"></i>{% trans "Upload"%}<input id="fileupload-avatar" type="file" name="avatar">
+                                                </button>
+                                            </div>
+                                            <div class="fileinput-button">
+                                                <div class="btn btn-sm btn-light py-0" name="showFiles" data-toggle="modal">
+                                                    <i class="fa fa-paperclip mr-2"></i>{% trans "Attachment"%}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>          
+            </div>
+            <div class="modal-footer">
+                <div class="switchTask_tools el-example">
+                    <button type="button" class="btn btn-secondary" name="create_task"><i class="fas fa-plus mr-1"></i>{% trans "Add"%}</button>
+                    <button type="button" class="btn btn-secondary" name="trun_to_task"><i class="fas fa-sliders-h mr-1"></i>{% trans "Task Transfer"%}</button>
+                </div>
+                <div class="el-example">
+                    <button type="button" class="btn btn-secondary addtaskbtn"><i class="fas fa-plus mr-1"></i>{% trans "Add Task"%}</button>
+                    <div class="dropdown" style="display:inline-block">
+                        <button class="btn btn-secondary dropdown-toggle caption" type="button" id="sendNotifDropdownButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-paper-plane mr-1"></i>{% trans "Send Notif"%}</button>
+                        <div class="dropdown-menu control" aria-labelledby="sendNotifDropdownButton" style>
+                            <a class="dropdown-item send-instant-notif" href="#"><i class="fas fa-paper-plane mr-1"></i>{% trans "Send Instant Notification"%}</a>
+                            <a class="dropdown-item setting-notif" href="#"><i class="fas fa-cog mr-1"></i>{% trans "Set Notification"%}</a>
+                        </div>
+                    </div>
+                    <!--<button  class="btn btn-secondary approve_required"><i class="far fa-save mr-1"></i>{% trans "Approve required"%}</button>-->
+                    <button  class="btn btn-secondary save"><i class="far fa-save mr-1"></i>{% trans "Save"%}</button> 
+                    <button type="button" class="btn btn-secondary" name="delete_task"><i class="far fa-trash-alt mr-1"></i>{% trans "Delete"%}</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="modal fade"  id="uploadFileDetails_task" tabindex="-1" role="dialog" aria-labelledby="form" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog modal-dialog-scrollable " role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">
+            {% trans "View File Details" %}
+          </h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <div class="list-group list-group-flush list-group-divider filelist">
+                
+            </div>
+        </div>
+        <div class="modal-footer">
+            
+        </div>
+      </div>
+    </div>
+</div>   
+
+<div class="modal fade"  id="setNotifDialog" tabindex="-1" role="dialog" aria-labelledby="form" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog modal-dialog-centered " role="document" style="max-width: 600px;">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">
+            {% trans "Set Notification Reminder" %}
+          </h5>
+          <button type="button" class="close text-dark" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <form>
+                <div class="form-group card expanded remindGroup mt-3">
+                    <div class="card-header">
+                      <button class="btn btn-reset d-flex justify-content-between prevent-default text-primary"><span>{% trans "Basic Information" %}</span></button>
+                    </div>
+                    <div class="collapse show">
+                        <div class="form-group ml-1 mr-1 row">
+                        <div class="col-6 d-flex align-items-center">
+                            <label for="taskNumber" class="label-1 col-form-label">{% trans "TaskID" %}</label>
+                            <input type="hidden" class="form-control" name='tr027'>
+                            <input type="hidden" class="form-control" name='tr001'>
+                            <input type="hidden" class="form-control" name='tr002' placeholder="00030-21010-130">
+                            <input type="text" disabled class="form-control" id="taskNumber" name='tr002' placeholder="00030-21010-130">
+                        </div>
+                        <div class="col-6 d-flex align-items-center">
+                        <label for="taskProgress" class="label-2 col-form-label">{% trans "TaskProgress" %}</label>
+                        <input type="hidden" class="form-control" name='tr003' placeholder="N">
+                        <input type="text" disabled class="form-control" name='tr003' id="taskProgress" placeholder="N">
+                        </div>
+                        </div>
+                        <div class="form-group ml-1 mr-1 row">
+                        <div class="col-6 d-flex align-items-center">
+                        <label for="taskName" class="label-1 col-form-label">{% trans "Reminder" %}</label>
+                        <input type="hidden" class="form-control" name="tr006" placeholder='{% trans "Reminder" %}'>
+                        <input type="text" disabled class="form-control" name="tr006" id="taskName" placeholder='{% trans "Reminder" %}'>
+                        </div>
+                        <div class="col-6 d-flex align-items-center">
+                        <label for="startTime" class="label-2 col-form-label">{% trans "Start Time" %}</label>
+                        <input class="form-control control" id="startTime" name="tr004" type="time" value="08:00" required=""  pattern="[0-2][0-9]:[0-5][0-9]">
+                        </div>
+                        </div>
+                        <div class="form-group ml-1 mr-1 row">
+                            <div class="col-6 d-flex align-items-center">
+                            <label for="taskType" class="label-1 col-form-label">{% trans "Progress" %}</label>
+                            <select class="form-control" name="tr007" id="taskType">
+                                <option value="N">N: {% trans "Waiting for Reminder" %}</option>
+                                <option value="I">I: {% trans "Reminding" %}</option>
+                                <option value="F">F: {% trans "Reminder Complete" %}</option>
+                            </select>
+                            </div>
+                            <div class="col-6 d-flex align-items-center">
+                            <label for="endTime" class="label-2 col-form-label">{% trans "End Time" %}</label>
+                            <input class="form-control control" name="tr005" id="endTime" type="time" value="17:00" required=""  pattern="[0-2][0-9]:[0-5][0-9]">
+                            </div>
+                        </div>   
+                        <div class="form-group ml-1 mr-1 row" style="margin-bottom:0px !important;">
+                            <div class="col d-flex align-items-center">
+                            <label class="custom-control custom-checkbox">
+                                <input id="remindRepeat" type="checkbox" class="custom-control-input control" name="istr024">
+                                <span class="custom-control-label">
+                                    {% trans "Repeat" %}
+                                </span>
+                            </label>    
+                            </div>
+                        </div>
+                        <div class="form-group ml-1 mr-1 row align-items-center d-none" id="remindRound">
+                            <div class="col-6 d-flex align-items-center">
+                            <label for="remindRoundHour" class="label-1 col-form-label">{% trans "Repeat Cycle" %}</label>                    
+                            <input type="hidden" name="tr024"/>
+                            <select class="form-control" name="tr024h" id="remindRoundHour">
+                            </select> 
+                            </div>
+                            <div class="col-6 d-flex align-items-center">
+                            <select class="form-control" name="tr024m" id="remindRoundMinute">
+                            </select>                                    
+                            </div>                                         
+                        </div>
+                        <div class="form-group ml-1 mr-1 row">
+                            <div class="col d-flex align-items-center">
+                            <label for="taskName" class="col-form-label" style="min-width:140px">{% trans "Overdue Reminder" %}</label>
+                            <input type="text" class="form-control" name="tr026" id="taskName" placeholder='{% trans "Overdue Reminder" %}'>
+                            </div>
+                        </div>                                                
+                    </div>
+                </div>
+                <div class="form-group card expanded remindGroup mt-3">
+                    <div class="card-header">
+                      <button class="btn btn-reset d-flex justify-content-between prevent-default text-primary"><span>{% trans "Reminder Start" %}</span></button>
+                    </div>
+                    <div class="collapse show" id="remindBegin">
+                        <div class="form-group row ml-4 mr-1">
+                            <div class="col-12 form-group d-flex align-items-center">
+                                <input class="form-check-input" type="radio" name="tr028" id="remindBeginType1" value="1" init_value="1">
+                                <label class="form-check-label" for="remindBeginType1" style="min-width:120px">
+                                  {% trans "Starts on Date" %}
+                                </label>                                
+                                <input class="form-control control" id="startDate" name="tr021" type="date" value="2024-02-20" required="">                    
+                            </div>
+                            <div class="col-12 d-flex align-items-center">
+                                <input class="form-check-input" type="radio" name="tr028" id="remindBeginType2" value="2" init_value="2">
+                                <label class="form-check-label" for="remindBeginType2" style="min-width:120px">
+                                  {% trans "Before Plan Begin Date" %}
+                                </label>                                
+                                <select class="form-control" id="first-reminder" name="tr029">
+                                    <option value="0">0 {% trans "Days Before" %}</option>
+                                    <option value="1">1 {% trans "Days Before" %}</option>
+                                    <option value="2">2 {% trans "Days Before" %}</option>
+                                    <option value="3">3 {% trans "Days Before" %}</option>
+                                    <option value="7">1 {% trans "Week Before" %}</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>                
+                <div class="form-group card expanded remindGroup mt-3">
+                    <div class="card-header">
+                      <button class="btn btn-reset d-flex justify-content-between prevent-default text-primary"><span>{% trans "Reminder End" %}</span></button>
+                    </div>
+                    <div class="collapse show" id="remindBegin">
+                        <div class="form-group row ml-4 mr-1">
+                            <div class="col-12 form-group d-flex align-items-center">
+                                <input class="form-check-input" type="radio" name="tr030" id="remindEndType1" value="1" init_value="1">
+                                <label class="form-check-label" style="min-width:120px" for="remindEndType1">
+                                  {% trans "Ends on Date" %}
+                                </label>                                
+                                <input class="form-control control" name="tr022" id="startDate" type="date" value="2024-02-20" required="">                    
+                            </div>
+                            <div class="col-12 form-group d-flex align-items-center">
+                                <input class="form-check-input" type="radio" name="tr030" id="remindEndType2" value="2" init_value="2">
+                                <label class="form-check-label"  style="min-width:120px" for="remindEndType2">
+                                  {% trans "Ends When Task is C or F" %}
+                                </label>                                
+                            </div>
+                            <div class="col-12 d-flex align-items-center">
+                                <input class="form-check-input" type="radio" name="tr030" id="remindEndType3" value="3" init_value="3">
+                                <label class="form-check-label"  style="min-width:120px" for="remindEndType3">
+                                  {% trans "Ends When 'I Konw' Button in Message is Clicked" %}
+                                </label>                                
+                            </div>                            
+                        </div>
+                    </div>
+                </div>                                  
+              </form>
+        </div>
+        <div class="modal-footer">
+            <button  class="btn btn-secondary save"><i class="far fa-save mr-1"></i>{% trans "Save"%}</button> 
+            <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="far fa-times-circle mr-1"></i>{% trans "Cancel"%}</button>
+        </div>
+      </div>
+    </div>
+</div>   
+
+
+<!-- Modal -->
+<div class="modal fade" id="approveModal" tabindex="-1" aria-labelledby="approveModalLabel" aria-hidden="true" style="display:none;">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="approveModalLabel">{% trans "Request Approve" %}</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form id="approveForm">
+            <input type="hidden" name="task_inc_id"/>
+            <div class="form-group approver-group">
+            </div>
+            <div class="form-group approver-desc">
+              <label for="approveContent">{% trans "Approve Content"%}</label>
+              <textarea class="form-control" id="approveContent" rows="15"></textarea>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary submit_approve_btn">Submit</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+<div class="modal fade"  id="relationTask_modal" tabindex="-1" role="dialog" aria-labelledby="form" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog modal-lg modal-dialog-scrollable has-sidebar"  role="document" style="min-width: 1500px;">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">
+            {% trans "relationTask" %}
+          </h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <div id="relationTask_table"></div>
+        </div>
+        <div class="modal-footer">    
+            <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="far fa-times-circle mr-1"></i>{% trans "Close"%}</button>
+        </div>
+      </div>
+    </div>
+</div>   

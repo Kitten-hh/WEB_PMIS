@@ -1,0 +1,150 @@
+.faqAnalysisTask .page-sidebar .sidebar-header {
+    height: auto;
+}
+
+.faqAnalysisTask .page-sidebar .sidebar-section-fill {
+    overflow-y: hidden;
+}
+
+.faqAnalysisTask .page-sidebar .sidebar-section-fill>.card>.card-body form[name="searchform"] {
+    display: flex;
+    flex-direction: column;
+    height: calc(100% - 28px);
+}
+
+.faqAnalysisTask header.page-title-bar {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-right: .5rem;
+    padding-left: .5rem;
+    height: auto;
+    box-shadow: 0 1px 0 rgba(34, 34, 48, .1);
+    z-index: 5;
+    margin-bottom: 0;
+}
+
+.faqAnalysisTask header.page-title-bar>div {
+    flex-wrap: wrap;
+}
+
+.faqAnalysisTask header.page-title-bar .badge {
+    font-size: 14px;
+}
+
+.faqAnalysisTask .questionTypeList fieldset {
+    border: solid 1px #CCC;
+    border-radius: 8px;
+    padding: 0 1rem;
+    height: 100%;
+    overflow-y: auto;
+}
+
+.faqAnalysisTask .questionTypeList legend {
+    width: auto;
+    color: #333;
+    font-size: 14px;
+    padding: 0em 0.5em;
+    font-weight: bold;
+}
+
+.faqAnalysisTask .LPDataTable .dataTables_scrollHeadInner .table {
+    margin-top: 0 !important;
+}
+
+.faqAnalysisTask .LPDataTable .dataTables_info {
+    display: none;
+}
+
+/* dataTable */
+.LPDataTable table.dataTable thead .sorting:before,
+.LPDataTable table.dataTable thead .sorting_asc:before,
+.LPDataTable table.dataTable thead .sorting_desc:before,
+.LPDataTable table.dataTable thead .sorting_asc_disabled:before,
+.LPDataTable table.dataTable thead .sorting_desc_disabled:before {
+    content: "\f0de" !important;
+    right: 0.5em !important;
+}
+
+.LPDataTable table.dataTable thead .sorting:after,
+.LPDataTable table.dataTable thead .sorting_asc:after,
+.LPDataTable table.dataTable thead .sorting_desc:after,
+.LPDataTable table.dataTable thead .sorting_asc_disabled:after,
+.LPDataTable table.dataTable thead .sorting_desc_disabled:after {
+    content: "\f0dd" !important;
+}
+
+.masterTableCard .LPDataTable table.table-sm .sorting:before,
+.masterTableCard .LPDataTable table.table-sm .sorting_asc:before,
+.masterTableCard .LPDataTable table.table-sm .sorting_desc:before,
+.masterTableCard .LPDataTable table.table-sm .sorting:after, 
+.masterTableCard .LPDataTable table.table-sm .sorting_asc:after, 
+.masterTableCard .LPDataTable table.table-sm .sorting_desc:after {
+  top: 10px;
+}
+
+.masterTableCard .LPDataTable table.table-sm th,
+.masterTableCard .LPDataTable table.table-sm td {
+    font-size: 14px;
+}
+
+/* Bar chart模塊總計樣式 */
+.faqAnalysisTask .totalByPieChart .totalLeftPane,
+.faqAnalysisTask .totalByPieChart .totalLeftPane .form-group,
+.faqAnalysisTask .totalByPieChart .totalRightPane {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.faqAnalysisTask .totalByPieChart .totalLeftPane .form-group {
+    padding-left: .25rem;
+    padding-right: .25rem;
+}
+
+.faqAnalysisTask .totalByPieChart .totalLeftPane .form-group>label {
+    padding-right: .25rem;
+}
+
+.faqAnalysisTask .totalByPieChart .totalLeftPane .form-group>label:not(:last-child) {
+    min-width: 102px;
+    text-align: right;
+}
+
+.faqAnalysisTask .totalByPieChart .totalRightPane .chartjs {
+    height: 140px;
+}
+
+.faqAnalysisTask .totalByPieChart .totalRightPane .chartjs>canvas {
+    max-width: 130px;
+    max-height: 130px;
+}
+
+.status_select_sm.bootstrap-select>.dropdown-toggle {
+    height: 1.8125rem;
+    font-size: .8125rem;
+}
+
+.status_select_sm.bootstrap-select .dropdown-toggle .filter-option {
+    height: auto;
+}
+
+/* 滾動條樣式 */
+.masterTableCard .LPDataTable .dataTables_wrapper .dataTables_scrollBody::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+  
+.masterTableCard .LPDataTable .dataTables_wrapper .dataTables_scrollBody::-webkit-scrollbar-track {
+    background: rgba(230,232,237,.12);
+    border-radius: 6px;
+}
+  
+.masterTableCard .LPDataTable .dataTables_wrapper .dataTables_scrollBody::-webkit-scrollbar-thumb {
+    background: rgba(230,232,237,.12);
+    border-radius: 5px;
+}
+
+.masterTableCard .LPDataTable .dataTables_wrapper .dataTables_scrollBody::-webkit-scrollbar-thumb:hover {
+    background: #c0c0c0;
+}

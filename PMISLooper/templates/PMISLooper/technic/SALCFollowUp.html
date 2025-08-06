@@ -1,0 +1,29 @@
+{% extends 'BaseApp/looper_base/base_form2/base.html' %}
+{%load static %}
+{% load i18n %}
+{%load md5url %}
+{%block form_css%}
+{{block.super}}
+<style>
+.app-main {
+    padding-top: 0;
+}
+.page {
+    /* min-height: calc(100vh - 1rem); */
+    height: calc(100vh - .15rem);
+}
+</style>
+{%endblock%}
+
+{%  block content %}
+<iframe src="{{salc_server}}" frameborder="0" width='100%' class="iframe" style="height:100%"></iframe>
+
+{% endblock %}
+{%block form_js%}
+{{block.super}}
+<script>
+    $(function () {
+        $("title").html(`{% trans "SALC Follow Up"%}`);
+    });
+</script>
+{%endblock%}

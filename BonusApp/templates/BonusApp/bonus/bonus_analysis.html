@@ -1,0 +1,23 @@
+{% extends 'PMISLooper/vue_index.html' %}
+{%load static %}
+{% load i18n %}
+{% load render_bundle from webpack_loader %}
+{%block form_css%}
+{{block.super}}
+<!-- 圖標 -->
+<!-- <link rel="stylesheet" href="{% static 'BaseApp/vendor/fontawesome-pro-6.1.1-web/css/all.css'%}"> -->
+<link rel="stylesheet" href="{% static 'BonusApp/stylesheets/bonus_analysis.css' %}" data-skin="default">
+<link rel="stylesheet" href="{% static 'BonusApp/stylesheets/bonus_analysis_dark.css' %}" data-skin="dark">
+<!-- <script defer src="{% static 'BaseApp/vendor/fontawesome-pro-6.1.1-web/js/all.js'%}"></script> -->
+{%endblock%}
+{%block form_js%}
+{{block.super}}
+{% render_bundle 'BonusApp/dist/javascript/bonus/bonus_analysis' %}
+<script type="text/javascript" src="{% static 'BonusApp/js/common.js' %}"></script>
+<script type="text/javascript" src="{% static 'BonusApp/js/bonus_analysis.js' %}"></script> 
+<script>
+    $(function () {
+        $("title").html('{% trans "Bonus Simulation" %}');
+    });
+</script>
+{%endblock%}     

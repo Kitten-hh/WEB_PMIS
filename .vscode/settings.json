@@ -1,0 +1,17 @@
+{
+    "python.testing.unittestArgs": [
+        "-v",
+        "-s",
+        "./",
+        "-p",
+        "*_test.py"
+    ],
+    "liveServer.settings.port": 5551,
+    "python.testing.pytestEnabled": false,
+    "python.testing.nosetestsEnabled": false,
+    "python.testing.unittestEnabled": true,
+    "python.terminal.activateEnvInCurrentTerminal": true,
+    "python.defaultInterpreterPath": "/share_data/environment/General_Env/bin/python3",
+    "python.pythonPath": "/share_data/environment/General_Env/bin/python3",
+    "git.ignoreLimitWarning": true
+} 

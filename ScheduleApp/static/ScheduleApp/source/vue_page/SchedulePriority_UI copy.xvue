@@ -1,0 +1,312 @@
+<template>
+    <div class="col-12 col-lg-6 col-xl-5 col-xxl-3 mb-4 mb-sm-0 d-none d-md-block pr-0">
+        <div class="wrapper_test pb-2" id="card_para">
+            <div class="schparam_container scrollbar">
+                <div class="col-12 px-0">
+                    <h3 class="text-dark-75 trm-title-with-divider mb-0">
+                        {{ $t("Schedule Parameter") }}
+                        <label name="lb_contact" class="m-0 text-warning"></label>
+                        <span class="m-0"></span>
+                    </h3>
+                </div>
+                <div class="card-body px-0 p-sm-3 card_para_body">
+                    <div class="row pc_parameter px-0">
+                        <div v-for="(params, group, index) in scheduleParams" :key="index"
+                            class="col-12 mb-3">
+                            <div class="box boxs">
+                                <div v-if="index == 0" class="cs_content flex-row-fluid">
+                                    <h4 class="flex-grow-1 text-dark">{{ $t("Show Schedule Results")}}({{ loginUserName }})</h4>
+                                    <input type="checkbox" class="form-control"
+                                        v-model="showScheduleResultsWithUser" style="width: 20px;height:20px">
+                                </div>
+                                <div v-if="index == 0" class="cs_content flex-row-fluid">
+                                    <h4 class="flex-grow-1 text-dark">{{ $t("Show Schedule Results") }}</h4>
+                                    <input type="checkbox" class="form-control"
+                                        v-model="showScheduleResultsWithAll" style="width: 20px;height:20px">
+                                </div>                                                    
+                                <div v-for="(param, subIndex) in params" :key="subIndex"
+                                    class="cs_content flex-row-fluid">
+                                    <h4 v-if="param.nfield == 'Week are Scheduled'"
+                                        class="flex-grow-1 text-dark">{{ $t(param.nfield) }}{{ $t("(Red is selected)")}}</h4>
+                                    <h4 v-else class="flex-grow-1 text-dark">{{ $t(param.nfield) }}</h4>
+                                    <div v-if="param.nfield == 'Week are Scheduled'"
+                                        class="d-flex mt-2 justify-content-end WeekAreScheduled w-100">
+                                        <a href="#"
+                                            :class="['badge badge-subtle mr-1', getWeekAreScheduledDay(1) ? 'active' : '']"
+                                            @click="selectWeekAreScheduledDay($event, 1)">{{ $t("Mon") }}</a>
+                                        <a href="#"
+                                            :class="['badge badge-subtle mr-1', getWeekAreScheduledDay(2) ? 'active' : '']"
+                                            @click="selectWeekAreScheduledDay($event, 2)">{{ $t("Tue") }}</a>
+                                        <a href="#"
+                                            :class="['badge badge-subtle mr-1', getWeekAreScheduledDay(3) ? 'active' : '']"
+                                            @click="selectWeekAreScheduledDay($event, 3)">{{ $t("Wed") }}</a>
+                                        <a href="#"
+                                            :class="['badge badge-subtle mr-1', getWeekAreScheduledDay(4) ? 'active' : '']"
+                                            @click="selectWeekAreScheduledDay($event, 4)">{{ $t("Thu") }}</a>
+                                        <a href="#"
+                                            :class="['badge badge-subtle mr-1', getWeekAreScheduledDay(5) ? 'active' : '']"
+                                            @click="selectWeekAreScheduledDay($event, 5)">{{ $t("Fri") }}</a>
+                                        <a href="#"
+                                            :class="['badge badge-subtle mr-1', getWeekAreScheduledDay(6) ? 'active' : '']"
+                                            @click="selectWeekAreScheduledDay($event, 6)">{{ $t("Sat") }}</a>
+                                        <a href="#"
+                                            :class="['badge badge-subtle', getWeekAreScheduledDay(0) ? 'active' : '']"
+                                            @click="selectWeekAreScheduledDay($event, 0)">{{ $t("Sun") }}</a>
+                                    </div>
+                                    <input v-else class="textEdit form-control" type="number" min="0"
+                                        onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))"
+                                        v-model="param.fvalue" style="width: 75px;">
+                                    <input v-if="group == 'group2'" class="textEdit form-control ml-1"
+                                        type="number" min="0"
+                                        onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))"
+                                        v-model="scheduleParamsOther.categoryCapacity[subIndex]['fvalue']"
+                                        style="width: 40px;">
+                                </div>
+                                <div v-if="index == 0 && scheduleParamsScenario != undefined" class="cs_content flex-row-fluid">
+                                    <h4 class="flex-grow-1 text-dark">{{ $t("Scenario") }}</h4>
+                                    <span class="schedule_scenario">{{ scheduleParamsScenario }}</span>
+                                </div>                                                       
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 p-0 pl-3 pr-4 pt-1">
+                <div class="box flex-row inner-box" style="height: 100%;">
+                    <div class="cs_content flex-row-fluid" style="justify-content: flex-end;">
+                        <button id="btn_saveParam" class="btn btn-subtle-primary mr-2"
+                            style="font-weight: 900;font-size: larger;"
+                            @click="saveScheduleParams">{{ $t("Save") }}</button>
+                        <button id="btn_restore" class="btn btn-subtle-primary"
+                            style="font-weight: 900;font-size: larger;"
+                            @click="restore">{{ $t("Cancel") }}</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>         
+</template>
+<script>
+import axios from "axios";
+export default {
+    name: "ShcedulePriority_vueFrm_UI",
+    data() {
+        var self = this;
+        return {
+            scheduleParams: {
+                group1: [
+                    { nfield: "Project Priority Base", fvalue: 3000 },
+                    { nfield: "Day Capacity", fvalue: 3 },
+                    { nfield: "Week are Scheduled", fvalue: "0111111" },
+                ],
+                group2: [
+                    { nfield: "Raised by Robert", fvalue: 230 },
+                    { nfield: "Raised by Sing", fvalue: 220 },
+                    { nfield: "Meeting P", fvalue: 200 },
+                    { nfield: "External Request", fvalue: 150 },
+                    { nfield: "Fixed Day", fvalue: 1000 }
+                ],
+                group3: [
+                    { nfield: "Class(1)", fvalue: 200 },
+                    { nfield: "Priority(8889)", fvalue: 150 },
+                    { nfield: "Priority(8888)", fvalue: 100 },
+                    { nfield: "Priority(888)", fvalue: 50 },
+                ]
+            },
+            scheduleParamsOther: {
+                categoryCapacity: [
+                    { nfield: "Raised by Robert Capacity", fvalue: 2 },
+                    { nfield: "Raised by Sing Capacity", fvalue: 3 },
+                    { nfield: "Meeting P Capacity", fvalue: 1 },
+                    { nfield: "External Request Capacity", fvalue: 1 },
+                    { nfield: "Fixed Day Capacity", fvalue: 1 }
+                ]
+            },
+            scheduleParamsScenario: undefined,
+            loginUserName:window.get_login_name()
+        }
+    },
+    created() {
+        this.initScheduleParams();
+    },    
+    methods: {
+        getMasterChanged() {
+            var priorityDomList = $(this.$refs.masterTable.table).find(".textEdit.priority");
+            var changeList = { priority: [], upriority: [] }
+            for (var dom of priorityDomList) {
+                if ($(dom).val() != $(dom).attr("oldvalue")) {
+                    changeList.priority.push({ inc_id: $(dom).attr("inc_id"), score: $(dom).val() })
+                }
+            }
+
+            if (this.masterSearch.isPersonSearch) {
+                var upriorityDomList = $(this.$refs.masterTable.table).find(".textEdit.upriority");
+                for (var dom of upriorityDomList) {
+                    if ($(dom).val() != $(dom).attr("oldvalue")) {
+                        var recordid = $(dom).attr("recordid");
+                        var contact = $(dom).attr("contact")
+                        changeList.upriority.push({ contact: contact, recordid: recordid, score: $(dom).val() })
+                    }
+                }
+            }
+            return changeList;
+        },
+        getDetailChanged() {
+            var domList = $(this.$refs.detailTable.table).find(".textEdit.weight");
+            var fifoDomList = $(this.$refs.detailTable.table).find(".fifoCheck");
+            var capacityDomList = $(this.$refs.detailTable.table).find(".textEdit.capacity");
+            var changeObject = { weight: [], uweight: [] };
+            var changeWeightObject = {}
+            for (var dom of domList) {
+                if ($(dom).val() != $(dom).attr("oldvalue")) {
+                    var priorityValue = $(dom).val();
+                    var fifoValue = $(dom).closest("tr").find(".fifoCheck").prop("checked") ? "Y" : "N";
+                    var capacityValue = $(dom).closest("tr").find(".capacity").val();
+                    var inc_id = $(dom).attr("inc_id");
+                    changeWeightObject[inc_id] = { inc_id: inc_id, fifo: fifoValue, weight: priorityValue, capacity:capacityValue };
+                }
+            }
+            for (var dom of fifoDomList) {
+                var fifoValue = $(dom).prop("checked") ? "Y" : "N";
+                if (fifoValue != $(dom).attr("oldvalue")) {
+                    var priorityValue = $(dom).closest("tr").find(".weight").val();
+                    var capacityValue = $(dom).closest("tr").find(".capacity").val();
+                    var inc_id = $(dom).attr("inc_id");
+                    changeWeightObject[inc_id] = { inc_id: inc_id, fifo: fifoValue, weight: priorityValue,capacity: capacityValue };
+                }
+            }
+            for (var dom of capacityDomList) {
+                if ($(dom).val() != $(dom).attr("oldvalue")) {
+                    var capacityValue = $(dom).val();
+                    var priorityValue = $(dom).closest("tr").find(".weight").val();
+                    var fifoValue = $(dom).closest("tr").find(".fifoCheck").prop("checked") ? "Y" : "N";
+                    var inc_id = $(dom).attr("inc_id");
+                    changeWeightObject[inc_id] = { inc_id: inc_id, fifo: fifoValue, weight: priorityValue, capacity: capacityValue};
+                }
+            }
+            
+            changeObject.weight = Object.values(changeWeightObject);
+            if (this.masterSearch.isPersonSearch) {
+                var uweightDomList = $(this.$refs.detailTable.table).find(".textEdit.uweight");
+                for (var dom of uweightDomList) {
+                    if ($(dom).val() != $(dom).attr("oldvalue")) {
+                        var priorityValue = $(dom).val();
+                        var contact = $(dom).attr("contact");
+                        var sessionid = $(dom).attr("sessionid");
+                        changeObject.uweight.push({ contact: contact, sessionid: sessionid, weight: $(dom).val() });
+                    }
+                }
+            }
+            return changeObject;
+        },
+        getWeekAreScheduledDay(index) {
+            var weekAreScheduled = this.scheduleParams.group1[2].fvalue;
+            if (index < weekAreScheduled.length)
+                return parseInt(weekAreScheduled.charAt(index)) == 1
+            else
+                return false
+        },
+        selectWeekAreScheduledDay(e, index) {
+            e.preventDefault();
+            var weekAreScheduled = this.scheduleParams.group1[2].fvalue
+            if (index < weekAreScheduled.length) {
+                var arr = weekAreScheduled.split("");
+                arr[index] = parseInt(weekAreScheduled.charAt(index)) == 1 ? "0" : "1"
+                this.scheduleParams.group1[2].fvalue = arr.join("");
+            }
+            e.currentTarget.blur();
+        },
+        initScheduleParams() {
+            for (var [group, params] of Object.entries(this.scheduleParams).concat(Object.entries(this.scheduleParamsOther))) {
+                for (var param of params) {
+                    param.fvalue = "";
+                }
+            }
+            axios.get("/schedule/get_schedule_prarms").then((response)=>{
+                var result = response.data;
+                if (result.status) {
+                    var params = result.data;
+                    var paramsMap = new Map(
+                        params.map(item => {
+                            return [item.nfield, item];
+                        }),
+                    );
+                    for (var [group, params] of Object.entries(this.scheduleParams).concat(Object.entries(this.scheduleParamsOther))) {
+                        for (var param of params) {
+                            if (paramsMap.has(param.nfield))
+                                param.fvalue = paramsMap.get(param.nfield).fvalue
+                        }
+                    }
+                    if (paramsMap.has("Scenario")) {
+                        var scenarioParams = paramsMap.get("Scenario");
+                        var scenarioArr = this.scenarioList.filter(x=>x.schType == parseInt(scenarioParams.fvalue));
+                        if (scenarioArr.length > 0) {
+                            this.scheduleParamsScenario = scenarioArr[0].label;
+                        }
+                    }
+                }else {
+                    alert(gettext("Get schedule parameter fail"));
+                }
+            })
+        },
+        saveScheduleParams() {
+            var updateData = []
+            for (var [group, params] of Object.entries(this.scheduleParams).concat(Object.entries(this.scheduleParamsOther))) {
+                updateData.push(...params);
+                for (var param of params) {
+                    if (param["fvalue"] === "") {
+                        alert(gettext(param.nfield) + gettext(" cannot be empty!"))
+                        return;
+                    }
+                    if (param['nfield'] == "Day Capacity" && param["fvalue"] <= 0) {
+                        alert(gettext("Day capacity must be greater than 0!"))
+                        return;
+                    }
+                }
+            }
+            axios.post("/schedule/update_schedule_prarms", this.objectToFormData({updateData:JSON.stringify(updateData)})).then((response)=>{
+                var result = response.data;
+                if (result.status) {
+                    alert(gettext("Save Success!"));
+                }else {
+                    alert(gettext("Save fail!"))
+                }
+            })
+        },        
+    }
+
+}
+</script>
+
+
+def getSchedulePrarms(request):
+    """
+    功能描述：獲取排期參數
+    """ 
+    result = {'status':False, 'msg':'', 'data':{}}
+    try:
+        qs = models.Syspara.objects.filter(ftype="ScheduleParams")
+        scheduleParams = [model_to_dict(row) for row in qs]
+        result['data'] = scheduleParams
+        result['status'] = True
+    except Exception as e:
+        LOGGER.error(e)
+    return JsonResponse(result, safe=False)
+
+def updateScheduleParams(request:HttpRequest):
+    """
+    功能描述：更新排期參數
+    """
+    result = {'status':False, 'msg':"", "data":{}}
+    try:
+        updateData = json.loads(request.POST.get("updateData","[]"))
+        with transaction.atomic(ModelTools.get_database(models.Syspara)):
+            ##處理Session Params更新數據
+            for row in updateData:
+                models.Syspara.objects.update_or_create(ftype="ScheduleParams",nfield=row['nfield'], defaults={"fvalue":row['fvalue']})
+        result['status'] = True
+    except Exception as e:
+        LOGGER.error(e)
+    return JsonResponse(result, safe=False)
+
+    

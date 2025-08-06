@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+{%load static %}
+{% load md5url %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Web PMIS Login</title>
+    <link rel="stylesheet" href="{% static 'BaseApp/vendor/Looper/assets/stylesheets/theme.min.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static 'PMISLooper/assets/stylesheets/user/login.css' %}" />
+</head>
+<body class="bg-full-img">
+    <main id="auth-header" class="">
+        <canvas class="particles-js-canvas-el" width="1902" height="253" style="width: 100%; height: 100%;"></canvas>
+        <div class="container">
+            <div class="row vh-100">
+                <div class="col-12 align-self-center">
+                    <div class="auth-page">
+                        <div class="card auth-card shadow-lg bg-pattern" style="z-index: 9999;">
+                            <div class="card-body">
+                                <div class="text-center auth-logo-text">
+                                    <h4 class="mt-0 mb-3 mt-3">歡迎回來</h4>
+                                    <p class="text-muted mb-0">PMIS登錄</p>  
+                                </div>
+                                <form class="form-horizontal auth-form"  action="/looper/login" method="POST">
+                                    {% csrf_token %}
+                                    <div class="form-group">
+                                        <input type="hidden" name="next" value="{{ request.GET.next }}" />
+                                        <div class="form-label-group">
+                                            <input type="text" id="inputUser" class="form-control placeholder-shown rounded-lg" name="username" placeholder="Username" autofocus=""> 
+                                            <label for="inputUser">用戶名稱</label>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="form-label-group">
+                                            <input type="password" id="inputPassword" class="form-control placeholder-shown rounded-lg" name="password" placeholder="Password"> 
+                                            <label for="inputPassword">登錄密碼</label>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <button class="btn btn-lg btn-primary btn-block " type="submit">登錄</button>
+                                    </div>
+                                    <div class="text-center mt-4">
+                                        <div class="custom-control custom-control-inline custom-checkbox">
+                                            <input type="checkbox" class="custom-control-input" id="remember-me"> 
+                                            <label class="custom-control-label" for="remember-me">保持登錄</label>
+                                        </div>
+                                    </div> 
+                                </form>
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <p class="copyright">© 2022 All Rights Reserved.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="{% static 'BaseApp/vendor/Looper/assets/vendor/jquery/jquery.min.js'%}"></script>
+    <script src="{% static 'BaseApp/vendor/Looper/assets/vendor/popper.js/umd/popper.min.js'%}"></script>
+    <script src="{% static 'BaseApp/vendor/Looper/assets/vendor/bootstrap/js/bootstrap.min.js'%}"></script>
+    <script src="{% static 'BaseApp/vendor/Looper/assets/vendor/particles.js/particles.js'%}"></script>
+    <script>
+    $(document).on('theme:init', () =>
+    {
+        particlesJS.load('auth-header', '/static/BaseApp/vendor/Looper/assets/javascript/pages/particles.json');
+    });
+    </script>
+    <script src="{% static 'BaseApp/vendor/Looper/assets/javascript/theme.min.js'%}"></script>
+</body>
+</html>

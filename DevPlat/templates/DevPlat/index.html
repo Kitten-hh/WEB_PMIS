@@ -1,0 +1,309 @@
+{% extends 'BaseApp/looper_base/base_form1/base.html' %}
+{%load static %}
+{% load i18n %}
+{% load md5url %}
+{%block form_css%}
+<link rel="stylesheet" type="text/css" href="{% md5url 'PMISLooper/assets/stylesheets/quick-add-task.css' %}" data-skin="default" />
+<link rel="stylesheet" type="text/css" href="{% md5url 'PMISLooper/assets/stylesheets/quick-add-task_dark.css' %}" data-skin="dark" />
+<link rel="stylesheet" type="text/css" href="{% md5url 'PMISLooper/assets/stylesheets/user/index_login.css' %}"/>
+
+<link rel="stylesheet" type="text/css" href="{% md5url 'PMISLooper/assets/stylesheets/quick-add-technic.css' %}" data-skin="default" />
+<link rel="stylesheet" type="text/css" href="{% md5url 'PMISLooper/assets/stylesheets/quick-add-technic_dark.css' %}" data-skin="dark" />
+<link rel="stylesheet" type="text/css" href="{% md5url 'PMISLooper/assets/stylesheets/ai/AIComBox.css' %}" data-skin="default" />
+<link rel="stylesheet" type="text/css" href="{% static 'BaseApp/vendor/jquery_contextmenu/jquery.contextMenu.min.css'%}" />   
+<style>
+    body {
+        font-family: 'Andika', "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif !important;
+    }
+    .fa_add_tasks {
+        font-size: 1.25rem;
+    }
+    .top-0 {
+        top: 0 !important;
+    }
+    @media (min-width: 768px) {
+        .fa_add_tasks {
+            font-size: 18px;
+        }
+    }
+</style>
+{%endblock%}
+{%block content %}
+{%include "PMISLooper/task/quick-add-task.html"%}
+{%include "PMISLooper/user/index_login.html"%}
+{%include "PMISLooper/technic/quickAddTechnic.html"%}
+{%include "PMISLooper/ai/AIComBox.html"%}
+<!-- <div id="addTasks_menu" class="d-none">
+    <li class="nav-item">
+        <a class="nav-link" href="#" data-toggle="modal"><span class="fa fa-tasks fa_add_tasks"></span></a>
+    </li>
+</div> -->
+<div id="all_menu" class="d-none">
+    <li class="nav-item dropdown header-nav-dropdown">
+        <a class="nav-link" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="fa fa-tasks fa_add_tasks"></span></a>
+
+        <div class="dropdown-menu dropdown-menu-rich dropdown-menu-right" style>
+            <div class="dropdown-arrow d-none d-sm-block"></div>
+            <div class="dropdown-sheets">
+                <div class="dropdown-sheet-item" style="width: 33.33333%;">
+                    <a href="http://183.63.205.83:3000" class="tile-wrapper">
+                        <!-- <span class="tile tile-lg bg-teal"><i class="fas fa-robot top-0"></i></span> -->
+                        <span class="tile tile-lg bg-teal chatWithAiBtn">
+                            <img src="../../static/DevPlat/assets/images/Ai.png" alt="AI" class="chatWithAiBtnIcon">
+                        </span> 
+                        <span class="tile-peek">{% trans "Chat with Ai" %}</span>
+                    </a>
+                </div>
+                <div class="dropdown-sheet-item" style="width: 33.33333%;">
+                    <a href="#" class="tile-wrapper addTasks" data-toggle="modal"><span class="tile tile-lg bg-info"><i class="fa-fw oi oi-document"></i></span> <span class="tile-peek">{% trans "New Task" %}</span></a>
+                </div>
+                <div class="dropdown-sheet-item" id="addTechnic_menu"  style="width: 33.33333%;">
+                    <a href="#" class="tile-wrapper"  data-toggle="modal" data-target="#quick-add-technic">
+                        <span class="tile tile-lg bg-indigo"><i class="menu-icon oi oi-pencil"></i></span> 
+                        <span class="tile-peek">{% trans "Mini Technical" %}</span>
+                    </a>
+                </div>
+                <div class="dropdown-sheet-item" style="width: 33.33333%;">
+                    <a href="/devplat/sessions?recordid=00331&menu_id=mi_00001-18008#Session_Log" class="tile-wrapper"><span class="tile tile-lg bg-cyan"><i class="fa fa-fw fa-comment top-0"></i></span> <span class="tile-peek">{% trans "Log" %}</span></a>
+                </div>
+                <div class="dropdown-sheet-item" style="width: 33.33333%;">
+                    <a href="#" class="tile-wrapper devplat_link"><span class="tile tile-lg bg-pink"><i class="fab fa-kickstarter-k"></i></span> <span class="tile-peek">{% trans "Knowledge Based" %}</span></a>
+                </div>
+                <div class="dropdown-sheet-item" style="width: 33.33333%;">
+                    <a href="/looper/goal/goal_management" class="tile-wrapper"><span class="tile tile-lg bg-yellow"><i class="fab fa-gofore"></i></span> <span class="tile-peek">{% trans "Goal Management" %}</span></a>
+                </div>
+                <div class="dropdown-sheet-item" style="width: 33.33333%;">
+                    <a href="/devplat/session/question" class="tile-wrapper"><span class="tile tile-lg bg-cyan"><i class="oi oi-magnifying-glass"></i></span> <span class="tile-peek">{% trans "Question" %}</span></a>
+                </div>
+                <div class="dropdown-sheet-item" style="width: 33.33333%;">
+                    <a href="/systembugrpt" class="tile-wrapper"><span class="tile tile-lg bg-teal"><i class="fas fa-clipboard-list top-0"></i></span> <span class="tile-peek">{% trans "System Bug Rpt" %}</span></a>
+                </div>   
+                <div class="dropdown-sheet-item" style="width: 33.33333%;">
+                    <a href="#" id="message_summary_link" class="tile-wrapper"><span class="tile tile-lg bg-info"><i class="fas fa-sms top-0"></i></span> <span class="tile-peek">{% trans "Message Summay" %}</span></a>
+                </div> 
+            </div>
+        </div>
+    </li>
+</div>
+<div id="Comments_menu" class="d-none">
+    <div class="dropdown-menu dropdown-menu-rich dropdown-menu-right stop-propagation prevent-default" style>
+        <div class="dropdown-arrow d-none d-sm-block"></div>
+        <div id="lightSlider">
+            <div class="dropdown-sheets">
+                <div class="dropdown-sheet-item" style="width: 33.33333%;">
+                    <a href="/looper/task/today_task" class="tile-wrapper"><span class="tile tile-lg bg-primary"><i class="fa fa-calendar-day top-0"></i></span><span class="tile-peek">{% trans "Today's Tasks" %}</span></a>
+                </div>
+                <div class="dropdown-sheet-item" style="width: 33.33333%;">
+                    <a href="/looper/staff_dashboard" class="tile-wrapper" target="staff_dashboard"><span class="tile tile-lg bg-teal"><i class="fas fa-home top-0"></i></span> <span class="tile-peek">{% trans "Dashboard" %}</span></a>
+                </div>
+                <div class="dropdown-sheet-item" style="width: 33.33333%;">
+                    <a href="#" id="headernav_act_tasks" class="tile-wrapper"><span class="tile tile-lg bg-danger"><i class="oi oi-pulse top-0"></i></span> <span class="tile-peek">{% trans "Activity-Task" %}</span></a>
+                </div>
+                <div class="dropdown-sheet-item" style="width: 33.33333%;">
+                    <a href="/bonus/main_page" class="tile-wrapper"><span class="tile tile-lg bg-yellow"><i class="fab fa-stripe-s"></i></span> <span class="tile-peek">{% trans "Scoring" %}</span></a>
+                </div>
+                <div class="dropdown-sheet-item" style="width: 33.33333%;">
+                    <a href="#" id="headernav_goal_link" class="tile-wrapper"><span class="tile tile-lg bg-cyan"><i class="oi oi-flag"></i></span> <span class="tile-peek">{% trans "Goal" %}</span></a>
+                </div>
+                <div class="dropdown-sheet-item" style="width: 33.33333%;">
+                    <a href="/looper/metting/newMeeting" class="tile-wrapper" target="meeting"><span class="tile tile-lg bg-primary"><i class="far fa-comment-dots"></i></span> <span class="tile-peek">{% trans "Meeting" %}</span></a>
+                </div>
+                <div class="dropdown-sheet-item" style="width: 33.33333%;">
+                    <a href="/looper/user/top5_projects" class="tile-wrapper" target="top_project"><span class="tile tile-lg bg-teal"><i class="fas fa-sort-numeric-up top-0"></i></span> <span class="tile-peek">{% trans "Milestone" %}</span></a>
+                </div>
+                <div class="dropdown-sheet-item" style="width: 33.33333%;">
+                    <a href="http://121.13.252.164:8010/Forum" class="tile-wrapper"><span class="tile tile-lg bg-danger"><i class="fab fa-foursquare"></i></span> <span class="tile-peek">{% trans "Forum" %}</span></a>
+                </div>
+                <div class="dropdown-sheet-item" style="width: 33.33333%;">
+                    <a href="/devplat/project/overview" class="tile-wrapper" target="project"><span class="tile tile-lg bg-yellow"><i class="oi oi-fork"></i></span> <span class="tile-peek">{% trans "Projects-SDLC" %}</span></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="lang_menu" class="d-none">
+    <li class="nav-item dropdown lang_menu">
+        {% get_current_language as LANGUAGE_CODE %}
+        <input id="curr_language_code" value="{{LANGUAGE_CODE}}" type="hidden"/>
+        {% get_available_languages as LANGUAGES %}
+        {% get_language_info_list for LANGUAGES as languages %}
+        {% for language in languages %}
+            {% if language.code == LANGUAGE_CODE %} 
+                <a class="nav-link" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class="">{{language.name_translated}}</span>
+                </a>
+            {% endif %}
+        {% endfor %}            
+        
+        <div class="dropdown-menu dropdown-menu-right">
+            <div class="dropdown-arrow"></div>
+            {% for language in languages %}
+                <a class="dropdown-item" href="#" lang_code="{{language.code}}"> {{ language.name_translated }}</a>
+            {% endfor %}                        
+        </div>  
+        <form class="form-inline ml-3-md d-none" action="{% url 'set_language' %}" method="post">
+            {% csrf_token %}
+            <input name="next" type="hidden" value="{{ redirect_to }}" />
+            <input name="language" type="hidden" value=""/>
+            <div class="input-group-append">
+                <button type="submit" class="btn btn-inline btn-sm bg-warning">
+                </button>
+            </div>
+        </form>                  
+    </li>
+</div>
+{%endblock%}
+{%block form_js%}
+<script src="{% url 'javascript-catalog' %}"></script>
+<script src="{% static 'BaseApp/vendor/jquery/ajaxhook.min.js' %}" type="text/javascript"></script>
+<script src="{% md5url 'PMIS/js/syspublic.js'%}"></script>
+<script>
+    $(function () {
+        // 設置logo
+        $(".logo").text("PMIS");
+        $(".logo").attr("href", "/looper").css("font-size","35px");
+        //設置Menu菜單的MenuItem
+        $(".app .top-bar-item-right .header-nav").prepend($("#all_menu").html());
+        $(".app .top-bar-item-right li:last-child a").attr({"data-toggle":"dropdown","aria-haspopup":"true","aria-expanded":"false"});
+        $(".app .top-bar-item-right li:last-child").addClass("dropdown header-nav-dropdown quickLink").append($("#Comments_menu").html());
+        var username = get_username();
+        var quarterly = "{0}-{1}".format(new Date().toString("yyyy"), Math.ceil((new Date().getMonth() + 1)/3));
+        $("#headernav_goal_link").attr("href", `/looper/goal/overall/quarterly_goal?contact=${username}&period=${quarterly}`);
+        $("#headernav_act_tasks").attr("href", `/looper/user/activites?contact=${username}`);
+        $("#message_summary_link").attr("href", `/ntfy/message_summary?contact=${username}`);
+        $(".app .top-bar-item-right .header-nav").append($("#lang_menu").html());
+        $(".app .top-bar-item-right .header-nav .lang_menu").on("click", ".dropdown-item", function(e){
+            e.preventDefault();
+            var container = $(".app .top-bar-item-right .header-nav .lang_menu");
+            var lang_code = $(this).attr("lang_code");
+            container.find("input[name='language']").val(lang_code);
+            container.find("button[type='submit']").click();
+        });        
+        $(".app .top-bar-item-right").append($("#auth_info").html());        
+        var back_menu = `<div id="back_menu">
+                    <div class="top-bar-item top-bar-item-left px-0">
+                        <!-- .nav -->
+                        <ul class="header-nav nav">
+                            <!-- .nav-item -->
+                            <li class="nav-item ">
+                                <a class="nav-link back_link" href="#"><span class="menu-icon fas fa-home" style="font-size: 1.05rem;top:0px;"></span></a>
+                            </li>
+                        </ul>
+                    </div>    
+                </div>`;
+        $(".app .top-bar-list .top-bar-item:first").after(back_menu);        
+        $(".top-bar-list .back_link").attr("href", "/looper/staff_dashboard");
+        $(".top-bar-list .back_link").attr("target","staff_dashboard");
+        {%if user.username != ""%}
+            $(".top-bar-list .devplat_link").attr("href", "/devplat/course?recordid=00331&menu_id=mi_3");
+        {% else %}
+            $(".top-bar-list .devplat_link").attr("href", "/devplat/course?recordid=00331&menu_id=mi_3");
+        {% endif %}
+        $(".base-footer").remove();
+
+        // 快捷導航鏈接窗口-引用lightSlider插件
+        var quickLink_container = $('.quickLink #lightSlider>.dropdown-sheets');
+        var quickLink_children = quickLink_container.children();
+        var count = quickLink_children.length;
+        var perContainer = 9;
+
+        if (count > perContainer) {
+            if(count % perContainer == 0){
+                var numContainers= Math.trunc(count / perContainer) - 1;
+            }else{
+                var numContainers = Math.trunc(count / perContainer);
+            }
+            console.log(numContainers)
+
+            for (var i = 0; i < numContainers; i++) {
+                var newContainer = $('<div class="dropdown-sheets"></div>');
+                quickLink_container.after(newContainer);
+
+                for (var j = perContainer; j < count; j++) {
+                    newContainer.append(quickLink_children.eq(j-1).nextAll());
+                }
+            }
+
+            var slider = $("#lightSlider").lightSlider({item: 1, controls: false, slideMargin: 0,}); 
+        }
+
+        $('.app').on("click", ".quickLink>a[data-toggle='dropdown']", function () {
+            $(window).resize();
+        }).on("shown.bs.dropdown", ".quickLink>a[data-toggle='dropdown']", function () {
+            slider.refresh();
+        });
+
+        $(".top-bar-item-right .header-nav .quickLink").on("click", ".dropdown-menu .dropdown-sheet-item", function (e) {
+            e.stopPropagation();
+        });
+
+        window.recordid = getParamFromUrl("recordid");
+        window.contact = getParamFromUrl("contact");
+        window.menu_id = getParamFromUrl("menu_id")
+        SWNavigationBar.setMenuItem("mi_1", '{% trans "Knowledge based" %}', "#");  
+        SWNavigationBar.addSubMenu("mi_1_1", "mi_1", "{% trans 'Solution Type' %}", "#");  
+        SWNavigationBar.addSubMenu("mi_1_2", "mi_1", "{% trans 'Repository' %}", "#");  
+        SWNavigationBar.setMenuItem("mi_2", "{% trans 'Question' %}", "/devplat/session/question?recordid={0}&menu_id=mi_2".format(window.recordid));  
+        SWNavigationBar.setMenuItem("mi_3", "{% trans 'Course' %}", "/devplat/course?recordid={0}&menu_id=mi_3".format(window.recordid));
+        SWNavigationBar.setMenuItem("mi_4", "{% trans 'Control Center' %}", "#");  
+        SWNavigationBar.setMenuItem("mi_5", "{% trans 'Overview' %}", "/devplat/project/overview?");
+        $("#mi_5 a").attr("target", "project");
+        SWNavigationBar.setMenuItem("mi_6", "{% trans 'Mindmap' %}", "/looper/mindmap");
+        $("#mi_6 a").attr("target","mindmap");        
+        SWNavigationBar.setMenuItem("mi_7", "{% trans 'RuleDoc' %}", "/devplat/ruledoc?recordid={0}&menu_id=mi_7".format(window.recordid));
+        $.get("/devplat/sessions_list?recordid="+window.recordid, function(result){
+            if (result.status){
+                result.data.forEach((session, index)=>{
+                    SWNavigationBar.setMenuItem("mi_{0}".format(session.sessionid), session.sdesp, "#");                
+                    $("#mi_{0}".format(session.sessionid)).attr("sessionid", session.sessionid);
+                    $("#mi_{0}".format(session.sessionid)).attr("planbdate", session.planbdate);
+                    $("#mi_{0}".format(session.sessionid)).attr("planedate", session.planedate);
+                    $("#mi_{0} a".format(session.sessionid)).addClass("session_url");
+                });
+    
+                $("#stacked-menu .menu-item a").on("click", function(e){
+                    if($(this).attr("target") != undefined)
+                        return;
+                    $("#stacked-menu .menu-item").removeClass("has-active");
+                    $("#stacked-menu .has-open").removeClass("has-open");
+                    $(this).parents(".menu-item").addClass("has-open");
+                    $(this).closest(".menu-item").addClass("has-active");
+                    var title = $(this).closest(".menu-item").attr("title");
+                    $("title").html(title);
+                    if ($(this).closest(".menu-item").hasClass("has-child") == false && 
+                        $(".aside-header .hamburger-squeeze").is(":visible")) {
+                            $(".aside-header .hamburger-squeeze").click();
+                        }
+                    if (window.menu_on_click_fun != undefined) {
+                        window.menu_on_click_fun();
+                    }
+                    if (window.childWindowMenuClick != undefined) {
+                        window.childWindowMenuClick(e);
+                    }
+                });    
+
+                if (window.menu_id == undefined)
+                    $("#stacked-menu .menu-item a:first").click();
+                else
+                    $(`#${menu_id} a`).click();
+
+                if (window.update_menu_href != undefined)
+                    window.update_menu_href();
+            }
+        });        
+        window.update_session_url  = function() {
+            $("#stacked-menu .menu-item[sessionid]").each((index, item)=>{
+                $(item).find("a").attr("href", 
+                    "/devplat/sessions?recordid={0}&menu_id={1}".format(window.recordid, $(item).attr("id")));
+            });
+            
+        }
+    });
+</script>
+<script src="{% md5url 'BaseApp/vendor/jquery_contextmenu/jquery.ui.position.min.js'%}"></script>
+<script src="{% md5url 'BaseApp/vendor/jquery_contextmenu/jquery.contextMenu.min.js'%}"></script>
+<script src="{% md5url 'PMISLooper/assets/javascript/user/index_login.js' %}" type="text/javascript"></script>
+<script src="{% md5url 'PMISLooper/assets/javascript/quick-add-task.js' %}" type="text/javascript"></script>
+<script src="{% md5url 'PMISLooper/assets/javascript/quick-add-technic.js' %}" type="text/javascript"></script>
+<script src="{% md5url 'PMISLooper/assets/javascript/ai/AIComBox.js' %}" type="text/javascript"></script>
+{%endblock%}

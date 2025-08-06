@@ -1,0 +1,115 @@
+body{
+    font-family: 'Andika';
+}
+
+#exampleModal.modal {
+    padding: 0 !important;
+}
+
+#exampleModal.modal .modal-dialog {
+    width: 100%;
+    max-width: none;
+    height: 100%;
+    margin: 0;
+}
+
+#exampleModal.modal .modal-content {
+    height: 80%;
+    background: linear-gradient(to top, #dcdfeb 10%, #3b5998 100%);
+    padding: 5px;
+    border-radius: 10px 10px 0px 0px;
+    border: 0; 
+    margin-bottom: 5px;             
+}
+
+#exampleModal .modal-footer{
+    border-top: 1px solid rgba(34, 34, 48, .1);
+    padding: .75rem 0;
+}          
+
+#exampleModal.modal .modal-body {
+    overflow-y: hidden; 
+}
+
+#exampleModal {
+    transform: translate3d(0, 80vh, 0);
+    transition: all 0.35s ease-in;
+}          
+
+#exampleModal.show {
+    transform: translate3d(0, 20vh, 0);
+    transition: all 0.35s ease-out;
+}
+
+#exampleModal .pre-scrollable {
+    max-height: none;
+    height: 61vh;
+}
+
+#queryfilter .pre-scrollable { 
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid rgba(20, 20, 31, .2);
+    border-radius: .3rem;            
+}
+
+.status-warning { border-left: 4px solid #f0ad4e; }
+
+.status-success { border-left: 4px solid #2cc4cd; }
+
+.status-info { border-left: 4px solid #22bfed; }
+
+.status-danger { border-left: 4px solid #ff6262; }
+
+.status-primary { border-left: 4px solid #6c8bef; }
+
+.status.warning { background: #f0ad4e; }
+
+.status { -webkit-border-radius: 3px; -moz-border-radius: 3px; -ms-border-radius: 3px; border-radius: 3px; padding: 0 10px; line-height: 26px; display: inline-block; vertical-align: middle; color: #ffffff; }
+
+.status.warning { background: #f97d7c; }
+
+.status.success { background: #5edf60; }
+
+.status.complete { background: #a99af0; }
+
+.status.info { background: #22bfed; }
+
+.status.danger { background: #f4fc0d; }                                                                                                                   
+.status.hold { background: #a09e9e; }    
+
+.status.primary { background: #0dfbfa; }    
+
+.status.reviews { background: #b76ba3; }  
+
+#queryfilter .cust_filter{
+    flex-flow: row nowrap;
+} 
+
+#queryfilter .list-group-item {
+    padding: .35rem 1rem;
+}
+
+#queryfilter .list-group-item-action {
+    color: #000;
+}
+
+  /* 滾動條樣式 */
+.task-enquiry .card-body::-webkit-scrollbar {
+    width: 8px;
+    height: 6px;
+}
+
+.task-enquiry .card-body::-webkit-scrollbar-track {
+    background: transparent;
+    border-radius: 6px;
+}
+
+.task-enquiry .card-body::-webkit-scrollbar-thumb {
+    background: rgba(230,232,237);
+    border-radius: 5px;
+}
+
+.task-enquiry .card-body::-webkit-scrollbar-thumb:hover {
+    background: #dcdfeb;
+}

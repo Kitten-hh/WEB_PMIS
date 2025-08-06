@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+{%load static%}
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AppGallery</title>
+  <meta name="description"
+    content="Modern effects and styles for off-canvas navigation with CSS transitions and SVG animations using Snap.svg" />
+  <meta name="keywords"
+    content="sidebar, off-canvas, menu, navigation, effect, inspiration, css transition, SVG, morphing, animation" />
+  <link rel="stylesheet" href="{% static 'Gallery/Gallery_UI/assets/vendor/bootstrap/css/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static 'Gallery/Gallery_UI/assets/vendor/fonts/simple-line-icons.min.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'Gallery/Gallery_UI/assets/stylesheets/base.css' %}" />
+  <link rel="stylesheet" type="text/css" href="{% static 'Gallery/Gallery_UI/assets/stylesheets/page/app.css' %}" />
+  <link rel="stylesheet" type="text/css" href="{% static 'Gallery/Gallery_UI/assets/vendor/fonts/font-awesome-4.2.0/css/font-awesome.min.css' %}" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito">
+  <script src="{% static 'Gallery/Gallery_UI/assets/vendor/snap/snap.svg-min.js' %}"></script>
+</head>
+
+<body>
+  <header>
+    <div class="menu-wrap">
+      <nav class="menu">
+        <div class="menu__header">
+          <img
+            src="https://www.appsheet.com/fsimage.png?tableprovider=dropbox&amp;datasource=dropbox&amp;filename=%2Fappicons%2Fapp%20portfolio%20-%20white%20outline%20(2).png&amp;userid=10305&amp;width=1000"
+            style="width: 52px; margin-right: 16px;">
+          <h2 class="menu__title">Bonus</h2>
+        </div>
+        <div class="menu-after"></div>
+        <!-- function -->
+        <div class="menu-list">
+          <a href="#"><i class="icon-settings"></i><span>Settings</span></a>
+          <a href="#"><i class="icon-directions"></i><span>Locations</span></a>
+          <a href="/bonus/Task_Management/"><i class="icon-directions"></i><span>Bonus Simulation</span></a>
+          <div class="menu-after"></div>
+          <!-- common part -->
+          <a href="company.html"><span>About</span></a>
+          <a href="#"><span>Feedback</span></a>
+          <a href="#"><span>Share</span></a>
+          <div class="menu-after"></div>
+          <!-- major part -->
+          <a href="/"><i class="icon-grid"></i><span>App Gallery</span></a>
+        </div>
+        <div class="menu-after"></div>
+        <!-- logout -->
+        <div class="SideMenu__header">
+          <div style="display: flex; align-items: center;"></div>
+          <div class="SideMenu__email">hcsenior1500@gmail.com</div>
+          <div style="display: flex; justify-content: flex-end;">
+            <button class="MuiButtonBase-root" tabindex="0" type="button" data-toggle="modal"
+              data-target="#exampleModalCenter">
+              <span class="MuiButton-label">Log Out</span>
+              <span class="MuiTouchRipple-root"></span>
+            </button>
+          </div>
+        </div>
+      </nav>
+
+      <button class="close-button" id="close-button">Close Menu</button>
+      <div class="morph-shape" id="morph-shape"
+        data-morph-open="M-7.312,0H15c0,0,66,113.339,66,399.5C81,664.006,15,800,15,800H-7.312V0z;M-7.312,0H100c0,0,0,113.839,0,400c0,264.506,0,400,0,400H-7.312V0z">
+        <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 100 800"
+          preserveAspectRatio="none">
+          <path d="M-7.312,0H0c0,0,0,113.839,0,400c0,264.506,0,400,0,400h-7.312V0z" />
+        </svg>
+      </div>
+    </div>
+    <!-- toolbar -->
+    <div class="rd-navbar-wrap">
+      <nav class="rd-nav">
+        <div class="rd-nav-inner">
+          <div class="AppHeader__button-menu  flex-grow-1">
+            <button class="menu-button" id="open-button"><i class="icon-menu"></i></button>
+          </div>
+          <div class="search" id="search" style="display: none;">
+            <input type="search" placeholder="Search..." required>
+          </div>
+          <button class="menu-button" onclick="change()"><i class="icon-magnifier"></i></button>
+          <button class="menu-button"><a href="App_delete.html"><i class="icon-check"></i></a></button>
+          <button class="menu-button" onclick="location.reload()"><i class="icon-reload"></i></button>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <div class="content-wrap">
+    <div class="content">
+      <section class="news-section">
+        <img src="{% static 'Gallery/Gallery_UI/assets/images/about-sculpture-1-1.png' %}" alt="" class="about-one__moc">
+        <div class="circles">
+          <div class="c-1"></div>
+          <div class="c-2"></div>
+        </div>
+        <div class="table-responsive">
+          <table class="table table-bordered table-striped" id="mytable">
+            <tbody>
+              <tr>
+                <td colspan="2">XXX Company</td>
+              </tr>
+              <tr>
+                <td width="8%">2020-08-08</td>
+                <td>Customer interview</td>
+              </tr>
+              <tr>
+                <td>2020-08-08</td>
+                <td>Customer interview</td>
+              </tr>
+              <tr>
+                <td>2020-08-08</td>
+                <td>Customer interview</td>
+              </tr>
+              <tr>
+                <td>2020-08-08</td>
+                <td>Customer interview</td>
+              </tr>
+              <tr>
+                <td colspan="2">YY Company</td>
+              </tr>
+              <tr>
+                <td width="8%">2020-08-08</td>
+                <td>Customer interview</td>
+              </tr>
+              <tr>
+                <td>2020-08-08</td>
+                <td>Customer interview</td>
+              </tr>
+              <tr>
+                <td>2020-08-08</td>
+                <td>Customer interview</td>
+              </tr>
+              <tr>
+                <td>2020-08-08</td>
+                <td>Customer interview</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+
+      <div class="add-row-control">
+        <a href="App_insert.html">
+          <span class="circle-button button-position-0 " role="button" style>
+            <i class="fa fa-plus"></i>
+          </span>
+        </a>
+      </div>
+    </div>
+  </div>
+  <!-- /content-wrap -->
+  <!-- footer    -->
+  <div id="footer" class="FooterRail" style="height: 60px; border-top-width: 1px;">
+    <div id="FooterPopup" class="FooterPopup Invisible" style="display: block;"></div>
+    <div class="AppFooterContainer" style="position: fixed; bottom: 0; width: 100%;">
+      <div class="WidgetHelperRoot">
+        <div class="MuiBottomNavigation-root jss134" elevation="0"
+          style="background-color: rgb(255, 255, 255);border-top: 1px solid rgba(18, 18, 18, 0.07); border-right: none; border-bottom: none; border-left: none; border-image: initial; height: 60px; padding-left: 8px; padding-right: 8px;">
+          <button class="MuiButtonBase-root MuiBottomNavigationAction-root jss135" tabindex="0" type="button">
+            <span class="MuiBottomNavigationAction-wrapper">
+              <i class="MuiBottomNavigationAction-icon icon-picture"></i>
+              <span class="MuiBottomNavigationAction-label">Public Apps</span>
+            </span>
+            <span class="MuiTouchRipple-root"></span>
+          </button>
+          <button class="MuiButtonBase-root MuiBottomNavigationAction-root jss135 Mui-selected" tabindex="0"
+            type="button">
+            <span class="MuiBottomNavigationAction-wrapper">
+              <i class="MuiBottomNavigationAction-icon icon-briefcase"></i>
+              <span class="MuiBottomNavigationAction-label Mui-selected">My Apps</span>
+            </span>
+            <span class="MuiTouchRipple-root"></span>
+          </button>
+          <button class="MuiButtonBase-root MuiBottomNavigationAction-root jss135" tabindex="0" type="button">
+            <span class="MuiBottomNavigationAction-wrapper">
+              <i class="MuiBottomNavigationAction-icon icon-share-alt"></i>
+              <span class="MuiBottomNavigationAction-label">Shared Apps</span>
+            </span>
+            <span class="MuiTouchRipple-root"></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalCenterTitle">Log Out</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          Are you sure you want to logout?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-cancel" data-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-out">Log Out</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="{% static 'Gallery/Gallery_UI/assets/vendor/jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'Gallery/Gallery_UI/assets/vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'Gallery/Gallery_UI/assets/vendor/jquery/classie.js' %}"></script>
+  <script src="{% static 'Gallery/Gallery_UI/assets/vendor/jquery/main4.js' %}"></script>
+  <script src="{% static 'Gallery/Gallery_UI/assets/vendor/jquery/holmes.js' %}"></script>
+  <script>
+    // holmes setup
+    holmes({
+      input: '.search input',
+      find: 'table tr',
+      placeholder: '<h3>— No results. —</h3>',
+      class: {
+        visible: 'visible',
+        hidden: 'hidden'
+      }
+    });
+
+    function change() {
+      var divDisp = document.getElementById("search").style.display;
+      if (divDisp == "block") {
+        document.getElementById("search").style.display = "none";
+      } else {
+        document.getElementById("search").style.display = "block";
+      }
+    }
+  </script>
+
+</body>
+
+</html>

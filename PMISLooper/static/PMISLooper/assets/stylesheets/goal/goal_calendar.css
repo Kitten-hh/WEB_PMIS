@@ -1,0 +1,9 @@
+@media (max-width: 576px) {
+    #goal_calendar .SWCalendar .fc-toolbar-title.mobile {
+        font-size: 1rem;
+    }
+}
+
+#goal_calendar .SWCalendar .table-active, .table-active>td, .table-active>th {
+    background-color: #0179a8;
+}

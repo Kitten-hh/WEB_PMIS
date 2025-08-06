@@ -1,0 +1,190 @@
+
+.modal[size='lg'] .modal-dialog {
+    max-width: none !important;
+}
+
+.project_milestone_treegrid .tree_column_content {
+    display: inline !important;
+    white-space: pre-wrap;
+    vertical-align: baseline;
+}
+.project_milestone_treegrid.LPTreegrid .fixed-table-body {
+    min-height: calc(100vh - 10.5rem);
+}
+
+.LPGantt_container .board {
+    padding: .5rem 0;
+    height: calc(100vh - 8rem);
+}
+.LPGantt_container .board>.btn-group.btn-group-toggle {
+    margin-bottom: .5rem;
+}
+.LPGantt_container .board>.btn-group.btn-group-toggle,
+.LPGantt_container .board>.gantt-container {
+    margin-left: .25rem;
+    margin-right: .25rem;
+}
+.LPGantt_container .board>.gantt-container>svg {
+    touch-action: auto !important
+}
+
+/* dataTable 圖標 */
+.LPDataTable table.dataTable thead .sorting:before {
+    content: "\f0de" !important;
+    right: 0.5em !important;
+}
+
+.LPDataTable table.dataTable thead .sorting:after {
+    content: "\f0dd" !important;
+}
+
+.project_milestone_calendar.SWCalendar .fc .fc-header-toolbar {
+    margin-top: .5rem;
+    margin-bottom: .5rem;
+}
+
+.project_milestone_calendar .fc-header-toolbar.fc-toolbar .fc-toolbar-chunk:nth-child(2) .fc-toolbar-title {
+    font-size: 1rem;
+    margin-left: .5rem;
+}
+
+.project_milestone_tasksDataTable.LPDataTable {
+    margin-bottom: .5rem;
+}
+
+.project_milestone_tasksDataTable.LPDataTable table.dataTable th {
+    white-space: nowrap;
+}
+
+
+.editSessionForm,
+.editSessionForm>.form .container>.row>.col-lg-12 {
+    padding: 0;
+}
+.editSessionForm .example-compact {
+    margin-bottom: 0;
+}
+
+.editSessionForm .modal-body {
+    display: flex;
+    flex-wrap: wrap;
+    padding: .5rem;
+}
+
+.editSessionForm .modal-header {
+    box-shadow: 0 1px 0 0 rgba(20, 20, 31, .125);
+}
+.editSessionForm .modal-footer {
+    box-shadow: 0 -1px 0 0 rgba(20, 20, 31, .125);
+}
+
+.editSessionForm .modal-body .form-group {
+    position: relative;
+    width: 100%;
+    padding-right: 5px;
+    padding-left: 5px;
+    margin-bottom: .5rem;
+}
+
+.editSessionForm .modal-body .sessionWrap {
+    width: 100%;
+    padding-right: 5px;
+    padding-left: 5px;
+}
+.editSessionForm .modal-body .sessionWrap>label {
+    white-space: nowrap;
+}
+
+.editSessionForm .modal-body input[type="datetime-local"] {
+    min-width: 0;
+}
+
+.editSessionForm .modal-body .parentSessionWrap {
+    width: 100%;
+    padding-right: 12px;
+    padding-left: 12px;
+}
+.editSessionForm .modal-body .parentSessionWrap #editSession_parentSession {
+    margin-left: 1rem;
+}
+
+.sessionWrap #edit_session_sessionID {
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.editSessionForm .modal-body .form-group:not(:last-child):not(:nth-last-child(2)) {
+    flex: 0 0 50%;
+    max-width: 50%
+}
+
+.editSessionForm .example-compact .card-footer {
+    padding: .65rem !important;
+    justify-content: end !important;
+}
+.editSessionForm .example-compact .card-footer>.save {
+    margin-right: .5rem !important;
+}
+
+.parentSessionWrap .fa-rotate-by.fa-level-up-alt {
+    transform: rotate(90deg);
+    align-self: start;
+}
+
+@media (max-width: 575.98px) {
+    .project_milestone_calendar.SWCalendar {
+        margin-left: -.5rem;
+        margin-right: -.5rem;
+    }
+    .ganttModal .modal-dialog-scrollable .modal-header {
+        align-items: center;
+      }
+    .ganttModal .modal-dialog-scrollable .modal-header,
+    .ganttModal .modal-dialog-scrollable .modal-header>button.close {
+        padding-top: .5rem;
+        padding-bottom: .5rem;
+    }
+    .ganttModal .modal-body {
+        padding-left:4px;
+        padding-right:4px;
+    }    
+}
+
+@media (min-width: 576px) {
+    .editSessionForm .modal-dialog {
+        max-width: 400px;
+    }
+
+    .editSessionForm .modal-body {
+        padding: 1rem;
+    }
+}
+@media (min-width: 1400px) {
+    .gantt-operation-dropdown.dropdown-scroll {
+        height: 400px;
+    }
+}
+
+.lpAIComBox.modal .modal-dialog {
+    width: 100% !important;
+    max-width: 100% !important;
+    /* margin: 5px !important; */
+    height: 100vh !important;
+    overflow: hidden !important;
+}
+
+.lpAIComBox .modal-content .modal-body .card {
+    height:calc(100% - 18px);
+}
+.lpAIComBox .modal-content,.lpAIComBox iframe {
+    height: 100% !important;
+    min-height: auto;
+}
+.lpAIComBox .modal-content .modal-body,.lpAIComBox .modal-content .modal-body .card-body {
+    flex: 1;
+}
+.lpAIComBox .modal-dialog .modal-body .card {
+    display: flex !important;
+    flex-direction: column !important;
+    margin-bottom: 0px !important;
+}

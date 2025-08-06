@@ -1,0 +1,734 @@
+{% extends 'DevPlat/index.html'%}
+{%load static %}
+{% load i18n %}
+{% load md5url %}
+{%block form_css%}
+{{block.super}}
+<link rel="stylesheet" type="text/css" href="{% md5url 'DevPlat/assets/stylesheets/dev_sessions.css' %}"  data-skin="default"/>    
+<link rel="stylesheet" type="text/css" href="{% md5url 'DevPlat/assets/stylesheets/dev_sessions_dark.css' %}"  data-skin="dark"/> 
+<link rel="stylesheet" type="text/css" href="{% static 'BaseApp/assets/stylesheets/looper_base/components/SWAIComBox.css' %}" />
+<style>
+    .status-warning { border-left: 4px solid #f0ad4e; }
+
+    .status-success { border-left: 4px solid #2cc4cd; }
+    
+    .status-info { border-left: 4px solid #22bfed; }
+    
+    .status-danger { border-left: 4px solid #ff6262; }
+    
+    .status-primary { border-left: 4px solid #6c8bef; }
+    
+    .status.warning { background: #f0ad4e; }
+    
+    .status { -webkit-border-radius: 3px; -moz-border-radius: 3px; -ms-border-radius: 3px; border-radius: 3px; padding: 0 10px; line-height: 1.5; display: inline-block; vertical-align: middle; color: #ffffff; height: 26px; }
+    
+    .status.warning { background: #f0ad4e; }
+    
+    .status.success { background: #2cc4cd; }
+    
+    .status.info { background: #22bfed; }
+    
+    .status.danger { background: #ff6262; }                                                                                                                   
+    
+    .status.primary { background: #6c8bef; }       
+    #Session_Tasks .filter .col-form-label {
+        margin-right: 5px;
+    }
+    #Session_Tasks .filter input {
+        border-radius:.25rem !important;
+    }
+    #Session_Tasks .card-header {
+        font-weight: 400;
+        padding-bottom:.5rem;
+        padding-top:.5rem;
+    }
+    #session_top_tasks_datatable_wrapper .dataTables_pager, #session_top_priority_tasks_datatable_wrapper .dataTables_pager{
+        display: none;
+    }
+</style>
+{%endblock%}
+{%block default_components%}
+{%include "BaseApp/looper_base/components/SWAIComBox.html"%}       
+{%endblock%}
+{%block content %}
+{{block.super}}
+<div class="session_container">
+    <div class="card-header tab-menu">
+        <ul class="nav nav-tabs card-header-tabs">
+            <li class="nav-item">
+                <a class="nav-link active" data-toggle="tab" href="#Overview">{% trans "Overview"%}</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link show" data-toggle="tab" href="#Requirements">{% trans "Requirements"%}</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link show" data-toggle="tab" href="#Session_Tasks">{% trans "Session Tasks"%}</a>
+            </li>  
+            <li class="nav-item d-none d-md-block">
+                <a class="nav-link show" data-toggle="tab" href="#Diagram">{% trans "Diagram"%}</a>
+            </li>
+            <li class="nav-item d-none d-lg-block">
+                <a class="nav-link show" data-toggle="tab" href="#Design">{% trans "Design"%}</a>
+            </li>
+            <li class="nav-item d-none d-lg-block">
+                <a class="nav-link show" data-toggle="tab" href="#Specification">{% trans "Specification"%}</a>
+            </li>
+            <li class="nav-item d-none d-xl-block">
+                <a class="nav-link show" data-toggle="tab" href="#Deliverables">{% trans "Deliverables"%}</a>
+            </li>
+            <li class="nav-item d-none d-xl-block">
+                <a class="nav-link show" data-toggle="tab" href="#Questions">{% trans "Questions"%}</a>
+            </li>
+            <li class="nav-item d-none d-xl-block">
+                <a class="nav-link show" data-toggle="tab" href="#Quality">{% trans "Quality"%}</a>
+            </li>
+            <li class="nav-item d-none d-xxl-block">
+                <a class="nav-link show" data-toggle="tab" href="#Testing">{% trans "Testing"%}</a>
+            </li>
+            <li class="nav-item d-none d-xxl-block">
+                <a class="nav-link show" data-toggle="tab" href="#Control_Center">{% trans "Control Center"%}</a>
+            </li>          
+            <li class="nav-item d-none d-xxxl-block">
+                <a class="nav-link show" data-toggle="tab" href="#Summary">{% trans "Summary"%}</a>
+            </li>            
+            <li class="nav-item d-none d-xxxl-block">
+                <a class="nav-link show" data-toggle="tab" href="#User_Manual">{% trans "User Manual"%}</a>
+            </li>            
+            <li class="nav-item d-none d-xxxl-block">
+                <!-- xmm 增加用戶個人的Session log 以Session_log查詢-->
+                <a class="nav-link show" data-toggle="tab" href="#Session_Log">{% trans "Log"%}</a>
+            </li>            
+            <li class="dropdown d-xxxl-none tabDropdown">
+                <a class="nav-link" data-toggle="dropdown" href="#" role="button" aria-expanded="false">{% trans "More"%} <span
+                        class="caret"></span></a>
+                <div class="dropdown-menu dropdown-menu-right">
+                    <div class="dropdown-arrow"></div>
+                    <div class="dropdown-scroll">
+                        <!-- <a class="nav-link show" data-toggle="tab" href="#Session_Tasks">{% trans "Session Tasks"%}</a> -->
+                        <a class="nav-link show d-md-none" data-toggle="tab" href="#Diagram">{% trans "Diagram"%}</a>
+                        <a class="nav-link show d-md-none" data-toggle="tab" href="#Design">{% trans "Design"%}</a>
+                        <a class="nav-link show d-lg-none" data-toggle="tab" href="#Specification">{% trans "Specification"%}</a>
+                        <a class="nav-link show d-md-none" data-toggle="tab" href="#Deliverables">{% trans "Deliverables"%}</a>
+                        <a class="nav-link show d-lg-none" data-toggle="tab" href="#Questions">{% trans "Questions"%}</a>
+                        <a class="nav-link show d-xl-none" data-toggle="tab" href="#Quality">{% trans "Quality"%}</a>
+                        <a class="nav-link show d-xl-none" data-toggle="tab" href="#Testing">{% trans "Testing"%}</a>
+                        <a class="nav-link show d-xl-none" data-toggle="tab" href="#Control_Center">{% trans "Control Center"%}</a>
+                        <a class="nav-link show" data-toggle="tab" href="#Summary">{% trans "Summary"%}</a>
+                        <a class="nav-link show" data-toggle="tab" href="#User_Manual">{% trans "User Manual"%}</a>
+                        <a class="nav-link show" data-toggle="tab" href="#Session_Log">{% trans "Log"%}</a>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="card-body cardBody">
+        <div class="tab-content" id="pagecontrol_content">
+            <div class="tab-pane fade active show" id="Overview">
+            </div>
+            <div class="tab-pane fade" id="Requirements">
+                <ul class="nav nav-tabs d-none">
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#req_session_table">req_table</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active show" data-toggle="tab" href="#req_edit">req_edit</a>
+                    </li>
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane fade  active " id="req_session_table">
+                    </div>
+                    <div class="tab-pane fade  active show" id="req_edit">
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade px-0 h-100 pb-0" id="Diagram">
+                <div class="select_flowchart mb-2 mt-2 mt-sm-0">
+
+                </div>
+                <div class="iframe_wrapper">
+                    <iframe src="/flowchart/preview_diagram?hidetm=true" frameborder="0" width='100%' id="pciframe" class="iframe" style="height:100%"></iframe>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="Design">
+                <p>{% trans "Tab content Design" %}</p> 
+                <!-- <header class="page-title-bar">
+                    <div class="d-flex justify-content-between">
+                      <div class="d-md-inline-block">
+                        <div class="input-group input-group-alt">
+                          <div class="input-group">
+                            <div class="input-group-prepend">
+                              <span class="input-group-text"><span class="oi oi-magnifying-glass"></span></span>
+                            </div><input type="text" class="form-control" placeholder="Search">
+                          </div>
+                          <div class="input-group-append">
+                            <select class="custom-select">
+                              <option selected=""> Filter By </option>
+                              <option value="1"> Project </option>
+                            </select>
+                          </div>
+                        </div>
+                      </div><button type="button" class="btn btn-success d-none d-sm-inline-block btn-upload">Upload</button>
+                    </div><button type="button" class="btn btn-success btn-floated d-block d-sm-none"><span class="fa fa-plus"></span></button>
+                </header>   
+                <div class="section-block">
+                    <h3 class="section-title"> Folder </h3>
+                    <div class="metric-row mb-0">
+                        <div class="col-12 col-sm-6 col-lg-3">
+                            <div class="card mb-lg-0">
+                                <div class="card-body d-flex align-items-center">
+                                    <div class="leftInfo d-flex align-items-center flex-fill">
+                                        <i class="far fa-folder-open fa-fw mr-3" style="font-size: 1.5rem;"></i>
+                                        <h2 class="metric-label mt-0"> Teams </h2>
+                                    </div>
+                                    <div class="list-group-item-figure">
+                                        <div class="dropdown">
+                                            <button class="btn btn-sm btn-icon btn-light" data-toggle="dropdown" aria-expanded="false"><i
+                                                    class="fa fa-fw fa-ellipsis-v"></i></button>
+                                            <div class="dropdown-menu dropdown-menu-right" style="">
+                                                <div class="dropdown-arrow mr-n1"></div><button type="button" class="dropdown-item">Download</button> <button
+                                                    type="button" class="dropdown-item">View details</button> <button type="button" class="dropdown-item">Share
+                                                    file</button> <button type="button" class="dropdown-item">Copy link file</button>
+                                                <div class="dropdown-divider"></div><button type="button" class="dropdown-item">Remove</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-lg-3">
+                            <div class="card mb-lg-0">
+                                <div class="card-body d-flex align-items-center">
+                                    <div class="leftInfo d-flex align-items-center flex-fill">
+                                        <i class="far fa-folder-open fa-fw mr-3" style="font-size: 1.5rem;"></i>
+                                        <h2 class="metric-label mt-0"> Projects </h2>
+                                    </div>
+                                    <div class="list-group-item-figure">
+                                        <div class="dropdown">
+                                            <button class="btn btn-sm btn-icon btn-light" data-toggle="dropdown" aria-expanded="false"><i
+                                                    class="fa fa-fw fa-ellipsis-v"></i></button>
+                                            <div class="dropdown-menu dropdown-menu-right" style="">
+                                                <div class="dropdown-arrow mr-n1"></div><button type="button" class="dropdown-item">Download</button> <button
+                                                    type="button" class="dropdown-item">View details</button> <button type="button" class="dropdown-item">Share
+                                                    file</button> <button type="button" class="dropdown-item">Copy link file</button>
+                                                <div class="dropdown-divider"></div><button type="button" class="dropdown-item">Remove</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-lg-3">
+                            <div class="card mb-lg-0">
+                                <div class="card-body d-flex align-items-center">
+                                    <div class="leftInfo d-flex align-items-center flex-fill">
+                                        <i class="far fa-folder-open fa-fw mr-3" style="font-size: 1.5rem;"></i>
+                                        <h2 class="metric-label mt-0"> People </h2>
+                                    </div>
+                                    <div class="list-group-item-figure">
+                                        <div class="dropdown">
+                                            <button class="btn btn-sm btn-icon btn-light" data-toggle="dropdown" aria-expanded="false"><i
+                                                    class="fa fa-fw fa-ellipsis-v"></i></button>
+                                            <div class="dropdown-menu dropdown-menu-right" style="">
+                                                <div class="dropdown-arrow mr-n1"></div><button type="button" class="dropdown-item">Download</button> <button
+                                                    type="button" class="dropdown-item">View details</button> <button type="button" class="dropdown-item">Share
+                                                    file</button> <button type="button" class="dropdown-item">Copy link file</button>
+                                                <div class="dropdown-divider"></div><button type="button" class="dropdown-item">Remove</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="section-block d-flex align-items-center justify-content-between">
+                    <h3 class="section-title"> Files </h3>
+                    <ul class="nav nav-pills filesNav">
+                        <li class="nav-item">
+                          <a class="nav-link" href="#fileGrid" data-toggle="tab"><i class="fas fa-th-large"></i></a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link active" href="#fileViewList" data-toggle="tab"><i class="fas fa-list-ul"></i></a>
+                        </li>
+                      </ul>
+                </div>
+                <div id="myFilesContent" class="tab-content">
+                    <div class="tab-pane fade" id="fileGrid">
+                        <div class="row"></div>
+                    </div>
+                    <div class="tab-pane fade active show" id="fileViewList">
+                        <div class="card card-fluid displayDocuments">
+                            <div class="list-group list-group-flush list-group-divider" id="documentContainer"></div>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+            <div class="tab-pane fade" id="Specification">
+                <ul class="nav nav-tabs d-none">
+                    <li class="nav-item">
+                        <a class="nav-link active show" data-toggle="tab" href="#spec_table">spec_table</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " data-toggle="tab" href="#spec_edit">spec_edit</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#TechRequirement">TechRequirement</a>
+                    </li>
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane fade  active show" id="spec_table">
+                        <div class="d-flex justify-content-between">
+                            <a class="btn btn-sm btn-primary" id="add_spec" href="#"><i class="fa fa-plus"></i></a>
+                        </div>
+                        <div id="spec_table_container"></div>
+                    </div>
+                    <div class="tab-pane fade" id="spec_edit">
+                        <div id="showSpecAIDocument"></div>
+                        <div id="stepper" class="daily_planning bs-stepper">
+                        <div class="card">
+                            <div class="card-header">
+                                <div class="test d-flex flex-row align-items-center">
+                                    <a class="back text-gray-soft" href="#"><i class="fa fa-chevron-left"></i>{% trans "Back"%}</a>
+                                    <h5 class="text-center tech_title mb-0 flex-grow-1">{% trans "Add Specification"%}</h5>
+                                    <a class="btn btn-sm btn-secondary" id="spec_q_ai_btn" href="#"><i class="fa fa-robot"></i></a>
+                                </div>                                
+                                <div class="steps steps-" role="tablist">
+                                    <ul>
+                                        <li class="step active" data-target="#spec-l-1" data-validate="fieldset01">
+                                            <a href="#" class="step-trigger" tabindex="-1" aria-selected="true"><span
+                                                    class="step-indicator step-indicator-icon"><i
+                                                        class="fas fa-file"></i></span> <span
+                                                    class="d-none d-lg-inline">{% trans "Basic"%}</span></a>
+                                        </li>
+                                        <li class="step" data-target="#spec-l-2" data-validate="fieldset02">
+                                            <a href="#" class="step-trigger" tabindex="-1" aria-selected="false"><span
+                                                    class="step-indicator step-indicator-icon"><i
+                                                        class="fas fa-tasks"></i></span> <span class="d-none d-lg-inline">{% trans "Function"%}</span></a>
+                                        </li>
+                                        <li class="step" data-target="#spec-l-3" data-validate="fieldset03">
+                                            <a href="#" class="step-trigger" tabindex="-1" aria-selected="false"><span
+                                                    class="step-indicator step-indicator-icon"><i
+                                                        class="fas fa-window-restore"></i></span> <span
+                                                    class="d-none d-lg-inline">{% trans "Instructions"%}</span></a>
+                                        </li>
+                                        <li class="step" data-target="#spec-l-4" data-validate="agreement">
+                                            <a href="#" class="step-trigger" tabindex="-1" aria-selected="false"><span
+                                                    class="step-indicator step-indicator-icon"><i
+                                                        class="oi oi-puzzle-piece"></i></span> <span
+                                                    class="d-none d-lg-inline">{% trans "Logic"%}</span></a>
+                                        </li>
+                                        <li class="step" data-target="#spec-l-5" data-validate="agreement">
+                                            <a href="#" class="step-trigger" tabindex="-1" aria-selected="false"><span
+                                                    class="step-indicator step-indicator-icon"><i
+                                                        class="oi oi-check"></i></span> <span
+                                                    class="d-none d-lg-inline">{% trans "Maintain"%}</span></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="card-body" id="spec_from_div">
+                                <form id="stepper-form" name="stepperForm" class="p-0 pc_form">
+                                    <div id="spec-l-1" class="content fade active dstepper-block">
+                                        <fieldset>
+                                            <div class="field-section">
+                                            </div>
+                                            <hr class="mt-4">
+                                            <div class="d-flex">
+                                                <button type="button" class="next btn btn-primary ml-auto"
+                                                    data-validate="fieldset01">{% trans "Next step"%}</button>
+                                            </div>
+                                        </fieldset>
+                                    </div>
+                                    <div id="spec-l-2" class="content dstepper-none fade">
+                                        <fieldset>
+                                            <div class="field-section">
+                                                <a class="btn btn-sm btn-primary" id="add_spec_function" href="#"><i class="fa fa-plus"></i></a>
+                                            </div>
+                                            <hr class="mt-4">
+                                            <div class="d-flex">
+                                                <button type="button" class="prev btn btn-secondary">{% trans "Previous"%}</button> <button
+                                                    type="button" class="next btn btn-primary ml-auto"
+                                                    data-validate="fieldset02">{% trans "Next step"%}</button>
+                                            </div>
+                                        </fieldset>
+                                    </div>
+                                    <div id="spec-l-3" class="content dstepper-none fade">
+                                        <fieldset>
+                                            <div class="field-section">
+                                                <a class="btn btn-sm btn-primary" id="add_inst_function" href="#"><i class="fa fa-plus"></i></a>
+                                            </div>
+                                            <hr class="mt-4">
+                                            <div class="d-flex">
+                                                <button type="button" class="prev btn btn-secondary">{% trans "Previous"%}</button> <button
+                                                    type="button" class="next btn btn-primary ml-auto"
+                                                    data-validate="fieldset02">{% trans "Next step"%}</button>
+                                            </div>
+                                        </fieldset>                                        
+                                    </div>
+                                    <div id="spec-l-4" class="content dstepper-none fade">
+                                        <fieldset>
+                                            <div class="field-section">
+                                                <a class="btn btn-sm btn-primary" id="add_logical_function" href="#"><i class="fa fa-plus"></i></a>
+                                            </div>
+                                            <hr class="mt-4">
+                                            <div class="d-flex">
+                                                <button type="button" class="prev btn btn-secondary">{% trans "Previous"%}</button> <button
+                                                    type="button" class="next btn btn-primary ml-auto"
+                                                    data-validate="fieldset02">{% trans "Next step"%}</button>
+                                            </div>
+                                        </fieldset>                                        
+                                    </div>
+                                    <div id="spec-l-5" class="content dstepper-none fade">
+                                        <fieldset>
+                                            <div class="field-section">
+                                                <a class="btn btn-sm btn-primary" id="add_maintain_function" href="#"><i class="fa fa-plus"></i></a>
+                                            </div>
+                                            <hr class="mt-4">
+                                            <div class="d-flex">
+                                                <button type="button" class="prev btn btn-secondary">{% trans "Previous"%}</button> 
+                                                <button type="submit" id="stepper_form_submit" class=" btn btn-primary ml-auto save" 
+                                                data-validate="agreement">{% trans "Save"%}</button>
+                                            </div>
+                                        </fieldset>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>                        
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="TechRequirement">
+                        <div id="SWCard" class="card">
+                            <div class="card-header"> 
+                                <div class="test d-flex flex-row align-items-center">
+                                    <a class="back text-gray-soft" href="#"><i class="fa fa-chevron-left"></i>{% trans "Back"%}</a>
+                                    <h5 class="text-center techreq_title mb-0 flex-grow-1">{% trans "Technical Requirement"%}</h5>
+                                </div>                                 
+                            </div>
+                            <div class="card-body">
+                                <a class="btn btn-sm btn-primary" id="add_tecreq" href="#"><i class="fa fa-plus"></i></a>
+                                <div id="tecreq_table_container"></div>        
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="Deliverables">
+                <p>{% trans "Tab content Deliverables" %}</p>
+            </div>
+            <div class="tab-pane fade" id="Knowledge_based">
+                <p> {% trans "Tab content Knowledge based"%}</p>
+            </div>
+            <div class="tab-pane fade" id="Questions">
+                <div class="row">
+                    <div class="col"></div>
+                    <div class="col-auto col_right form-inline ml-0">
+                        <div class="d-flex " style="flex-direction: column;">
+                        </div>
+                    </div>
+                </div>
+                <div id="questions_table">
+
+                </div>
+            </div>
+            <div class="tab-pane fade" id="Quality">
+                <p> {% trans "Tab content Quality"%}</p>
+            </div>
+            <div class="tab-pane fade" id="Testing">
+                <p> {% trans "Tab content Testing"%} </p>
+            </div>
+            <div class="tab-pane fade" id="Control_Center">
+                <ul class="nav nav-tabs d-none">
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#control_center_table">control_center_table</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active show" data-toggle="tab" href="#control_center_edit">control_center_edit</a>
+                    </li>
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane fade  active " id="control_center_table">
+                    </div>
+                    <div class="tab-pane fade  active show" id="control_center_edit">
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="Session_Tasks">
+                <div class="card">
+                    <div class="card-header py-1">
+                        <div class="filter pt-2 row m-0">
+                            <div class="toolbar col-auto mt-xl-0">
+                                <!-- <button type="button" class="btn btn-primary btn-ai" id="chataibtn"><i class="fas fa-robot d-xxxl-none"></i><span class="d-none d-xxxl-inline-block">{% trans "AI" %}</span></button> -->
+                                <button type="button" class="btn btn-primary btn-ai chatWithAiBtn" id="chataibtn">
+                                    <img src="../../static/DevPlat/assets/images/Ai.png" width="24" height="24" alt="AI" class="chatWithAiBtnIcon d-xxxl-none">
+                                    <span class="d-none d-xxxl-inline-block">{% trans "AI" %}</span>
+                                </button>
+                                <button type="button" class="btn btn-primary btn-clear"><i class="fa fa-broom d-xxxl-none"></i><span class="d-none d-xxxl-inline-block">{% trans "Clear" %}</span></button>
+                                <button type="button" class="btn btn-primary btn-search"><i class="oi oi-magnifying-glass d-xxxl-none"></i><span class="d-none d-xxxl-inline-block">{% trans "Search" %}</span></button>
+                                <button type="button" class="btn btn-primary btn-add"><i class="fa fa-plus d-xxxl-none"></i><span class="d-none d-xxxl-inline-block">{% trans "Add Task" %}</span></button>
+                            </div>
+                        </div>        
+                    </div>
+                    <div class="card-body pt-0">
+                        <ul class="nav nav-tabs session_tasks_menu">
+                            <li class="nav-item">
+                                <a class="nav-link active" data-toggle="tab" href="#SessionTasks">{% trans "SessionTasks"%}</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link show" data-toggle="tab" href="#DocumentList">{% trans "Document list"%}</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link show" data-toggle="tab" href="#SessionTopTasks">{% trans "SessionTopTasks"%}</a>
+                            </li>
+                            <li class="nav-item d-none d-md-block">
+                                <a class="nav-link show" data-toggle="tab" href="#SessionTopPriorityTasks">{% trans "SessionTopPriorityTasks"%}</a>
+                            </li>
+                        </ul>
+                        <div class="tab-content">
+                            <div id="showAI"></div>
+                            <div id="showAIDocument"></div>
+                            <div class="tab-pane fade show active" id="SessionTasks">
+                                <div id="session_tasks_table">
+                                </div>                                
+                            </div>
+                            <div class="tab-pane fade" id="DocumentList">
+                                <div id="document_list_table" class="mt-3">
+                                    <div class="d-flex align-items-center justify-content-between mb-3">
+                                        <div class="input-group has-clearable mr-3">
+                                            <button type="button" class="close" aria-label="Close"><span aria-hidden="true"><i
+                                                        class="fa fa-times-circle"></i></span></button>
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><span class="oi oi-magnifying-glass"></span></span>
+                                            </div><input type="text" class="form-control" placeholder="Search">
+                                        </div>
+                                        <ul class="nav nav-pills filesNav flex-nowrap">
+                                            <li class="nav-item pr-1">
+                                                <a class="nav-link" href="#fileGrid" data-toggle="tab"><i class="fas fa-th-large"></i></a>
+                                            </li>
+                                            <li class="nav-item pr-1">
+                                                <a class="nav-link active" href="#fileViewList" data-toggle="tab"><i class="fas fa-list-ul"></i></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div id="myFilesContent" class="tab-content">
+                                        <div class="tab-pane fade pt-1 scrollbar" id="fileGrid">
+                                            <div class="row mx-0"></div>
+                                        </div>
+                                        <div class="tab-pane fade active show px-1 pt-1 scrollbar" id="fileViewList">
+
+                                        </div>
+                                    </div>
+                                </div>                                
+                            </div>
+                            <div class="tab-pane fade" id="SessionTopTasks">
+                                <div id="session_top_tasks_table">
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="SessionTopPriorityTasks">
+                                <div id="session_top_priority_tasks_table">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>                
+            </div>
+            <div class="tab-pane fade" id="Summary">
+                <p> {% trans "Tab content Summary"%}</p>
+            </div>
+            <div class="tab-pane fade" id="User_Manual">
+                <p> {% trans "Tab content User Manual"%}</p>
+            </div>
+            <div class="tab-pane fade" id="Session_Log">
+                <div class="h-100">
+                    {% comment %} {%include "DevPlat/SessionLog.html"%} {% endcomment %}
+                    <iframe src="/devplat/session/log_page?hidetm=true" frameborder="0" width='100%' id="logiframe" class="iframe" style="height:98%"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="task_item_template" class="collapse task-collapse" style="display: none;">
+    <div class="row task_wap task-item">
+        <span class="d-none pk">[[inc_id]]</span>
+        <div class="col-12">
+            <div class="card wrap-primary">
+                <div class="card-body">
+                    <div class="card-title d-flex align-content-center">
+                        <span class="task-num">
+                            <h4 class="card-subtitle"><i class="fas fa-circle circle-dot"></i>[[taskno]]</h4>
+                        </span>
+                        <span class="ml-auto alert-link">[[progress]]</span>
+                    </div>
+                    <div class="card-content d-flex pl-2">
+                        <div class="font-weight-bolder">[[task]]</div>
+                    </div>
+                </div>
+                <div class="footer_wrap text-dark">
+                    <ul class="list d-flex justify-content-around pl-0 flex-wrap">
+                        <li class="list-item">
+                            <span class="menu-text"> [[planbdate]] / [[planedate]]</span>
+                        </li>
+                        <li class="list-item">
+                            <span class="">[[schpriority]]</span>
+                        </li>
+                        <li class="list-item">
+                            <span class="badge badge-subtle badge-primary">[[contact]]</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="select_system" tabindex="-1" role="dialog" aria-labelledby="SWSelectqueryLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h6 class="modal-title">{% trans "Select System"%}</h6>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><i class="fas fa-times" style="font-size: 20px;color: #000;"></i></button>
+            </div>
+            <div class="modal-body">
+                <div class="data_wrapper" >
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary btn-selected">{% trans "Save"%}</button> 
+                <button type="button" class="btn btn-light" data-dismiss="modal">{% trans "Cancel"%}</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="edit_spec_func" tabindex="-1" role="dialog" aria-labelledby="form" style="display: none;" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-scrollable col-12">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">{% trans "Edit Function"%}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><i class="far fa-times-circle" style="font-size: 20px;color: #bbb;"></i></button>
+            </div>
+            <div class="modal-body">               
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-subtle-danger mr-5 new_save">{% trans "Save"%}</button>
+                <button class="btn btn-subtle-info" data-dismiss="modal" aria-label="Close">{% trans "Cancel"%}</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="edit_spec_inst" tabindex="-1" role="dialog" aria-labelledby="form" style="display: none;" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-scrollable col-12">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">{% trans "Edit Instructions"%}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><i class="far fa-times-circle" style="font-size: 20px;color: #bbb;"></i></button>
+            </div>
+            <div class="modal-body">               
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-subtle-danger mr-5 new_save">{% trans "Save"%}</button>
+                <button class="btn btn-subtle-info" data-dismiss="modal" aria-label="Close">{% trans "Cancel"%}</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="edit_spec_logical" tabindex="-1" role="dialog" aria-labelledby="form" style="display: none;" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-scrollable col-12">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">{% trans "Edit Instructions"%}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><i class="far fa-times-circle" style="font-size: 20px;color: #bbb;"></i></button>
+            </div>
+            <div class="modal-body">               
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-subtle-danger mr-5 new_save">{% trans "Save"%}</button>
+                <button class="btn btn-subtle-info" data-dismiss="modal" aria-label="Close">{% trans "Cancel"%}</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="edit_spec_maintain" tabindex="-1" role="dialog" aria-labelledby="form" style="display: none;" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-scrollable col-12">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">{% trans "Edit Instructions"%}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><i class="far fa-times-circle" style="font-size: 20px;color: #bbb;"></i></button>
+            </div>
+            <div class="modal-body">               
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-subtle-danger mr-5 new_save">{% trans "Save"%}</button>
+                <button class="btn btn-subtle-info" data-dismiss="modal" aria-label="Close">{% trans "Cancel"%}</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="edit_tecreq" tabindex="-1" role="dialog" aria-labelledby="form" style="display: none;" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-scrollable col-12">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">{% trans "Edit Technical Requirement"%}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><i class="far fa-times-circle" style="font-size: 20px;color: #bbb;"></i></button>
+            </div>
+            <div class="modal-body">               
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-subtle-danger mr-5 new_save">{% trans "Save"%}</button>
+                <button class="btn btn-subtle-info" data-dismiss="modal" aria-label="Close">{% trans "Cancel"%}</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="image-Modal" tabindex="-1" role="dialog" aria-labelledby="form" style="display: none;" aria-hidden="true">
+    <div class="modal-dialog" role="document" style="max-width:1000px">
+        <div class="modal-content" style="background-color: inherit;border: 0;">
+            <div class="modal-body p-0 text-center">
+                <img src="" style="border-radius: 5px;max-width:980px;" data-dismiss="modal" aria-label="Close">
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Design -->
+<div class="modal fade" id="uploadFileModal" tabindex="-1" role="dialog" aria-labelledby="form" style="display: none;" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-scrollable col-12">
+        <div class="modal-content">
+            <div class="modal-header pt-2">
+                <h5 class="modal-title">Upload file</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><i class="fa fa-times" style="font-size: 18px;color: #000;"></i></button>
+            </div>
+            <div class="modal-body">         
+                <div id="dropzone" class="fileinput-dropzone mb-3">
+                    <img class="file_avatar mb-3" src="../../static/DevPlat/assets/images/oc-browse.svg" alt="Image Description" >
+                    <h6 class="font-weight-bolder">Drop your file here, or <a href="#">Browse</a></h6>
+                    <p class="card-text text-muted"> Maximum file size 50mb </p>
+                    <input id="fileupload-dropzone" type="file" accept=".pdf, .doc, .ppt, .jpg, .png">
+                </div>
+                <div id="uploadList" class="list-group list-group-flush list-group-divider">
+                    <div class="list-group-header"> Uploaded Files </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{%endblock%}
+{%block form_js%}
+{{block.super}}
+<script>
+    $(function () {
+        //設置Menu菜單的MenuItem
+    });
+</script>
+<script src="{% static 'BaseApp/vendor/Looper/assets/vendor/parsleyjs/parsley.min.js'%}"></script>
+<script src="{% static 'BaseApp/vendor/Looper/assets/vendor/bs-stepper/js/bs-stepper.js'%}"></script>
+<script src="{% md5url 'DevPlat/assets/javascript/requirements.js' %}" type="text/javascript"></script>
+<script src="{% md5url 'DevPlat/assets/javascript/overview.js' %}" type="text/javascript"></script>
+<script src="{% md5url 'DevPlat/assets/javascript/question.js' %}" type="text/javascript"></script>
+<!-- <script src="{% md5url 'DevPlat/assets/javascript/design.js' %}" type="text/javascript"></script>  -->
+<script src="{% md5url 'DevPlat/assets/javascript/techrequirement.js' %}" type="text/javascript"></script>
+<script src="{% md5url 'DevPlat/assets/javascript/Specification.js' %}" type="text/javascript"></script>
+<script src="{% md5url 'DevPlat/assets/javascript/session_tasks.js' %}" type="text/javascript"></script>
+<script src="{% md5url 'DevPlat/assets/javascript/control_center.js' %}" type="text/javascript"></script>
+{% comment %} <script src="{% md5url 'DevPlat/assets/javascript/session_log.js' %}" type="text/javascript"></script> {% endcomment %}
+<script src="{% md5url 'BaseApp/assets/javascript/looper_base/components/SWAIComBox.js' %}" type="text/javascript"></script> 
+<script src="{% md5url 'DevPlat/assets/javascript/dev_sessions.js' %}" type="text/javascript"></script>
+{%endblock%}

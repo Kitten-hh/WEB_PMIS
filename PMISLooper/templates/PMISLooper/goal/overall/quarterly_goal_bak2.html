@@ -1,0 +1,1755 @@
+{% extends 'PMISLooper/index.html' %}
+{%load static %}
+{% load md5url %}
+{%block form_css%}
+{{block.super}}
+<link rel="stylesheet" href="{% static 'PMISLooper/assets/vendor/icofont/icofont.min.css'%}">
+<link rel="stylesheet" href="{% static 'PMISLooper/assets/stylesheets/goal/overall/quarterly_goal.css'%}" data-skin="default">
+<link rel="stylesheet" href="{% static 'PMISLooper/assets/stylesheets/goal/overall/quarterly_goal_dark.css'%}" data-skin="dark">
+{%endblock%}
+{%block content %}
+{{block.super}}
+<div class="page-inner">
+    <div id="qGoals_pc" class="page-content quarterly_Goals_pc d-lg-block d-none">
+        <div class="container-fluid">
+            <!-- start page title -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="page-title-box d-flex align-items-center justify-content-between">
+                        <h5 class="mb-0 goal_title">Quarterly Goal</h5>
+                        <div class="page-title-right">
+                            <ol class="breadcrumb m-0">
+                                <li class="breadcrumb-item">
+                                    <a href="javascript: void(0);">Goals for 2020</a>
+                                </li>
+                                <li class="breadcrumb-item active">2020-03 Quarterly Goal</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- end page title -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="card goals_wrap">
+                        <div class="card-body">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-10 monthly">
+                                    <div class="row quaGoal">
+                                        <div class="col-lg-12 col-xl-5">
+                                            <div class="home-img text-center">
+                                                <div class="animation-2"></div>
+                                                <div class="animation-3"></div>
+                                                <img src="../../../../static/PMISLooper/assets/images/img-3.png"
+                                                    alt="">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12 col-xl-7">
+                                            <div class="manager_quarterly_goal">
+                                                <div class="row m-0 justify-content-between align-items-center">
+                                                    <span class="goals_ti">Quarterly Goals</span>
+                                                    <div class="goals_ti_right form-inline">
+                                                    <div class="text-right">
+                                                        <span class="save"></span>
+                                                        <a href="javascript:void(0);" class="edit">
+                                                            <i class="fas fa-edit"></i>
+                                                        </a>
+                                                    </div>
+                                                    </div>
+                                                </div>
+                                                <ul class="all_goals">
+                                                    <li class="mb-2 pl-3 pr-3 d-flex justify-content-start">
+                                                        <span class="task_num">01 <i class="fas fa-arrow-right pl-2"></i></span>
+                                                        <p class="task_contents">Create Rest Api Services. (hb)</p>
+                                                    </li>
+                                                    <li class="mb-2 pl-3 pr-3 d-flex justify-content-start">
+                                                        <span class="task_num">02 <i class="fas fa-arrow-right pl-2"></i></span>
+                                                        <p class="task_contents">Ensure the knowledge based system have a sound foundation. (hb & qfq)</p>
+                                                    </li>
+                                                    <li class="mb-2 pl-3 pr-3 d-flex justify-content-start">
+                                                        <span class="task_num">03 <i class="fas fa-arrow-right pl-2"></i></span>
+                                                        <p class="task_contents">Machine Learning work with the task category prediction. (zeng & sing)</p>
+                                                    </li>
+                                                    <li class="mb-2 pl-3 pr-3 d-flex justify-content-start">
+                                                        <span class="task_num">04 <i class="fas fa-arrow-right pl-2"></i></span>
+                                                        <p class="task_contents">Work on order to shipment in a stright systemic manner. (Qfq)</p>
+                                                    </li>
+                                                    <li class="mb-2 pl-3 pr-3 d-flex justify-content-start">
+                                                        <span class="task_num">05 <i class="fas fa-arrow-right pl-2"></i></span>
+                                                        <p class="task_contents">Integration with Mo Way. (hb & qfq)</p>
+                                                    </li>
+                                                    <li class="mb-2 pl-3 pr-3 d-flex justify-content-start">
+                                                        <span class="task_num">06 <i class="fas fa-arrow-right pl-2"></i></span>
+                                                        <p class="task_contents">Management and Deliverables</p>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <ul class="nav nav-pills justify-content-center monthly-tab" role="tablist">
+                                        <li class="nav-item mr-2"><a class="nav-link active" data-toggle="pill"
+                                                href="#June" role="tab"> June </a></li>
+                                        <li class="nav-item mr-2"><a class="nav-link" data-toggle="pill" href="#Aug"
+                                                role="tab"> August </a></li>
+                                        <li class="nav-item"><a class="nav-link" data-toggle="pill" href="#Sept"
+                                                role="tab"> September </a></li>
+                                    </ul>
+                                    <div class="tab-content"> 
+                                        <div class="tab-pane fade show active month-1" id="June" role="tabpanel">
+                                            <div class="monthly-1 blog-quota mt-4">
+                                                <div class="row align-items-center">
+                                                    <div class="col-lg-3 col-xl-4">
+                                                        <h2 class="mb-0 month text-lg-left text-center">June</h2>
+                                                    </div>
+                                                    <div class="col-lg-9 col-xl-8">
+                                                        <ul class="week-filter nav justify-content-center justify-content-xl-end"
+                                                            id="week">
+                                                            <li class="nav-item">
+                                                                <a class="nav-link active" id="week1" data-toggle="pill"
+                                                                    href="#">
+                                                                    Week1
+                                                                </a>
+                                                            </li>
+                                                            <li class="nav-item">
+                                                                <a class="nav-link" id="week2" data-toggle="pill"
+                                                                    href="#">
+                                                                    Week2
+                                                                </a>
+                                                            </li>
+                                                            <li class="nav-item">
+                                                                <a class="nav-link" id="week3" data-toggle="pill"
+                                                                    href="#">
+                                                                    Week3
+                                                                </a>
+                                                            </li>
+                                                            <li class="nav-item">
+                                                                <a class="nav-link" id="week4" data-toggle="pill"
+                                                                    href="#">
+                                                                    Week4
+                                                                </a>
+                                                            </li>
+                                                            <li class="nav-item">
+                                                                <a class="nav-link" id="week5" data-toggle="pill"
+                                                                    href="#">
+                                                                    Week5
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="monthly-1_goals">
+                                                    <h5 class="text-center text-primary">Monthly Goals</h5>
+                                                    <div class="row">
+                                                        <div class="col-12">
+                                                            <div class="sing_goals">
+                                                                <div class="row m-0 justify-content-between">
+                                                                    <span class="goals_ti">by sing</span>
+                                                                    <div class="text-right">
+                                                                        <span class="save"></span>
+                                                                        <a href="javascript:void(0);" class="edit">
+                                                            <i class="fas fa-edit"></i>
+                                                        </a>
+                                                                    </div>
+                                                                </div>
+                                                                <ul class="task-inner">
+                                                                    <li class="task d-flex mb-2">
+                                                                        <span>1. 00188 Knowledge Based System</span>
+                                                                    </li>
+                                                                    <li class="task d-flex mb-2">
+                                                                        <span>2. 00300-16038 Open Django CRM Content
+                                                                            Management(之前是以qfq為主，現在是以hb為主)</span>
+                                                                    </li>
+                                                                    <li class="task d-flex mb-2">
+                                                                        <span>3. Have both the real time PIMS with lower
+                                                                            version available. (00300-16018)</span>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12">
+                                                            <div class="mine_goals">
+                                                                <div class="row m-0 justify-content-between">
+                                                                    <span class="goals_ti user_month_goals_ti">by hb</span>
+                                                                    <div class="text-right">
+                                                                        <a href="javascript:void(0);" class="search">
+                                                                            <i class="fas fa-plus-circle"></i>
+                                                                        </a>
+                                                                    </div>
+                                                                </div>
+                                                                <ul class="task-inner">
+                                                                    <li class="task d-flex mb-2">
+                                                                        <span>1. 基本完成自動排期新邏輯，達到可以使用到7成(00001-11075 UR -
+                                                                            以新邏輯優化自動排期)</span>
+                                                                        <div class="ml-auto">
+                                                                            <a href="javascript:void(0);"
+                                                                                class="text-info" data-toggle="tooltip"
+                                                                                data-placement="top" title=""
+                                                                                data-original-title="Delete">
+                                                                                <i class="far fa-times-circle"></i>
+                                                                            </a>
+                                                                        </div>
+                                                                    </li>
+                                                                    <li class="task d-flex mb-2">
+                                                                        <span>2. Djano
+                                                                            ERP實現基類新增修改及單據操作的通用功能,完成報表服務器功能,優化表格中數據顯示，提供通用錄入查詢框</span>
+                                                                        <div class="ml-auto">
+                                                                            <a href="javascript:void(0);"
+                                                                                class="text-info" data-toggle="tooltip"
+                                                                                data-placement="top" title=""
+                                                                                data-original-title="Delete">
+                                                                                <i class="far fa-times-circle"></i>
+                                                                            </a>
+                                                                        </div>
+                                                                    </li>
+                                                                    <li class="task d-flex mb-2">
+                                                                        <span>3. 完成Looper中Project的Overview,Board
+                                                                            User菜單的Tasks查詢及報表功能(00300-16040 UR - ERP
+                                                                            以django實現車間常用模塊，將車間pc版erp轉到使用工按機上使用網頁版ERP)</span>
+                                                                        <div class="ml-auto">
+                                                                            <a href="javascript:void(0);"
+                                                                                class="text-info" data-toggle="tooltip"
+                                                                                data-placement="top" title=""
+                                                                                data-original-title="Delete">
+                                                                                <i class="far fa-times-circle"></i>
+                                                                            </a>
+                                                                        </div>
+                                                                    </li>
+                                                                    <li class="task d-flex mb-2">
+                                                                        <span>4. 實際搬廠的方案及查找關於數據同步的最好方法(00900-40061
+                                                                            Moving Service)</span>
+                                                                        <div class="ml-auto">
+                                                                            <a href="javascript:void(0);"
+                                                                                class="text-info" data-toggle="tooltip"
+                                                                                data-placement="top" title=""
+                                                                                data-original-title="Delete">
+                                                                                <i class="far fa-times-circle"></i>
+                                                                            </a>
+                                                                        </div>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="mt-50 desc_week1">
+                                                    <div class="weekly_task">
+                                                        <div class="widget weekly_task_widget">
+                                                            <div class="row m-0 justify-content-between">
+                                                                <h4 class="widget-title mb-4">weekly1</h4>
+                                                                <div class="text-right">
+                                                                    <a href="javascript:void(0);" class="search">
+                                                                        <i class="fas fa-plus-circle"></i>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                            <div class="task">
+                                                                <ul class="task-inner">
+                                                                    <li class="task-item">
+                                                                        <span class="mr-2">1.討論需求及設計自動排期</span>
+                                                                        <i class="far fa-times-circle"></i>
+                                                                    </li>
+                                                                    <li class="task-item">
+                                                                        <span class="mr-2">
+
+                                                                        </span>
+                                                                        <i class="far fa-times-circle"></i>
+                                                                    </li>
+                                                                    <li class="task-item">
+                                                                        <span class="mr-2">
+
+                                                                        </span>
+                                                                        <i class="far fa-times-circle"></i>
+                                                                    </li>
+                                                                    <li class="task-item">
+                                                                        <span class="mr-2">
+
+                                                                        </span>
+                                                                        <i class="far fa-times-circle"></i>
+                                                                    </li>
+                                                                    <li class="task-item">
+                                                                        <span class="mr-2">
+
+                                                                        </span>
+                                                                        <i class="far fa-times-circle"></i>
+                                                                    </li>
+                                                                    <li class="task-item">
+                                                                        <span class="mr-2">
+
+                                                                        </span>
+                                                                        <i class="far fa-times-circle"></i>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                        <div class="widget weekly_task_widget">
+                                                            <div class="row m-0 justify-content-between">
+                                                                <h4 class="widget-title mb-4">weekly2</h4>
+                                                                <div class="text-right">
+                                                                    <a href="javascript:void(0);" class="search">
+                                                                        <i class="fas fa-plus-circle"></i>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                            <div class="task">
+                                                                <ul class="task-inner">
+                                                                    <li class="task-item">
+                                                                        <span
+                                                                            class="mr-2">1.開始模擬排期及完成參數定義介面及Session內排期的邏</span>
+                                                                        <i class="far fa-times-circle"></i>
+                                                                    </li>
+                                                                    <li class="task-item">
+                                                                        <span class="mr-2">2.Overview the progress
+                                                                            of the technical</span>
+                                                                        <i class="far fa-times-circle"></i>
+                                                                    </li>
+                                                                    <li class="task-item">
+                                                                        <span class="mr-2">3.Identify the next stage
+                                                                            of this project based on their feedback
+                                                                            and the planning of the whole moving
+                                                                            services</span>
+                                                                        <i class="far fa-times-circle"></i>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                        <div class="widget weekly_task_widget">
+                                                            <div class="row m-0 justify-content-between">
+                                                                <h4 class="widget-title mb-4">weekly3</h4>
+                                                                <div class="text-right">
+                                                                    <a href="javascript:void(0);" class="search">
+                                                                        <i class="fas fa-plus-circle"></i>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                            <div class="task">
+                                                                <ul class="task-inner">
+                                                                    <li class="task-item">
+                                                                        <span class="mr-2">1.Have both the real time
+                                                                            PIMS with lower version available</span>
+                                                                        <i class="far fa-times-circle"></i>
+                                                                    </li>
+                                                                    <li class="task-item">
+                                                                        <span class="mr-2">2.Real kick off ot the
+                                                                            New scheduling in program</span>
+                                                                        <i class="far fa-times-circle"></i>
+                                                                    </li>
+                                                                    <li class="task-item">
+                                                                        <span class="mr-2">3.Complete the previous
+                                                                            weeks goal</span>
+                                                                        <i class="far fa-times-circle"></i>
+                                                                    </li>
+                                                                    <li class="task-item">
+                                                                        <span class="mr-2">4.Cater for all those
+                                                                            critical mention in PMS from lmy</span>
+                                                                        <i class="far fa-times-circle"></i>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="weekly_task">
+                                                        <div class="widget weekly_task_widget">
+                                                            <div class="row m-0 justify-content-between">
+                                                                <h4 class="widget-title mb-4">weekly4</h4>
+                                                                <div class="text-right">
+                                                                    <a href="javascript:void(0);" class="search">
+                                                                        <i class="fas fa-plus-circle"></i>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                            <div class="task">
+                                                                <ul class="task-inner">
+                                                                    <li class="task-item">
+                                                                        <span class="mr-2">1.完成模擬排期的工具頁面</span>
+                                                                        <i class="far fa-times-circle"></i>
+                                                                    </li>
+                                                                    <li class="task-item">
+                                                                        <span
+                                                                            class="mr-2">2.使用低版django支持多字段主鍵，盡可能使用Goal
+                                                                            Master頁面可以使用真實數據庫</span>
+                                                                        <i class="far fa-times-circle"></i>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                        <div class="widget weekly_task_widget">
+                                                            <div class="row m-0 justify-content-between">
+                                                                <h4 class="widget-title mb-4">weekly5</h4>
+                                                                <div class="text-right">
+                                                                    <a href="javascript:void(0);" class="search">
+                                                                        <i class="fas fa-plus-circle"></i>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                            <div class="task">
+                                                                <ul class="task-inner">
+                                                                    <li class="task-item">
+                                                                        <span
+                                                                            class="mr-2">1.開始進行Schedule的編程工作</span>
+                                                                        <i class="far fa-times-circle"></i>
+                                                                    </li>
+                                                                    <li class="task-item">
+                                                                        <span class="mr-2">2.寫一個Moving
+                                                                            Server的方案</span>
+                                                                        <i class="far fa-times-circle"></i>
+                                                                    </li>
+                                                                    <li class="task-item">
+                                                                        <span class="mr-2">
+                                                                            3.完成PMIS之前已經有功能，能夠全部使用真實數據</span>
+                                                                        <i class="far fa-times-circle"></i>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane fade month-2" id="Aug" role="tabpanel">
+                                            <div class="monthly-1 blog-quota mt-4">
+                                                <div class="row align-items-center">
+                                                    <div class="col-lg-3 col-xl-4">
+                                                        <h2 class="mb-0 month">August</h2>
+                                                    </div>
+                                                    <div class="col-lg-9 col-xl-8">
+                                                        <ul class="week-filter nav justify-content-center justify-content-lg-end"
+                                                            id="week">
+                                                            <li class="nav-item">
+                                                                <a class="nav-link active" id="week1" data-toggle="pill"
+                                                                    href="#">
+                                                                    Week1
+                                                                </a>
+                                                            </li>
+                                                            <li class="nav-item">
+                                                                <a class="nav-link" id="week2" data-toggle="pill"
+                                                                    href="#">
+                                                                    Week2
+                                                                </a>
+                                                            </li>
+                                                            <li class="nav-item">
+                                                                <a class="nav-link" id="week3" data-toggle="pill"
+                                                                    href="#">
+                                                                    Week3
+                                                                </a>
+                                                            </li>
+                                                            <li class="nav-item">
+                                                                <a class="nav-link" id="week4" data-toggle="pill"
+                                                                    href="#">
+                                                                    Week4
+                                                                </a>
+                                                            </li>
+                                                            <li class="nav-item">
+                                                                <a class="nav-link" id="week5" data-toggle="pill"
+                                                                    href="#">
+                                                                    Week5
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="monthly-1_goals">
+                                                    <h5 class="text-center text-primary">Monthly Goals</h5>
+                                                    <div class="row">
+                                                        <div class="col-12">
+                                                            <div class="sing_goals">
+                                                                <div class="row m-0 justify-content-between">
+                                                                    <span class="goals_ti">by sing</span>
+                                                                    <div class="text-right">
+                                                                        <span class="save"></span>
+                                                                        <a href="javascript:void(0);" class="edit">
+                                                            <i class="fas fa-edit"></i>
+                                                        </a>
+                                                                    </div>
+                                                                </div>
+                                                                <ul class="task-inner">
+                                                                    <li class="task d-flex mb-2">
+                                                                        <span>What can be accomplished of the new
+                                                                            scheduling at the end of the month</span>
+                                                                        <div class="ml-auto">
+                                                                            <a href="javascript:void(0);"
+                                                                                class="text-info" data-toggle="tooltip"
+                                                                                data-placement="top" title=""
+                                                                                data-original-title="Delete">
+                                                                                <i class="far fa-times-circle"></i>
+                                                                            </a>
+                                                                        </div>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12">
+                                                            <div class="mine_goals">
+                                                                <div class="row m-0 justify-content-between">
+                                                                    <span class="goals_ti user_month_goals_ti">by hb</span>
+                                                                    <div class="text-right">
+                                                                        <a href="javascript:void(0);" class="search">
+                                                                            <i class="fas fa-plus-circle"></i>
+                                                                        </a>
+                                                                    </div>
+                                                                </div>
+                                                                <ul class="task-inner">
+                                                                    <li class="task d-flex mb-2">
+                                                                        <span></span>
+                                                                        <div class="ml-auto">
+                                                                            <a href="javascript:void(0);"
+                                                                                class="text-info" data-toggle="tooltip"
+                                                                                data-placement="top" title=""
+                                                                                data-original-title="Delete">
+                                                                                <i class="far fa-times-circle"></i>
+                                                                            </a>
+                                                                        </div>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="mt-50 desc_week1">
+                                                    <div class="weekly_task">
+                                                        <div class="widget weekly_task_widget">
+                                                            <div class="row m-0 justify-content-between">
+                                                                <h4 class="widget-title mb-4">weekly1</h4>
+                                                                <div class="text-right">
+                                                                    <a href="javascript:void(0);" class="search">
+                                                                        <i class="fas fa-plus-circle"></i>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                            <div class="task">
+                                                                <ul class="task-inner">
+                                                                    <li class="task-item">
+                                                                        <span class="mr-2">1.完成Single
+                                                                            Page基類的通用新增，修改，刪除保存功能</span>
+                                                                        <i class="far fa-times-circle"></i>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                        <div class="widget weekly_task_widget">
+                                                            <div class="row m-0 justify-content-between">
+                                                                <h4 class="widget-title mb-4">weekly2</h4>
+                                                                <div class="text-right">
+                                                                    <a href="javascript:void(0);" class="search">
+                                                                        <i class="fas fa-plus-circle"></i>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                            <div class="task">
+                                                                <ul class="task-inner">
+                                                                    <li class="task-item">
+                                                                        <span class="mr-2">1.完善設置參數功能及Get Priority
+                                                                            in Session邏輯</span>
+                                                                        <i class="far fa-times-circle"></i>
+                                                                    </li>
+                                                                    <li class="task-item">
+                                                                        <span class="mr-2">2.Make sure the further
+                                                                            requirement of the moving services need
+                                                                            to be done in order to be implemented
+                                                                            (fixed day this week)</span>
+                                                                        <i class="far fa-times-circle"></i>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                        <div class="widget weekly_task_widget">
+                                                            <div class="row m-0 justify-content-between">
+                                                                <h4 class="widget-title mb-4">weekly3</h4>
+                                                                <div class="text-right">
+                                                                    <a href="javascript:void(0);" class="search">
+                                                                        <i class="fas fa-plus-circle"></i>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                            <div class="task">
+                                                                <ul class="task-inner">
+                                                                    <li class="task-item">
+                                                                        <span class="mr-2">1. 完善Get Priority in
+                                                                            Session邏輯及Quarterly Schedule及Fixed Day
+                                                                            Schedule</span>
+                                                                        <i class="far fa-times-circle"></i>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="weekly_task">
+                                                        <div class="widget weekly_task_widget">
+                                                            <div class="row m-0 justify-content-between">
+                                                                <h4 class="widget-title mb-4">weekly4</h4>
+                                                                <div class="text-right">
+                                                                    <a href="javascript:void(0);" class="search">
+                                                                        <i class="fas fa-plus-circle"></i>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                            <div class="task">
+                                                                <ul class="task-inner">
+                                                                    <li class="task-item">
+                                                                        <span class="mr-2">1.完成Quarterly
+                                                                            Schedule及分配計畫日期的邏輯</span>
+                                                                        <i class="far fa-times-circle"></i>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                        <div class="widget weekly_task_widget">
+                                                            <div class="row m-0 justify-content-between">
+                                                                <h4 class="widget-title mb-4">weekly5</h4>
+                                                                <div class="text-right">
+                                                                    <a href="javascript:void(0);" class="search">
+                                                                        <i class="fas fa-plus-circle"></i>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                            <div class="task">
+                                                                <ul class="task-inner">
+                                                                    <li class="task-item">
+                                                                        <span class="mr-2">1. 完成排期顯示結果頁面</span>
+                                                                        <i class="far fa-times-circle"></i>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane fade month-3" id="Sept" role="tabpanel">
+                                            <div class="monthly-1 blog-quota mt-4">
+                                                <div class="row align-items-center">
+                                                    <div class="col-lg-3 col-xl-4">
+                                                        <h2 class="mb-0 month">September</h2>
+                                                    </div>
+                                                    <div class="col-lg-9 col-xl-8">
+                                                        <ul class="week-filter nav justify-content-center justify-content-lg-end"
+                                                            id="week">
+                                                            <li class="nav-item">
+                                                                <a class="nav-link active" id="week1" data-toggle="pill"
+                                                                    href="#">
+                                                                    Week1
+                                                                </a>
+                                                            </li>
+                                                            <li class="nav-item">
+                                                                <a class="nav-link" id="week2" data-toggle="pill"
+                                                                    href="#">
+                                                                    Week2
+                                                                </a>
+                                                            </li>
+                                                            <li class="nav-item">
+                                                                <a class="nav-link" id="week3" data-toggle="pill"
+                                                                    href="#">
+                                                                    Week3
+                                                                </a>
+                                                            </li>
+                                                            <li class="nav-item">
+                                                                <a class="nav-link" id="week4" data-toggle="pill"
+                                                                    href="#">
+                                                                    Week4
+                                                                </a>
+                                                            </li>
+                                                            <li class="nav-item">
+                                                                <a class="nav-link" id="week5" data-toggle="pill"
+                                                                    href="#">
+                                                                    Week5
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="monthly-1_goals">
+                                                    <h5 class="text-center text-primary">Monthly Goals</h5>
+                                                    <div class="row">
+                                                        <div class="col-12">
+                                                            <div class="sing_goals">
+                                                                <div class="row m-0 justify-content-between">
+                                                                    <span class="goals_ti">by sing</span>
+                                                                    <div class="text-right">
+                                                                        <span class="save"></span>
+                                                                        <a href="javascript:void(0);" class="edit">
+                                                            <i class="fas fa-edit"></i>
+                                                        </a>
+                                                                    </div>
+                                                                </div>
+                                                                <ul class="task-inner">
+                                                                    <li class="task d-flex mb-2">
+                                                                        <span>Cater for Django Solution Type and tidy up
+                                                                            and standardized at least 3 technical
+                                                                            daily.</span>
+                                                                        <div class="ml-auto">
+                                                                            <a href="javascript:void(0);"
+                                                                                class="text-info" data-toggle="tooltip"
+                                                                                data-placement="top" title=""
+                                                                                data-original-title="Delete">
+                                                                                <i class="far fa-times-circle"></i>
+                                                                            </a>
+                                                                        </div>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12">
+                                                            <div class="mine_goals">
+                                                                <div class="row m-0 justify-content-between">
+                                                                    <span class="goals_ti user_month_goals_ti">by hb</span>
+                                                                    <div class="text-right">
+                                                                        <a href="javascript:void(0);" class="search">
+                                                                            <i class="fas fa-plus-circle"></i>
+                                                                        </a>
+                                                                    </div>
+                                                                </div>
+                                                                <ul class="task-inner">
+                                                                    <li class="task d-flex mb-2">
+                                                                        <span></span>
+                                                                        <div class="ml-auto">
+                                                                            <a href="javascript:void(0);"
+                                                                                class="text-info" data-toggle="tooltip"
+                                                                                data-placement="top" title=""
+                                                                                data-original-title="Delete">
+                                                                                <i class="far fa-times-circle"></i>
+                                                                            </a>
+                                                                        </div>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="mt-50 desc_week1">
+                                                    <div class="weekly_task">
+                                                        <div class="widget weekly_task_widget">
+                                                            <div class="row m-0 justify-content-between">
+                                                                <h4 class="widget-title mb-4">weekly1</h4>
+                                                                <div class="text-right">
+                                                                    <a href="javascript:void(0);" class="search">
+                                                                        <i class="fas fa-plus-circle"></i>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                            <div class="task">
+                                                                <ul class="task-inner">
+                                                                    <li class="task-item">
+                                                                        <span class="mr-2">1. Fixed Day
+                                                                            Schedule的邏輯及修改原Java
+                                                                            Schedule生成Appraisal和Goal及TaskEnquiry_Frm中Past
+                                                                            8 Day表</span>
+                                                                        <i class="far fa-times-circle"></i>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                        <div class="widget weekly_task_widget">
+                                                            <div class="row m-0 justify-content-between">
+                                                                <h4 class="widget-title mb-4">weekly2</h4>
+                                                                <div class="text-right">
+                                                                    <a href="javascript:void(0);" class="search">
+                                                                        <i class="fas fa-plus-circle"></i>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                            <div class="task">
+                                                                <ul class="task-inner">
+                                                                    <li class="task-item">
+                                                                        <span
+                                                                            class="mr-2">1.完成任務變更時Schedule邏輯</span>
+                                                                        <i class="far fa-times-circle"></i>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                        <div class="widget weekly_task_widget">
+                                                            <div class="row m-0 justify-content-between">
+                                                                <h4 class="widget-title mb-4">weekly3</h4>
+                                                                <div class="text-right">
+                                                                    <a href="javascript:void(0);" class="search">
+                                                                        <i class="fas fa-plus-circle"></i>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                            <div class="task">
+                                                                <ul class="task-inner">
+                                                                    <li class="task-item">
+                                                                        <!-- <span class="mr-2"></span>
+                                                                        <i class="far fa-times-circle"></i> -->
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="weekly_task">
+                                                        <div class="widget weekly_task_widget">
+                                                            <div class="row m-0 justify-content-between">
+                                                                <h4 class="widget-title mb-4">weekly4</h4>
+                                                                <div class="text-right">
+                                                                    <a href="javascript:void(0);" class="search">
+                                                                        <i class="fas fa-plus-circle"></i>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                            <div class="task">
+                                                                <ul class="task-inner">
+                                                                    <li class="task-item">
+                                                                        <!-- <span class="mr-2"></span>
+                                                                        <i class="far fa-times-circle"></i> -->
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                        <div class="widget weekly_task_widget">
+                                                            <div class="row m-0 justify-content-between">
+                                                                <h4 class="widget-title mb-4">weekly5</h4>
+                                                                <div class="text-right">
+                                                                    <a href="javascript:void(0);" class="search">
+                                                                        <i class="fas fa-plus-circle"></i>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                            <div class="task">
+                                                                <ul class="task-inner">
+                                                                    <li class="task-item">
+                                                                        <!-- <span class="mr-2">(5 of 5)App Server(00298)</span>
+                                                                        <i class="far fa-times-circle"></i> -->
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- end row -->
+        </div><!-- container-fluid -->
+    </div>
+
+    <div id="qGoals_mobile" class="page-content quarterly_Goals_m d-block d-lg-none">
+        <div class="container-fluid">
+            <!-- start page title -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="page-title-box d-flex align-items-center justify-content-between">
+                        <h5 class="mb-0 goal_title">Goals for 2021</h5>
+                        <div class="page-title-right">
+                            <ol class="breadcrumb m-0">
+                                <li class="breadcrumb-item active">2021-01 Quarterly Goal</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- end page title -->
+            <div class="row">
+                <div class="col-12 p-2">
+                    <div class="manager_quarterly_goal">
+                        <div class="row m-0 mb-2 justify-content-between align-items-center">
+                            <span class="goals_ti">Quarterly Goals</span>
+                            <div class="goals_ti_right form-inline">
+                            <div class="text-right">
+                                <span class="save"></span>
+                                <a href="javascript:void(0);" class="edit">
+                                    <i class="fas fa-edit"></i>
+                                </a>
+                            </div>
+                            </div>
+                        </div>
+                        <ul class="all_goals">
+                            <li class="mb-2 d-flex justify-content-start">
+                                <i class="icofont-tick-mark mr-2"></i>
+                                <p class="mb-0">Create Rest Api Services. (hb)</p>
+                            </li>
+                            <li class="mb-2 d-flex justify-content-start"><i class="icofont-tick-mark mr-2"></i>
+                                <p class="mb-0">Ensure the knowledge based system have a sound foundation. (hb & qfq)</p>
+                                </li>
+                            <li class="mb-2 d-flex justify-content-start"><i class="icofont-tick-mark mr-2"></i>
+                                <p class="mb-0">Machine Learning work with the task category prediction. (zeng & sing)</p>
+                                </li>
+                            <li class="mb-2 d-flex justify-content-start"><i class="icofont-tick-mark mr-2"></i>
+                                <p class="mb-0">Work on order to shipment in a stright systemic manner. (Qfq)</p>
+                                </li>
+                            <li class="mb-2 d-flex justify-content-start"><i class="icofont-tick-mark mr-2"></i>
+                                <p class="mb-0">Integration with Mo Way. (hb & qfq)</p>
+                                </li>
+                            <li class="mb-2 d-flex justify-content-start"><i class="icofont-tick-mark mr-2"></i>
+                                <p class="mb-0">Management and Deliverables</p>
+                                </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 p-2">
+                    <div class="card goals_wrap">
+                        <div class="card-header ">
+                            <ul class="nav nav-tabs card-header-tabs justify-content-center monthly-tab">
+                                <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#june">
+                                        <h6>June</h6>
+                                    </a></li>
+                                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#aug">
+                                        <h6>August</h6>
+                                    </a></li>
+                                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#sept">
+                                        <h6>September</h6>
+                                    </a></li>
+                            </ul>
+                        </div>
+                        <div class="card-body">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-10 monthly">
+                                    <div class="tab-content">
+                                        <div class="tab-pane fade show active month-1" id="june" role="tabpanel">
+                                            <div class="monthly-1 blog-quota">
+                                                <div class="row align-items-center mt-3">
+                                                    <div class="col-lg-6">
+                                                        <div class="week-filter-wrap">
+                                                            <ul class="week-filter nav justify-content-center justify-content-lg-end"
+                                                                id="week">
+                                                                <li class="nav-item">
+                                                                    <a class="nav-link active week-item" id="week1"
+                                                                        data-toggle="pill" href="#">
+                                                                        Week1
+                                                                    </a>
+                                                                </li>
+                                                                <li class="nav-item">
+                                                                    <a class="nav-link week-item" id="week2"
+                                                                        data-toggle="pill" href="#">
+                                                                        Week2
+                                                                    </a>
+                                                                </li>
+                                                                <li class="nav-item">
+                                                                    <a class="nav-link week-item" id="week3"
+                                                                        data-toggle="pill" href="#">
+                                                                        Week3
+                                                                    </a>
+                                                                </li>
+                                                                <li class="nav-item">
+                                                                    <a class="nav-link week-item" id="week4"
+                                                                        data-toggle="pill" href="#">
+                                                                        Week4
+                                                                    </a>
+                                                                </li>
+                                                                <li class="nav-item">
+                                                                    <a class="nav-link week-item" id="week5"
+                                                                        data-toggle="pill" href="#">
+                                                                        Week5
+                                                                    </a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="monthly-1_goals">
+                                                    <h5 class="text-center text-primary">Monthly Goals</h5>
+                                                    <div class="row">
+                                                        <div class="col-12">
+                                                            <div class="sing_goals">
+                                                                <div class="row m-0 justify-content-between">
+                                                                    <span class="goals_ti">by sing</span>
+                                                                    <div class="text-right">
+                                                                        <span class="save"></span>
+                                                                        <a href="javascript:void(0);" class="edit">
+                                                            <i class="fas fa-edit"></i>
+                                                        </a>
+                                                                    </div>
+                                                                </div>
+                                                                <ul class="task-inner">
+                                                                    <li class="task d-flex mb-2">
+                                                                        <span>1. 00188 Knowledge Based System</span>
+                                                                    </li>
+                                                                    <li class="task d-flex mb-2">
+                                                                        <span>2. 00300-16038 Open Django CRM Content
+                                                                            Management(之前是以qfq為主，現在是以hb為主)</span>
+                                                                    </li>
+                                                                    <li class="task d-flex mb-2">
+                                                                        <span>3. Have both the real time PIMS with lower
+                                                                            version available. (00300-16018)</span>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12">
+                                                            <div class="mine_goals">
+                                                                <div class="row m-0 justify-content-between">
+                                                                    <span class="goals_ti user_month_goals_ti">by hb</span>
+                                                                    <div class="text-right">
+                                                                        <a href="javascript:void(0);" class="search">
+                                                                            <i class="fas fa-plus-circle"></i>
+                                                                        </a>
+                                                                    </div>
+                                                                </div>
+                                                                <ul class="task-inner">
+                                                                    <li class="task d-flex mb-2">
+                                                                        <span>1. 基本完成自動排期新邏輯，達到可以使用到7成(00001-11075 UR -
+                                                                            以新邏輯優化自動排期)</span>
+                                                                        <div class="ml-auto">
+                                                                            <a href="javascript:void(0);"
+                                                                                class="text-info" data-toggle="tooltip"
+                                                                                data-placement="top" title=""
+                                                                                data-original-title="Delete">
+                                                                                <i class="far fa-times-circle"></i>
+                                                                            </a>
+                                                                        </div>
+                                                                    </li>
+                                                                    <li class="task d-flex mb-2">
+                                                                        <span>2. Djano
+                                                                            ERP實現基類新增修改及單據操作的通用功能,完成報表服務器功能,優化表格中數據顯示，提供通用錄入查詢框</span>
+                                                                        <div class="ml-auto">
+                                                                            <a href="javascript:void(0);"
+                                                                                class="text-info" data-toggle="tooltip"
+                                                                                data-placement="top" title=""
+                                                                                data-original-title="Delete">
+                                                                                <i class="far fa-times-circle"></i>
+                                                                            </a>
+                                                                        </div>
+                                                                    </li>
+                                                                    <li class="task d-flex mb-2">
+                                                                        <span>3. 完成Looper中Project的Overview,Board
+                                                                            User菜單的Tasks查詢及報表功能(00300-16040 UR - ERP
+                                                                            以django實現車間常用模塊，將車間pc版erp轉到使用工按機上使用網頁版ERP)</span>
+                                                                        <div class="ml-auto">
+                                                                            <a href="javascript:void(0);"
+                                                                                class="text-info" data-toggle="tooltip"
+                                                                                data-placement="top" title=""
+                                                                                data-original-title="Delete">
+                                                                                <i class="far fa-times-circle"></i>
+                                                                            </a>
+                                                                        </div>
+                                                                    </li>
+                                                                    <li class="task d-flex mb-2">
+                                                                        <span>4. 實際搬廠的方案及查找關於數據同步的最好方法(00900-40061
+                                                                            Moving Service)</span>
+                                                                        <div class="ml-auto">
+                                                                            <a href="javascript:void(0);"
+                                                                                class="text-info" data-toggle="tooltip"
+                                                                                data-placement="top" title=""
+                                                                                data-original-title="Delete">
+                                                                                <i class="far fa-times-circle"></i>
+                                                                            </a>
+                                                                        </div>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="mt-50 desc_week1">
+                                                    <div class="row align-items-center">
+                                                        <div class="col-12">
+                                                            <div id="accordion2" class="card-expansion">
+                                                                <!-- .card -->
+                                                                <div class="card card-expansion-item expanded mb-24">
+                                                                    <div class="card-header border-0" id="weekly1">
+                                                                        <button
+                                                                            class="btn btn-reset d-flex justify-content-between w-100"
+                                                                            data-toggle="collapse"
+                                                                            data-target="#collapseOne2"
+                                                                            aria-expanded="true"
+                                                                            aria-controls="collapseOne2">
+                                                                            <span
+                                                                                class="week_title text-primary">weekly1<span>01</span></span>
+                                                                            <span class="collapse-indicator"><i
+                                                                                    class="fa fa-fw fa-chevron-down"></i></span>
+                                                                        </button>
+                                                                    </div>
+                                                                    <div id="collapseOne2" class="collapse show"
+                                                                        aria-labelledby="weekly1"
+                                                                        data-parent="#accordion2" style="">
+                                                                        <div class="card-body">
+                                                                            <ul class="task-inner">
+                                                                                <li class="task-item">
+                                                                                    <span
+                                                                                        class="mr-2">1.討論需求及設計自動排期</span>
+                                                                                    <i class="far fa-times-circle"></i>
+                                                                                </li>
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+                                                                </div><!-- /.card -->
+                                                                <!-- .card -->
+                                                                <div class="card card-expansion-item mb-24">
+                                                                    <div class="card-header border-0" id="weekly2">
+                                                                        <button
+                                                                            class="btn btn-reset d-flex justify-content-between w-100 collapsed"
+                                                                            data-toggle="collapse"
+                                                                            data-target="#collapseTwo2"
+                                                                            aria-expanded="false"
+                                                                            aria-controls="collapseTwo2"><span
+                                                                                class="week_title text-primary">weekly2
+                                                                                <span>02</span></span> <span
+                                                                                class="collapse-indicator"><i
+                                                                                    class="fa fa-fw fa-chevron-down"></i></span></button>
+                                                                    </div>
+                                                                    <div id="collapseTwo2" class="collapse"
+                                                                        aria-labelledby="weekly2"
+                                                                        data-parent="#accordion2">
+                                                                        <div class="card-body">
+                                                                            <ul class="task-inner">
+                                                                                <li class="task-item">
+                                                                                    <span
+                                                                                        class="mr-2">1.開始模擬排期及完成參數定義介面及Session內排期的邏</span>
+                                                                                    <i class="far fa-times-circle"></i>
+                                                                                </li>
+                                                                                <li class="task-item">
+                                                                                    <span class="mr-2">2.Overview the
+                                                                                        progress of the technical</span>
+                                                                                    <i class="far fa-times-circle"></i>
+                                                                                </li>
+                                                                                <li class="task-item">
+                                                                                    <span class="mr-2">3.Identify the
+                                                                                        next stage of this project based
+                                                                                        on their feedback and the
+                                                                                        planning of the whole moving
+                                                                                        services</span>
+                                                                                    <i class="far fa-times-circle"></i>
+                                                                                </li>
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+                                                                </div><!-- /.card -->
+                                                                <!-- .card -->
+                                                                <div class="card card-expansion-item mb-24">
+                                                                    <div class="card-header border-0" id="weekly3">
+                                                                        <button
+                                                                            class="btn btn-reset d-flex justify-content-between w-100 collapsed"
+                                                                            data-toggle="collapse"
+                                                                            data-target="#collapseThree2"
+                                                                            aria-expanded="false"
+                                                                            aria-controls="collapseThree2"><span
+                                                                                class="week_title text-primary">weekly3
+                                                                                <span>03</span></span> <span
+                                                                                class="collapse-indicator"><i
+                                                                                    class="fa fa-fw fa-chevron-down"></i></span></button>
+                                                                    </div>
+                                                                    <div id="collapseThree2" class="collapse"
+                                                                        aria-labelledby="weekly3"
+                                                                        data-parent="#accordion2">
+                                                                        <div class="card-body">
+                                                                            <ul class="task-inner">
+                                                                                <li class="task-item">
+                                                                                    <span class="mr-2">1.Have both the
+                                                                                        real time PIMS with lower
+                                                                                        version available</span>
+                                                                                    <i class="far fa-times-circle"></i>
+                                                                                </li>
+                                                                                <li class="task-item">
+                                                                                    <span class="mr-2">2.Real kick off
+                                                                                        ot the New scheduling in
+                                                                                        program</span>
+                                                                                    <i class="far fa-times-circle"></i>
+                                                                                </li>
+                                                                                <li class="task-item">
+                                                                                    <span class="mr-2">3.Complete the
+                                                                                        previous weeks goal</span>
+                                                                                    <i class="far fa-times-circle"></i>
+                                                                                </li>
+                                                                                <li class="task-item">
+                                                                                    <span class="mr-2">4.Cater for all
+                                                                                        those critical mention in PMS
+                                                                                        from lmy</span>
+                                                                                    <i class="far fa-times-circle"></i>
+                                                                                </li>
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+                                                                </div><!-- /.card -->
+                                                                <div class="card card-expansion-item mb-24">
+                                                                    <div class="card-header border-0" id="weekly4">
+                                                                        <button
+                                                                            class="btn btn-reset d-flex justify-content-between w-100 collapsed"
+                                                                            data-toggle="collapse"
+                                                                            data-target="#collapseFour2"
+                                                                            aria-expanded="false"
+                                                                            aria-controls="collapseThree2"><span
+                                                                                class="week_title text-primary">weekly4
+                                                                                <span>04</span></span> <span
+                                                                                class="collapse-indicator"><i
+                                                                                    class="fa fa-fw fa-chevron-down"></i></span></button>
+                                                                    </div>
+                                                                    <div id="collapseFour2" class="collapse"
+                                                                        aria-labelledby="weekly4"
+                                                                        data-parent="#accordion2">
+                                                                        <div class="card-body">
+                                                                            <ul class="task-inner">
+                                                                                <li class="task-item">
+                                                                                    <span
+                                                                                        class="mr-2">1.完成模擬排期的工具頁面</span>
+                                                                                    <i class="far fa-times-circle"></i>
+                                                                                </li>
+                                                                                <li class="task-item">
+                                                                                    <span
+                                                                                        class="mr-2">2.使用低版django支持多字段主鍵，盡可能使用Goal
+                                                                                        Master頁面可以使用真實數據庫</span>
+                                                                                    <i class="far fa-times-circle"></i>
+                                                                                </li>
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+                                                                </div><!-- /.card -->
+                                                                <div class="card card-expansion-item mb-24">
+                                                                    <div class="card-header border-0" id="weekly5">
+                                                                        <button
+                                                                            class="btn btn-reset d-flex justify-content-between w-100 collapsed"
+                                                                            data-toggle="collapse"
+                                                                            data-target="#collapseFive2"
+                                                                            aria-expanded="false"
+                                                                            aria-controls="collapseThree2"><span
+                                                                                class="week_title text-primary">weekly5
+                                                                                <span>05</span></span> <span
+                                                                                class="collapse-indicator"><i
+                                                                                    class="fa fa-fw fa-chevron-down"></i></span></button>
+                                                                    </div>
+                                                                    <div id="collapseFive2" class="collapse"
+                                                                        aria-labelledby="weekly5"
+                                                                        data-parent="#accordion2">
+                                                                        <div class="card-body">
+                                                                            <ul class="task-inner">
+                                                                                <li class="task-item">
+                                                                                    <span
+                                                                                        class="mr-2">1.開始進行Schedule的編程工作</span>
+                                                                                    <i class="far fa-times-circle"></i>
+                                                                                </li>
+                                                                                <li class="task-item">
+                                                                                    <span class="mr-2">2.寫一個Moving
+                                                                                        Server的方案</span>
+                                                                                    <i class="far fa-times-circle"></i>
+                                                                                </li>
+                                                                                <li class="task-item">
+                                                                                    <span class="mr-2">
+                                                                                        3.完成PMIS之前已經有功能，能夠全部使用真實數據</span>
+                                                                                    <i class="far fa-times-circle"></i>
+                                                                                </li>
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+                                                                </div><!-- /.card -->
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane fade month-2" id="aug" role="tabpanel">
+                                            <div class="monthly-1 blog-quota">
+                                                <div class="row align-items-center mt-3 mb-3">
+                                                    <div class="col-lg-6">
+                                                        <div class="week-filter-wrap">
+                                                            <ul class="week-filter nav justify-content-center justify-content-lg-end"
+                                                                id="week">
+                                                                <li class="nav-item">
+                                                                    <a class="nav-link active week-item" id="week1"
+                                                                        data-toggle="pill" href="#">
+                                                                        Week1
+                                                                    </a>
+                                                                </li>
+                                                                <li class="nav-item">
+                                                                    <a class="nav-link week-item" id="week2"
+                                                                        data-toggle="pill" href="#">
+                                                                        Week2
+                                                                    </a>
+                                                                </li>
+                                                                <li class="nav-item">
+                                                                    <a class="nav-link week-item" id="week3"
+                                                                        data-toggle="pill" href="#">
+                                                                        Week3
+                                                                    </a>
+                                                                </li>
+                                                                <li class="nav-item">
+                                                                    <a class="nav-link week-item" id="week4"
+                                                                        data-toggle="pill" href="#">
+                                                                        Week4
+                                                                    </a>
+                                                                </li>
+                                                                <li class="nav-item">
+                                                                    <a class="nav-link week-item" id="week5"
+                                                                        data-toggle="pill" href="#">
+                                                                        Week5
+                                                                    </a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="monthly-1_goals">
+                                                    <h5 class="text-center text-primary">Monthly Goals</h5>
+                                                    <div class="row">
+                                                        <div class="col-12">
+                                                            <div class="sing_goals">
+                                                                <div class="row m-0 justify-content-between">
+                                                                    <span class="goals_ti">by sing</span>
+                                                                    <div class="text-right">
+                                                                        <span class="save"></span>
+                                                                        <a href="javascript:void(0);" class="edit">
+                                                            <i class="fas fa-edit"></i>
+                                                        </a>
+                                                                    </div>
+                                                                </div>
+                                                                <ul class="task-inner">
+                                                                    <li class="task d-flex mb-2">
+                                                                        <span>What can be accomplished of the new
+                                                                            scheduling at the end of the month</span>
+                                                                        <div class="ml-auto">
+                                                                            <a href="javascript:void(0);"
+                                                                                class="text-info" data-toggle="tooltip"
+                                                                                data-placement="top" title=""
+                                                                                data-original-title="Delete">
+                                                                                <i class="far fa-times-circle"></i>
+                                                                            </a>
+                                                                        </div>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12">
+                                                            <div class="mine_goals">
+                                                                <div class="row m-0 justify-content-between">
+                                                                    <span class="goals_ti user_month_goals_ti">by hb</span>
+                                                                    <div class="text-right">
+                                                                        <a href="javascript:void(0);" class="search">
+                                                                            <i class="fas fa-plus-circle"></i>
+                                                                        </a>
+                                                                    </div>
+                                                                </div>
+                                                                <ul class="task-inner">
+                                                                    <li class="task d-flex mb-2">
+                                                                        <span></span>
+                                                                        <div class="ml-auto">
+                                                                            <a href="javascript:void(0);"
+                                                                                class="text-info" data-toggle="tooltip"
+                                                                                data-placement="top" title=""
+                                                                                data-original-title="Delete">
+                                                                                <i class="far fa-times-circle"></i>
+                                                                            </a>
+                                                                        </div>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="mt-50 desc_week1">
+                                                    <div class="row align-items-center">
+                                                        <div class="col-12">
+                                                            <div id="accordion2" class="card-expansion">
+                                                                <!-- .card -->
+                                                                <div class="card card-expansion-item expanded mb-24">
+                                                                    <div class="card-header border-0" id="weekly1">
+                                                                        <button
+                                                                            class="btn btn-reset d-flex justify-content-between w-100"
+                                                                            data-toggle="collapse"
+                                                                            data-target="#collapseOne2"
+                                                                            aria-expanded="true"
+                                                                            aria-controls="collapseOne2">
+                                                                            <span
+                                                                                class="week_title text-primary">weekly1<span>01</span></span>
+                                                                            <span class="collapse-indicator"><i
+                                                                                    class="fa fa-fw fa-chevron-down"></i></span>
+                                                                        </button>
+                                                                    </div>
+                                                                    <div id="collapseOne2" class="collapse show"
+                                                                        aria-labelledby="weekly1"
+                                                                        data-parent="#accordion2" style="">
+                                                                        <div class="card-body">
+                                                                            <ul class="task-inner">
+                                                                                <li class="task-item">
+                                                                                    <span class="mr-2">1.完成Single
+                                                                                        Page基類的通用新增，修改，刪除保存功能</span>
+                                                                                    <i class="far fa-times-circle"></i>
+                                                                                </li>
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+                                                                </div><!-- /.card -->
+                                                                <!-- .card -->
+                                                                <div class="card card-expansion-item mb-24">
+                                                                    <div class="card-header border-0" id="weekly2">
+                                                                        <button
+                                                                            class="btn btn-reset d-flex justify-content-between w-100 collapsed"
+                                                                            data-toggle="collapse"
+                                                                            data-target="#collapseTwo2"
+                                                                            aria-expanded="false"
+                                                                            aria-controls="collapseTwo2"><span
+                                                                                class="week_title text-primary">weekly2
+                                                                                <span>02</span></span> <span
+                                                                                class="collapse-indicator"><i
+                                                                                    class="fa fa-fw fa-chevron-down"></i></span></button>
+                                                                    </div>
+                                                                    <div id="collapseTwo2" class="collapse"
+                                                                        aria-labelledby="weekly2"
+                                                                        data-parent="#accordion2">
+                                                                        <div class="card-body">
+                                                                            <ul class="task-inner">
+                                                                                <li class="task-item">
+                                                                                    <span class="mr-2">1.完善設置參數功能及Get
+                                                                                        Priority in Session邏輯</span>
+                                                                                    <i class="far fa-times-circle"></i>
+                                                                                </li>
+                                                                                <li class="task-item">
+                                                                                    <span class="mr-2">2.Make sure the
+                                                                                        further requirement of the
+                                                                                        moving services need to be done
+                                                                                        in order to be implemented
+                                                                                        (fixed day this week)</span>
+                                                                                    <i class="far fa-times-circle"></i>
+                                                                                </li>
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+                                                                </div><!-- /.card -->
+                                                                <!-- .card -->
+                                                                <div class="card card-expansion-item mb-24">
+                                                                    <div class="card-header border-0" id="weekly3">
+                                                                        <button
+                                                                            class="btn btn-reset d-flex justify-content-between w-100 collapsed"
+                                                                            data-toggle="collapse"
+                                                                            data-target="#collapseThree2"
+                                                                            aria-expanded="false"
+                                                                            aria-controls="collapseThree2"><span
+                                                                                class="week_title text-primary">weekly3
+                                                                                <span>03</span></span> <span
+                                                                                class="collapse-indicator"><i
+                                                                                    class="fa fa-fw fa-chevron-down"></i></span></button>
+                                                                    </div>
+                                                                    <div id="collapseThree2" class="collapse"
+                                                                        aria-labelledby="weekly3"
+                                                                        data-parent="#accordion2">
+                                                                        <div class="card-body">
+                                                                            <ul class="task-inner">
+                                                                                <li class="task-item">
+                                                                                    <span class="mr-2">1. 完善Get Priority
+                                                                                        in Session邏輯及Quarterly
+                                                                                        Schedule及Fixed Day
+                                                                                        Schedule</span>
+                                                                                    <i class="far fa-times-circle"></i>
+                                                                                </li>
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+                                                                </div><!-- /.card -->
+                                                                <div class="card card-expansion-item mb-24">
+                                                                    <div class="card-header border-0" id="weekly4">
+                                                                        <button
+                                                                            class="btn btn-reset d-flex justify-content-between w-100 collapsed"
+                                                                            data-toggle="collapse"
+                                                                            data-target="#collapseFour2"
+                                                                            aria-expanded="false"
+                                                                            aria-controls="collapseThree2"><span
+                                                                                class="week_title text-primary">weekly4
+                                                                                <span>04</span></span> <span
+                                                                                class="collapse-indicator"><i
+                                                                                    class="fa fa-fw fa-chevron-down"></i></span></button>
+                                                                    </div>
+                                                                    <div id="collapseFour2" class="collapse"
+                                                                        aria-labelledby="weekly4"
+                                                                        data-parent="#accordion2">
+                                                                        <div class="card-body">
+                                                                            <ul class="task-inner">
+                                                                                <li class="task-item">
+                                                                                    <span class="mr-2">1.完成Quarterly
+                                                                                        Schedule及分配計畫日期的邏輯</span>
+                                                                                    <i class="far fa-times-circle"></i>
+                                                                                </li>
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+                                                                </div><!-- /.card -->
+                                                                <div class="card card-expansion-item mb-24">
+                                                                    <div class="card-header border-0" id="weekly5">
+                                                                        <button
+                                                                            class="btn btn-reset d-flex justify-content-between w-100 collapsed"
+                                                                            data-toggle="collapse"
+                                                                            data-target="#collapseFive2"
+                                                                            aria-expanded="false"
+                                                                            aria-controls="collapseThree2"><span
+                                                                                class="week_title text-primary">weekly5
+                                                                                <span>05</span></span> <span
+                                                                                class="collapse-indicator"><i
+                                                                                    class="fa fa-fw fa-chevron-down"></i></span></button>
+                                                                    </div>
+                                                                    <div id="collapseFive2" class="collapse"
+                                                                        aria-labelledby="weekly5"
+                                                                        data-parent="#accordion2">
+                                                                        <div class="card-body">
+                                                                            <ul class="task-inner">
+                                                                                <li class="task-item">
+                                                                                    <span
+                                                                                        class="mr-2">1.完成排期顯示結果頁面</span>
+                                                                                    <i class="far fa-times-circle"></i>
+                                                                                </li>
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+                                                                </div><!-- /.card -->
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane fade month-3" id="sept" role="tabpanel">
+                                            <div class="monthly-1 blog-quota">
+                                                <div class="row align-items-center mt-3 mb-3">
+                                                    <div class="col-lg-6">
+                                                        <div class="week-filter-wrap">
+                                                            <ul class="week-filter nav justify-content-center justify-content-lg-end"
+                                                                id="week">
+                                                                <li class="nav-item">
+                                                                    <a class="nav-link active week-item" id="week1"
+                                                                        data-toggle="pill" href="#">
+                                                                        Week1
+                                                                    </a>
+                                                                </li>
+                                                                <li class="nav-item">
+                                                                    <a class="nav-link week-item" id="week2"
+                                                                        data-toggle="pill" href="#">
+                                                                        Week2
+                                                                    </a>
+                                                                </li>
+                                                                <li class="nav-item">
+                                                                    <a class="nav-link week-item" id="week3"
+                                                                        data-toggle="pill" href="#">
+                                                                        Week3
+                                                                    </a>
+                                                                </li>
+                                                                <li class="nav-item">
+                                                                    <a class="nav-link week-item" id="week4"
+                                                                        data-toggle="pill" href="#">
+                                                                        Week4
+                                                                    </a>
+                                                                </li>
+                                                                <li class="nav-item">
+                                                                    <a class="nav-link week-item" id="week5"
+                                                                        data-toggle="pill" href="#">
+                                                                        Week5
+                                                                    </a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="monthly-1_goals">
+                                                    <h5 class="text-center text-primary">Monthly Goals</h5>
+                                                    <div class="row">
+                                                        <div class="col-12">
+                                                            <div class="sing_goals">
+                                                                <div class="row m-0 justify-content-between">
+                                                                    <span class="goals_ti">by sing</span>
+                                                                    <div class="text-right">
+                                                                        <span class="save"></span>
+                                                                        <a href="javascript:void(0);" class="edit">
+                                                            <i class="fas fa-edit"></i>
+                                                        </a>
+                                                                    </div>
+                                                                </div>
+                                                                <ul class="task-inner">
+                                                                    <li class="task d-flex mb-2">
+                                                                        <span>Cater for Django Solution Type and tidy up
+                                                                            and standardized at least 3 technical
+                                                                            daily.</span>
+                                                                        <div class="ml-auto">
+                                                                            <a href="javascript:void(0);"
+                                                                                class="text-info" data-toggle="tooltip"
+                                                                                data-placement="top" title=""
+                                                                                data-original-title="Delete">
+                                                                                <i class="far fa-times-circle"></i>
+                                                                            </a>
+                                                                        </div>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12">
+                                                            <div class="mine_goals">
+                                                                <div class="row m-0 justify-content-between">
+                                                                    <span class="goals_ti user_month_goals_ti">by hb</span>
+                                                                    <div class="text-right">
+                                                                        <a href="javascript:void(0);" class="search">
+                                                                            <i class="fas fa-plus-circle"></i>
+                                                                        </a>
+                                                                    </div>
+                                                                </div>
+                                                                <ul class="task-inner">
+                                                                    <li class="task d-flex mb-2">
+                                                                        <span></span>
+                                                                        <div class="ml-auto">
+                                                                            <a href="javascript:void(0);"
+                                                                                class="text-info" data-toggle="tooltip"
+                                                                                data-placement="top" title=""
+                                                                                data-original-title="Delete">
+                                                                                <i class="far fa-times-circle"></i>
+                                                                            </a>
+                                                                        </div>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="mt-50 desc_week1">
+                                                    <div class="row align-items-center">
+                                                        <div class="col-12">
+                                                            <div id="accordion2" class="card-expansion">
+                                                                <!-- .card -->
+                                                                <div class="card card-expansion-item expanded mb-24">
+                                                                    <div class="card-header border-0" id="weekly1">
+                                                                        <button
+                                                                            class="btn btn-reset d-flex justify-content-between w-100"
+                                                                            data-toggle="collapse"
+                                                                            data-target="#collapseOne2"
+                                                                            aria-expanded="true"
+                                                                            aria-controls="collapseOne2">
+                                                                            <span
+                                                                                class="week_title text-primary">weekly1<span>01</span></span>
+                                                                            <span class="collapse-indicator"><i
+                                                                                    class="fa fa-fw fa-chevron-down"></i></span>
+                                                                        </button>
+                                                                    </div>
+                                                                    <div id="collapseOne2" class="collapse show"
+                                                                        aria-labelledby="weekly1"
+                                                                        data-parent="#accordion2" style="">
+                                                                        <div class="card-body">
+                                                                            <ul class="task-inner">
+                                                                                <li class="task-item">
+                                                                                    <span class="mr-2">1. Fixed Day
+                                                                                        Schedule的邏輯及修改原Java
+                                                                                        Schedule生成Appraisal和Goal及TaskEnquiry_Frm中Past
+                                                                                        8 Day表</span>
+                                                                                    <i class="far fa-times-circle"></i>
+                                                                                </li>
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+                                                                </div><!-- /.card -->
+                                                                <!-- .card -->
+                                                                <div class="card card-expansion-item mb-24">
+                                                                    <div class="card-header border-0" id="weekly2">
+                                                                        <button
+                                                                            class="btn btn-reset d-flex justify-content-between w-100 collapsed"
+                                                                            data-toggle="collapse"
+                                                                            data-target="#collapseTwo2"
+                                                                            aria-expanded="false"
+                                                                            aria-controls="collapseTwo2"><span
+                                                                                class="week_title text-primary">weekly2
+                                                                                <span>02</span></span> <span
+                                                                                class="collapse-indicator"><i
+                                                                                    class="fa fa-fw fa-chevron-down"></i></span></button>
+                                                                    </div>
+                                                                    <div id="collapseTwo2" class="collapse"
+                                                                        aria-labelledby="weekly2"
+                                                                        data-parent="#accordion2">
+                                                                        <div class="card-body">
+                                                                            <ul class="task-inner">
+                                                                                <li class="task-item">
+                                                                                    <span
+                                                                                        class="mr-2">1.完成任務變更時Schedule邏輯</span>
+                                                                                    <i class="far fa-times-circle"></i>
+                                                                                </li>
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+                                                                </div><!-- /.card -->
+                                                                <!-- .card -->
+                                                                <div class="card card-expansion-item mb-24">
+                                                                    <div class="card-header border-0" id="weekly3">
+                                                                        <button
+                                                                            class="btn btn-reset d-flex justify-content-between w-100 collapsed"
+                                                                            data-toggle="collapse"
+                                                                            data-target="#collapseThree2"
+                                                                            aria-expanded="false"
+                                                                            aria-controls="collapseThree2"><span
+                                                                                class="week_title text-primary">weekly3
+                                                                                <span>03</span></span> <span
+                                                                                class="collapse-indicator"><i
+                                                                                    class="fa fa-fw fa-chevron-down"></i></span></button>
+                                                                    </div>
+                                                                    <div id="collapseThree2" class="collapse"
+                                                                        aria-labelledby="weekly3"
+                                                                        data-parent="#accordion2">
+                                                                        <div class="card-body">
+                                                                            <ul class="task-inner">
+                                                                                <li class="task-item">
+                                                                                    <!-- <span class="mr-2">(3 of 5)App Server(00298)</span>
+                                                                                    <i class="far fa-times-circle"></i> -->
+                                                                                </li>
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+                                                                </div><!-- /.card -->
+                                                                <div class="card card-expansion-item mb-24">
+                                                                    <div class="card-header border-0" id="weekly4">
+                                                                        <button
+                                                                            class="btn btn-reset d-flex justify-content-between w-100 collapsed"
+                                                                            data-toggle="collapse"
+                                                                            data-target="#collapseFour2"
+                                                                            aria-expanded="false"
+                                                                            aria-controls="collapseThree2"><span
+                                                                                class="week_title text-primary">weekly4
+                                                                                <span>04</span></span> <span
+                                                                                class="collapse-indicator"><i
+                                                                                    class="fa fa-fw fa-chevron-down"></i></span></button>
+                                                                    </div>
+                                                                    <div id="collapseFour2" class="collapse"
+                                                                        aria-labelledby="weekly4"
+                                                                        data-parent="#accordion2">
+                                                                        <div class="card-body">
+                                                                            <ul class="task-inner">
+                                                                                <li class="task-item">
+                                                                                    <!-- <span class="mr-2">(4 of 5)App Server(00298)</span>
+                                                                                    <i class="far fa-times-circle"></i> -->
+                                                                                </li>
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+                                                                </div><!-- /.card -->
+                                                                <div class="card card-expansion-item mb-24">
+                                                                    <div class="card-header border-0" id="weekly5">
+                                                                        <button
+                                                                            class="btn btn-reset d-flex justify-content-between w-100 collapsed"
+                                                                            data-toggle="collapse"
+                                                                            data-target="#collapseFive2"
+                                                                            aria-expanded="false"
+                                                                            aria-controls="collapseThree2"><span
+                                                                                class="week_title text-primary">weekly5
+                                                                                <span>05</span></span> <span
+                                                                                class="collapse-indicator"><i
+                                                                                    class="fa fa-fw fa-chevron-down"></i></span></button>
+                                                                    </div>
+                                                                    <div id="collapseFive2" class="collapse"
+                                                                        aria-labelledby="weekly5"
+                                                                        data-parent="#accordion2">
+                                                                        <div class="card-body">
+                                                                            <ul class="task-inner">
+                                                                                <li class="task-item">
+                                                                                    <!-- <span class="mr-2">(5 of 5)App Server(00298)</span>
+                                                                                    <i class="far fa-times-circle"></i> -->
+                                                                                </li>
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+                                                                </div><!-- /.card -->
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- end row -->
+        </div><!-- container-fluid -->
+    </div>
+</div>
+{%endblock%}
+
+{%block form_js%}
+{{block.super}}
+<script src="{% md5url 'PMISLooper/assets/javascript/goal/overall/quarterly_goal.js' %}"
+    type="text/javascript"></script>
+{% endblock%}

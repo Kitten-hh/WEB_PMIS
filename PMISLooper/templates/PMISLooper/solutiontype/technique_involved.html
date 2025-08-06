@@ -1,0 +1,35 @@
+{% extends 'PMISLooper/index.html' %}
+
+{% load static %}
+
+{% block content%}
+{{block.super}}
+    <div id="form-wapper"> <!--form將生成到這個div中，需要設置id--></div>
+{% endblock %}
+{%block form_js%}
+{{block.super}}
+<script>
+
+    $(function(){
+
+        var form = new SWForm("#form-wapper", "Solution Type", "/looper/solutiontype/technique_involved", "POST", false);
+
+        form.addComponent(new SWText("inc_id", "hidden", ""));
+
+        form.addComponent(new SWText("solutiontype", "text", "SolutionType"));
+
+        form.addComponent(new SWText("technical", "text", "Technical"));
+
+        form.addComponent(new SWText("condition", "text", "Condition"));
+
+        form.addComponent(new SWText("time", "text", "Time"));
+
+        form.addComponent(new SWText("remark", "text", "Remark"));
+
+        form.init_data("/looper/SolutionType/create");
+
+        form.save_data("/looper/SolutionType/create",);
+    });
+
+</script>
+{% endblock %}

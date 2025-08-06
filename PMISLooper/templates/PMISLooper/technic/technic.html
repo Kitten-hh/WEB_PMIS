@@ -1,0 +1,221 @@
+{% extends 'BaseApp/looper_base/base_form2/base.html' %}
+{%load static %}
+{% load i18n %}
+{% load md5url %}
+{%block form_css%}
+{{block.super}}
+<link href="{% static 'BaseApp/vendor/jquery-splitter/css/jquery.splitter.css'%}" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="{% static 'PMISLooper/assets/stylesheets/quick-add-task.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'PMISLooper/assets/stylesheets/mindmap/mindmap_modal.css' %}" />
+<style>
+    .technical-tis .col-form-label {
+        border:none !important;
+        padding-top:inherit !important;
+        padding-bottom: inherit !important;
+        padding-right: 5px !important;
+    }    
+    .technical-tis{
+        width: 120px !important;
+    }    
+</style>
+{%endblock%}
+
+{%  block content %}
+{% get_current_language as LANGUAGE_CODE %}
+<input id="curr_language_code" value="{{LANGUAGE_CODE}}" type="hidden"/>
+<div class="page-inner" style="margin-right: 0px;">
+    <div class="page-section">
+        <div id="pc_technic" class="section-block">
+            <div id="stepper" class="daily_planning bs-stepper">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="test">
+                            <h5 class="text-center tech_title">{% trans "Detail Technical Daily Planner"%}</h5>
+                        </div>
+                        <div class="steps steps-" role="tablist">
+                            <ul>
+                                <li class="step active" data-target="#test-l-1" data-validate="fieldset01">
+                                    <a href="#" class="step-trigger" tabindex="-1" aria-selected="true"><span
+                                            class="step-indicator step-indicator-icon"><i
+                                                class="oi oi-person"></i></span> <span
+                                            class="d-none d-sm-inline">{% trans "Personal" %}</span></a>
+                                </li>
+                                <li class="step" data-target="#test-l-2" data-validate="fieldset02">
+                                    <a href="#" class="step-trigger" tabindex="-1" aria-selected="false"><span
+                                            class="step-indicator step-indicator-icon"><i
+                                                class="fas fa-tasks"></i></span> <span class="d-none d-sm-inline">{% trans "Task Info" %}</span></a>
+                                </li>
+                                <li class="step" data-target="#test-l-3" data-validate="fieldset03">
+                                    <a href="#" class="step-trigger" tabindex="-1" aria-selected="false"><span
+                                            class="step-indicator step-indicator-icon"><i
+                                                class="fas fa-file-signature"></i></span> <span
+                                            class="d-none d-sm-inline">{% trans "Technique Involved" %}</span></a>
+                                </li>
+                                <li class="step" data-target="#test-l-4" data-validate="agreement">
+                                    <a href="#" class="step-trigger" tabindex="-1" aria-selected="false"><span
+                                            class="step-indicator step-indicator-icon"><i
+                                                class="oi oi-check"></i></span> <span
+                                            class="d-none d-sm-inline">{% trans "Status" %}</span></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="card-body" id="stepper_from_div">
+                        <form id="stepper-form" name="stepperForm" class="p-lg-4 p-sm-3 p-0 pc_form">
+                            <div id="test-l-1" class="content fade active dstepper-block">
+                                <fieldset>
+                                    <div class="per-section">
+                                    </div>
+                                    <hr class="mt-4">
+                                    <div class="d-flex">
+                                        <button type="button" class="next btn btn-primary ml-auto"
+                                            data-validate="fieldset01">{% trans "Next step" %}</button>
+                                    </div>
+                                </fieldset>
+                            </div>
+                            <div id="test-l-2" class="content dstepper-none fade">
+                                <fieldset>
+                                    <div class="task-section">
+
+                                    </div>
+                                    <hr class="mt-4">
+                                    <div class="d-flex">
+                                        <button type="button" class="prev btn btn-secondary">{% trans "Previous" %}</button> <button
+                                            type="button" class="next btn btn-primary ml-auto"
+                                            data-validate="fieldset02">{% trans "Next step" %}</button>
+                                    </div>
+                                </fieldset>
+                            </div>
+                            <div id="test-l-3" class="content dstepper-none fade">
+                                <fieldset form="solutiontype_form">
+                                    <legend>{% trans "Technique Involved" %}
+                                        <small class="text-muted">({% trans "Major components, library, pattern" %})</small>
+                                    </legend>
+                                    <div class="d-flex align-items-center titlegoal1">
+                                        <span class="ml-1" style="color: #9d5d8e;">{% trans "For Goal 1" %}</span>
+                                        <button type="button" onclick="toRemoveGoal(1)" class="btn btn-subtle-danger"
+                                            style="margin-left: 2%">
+                                            <i class="fas fa-minus"></i>
+                                        </button>
+                                        <button type="button" onclick="toDeleteTechnic(1)"
+                                            class="btn btn-subtle-danger ml-auto">
+                                            <i class="fas fa-minus"></i>
+                                        </button>
+                                        <button type="button" onclick="toAddTechnic(1)" class="btn btn-subtle-danger "
+                                            style="margin-left: 2%">
+                                            <i class="fas fa-plus"></i>
+                                        </button>
+                                    </div>
+                                    <div id="ContainerGoal1">
+                                        <div id="mindmapinput1">
+
+                                        </div>
+                                        <div class="goal1">
+
+                                        </div>
+                                        <div class="goal1_tech">
+
+                                        </div>
+                                    </div>
+                                    <div id="goaldiv">
+
+                                    </div>
+                                    <span class="ml-1 add_goal" style="color: #9d5d8e;cursor: pointer;" id="addGoal">{% trans "Add Goal" %}</span>
+                                    <hr class="mt-4">
+                                    <div class="d-flex">
+                                        <button type="button" class="prev btn btn-secondary">{% trans "Previous" %}</button> <button
+                                            type="button" class="next btn btn-primary ml-auto"
+                                            data-validate="fieldset02">{% trans "Next step" %}</button>
+                                    </div>
+                                </fieldset>
+                            </div>
+                            <div id="test-l-4" class="content dstepper-none fade">
+                                <fieldset>
+                                    <div class="sta-section">
+
+                                    </div>
+                                    <hr class="mt-4">
+                                    <div class="d-flex">
+                                        <button type="button" class="prev btn btn-secondary">{% trans "Previous" %}</button> <button
+                                            type="submit" id="stepper_form_submit" class=" btn btn-primary ml-auto save"
+                                            data-validate="agreement">{% trans "Save" %}</button>
+                                    </div>
+                                </fieldset>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#SearchNewModal" id="modalbtn"
+            hidden></button>
+        <div class="modal fade" id="SearchNewModal" tabindex="-1" role="dialog" aria-labelledby="SearchNewModal" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" style="min-width: min-content; "
+                role="document">
+                <div class="modal-content" style="width: 1365px;height: 800px;">
+                    {%include "PMISLooper/mindmap/mindmap_modal.html"%}
+                </div>
+            </div>
+        </div>
+        
+        <button class="btn btn-primary search_more" id="Technicmodelbtn" hidden></button>
+            
+    </div>
+    {%endblock%}
+    {%block form_js%}
+    <script src="{% url 'javascript-catalog' %}"></script>
+    <!-- BEGIN ::this page PLUGINS JS -->
+    <script src="{% static 'BaseApp/vendor/Looper/assets/vendor/perfect-scrollbar/perfect-scrollbar.min.js'%}"></script>
+    <script src="{% static 'BaseApp/vendor/Looper/assets/vendor/parsleyjs/parsley.min.js'%}"></script>
+    <script src="{% static 'BaseApp/vendor/Looper/assets/vendor/vanilla-text-mask/vanillaTextMask.js'%}"></script>
+    <script src="{% static 'BaseApp/vendor/Looper/assets/vendor/text-mask-addons/textMaskAddons.js'%}"></script>
+    <script src="{% static 'BaseApp/vendor/Looper/assets/vendor/bs-stepper/js/bs-stepper.min.js'%}"></script>
+    <script src="{% static 'BaseApp/vendor/Looper/assets/vendor/jstree/jstree.min.js'%}"></script>
+    <script src="{% md5url 'BaseApp/vendor/jquery-splitter/js/jquery.splitter.js'%}"></script>
+    <script src="{% md5url 'PMISLooper/assets/javascript/mindmap/selectmindmap.js'%}"></script>
+    <script src="{% static 'BaseApp/vendor/jquery/ajaxhook.min.js' %}" type="text/javascript"></script>
+    <script src="{% md5url 'PMIS/js/syspublic.js'%}"></script>    
+    <script src="{% md5url 'PMISLooper/assets/javascript/user/index_login.js' %}" type="text/javascript"></script>    
+    <script>
+        $(function () {
+            var jsondelete_array = new Array();
+            $("#techtree").bind("ready.jstree", function () {
+                for (key in jsonarray) {
+                    key_val = jsonarray[key];
+                    if (key_val.parent == -1 && key_val.id != 1) {
+                        jsondelete_array.push(key_val)
+                    }
+                }
+                $("#techtree").jstree(true).delete_node(jsondelete_array);
+            })
+
+            mindmap = new SWMindmap("#right_content");
+            $(".btn-lg").on("click", function () {
+                $('#SearchNewModal').modal('show');
+                // 分隔條插件
+                var splitter = $('#splitter2').split({
+                    orientation: 'vertical',
+                    position: '280px',
+                });
+            });
+        })
+    </script>
+    <!-- END PLUGINS JS -->
+    <script src="{% static 'PMISLooper/assets/javascript/technic/technic.js'%}"></script>
+    <script>
+        $(function () {
+            new stepsDemo();
+            var jsondelete_array = new Array();
+            $("#techtree").bind("ready.jstree", function () {
+                for (key in jsonarray) {
+                    key_val = jsonarray[key];
+                    if (key_val.parent == -1 && key_val.id != 1) {
+                        jsondelete_array.push(key_val)
+                    }
+                }
+                $("#techtree").jstree(true).delete_node(jsondelete_array);
+            })
+        })
+    </script>
+    
+    {%endblock%}

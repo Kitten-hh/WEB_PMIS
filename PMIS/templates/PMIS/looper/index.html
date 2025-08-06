@@ -1,0 +1,297 @@
+{% extends 'WEB_PMIS/main.html' %}
+{%load static %}
+{%load customer_filter%}
+{% block header_jscss%}
+    <!-- BEGIN PLUGINS STYLES -->
+    <link rel="stylesheet" href="{% static 'BaseProject/vendor/Looper/assets/vendor/open-iconic/font/css/open-iconic-bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'BaseProject/vendor/Looper/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'BaseProject/vendor/Looper/assets/vendor/flatpickr/flatpickr.min.css' %}"><!-- END PLUGINS STYLES -->
+{% endblock%}
+{%  block content %}
+<div class="page">
+  <!-- .page-inner -->
+  <div class="page-inner">
+    <!-- .page-title-bar -->
+    <header class="page-title-bar">
+      <div class="d-flex flex-column flex-md-row">
+        <p class="lead">
+          <span class="font-weight-bold">Hi, Beni.</span> <span class="d-block text-muted">Here’s what’s happening with your business today.</span>
+        </p>
+        <div class="ml-auto">
+          <!-- .dropdown -->
+          <div class="dropdown">
+            <button class="btn btn-secondary" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>This Week</span> <i class="fa fa-fw fa-caret-down"></i></button> <!-- .dropdown-menu -->
+            <div class="dropdown-menu dropdown-menu-right dropdown-menu-md stop-propagation">
+              <div class="dropdown-arrow"></div><!-- .custom-control -->
+              <div class="custom-control custom-radio">
+                <input type="radio" class="custom-control-input" id="dpToday" name="dpFilter" data-start="2019/03/27" data-end="2019/03/27"> <label class="custom-control-label d-flex justify-content-between" for="dpToday"><span>Today</span> <span class="text-muted">Mar 27</span></label>
+              </div><!-- /.custom-control -->
+              <!-- .custom-control -->
+              <div class="custom-control custom-radio">
+                <input type="radio" class="custom-control-input" id="dpYesterday" name="dpFilter" data-start="2019/03/26" data-end="2019/03/26"> <label class="custom-control-label d-flex justify-content-between" for="dpYesterday"><span>Yesterday</span> <span class="text-muted">Mar 26</span></label>
+              </div><!-- /.custom-control -->
+              <!-- .custom-control -->
+              <div class="custom-control custom-radio">
+                <input type="radio" class="custom-control-input" id="dpWeek" name="dpFilter" data-start="2019/03/21" data-end="2019/03/27" checked> <label class="custom-control-label d-flex justify-content-between" for="dpWeek"><span>This Week</span> <span class="text-muted">Mar 21-27</span></label>
+              </div><!-- /.custom-control -->
+              <!-- .custom-control -->
+              <div class="custom-control custom-radio">
+                <input type="radio" class="custom-control-input" id="dpMonth" name="dpFilter" data-start="2019/03/01" data-end="2019/03/27"> <label class="custom-control-label d-flex justify-content-between" for="dpMonth"><span>This Month</span> <span class="text-muted">Mar 1-31</span></label>
+              </div><!-- /.custom-control -->
+              <!-- .custom-control -->
+              <div class="custom-control custom-radio">
+                <input type="radio" class="custom-control-input" id="dpYear" name="dpFilter" data-start="2019/01/01" data-end="2019/12/31"> <label class="custom-control-label d-flex justify-content-between" for="dpYear"><span>This Year</span> <span class="text-muted">2019</span></label>
+              </div><!-- /.custom-control -->
+              <!-- .custom-control -->
+              <div class="custom-control custom-radio">
+                <input type="radio" class="custom-control-input" id="dpCustom" name="dpFilter" data-start="2019/03/27" data-end="2019/03/27"> <label class="custom-control-label" for="dpCustom">Custom</label>
+                <div class="custom-control-hint my-1">
+                  <!-- datepicker:range -->
+                  <input type="text" class="form-control" id="dpCustomInput" data-toggle="flatpickr" data-mode="range" data-disable-mobile="true" data-date-format="Y-m-d"> <!-- /datepicker:range -->
+                </div>
+              </div><!-- /.custom-control -->
+            </div><!-- /.dropdown-menu -->
+          </div><!-- /.dropdown -->
+        </div>
+      </div>
+    </header><!-- /.page-title-bar -->
+    <!-- .page-section -->
+    <div class="page-section">
+      <!-- .section-block -->
+      <div class="section-block">
+        <!-- metric row -->
+        <div class="metric-row">
+          <div class="col-lg-9">
+            <div class="metric-row metric-flush">
+              <!-- metric column -->
+              <div class="col">
+                <!-- .metric -->
+                <a href="user-teams.html" class="metric metric-bordered align-items-center">
+                  <h2 class="metric-label"> Teams </h2>
+                  <p class="metric-value h3">
+                    <sub><i class="oi oi-people"></i></sub> <span class="value">{{teams}}</span>
+                  </p>
+                </a> <!-- /.metric -->
+              </div><!-- /metric column -->
+              <!-- metric column -->
+              <div class="col">
+                <!-- .metric -->
+                <a href="/devplat/project/overview" class="metric metric-bordered align-items-center" target="project">
+                  <h2 class="metric-label"> Projects </h2>
+                  <p class="metric-value h3">
+                    <sub><i class="oi oi-fork"></i></sub> <span class="value">{{projects}}</span>
+                  </p>
+                </a> <!-- /.metric -->
+              </div><!-- /metric column -->
+              <!-- metric column -->
+              <div class="col">
+                <!-- .metric -->
+                <a href="user-tasks.html" class="metric metric-bordered align-items-center">
+                  <h2 class="metric-label"> Active Tasks </h2>
+                  <p class="metric-value h3">
+                    <sub><i class="fa fa-tasks"></i></sub> <span class="value">{{active_tasks}}</span>
+                  </p>
+                </a> <!-- /.metric -->
+              </div><!-- /metric column -->
+            </div>
+          </div><!-- metric column -->
+          <div class="col-lg-3">
+            <!-- .metric -->
+            <a href="user-tasks.html" class="metric metric-bordered">
+              <div class="metric-badge">
+                <span class="badge badge-lg badge-success"><span class="oi oi-media-record pulse mr-1"></span> ONGOING TASKS</span>
+              </div>
+              <p class="metric-value h3">
+                <sub><i class="oi oi-timer"></i></sub> <span class="value">{{ongoing_tasks}}</span>
+              </p>
+            </a> <!-- /.metric -->
+          </div><!-- /metric column -->
+        </div><!-- /metric row -->
+      </div><!-- /.section-block -->
+      <!-- grid row -->
+      <div class="row">
+        <!-- grid column -->
+        <div class="col-12 col-lg-12 col-xl-4">
+          <!-- .card -->
+          <div class="card card-fluid">
+            <!-- .card-body -->
+            <div class="card-body">
+              <h3 class="card-title mb-4"> Completion Tasks </h3>
+              <div class="chartjs" style="height: 292px">
+                <canvas id="completion-tasks"></canvas>
+              </div>
+            </div><!-- /.card-body -->
+          </div><!-- /.card -->
+        </div><!-- /grid column -->
+        <!-- grid column -->
+        <div class="col-12 col-lg-6 col-xl-4">
+          <!-- .card -->
+          <div class="card card-fluid">
+            <!-- .card-body -->
+            <div class="card-body">
+              <h3 class="card-title"> Tasks Performance </h3><!-- easy-pie-chart -->
+              <div class="text-center pt-3">
+                <div class="chart-inline-group" style="height:214px">
+                  <div class="easypiechart" data-toggle="easypiechart" data-percent="{{task_performance.assigned_percent}}" data-size="214" data-bar-color="#346CB0" data-track-color="false" data-scale-color="false" data-rotate="225"></div>
+                  <div class="easypiechart" data-toggle="easypiechart" data-percent="{{task_performance.completed_percent}}" data-size="174" data-bar-color="#00A28A" data-track-color="false" data-scale-color="false" data-rotate="225"></div>
+                  <div class="easypiechart" data-toggle="easypiechart" data-percent="{{task_performance.active_percent}}" data-size="134" data-bar-color="#5F4B8B" data-track-color="false" data-scale-color="false" data-rotate="225"></div>
+                </div>
+              </div><!-- /easy-pie-chart -->
+            </div><!-- /.card-body -->
+            <!-- .card-footer -->
+            <div class="card-footer">
+              <div class="card-footer-item">
+                <i class="fa fa-fw fa-circle text-indigo"></i> 100% <div class="text-muted small"> Assigned </div>
+              </div>
+              <div class="card-footer-item">
+                <i class="fa fa-fw fa-circle text-purple"></i> {{task_performance.completed_percent_r}}% <div class="text-muted small"> Completed </div>
+              </div>
+              <div class="card-footer-item">
+                <i class="fa fa-fw fa-circle text-teal"></i> {{task_performance.active_percent_r}}% <div class="text-muted small"> Active </div>
+              </div>
+            </div><!-- /.card-footer -->
+          </div><!-- /.card -->
+        </div><!-- /grid column -->
+        <!-- grid column -->
+        <div class="col-12 col-lg-6 col-xl-4">
+          <!-- .card -->
+          <div class="card card-fluid">
+            <!-- .card-body -->
+            <div class="card-body pb-0">
+              <h3 class="card-title"> Leaderboard </h3><!-- legend -->
+              <ul class="list-inline small">
+                <li class="list-inline-item">
+                  <i class="fa fa-fw fa-circle text-light"></i> Tasks </li>
+                <li class="list-inline-item">
+                  <i class="fa fa-fw fa-circle text-purple"></i> Completed </li>
+                <li class="list-inline-item">
+                  <i class="fa fa-fw fa-circle text-teal"></i> Active </li>
+                <li class="list-inline-item">
+                  <i class="fa fa-fw fa-circle text-red"></i> Overdue </li>
+              </ul><!-- /legend -->
+            </div><!-- /.card-body -->
+            <!-- .list-group -->
+            <div class="list-group list-group-flush" style="max-height: 285px;overflow-y: auto;">
+
+                {%for key, value in leader_board.items%}
+              <!-- .list-group-item -->
+              <div class="list-group-item">
+                <!-- .list-group-item-figure -->
+                <div class="list-group-item-figure">
+                  <a href="#" class="user-avatar" data-toggle="tooltip" title="{{key}}"><span class="oi oi-person"></span></a>
+                </div><!-- /.list-group-item-figure -->                
+                <!-- .list-group-item-body -->
+                <div class="list-group-item-body">
+                  <!-- .progress -->
+                  <div class="progress progress-animated bg-transparent rounded-0" data-toggle="tooltip" data-html="true" title='&lt;div class="text-left small"&gt;&lt;i class="fa fa-fw fa-circle text-purple"&gt;&lt;/i&gt; {{value.Completed_Qty}}&lt;br&gt;&lt;i class="fa fa-fw fa-circle text-teal"&gt;&lt;/i&gt; {{value.Active_Qty}}&lt;br&gt;&lt;i class="fa fa-fw fa-circle text-red"&gt;&lt;/i&gt; {{value.Overdue_Qty}}&lt;/div&gt;'>
+                    <div class="progress-bar bg-purple" role="progressbar" aria-valuenow="{{value.Completed}}" aria-valuemin="0" aria-valuemax="100" style="width: {{value.Completed}}%">
+                      <span class="sr-only">{{value.Completed}}% Complete</span>
+                    </div>
+                    <div class="progress-bar bg-teal" role="progressbar" aria-valuenow="{{value.Active}}" aria-valuemin="0" aria-valuemax="100" style="width:{{value.Active}}%">
+                      <span class="sr-only">{{value.Active}}% Complete</span>
+                    </div>
+                    <div class="progress-bar bg-red" role="progressbar" aria-valuenow="{{value.Overdue}}" aria-valuemin="0" aria-valuemax="100" style="width: {{value.Overdue}}%">
+                      <span class="sr-only">{{value.Overdue}}% Complete</span>
+                    </div>
+                  </div><!-- /.progress -->
+                </div><!-- /.list-group-item-body -->
+              </div><!-- /.list-group-item -->                
+                {%endfor%}
+            </div><!-- /.list-group -->
+          </div><!-- /.card -->
+        </div><!-- /grid column -->
+      </div><!-- /grid row -->
+      <!-- card-deck-xl -->
+      <div class="card-deck-xl">
+        <!-- .card -->
+        <div class="card card-fluid pb-3">
+          <div class="card-header"> Active Projects </div><!-- .lits-group -->
+          <div class="lits-group list-group-flush">
+            {% for key, value in active_project.items%}
+              {% set color = 'bg-indigo'%}
+              {%if value.progress > 20 and value.progress <= 40%}
+                {%set color = 'bg-blue'%}
+              {%endif%}
+
+              {%if value.progress > 40 and value.progress <= 60%}
+                {%set color = 'bg-teal'%}
+              {%endif%}
+
+              {%if value.progress > 60 and value.progress <= 80%}
+                {%set color = 'bg-pink'%}
+              {%endif%}
+
+              {%if value.progress > 80%}
+                {%set color = 'bg-yellow'%}
+              {%endif%}
+            
+
+            <!-- .lits-group-item -->
+            <div class="list-group-item">
+              <!-- .lits-group-item-figure -->
+              <div class="list-group-item-figure">
+                <div class="has-badge">
+                  <a href="#" class="tile tile-md {{color}}">{{value.s_title}}</a> 
+                  <a href="#team" class="user-avatar user-avatar-xs"><img src="assets/images/avatars/team4.jpg" alt=""></a>
+                </div>
+              </div><!-- .lits-group-item-figure -->
+             <!-- .lits-group-item-body -->
+             <div class="list-group-item-body">
+              <h5 class="card-title">
+                <a href="#">{{value.title}}</a>
+              </h5>
+              <p class="card-subtitle text-muted mb-1"> Progress in {{value.progress}}% - Last update {{value.last_update}} </p><!-- .progress -->
+              <div class="progress progress-xs bg-transparent">
+                <div class="progress-bar {{color}}" role="progressbar" aria-valuenow="2181" aria-valuemin="0" aria-valuemax="100" style="width: {{value.progress}}%">
+                  <span class="sr-only">{{value.progress}}% Complete</span>
+                </div>
+              </div><!-- /.progress -->
+            </div><!-- .lits-group-item-body -->
+          </div><!-- /.lits-group-item -->              
+            {%endfor%}
+          </div><!-- /.lits-group -->
+        </div><!-- /.card -->
+        <!-- .card -->
+        <div class="card card-fluid">
+          <div class="card-header"> Active Tasks: To-Dos </div><!-- .card-body -->
+          <div class="card-body">
+            <!-- .todo-list -->
+            <div class="todo-list">
+              {% for key, value in to_dos.items%}
+                <div class="todo-header"> {{value.0.project_desc}}</div><!-- /.todo-header -->
+                {%for sub_value in value%}
+                <div class="todo">
+                  <!-- .custom-control -->
+                  <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="todo{{iterator.next}}"> <label class="custom-control-label" for="todo{{iterator.current}}">{{sub_value.task}}</label>
+                  </div><!-- /.custom-control -->
+                </div><!-- /.todo -->
+                {%endfor%}
+              {%endfor%}
+            </div><!-- /.todo-list -->
+          </div><!-- /.card-body -->
+          <!-- .card-footer -->
+          <div class="card-footer">
+            <a href="#" class="card-footer-item">View all <i class="fa fa-fw fa-angle-right"></i></a>
+          </div><!-- /.card-footer -->
+        </div><!-- /.card -->
+      </div><!-- /card-deck-xl -->
+    </div><!-- /.page-section -->
+  </div><!-- /.page-inner -->
+</div><!-- /.page -->
+{%  endblock %}
+
+{% block footer_jscss %}          
+    <!-- BEGIN PLUGINS JS -->
+    <script src="{% static 'BaseProject/vendor/Looper/assets/vendor/pace-progress/pace.min.js' %}"></script>
+    <script src="{% static 'BaseProject/vendor/Looper/assets/vendor/stacked-menu/js/stacked-menu.min.js' %}"></script>
+    <script src="{% static 'BaseProject/vendor/Looper/assets/vendor/perfect-scrollbar/perfect-scrollbar.min.js' %}"></script>
+    <script src="{% static 'BaseProject/vendor/Looper/assets/vendor/flatpickr/flatpickr.min.js' %}"></script>
+    <script src="{% static 'BaseProject/vendor/Looper/assets/vendor/easy-pie-chart/jquery.easypiechart.min.js' %}"></script>
+    <script src="{% static 'BaseProject/vendor/Looper/assets/vendor/chart.js/Chart.min.js' %}"></script> <!-- END PLUGINS JS -->
+    <!-- BEGIN PAGE LEVEL JS -->
+    <!--<script src="{% static 'BaseProject/vendor/Looper/assets/javascript/pages/dashboard-demo.js' %}"></script>--> <!-- END PAGE LEVEL JS -->    
+    <script src="{% static 'PMIS/js/looper/components.js' %}"></script> 
+    <script src="{% static 'PMIS/js/looper/dashboard_demo.js' %}"></script> 
+    <!-- END PAGE LEVEL JS -->
+{% endblock%}

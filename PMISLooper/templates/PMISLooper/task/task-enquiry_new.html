@@ -1,0 +1,22 @@
+{% extends 'PMISLooper/vue_index.html' %}
+{% load static %}
+{% load i18n %}
+{% load md5url %}
+{% load customer_filter %}
+{% load render_bundle from webpack_loader %}
+{% block form_css %}
+  {{ block.super }}
+  <link rel="stylesheet" href="{% md5url 'PMISLooper/assets/stylesheets/task/task-enquiry.css' %}" data-skin="default">
+  <link rel="stylesheet" href="{% md5url 'PMISLooper/assets/stylesheets/task/task-enquiry_dark.css' %}" data-skin="dark">
+{% endblock form_css %}
+
+{% block content %}
+  {{ block.super }}
+{% endblock content %}
+
+{% block form_js %}
+    {{ block.super }}
+    {% render_bundle 'PMISLooper/dist/javascript/TaskEnquiry' %} 
+{% endblock form_js %}
+
+

@@ -1,0 +1,41 @@
+{% extends 'PMISLooper/index.html' %}
+{%load static %}
+{% load i18n %}
+{%block form_css%}
+{{block.super}}
+<link rel="stylesheet" type="text/css" href="{% static 'PMISLooper/assets/stylesheets/webPMS/technic.css' %}" />
+<style>
+    #db_wapper .dataTables_wrapper .table-responsive {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+</style>
+{%endblock%}
+
+{%  block content %}
+{{block.super}}
+<div class="page-inner">
+    <div class="page-section">
+        <div id="pc_technic" class="section-block">
+            <div id="stepper" class="daily_planning bs-stepper">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="test">
+                            <h5 class="text-center tech_title">{% trans "Task Type Cartogram"%}</h5>
+                        </div>
+                    </div>
+                    <div class="card-body" id="stepper_from_div">
+                        <button class="btn btn-primary search_more"><i class="fas fa-book mr-1"></i> {% trans "Search"%}</button>
+                        <div id="db_wapper"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{%endblock%}
+{%block form_js%}
+{{block.super}}
+<script src="{% static 'PMISLooper/assets/javascript/technic/tasktypeTable.js'%}"></script>
+
+{%endblock%}

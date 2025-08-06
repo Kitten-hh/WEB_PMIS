@@ -1,0 +1,2089 @@
+{
+	"class": "TreeModel",
+	"nodeDataArray": [
+		{
+			"key": 0,
+			"text": "Django Production Course\t",
+			"brush": "#adc2ff",
+			"loc": "0 0"
+		},
+		{
+			"text": "How to build a Rest Api project\nDoc: Dja-Res-00001",
+			"brush": "#adc2ff",
+			"parent": -14,
+			"key": -2,
+			"loc": "464.81971825449625 1771.4979842861273",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Dja-Res-00001"
+		},
+		{
+			"text": "How to use data table build model\nDoc: Dja-dat-00003",
+			"brush": "#adc2ff",
+			"parent": -128,
+			"key": -3,
+			"loc": "796.127325281516 -1579.388241593834",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Dja-dat-00003",
+			"color": "#adc2ff"
+		},
+		{
+			"text": "Django Versions\nDoc: Dja-Dja-00005",
+			"brush": "#adc2ff",
+			"dir": "right",
+			"parent": -72,
+			"key": -6,
+			"loc": "422.1825112232463 -5488.464850404565",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Dja-Dja-00005"
+		},
+		{
+			"text": "Set up Django programming",
+			"brush": "#adc2ff",
+			"dir": "right",
+			"parent": 0,
+			"key": -7,
+			"loc": "287.44277528997645 1661.6570296818281"
+		},
+		{
+			"text": "Database Migration\nDoc: Dja-Dat-00048",
+			"brush": "#adc2ff",
+			"dir": "right",
+			"parent": -7,
+			"key": -11,
+			"loc": "516.8387612232463 1654.618113666203",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Dja-Dat-00048"
+		},
+		{
+			"text": "Create Django App",
+			"brush": "#adc2ff",
+			"dir": "right",
+			"parent": 0,
+			"key": -14,
+			"loc": "287.44277528997645 1749.3169326467714"
+		},
+		{
+			"text": "Create Leads App\nDoc: Dja-app-00001",
+			"brush": "#adc2ff",
+			"dir": "right",
+			"parent": -14,
+			"key": -15,
+			"loc": "464.81971825449625 1713.0580489761653",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Dja-app-00001"
+		},
+		{
+			"text": "*Models and Databases(hb)",
+			"brush": "#adc2ff",
+			"dir": "right",
+			"parent": 0,
+			"key": -16,
+			"loc": "287.44277528997645 -879.378926032643",
+			"color": "#adc2ff"
+		},
+		{
+			"text": "Django Models\nDoc: Dja-mod-00005",
+			"brush": "#adc2ff",
+			"dir": "right",
+			"parent": -128,
+			"key": -17,
+			"loc": "796.127325281516 -1462.5083709739104",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Dja-mod-00005",
+			"color": "#adc2ff"
+		},
+		{
+			"text": "Django Model Fields\nDoc: Dja-Mod-00014",
+			"brush": "#adc2ff",
+			"dir": "right",
+			"parent": -129,
+			"key": -18,
+			"loc": "819.956426844016 -1287.1885650440247",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Dja-Mod-00014",
+			"color": "#adc2ff"
+		},
+		{
+			"text": "Querysets and Managers\nDoc: Dja-Que-00005",
+			"brush": "#adc2ff",
+			"dir": "right",
+			"parent": -129,
+			"key": -21,
+			"loc": "819.956426844016 -1345.6285003539865",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Dja-Que-00005",
+			"color": "#adc2ff"
+		},
+		{
+			"text": "Using Django Admin",
+			"brush": "#adc2ff",
+			"dir": "right",
+			"parent": 0,
+			"key": -22,
+			"loc": "287.44277528997645 1866.1968032666955"
+		},
+		{
+			"text": "Django Admin\nDoc: Dja-Adm-00002",
+			"brush": "#adc2ff",
+			"dir": "right",
+			"parent": -22,
+			"key": -23,
+			"loc": "472.75428856699625 1888.3778549060514",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Dja-Adm-00002"
+		},
+		{
+			"text": "Using the Admin Panel DOC : Dja-Adm-00001",
+			"brush": "#f97d7c",
+			"dir": "right",
+			"parent": -22,
+			"key": -24,
+			"loc": "472.75428856699625 1829.9379195960894",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Dja-Adm-00001",
+			"color": "#f97d7c"
+		},
+		{
+			"text": "Templates and Frontend",
+			"brush": "#adc2ff",
+			"dir": "right",
+			"parent": 0,
+			"key": -25,
+			"loc": "287.44277528997645 898.9505644407509"
+		},
+		{
+			"text": "URLs & Views \nDOC : Dja-Vie-00003",
+			"brush": "#adc2ff",
+			"dir": "right",
+			"parent": -207,
+			"key": -26,
+			"loc": "593.764044031516 1209.2796828258633",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Dja-Vie-00003",
+			"mark_keyid": -13,
+			"mark_parentid": -7
+		},
+		{
+			"text": "Getting Started with Templates\nDOC : Dja-Tem-00013",
+			"brush": "#adc2ff",
+			"dir": "right",
+			"parent": -207,
+			"key": -27,
+			"loc": "593.764044031516 1267.7196181358252",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Dja-Tem-00013"
+		},
+		{
+			"text": "Key Django Template Language Features & Tags\nDOC : Dja-Tem-00004",
+			"brush": "#adc2ff",
+			"dir": "right",
+			"parent": -207,
+			"key": -28,
+			"loc": "593.764044031516 1136.7619154846514",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Dja-Tem-00004"
+		},
+		{
+			"text": "*Django ORM CRUD(hb)",
+			"brush": "#adc2ff",
+			"parent": 0,
+			"key": -29,
+			"loc": "287.44277528997645 2345.0224863708227",
+			"color": "#adc2ff"
+		},
+		{
+			"text": "display data ",
+			"brush": "#adc2ff",
+			"parent": -29,
+			"key": -31,
+			"loc": "498.72889794199625 2115.846506731268",
+			"color": "#adc2ff"
+		},
+		{
+			"text": "Lead List and Detail Views\nDoc: Dja-Lis-00002",
+			"brush": "#adc2ff",
+			"parent": -31,
+			"key": -32,
+			"loc": "634.915899500266 2108.8075907156435",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Dja-Lis-00002",
+			"color": "#adc2ff"
+		},
+		{
+			"text": "Dynamic Paths\nDOC : Dja-Tem-00008",
+			"brush": "#adc2ff",
+			"dir": "right",
+			"parent": -207,
+			"key": -33,
+			"loc": "593.764044031516 1078.3219801746895",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Dja-Tem-00008"
+		},
+		{
+			"text": "Dynamic URLs in Templates\nDOC : Dja-Tem-00009",
+			"brush": "#adc2ff",
+			"dir": "right",
+			"parent": -207,
+			"key": -34,
+			"loc": "593.764044031516 1326.1595534457872",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Dja-Tem-00009"
+		},
+		{
+			"text": "Using Template Inheritance\nDOC : Dja-Tem-00021",
+			"brush": "#adc2ff",
+			"dir": "right",
+			"parent": -207,
+			"key": -35,
+			"loc": "593.764044031516 1384.599488755749",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Dja-Tem-00021"
+		},
+		{
+			"text": "Includes \nDOC : Dja-Tem-00011 ",
+			"brush": "#adc2ff",
+			"dir": "right",
+			"parent": -207,
+			"key": -36,
+			"loc": "593.764044031516 1019.8820448647274",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Dja-Tem-00011"
+		},
+		{
+			"text": "create view",
+			"brush": "#adc2ff",
+			"parent": -29,
+			"key": -37,
+			"loc": "498.72889794199625 2246.8042093824424",
+			"color": "#adc2ff"
+		},
+		{
+			"text": "Forms and Create View DOC: Dja-For-00007",
+			"brush": "#adc2ff",
+			"parent": -37,
+			"key": -38,
+			"loc": "631.285040125266 2167.2475260256056",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Dja-For-00007",
+			"color": "#adc2ff"
+		},
+		{
+			"text": "Using Model Forms DOC: Dja-Mod-00018",
+			"brush": "#adc2ff",
+			"parent": -37,
+			"key": -39,
+			"loc": "631.285040125266 2225.6874613355676",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Dja-Mod-00018",
+			"color": "#adc2ff"
+		},
+		{
+			"text": "update view",
+			"brush": "#adc2ff",
+			"parent": -29,
+			"key": -40,
+			"loc": "498.72889794199625 2370.722996017991",
+			"color": "#adc2ff"
+		},
+		{
+			"text": "Lead Update View  DOC: Dja-vie-00004",
+			"brush": "#adc2ff",
+			"parent": -40,
+			"key": -41,
+			"loc": "634.915899500266 2370.722996017991",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Dja-vie-00004",
+			"color": "#adc2ff"
+		},
+		{
+			"text": "delete view",
+			"brush": "#adc2ff",
+			"parent": -29,
+			"key": -42,
+			"loc": "498.72889794199625 2415.0850992967034",
+			"color": "#adc2ff"
+		},
+		{
+			"text": "Lead Delete View DOC: Dja-vie-00005",
+			"brush": "#adc2ff",
+			"parent": -42,
+			"key": -43,
+			"loc": "630.574102625266 2415.0850992967034",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Dja-vie-00005",
+			"color": "#adc2ff"
+		},
+		{
+			"text": "Using Style with Django Templates",
+			"brush": "#adc2ff",
+			"parent": 0,
+			"key": -44,
+			"loc": "287.44277528997645 2749.518271940262"
+		},
+		{
+			"text": "TailwindCSS DOC: Dja-Tem-00015",
+			"brush": "#adc2ff",
+			"parent": -44,
+			"key": -45,
+			"loc": "554.3978432544963 2749.518271940262",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Dja-Tem-00015"
+		},
+		{
+			"text": "Inherit Django Basic views with CRUD",
+			"brush": "#adc2ff",
+			"parent": 0,
+			"key": -46,
+			"loc": "287.44277528997645 2793.880375218974"
+		},
+		{
+			"text": "Class Based Views DOC: Dja-Cla-00001",
+			"brush": "#adc2ff",
+			"parent": -46,
+			"key": -47,
+			"loc": "574.6024330982463 2793.880375218974",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Dja-Cla-00001"
+		},
+		{
+			"text": "Using Django complete requirement",
+			"brush": "#adc2ff",
+			"parent": 0,
+			"key": -48,
+			"loc": "287.44277528997645 3043.8465556750343"
+		},
+		{
+			"text": "Sending Emails DOC: Dja-Ema-00001",
+			"brush": "#adc2ff",
+			"parent": -48,
+			"key": -49,
+			"loc": "561.6341713794963 2955.122349117611",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Dja-Ema-00001"
+		},
+		{
+			"text": "Authentication DOC: Dja-Aut-00001",
+			"brush": "#adc2ff",
+			"parent": -48,
+			"key": -50,
+			"loc": "561.6341713794963 2999.484452396323",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Dja-Aut-00001"
+		},
+		{
+			"text": "Tests DOC: Dja-Tes-00004",
+			"brush": "#adc2ff",
+			"parent": -48,
+			"key": -51,
+			"loc": "561.6341713794963 3043.846555675035",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Dja-Tes-00004"
+		},
+		{
+			"text": "Auth Permissions DOC: Dja-Per-00001",
+			"brush": "#adc2ff",
+			"parent": -48,
+			"key": -52,
+			"loc": "561.6341713794963 3088.2086589537466",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Dja-Per-00001"
+		},
+		{
+			"text": "Signals DOC: Dja-Mod-00019",
+			"brush": "#adc2ff",
+			"parent": -48,
+			"key": -53,
+			"loc": "561.6341713794963 3132.5707622324585",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Dja-Mod-00019"
+		},
+		{
+			"text": "Setting one-to-many Relations(Model ForeignKey) \nDOC : Dja-mod-00012",
+			"brush": "#adc2ff",
+			"dir": "right",
+			"parent": -131,
+			"key": -54,
+			"loc": "830.563360437766 -346.58619679323186",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Dja-mod-00012",
+			"color": "#adc2ff"
+		},
+		{
+			"text": "many-to-many Relations \nDOC : Dja-mod-00013",
+			"brush": "#adc2ff",
+			"dir": "right",
+			"parent": -131,
+			"key": -55,
+			"loc": "830.563360437766 -274.06842945202",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Dja-mod-00013",
+			"color": "#adc2ff"
+		},
+		{
+			"text": "More Meetup Fields & Outputting Related Data DOC : Dja-Dat-00021",
+			"brush": "#adc2ff",
+			"dir": "right",
+			"parent": -129,
+			"key": -56,
+			"loc": "819.956426844016 -1404.0684356639483",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Dja-Dat-00021",
+			"color": "#adc2ff"
+		},
+		{
+			"text": "Creating a Modelform DOC : Dja-mod-00015",
+			"brush": "#adc2ff",
+			"dir": "right",
+			"parent": -128,
+			"key": -57,
+			"loc": "796.127325281516 -1520.9483062838722",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Dja-mod-00015",
+			"color": "#adc2ff"
+		},
+		{
+			"text": "Handling Form Submission DOC: Dja-For-00005",
+			"brush": "#adc2ff",
+			"parent": -48,
+			"key": -58,
+			"loc": "561.6341713794963 2838.242478497687",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Dja-For-00005"
+		},
+		{
+			"text": "More on Form Submission & Validation DOC : Dja-For-00006",
+			"brush": "#adc2ff",
+			"parent": -48,
+			"key": -59,
+			"loc": "561.6341713794963 2896.682413807649",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Dja-For-00006"
+		},
+		{
+			"text": "Adding Image Upload DOC : Dja-Ima-00001",
+			"brush": "#adc2ff",
+			"parent": -48,
+			"key": -60,
+			"loc": "561.6341713794963 3176.9328655111703",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Dja-Ima-00001"
+		},
+		{
+			"text": "Serving & Displaying Images DOC : Dja-Ima-00002",
+			"brush": "#adc2ff",
+			"parent": -48,
+			"key": -61,
+			"loc": "561.6341713794963 3235.3728008211324",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Dja-Ima-00002"
+		},
+		{
+			"text": "transaction ",
+			"brush": "#adc2ff",
+			"parent": -29,
+			"key": -62,
+			"loc": "498.72889794199625 2466.4861185910395",
+			"color": "#adc2ff"
+		},
+		{
+			"text": "Django中手動事務的使用\nDoc: Dja-tra-00001",
+			"brush": "#adc2ff",
+			"parent": -62,
+			"key": -63,
+			"loc": "629.126837000266 2459.447202575415",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Dja-tra-00001",
+			"color": "#adc2ff"
+		},
+		{
+			"text": "django model search overall\nDoc: Dja-que-00002",
+			"brush": "#adc2ff",
+			"dir": "right",
+			"parent": -126,
+			"key": -64,
+			"loc": "783.552618250266 -463.46606741315554",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Dja-que-00002",
+			"color": "#adc2ff"
+		},
+		{
+			"text": "Generate bill",
+			"brush": "#adc2ff",
+			"parent": 0,
+			"key": -65,
+			"loc": "287.44277528997645 3359.2915874566806"
+		},
+		{
+			"text": "使用Django服務端生成單據\nDoc: Dja-Gen-00004",
+			"brush": "#adc2ff",
+			"parent": -65,
+			"key": -66,
+			"loc": "427.9588784107463 3352.252671441056",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Dja-Gen-00004"
+		},
+		{
+			"text": "Data analysis",
+			"brush": "#adc2ff",
+			"parent": 0,
+			"key": -67,
+			"loc": "287.44277528997645 3461.0293224528723"
+		},
+		{
+			"text": "使用model的aggregate,annotate, count,sum,max,min, case when, 分析統計數據的方法\nDoc:Dja-Dat-00030",
+			"brush": "#adc2ff",
+			"parent": -67,
+			"key": -68,
+			"loc": "432.28797997324625 3410.6926067510167",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Dja-Dat-00030"
+		},
+		{
+			"text": "How to Page jump and pass parameters",
+			"brush": "#adc2ff",
+			"parent": 0,
+			"key": -69,
+			"loc": "287.44277528997645 3599.025941119671"
+		},
+		{
+			"text": "How can I pass parameters between webpages\nDoc:HTM-par-00001",
+			"brush": "#adc2ff",
+			"parent": -69,
+			"key": -70,
+			"loc": "586.2059487232463 3555.7281414334407",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=HTM-par-00001"
+		},
+		{
+			"text": "JavaScript獲取URL中的參數值\nDoc:Jav-Arg-00001",
+			"brush": "#adc2ff",
+			"parent": -69,
+			"key": -71,
+			"loc": "586.2059487232463 3628.2459087746524",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Jav-Arg-00001"
+		},
+		{
+			"text": "Introduction",
+			"brush": "#adc2ff",
+			"dir": "right",
+			"parent": 0,
+			"key": -72,
+			"loc": "287.44277528997645 -5422.985999078979"
+		},
+		{
+			"text": "DataBase",
+			"brush": "#adc2ff",
+			"parent": 0,
+			"key": -75,
+			"loc": "287.44277528997645 4010.0284909084967"
+		},
+		{
+			"text": "ORM",
+			"brush": "#adc2ff",
+			"parent": -75,
+			"key": -76,
+			"loc": "411.3407143482463 3987.8474392691405"
+		},
+		{
+			"text": "Structure Query",
+			"brush": "#adc2ff",
+			"parent": -75,
+			"key": -77,
+			"loc": "411.3407143482463 4032.209542547853"
+		},
+		{
+			"text": "how to use query search data",
+			"brush": "#adc2ff",
+			"parent": -76,
+			"key": -78,
+			"loc": "508.47693465651616 3987.8474392691405"
+		},
+		{
+			"text": "simple query",
+			"brush": "#adc2ff",
+			"parent": -78,
+			"key": -79,
+			"loc": "745.832881527286 3686.685844084615"
+		},
+		{
+			"text": "使用ORM執行簡單的查詢(How to run a simple query)\nDoc:Dja-ORM-00001",
+			"brush": "#adc2ff",
+			"parent": -79,
+			"key": -80,
+			"loc": "886.3362893355559 3513.4946453396915",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Dja-ORM-00001"
+		},
+		{
+			"text": "Django ORM performs OR query example(OR query example)\nDjango ORM執行or 查詢實例\nDoc:Dja-orm-00003",
+			"brush": "#adc2ff",
+			"parent": -79,
+			"key": -81,
+			"loc": "886.3362893355559 3586.0124126809033",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Dja-orm-00003"
+		},
+		{
+			"text": "Use exclude query data(Starting to code the NOT example)\nDoc:Dja-orm-00008",
+			"brush": "#adc2ff",
+			"parent": -79,
+			"key": -82,
+			"loc": "886.3362893355559 3672.608012053365",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Dja-orm-00008"
+		},
+		{
+			"text": "Django ORM performs and query(Start coding AND queries) Django ORM 執行and查詢\nDoc:Dja-orm-00005",
+			"brush": "#adc2ff",
+			"parent": -79,
+			"key": -83,
+			"loc": "886.3362893355559 3745.125779394577",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Dja-orm-00005"
+		},
+		{
+			"text": "Use union to combine query results(Union example)\nDoc:Dja-orm-00007",
+			"brush": "#adc2ff",
+			"parent": -79,
+			"key": -84,
+			"loc": "886.3362893355559 3831.721378767039",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Dja-orm-00007"
+		},
+		{
+			"text": "using Q object query\n(适合复杂的查询条件，\n动态生成的查询条件)",
+			"brush": "#adc2ff",
+			"parent": -78,
+			"key": -85,
+			"loc": "745.832881527286 4028.1579327438003"
+		},
+		{
+			"text": "query data with Q Object(Q Object example)\nDoc:Dja-orm-00009",
+			"brush": "#adc2ff",
+			"parent": -85,
+			"key": -86,
+			"loc": "946.9691018355556 3962.679081418213",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Dja-orm-00009"
+		},
+		{
+			"text": "OR query example with Q objects\nDoc:Dja-orm-00004",
+			"brush": "#adc2ff",
+			"parent": -85,
+			"key": -87,
+			"loc": "946.9691018355558 4035.196848759425",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Dja-orm-00004"
+		},
+		{
+			"text": "Django ORM performs and query with Q Objects(Q Objects AND queries)\nDoc:Dja-orm-00006",
+			"brush": "#adc2ff",
+			"parent": -85,
+			"key": -88,
+			"loc": "946.9691018355556 4093.6367840693865",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Dja-orm-00006"
+		},
+		{
+			"text": "Select and Output individual fields example(查詢和輸出單個字段的實例)\nDoc:Dja-ORM-00010",
+			"brush": "#adc2ff",
+			"parent": -78,
+			"key": -89,
+			"loc": "745.832881527286 4166.154551410598",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Dja-ORM-00010"
+		},
+		{
+			"text": "高级查询\n(适合多表查询，django orm不能处理的复杂查询)",
+			"brush": "#adc2ff",
+			"parent": -78,
+			"key": -90,
+			"loc": "745.832881527286 4260.853370391165"
+		},
+		{
+			"text": "django model使用extra進行連表查詢\nDoc:Dja-ext-00001",
+			"brush": "#adc2ff",
+			"parent": -90,
+			"key": -91,
+			"loc": "956.3572854293058 4238.67231875181",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Dja-ext-00001"
+		},
+		{
+			"text": "Django 直接执行Sql语句查询数据\nDoc:Dja-mod-00002",
+			"brush": "#adc2ff",
+			"parent": -90,
+			"key": -92,
+			"loc": "956.3572854293059 4297.112254061772",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Dja-mod-00002"
+		},
+		{
+			"text": "Programming",
+			"brush": "#adc2ff",
+			"parent": 0,
+			"key": -93,
+			"loc": "287.44277528997645 4143.114800744634"
+		},
+		{
+			"text": "Assignment Statement",
+			"brush": "#adc2ff",
+			"parent": -93,
+			"key": -94,
+			"loc": "432.2752846607463 4076.571645826565"
+		},
+		{
+			"text": "Selection Statement",
+			"brush": "#adc2ff",
+			"parent": -93,
+			"key": -95,
+			"loc": "432.2752846607463 4120.9337491052775"
+		},
+		{
+			"text": "Iteration",
+			"brush": "#adc2ff",
+			"parent": -93,
+			"key": -96,
+			"loc": "432.2752846607463 4165.29585238399"
+		},
+		{
+			"text": "Error Handling",
+			"brush": "#adc2ff",
+			"parent": -93,
+			"key": -97,
+			"loc": "432.2752846607463 4209.657955662701"
+		},
+		{
+			"text": "Data Structure Manipulation",
+			"brush": "#adc2ff",
+			"dir": "right",
+			"parent": 0,
+			"key": -98,
+			"loc": "287.44277528997645 4320.563213859481"
+		},
+		{
+			"text": "String Manipulation",
+			"brush": "#adc2ff",
+			"dir": "right",
+			"parent": -98,
+			"key": -99,
+			"loc": "515.3914955982463 4254.0200589414135"
+		},
+		{
+			"text": "Date Manipulation",
+			"brush": "#adc2ff",
+			"dir": "right",
+			"parent": -98,
+			"key": -100,
+			"loc": "515.3914955982463 4298.382162220125"
+		},
+		{
+			"text": "JSON Manipulation",
+			"brush": "#adc2ff",
+			"dir": "right",
+			"parent": -98,
+			"key": -101,
+			"loc": "515.3914955982463 4342.744265498837"
+		},
+		{
+			"text": "Array Manipulation",
+			"brush": "#adc2ff",
+			"dir": "right",
+			"parent": -98,
+			"key": -102,
+			"loc": "515.3914955982463 4387.106368777549"
+		},
+		{
+			"text": "How to search data and analysis with data\nDoc:Dja-Sea-00006",
+			"brush": "#adc2ff",
+			"parent": -67,
+			"key": -103,
+			"loc": "432.2879799732463 3497.2882061234786",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Dja-Sea-00006"
+		},
+		{
+			"text": "如果獲取控件需要的datasource數據\ndoc:Dja-com-00014",
+			"brush": "#adc2ff",
+			"parent": -78,
+			"key": -104,
+			"loc": "745.832881527286 3904.2391461082507",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Dja-com-00014"
+		},
+		{
+			"text": "views",
+			"brush": "#adc2ff",
+			"dir": "right",
+			"parent": 0,
+			"key": -105,
+			"loc": "287.44277528997645 3300.851652146719"
+		},
+		{
+			"text": "如何將含有二進制字段的model數據返回到頁面",
+			"brush": "#adc2ff",
+			"dir": "right",
+			"parent": -105,
+			"key": -106,
+			"loc": "386.7562416919963 3293.8127361310944"
+		},
+		{
+			"text": "使用Django的Model批量更新數據\nDoc: Dja-Mod-00011",
+			"brush": "#adc2ff",
+			"parent": -29,
+			"key": -107,
+			"loc": "498.72889794199625 2517.887137885377",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Dja-Mod-00011",
+			"color": "#adc2ff"
+		},
+		{
+			"text": "Create Django Project",
+			"brush": "#adc2ff",
+			"dir": "right",
+			"parent": 0,
+			"key": -108,
+			"loc": "287.44277528997645 1566.9582107012602"
+		},
+		{
+			"text": "Starting a Project\nDoc: Dja-Vir-00002",
+			"brush": "#adc2ff",
+			"dir": "right",
+			"parent": -108,
+			"key": -109,
+			"loc": "482.14881981699625 1523.6604110150292",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Dja-Vir-00002"
+		},
+		{
+			"text": "cookies",
+			"brush": "#adc2ff",
+			"parent": 0,
+			"key": -110,
+			"loc": "287.44277528997645 4445.546304087511"
+		},
+		{
+			"text": "如何處理Django cookies共享引起的session衝突\nDoc:Dja-coo-00001",
+			"brush": "#adc2ff",
+			"parent": -110,
+			"key": -111,
+			"loc": "398.3280190357463 4431.468472056261",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Dja-coo-00001"
+		},
+		{
+			"text": "如何使用Django接收頁面參數查詢返回JSON數據並顯示\nDoc:Dja-Sea-00007",
+			"brush": "#adc2ff",
+			"parent": -29,
+			"key": -112,
+			"loc": "498.72889794199625 2576.327073195339",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Dja-Sea-00007",
+			"color": "#adc2ff"
+		},
+		{
+			"text": "Bootstrap",
+			"brush": "#adc2ff",
+			"dir": "right",
+			"parent": -207,
+			"key": -113,
+			"loc": "593.764044031516 939.2610579154098"
+		},
+		{
+			"text": "Styling\nDoc: Dja-Boo-00001",
+			"brush": "#adc2ff",
+			"dir": "right",
+			"parent": -113,
+			"key": -114,
+			"loc": "716.214717464786 903.0021742448039",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Dja-Boo-00001"
+		},
+		{
+			"text": "Grid layout\nDoc: Boo-Gri-00001",
+			"brush": "#adc2ff",
+			"dir": "right",
+			"parent": -113,
+			"key": -115,
+			"loc": "716.214717464786 961.4421095547657",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Boo-Gri-00001"
+		},
+		{
+			"text": "Load the static style file\nDoc:Pyt-Sta-00001",
+			"brush": "#adc2ff",
+			"dir": "right",
+			"parent": -117,
+			"key": -116,
+			"loc": "717.642940121036 1443.0394240657108",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Pyt-Sta-00001"
+		},
+		{
+			"text": "Static File",
+			"brush": "#adc2ff",
+			"dir": "right",
+			"parent": -207,
+			"key": -117,
+			"loc": "593.764044031516 1479.298307736317"
+		},
+		{
+			"text": "Load Static Images\nDoc:Pyt-Sta-00002",
+			"brush": "#adc2ff",
+			"dir": "right",
+			"parent": -117,
+			"key": -118,
+			"loc": "717.642940121036 1501.4793593756729",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Pyt-Sta-00002"
+		},
+		{
+			"text": "*Views and URLs(qfq)",
+			"brush": "#adc2ff",
+			"dir": "right",
+			"parent": 0,
+			"key": -119,
+			"loc": "287.44277528997645 333.21280497267526",
+			"color": "#adc2ff"
+		},
+		{
+			"text": "Creating views and handling requests",
+			"brush": "#adc2ff",
+			"dir": "right",
+			"parent": -119,
+			"key": -120,
+			"loc": "481.90126122324625 122.16626716842404",
+			"color": "#adc2ff"
+		},
+		{
+			"text": "如何定義一個Django View函數(How to define a Django View function)\nDoc:Dja-Fun-00002",
+			"brush": "#adc2ff",
+			"dir": "right",
+			"parent": -120,
+			"key": -121,
+			"loc": "765.506231531516 -159.80158258831761",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Dja-Fun-00002",
+			"color": "#adc2ff"
+		},
+		{
+			"text": "在Django View中如何調用RestApi（How to call RestApi in Django View）\nDoc:Dja-Res-00015",
+			"brush": "#adc2ff",
+			"dir": "right",
+			"parent": -120,
+			"key": -122,
+			"loc": "765.506231531516 -87.28381524710571",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Dja-Res-00015",
+			"color": "#adc2ff"
+		},
+		{
+			"text": "*REST API Development(hb)",
+			"brush": "#adc2ff",
+			"dir": "right",
+			"parent": 0,
+			"key": -123,
+			"loc": "287.44277528997645 -2925.1394898748063",
+			"color": "#adc2ff"
+		},
+		{
+			"text": "Building RESTful APIs with Django Rest Framework (DRF)",
+			"brush": "#adc2ff",
+			"dir": "right",
+			"parent": -123,
+			"key": -124,
+			"loc": "521.8724526294963 -3765.3949739522564",
+			"color": "#adc2ff"
+		},
+		{
+			"text": "Working with queries and the ORM (ObjectRelational Mapping)",
+			"brush": "#adc2ff",
+			"dir": "right",
+			"parent": -16,
+			"key": -126,
+			"loc": "515.3978432544963 -816.8873809186281",
+			"color": "#adc2ff"
+		},
+		{
+			"text": "如何使用Django Model filter 和Q查詢數據(How to query data using Django Model filter and Q)\nDoc:Dja-mod-00004",
+			"brush": "#b76ba3",
+			"dir": "right",
+			"parent": -126,
+			"key": -127,
+			"loc": "783.552618250266 -1228.7486297340627",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Dja-mod-00004",
+			"color": "#b76ba3"
+		},
+		{
+			"text": "Defining models and database tables",
+			"brush": "#adc2ff",
+			"dir": "right",
+			"parent": -16,
+			"key": -128,
+			"loc": "515.3978432544963 -1579.388241593834",
+			"color": "#adc2ff"
+		},
+		{
+			"text": "Field types and options in Django models",
+			"brush": "#adc2ff",
+			"dir": "right",
+			"parent": -16,
+			"key": -129,
+			"loc": "515.3978432544963 -1338.5895843383614",
+			"color": "#adc2ff"
+		},
+		{
+			"text": "Database migrations and schema changes",
+			"brush": "#adc2ff",
+			"dir": "right",
+			"parent": -16,
+			"key": -130,
+			"loc": "515.3978432544963 -1294.2274810596496",
+			"color": "#adc2ff"
+		},
+		{
+			"text": "Model relationships (onetoone, onetomany, manytomany)",
+			"brush": "#adc2ff",
+			"dir": "right",
+			"parent": -16,
+			"key": -131,
+			"loc": "515.3978432544963 -310.3273131226259",
+			"color": "#adc2ff"
+		},
+		{
+			"text": "如何使用Django model修改數據(How to modify data using Django model)\nDoc:Dja-mod-00009",
+			"brush": "#adc2ff",
+			"dir": "right",
+			"parent": -126,
+			"key": -132,
+			"loc": "783.552618250266 -795.7706328717532",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Dja-mod-00009",
+			"color": "#adc2ff"
+		},
+		{
+			"text": "如何使用Django model操作數據(How to manipulate data using Django models)\nDoc:Dja-Dat-00018",
+			"brush": "#b76ba3",
+			"dir": "right",
+			"parent": -126,
+			"key": -133,
+			"loc": "783.552618250266 -723.2528655305413",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Dja-Dat-00018",
+			"color": "#b76ba3"
+		},
+		{
+			"text": "Django View如何在新增時更新其它數據表(How does Django View update other data tables when they are added)\nDoc:Dja-Cus-00008",
+			"brush": "#adc2ff",
+			"dir": "right",
+			"parent": -120,
+			"key": -134,
+			"loc": "765.506231531516 -14.7660479058938",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Dja-Cus-00008",
+			"color": "#adc2ff"
+		},
+		{
+			"text": "Internationalization and Localization",
+			"brush": "#adc2ff",
+			"parent": 0,
+			"key": -136,
+			"loc": "287.44277528997645 4511.025155413097"
+		},
+		{
+			"text": "Working with language files and translations",
+			"brush": "#adc2ff",
+			"parent": -136,
+			"key": -137,
+			"loc": "560.9486245044963 4503.986239397473",
+			"color": "#adc2ff"
+		},
+		{
+			"text": "django項目如何支持國際化語言(How does the django project support internationalized languages)\nDoc:Dja-int-00005",
+			"brush": "#adc2ff",
+			"parent": -137,
+			"key": -138,
+			"loc": "811.069708094016 4439.571691664367",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Dja-int-00005",
+			"color": "#adc2ff"
+		},
+		{
+			"text": "django項目如何把html,js,py文件轉換為國際化語言(How does the django project convert files into internationalized languages)\nDoc:Dja-int-00006",
+			"brush": "#adc2ff",
+			"parent": -137,
+			"key": -139,
+			"loc": "811.069708094016 4526.167291036829",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Dja-int-00006",
+			"color": "#adc2ff"
+		},
+		{
+			"text": "如何使用Django Model批量新增或更新數據(How to use Django Model to add or update data in batches)\nDoc:Dja-Mod-00011",
+			"brush": "#adc2ff",
+			"dir": "right",
+			"parent": -126,
+			"key": -140,
+			"loc": "783.552618250266 -650.7350981893294",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Dja-Mod-00011",
+			"color": "#adc2ff"
+		},
+		{
+			"text": "如何在Django View中處理Json數據(How to handle Json data in Django View)\nDoc:Dja-Jso-00002",
+			"brush": "#adc2ff",
+			"dir": "right",
+			"parent": -120,
+			"key": -141,
+			"loc": "765.506231531516 85.9073834978181",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Dja-Jso-00002",
+			"color": "#adc2ff"
+		},
+		{
+			"text": "Report",
+			"brush": "#adc2ff",
+			"parent": 0,
+			"key": -142,
+			"loc": "287.44277528997645 4885.5632169654455",
+			"color": "#adc2ff"
+		},
+		{
+			"text": "(Stimulsoft設計報表時如何動態設置控件邊框 (How to dynamically set control borders when designing reports in Stimulsoft?))\nDoc:Dja-Rep-00005",
+			"brush": "#adc2ff",
+			"parent": -142,
+			"key": -143,
+			"loc": "393.26893700449625 4777.850869546109",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Dja-Rep-00005",
+			"color": "#adc2ff"
+		},
+		{
+			"text": "(如何設計Stimulsoft報表使用打印或導出的PDF文件支持中文(How to design Stimulsoft reports to support Chinese characters when printing or exporting to PDF files))\nDoc:Dja-Rep-00006",
+			"brush": "#adc2ff",
+			"parent": -142,
+			"key": -144,
+			"loc": "393.26893700449625 4864.446468918571",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Dja-Rep-00006",
+			"color": "#adc2ff"
+		},
+		{
+			"text": "如何Stimulsoft Report.JS設計報表(How to Design Reports Using Stimulsoft Report.JS)\nDoc:Dja-Des-00002",
+			"brush": "#adc2ff",
+			"parent": -142,
+			"key": -145,
+			"loc": "393.2689370044963 4979.197732353533",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Dja-Des-00002",
+			"color": "#adc2ff"
+		},
+		{
+			"text": "Django vue項目如何使用通用報表BaseReportApp設計和打印報表（How to Design and Print Reports in a Django Vue Project Using the Generic Report BaseReportApp）\nDoc:Dja-Rep-00003",
+			"brush": "#adc2ff",
+			"parent": -142,
+			"key": -146,
+			"loc": "393.26893700449625 4663.099606111147",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Dja-Rep-00003",
+			"color": "#adc2ff"
+		},
+		{
+			"text": "Django Rest API軟件結構(Django Rest Framework's Software Structure)\nDoc:Dja-RES-00023",
+			"brush": "#ff0000",
+			"dir": "right",
+			"parent": -123,
+			"key": -147,
+			"loc": "521.8724526294963 -3896.35267660343",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Dja-RES-00023",
+			"color": "#ff0000"
+		},
+		{
+			"text": "Serializers and views in DRF",
+			"brush": "#adc2ff",
+			"dir": "right",
+			"parent": -123,
+			"key": -148,
+			"loc": "521.8724526294963 -2503.784170628415",
+			"color": "#adc2ff"
+		},
+		{
+			"text": "Authentication and permission handling in DRF",
+			"brush": "#adc2ff",
+			"dir": "right",
+			"parent": -123,
+			"key": -149,
+			"loc": "521.8724526294963 -2056.7283417348553",
+			"color": "#adc2ff"
+		},
+		{
+			"text": "Versioning and documentation of APIs",
+			"brush": "#adc2ff",
+			"dir": "right",
+			"parent": -123,
+			"key": -150,
+			"loc": "521.8724526294963 -1998.2884064248938",
+			"color": "#adc2ff"
+		},
+		{
+			"text": "Testing and debugging REST APIs",
+			"brush": "#adc2ff",
+			"dir": "right",
+			"parent": -123,
+			"key": -151,
+			"loc": "521.8724526294963 -1953.926303146182",
+			"color": "#adc2ff"
+		},
+		{
+			"text": "Create Rest APIs using Rest Framework with APIView(User Endpoint with APIView) 使用Rest FrameWork的APIView類創建model的Rest API\nDoc:Mic-Res-00002",
+			"brush": "#adc2ff",
+			"dir": "right",
+			"parent": -124,
+			"key": -155,
+			"loc": "819.8929502815156 -3339.4558931055703",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Mic-Res-00002",
+			"color": "#adc2ff"
+		},
+		{
+			"text": "reate Rest APIs using Rest Framework with ViewSets(Rest APIs with ViewSets) 使用Rest FrameWork的ViewSet類創建model的五種常用Rest API\nDoc:Mic-Res-00001",
+			"brush": "#adc2ff",
+			"dir": "right",
+			"parent": -124,
+			"key": -156,
+			"loc": "819.892950281516 -3224.70462967061",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Mic-Res-00001",
+			"color": "#adc2ff"
+		},
+		{
+			"text": "生成獲取單個Model對像的RestAPI\nDoc:Dja-Ret-00001",
+			"brush": "#adc2ff",
+			"dir": "right",
+			"parent": -148,
+			"key": -157,
+			"loc": "754.842169031516 -2819.8822968708005",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Dja-Ret-00001",
+			"color": "#adc2ff"
+		},
+		{
+			"text": "Django Rest Framework ListAPIView & ListCreateAPIView(如何使用Djang Rest Framework的Generics ListAPIView & ListCreateAPIView提供獲取Model實例數據列表的Rest Api)\nDoc:Dja-Lis-00003",
+			"brush": "#adc2ff",
+			"dir": "right",
+			"parent": -148,
+			"key": -159,
+			"loc": "754.842169031516 -2761.4423615608384",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Dja-Lis-00003",
+			"color": "#adc2ff"
+		},
+		{
+			"text": "使用Django Rest framework創建一個用戶API 的簡單實例\nDoc:Dja-Res-00001\t",
+			"brush": "#adc2ff",
+			"dir": "right",
+			"parent": -124,
+			"key": -160,
+			"loc": "819.892950281516 -3109.953366235648",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Dja-Res-00001",
+			"color": "#adc2ff"
+		},
+		{
+			"text": "生成獲取Model對象列表的Rest API\nDoc:Dja-Lis-00001",
+			"brush": "#adc2ff",
+			"dir": "right",
+			"parent": -148,
+			"key": -161,
+			"loc": "754.842169031516 -2646.6910981258766",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Dja-Lis-00001",
+			"color": "#adc2ff"
+		},
+		{
+			"text": "\tDjango Rest Framework CreateAPIView(如何使用Djang Rest Framework的Generics CreateAPIView提供新增單個Model實例數據的Rest Api)\nDoc:Dja-Gen-00006",
+			"brush": "#adc2ff",
+			"dir": "right",
+			"parent": -148,
+			"key": -162,
+			"loc": "754.842169031516 -2588.251162815915",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Dja-Gen-00006",
+			"color": "#adc2ff"
+		},
+		{
+			"text": "Django Rest Framework Generics RetrieveAPIView(如何使用Djang Rest Framework的Generics RetrieveAPIView提供獲取單個Model實例數據的Rest Api)\nDoc:Dja-Gen-00005",
+			"brush": "#adc2ff",
+			"dir": "right",
+			"parent": -148,
+			"key": -163,
+			"loc": "754.842169031516 -2473.499899380953",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Dja-Gen-00005",
+			"color": "#adc2ff"
+		},
+		{
+			"text": "Mixins and a Generic API View(使用Django Rest Framework的Mixins提供基本視圖行為的操作和GenericAPIView創建Api View)\nDoc:Dja-Api-00010",
+			"brush": "#adc2ff",
+			"dir": "right",
+			"parent": -148,
+			"key": -164,
+			"loc": "754.842169031516 -2358.748635945991",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Dja-Api-00010",
+			"color": "#adc2ff"
+		},
+		{
+			"text": "UpdateAPIView & DestroyAPIView(如何使用Djang Rest Framework的Generics UpdateAPIView & DestroyAPIView提供更新和刪除Model實例的Rest Api)\nDoc:Dja-Api-00009",
+			"brush": "#adc2ff",
+			"dir": "right",
+			"parent": -148,
+			"key": -165,
+			"loc": "754.842169031516 -2258.075204542279",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Dja-Api-00009",
+			"color": "#adc2ff"
+		},
+		{
+			"text": "Using Function Based Views For Create Retrieve or List（使用基于函數的視圖實現新增/獲取單例/獲取列表的Rest Api）\nDoc:Dja-Api-00008",
+			"brush": "#adc2ff",
+			"dir": "right",
+			"parent": -124,
+			"key": -166,
+			"loc": "819.892950281516 -3037.435598894436",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Dja-Api-00008",
+			"color": "#adc2ff"
+		},
+		{
+			"text": "URL patterns and routing in Django",
+			"brush": "#adc2ff",
+			"dir": "right",
+			"parent": -119,
+			"key": -167,
+			"loc": "481.90126122324625 166.52837044713596",
+			"color": "#adc2ff"
+		},
+		{
+			"text": "Classbased views vs. functionbased views",
+			"brush": "#adc2ff",
+			"dir": "right",
+			"parent": -119,
+			"key": -168,
+			"loc": "481.90126122324625 448.49622020387767",
+			"color": "#adc2ff"
+		},
+		{
+			"text": "Template rendering and context data",
+			"brush": "#adc2ff",
+			"dir": "right",
+			"parent": -119,
+			"key": -169,
+			"loc": "481.90126122324625 499.89723949821445",
+			"color": "#adc2ff"
+		},
+		{
+			"text": "Handling forms and form validation",
+			"brush": "#adc2ff",
+			"dir": "right",
+			"parent": -119,
+			"key": -170,
+			"loc": "481.90126122324625 544.2593427769264",
+			"color": "#adc2ff"
+		},
+		{
+			"text": "使用Django Generic editing views實現增、刪、改功能（Implementing Create, Delete, and Update Functionality Using Django Generic Editing Views）\nDoc:Dja-Dja-00008",
+			"brush": "#adc2ff",
+			"parent": -29,
+			"key": -171,
+			"loc": "498.72889794199625 2648.8448405365507",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Dja-Dja-00008",
+			"color": "#adc2ff"
+		},
+		{
+			"text": "使用自定義的SWCreateView(Class View)實現數據新增（Implement Data Addition with Custom SWCreateView (Class-Based View)）\nDoc:Dja-Dja-00009",
+			"brush": "#adc2ff",
+			"parent": -37,
+			"key": -172,
+			"loc": "631.285040125266 2270.0495646142795",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Dja-Dja-00009",
+			"color": "#adc2ff"
+		},
+		{
+			"text": "如何使用 Django ORM 從現有數據庫錶生成模型\nDoc:Dja-Mod-00060",
+			"brush": "#b76ba3",
+			"dir": "right",
+			"parent": -128,
+			"key": -173,
+			"loc": "796.127325281516 -1651.906008935046",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Dja-Mod-00060",
+			"color": "#b76ba3"
+		},
+		{
+			"text": "如何使用django model的extra實現多表關聯查詢 (How to use extra of django model to implement multi-table related query)\nDoc:Dja-ext-00001",
+			"brush": "#adc2ff",
+			"dir": "right",
+			"parent": -126,
+			"key": -174,
+			"loc": "783.552618250266 -1083.713095051639",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Dja-ext-00001",
+			"color": "#adc2ff"
+		},
+		{
+			"text": "在Django中如何執行SQL語句查詢表數據（How to execute SQL statement query in Django）\nDoc: Dja-mod-00002",
+			"brush": "#adc2ff",
+			"dir": "right",
+			"parent": -126,
+			"key": -175,
+			"loc": "783.552618250266 -983.039663647927",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Dja-mod-00002",
+			"color": "#adc2ff"
+		},
+		{
+			"text": "如何使用Django Mode的aggregate和annotate統計數據（How to use Django Mode＊s aggregate and annotate statistics）\nDoc:Dja-Dat-00030",
+			"brush": "#adc2ff",
+			"dir": "right",
+			"parent": -126,
+			"key": -176,
+			"loc": "783.552618250266 -896.444064275465",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Dja-Dat-00030",
+			"color": "#adc2ff"
+		},
+		{
+			"text": "在Python中如何執行SQL語句查詢數據和更新數據(How to execute SQL statements to query data and update data in Python)\nDoc:Dja-Mod-00058",
+			"brush": "#adc2ff",
+			"dir": "right",
+			"parent": -126,
+			"key": -177,
+			"loc": "783.552618250266 -550.0616667856175",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Dja-Mod-00058",
+			"color": "#adc2ff"
+		},
+		{
+			"text": "怎麼使用Stimusloft Reports.JS設計和打印報表(How to Design and Print Reports Using Stimulsoft Reports.JS)\nDoc:Dja-rep-00002",
+			"brush": "#adc2ff",
+			"parent": -142,
+			"key": -178,
+			"loc": "393.2689370044963 4562.426174707435",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Dja-rep-00002",
+			"color": "#adc2ff"
+		},
+		{
+			"text": "Vue+DjangoView和Vue+RestApi的區別\nDoc:Vue-HTT-00003",
+			"brush": "#adc2ff",
+			"dir": "right",
+			"parent": -169,
+			"key": -179,
+			"loc": "759.736212000266 492.85832348258947",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Vue-HTT-00003",
+			"color": "#adc2ff"
+		},
+		{
+			"text": "在Django中實現REST API文件流下載\nDoc:Dja-Vie-00021",
+			"brush": "#adc2ff",
+			"dir": "right",
+			"parent": -120,
+			"key": -180,
+			"loc": "765.506231531516 158.42515083903004",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Dja-Vie-00021",
+			"color": "#adc2ff"
+		},
+		{
+			"text": "django redis cache\n使用redis cache緩存請求數據\nDoc:Red-cac-00004",
+			"brush": "#adc2ff",
+			"dir": "right",
+			"parent": -108,
+			"key": -181,
+			"loc": "482.14881981699625 1582.1003463249913",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Red-cac-00004"
+		},
+		{
+			"text": "如何在 Django 中使用 `ntfy` 發送消息(How to send messages using ntfy in Django)\nDoc:Dja-Vie-00024",
+			"brush": "#f4fc0d",
+			"dir": "right",
+			"parent": -120,
+			"key": -182,
+			"loc": "765.506231531516 216.86508614899196",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Dja-Vie-00024",
+			"color": "#f4fc0d"
+		},
+		{
+			"text": "Show me the introductory for Django\nDoc:Sta-Int-00003",
+			"brush": "#ff0000",
+			"dir": "right",
+			"parent": -72,
+			"key": -183,
+			"loc": "422.18251122324625 -5371.584979784642",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Sta-Int-00003",
+			"color": "#ff0000"
+		},
+		{
+			"text": "model & database",
+			"brush": "#adc2ff",
+			"parent": -29,
+			"key": -184,
+			"loc": "498.72889794199625 1984.8888040800948",
+			"color": "#adc2ff"
+		},
+		{
+			"text": "如何將數據表生成Model (How to generate a model from a data table)\nDoc:Dja-Mod-00060",
+			"brush": "#adc2ff",
+			"parent": -184,
+			"key": -185,
+			"loc": "670.329473719016 1905.332120723258",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Dja-Mod-00060",
+			"color": "#adc2ff"
+		},
+		{
+			"text": "Django Models (Getting Started with Models)\nDoc:Dja-mod-00005",
+			"brush": "#adc2ff",
+			"parent": -184,
+			"key": -186,
+			"loc": "670.329473719016 1977.84988806447",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Dja-mod-00005",
+			"color": "#adc2ff"
+		},
+		{
+			"text": "為django項目配置Sql Server多數據庫\nDoc:Dja-dat-00002",
+			"brush": "#adc2ff",
+			"parent": -184,
+			"key": -187,
+			"loc": "670.329473719016 2050.367655405682",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Dja-dat-00002",
+			"color": "#adc2ff"
+		},
+		{
+			"text": "如何使用Stimulsofts Report.JS設計Master-Details類型的報表（How to Design a Master-Detail Type Report Using Stimulsoft Report.js）\nDoc: Dja-Rep-00004",
+			"brush": "#adc2ff",
+			"parent": -142,
+			"key": -188,
+			"loc": "393.26893700449625 5065.793331725994",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Dja-Rep-00004",
+			"color": "#adc2ff"
+		},
+		{
+			"text": "Stimulsoft設計報表時如何動態設置圖片URL(How to dynamically set the image URL when designing a report in Stimulsoft)\nDoc: Tem-Tem-00007",
+			"brush": "#adc2ff",
+			"parent": -142,
+			"key": -189,
+			"loc": "393.2689370044963 5166.466763129706",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Tem-Tem-00007",
+			"color": "#adc2ff"
+		},
+		{
+			"text": "Getting Started",
+			"brush": "#adc2ff",
+			"parent": 0,
+			"key": -190,
+			"loc": "287.44277528997645 5260.101278517792"
+		},
+		{
+			"text": "如何在Django創建一個自定義類和使用\nDoc:Dja-Get-00013",
+			"brush": "#adc2ff",
+			"parent": -190,
+			"key": -191,
+			"loc": "441.68885887949625 5253.062362502167",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Dja-Get-00013"
+		},
+		{
+			"text": "Getting Started",
+			"brush": "#adc2ff",
+			"dir": "right",
+			"parent": 0,
+			"key": -192,
+			"loc": "287.44277528997645 -4971.672955815495"
+		},
+		{
+			"text": "Structure of Django Project\nDoc:Dja-Get-00005",
+			"brush": "#ff0000",
+			"dir": "right",
+			"parent": -204,
+			"key": -193,
+			"loc": "746.247442469016 -4978.711871831119",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Dja-Get-00005",
+			"color": "#ff0000"
+		},
+		{
+			"text": "How to Activate the virtual environment on Windows or Mac\nDoc:Dja-Get-00007",
+			"brush": "#f97d7c",
+			"dir": "right",
+			"parent": -195,
+			"key": -194,
+			"loc": "702.607305750266 -5327.222876505928",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Dja-Get-00007",
+			"color": "#f97d7c"
+		},
+		{
+			"text": "Working with virtual environments",
+			"brush": "#adc2ff",
+			"dir": "right",
+			"parent": -192,
+			"key": -195,
+			"loc": "441.6888588794963 -5313.145044474679"
+		},
+		{
+			"text": "Installation and setup of Django",
+			"brush": "#adc2ff",
+			"dir": "right",
+			"parent": -192,
+			"key": -196,
+			"loc": "441.6888588794963 -4862.896304803677"
+		},
+		{
+			"text": "How to start or to run a basic django \nDocId:Dja-Get-00002  ",
+			"brush": "#f97d7c",
+			"dir": "right",
+			"parent": -195,
+			"key": -197,
+			"loc": "702.607305750266 -5254.705109164716",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Dja-Get-00002",
+			"color": "#f97d7c"
+		},
+		{
+			"text": "How to create an app in Django\nDocId:Dja-Get-00006  ",
+			"brush": "#ff0000",
+			"dir": "right",
+			"parent": -203,
+			"key": -198,
+			"loc": "683.3739073127662 -5095.5917424510435",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Dja-Get-00006",
+			"color": "#ff0000"
+		},
+		{
+			"text": "Create with a basic skeleton project structure using React.js for the frontend and Django for the backend with mysql as the database.\nDocId:Dja-Get-00004  ",
+			"brush": "#ff0000",
+			"dir": "right",
+			"parent": -203,
+			"key": -199,
+			"loc": "683.3739073127662 -5196.265173854756",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Dja-Get-00004",
+			"color": "#ff0000"
+		},
+		{
+			"text": "How to install pymsql for arm chip Mac\nDocId:Dja-Get-00003  ",
+			"brush": "#ff0000",
+			"dir": "right",
+			"parent": -203,
+			"key": -200,
+			"loc": "683.3739073127662 -5037.151807141081",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Dja-Get-00003",
+			"color": "#ff0000"
+		},
+		{
+			"text": "how do I create my virtual environment ?\nDocId:Pyt-Get-00001",
+			"brush": "#f97d7c",
+			"dir": "right",
+			"parent": -195,
+			"key": -201,
+			"loc": "702.607305750266 -5385.662811815891",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Pyt-Get-00001",
+			"color": "#f97d7c"
+		},
+		{
+			"text": "Introduction of Development Policy\nDoc:Tem-Tem-00028",
+			"brush": "#adc2ff",
+			"dir": "right",
+			"parent": -72,
+			"key": -202,
+			"loc": "422.18251122324625 -5430.024915094604",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Tem-Tem-00028"
+		},
+		{
+			"text": "Creating a new Django project",
+			"brush": "#adc2ff",
+			"dir": "right",
+			"parent": -192,
+			"key": -203,
+			"loc": "441.6888588794963 -5109.669574482294"
+		},
+		{
+			"text": "Django project structure and organization",
+			"brush": "#adc2ff",
+			"dir": "right",
+			"parent": -192,
+			"key": -204,
+			"loc": "441.68885887949637 -4971.672955815495"
+		},
+		{
+			"text": "Introduction to Django's philosophy and features",
+			"brush": "#adc2ff",
+			"dir": "right",
+			"parent": -192,
+			"key": -205,
+			"loc": "441.6888588794963 -4761.158569807483"
+		},
+		{
+			"text": "Django template language (DTL) syntax and features",
+			"brush": "#adc2ff",
+			"dir": "right",
+			"parent": -25,
+			"key": -206,
+			"loc": "494.44422997324625 588.6214460556384"
+		},
+		{
+			"text": "Other",
+			"brush": "#adc2ff",
+			"dir": "right",
+			"parent": -25,
+			"key": -207,
+			"loc": "494.44422997324625 1209.2796828258633"
+		},
+		{
+			"text": "Template inheritance and layout structure",
+			"brush": "#adc2ff",
+			"dir": "right",
+			"parent": -25,
+			"key": -208,
+			"loc": "494.44422997324625 647.0613813656003"
+		},
+		{
+			"text": "Template tags and filters",
+			"brush": "#adc2ff",
+			"dir": "right",
+			"parent": -25,
+			"key": -209,
+			"loc": "494.44422997324625 691.4234846443122"
+		},
+		{
+			"text": "Static files management (CSS, JavaScript, images)",
+			"brush": "#adc2ff",
+			"dir": "right",
+			"parent": -25,
+			"key": -210,
+			"loc": "494.44422997324625 735.7855879230241"
+		},
+		{
+			"text": "Integrating frontend frameworks (React, Vue.js) with Django",
+			"brush": "#adc2ff",
+			"dir": "right",
+			"parent": -25,
+			"key": -211,
+			"loc": "494.44422997324625 794.225523232986"
+		},
+		{
+			"text": "CentOS7安裝python3.8.1和Django(Installing Python 3.8.1 and Django on CentOS 7)\nDocId: Net-cen-00008",
+			"brush": "#ff0000",
+			"dir": "right",
+			"parent": -196,
+			"key": -212,
+			"loc": "690.6229307502662 -4920.271936521158",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Net-cen-00008",
+			"color": "#ff0000"
+		},
+		{
+			"text": "CentOS8安裝Python3.8.1步驟文檔。(CentOS 8 Installation Steps for Python 3.8.1 Documentation.)\nDocId:Net-cen-00022",
+			"brush": "#ff0000",
+			"dir": "right",
+			"parent": -196,
+			"key": -213,
+			"loc": "690.6229307502662 -4847.754169179945",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Net-cen-00022",
+			"color": "#ff0000"
+		},
+		{
+			"text": "如何使用Django創建RestAPI項目\nDoc:Dja-RES-00035",
+			"brush": "#ff0000",
+			"dir": "right",
+			"parent": -123,
+			"key": -214,
+			"loc": "521.8724526294963 -3823.8349092622184",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Dja-RES-00035",
+			"color": "#ff0000"
+		},
+		{
+			"text": "在Django Rest Framework（DRF）中利用APIView創建API視圖(Creating API Views with APIView in Django Rest Framework (DRF))\nDoc:Dja-RES-00037",
+			"brush": "#ff0000",
+			"dir": "right",
+			"parent": -124,
+			"key": -215,
+			"loc": "819.892950281516 -4652.46771572375",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Dja-RES-00037",
+			"color": "#ff0000"
+		},
+		{
+			"text": "Django多數據庫路由管理\nDoc:Dja-dat-00053",
+			"brush": "#ff0000",
+			"dir": "right",
+			"parent": -128,
+			"key": -216,
+			"loc": "796.127325281516 -1710.3459442450078",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Dja-dat-00053",
+			"color": "#ff0000"
+		},
+		{
+			"text": "如何使用Django Rest FrameWork創建CRUD API(How to use Django Restapi for CRUD operations )\nDoc:Dja-RES-00038",
+			"brush": "#f97d7c",
+			"dir": "right",
+			"parent": -219,
+			"key": -217,
+			"loc": "948.818233089786 -4465.198684947577",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Dja-RES-00038",
+			"color": "#f97d7c"
+		},
+		{
+			"text": "如何在 CRUD API 中，針對不同操作（如新增、修改、刪除）進行差異化的數據驗證(How to perform differentiated data validation for different operations (such as create, update, delete) in a CRUD API)\nDoc:Dja-RES-00039",
+			"brush": "#f4fc0d",
+			"dir": "right",
+			"parent": -219,
+			"key": -218,
+			"loc": "948.818233089786 -4378.603085575115",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Dja-RES-00039",
+			"color": "#f4fc0d"
+		},
+		{
+			"text": "CRUD API",
+			"brush": "#b76ba3",
+			"dir": "right",
+			"parent": -124,
+			"key": -219,
+			"loc": "819.892950281516 -4034.349295270229",
+			"color": "#b76ba3"
+		},
+		{
+			"text": "如何實現支持批量新增、修改、刪除的 CRUD API（How to implement a CRUD API that supports batch create, update, and delete operations\nDoc:Dja-RES-00040",
+			"brush": "#f4fc0d",
+			"dir": "right",
+			"parent": -219,
+			"key": -220,
+			"loc": "948.8182330897858 -4249.773990108903",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Dja-RES-00040",
+			"color": "#f4fc0d"
+		},
+		{
+			"text": "在CRUD API 中如何實現分頁、過濾和排序功能(How to implement pagination, filtering, and sorting in a CRUD API)\nDoc:Dja-RES-00041",
+			"brush": "#f4fc0d",
+			"dir": "right",
+			"parent": -219,
+			"key": -221,
+			"loc": "948.818233089786 -3919.598031835267",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Dja-RES-00041",
+			"color": "#f4fc0d"
+		},
+		{
+			"text": "如何處理 Django Rest Framework 中的關聯和嵌套資源（Handling Associations and Nested Resources in CRUD APIs）\nDoc:Dja-RES-00043",
+			"brush": "#f4fc0d",
+			"dir": "right",
+			"parent": -219,
+			"key": -222,
+			"loc": "948.8182330897858 -3818.9246004315555",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Dja-RES-00043",
+			"color": "#f4fc0d"
+		},
+		{
+			"text": "CRUD API 的性能优化",
+			"brush": "#adc2ff",
+			"dir": "right",
+			"parent": -219,
+			"key": -223,
+			"loc": "948.8182330897858 -3516.9043062204196",
+			"color": "#adc2ff"
+		},
+		{
+			"text": "如何實現單據類型 CRUD API 中的單據狀態轉換：確認、取消確認、審核與反審核、作廢（How to Implement State Transition in Document-Oriented CRUD API: Confirm, Unconfirm, Audit and Unaudit, Void）\nDoc:Dja-RES-00045",
+			"brush": "#f4fc0d",
+			"dir": "right",
+			"parent": -219,
+			"key": -224,
+			"loc": "948.8182330897858 -3718.2511690278434",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Dja-RES-00045",
+			"color": "#f4fc0d"
+		},
+		{
+			"text": "Base Class",
+			"brush": "#b76ba3",
+			"dir": "right",
+			"parent": -219,
+			"key": -225,
+			"loc": "948.818233089786 -4056.530346909585",
+			"color": "#b76ba3"
+		},
+		{
+			"text": "如何自定義一個TransactionalModelViewSet的CRUD API的基類，使繼承它的API CRUD操作時支持事務(How to customize a base class for TransactionalModelViewSet CRUD API, so that the CRUD operations of the API inheriting it support transactions.)\nDoc:Dja-RES-00042",
+			"brush": "#f4fc0d",
+			"dir": "right",
+			"parent": -225,
+			"key": -226,
+			"loc": "1081.3743752730559 -4149.100558705191",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Dja-RES-00042",
+			"color": "#f4fc0d"
+		},
+		{
+			"text": "如何自定義一個BillModelViewSet的單據類型CRUD API的基類，使繼承它的API 支持CRUD和單據狀態變更操作，且支持事務\nDoc:Dja-RES-00044",
+			"brush": "#f4fc0d",
+			"dir": "right",
+			"parent": -225,
+			"key": -227,
+			"loc": "1081.3743752730559 -4020.2714632389793",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Dja-RES-00044",
+			"color": "#f4fc0d"
+		},
+		{
+			"text": "CRUD API Endpoint 清單及功能描述(CRUD API Endpoint List and Functional Description)\nDoc:Dja-RES-00046",
+			"brush": "#f97d7c",
+			"dir": "right",
+			"parent": -219,
+			"key": -228,
+			"loc": "948.8182330897858 -4551.794284320039",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Dja-RES-00046",
+			"color": "#f97d7c"
+		},
+		{
+			"text": "實時數據 API",
+			"brush": "#adc2ff",
+			"dir": "right",
+			"parent": -124,
+			"key": -229,
+			"loc": "819.892950281516 -3383.8179963842836"
+		},
+		{
+			"text": "文件上傳和處理 API",
+			"brush": "#adc2ff",
+			"dir": "right",
+			"parent": -124,
+			"key": -230,
+			"loc": "819.892950281516 -3472.5422029417073"
+		},
+		{
+			"text": "分析和報表 API",
+			"brush": "#adc2ff",
+			"dir": "right",
+			"parent": -124,
+			"key": -232,
+			"loc": "819.892950281516 -3428.1800996629954"
+		},
+		{
+			"text": "如何使用 Django Rest Framework 和 React 實現高安全性的混合認證繫統(Implementing a Secure Hybrid Authentication System with Django Rest Framework and React)\nDoc:Dja-RES-00047",
+			"brush": "#f4fc0d",
+			"dir": "right",
+			"parent": -149,
+			"key": -233,
+			"loc": "829.338262781516 -2143.3239411073173",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Dja-RES-00047",
+			"color": "#f4fc0d"
+		},
+		{
+			"text": "如何實現Django Model的排序\nDoc:Dja-Mod-00064",
+			"brush": "#adc2ff",
+			"dir": "right",
+			"parent": -126,
+			"key": -234,
+			"loc": "783.552618250266 -1142.1530303616007",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Dja-Mod-00064"
+		},
+		{
+			"text": "如何使用Syspara系統參數表\nDoc:Dja-Get-00015",
+			"brush": "#adc2ff",
+			"dir": "right",
+			"parent": -192,
+			"key": -235,
+			"loc": "441.6888588794963 -4702.718634497522",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Dja-Get-00015"
+		},
+		{
+			"text": "使用Django服務端生成單據\nDoc: Dja-Mod-00065",
+			"brush": "#adc2ff",
+			"dir": "right",
+			"parent": -16,
+			"key": -236,
+			"loc": "515.3978432544963 -251.88737781266389",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Dja-Mod-00065"
+		},
+		{
+			"text": "使用 REST API 實現單據轉換\nDoc:Dja-RES-00050",
+			"brush": "#adc2ff",
+			"dir": "right",
+			"parent": -124,
+			"key": -237,
+			"loc": "819.892950281516 -2936.762167490724",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Dja-RES-00050"
+		},
+		{
+			"text": "Security and Performance",
+			"brush": "#adc2ff",
+			"parent": 0,
+			"key": -238,
+			"loc": "287.44277528997645 5347.761181482734"
+		},
+		{
+			"text": "Django項目增加權限管理\nDoc:Dja-Sec-00003",
+			"brush": "#adc2ff",
+			"parent": -238,
+			"key": -239,
+			"loc": "504.54335106699625 5311.502297812129",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Dja-Sec-00003"
+		},
+		{
+			"text": "實現頁面權限控制\nDoc:Dja-Sec-00004",
+			"brush": "#adc2ff",
+			"parent": -238,
+			"key": -240,
+			"loc": "504.54335106699625 5369.94223312209",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Dja-Sec-00004"
+		},
+		{
+			"text": "如何在 Django + Vue 中批量保存繫統參數\nDoc:Dja-Get-00016",
+			"brush": "#adc2ff",
+			"dir": "right",
+			"parent": -192,
+			"key": -241,
+			"loc": "441.68885887949625 -4644.27869918756",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Dja-Get-00016"
+		},
+		{
+			"text": "如何根據變更的記錄更新目標單據\nDoc:Dja-Mod-00066",
+			"brush": "#adc2ff",
+			"dir": "right",
+			"parent": -16,
+			"key": -242,
+			"loc": "515.3978432544963 -193.44744250270207",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Dja-Mod-00066"
+		},
+		{
+			"text": "如何在Python中實現HTTP請求\nDoc:Dja-Vie-00026",
+			"brush": "#adc2ff",
+			"dir": "right",
+			"parent": -120,
+			"key": -243,
+			"loc": "765.506231531516 289.38285349020384",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Dja-Vie-00026"
+		},
+		{
+			"text": "如何將字典對象按相同字段賦值給Model\nDoc: Dja-Mod-00067",
+			"brush": "#adc2ff",
+			"dir": "right",
+			"parent": -126,
+			"key": -244,
+			"loc": "783.552618250266 -405.0261321031936",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Dja-Mod-00067"
+		},
+		{
+			"text": "如何在 REST API 的返回結果中更新結果集\nDoc: Dja-RES-00052",
+			"brush": "#adc2ff",
+			"dir": "right",
+			"parent": -124,
+			"key": -245,
+			"loc": "819.892950281516 -2878.3222321807625",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Dja-RES-00052"
+		},
+		{
+			"text": "如何在django中使用ntfy服務發送通知時添加動作按鈕(Action Button)(How to add action buttons when sending notifications with ntfy service in Django)\nDoc:Dja-Vie-00028",
+			"brush": "#f4fc0d",
+			"dir": "right",
+			"parent": -120,
+			"key": -246,
+			"loc": "765.506231531516 347.82278880016577",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Dja-Vie-00028",
+			"color": "#f4fc0d"
+		},
+		{
+			"text": "如何使用SWCalendar控件以日曆視圖顯示數據\nDoc:Dja-Tem-00034",
+			"brush": "#adc2ff",
+			"dir": "right",
+			"parent": -211,
+			"key": -247,
+			"loc": "790.300176844016 743.8888075311299",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Dja-Tem-00034"
+		},
+		{
+			"text": "如何使用SWGantt控件以甘特圖視圖顯示數據（How to Use SWGantt Control to Display Data in a Gantt Chart View）\nDoc:Dja-Tem-00035",
+			"brush": "#adc2ff",
+			"dir": "right",
+			"parent": -211,
+			"key": -248,
+			"loc": "790.300176844016 816.4065748723419",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Dja-Tem-00035"
+		},
+		{
+			"text": "Deployment and Scaling",
+			"brush": "#adc2ff",
+			"parent": 0,
+			"key": -249,
+			"loc": "287.44277528997645 5428.382168432052"
+		},
+		{
+			"text": "Configuring production settings",
+			"brush": "#adc2ff",
+			"parent": -249,
+			"key": -250,
+			"loc": "495.16786278574625 5428.382168432052"
+		},
+		{
+			"text": "如何在服務器上發布django項目\nDoc:Dja-Dep-00004",
+			"brush": "#f4fc0d",
+			"parent": -250,
+			"key": -251,
+			"loc": "741.194708094016 5421.343252416427",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Dja-Dep-00004",
+			"color": "#f4fc0d"
+		},
+		{
+			"text": "如何使用 Django Rest Framework 的 CRUD API 中使用 @action 添加新的 API\nDoc:Dja-RES-00053",
+			"brush": "#f4fc0d",
+			"dir": "right",
+			"parent": -219,
+			"key": -252,
+			"loc": "948.8182330897858 -3589.4220735616314",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Dja-RES-00053",
+			"color": "#f4fc0d"
+		},
+		{
+			"text": "Django Rest Framework如何實現權限控制(自定義用戶和權限管理系統)\nDoc:Dja-RES-00054",
+			"brush": "#f4fc0d",
+			"dir": "right",
+			"parent": -149,
+			"key": -253,
+			"loc": "829.338262781516 -2042.6505097036052",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Dja-RES-00054",
+			"color": "#f4fc0d"
+		},
+		{
+			"text": "Authentication and Authorization",
+			"brush": "#adc2ff",
+			"dir": "right",
+			"parent": 0,
+			"key": -255,
+			"loc": "287.44277528997645 -1833.2004272880754"
+		},
+		{
+			"text": "User authorization and permissions",
+			"brush": "#adc2ff",
+			"dir": "right",
+			"parent": -255,
+			"key": -256,
+			"loc": "541.4359291919963 -1833.2004272880754"
+		},
+		{
+			"text": "如何使 Django 項目支持記錄集權限控制(How to Enable Record-Based Access Control in a Django Projec)\nDoc:Dja-Aut-00004",
+			"brush": "#f4fc0d",
+			"dir": "right",
+			"parent": -256,
+			"key": -257,
+			"loc": "812.009161219016 -1911.6928070524314",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Dja-Aut-00004",
+			"color": "#f4fc0d"
+		},
+		{
+			"text": "如何為 Django 項目配置記錄集權限控制(How to Configure Record Set Permission Control for a Django Project)\nDoc:Dja-Aut-00005",
+			"brush": "#f4fc0d",
+			"dir": "right",
+			"parent": -256,
+			"key": -258,
+			"loc": "812.009161219016 -1811.0193756487195",
+			"url": "http://183.63.205.83:8000/PMIS/opportunity/Technical_Material?param=Dja-Aut-00005",
+			"color": "#f4fc0d"
+		}
+	]
+}

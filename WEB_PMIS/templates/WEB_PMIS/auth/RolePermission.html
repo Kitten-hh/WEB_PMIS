@@ -1,0 +1,25 @@
+{% extends 'PMISLooper/index.html' %}
+{%load static %}
+{% load i18n %}
+{%load md5url %}
+{%block form_css%}
+{{block.super}}
+<style>
+.app-main {
+    padding-top: 0;
+}
+.page {
+    /* min-height: calc(100vh - 1rem); */
+    height: calc(100vh - .15rem);
+}
+</style>
+{%endblock%}
+
+{%  block content %}
+{{block.super}}
+<iframe src="{{salc_server}}/auth/role_permissions_pmis" frameborder="0" width='100%' class="iframe" style="height:calc(100% - 56px); margin-top:56px;"></iframe>
+
+{% endblock %}
+{%block form_js%}
+{{block.super}}
+{%endblock%}

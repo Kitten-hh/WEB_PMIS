@@ -1,0 +1,105 @@
+#Sessions .SWBoardlist .task-header {
+    display: none;
+}
+
+#Sessions .SWBoardlist .tasks {
+    border-top-left-radius: 0%;
+    border-top-right-radius: 0%;
+}
+
+
+/* Active Sessions部分显示task的样式 */
+.task_wap:first-child{
+    margin-top: 20px;
+}
+
+.task_wap .menu-text{ 
+    color: #111;
+}
+
+.task_wap .alert-link {
+    color: #9d5d8e;
+}
+
+.task_wap .wrap-primary{
+    color: #2f5e99;
+    background-color: #f7f9fc;
+    border-bottom: 3px solid #346cb0;
+    box-shadow: 0 0 0 1px rgb(20 20 31 / 5%), 0 1px 3px 0 rgb(20 20 31 / 15%);
+}
+
+.circle-dot {
+    margin-right: 8px;
+}
+
+.task_wap .card-body {
+    width: 100%!important;
+}
+
+.task_wap .card-content div{
+    min-width: 0;
+    white-space: pre-wrap;
+}
+
+.task_wap .card-title {
+    margin-bottom: 5px;
+}
+
+.task_wap .card-subtitle {
+    margin-top: 0;
+}
+
+.task_wap .list-inline{
+    margin-bottom: 0;
+}
+
+.task_wap .card-footer {
+    padding: .5rem;
+}
+
+.task_wap .task-num{
+    display: inline-block;
+    padding: 4px 16px 4px 8px;
+    border-radius: 0 30px 30px 0;
+    background-color: #5664d2;
+    color: #fff;
+    position: relative;
+    left: -25px;
+}
+
+.task_wap ul.list {
+    list-style: none;
+    margin-bottom: 0;
+}
+
+.task_wap .footer_wrap {
+    background-color: transparent;
+    border-top: 1px solid rgba(20, 20, 31, .12);
+    border-radius: 0 0 calc(.25rem - 1px) calc(.25rem - 1px);
+    padding: .5rem;
+}
+
+.task_wap ul li span {
+    min-width: 0;
+    white-space: pre-wrap;
+}
+
+.task_wap .list .badge {
+    font-size: 14px;
+}
+
+#Simulation .metric-label {
+    color:#888c9b;
+}
+
+#Simulation .card-body .row {
+    border-bottom: 1px dashed #eaeff5;
+}
+
+#Goal h1.title {
+    padding-top:6px;
+}
+
+#Sessions .task_filter .input-group{
+    width:150px !important;
+}

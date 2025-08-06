@@ -1,0 +1,148 @@
+{% extends 'BonusApp/index.html' %}
+{%load static %}
+{% load customer_filter %}
+{%block form_css%}
+{{block.super}}
+<style>
+
+</style>
+{%endblock%}
+
+{%block content%}
+{{block.super}}
+<div id="app">
+    <div class="card card-custom ml-2 mr-2 mt-2">
+        <div class="card-body no-drag grid-item-body">
+            <div class="container-fluid d-flex align-items-stretch justify-content-between " id="searchBox">
+                <!-- 模態框按鈕 -->
+                <button class="btn btn-fixed-height btn-danger font-weight-bolder font-size-sm px-5 search_more mr-2">
+                    獎金分析
+                </button>
+            </div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <!--begin::Card-->
+                    <div class="card card-custom gutter-b">
+                        <div class="card-header">
+                            <div class="card-title">
+                                <h3 class="card-label">Score Chart</h3>
+                            </div>
+                        </div>
+                        <div class="card-body" style="position: relative;">
+                            <!--begin::Chart-->
+                            <div id="chart_3" style="min-height: 365px;" id="scoreChart_p">
+                                <canvas id="scoreChart"></canvas>
+                            </div>
+                            <!--end::Chart-->
+                        </div>
+                    </div>
+                    <!--end::Card-->
+                </div>
+                <div class="col-lg-6">
+                    <!--begin::Card-->
+                    <div class="card card-custom gutter-b">
+                        <div class="card-header">
+                            <div class="card-title">
+                                <h3 class="card-label">Avg Score Chart</h3>
+                            </div>
+                        </div>
+                        <div class="card-body" style="position: relative;">
+                            <!--begin::Chart-->
+                            <div id="chart_4" style="min-height: 365px;" id="avgScoreChart_p">
+                                <canvas id="avgScoreChart"></canvas>
+                            </div>
+                        </div>
+                        <!--end::Card-->
+                    </div>
+                </div>
+            </div>
+            <div class="card card-custom gutter-b">
+                <div class="card-header">
+                    <div class="card-title">
+                        <h3 class="card-label"><label id="lb_contact"></label></h3>
+                    </div>
+                </div>
+                <div class="card-body d-flex align-items-center py-5 py-lg-13">
+                    <div class="row">
+                        <label class="col-form-label col-8 col-lg-1">Budget Allowance %:</label>
+                        <label class="col-form-label col-4 col-lg-1" id="BudgetAllowance">0</label>
+                        <label class="col-form-label col-8 col-lg-1">Perfect Scoring:</label>
+                        <label class="col-form-label col-4 col-lg-1" id="PerfectScoring">0</label>
+                        <label class="col-form-label col-8 col-lg-1">Ratio Of M:</label>
+                        <label class="col-form-label col-4 col-lg-1" id="RatioOFM">0</label>
+                        <label class="col-form-label col-8 col-lg-1">Ratio Of S:</label>
+                        <label class="col-form-label col-4 col-lg-1" id="RatioOFS">0</label>
+                        <label class="col-form-label col-8 col-lg-1">Ratio Of P:</label>
+                        <label class="col-form-label col-4 col-lg-1" id="RatioOFP">0</label>
+                        <label class="col-form-label col-8 col-lg-1">Management S:</label>
+                        <label class="col-form-label col-4 col-lg-1" id="ManagementS">0</label>
+                        <label class="col-form-label col-8 col-lg-1">Performance. S:</label>
+                        <label class="col-form-label col-4 col-lg-1" id="PerformanceS">0</label>
+                        <label class="col-form-label col-8 col-lg-1">Quarter Working Day:</label>
+                        <label class="col-form-label col-4 col-lg-1" id="QuarterWorkingDay">0</label>
+                        <label class="col-form-label col-8 col-lg-1">Working Day:</label>
+                        <label class="col-form-label col-4 col-lg-1" id="WorkingDay">0</label>
+                        <label class="col-form-label col-8 col-lg-1">Mag %:</label>
+                        <label class="col-form-label col-4 col-lg-1" id="ManagementRatio">0</label>
+                        <label class="col-form-label col-8 col-lg-1">Per %:</label>
+                        <label class="col-form-label col-4 col-lg-1" id="PerformanaceRatio">0</label>
+                        <label class="col-form-label col-8 col-lg-1">Salary $:</label>
+                        <label class="col-form-label col-4 col-lg-1" id="Salary">0</label>
+                    </div>
+                </div>
+            </div>    
+            <div class="card card-custom gutter-b">
+                <div class="card-body d-flex align-items-center py-5 py-lg-13">
+                    <div class="row">
+                        <label class="col-form-label col-6 col-lg-1" id="c1"></label>
+                        <label class="col-form-label col-3 col-lg-1" id="c2" style="color:blue;">Score</label>
+                        <label class="col-form-label col-3 col-lg-1" id="c3" style="color:red;">LScore</label>
+                        <label class="col-form-label col-6 col-lg-1" id="c4"></label>
+                        <label class="col-form-label col-4 col-lg-1" id="c5"></label>
+                        <label class="col-form-label col-6 col-lg-1" id="c6"></label>
+                        <label class="col-form-label col-4 col-lg-1" id="c7"></label>
+                        <label class="col-form-label col-6 col-lg-1" id="c8"></label>
+                        <label class="col-form-label col-3 col-lg-1" id="c9" style="color:blue;">Score</label>
+                        <label class="col-form-label col-3 col-lg-1" id="c10" style="color:red;">LScore</label>
+                        <label class="col-form-label col-4 col-lg-1" id="c11"></label>
+                        <label class="col-form-label col-6 col-lg-1" id="c12"></label>
+                        <hr class="col-lg-11 col-11" style="border:1px solid darkgray;" />
+            
+            
+                        <label class="col-form-label col-6 col-lg-1">Total Score:</label>
+                        <label class="col-form-label col-3 col-lg-1" style="color:blue;" id="Score">0</label>
+                        <label class="col-form-label col-3 col-lg-1" style="color:red;" id="LookupScore">0</label>
+                        <label class="col-form-label col-6 col-lg-1">Avg:</label>
+                        <label class="col-form-label col-4 col-lg-1" id="ScoreAvg">0</label>
+                        <label class="col-form-label col-6 col-lg-1">Sugg.Avg:</label>
+                        <label class="col-form-label col-4 col-lg-1" id="SuggAvg">0</label>
+                        <label class="col-form-label col-6 col-lg-1">S Score for the quarter.S:</label>
+                        <label class="col-form-label col-3 col-lg-1" style="color:blue;" id="QuarterScore">0</label>
+                        <label class="col-form-label col-3 col-lg-1" style="color:red;" id="QuarterLookupScore">0</label>
+                        <label class="col-form-label col-6 col-lg-1">Simulate Score:</label>
+                        <label class="col-form-label col-4 col-lg-1" id="SimulateScore">0</label>
+            
+                        <label class="col-form-label col-6 col-lg-1">S Bonus:</label>
+                        <label class="col-form-label col-3 col-lg-1" style="color:blue;" id="ScoreBonus">0</label>
+                        <label class="col-form-label col-3 col-lg-1" style="color:red;" id="LookupScoreBonus">0</label>
+                        <label class="col-form-label col-6 col-lg-1">Simulate $per mth:</label>
+                        <label class="col-form-label col-4 col-lg-1" id="SimulatePerMth">0</label>
+                        <label class="col-form-label col-6 col-lg-1">Act in $ per mth:</label>
+                        <label class="col-form-label col-4 col-lg-1" id="ActInPerMth">0</label>
+                        <label class="col-form-label col-6 col-lg-1">S Actual Quarter:</label>
+                        <label class="col-form-label col-3 col-lg-1" style="color:blue;" id="ScoreActualQuarter">0</label>
+                        <label class="col-form-label col-3 col-lg-1" style="color:red;" id="LookupScoreActualQuarter">0</label>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{%block form_js%}
+{{block.super}}
+<script type="text/javascript" src="{% static 'BonusApp/tools/Chart.js' %}"></script>
+<script type="text/javascript" src="{% static 'BonusApp/js/bonusS.js' %}"></script>
+{% endblock%}

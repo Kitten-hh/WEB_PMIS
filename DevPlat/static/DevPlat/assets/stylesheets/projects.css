@@ -1,0 +1,517 @@
+#musthaveTasks .card{
+    margin-bottom: 0;
+    display: block;
+    background-color: transparent;
+    box-shadow: none
+}
+
+#musthaveTasks .card .card-header{
+    border-bottom: 0;
+}
+
+#musthaveTasks .card h4.title{
+    font-size: 1rem;
+    margin-bottom: 0;
+}
+
+#musthaveTasks .card .card-body .example-preview {
+    border: 0; 
+    padding: 0; 
+}
+
+#musthaveTasks .card .card-body .example-preview .section-block {
+    margin: 0;
+}
+
+#musthaveTasks .card .card-body .example-preview .section-block .section-title {
+    display: none;
+}
+
+#musthaveTasks .card .card-body .example-preview .section-block .timeline.timeline2 .timeline-figure:before {
+    width: 4px;
+    border-left: 2px solid rgba(231,234,243,.7);
+}
+
+/*  */
+#project_list .SWProjectlist .filter {
+    display: flex;
+    align-items: center;
+}
+
+#project_list .SWProjectlist .page-title-bar {
+    align-items: center;
+}
+
+#project_list .SWProjectlist .page-title {
+    margin-bottom: 0;
+}
+
+.musthave_sidebar .breadcrumb-item.active {
+    color: #000;
+}
+
+.musthave .close {
+    color: #000;
+}
+
+.step-title {
+    display: block;
+    /* color: #1e2022; */
+    color: #346cb0;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.musthave .timeline-figure {
+    padding: 0.3rem 0;
+}
+
+.musthave .timeline-figure:before {
+    border-left: 2px dotted rgba(231,234,243,.7);
+}
+
+.tile-custom {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 2px solid #5b73e8;
+    background-color: #fff;
+}
+
+/*  */
+@media (min-width: 576px) {
+    .page-inner {
+        padding-right: 1rem !important;
+        padding-left: 1rem !important;
+    }
+}
+
+@media (max-height: 992px) {
+    .page {
+        min-height: calc(100vh - 3.5rem);
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) , (min-width: 1299.98px) {
+    #project_list .SWProjectlist .list_container .card .card-body {
+        height: 236px;
+        overflow-y: auto;
+    }
+}
+
+@media (min-width: 1200px) { 
+    #project_list .SWProjectlist .list_container .item {
+        flex: 0 0 100% !important;
+        max-width: 100% !important
+    }
+}
+
+@media (min-width: 1300px) { 
+    #project_list .SWProjectlist .list_container .item {
+        flex: 0 0 50% !important;
+        max-width: 50% !important
+    }
+}
+
+@media (min-width: 1620px) {
+    .page-inner {
+        padding-right: 2rem !important;
+        padding-left: 2rem !important;
+    }
+
+    #project_list .SWProjectlist .list_container .item {
+        -webkit-box-flex: 0 !important;
+        -ms-flex: 0 0 33.3333333333% !important;
+        flex: 0 0 33.3333333333% !important;
+        max-width: 33.3333333333% !important;
+    }
+}
+
+.cardSelect {
+    background-color:#e6e8ed !important
+}
+
+@media (min-width: 768px) {
+    #must_tasks.timeline {
+        padding-right: 0.5rem;
+        padding-left: 0.5rem;
+    }
+}
+
+.musthave ul.timeline#must_tasks .media-body {
+    padding-right: .5rem;
+    padding-left: .5rem;
+}
+
+.priorityTask {
+    background-color: #dbe3e5;
+    border-radius: .5rem;
+}
+
+/* 滾動條樣式 */
+.sidebar-section-fill::-webkit-scrollbar,
+#project_list .SWProjectlist .list_container .card .card-body::-webkit-scrollbar {
+    width: 8px;
+    height: 6px;
+}
+
+.sidebar-section-fill::-webkit-scrollbar-track,
+#project_list .SWProjectlist .list_container .card .card-body::-webkit-scrollbar-track {
+	background: #f1f1f1;
+	border-radius: 6px;
+}
+
+.sidebar-section-fill::-webkit-scrollbar-thumb,
+#project_list .SWProjectlist .list_container .card .card-body::-webkit-scrollbar-thumb {
+	background: #e0e1e5;
+    border-radius: 5px;
+}
+
+.sidebar-section-fill::-webkit-scrollbar-thumb:hover,
+#project_list .SWProjectlist .list_container .card .card-body::-webkit-scrollbar-thumb:hover {
+	background: #c0c0c0;
+}
+
+/**must have*/
+
+#must_tasks .top_wrap {
+    flex-flow: row wrap;
+    margin-bottom: 20px;
+}
+
+#must_tasks .card.SWTimeline2 {
+    border-radius: .5rem;
+    height: 100%;
+    transition: all .5s;
+    margin-bottom: 0;
+}
+
+#must_tasks .card.SWTimeline2 .card-header {
+    border-bottom: .0625rem dashed rgba(231,234,243,.7);
+    max-height: 130px;
+    /*overflow-y: auto;*/
+}
+
+#must_tasks .card.SWTimeline2 .card-header h4.title {
+    margin-bottom: 0;
+    font-size: 16.5px !important;
+    margin-right: 3.125rem;
+}
+
+#must_tasks .card.SWTimeline2 .card-body .example-preview {
+    padding: 1rem;
+    padding-left: 2px;
+    padding-right: 2px;
+    padding-bottom: 0;
+    border-radius: .42rem;
+    background: #F3F6F9;
+    height: 800px;
+    overflow-y: auto;
+}
+
+#must_tasks .card.SWTimeline2 .card-body .section-block {
+    margin: 0;
+}
+
+#must_tasks .card.SWTimeline2 .card-body .section-title {
+    margin-bottom: 0;
+    padding-top: 0;
+}
+
+#must_tasks .card.SWTimeline2 .card-body ul.timeline li.timeline-item .timeline-figure:before {
+    background-color: transparent;
+    border-left: 2px dotted rgba(231,234,243,.7);
+}
+
+#must_tasks .card.SWTimeline2 .card-body ul.timeline li.timeline-item .timeline-figure .tile-circle {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 2px solid #5b73e8;
+    background-color: #fff !important;
+    margin-top: -0.3rem;
+}
+
+#must_tasks .card.SWTimeline2 .card-body ul.timeline li.timeline-item .timeline-body .media-body .timeline-date {
+    font-size: .85rem;
+}
+
+#must_tasks .card.SWTimeline2:hover {
+    box-shadow: 0 .1875rem .75rem rgba(140,152,164,.25)!important;
+}
+
+/* 滾動條樣式 */
+#must_tasks .card.SWTimeline2 .card-body .example-preview::-webkit-scrollbar,
+#must_tasks .card.SWTimeline2 .card-header::-webkit-scrollbar {
+	width: 6px;
+}
+
+#must_tasks .card.SWTimeline2 .card-body .example-preview::-webkit-scrollbar-track,
+#must_tasks .card.SWTimeline2 .card-header::-webkit-scrollbar-track {
+	background: #f1f1f1;
+	border-radius: 6px;
+}
+
+#must_tasks .card.SWTimeline2 .card-body .example-preview::-webkit-scrollbar-thumb,
+#must_tasks .card.SWTimeline2 .card-header::-webkit-scrollbar-thumb {
+	background: #e0e1e5;
+	border-radius: 5px;
+}
+
+#must_tasks .card.SWTimeline2 .card-body .example-preview::-webkit-scrollbar-thumb:hover,
+#must_tasks .card.SWTimeline2 .card-header::-webkit-scrollbar-thumb:hover {
+	background: #c0c0c0;
+}
+
+
+
+@media (min-width: 768px) {
+    #must_tasks.timeline {
+        padding-right: 0.5rem;
+        padding-left: 0.5rem;
+    }
+}
+
+.musthave ul.timeline#must_tasks .media-body {
+    padding-right: .5rem;
+    padding-left: .5rem;
+}
+
+.priorityTask{
+    background-color: #DBE3E5;
+    border-radius: .5rem;
+}
+
+.userlist .caption{
+    font-size:16px !important;
+    font-weight:600 !important;
+    padding-right: 20px;
+}
+.userlist .SWCombobox{
+    width: 150px !important;
+}
+
+.filter_goal .dropdown-item {
+    position: relative;
+}
+
+.filter_goal .dropdown-item.selected:before {
+    background-color: blueviolet;
+    content: "";
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    position: absolute;
+    left: 3px;
+    top: 14px;
+}
+.mustFinishMF {
+    color: #346cb0 !important;
+}
+
+.progressF {
+    color:#5edf60 !important;
+}
+.progressC {
+    font-weight: 600 !important;
+    color:#a99af0 !important;
+}
+
+.progressC .fas.fa-bullhorn{
+    color: #9B90C2 !important;
+    opacity: .8 !important;
+}
+
+.progressT {
+    font-weight: 600 !important;
+    color: #f97d7c !important;
+}
+
+.progressT .fas.fa-bullhorn{
+    color: #F39189 !important;
+    opacity: .8 !important;
+}
+
+#must_tasks .section-title {
+    padding-bottom:  4px !important;
+}
+
+#must_tasks .caption {
+    padding-top: 2px !important;
+    padding-bottom: 2px !important;
+}
+
+.timeline.timeline2 .timeline-body {
+    padding: 0.25rem 0;
+}
+
+.timeline.timeline2 .timeline-item:last-child .timeline-body,
+.timeline.timeline2 .timeline-item:last-child .timeline-figure {
+    padding-bottom: 0px;
+    margin-bottom: 4px
+}
+
+#must_tasks .card.SWTimeline2 .card-body:not(.summary_wrap) {
+    padding: 0px;
+}
+
+#must_tasks .card.SWTimeline2 .example-preview {
+    padding: 8px 8px 0px 8px;
+}
+
+#must_tasks .card.SWTimeline2 .example-preview .timeline.timeline2 .timeline-figure:before {
+    height: calc(100% - 14px) !important;
+}
+
+#must_tasks .card.SWTimeline2 .example-preview .timeline.timeline2 .timeline-item .timeline-figure {
+    padding-left: 2px;
+}
+
+#must_tasks .card.SWTimeline2 .example-preview .timeline.timeline2 .timeline-item:last-child .timeline-body,
+#must_tasks .card.SWTimeline2 .example-preview .timeline.timeline2 .timeline-item:last-child .timeline-figure {
+    padding-top: 0;
+}
+#must_tasks .timeline-body {
+    margin-left: 4px;
+}
+/* 滾動條樣式 */
+textarea[name='goaldesc']::-webkit-scrollbar {
+	width: 6px;
+}
+
+textarea[name='goaldesc']::-webkit-scrollbar-track {
+	background: #f1f1f1;
+	border-radius: 6px;
+}
+
+textarea[name='goaldesc']::-webkit-scrollbar-thumb{
+	background: #e0e1e5;
+	border-radius: 5px;
+}
+
+textarea[name='goaldesc']::-webkit-scrollbar-thumb:hover {
+	background: #c0c0c0;
+}
+/**
+.goal_content .dropdown-menu{
+    width:400px;
+}
+@media (max-width:768px) {
+    .goal_content .dropdown-menu{
+        width:100% !important;
+    }
+}
+*/
+.subMustHaveY {
+    margin-left:24px !important;
+}
+
+/* new */
+.projects_page .page-inner {
+    height: calc(100vh - 3.5rem);
+    overflow-y: auto;
+}
+
+.projects_page .page-inner>#project_list,
+.projects_page .page-inner>#project_list>.SWProjectlist {
+    height: 100%;
+}
+
+.projects_page .page-inner>#project_list .page-section {
+    height: calc(100% - 36px);
+    overflow-y: auto;
+}
+
+.projects_page .page-inner>#project_list .page-section .list_container {
+    margin: 0;
+}
+
+.projects_page .page-sidebar.musthave_sidebar .sidebar-section-fill {
+    height: calc(100vh - 4.5rem);
+    overflow: hidden;
+}
+
+.projects_page .page-sidebar.musthave_sidebar .sidebar-section-fill>.card.musthave,
+.projects_page .page-sidebar.musthave_sidebar .sidebar-section-fill>.card.musthave>.card-body {
+    height: 100%;
+}
+
+.projects_page #must_tasks {
+    height: calc(100% - 1rem);
+}
+
+.projects_page #must_tasks>.card.SWTimeline2>.card-body {
+    overflow-y: auto;
+}
+
+.projects_page #must_tasks>.card.SWTimeline2>.card-body.summary_wrap {
+    flex-shrink: 0;
+    padding: 0 .6rem .6rem;
+    max-height: 190px;
+}
+
+.projects_page #must_tasks>.card.SWTimeline2>.card-body.summary_wrap>div:last-child .col-auto {
+    padding-right: 5px;
+    padding-left: 5px;
+}
+
+.projects_page #must_tasks>.card.SWTimeline2>.card-body .example-preview {
+    overflow-y: hidden;
+    height: auto;
+}
+
+.filter_session .dropdown-menu .session_treegrid.jstree-default .jstree-anchor {
+    white-space: pre-wrap;
+    vertical-align: baseline;
+}
+
+.session_treegrid {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.ganttIcon {
+    text-align: center;
+    /* width: 1.25em; */
+    width: 1.3em;
+    margin-right: .5rem;
+    margin-left: .2rem;
+    font-size: 11px;
+}
+.dropdown-item.project_gantt_view.focus>.ganttIcon, 
+.dropdown-item.project_gantt_view:focus>.ganttIcon, 
+.dropdown-item.project_gantt_view:hover>.ganttIcon,
+.dropdown-item.project_gantt_editor.focus>.ganttIcon, 
+.dropdown-item.project_gantt_editor:focus>.ganttIcon, 
+.dropdown-item.project_gantt_editor:hover>.ganttIcon  {
+    fill: #fff;
+}
+
+#project_list .dropdown-menu .view_diagram.dropdown-item.project_diagram>i,
+#project_list .dropdown-menu .view_diagram.dropdown-item.mdinmap_diagram>i {
+    font-size: 12px;
+    margin-left: 5px;
+} 
+#project_list .dropdown-menu .view_diagram.dropdown-item.project_gantt>.ganttIcon {
+    font-size: 11px;
+    margin-left: 6px;
+} 
+
+@media (min-width: 768px) {
+    #project_list .dropdown-menu .view_diagram.dropdown-item.project_diagram>i,
+    #project_list .dropdown-menu .view_diagram.dropdown-item.mdinmap_diagram>i {
+        margin-left: 3px;
+    } 
+    #project_list .dropdown-menu .view_diagram.dropdown-item.project_gantt>.ganttIcon {
+        margin-left: 4px;
+    } 
+}
+
+#project_gantt .modal-dialog {
+    max-width: 100% !important;
+    margin: 5px !important;
+}
+#project_gantt .iframe_wrapper {
+    height:calc(100vh - 3.5rem - 62px);
+}

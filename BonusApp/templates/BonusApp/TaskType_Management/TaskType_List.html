@@ -1,0 +1,127 @@
+
+{% extends 'BonusApp/index.html' %}
+{%load static %}
+{% load customer_filter %}
+{%block form_css%}
+{{block.super}}
+<style>
+    #kt_content{
+        padding-top: 0rem;
+    }
+    #simple_datatable {
+        background-color: white;
+        font-size: 1.3rem;
+        width: 100% !important;
+    }
+    .fa-chevron-right:hover {
+        color: orange;
+    }
+
+    #simple_datatable tbody tr:nth-child(odd) {
+        background-color: #F3F3F3;
+    }
+
+    #app-footer li {
+        display: none;
+    }
+
+    .Add_TaskType {
+        position: fixed;
+        right: 5%;
+        bottom: 10%;
+    }
+
+    .Add_TaskType div {
+        width: 6rem;
+        height: 6rem;
+        border-radius: 50%;
+        background-color: orange;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .Add_TaskType div i {
+        font-size: 3rem;
+        color: white;
+    }
+    /* 搜索框 */
+    .scrollable-menu {
+        height: auto;
+        display: inline-block;
+        max-height: 200px;
+        overflow-x: hidden;
+    }
+
+    #task_search_box {
+        /* display: none; */
+        width: 20%;
+        top: 50%;
+        transform: translateY(-50%);
+        line-height: 10px;
+        margin-right: 45%;
+    }
+    .content {
+        padding: 0px 0;
+    }
+
+    .modal-backdrop{
+        z-index: 9;
+    }
+
+    #TaskType {
+        height: 39px;
+        /* top: 0.2rem; */
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        line-height: 10px;
+    } 
+
+    .datefiler{
+        margin-left: 6%;
+    }
+    
+</style>
+{%endblock%}
+
+{%block content%}
+{{block.super}}
+<div class="card card-custom ml-2 mr-2 mt-2">
+    <div class="card-body">    
+        <div class="row" style="height: 30px;">
+            <div class="form-group col-6">
+                <div class="input-group">
+                    
+                        <div class="custom-file">
+                            <input type="file" class="custom-file-input" id="excelFile" name="excelFile" accept=".xls">
+                            <label class="custom-file-label" for="excelFile">請選擇TaskType Excel文件</label>
+                        </div>
+                        <div class="input-group-append">
+                            <button id="btnImport"  class="btn btn-success mr-2" type="button">導入</button>
+                        </div>  
+                    <form action="/bonus/tasktype/download" method="GET"> 
+                        <button class="btn btn-secondary" type="submit">下載模板</button>
+                    </form>
+                  
+                    
+                </div>                
+            </div>
+        </div>    
+        <div id="db_wapper"></div>        
+    </div>
+</div>
+
+<div class="Add_TaskType">
+    <div>
+        <a href="/bonus/tasktype/add"><i class="fa fa-plus"></i></a>
+    </div>
+</div>
+{%endblock%}
+
+{%block form_js%}
+{{block.super}}
+<script type="text/javascript" src="{% static 'BonusApp/TaskType_Management/TaskType_List.js' %}"></script>
+<script type="text/javascript" src="{% static 'BonusApp/TaskType_Management/TaskType_Public.js' %}"></script>
+<script type="text/javascript" src="{% static 'BonusApp/js/loadmenu.js' %}" ></script>
+{% endblock%}

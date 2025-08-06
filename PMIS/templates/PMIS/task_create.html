@@ -1,0 +1,148 @@
+
+
+{% extends 'PMIS/Starter_page.html' %}
+
+{%  block content %}
+
+
+    <!-- 
+    <form method ="post">
+        <button class="btn btn-primary" <a href="http://121.13.252.163:8001/Knowledge/knowledge"</a> value="">Search</button> 
+    -->
+    <H5>Task Form </H5>
+
+
+
+
+    <form class="site-form"  action="srh">
+        {% csrf_token %}
+        
+        <div class="row  align-items-center justify-content-between">
+            <button type="submit" class="btn btn-primary" value="">Search</button> 
+            <div class="col-12">
+                <input class="form-control" type="text" value="" id="Search" name="srh_txt">
+                <!-- 
+                <button type="submit" class="btn btn-primary" value="" name="srh">Submit</button> 
+                -->
+            </div>
+        </div>   
+    
+    </form>
+    <hr>
+
+
+
+    <form class="site-form" method="POST" >
+        {% csrf_token %}
+        <!-- 
+        <div class="fieldWrapper">
+        -->
+        <!-- -->
+            <div class="form-group row">
+            {{ form.Pid.errors }}
+            <label for="form.Pid.id_for_label }}" class="col-4 col-form-label">Pid</label>
+            <div class="col-12">
+                <input class="form-control" type="text" value="888" id={{ form.Pid }}
+            </div>
+          </div>
+            <div class="form-group row">
+            {{ form.Tid.errors }}
+            <label for="form.Tid.id_for_label }}" class="col-4 col-form-label">Tid</label>
+            <div class="col-12">
+                <input class="form-control" type="text" value="100" id={{ form.Tid }}
+            </div>
+        </div>
+        <div class="form-group row">
+            {{ form.TaskID.errors }}
+            <label for="form.TaskID.id_for_label }}" class="col-4 col-form-label">TaskID</label>
+            <div class="col-12">
+                <input class="form-control" type="text" value="136000" id={{ form.TaskID }}
+            </div>
+        </div>
+        <div class="form-group row">
+            {{ form.Task.errors }}
+            <label for="form.Task.id_for_label }}" class="col-4 col-form-label">Task</label>
+            <div class="col-12">
+                <textarea class="form-control" id={{ form.Task }} </textarea>
+            </div>
+        </div>   
+         <div class="form-group row">
+            {{ form.contact.errors }}
+            <label for="form.contact.id_for_label }}" class="col-4 col-form-label">contact</label>
+            <div class="col-12">
+                <input class="form-control" type="text" value="sing" id={{ form.contact }}
+            </div>
+        </div>
+         <div class="form-group row">
+            {{ form.PlanBDate.errors }}
+            <label for="form.PlanBDate.id_for_label }}" class="col-4 col-form-label">Date</label>
+            <div class="col-12">
+                <input class="form-control" type="date" value="" id={{ form.PlanBDate }} required/>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            {{ form.Class.errors }}
+            <label for="form.Class.id_for_label }}" class="col-4 col-form-label">Class</label>
+            <div class="col-12">
+                <input class="form-control" type="text" value="0" id={{ form.Class }}
+            </div>
+        </div>
+        <div class="form-group row">
+            {{ form.Remark.errors }}
+            <label for="form.Remark.id_for_label }}" class="col-4 col-form-label">Remark</label>
+            <div class="col-12">
+                <input class="form-control" type="text" value="na" id={{ form.Remark }}
+            </div>
+        </div>
+
+        <div class="form-group row">
+            {{ form.Progress.errors }}
+            <label for="form.Progress.id_for_label }}" class="col-4 col-form-label">Progress</label>
+            <div class="col-12">
+                <input class="form-control" type="text" value="N" id={{ form.Progress }}
+            </div>
+        </div>
+                
+
+        <button type="submit" class="btn btn-primary" value="">Submit</button> 
+
+    </form>
+
+<!-- 
+        <button onclick="Test()" class="btn btn-primary" value="">Test</button> 
+-->
+
+
+    <script>
+        function Test(){
+            var request = new XMLHttpRequest()
+
+            //request.open('GET','http://121.13.252.163:8001/PMIS/Trial',true)
+            request.open('GET','https://ghibliapi.herokuapp.com/films',true)
+
+            alert('About to do the onload')
+
+            request.onload = function () {
+
+                var data = JSON.parse(this.response)
+
+
+                alert('request was done'+str(request.status))
+
+                if( request.status >= 200 && request.status < 400){
+                    console.log('Working')
+                } else {
+                    console.log('Does not work')
+                }
+            }
+            console.log('Test')
+        }
+
+    </script>
+
+{% endblock %}
+
+
+
+

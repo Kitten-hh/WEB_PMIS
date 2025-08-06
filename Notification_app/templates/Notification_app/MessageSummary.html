@@ -1,0 +1,21 @@
+
+{% extends 'PMISLooper/vue_index.html' %}
+{%load static %}
+{% load md5url %}
+{% load render_bundle from webpack_loader %}
+{% block form_css%}
+{{block.super}}
+    <link rel="stylesheet" type="text/css" href="{% md5url 'Notification_app/assets/stylesheets/MessageSummary.css' %}" data-skin="default"/>    
+    <link rel="stylesheet" type="text/css" href="{% md5url 'Notification_app/assets/stylesheets/MessageSummary_dark.css' %}" data-skin="dark"/>    
+{%endblock%}
+
+{% block content%}
+{{block.super}}
+    
+{%endblock%}   
+
+
+{%block form_js%}
+{{block.super}}
+{% render_bundle 'Notification_app/dist/javascript/MessageSummary' %} 
+{%endblock%}     

@@ -1,0 +1,2169 @@
+{
+  "ReportVersion": "2022.2.3",
+  "ReportGuid": "01b34eba567d032c4b02c39dc7f34637",
+  "ReportName": "Report",
+  "ReportAlias": "Report",
+  "ReportFile": "TechnicalReport.mrt",
+  "ReportCreated": "/Date(1691460152000+0800)/",
+  "ReportChanged": "/Date(1691635340000+0800)/",
+  "EngineVersion": "EngineV2",
+  "CalculationMode": "Interpretation",
+  "ReportUnit": "Centimeters",
+  "Dictionary": {
+    "DataSources": {
+      "0": {
+        "Ident": "StiDataTableSource",
+        "Name": "tecmb",
+        "Alias": "tecmb",
+        "Columns": {
+          "0": {
+            "Name": "mb001c",
+            "Index": -1,
+            "NameInSource": "mb001c",
+            "Alias": "mb001c",
+            "Type": "System.String"
+          },
+          "1": {
+            "Name": "mb015c",
+            "Index": -1,
+            "NameInSource": "mb015c",
+            "Alias": "mb015c",
+            "Type": "System.String"
+          },
+          "2": {
+            "Name": "company",
+            "Index": -1,
+            "NameInSource": "company",
+            "Alias": "company",
+            "Type": "System.String"
+          },
+          "3": {
+            "Name": "creator",
+            "Index": -1,
+            "NameInSource": "creator",
+            "Alias": "creator",
+            "Type": "System.String"
+          },
+          "4": {
+            "Name": "usr_group",
+            "Index": -1,
+            "NameInSource": "usr_group",
+            "Alias": "usr_group",
+            "Type": "System.String"
+          },
+          "5": {
+            "Name": "create_date",
+            "Index": -1,
+            "NameInSource": "create_date",
+            "Alias": "create_date",
+            "Type": "System.String"
+          },
+          "6": {
+            "Name": "modifier",
+            "Index": -1,
+            "NameInSource": "modifier",
+            "Alias": "modifier",
+            "Type": "System.String"
+          },
+          "7": {
+            "Name": "modi_date",
+            "Index": -1,
+            "NameInSource": "modi_date",
+            "Alias": "modi_date",
+            "Type": "System.String"
+          },
+          "8": {
+            "Name": "flag",
+            "Index": -1,
+            "NameInSource": "flag",
+            "Alias": "flag",
+            "Type": "System.String"
+          },
+          "9": {
+            "Name": "mb001",
+            "Index": -1,
+            "NameInSource": "mb001",
+            "Alias": "mb001",
+            "Type": "System.String"
+          },
+          "10": {
+            "Name": "mb002",
+            "Index": -1,
+            "NameInSource": "mb002",
+            "Alias": "mb002",
+            "Type": "System.String"
+          },
+          "11": {
+            "Name": "mb003",
+            "Index": -1,
+            "NameInSource": "mb003",
+            "Alias": "mb003",
+            "Type": "System.String"
+          },
+          "12": {
+            "Name": "mb004",
+            "Index": -1,
+            "NameInSource": "mb004",
+            "Alias": "mb004",
+            "Type": "System.String"
+          },
+          "13": {
+            "Name": "mb005",
+            "Index": -1,
+            "NameInSource": "mb005",
+            "Alias": "mb005",
+            "Type": "System.String"
+          },
+          "14": {
+            "Name": "mb006",
+            "Index": -1,
+            "NameInSource": "mb006",
+            "Alias": "mb006",
+            "Type": "System.String"
+          },
+          "15": {
+            "Name": "mb007",
+            "Index": -1,
+            "NameInSource": "mb007",
+            "Alias": "mb007",
+            "Type": "System.String"
+          },
+          "16": {
+            "Name": "mb008",
+            "Index": -1,
+            "NameInSource": "mb008",
+            "Alias": "mb008",
+            "Type": "System.String"
+          },
+          "17": {
+            "Name": "mb009",
+            "Index": -1,
+            "NameInSource": "mb009",
+            "Alias": "mb009",
+            "Type": "System.String"
+          },
+          "18": {
+            "Name": "mb010",
+            "Index": -1,
+            "NameInSource": "mb010",
+            "Alias": "mb010",
+            "Type": "System.String"
+          },
+          "19": {
+            "Name": "mb011",
+            "Index": -1,
+            "NameInSource": "mb011",
+            "Alias": "mb011",
+            "Type": "System.String"
+          },
+          "20": {
+            "Name": "mb012",
+            "Index": -1,
+            "NameInSource": "mb012",
+            "Alias": "mb012",
+            "Type": "System.String"
+          },
+          "21": {
+            "Name": "mb013",
+            "Index": -1,
+            "NameInSource": "mb013",
+            "Alias": "mb013",
+            "Type": "System.String"
+          },
+          "22": {
+            "Name": "mb015",
+            "Index": -1,
+            "NameInSource": "mb015",
+            "Alias": "mb015",
+            "Type": "System.String"
+          },
+          "23": {
+            "Name": "mb016",
+            "Index": -1,
+            "NameInSource": "mb016",
+            "Alias": "mb016",
+            "Type": "System.String"
+          },
+          "24": {
+            "Name": "mb017",
+            "Index": -1,
+            "NameInSource": "mb017",
+            "Alias": "mb017",
+            "Type": "System.String"
+          },
+          "25": {
+            "Name": "mb018",
+            "Index": -1,
+            "NameInSource": "mb018",
+            "Alias": "mb018",
+            "Type": "System.String"
+          },
+          "26": {
+            "Name": "mb019",
+            "Index": -1,
+            "NameInSource": "mb019",
+            "Alias": "mb019",
+            "Type": "System.String"
+          },
+          "27": {
+            "Name": "mb020",
+            "Index": -1,
+            "NameInSource": "mb020",
+            "Alias": "mb020",
+            "Type": "System.String"
+          },
+          "28": {
+            "Name": "mb021",
+            "Index": -1,
+            "NameInSource": "mb021",
+            "Alias": "mb021",
+            "Type": "System.String"
+          },
+          "29": {
+            "Name": "mb022",
+            "Index": -1,
+            "NameInSource": "mb022",
+            "Alias": "mb022",
+            "Type": "System.String"
+          },
+          "30": {
+            "Name": "pid",
+            "Index": -1,
+            "NameInSource": "pid",
+            "Alias": "pid",
+            "Type": "System.String"
+          },
+          "31": {
+            "Name": "tid",
+            "Index": -1,
+            "NameInSource": "tid",
+            "Alias": "tid",
+            "Type": "System.Decimal"
+          },
+          "32": {
+            "Name": "taskid",
+            "Index": -1,
+            "NameInSource": "taskid",
+            "Alias": "taskid",
+            "Type": "System.Decimal"
+          },
+          "33": {
+            "Name": "mb023",
+            "Index": -1,
+            "NameInSource": "mb023",
+            "Alias": "mb023",
+            "Type": "System.String"
+          },
+          "34": {
+            "Name": "mb024",
+            "Index": -1,
+            "NameInSource": "mb024",
+            "Alias": "mb024",
+            "Type": "System.String"
+          },
+          "35": {
+            "Name": "mb025",
+            "Index": -1,
+            "NameInSource": "mb025",
+            "Alias": "mb025",
+            "Type": "System.String"
+          },
+          "36": {
+            "Name": "udf01",
+            "Index": -1,
+            "NameInSource": "udf01",
+            "Alias": "udf01",
+            "Type": "System.String"
+          },
+          "37": {
+            "Name": "udf02",
+            "Index": -1,
+            "NameInSource": "udf02",
+            "Alias": "udf02",
+            "Type": "System.String"
+          },
+          "38": {
+            "Name": "udf03",
+            "Index": -1,
+            "NameInSource": "udf03",
+            "Alias": "udf03",
+            "Type": "System.String"
+          },
+          "39": {
+            "Name": "udf04",
+            "Index": -1,
+            "NameInSource": "udf04",
+            "Alias": "udf04",
+            "Type": "System.String"
+          },
+          "40": {
+            "Name": "udf05",
+            "Index": -1,
+            "NameInSource": "udf05",
+            "Alias": "udf05",
+            "Type": "System.String"
+          },
+          "41": {
+            "Name": "id",
+            "Index": -1,
+            "NameInSource": "id",
+            "Alias": "id",
+            "Type": "System.Decimal"
+          },
+          "42": {
+            "Name": "parentid",
+            "Index": -1,
+            "NameInSource": "parentid",
+            "Alias": "parentid",
+            "Type": "System.String"
+          },
+          "43": {
+            "Name": "inc_id",
+            "Index": -1,
+            "NameInSource": "inc_id",
+            "Alias": "inc_id",
+            "Type": "System.Decimal"
+          },
+          "44": {
+            "Name": "mb026",
+            "Index": -1,
+            "NameInSource": "mb026",
+            "Alias": "mb026",
+            "Type": "System.String"
+          },
+          "45": {
+            "Name": "mb027",
+            "Index": -1,
+            "NameInSource": "mb027",
+            "Alias": "mb027",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "DataSet.tecmb"
+      },
+      "1": {
+        "Ident": "StiDataTableSource",
+        "Name": "steps",
+        "Alias": "steps",
+        "Columns": {
+          "0": {
+            "Name": "company",
+            "Index": -1,
+            "NameInSource": "company",
+            "Alias": "company",
+            "Type": "System.String"
+          },
+          "1": {
+            "Name": "creator",
+            "Index": -1,
+            "NameInSource": "creator",
+            "Alias": "creator",
+            "Type": "System.String"
+          },
+          "2": {
+            "Name": "usr_group",
+            "Index": -1,
+            "NameInSource": "usr_group",
+            "Alias": "usr_group",
+            "Type": "System.String"
+          },
+          "3": {
+            "Name": "create_date",
+            "Index": -1,
+            "NameInSource": "create_date",
+            "Alias": "create_date",
+            "Type": "System.String"
+          },
+          "4": {
+            "Name": "modifier",
+            "Index": -1,
+            "NameInSource": "modifier",
+            "Alias": "modifier",
+            "Type": "System.String"
+          },
+          "5": {
+            "Name": "modi_date",
+            "Index": -1,
+            "NameInSource": "modi_date",
+            "Alias": "modi_date",
+            "Type": "System.String"
+          },
+          "6": {
+            "Name": "flag",
+            "Index": -1,
+            "NameInSource": "flag",
+            "Alias": "flag",
+            "Type": "System.String"
+          },
+          "7": {
+            "Name": "mc001",
+            "Index": -1,
+            "NameInSource": "mc001",
+            "Alias": "mc001",
+            "Type": "System.String"
+          },
+          "8": {
+            "Name": "mc002",
+            "Index": -1,
+            "NameInSource": "mc002",
+            "Alias": "mc002",
+            "Type": "System.String"
+          },
+          "9": {
+            "Name": "mc003",
+            "Index": -1,
+            "NameInSource": "mc003",
+            "Alias": "mc003",
+            "Type": "System.String"
+          },
+          "10": {
+            "Name": "mc004",
+            "Index": -1,
+            "NameInSource": "mc004",
+            "Alias": "mc004",
+            "Type": "System.String"
+          },
+          "11": {
+            "Name": "mc005",
+            "Index": -1,
+            "NameInSource": "mc005",
+            "Alias": "mc005",
+            "Type": "System.String"
+          },
+          "12": {
+            "Name": "mc007",
+            "Index": -1,
+            "NameInSource": "mc007",
+            "Alias": "mc007",
+            "Type": "System.String"
+          },
+          "13": {
+            "Name": "udf01",
+            "Index": -1,
+            "NameInSource": "udf01",
+            "Alias": "udf01",
+            "Type": "System.String"
+          },
+          "14": {
+            "Name": "udf02",
+            "Index": -1,
+            "NameInSource": "udf02",
+            "Alias": "udf02",
+            "Type": "System.String"
+          },
+          "15": {
+            "Name": "udf03",
+            "Index": -1,
+            "NameInSource": "udf03",
+            "Alias": "udf03",
+            "Type": "System.String"
+          },
+          "16": {
+            "Name": "udf04",
+            "Index": -1,
+            "NameInSource": "udf04",
+            "Alias": "udf04",
+            "Type": "System.String"
+          },
+          "17": {
+            "Name": "udf05",
+            "Index": -1,
+            "NameInSource": "udf05",
+            "Alias": "udf05",
+            "Type": "System.String"
+          },
+          "18": {
+            "Name": "id",
+            "Index": -1,
+            "NameInSource": "id",
+            "Alias": "id",
+            "Type": "System.Decimal"
+          },
+          "19": {
+            "Name": "inc_id",
+            "Index": -1,
+            "NameInSource": "inc_id",
+            "Alias": "inc_id",
+            "Type": "System.Decimal"
+          },
+          "20": {
+            "Name": "hasimg",
+            "Index": -1,
+            "NameInSource": "hasimg",
+            "Alias": "hasimg",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "DataSet.steps"
+      },
+      "2": {
+        "Ident": "StiDataTableSource",
+        "Name": "example",
+        "Alias": "example",
+        "Columns": {
+          "0": {
+            "Name": "company",
+            "Index": -1,
+            "NameInSource": "company",
+            "Alias": "company",
+            "Type": "System.String"
+          },
+          "1": {
+            "Name": "creator",
+            "Index": -1,
+            "NameInSource": "creator",
+            "Alias": "creator",
+            "Type": "System.String"
+          },
+          "2": {
+            "Name": "usr_group",
+            "Index": -1,
+            "NameInSource": "usr_group",
+            "Alias": "usr_group",
+            "Type": "System.String"
+          },
+          "3": {
+            "Name": "create_date",
+            "Index": -1,
+            "NameInSource": "create_date",
+            "Alias": "create_date",
+            "Type": "System.String"
+          },
+          "4": {
+            "Name": "modifier",
+            "Index": -1,
+            "NameInSource": "modifier",
+            "Alias": "modifier",
+            "Type": "System.String"
+          },
+          "5": {
+            "Name": "modi_date",
+            "Index": -1,
+            "NameInSource": "modi_date",
+            "Alias": "modi_date",
+            "Type": "System.String"
+          },
+          "6": {
+            "Name": "flag",
+            "Index": -1,
+            "NameInSource": "flag",
+            "Alias": "flag",
+            "Type": "System.String"
+          },
+          "7": {
+            "Name": "mc001",
+            "Index": -1,
+            "NameInSource": "mc001",
+            "Alias": "mc001",
+            "Type": "System.String"
+          },
+          "8": {
+            "Name": "mc002",
+            "Index": -1,
+            "NameInSource": "mc002",
+            "Alias": "mc002",
+            "Type": "System.String"
+          },
+          "9": {
+            "Name": "mc003",
+            "Index": -1,
+            "NameInSource": "mc003",
+            "Alias": "mc003",
+            "Type": "System.String"
+          },
+          "10": {
+            "Name": "mc004",
+            "Index": -1,
+            "NameInSource": "mc004",
+            "Alias": "mc004",
+            "Type": "System.String"
+          },
+          "11": {
+            "Name": "mc005",
+            "Index": -1,
+            "NameInSource": "mc005",
+            "Alias": "mc005",
+            "Type": "System.String"
+          },
+          "12": {
+            "Name": "mc007",
+            "Index": -1,
+            "NameInSource": "mc007",
+            "Alias": "mc007",
+            "Type": "System.String"
+          },
+          "13": {
+            "Name": "udf01",
+            "Index": -1,
+            "NameInSource": "udf01",
+            "Alias": "udf01",
+            "Type": "System.String"
+          },
+          "14": {
+            "Name": "udf02",
+            "Index": -1,
+            "NameInSource": "udf02",
+            "Alias": "udf02",
+            "Type": "System.String"
+          },
+          "15": {
+            "Name": "udf03",
+            "Index": -1,
+            "NameInSource": "udf03",
+            "Alias": "udf03",
+            "Type": "System.String"
+          },
+          "16": {
+            "Name": "udf04",
+            "Index": -1,
+            "NameInSource": "udf04",
+            "Alias": "udf04",
+            "Type": "System.String"
+          },
+          "17": {
+            "Name": "udf05",
+            "Index": -1,
+            "NameInSource": "udf05",
+            "Alias": "udf05",
+            "Type": "System.String"
+          },
+          "18": {
+            "Name": "id",
+            "Index": -1,
+            "NameInSource": "id",
+            "Alias": "id",
+            "Type": "System.Decimal"
+          },
+          "19": {
+            "Name": "inc_id",
+            "Index": -1,
+            "NameInSource": "inc_id",
+            "Alias": "inc_id",
+            "Type": "System.Decimal"
+          },
+          "20": {
+            "Name": "hasimg",
+            "Index": -1,
+            "NameInSource": "hasimg",
+            "Alias": "hasimg",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "DataSet.example"
+      },
+      "3": {
+        "Ident": "StiDataTableSource",
+        "Name": "precaution",
+        "Alias": "precaution",
+        "Columns": {
+          "0": {
+            "Name": "company",
+            "Index": -1,
+            "NameInSource": "company",
+            "Alias": "company",
+            "Type": "System.String"
+          },
+          "1": {
+            "Name": "creator",
+            "Index": -1,
+            "NameInSource": "creator",
+            "Alias": "creator",
+            "Type": "System.String"
+          },
+          "2": {
+            "Name": "usr_group",
+            "Index": -1,
+            "NameInSource": "usr_group",
+            "Alias": "usr_group",
+            "Type": "System.String"
+          },
+          "3": {
+            "Name": "create_date",
+            "Index": -1,
+            "NameInSource": "create_date",
+            "Alias": "create_date",
+            "Type": "System.String"
+          },
+          "4": {
+            "Name": "modifier",
+            "Index": -1,
+            "NameInSource": "modifier",
+            "Alias": "modifier",
+            "Type": "System.String"
+          },
+          "5": {
+            "Name": "modi_date",
+            "Index": -1,
+            "NameInSource": "modi_date",
+            "Alias": "modi_date",
+            "Type": "System.String"
+          },
+          "6": {
+            "Name": "flag",
+            "Index": -1,
+            "NameInSource": "flag",
+            "Alias": "flag",
+            "Type": "System.String"
+          },
+          "7": {
+            "Name": "mc001",
+            "Index": -1,
+            "NameInSource": "mc001",
+            "Alias": "mc001",
+            "Type": "System.String"
+          },
+          "8": {
+            "Name": "mc002",
+            "Index": -1,
+            "NameInSource": "mc002",
+            "Alias": "mc002",
+            "Type": "System.String"
+          },
+          "9": {
+            "Name": "mc003",
+            "Index": -1,
+            "NameInSource": "mc003",
+            "Alias": "mc003",
+            "Type": "System.String"
+          },
+          "10": {
+            "Name": "mc004",
+            "Index": -1,
+            "NameInSource": "mc004",
+            "Alias": "mc004",
+            "Type": "System.String"
+          },
+          "11": {
+            "Name": "mc005",
+            "Index": -1,
+            "NameInSource": "mc005",
+            "Alias": "mc005",
+            "Type": "System.String"
+          },
+          "12": {
+            "Name": "mc007",
+            "Index": -1,
+            "NameInSource": "mc007",
+            "Alias": "mc007",
+            "Type": "System.String"
+          },
+          "13": {
+            "Name": "udf01",
+            "Index": -1,
+            "NameInSource": "udf01",
+            "Alias": "udf01",
+            "Type": "System.String"
+          },
+          "14": {
+            "Name": "udf02",
+            "Index": -1,
+            "NameInSource": "udf02",
+            "Alias": "udf02",
+            "Type": "System.String"
+          },
+          "15": {
+            "Name": "udf03",
+            "Index": -1,
+            "NameInSource": "udf03",
+            "Alias": "udf03",
+            "Type": "System.String"
+          },
+          "16": {
+            "Name": "udf04",
+            "Index": -1,
+            "NameInSource": "udf04",
+            "Alias": "udf04",
+            "Type": "System.String"
+          },
+          "17": {
+            "Name": "udf05",
+            "Index": -1,
+            "NameInSource": "udf05",
+            "Alias": "udf05",
+            "Type": "System.String"
+          },
+          "18": {
+            "Name": "id",
+            "Index": -1,
+            "NameInSource": "id",
+            "Alias": "id",
+            "Type": "System.Decimal"
+          },
+          "19": {
+            "Name": "inc_id",
+            "Index": -1,
+            "NameInSource": "inc_id",
+            "Alias": "inc_id",
+            "Type": "System.Decimal"
+          },
+          "20": {
+            "Name": "hasimg",
+            "Index": -1,
+            "NameInSource": "hasimg",
+            "Alias": "hasimg",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "DataSet.precaution"
+      }
+    }
+  },
+  "Pages": {
+    "0": {
+      "Ident": "StiPage",
+      "Name": "Page1",
+      "Guid": "cb5875b2376c33bedf355f6d6e883687",
+      "Interaction": {
+        "Ident": "StiInteraction"
+      },
+      "Border": ";;2;;;;;solid:Black",
+      "Brush": "solid:",
+      "Components": {
+        "0": {
+          "Ident": "StiReportTitleBand",
+          "Name": "ReportTitleBand1",
+          "ClientRectangle": "0,0.4,19,1.4",
+          "Interaction": {
+            "Ident": "StiInteraction"
+          },
+          "Border": ";;;;;;;solid:Black",
+          "Brush": "solid:",
+          "Components": {
+            "0": {
+              "Ident": "StiText",
+              "Name": "Text45",
+              "ClientRectangle": "5.7,0,7.6,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "Detail Technical Topic Description"
+              },
+              "HorAlignment": "Center",
+              "Font": ";12;Bold, Underline;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "Type": "Expression"
+            }
+          }
+        },
+        "1": {
+          "Ident": "StiDataBand",
+          "Name": "DataBand4",
+          "ClientRectangle": "0,2.6,19,1.2",
+          "Interaction": {
+            "Ident": "StiBandInteraction"
+          },
+          "Border": ";;;;;;;solid:Black",
+          "Brush": "solid:",
+          "Components": {
+            "0": {
+              "Ident": "StiText",
+              "Name": "Text2",
+              "Guid": "6d812fd121f8763fd30ffef97bcb1fea",
+              "ClientRectangle": "3.4,0,4.2,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{tecmb.mb023}"
+              },
+              "VertAlignment": "Center",
+              "Font": "Arial Unicode MS;12;;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "DataColumn"
+            },
+            "1": {
+              "Ident": "StiText",
+              "Name": "Text3",
+              "Guid": "09d9bec506259fcb0f64ddb0991284a8",
+              "ClientRectangle": "10.2,0,2.8,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{tecmb.mb005}"
+              },
+              "VertAlignment": "Center",
+              "Font": "Arial Unicode MS;12;;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "2": {
+              "Ident": "StiText",
+              "Name": "Text4",
+              "Guid": "35070a2a5c71e16f9579c23033971820",
+              "ClientRectangle": "7.6,0,2.6,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "Contact:"
+              },
+              "VertAlignment": "Center",
+              "Font": "Arial Unicode MS;12;;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "3": {
+              "Ident": "StiText",
+              "Name": "Text5",
+              "Guid": "e58cc5b5bf4f7bdfd669d8cc779597c7",
+              "ClientRectangle": "15.2,0,3.8,0.6",
+              "BeforePrintEvent": {
+                "Script": "var mb006 = tecmb.getData(\"mb006\", 0)\r\nvar year = mb006.substring(0,4);\r\nvar month = mb006.substring(4,6);\r\nvar date = mb006.substring(6,8);\r\nText5.text = `${year}-${month}-${date}`;"
+              },
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{tecmb.mb006}"
+              },
+              "VertAlignment": "Center",
+              "Font": "Arial Unicode MS;12;;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "4": {
+              "Ident": "StiText",
+              "Name": "Text7",
+              "Guid": "6953b1cb170d18ae65252444f516772d",
+              "ClientRectangle": "13,0,2.2,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "Date:"
+              },
+              "VertAlignment": "Center",
+              "Font": "Arial Unicode MS;12;;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "5": {
+              "Ident": "StiText",
+              "Name": "Text8",
+              "Guid": "33deeff34767b572596f41752ea6132e",
+              "ClientRectangle": "0,0,3.4,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "Tid:"
+              },
+              "VertAlignment": "Center",
+              "Font": "Arial Unicode MS;12;;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "6": {
+              "Ident": "StiText",
+              "Name": "Text1",
+              "CanGrow": true,
+              "GrowToHeight": true,
+              "ClientRectangle": "0,0.6,3.4,0.6",
+              "BeforePrintEvent": {
+                "Script": "Text1.height = Text10.height;"
+              },
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "Topic:"
+              },
+              "VertAlignment": "Center",
+              "Font": "Arial Unicode MS;12;;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "7": {
+              "Ident": "StiText",
+              "Name": "Text10",
+              "CanGrow": true,
+              "GrowToHeight": true,
+              "ClientRectangle": "3.4,0.6,15.6,0.6",
+              "BeforePrintEvent": {
+                "Script": "Text1.height = Text10.height;"
+              },
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{tecmb.mb004}"
+              },
+              "VertAlignment": "Center",
+              "Font": "Arial Unicode MS;12;;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "DataColumn"
+            }
+          },
+          "DataSourceName": "tecmb"
+        },
+        "2": {
+          "Ident": "StiDataBand",
+          "Name": "DataBand6",
+          "ClientRectangle": "0,4.6,19,0.6",
+          "Interaction": {
+            "Ident": "StiBandInteraction"
+          },
+          "Border": ";;;;;;;solid:Black",
+          "Brush": "solid:",
+          "Components": {
+            "0": {
+              "Ident": "StiText",
+              "Name": "Text9",
+              "Guid": "3453b1edd47e63dffb897e76582a4417",
+              "CanGrow": true,
+              "GrowToHeight": true,
+              "ClientRectangle": "0,0,3.4,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "Concept/Theory:"
+              },
+              "VertAlignment": "Center",
+              "Font": "Arial Unicode MS;12;;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "1": {
+              "Ident": "StiText",
+              "Name": "Text12",
+              "Guid": "9ae8b9030630326283dea8f8387ee612",
+              "CanGrow": true,
+              "GrowToHeight": true,
+              "ClientRectangle": "3.4,0,15.6,0.6",
+              "AfterPrintEvent": {
+                "Script": "Text9.height = Text12.height;"
+              },
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{tecmb.mb007}"
+              },
+              "VertAlignment": "Center",
+              "Font": "Arial Unicode MS;12;;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "DataColumn"
+            }
+          },
+          "DataSourceName": "tecmb"
+        },
+        "3": {
+          "Ident": "StiDataBand",
+          "Name": "DataBand7",
+          "Guid": "3c3692aee84927de687770bf7f946416",
+          "ClientRectangle": "0,6,19,2",
+          "Interaction": {
+            "Ident": "StiBandInteraction"
+          },
+          "Border": ";;;;;;;solid:Black",
+          "Brush": "solid:",
+          "Components": {
+            "0": {
+              "Ident": "StiText",
+              "Name": "Text6",
+              "Guid": "ab9b106d79da433f6f45068295343ab0",
+              "CanGrow": true,
+              "GrowToHeight": true,
+              "ClientRectangle": "0,0,3.4,2",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "Usage: \r\n作用 :"
+              },
+              "VertAlignment": "Center",
+              "Font": "Arial Unicode MS;12;;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "1": {
+              "Ident": "StiText",
+              "Name": "Text11",
+              "Guid": "d1164c3678d7e7640a1ee364ae4646e1",
+              "CanGrow": true,
+              "GrowToHeight": true,
+              "ClientRectangle": "3.4,0,15.6,2",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{tecmb.mb008}"
+              },
+              "VertAlignment": "Center",
+              "Font": "Arial Unicode MS;12;;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            }
+          },
+          "DataSourceName": "tecmb"
+        },
+        "4": {
+          "Ident": "StiDataBand",
+          "Name": "DataBand8",
+          "Guid": "14749c7c1e0d561b63759c16f3831a5a",
+          "ClientRectangle": "0,8.8,19,2",
+          "Interaction": {
+            "Ident": "StiBandInteraction"
+          },
+          "Border": ";;;;;;;solid:Black",
+          "Brush": "solid:",
+          "Components": {
+            "0": {
+              "Ident": "StiText",
+              "Name": "Text13",
+              "Guid": "53bd13fad23d46cbfad3243a3676d248",
+              "CanGrow": true,
+              "GrowToHeight": true,
+              "ClientRectangle": "0,0,3.4,2",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "Pre-request / \r\nDependency : \r\n類中重要的屬性:"
+              },
+              "VertAlignment": "Center",
+              "Font": "Arial Unicode MS;12;;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "1": {
+              "Ident": "StiText",
+              "Name": "Text14",
+              "Guid": "195cb73399bec30224f8f6c201be02c3",
+              "CanGrow": true,
+              "GrowToHeight": true,
+              "ClientRectangle": "3.4,0,15.6,2",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{tecmb.mb009}"
+              },
+              "VertAlignment": "Center",
+              "Font": "Arial Unicode MS;12;;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            }
+          },
+          "DataSourceName": "tecmb"
+        },
+        "5": {
+          "Ident": "StiColumnHeaderBand",
+          "Name": "ColumnHeaderBand3",
+          "Guid": "54352e54a4304efa3fd84306011d6abe",
+          "PrintOn": "ExceptFirstPage",
+          "ClientRectangle": "0,11.6,19,2.8",
+          "BeforePrintEvent": {
+            "Script": "if (steps.count == 0)\r\n    ColumnHeaderBand3.enabled = true;\r\nelse\r\n    ColumnHeaderBand3.enabled = false;"
+          },
+          "Interaction": {
+            "Ident": "StiInteraction"
+          },
+          "Border": ";;;;;;;solid:Black",
+          "Brush": "solid:",
+          "Components": {
+            "0": {
+              "Ident": "StiText",
+              "Name": "Text46",
+              "Guid": "16a4968d44bfa83b0e430d6fe7d0be40",
+              "CanGrow": true,
+              "GrowToHeight": true,
+              "ClientRectangle": "3.4,0,15.6,2.8",
+              "BeforePrintEvent": {
+                "Script": "var hasimg = steps.getData('hasimg', DataBand1.position)\r\nif (hasimg != \"N\") {\r\n    Image2.border.side = 6;\r\n}else{\r\n    Image2.border.side = 0;\r\n}\r\nif (steps.count == 1)\r\n   Text35.border.side = 15;\r\nelse if (DataBand1.position == 0)\r\n   Text35.border.side = 7;\r\nelse if (DataBand1.position == steps.count - 1){\r\n   if (hasimg != \"N\") {\r\n      Image2.border.side = 14;\r\n   }\r\n   Text35.border.side = 14;\r\n}else\r\n   Text35.border.side = 6;\r\n"
+              },
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "VertAlignment": "Center",
+              "Font": ";12;;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "1": {
+              "Ident": "StiText",
+              "Name": "Text47",
+              "Guid": "a1c4ba7bcbe35cbd4dfdcdfa3c1fbbbd",
+              "GrowToHeight": true,
+              "ClientRectangle": "0,0,3.4,2.8",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "ProcessingDuplicates": "Merge",
+              "OnlyText": true,
+              "Text": {
+                "Value": "Implementation \r\nProcedure/Steps:\r\n實現思路:"
+              },
+              "CanBreak": true,
+              "VertAlignment": "Center",
+              "Font": ";12;;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            }
+          },
+          "PrintIfEmpty": true,
+          "PrintOnAllPages": false
+        },
+        "6": {
+          "Ident": "StiDataBand",
+          "Name": "DataBand1",
+          "ClientRectangle": "0,15.2,19,2.8",
+          "BeforePrintEvent": {
+            "Script": "var hasimg = steps.getData('hasimg', DataBand1.position)\r\nif (hasimg == 'N') {\r\n   Text36.height = 1;\r\n    DataBand1.height = 1;\r\n    Image2.height = 0;\r\n}else {\r\n   Text36.height = 2.8;\r\n    DataBand1.height = 2.8;\r\n    Image2.height = 1.8;\r\n}"
+          },
+          "Interaction": {
+            "Ident": "StiBandInteraction"
+          },
+          "Border": ";;;;;;;solid:0,0,0",
+          "Brush": "solid:",
+          "Components": {
+            "0": {
+              "Ident": "StiText",
+              "Name": "Text36",
+              "Guid": "bde763d4fb68783a5dc6a2681b89128e",
+              "GrowToHeight": true,
+              "ClientRectangle": "0,0,3.4,2.8",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "ProcessingDuplicates": "Merge",
+              "OnlyText": true,
+              "Text": {
+                "Value": "Implementation \r\nProcedure/Steps:\r\n實現思路:"
+              },
+              "CanBreak": true,
+              "VertAlignment": "Center",
+              "Font": ";12;;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "1": {
+              "Ident": "StiText",
+              "Name": "Text35",
+              "Guid": "c0f3509c456c1d7d3824ce3677ed7cc7",
+              "CanGrow": true,
+              "GrowToHeight": true,
+              "ClientRectangle": "3.4,0,15.6,1",
+              "BeforePrintEvent": {
+                "Script": "var hasimg = steps.getData('hasimg', DataBand1.position)\r\nif (hasimg != \"N\") {\r\n    Image2.border.side = 6;\r\n}else{\r\n    Image2.border.side = 0;\r\n}\r\nif (steps.count == 1)\r\n   Text35.border.side = 15;\r\nelse if (DataBand1.position == 0)\r\n   Text35.border.side = 7;\r\nelse if (DataBand1.position == steps.count - 1){\r\n   if (hasimg != \"N\") {\r\n      Image2.border.side = 14;\r\n   }\r\n   Text35.border.side = 14;\r\n}else\r\n   Text35.border.side = 6;\r\n\r\n   "
+              },
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{steps.mc005}"
+              },
+              "VertAlignment": "Center",
+              "Font": ";12;;",
+              "Border": "Left, Right;;;;;;;solid:0,0,0",
+              "Brush": "solid:",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "DataColumn"
+            },
+            "2": {
+              "Ident": "StiImage",
+              "Name": "Image2",
+              "Guid": "e6555c1e0d642ee94be5cddc0722e161",
+              "CanGrow": true,
+              "GrowToHeight": true,
+              "MinSize": "15.6,0",
+              "MaxSize": "15.6,0",
+              "ClientRectangle": "3.4,1,15.6,1.8",
+              "BeforePrintEvent": {
+                "Script": "var id = steps.getData('id', DataBand1.position)\r\nvar mc003 = steps.getData('mc003', DataBand1.position)\r\nvar mc004 = steps.getData('mc004', DataBand1.position)\r\nvar hasimg = steps.getData('hasimg', DataBand1.position)\r\nif (hasimg != \"N\") {\r\nImage2.imageURL = `/PMIS/opportunity/Technical_Image?id=${id}-${mc003}-${mc004}`\r\n}else{\r\nImage2.imageURL =\"\";\r\n}"
+              },
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "HorAlignment": "Center",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:",
+              "Smoothing": false,
+              "Stretch": true,
+              "AspectRatio": true,
+              "Image": ""
+            },
+            "3": {
+              "Ident": "StiStartPointPrimitive",
+              "Name": "StartPointPrimitive1",
+              "ClientRectangle": "19,0,0,0",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "ReferenceToGuid": "fa82daeb929291ee5b91baa8c23aaa03"
+            },
+            "4": {
+              "Ident": "StiEndPointPrimitive",
+              "Name": "EndPointPrimitive1",
+              "ClientRectangle": "19,2,0,0",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "ReferenceToGuid": "fa82daeb929291ee5b91baa8c23aaa03"
+            }
+          },
+          "DataSourceName": "steps"
+        },
+        "7": {
+          "Ident": "StiColumnHeaderBand",
+          "Name": "ColumnHeaderBand1",
+          "PrintOn": "ExceptFirstPage",
+          "ClientRectangle": "0,18.8,19,2.8",
+          "BeforePrintEvent": {
+            "Script": "if (example.count == 0)\r\n    ColumnHeaderBand1.enabled = true;\r\nelse\r\n    ColumnHeaderBand1.enabled = false;"
+          },
+          "Interaction": {
+            "Ident": "StiInteraction"
+          },
+          "Border": ";;;;;;;solid:Black",
+          "Brush": "solid:",
+          "Components": {
+            "0": {
+              "Ident": "StiText",
+              "Name": "Text37",
+              "Guid": "5a60369857725f58ceefc443fefa576e",
+              "GrowToHeight": true,
+              "ClientRectangle": "0,0,3.4,2.8",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "ProcessingDuplicates": "Merge",
+              "OnlyText": true,
+              "Text": {
+                "Value": "Example : \r\n應用舉例:"
+              },
+              "CanBreak": true,
+              "VertAlignment": "Center",
+              "Font": ";12;;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "1": {
+              "Ident": "StiText",
+              "Name": "Text41",
+              "Guid": "07e2d176793bc52c8387032a5a7c00c1",
+              "CanGrow": true,
+              "GrowToHeight": true,
+              "ClientRectangle": "3.4,0,15.6,2.8",
+              "BeforePrintEvent": {
+                "Script": "var hasimg = example.getData('hasimg', DataBand3.position)\r\nif (hasimg != \"N\") {\r\n    Image3.border.side = 6;\r\n}else{\r\n    Image3.border.side = 0;\r\n}\r\nif (example.count == 1)\r\n   Text39.border.side = 15;\r\nelse if (DataBand3.position == 0)\r\n   Text39.border.side = 7;\r\nelse if (DataBand3.position == example.count - 1){\r\n   var hasimg = example.getData('hasimg', DataBand3.position)\r\n   if (hasimg != \"N\") {\r\n      Image3.border.side = 14;\r\n   }\r\n   Text39.border.side = 14;\r\n}else\r\n   Text39.border.side = 6;\r\n\r\n   "
+              },
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "VertAlignment": "Center",
+              "Font": ";12;;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            }
+          },
+          "PrintIfEmpty": true,
+          "PrintOnAllPages": false
+        },
+        "8": {
+          "Ident": "StiDataBand",
+          "Name": "DataBand3",
+          "ClientRectangle": "0,22.4,19,2.8",
+          "BeforePrintEvent": {
+            "Script": "var hasimg = example.getData('hasimg', DataBand3.position)\r\nif (hasimg == 'N') {\r\n   Text40.height = 1;\r\n    DataBand3.height = 1;\r\n    Image3.height = 0;\r\n}else {\r\n   Text40.height = 2.8;\r\n    DataBand3.height = 2.8;\r\n    Image3.height = 1.8;\r\n}\r\n   \r\n"
+          },
+          "Interaction": {
+            "Ident": "StiBandInteraction"
+          },
+          "Border": ";;;;;;;solid:Black",
+          "Brush": "solid:",
+          "Components": {
+            "0": {
+              "Ident": "StiText",
+              "Name": "Text39",
+              "Guid": "8bbaaa2c5203a7f677f9255588aa95b6",
+              "CanGrow": true,
+              "GrowToHeight": true,
+              "ClientRectangle": "3.4,0,15.6,1",
+              "BeforePrintEvent": {
+                "Script": "var hasimg = example.getData('hasimg', DataBand3.position)\r\nif (hasimg != \"N\") {\r\n    Image3.border.side = 6;\r\n}else{\r\n    Image3.border.side = 0;\r\n}\r\nif (example.count == 1)\r\n   Text39.border.side = 15;\r\nelse if (DataBand3.position == 0)\r\n   Text39.border.side = 7;\r\nelse if (DataBand3.position == example.count - 1){\r\n   if (hasimg != \"N\") {\r\n      Image3.border.side = 14;\r\n   }\r\n   Text39.border.side = 14;\r\n}else\r\n   Text39.border.side = 6;\r\n\r\n   "
+              },
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{example.mc005}"
+              },
+              "VertAlignment": "Center",
+              "Font": "Arial Unicode MS;12;;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "DataColumn"
+            },
+            "1": {
+              "Ident": "StiText",
+              "Name": "Text40",
+              "Guid": "cd967a32c9699befee4ba5a92ab4785b",
+              "GrowToHeight": true,
+              "ClientRectangle": "0,0,3.4,2.8",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "ProcessingDuplicates": "Merge",
+              "OnlyText": true,
+              "Text": {
+                "Value": "Example : \r\n應用舉例:"
+              },
+              "CanBreak": true,
+              "VertAlignment": "Center",
+              "Font": "Arial Unicode MS;12;;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "2": {
+              "Ident": "StiImage",
+              "Name": "Image3",
+              "Guid": "2d1565287a82035c0703689add39f23e",
+              "CanShrink": true,
+              "CanGrow": true,
+              "GrowToHeight": true,
+              "MinSize": "15.6,0",
+              "MaxSize": "15.6,0",
+              "ClientRectangle": "3.4,1,15.6,1.8",
+              "BeforePrintEvent": {
+                "Script": "var id = example.getData('id', DataBand3.position)\r\nvar mc003 = example.getData('mc003', DataBand3.position)\r\nvar mc004 = example.getData('mc004', DataBand3.position)\r\nvar hasimg = example.getData('hasimg', DataBand3.position)\r\nif (hasimg != \"N\") {\r\nImage3.imageURL = `/PMIS/opportunity/Technical_Image?id=${id}-${mc003}-${mc004}`\r\n}else {\r\n  Image3.imageURL = \"\";\r\n}"
+              },
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "HorAlignment": "Center",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:",
+              "Smoothing": false,
+              "Stretch": true,
+              "AspectRatio": true,
+              "Image": ""
+            }
+          },
+          "DataSourceName": "example"
+        },
+        "9": {
+          "Ident": "StiColumnHeaderBand",
+          "Name": "ColumnHeaderBand2",
+          "Guid": "61f54074c38eb301ea1acec2a27431df",
+          "PrintOn": "ExceptFirstPage",
+          "ClientRectangle": "0,26,19,2.8",
+          "BeforePrintEvent": {
+            "Script": "if (precaution.count == 0)\r\n    ColumnHeaderBand2.enabled = true;\r\nelse\r\n    ColumnHeaderBand2.enabled = false;"
+          },
+          "Interaction": {
+            "Ident": "StiInteraction"
+          },
+          "Border": ";;;;;;;solid:Black",
+          "Brush": "solid:",
+          "Components": {
+            "0": {
+              "Ident": "StiText",
+              "Name": "Text42",
+              "Guid": "19341caf18f4a4c0a22965396086fab6",
+              "GrowToHeight": true,
+              "ClientRectangle": "0,0,3.4,2.8",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "ProcessingDuplicates": "Merge",
+              "OnlyText": true,
+              "Text": {
+                "Value": "Precaution :\r\n注意事項 :"
+              },
+              "CanBreak": true,
+              "VertAlignment": "Center",
+              "Font": "Arial Unicode MS;12;;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "1": {
+              "Ident": "StiText",
+              "Name": "Text44",
+              "Guid": "4e57f767ee4b978248af8cd7452a2e74",
+              "CanGrow": true,
+              "GrowToHeight": true,
+              "ClientRectangle": "3.4,0,15.6,2.8",
+              "BeforePrintEvent": {
+                "Script": "var hasimg = example.getData('hasimg', DataBand3.position)\r\nif (hasimg != \"N\") {\r\n    Image3.border.side = 6;\r\n}else{\r\n    Image3.border.side = 0;\r\n}\r\nif (example.count == 1)\r\n   Text39.border.side = 15;\r\nelse if (DataBand3.position == 0)\r\n   Text39.border.side = 7;\r\nelse if (DataBand3.position == example.count - 1){\r\n   var hasimg = example.getData('hasimg', DataBand3.position)\r\n   if (hasimg != \"N\") {\r\n      Image3.border.side = 14;\r\n   }\r\n   Text39.border.side = 14;\r\n}else\r\n   Text39.border.side = 6;\r\n\r\n   "
+              },
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "VertAlignment": "Center",
+              "Font": ";12;;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "DataColumn"
+            }
+          },
+          "PrintIfEmpty": true,
+          "PrintOnAllPages": false
+        },
+        "10": {
+          "Ident": "StiDataBand",
+          "Name": "DataBand2",
+          "ClientRectangle": "0,29.6,19,2.8",
+          "BeforePrintEvent": {
+            "Script": "var hasimg = precaution.getData('hasimg', DataBand2.position)\r\nif (hasimg == 'N') {\r\n   Text43.height = 1;\r\n    DataBand2.height = 1;\r\n    Image1.height = 0;\r\n}else {\r\n   Text43.height = 2.8;\r\n    DataBand2.height = 2.8;\r\n    Image1.height = 1.8;\r\n}\r\n   \r\n"
+          },
+          "Interaction": {
+            "Ident": "StiBandInteraction"
+          },
+          "Border": ";;;;;;;solid:Black",
+          "Brush": "solid:",
+          "Components": {
+            "0": {
+              "Ident": "StiText",
+              "Name": "Text38",
+              "Guid": "4268af9468ff7e3f72fd99faf7d2941d",
+              "GrowToHeight": true,
+              "ClientRectangle": "0,0,3.4,2.8",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "ProcessingDuplicates": "Merge",
+              "OnlyText": true,
+              "Text": {
+                "Value": "Precaution :\r\n注意事項 :"
+              },
+              "CanBreak": true,
+              "VertAlignment": "Center",
+              "Font": "Arial Unicode MS;12;;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "1": {
+              "Ident": "StiText",
+              "Name": "Text43",
+              "Guid": "92e1e88d2ed04fa3d16014b420c8111f",
+              "CanGrow": true,
+              "GrowToHeight": true,
+              "ClientRectangle": "3.4,0,15.6,1",
+              "BeforePrintEvent": {
+                "Script": "var hasimg = precaution.getData('hasimg', DataBand1.position)\r\nif (hasimg != \"N\") {\r\n    Image1.border.side = 6;\r\n}else{\r\n    Image1.border.side = 0;\r\n}\r\nif (precaution.count == 1)\r\n   Text43.border.side = 15;\r\nelse if (DataBand1.position == 0)\r\n   Text43.border.side = 7;\r\nelse if (DataBand1.position == precaution.count - 1){\r\n   if (hasimg != \"N\") {\r\n      Image1.border.side = 14;\r\n   }\r\n   Text43.border.side = 14;\r\n}else\r\n   Text43.border.side = 6;\r\n\r\n   "
+              },
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{precaution.mc005}"
+              },
+              "VertAlignment": "Center",
+              "Font": "Arial Unicode MS;12;;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "DataColumn"
+            },
+            "2": {
+              "Ident": "StiImage",
+              "Name": "Image1",
+              "Guid": "6bad2fe4cc343a5a0c84842b8e38660d",
+              "CanShrink": true,
+              "CanGrow": true,
+              "GrowToHeight": true,
+              "MinSize": "15.6,0",
+              "MaxSize": "15.6,0",
+              "ClientRectangle": "3.4,1,15.6,1.8",
+              "BeforePrintEvent": {
+                "Script": "var id = precaution.getData('id', DataBand2.position)\r\nvar mc003 = precaution.getData('mc003', DataBand2.position)\r\nvar mc004 = precaution.getData('mc004', DataBand2.position)\r\nvar hasimg = precaution.getData('hasimg', DataBand2.position)\r\nif (hasimg != \"N\") {\r\nImage1.imageURL = `/PMIS/opportunity/Technical_Image?id=${id}-${mc003}-${mc004}`\r\n}else {\r\n  Image1.imageURL = \"\";\r\n}"
+              },
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "HorAlignment": "Center",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:",
+              "Smoothing": false,
+              "Stretch": true,
+              "AspectRatio": true,
+              "Image": ""
+            }
+          },
+          "DataSourceName": "precaution"
+        },
+        "11": {
+          "Ident": "StiDataBand",
+          "Name": "DataBand5",
+          "ClientRectangle": "0,33.2,19,4.2",
+          "Interaction": {
+            "Ident": "StiBandInteraction"
+          },
+          "Border": ";;;;;;;solid:Black",
+          "Brush": "solid:",
+          "Components": {
+            "0": {
+              "Ident": "StiText",
+              "Name": "Text15",
+              "Guid": "7ce8f984542e96cf148608da9c017b95",
+              "ClientRectangle": "3.4,2.2,4.2,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{tecmb.mb018}"
+              },
+              "VertAlignment": "Center",
+              "Font": "Arial Unicode MS;12;;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "DataColumn"
+            },
+            "1": {
+              "Ident": "StiText",
+              "Name": "Text16",
+              "Guid": "41480278b23104047de2bff645bd341d",
+              "ClientRectangle": "10.2,2.2,2.8,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{tecmb.mb019}"
+              },
+              "VertAlignment": "Center",
+              "Font": "Arial Unicode MS;12;;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "2": {
+              "Ident": "StiText",
+              "Name": "Text17",
+              "Guid": "757ef20d0cd7297431db0389b977badb",
+              "ClientRectangle": "7.6,2.2,2.6,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "Compulsory:"
+              },
+              "VertAlignment": "Center",
+              "Font": "Arial Unicode MS;12;;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "3": {
+              "Ident": "StiText",
+              "Name": "Text18",
+              "Guid": "6b2240d4095d23bf5147ed24ff80b661",
+              "ClientRectangle": "15.2,2.2,3.8,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{tecmb.mb020}"
+              },
+              "VertAlignment": "Center",
+              "Font": "Arial Unicode MS;12;;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "4": {
+              "Ident": "StiText",
+              "Name": "Text19",
+              "Guid": "17d451e9258c1b430ac247c8029e84eb",
+              "ClientRectangle": "13,2.2,2.2,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "Status:"
+              },
+              "VertAlignment": "Center",
+              "Font": "Arial Unicode MS;12;;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "5": {
+              "Ident": "StiText",
+              "Name": "Text20",
+              "Guid": "41c0a26fe9c2bcbba1470c7f31364094",
+              "ClientRectangle": "0,2.2,3.4,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "Video:"
+              },
+              "VertAlignment": "Center",
+              "Font": "Arial Unicode MS;12;;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "6": {
+              "Ident": "StiText",
+              "Name": "Text21",
+              "Guid": "d761b765f392fdc373a4dfa8345e6445",
+              "ClientRectangle": "3.4,2.8,4.2,1.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{tecmb.id}"
+              },
+              "VertAlignment": "Center",
+              "Font": "Arial Unicode MS;12;;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "DataColumn"
+            },
+            "7": {
+              "Ident": "StiText",
+              "Name": "Text22",
+              "Guid": "059e440f31d39b0b74b479dd7d4b6ff2",
+              "ClientRectangle": "10.2,2.8,2.8,1.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{tecmb.parentid}"
+              },
+              "VertAlignment": "Center",
+              "Font": "Arial Unicode MS;12;;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "8": {
+              "Ident": "StiText",
+              "Name": "Text23",
+              "Guid": "e9fb3f4d0a3b693d0a6ee0781340bb75",
+              "ClientRectangle": "7.6,2.8,2.6,1.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "Parent MindMap:"
+              },
+              "VertAlignment": "Center",
+              "Font": "Arial Unicode MS;12;;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "9": {
+              "Ident": "StiText",
+              "Name": "Text24",
+              "Guid": "f5276e521a02e5959b793803003741bc",
+              "ClientRectangle": "15.2,2.8,3.8,1.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "VertAlignment": "Center",
+              "Font": "Arial Unicode MS;12;;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "10": {
+              "Ident": "StiText",
+              "Name": "Text25",
+              "Guid": "b2b3a7e460d8ea1fe1c7511ab3f3b4f0",
+              "ClientRectangle": "13,2.8,2.2,1.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "VertAlignment": "Center",
+              "Font": "Arial Unicode MS;12;;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "11": {
+              "Ident": "StiText",
+              "Name": "Text26",
+              "Guid": "9adef8efa1cce6d952e65a52ae7452a0",
+              "ClientRectangle": "0,2.8,3.4,1.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "Mind Map ID:"
+              },
+              "VertAlignment": "Center",
+              "Font": "Arial Unicode MS;12;;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "12": {
+              "Ident": "StiText",
+              "Name": "Text27",
+              "Guid": "33d7f786b397edf51e67ac0f8f9564d9",
+              "ClientRectangle": "3.4,1.6,4.2,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{tecmb.mb015c}"
+              },
+              "VertAlignment": "Center",
+              "Font": "Arial Unicode MS;12;;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "DataColumn"
+            },
+            "13": {
+              "Ident": "StiText",
+              "Name": "Text28",
+              "Guid": "1f35f69bd0a8bf22fe648f43d91e948e",
+              "ClientRectangle": "10.2,1.6,2.8,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{tecmb.mb016}"
+              },
+              "VertAlignment": "Center",
+              "Font": "Arial Unicode MS;12;;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "14": {
+              "Ident": "StiText",
+              "Name": "Text29",
+              "Guid": "bcba2ab013a15993128d13a309cabd3d",
+              "ClientRectangle": "7.6,1.6,2.6,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "Area: "
+              },
+              "VertAlignment": "Center",
+              "Font": "Arial Unicode MS;12;;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "15": {
+              "Ident": "StiText",
+              "Name": "Text30",
+              "Guid": "9e403dbb36594d75045aeaaa7e019980",
+              "ClientRectangle": "15.2,1.6,3.8,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{tecmb.mb017}"
+              },
+              "VertAlignment": "Center",
+              "Font": "Arial Unicode MS;12;;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "16": {
+              "Ident": "StiText",
+              "Name": "Text31",
+              "Guid": "d49592f7f83eea01934bf6b8171812d7",
+              "ClientRectangle": "13,1.6,2.2,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "Reference:"
+              },
+              "VertAlignment": "Center",
+              "Font": "Arial Unicode MS;12;;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "17": {
+              "Ident": "StiText",
+              "Name": "Text32",
+              "Guid": "7776bd42c18c74a9f8d305301342505b",
+              "ClientRectangle": "0,1.6,3.4,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "Category:"
+              },
+              "VertAlignment": "Center",
+              "Font": "Arial Unicode MS;12;;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "18": {
+              "Ident": "StiText",
+              "Name": "Text33",
+              "Guid": "ff19a18cd23e0a00350d29d82292fe81",
+              "ClientRectangle": "0,0,3.4,1.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "Questions :"
+              },
+              "VertAlignment": "Center",
+              "Font": "Arial Unicode MS;12;;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "19": {
+              "Ident": "StiText",
+              "Name": "Text34",
+              "Guid": "e689e405e5d5a231cb12327ac1fd583b",
+              "ClientRectangle": "3.4,0,15.6,1.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{tecmb.mb013}"
+              },
+              "VertAlignment": "Center",
+              "Font": "Arial Unicode MS;12;;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            }
+          },
+          "DataSourceName": "tecmb"
+        },
+        "12": {
+          "Ident": "StiVerticalLinePrimitive",
+          "Name": "VerticalLinePrimitive1",
+          "Guid": "fa82daeb929291ee5b91baa8c23aaa03",
+          "ClientRectangle": "19,15.2,0.0254,2",
+          "Interaction": {
+            "Ident": "StiInteraction"
+          },
+          "StartCap": ";;;",
+          "EndCap": ";;;"
+        }
+      },
+      "Columns": 1,
+      "PaperSize": "A4",
+      "PageWidth": 21,
+      "PageHeight": 29.7,
+      "Watermark": {
+        "TextBrush": "solid:50,0,0,0"
+      },
+      "Margins": {
+        "Left": 1,
+        "Right": 1,
+        "Top": 1,
+        "Bottom": 1
+      }
+    }
+  }
+}

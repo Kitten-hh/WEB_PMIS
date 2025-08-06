@@ -1,0 +1,27 @@
+<body>
+
+    <p>This is a test to get a local json file</p> 
+ 
+    <div id="abc"></div>
+ 
+    <script>
+ 
+        "use strict";
+ 
+ 
+ 
+        fetch("/static/DevPlat/assets/javascript/test.json")
+             .then (function(resp){
+                 return resp.json();
+             })
+             .then (function(data){
+                console.log(data);
+                var values = Object.values(data);
+                for (var i = 0; i < values.length; i++) {
+                    document.getElementById('abc').innerHTML +=values[i].index + " " + values[i].displayText + "<br />";
+                }
+             });
+ 
+    </script>
+ 
+ </body>

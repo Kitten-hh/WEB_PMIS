@@ -1,0 +1,234 @@
+#quick-add-technic .modal-body .card.card-reflow {
+    border: 0;
+}
+
+#quick-add-technic fieldset {
+    border-radius: 8px;
+    padding: 0 1rem;
+    height: 100%;
+    overflow-y: auto;
+    border: 0.125rem solid rgba(231,234,243,.7);
+    border-radius: 0.5rem;
+    -webkit-border-radius: 0.5rem;
+}
+
+#quick-add-technic legend {
+    width: auto;
+    font-size: 14px;
+    padding: 0em 0.5em;
+    font-weight: bold;
+}
+
+.normal-quick-add-technic .task_switch_container label {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.ishidden {
+    display: none !important;
+}
+
+#quick_techinc_form_div li{
+    list-style: none;
+}
+
+#quick-add-technic .btn_img_close {
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    left: 100%;
+    top: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+@media (max-width: 575.98px) {
+    #quick-add-technic .modal-header .modal-title {
+        font-size: 1.1rem;
+    }
+
+    #quick-add-technic #quick_techinc_form .technicDetail #technicSteps>div {
+        flex-direction: column;
+        align-items: flex-start !important;
+    }
+
+    #quick-add-technic #quick_techinc_form .technicDetail #technicSteps>div #addStep {
+        margin-bottom: 1rem;
+    }
+
+    #quick-add-technic #quick_techinc_form .technicDetail #technicSteps>div #addStep,
+    #quick-add-technic #quick_techinc_form .technicDetail #technicSteps .publisher .publisher-actions>.btn {
+        margin-bottom: 8px;
+    }
+}
+
+#quick-add-technic .technicalEnquiry .card-header {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 0;
+}
+
+#quick-add-technic .technicalEnquiry #enquiryInput label {
+    display: none;
+}
+
+#quick-add-technic .technicalEnquiry #enquiryInput .control {
+    border-top-left-radius: .25rem;
+    border-bottom-left-radius: .25rem;
+}
+
+#quick-add-technic .technicalEnquiry #techEnquiryTable .dataTables_wrapper {
+    box-shadow: 0 0 0 1px rgb(20 20 31 / 5%), 0 1px 3px 0 rgb(20 20 31 / 15%);
+    border-radius: 0.3rem;
+    padding-top: 0 !important;
+}
+
+#quick-add-technic .technicalEnquiry #techEnquiryTable .table td,
+#quick-add-technic .technicalEnquiry #techEnquiryTable .table th {
+    vertical-align: top !important;
+}
+
+#quick-add-technic .technicalEnquiry legend .btn-reset {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.lang_en #quick-add-technic #techEnquiryTable table.dataTable>tbody>tr.child span.dtr-title {
+    min-width: 89px;
+}
+
+#techEnquiryTable {
+    border-radius: .25rem;
+    border: 1px solid #42425d;
+}
+
+#techEnquiryTable .table {
+    margin-top: 0 !important;
+}
+
+@media (max-width: 992px) {
+    #quick-add-technic .technicalEnquiry #techEnquiryTable.SWDataTable ul.pagination a.page-link {
+        padding: .5rem .7rem;
+    }
+}
+
+@media (max-width: 390px) {
+    #quick-add-technic fieldset {
+        padding: 0 .5rem;
+    }
+}
+
+/* 滾動條樣式 */
+#techEnquiryTable .dataTables_scroll .dataTables_scrollBody::-webkit-scrollbar {
+    width: 8px;
+    height: 4px;
+}
+
+#techEnquiryTable .dataTables_scroll .dataTables_scrollBody::-webkit-scrollbar-track {
+	background: rgba(230,232,237,.12);
+	border-radius: 6px;
+}
+
+#techEnquiryTable .dataTables_scroll .dataTables_scrollBody::-webkit-scrollbar-thumb {
+	background: rgba(230,232,237,.12);
+	border-radius: 5px;
+}
+
+#techEnquiryTable .dataTables_scroll .dataTables_scrollBody::-webkit-scrollbar-thumb:hover {
+	background: #c0c0c0;
+}
+
+/* Search Collapse */
+#quick-add-technic fieldset.card-expansion-item:not(.expanded) {
+    border: 0;
+    background-color: transparent;
+}
+#quick-add-technic fieldset.card-expansion-item:not(.expanded)>legend {
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+}
+
+.technicalEnquiry legend {
+    cursor: pointer;
+}
+
+#quick-add-technic fieldset.technicalEnquiry:not(.expanded)::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 37px;
+    border-radius: .5rem;
+    border: 0.125rem solid rgba(231,234,243,.7);
+    pointer-events: none;
+}
+
+#quick-add-technic fieldset.technicalEnquiry [data-toggle=collapse][aria-expanded=true].collapse-indicator>.fa-caret-right:before {
+    content: "\f0d7"
+}
+
+#techEnquiryTable>.dataTables_wrapper>.row {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.jstree-default-contextmenu{
+    z-index: 1300;
+}
+
+#category_tree.jstree-default .jstree-node.jstree-open, 
+#category_tree.jstree-default .jstree-open .jstree-icon {
+    background-image: none !important;
+}
+
+@media (max-width: 767.98px) {
+    .selectOptions span.optionLabel {
+        min-width: 64px;
+    }
+    .selectOptions #addRoot {
+        display: block;
+        width: 100%;
+    }
+    .selectOptions .btnBox {
+        padding-left: 91px;
+    }
+}
+
+@media (min-width: 992px) {
+    #quick_category .modal-dialog {
+        max-width: 900px;
+    }
+}
+
+.blur {
+    filter: blur(2px);
+}
+
+@media (min-width: 768px) and (max-width: 1199.98px) {
+    #quick-add-technic .modal-dialog {
+        max-width: 750px;
+    }
+    #quick_category_tree .modal-dialog {
+        max-width: 600px;
+    }
+}
+@media (min-width: 768px) and (max-width: 991.98px)  {
+    #quick_category_tree .modal-body .selectOptions>div:not(.btnBox) {
+        flex-basis: 0;
+        flex-grow: 1;
+        max-width: 100%;
+
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    #quick_category_tree .modal-body .selectOptions>div.btnBox {
+        flex: 0 0 auto;
+        width: auto;
+        max-width: 100%
+    }
+}

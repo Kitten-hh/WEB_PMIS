@@ -1,0 +1,97 @@
+{%load static %}
+{% load i18n %}
+<input type="hidden" id="login_username" value="{{user.username}}"/>
+<div id="User_menu" class="d-none">
+    <div class="dropdown-menu dropdown-menu-right" style>
+        <div class="dropdown-arrow"></div>
+        <div class="auth-page">
+            <h1 class="auth-page-title text-lg-center d-none d-lg-block" style="font-size: 16px;color: #3b3f5c;">登錄</h1>
+            <form class="form-horizontal auth-form">
+                <div class="form-group">
+                    <div class="form-label-group">
+                        <input type="text" id="inputUser" class="form-control placeholder-shown rounded-lg" name="username" placeholder="Username" autofocus=""> 
+                        <label for="inputUser">用戶名稱</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-label-group">
+                        <input type="password" id="inputPassword" class="form-control placeholder-shown rounded-lg" name="password" placeholder="Password"> 
+                        <label for="inputPassword">登錄密碼</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-lg btn-primary btn-block login" type="submit">登錄<i class="fas fa-arrow-right ml-1"></i></button>
+                </div>
+                <div class="text-left text-lg-center mt-4">
+                    <div class="custom-control custom-control-inline custom-checkbox mr-0">
+                        <input type="checkbox" class="custom-control-input" name="remeber-me" id="remember-me"> 
+                        <label class="custom-control-label" for="remember-me">保持登錄</label>
+                    </div>
+                </div> 
+            </form>        
+        </div>
+    </div>
+</div>
+
+<div id="auth_info" class="d-none">
+    <div class="auth-info dropdown d-none">
+        <button class="btn-account" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class="user-avatar user-avatar-md">
+                <img src="{% static 'PMISLooper/assets/images/timg.jpg' %}" alt="">
+            </span>
+            <span class="account-summary pr-lg-4 d-none d-lg-block">
+                <span class="account-name">Beni Arisandi</span>
+            </span>
+        </button>
+        <div class="dropdown-menu" style="">
+            <div class="dropdown-arrow d-lg-none" x-arrow="" style="left: 110px;"></div>
+            <div class="dropdown-arrow ml-3 d-none d-lg-block"></div>
+            <h6 class="dropdown-header account-name d-none d-md-block d-lg-none"> Beni Arisandi </h6>
+            <a class="dropdown-item" href="#"><span class="dropdown-icon oi oi-person"></span> {% trans "Profile" %}</a>            
+            <a class="dropdown-item logout" href="#"><span class="dropdown-icon oi oi-account-logout"></span>{% trans "Logout" %}</a>
+        </div>
+    </div>
+</div>
+
+<div id="auth-info-phone" class="d-none">
+    <button class="btn-account btn-account-login" type="button" data-toggle="modal" data-target="#userLogin"> 
+        <span class="account-summary"><span class="account-name" style="text-align: center;">登錄</span></span>
+    </button>
+    <button class="btn-account d-none d-md-none btn-account-islogin" type="button" data-toggle="collapse" data-target="#dropdown-aside" aria-expanded="false"> 
+        <span class="user-avatar user-avatar-lg">
+            <img src="{% static 'PMISLooper/assets/images/timg.jpg' %}" alt="">
+        </span> 
+        <span class="account-icon d-none"><span class="fa fa-caret-down fa-lg"></span></span> 
+        <span class="account-summary"><span class="account-name">Beni Arisandi</span></span>
+    </button>
+    <div id="dropdown-aside" class="dropdown-aside collapse">
+        <div class="pb-3">
+            <a class="dropdown-item" href="#"><span class="dropdown-icon oi oi-person"></span> {% trans "Profile" %} </a> <a
+                class="dropdown-item userLogout" href="#"><span class="dropdown-icon oi oi-account-logout"></span>
+                {% trans "Logout" %}</a>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade has-shown login_modal" id="userLogin" tabindex="-1" role="dialog"
+    aria-labelledby="userLogin" style="display: none;" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <h1 class="" style="font-size: 32px;color: #3b3f5c;">登錄</h1>
+                <p class="mb-4" style="font-size: 13px;color: #888ea8;font-weight: 600;">請登錄你的賬戶以繼續</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade has-shown login_modal" id="login_modal" tabindex="-1" role="dialog"
+    aria-labelledby="userLogin" style="display: none;" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <h1 class="" style="font-size: 32px;color: #3b3f5c;">登錄</h1>
+                <p class="mb-4" style="font-size: 13px;color: #888ea8;font-weight: 600;">請登錄你的賬戶以繼續</p>
+            </div>
+        </div>
+    </div>
+</div>

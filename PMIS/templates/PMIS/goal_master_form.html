@@ -1,0 +1,177 @@
+{% extends 'PMIS/My_Starter_page.html' %}
+{% load customer_filter %}
+{%block header_jscss%}
+<style type="text/css">
+  .modal-body {
+    padding:1rem;
+  }
+  .modal-body .form-group {
+    margin-bottom: 0px;
+  }
+  .modal-body textarea {
+    height:160px;
+  }
+</style>  
+{%endblock%}
+{%  block content %}
+    <div class="k-grid__item k-grid__item--fluid k-grid k-grid--hor">
+        <div class="k-grid__item k-grid__item--fluid">
+          <div class="k-portlet k-portlet--mobile">
+            <div class="k-portlet__head">
+              <h5 class="k-portlet__head-label">Goal Master</h5>
+              <div class="dropdown pt-2">
+                <button class="btn btn-secondary ml-2 dropdown-toggle" type="button" data-toggle="dropdown" aria-label="Columns" title="Columns">
+                <i class="fa fa-th-list"></i>                                
+                <span class="caret"></span>
+                </button>
+                <div class="dropdown-menu">
+                  <label class="dropdown-item">
+                    <span id="main_look_gantt">查看甘特圖</span></label>
+                  <label class="dropdown-item">
+                    <input id="allow_mutil_select" type="checkbox" data-field="TaskNo" value="1"> <span>允許多選</span></label>
+                </div>
+            </div>                  
+            </div>
+            <div class="k-portlet__body">
+                <div class="input-group from-inline">
+                            <label for="example-text-input" class="col-form-label ml-1">聯繫人</label>
+                            <input class="form-control col-auto ml-1" type="text" value="sing" id="user">
+                            <label for="example-text-input" class="col-form-label ml-1">季度</label>
+                            <input class="form-control col-auto ml-1" type="text" value="2020-3" id="period">
+                            <button type="button" class="btn btn-primary ml-1" id="btnSearch"><i class="flaticon-search"></i>Search</button>                        
+                </div>
+                <div class="table-responsive">
+                    {{ master_datatable }}
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalTitle" style="display: none;" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+                <h5 class="modal-title" id="editModalTitle">修改Appraisal</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">×</span> </button>
+          </div>
+          <form class="site-form" method="POST" action="/PMIS/goal_master_form/edit/">        
+            {% csrf_token %}
+            <div class="modal-body">  
+              <div class="form-group">
+                <label for="example-text-input" class="col-4 col-form-label">工程描述</label>
+                <textarea class="form-control" name="objective"></textarea>
+              </div>
+              <div class="form-group row">
+                <label for="example-text-input" class="col-4 col-form-label">計畫開始</label>
+                <div class="col-12">
+                    <input class="form-control" type="date" name="bdate" required/>
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="example-text-input" class="col-4 col-form-label">計畫結束</label>
+                <div class="col-12">
+                    <input class="form-control" type="date" name="edate" required/>
+                </div>
+              </div>
+            </div>
+            <div class='modal-footer'>
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <button type="submit" class="btn btn-secondary save">Save changes</button>
+            </div>        
+          </form>        
+        </div>
+      </div>
+    </div>        
+{% endblock %}
+
+{% block page_js%}
+<script type="text/javascript">
+  $(document).ready(function() {
+      datatableview.initialize($('.datatable'),OnlyTableDataTableStyle, {
+          deferLoading:0,
+          initComplete: function(settings) {        
+                self = this.api()              
+                var contact = $("#user").val();
+                var period = $("#period").val();
+                self.columns(1).search(period).columns(2).search(contact).draw()
+                $("#btnSearch").on("click", function(){
+                  var contact = $("#user").val();
+                  var period = $("#period").val();
+                  var desc = $("#desc").val();
+                  self.columns(1).search(period).columns(2).search(contact).draw();
+                });
+          },
+          columns:[
+            {"mRender": function ( data, type, row ) {
+                        var id = row.DT_RowId;
+                        return `<button type="button" class="btn btn-accent btn-icon" row_id='` + id + `' data-toggle="modal" data-target="#editModal">
+                              <i class="flaticon-edit-1"></i></button>
+                              <div class="dropdown dropdown-inline">
+                                    <button type="button" class="btn btn-hover-brand btn-elevate-hover btn-icon btn-icon-md" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="flaticon-more"></i> </button>
+                                          <div class="dropdown-menu dropdown-menu-right" x-placement="bottom-end" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(29px, 29px, 0px);">
+                                              <a class="dropdown-item" href="/PMIS/goal_master_form/treelist/`+ id +`"><i class="la la-plus"></i>查看目標</a>
+                                              <a class="dropdown-item" href="http://222.118.20.134:40010/s/34969?dc=false&id=`+ id +`"><i class="la la-plus"></i>查看報表</a>
+                                              <a class="dropdown-item" href="/PMIS/looper_calendar?type=goal&id=` + id + `"><i class="la la-user"></i>查看日曆</a>
+                                              <a class="dropdown-item" href="/PMIS/looper_gantt?type=goal&id=` + id + `"><i class="la la-cloud-download"></i>查看甘特圖</a>
+                                          </div>
+                              </div>`;}
+                }
+          ],
+          columnDefs: [
+                  {"responsivePriority": 1, "targets": 0 },
+                  {"responsivePriority": 1, "width": "45%", "targets": 3 },
+                  {"responsivePriority": 2, "targets": 1 },
+                  {"responsivePriority": 3, "targets": 2 },
+                  {"responsivePriority": 5, "targets": 4 },
+                  {"responsivePriority": 6, "targets": 5 },
+                  {"responsivePriority": 7, "targets": 6 },
+                  {"responsivePriority": 8, "targets": 7 },
+          ]
+      });
+
+    $('.datatable').on('click', 'button', function () {
+            var id = $(this).attr('row_id');
+            var row = undefined
+            $('.datatable').DataTable().row(function (idx, data, node) {
+              var local_id = data.DT_RowId;
+              if (local_id == id) {
+                row = data
+                return;
+              }
+            });
+            var action = $("#editModal form").attr("action");
+            action = action.replace(/edit.*/, "edit/" + id);
+            $("#editModal form").attr("action", action);
+            $("#editModal form .form-control[name='objective']").val(row[3]);
+            $("#editModal form .form-control[name='bdate']").val(row[4]);
+            $("#editModal form .form-control[name='edate']").val(row[5]);
+    });     
+    
+    $("#allow_mutil_select").on("click", function(){
+      var enabled = $(this).is(":checked");
+      if (enabled)
+        $('.datatable').DataTable().select.style('multi');
+      else
+        $('.datatable').DataTable().select.style('os');
+    })
+    $("#main_look_gantt").on('click', function(){
+      var rows = $('.datatable').DataTable().rows({selected:true}).data();
+      var ids = ""
+      for(var i = 0; i < rows.length; i++) {
+        var row = rows[i];
+        var id = data.DT_RowId;
+        if (ids != "")
+          ids += ";" + id;
+        else
+          ids = id;
+      }
+      if (ids != "")
+        window.location = "/PMIS/Looper_gantt?type=goal&id=" + ids;
+    })
+  });
+</script>
+{% endblock%}
+
+
+
+

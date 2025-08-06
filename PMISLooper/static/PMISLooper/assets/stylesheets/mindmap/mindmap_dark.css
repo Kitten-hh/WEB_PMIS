@@ -1,0 +1,262 @@
+.technic_mindmap {
+    font-family: 'Andika';
+    position: relative;
+}
+
+.SWRow .caption{
+    font-weight: 600;
+}
+
+.technic_mindmap label>.badge, label>abbr {
+    margin-right: .125rem;
+}
+
+.technic_mindmap abbr[data-original-title], .technic_mindmap abbr[title] {
+    text-decoration: none;
+}
+
+@media (max-width: 575.98px){
+    .page-inner {
+        padding: 1rem;
+    }
+
+  /* 預設先用 vh 以兼容不支援 dvh 的瀏覽器 */
+  #phoneLeftPanel>.SWMindmap>#myDiagramDiv-1 {
+      height: 72.5vh !important;
+  }
+
+  /* 若瀏覽器支援 dvh，則覆蓋為 dvh */
+  @supports (height: 100dvh) {
+      #phoneLeftPanel>.SWMindmap>#myDiagramDiv-1 {
+          height: 79.5dvh !important;
+      }
+  }
+}
+
+@media screen and (max-width: 576px) {
+    .section-block {
+        padding-right: 0;
+        padding-left: 0;
+    }
+
+    .steps {
+        margin: .6rem 0;
+    }
+
+    .SWRow .caption,.SWRow .control{
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .SWRow .caption{
+        color: #56575f;
+        font-weight: 600;
+    }
+}
+
+.sidebar_cust .vakata-context, .vakata-context ul {
+    z-index: 99999;
+}
+
+.sidebar_cust #splitter{
+    height: calc(100vh - 3.5rem) !important;
+    overflow: hidden;
+    background-color: #191927;
+}
+
+.splitter_panel .vsplitter {
+    background-color: #333;
+    cursor: col-resize!important;
+    z-index: 2;
+    width: 4px;
+}  
+
+.sidebar_cust .sidebar-section {
+    padding: 0;
+}
+
+.sidebar_cust .right_panel .sidebar-sec>.card-header {
+    padding: .5rem;
+    background: #222230;
+}
+
+.sidebar_cust .page-sidebar,.sidebar_cust #rightPane{
+    background: #222230;
+}
+
+.ps-20{
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+
+@media screen and (max-width: 768px) {
+    .splitter_panel .vsplitter {
+        width: 4px;
+    }  
+}
+
+/* 文字換行 */
+.jstree-anchor {
+    display: inline;
+    white-space: pre-wrap!important;
+    vertical-align: baseline!important;
+}
+
+#techtree.jstree-default .jstree-clicked, 
+#techtree.jstree-default .jstree-wholerow-clicked {
+    background: transparent;
+    box-shadow: none;
+    border-radius: 0;
+}
+
+#techtree.jstree-default>.jstree-wholerow-ul .jstree-clicked {
+    background: rgba(52, 108, 176, .2);
+    box-shadow: inset 0 0 1px #2d2d3f;
+    background-image: none;
+    color: #3265e2 !important;
+}
+
+.vsplitter {
+    background: rgba(230,232,237,.1) url(./../../images/panev.gif) 0% 50%;
+    filter: opacity(50%);
+}
+
+@media screen and (max-width: 768px) {
+    .splitter_panel .vsplitter {
+        width: 4px;
+    }  
+}
+
+@media screen and (max-width: 576px) {
+    #Optiondiv {
+        padding: 0 8px;
+    }
+
+    #Optiondiv .SWCombobox .caption:nth-child(1) {
+        padding-left: 5px;
+    }
+}
+
+/* 滾動條樣式 */
+.sidebar_cust #rightPane::-webkit-scrollbar, #myDiagramDiv-1 div:nth-child(2)::-webkit-scrollbar {
+	width: 8px;
+	height: 8px;
+}
+
+.sidebar_cust #rightPane::-webkit-scrollbar-track, #myDiagramDiv-1 div:nth-child(2)::-webkit-scrollbar-track {
+	background: transparent!important;
+	border-radius: 6px;
+}
+
+.sidebar_cust #rightPane::-webkit-scrollbar-thumb, #myDiagramDiv-1 div:nth-child(2)::-webkit-scrollbar-thumb {
+	background: rgba(230,232,237,.12)!important;
+	border-radius: 5px;
+}
+
+.sidebar_cust #rightPane::-webkit-scrollbar-thumb:hover, #myDiagramDiv-1 div:nth-child(2)::-webkit-scrollbar-thumb:hover {
+	background: rgba(230,232,237,.12)!important;
+}
+
+/*  */
+.SWMindmap .mindmap_wrapper {
+    background: #191927!important;
+    border-bottom: 1px solid rgba(230,232,237,.1)!important;
+    margin-bottom: 10px;
+}
+
+a.tile-wrapper .tile-peek {
+    color: #888c9b!important;
+}
+
+.SWMindmap>div[id] {
+    background-color: #2d2d3f !important;
+}
+
+/* 修改session明細 */
+#show_edit_session .modal-content .modal-header {
+    padding: .65rem !important;
+}
+
+.editSessionForm .card-body .sessionWrap>label {
+    white-space: nowrap;
+}
+
+.editSessionForm,
+.editSessionForm>.form .container>.row>.col-lg-12 {
+    padding: 0;
+}
+.editSessionForm .example-compact {
+    margin-bottom: 0;
+}
+
+.editSessionForm .example-compact .card-body {
+    display: flex;
+    flex-wrap: wrap;
+    padding: .5rem;
+}
+
+.editSessionForm .example-compact .card-body .form-group {
+    position: relative;
+    width: 100%;
+    padding-right: 5px;
+    padding-left: 5px;
+    margin-bottom: .5rem;
+}
+
+.editSessionForm .example-compact .card-body .sessionWrap {
+    width: 100%;
+    padding-right: 5px;
+    padding-left: 5px;
+}
+
+.editSessionForm .example-compact .card-body .parentSessionWrap {
+    width: 100%;
+    padding-right: 12px;
+    padding-left: 12px;
+}
+.editSessionForm .example-compact .card-body .parentSessionWrap #editSession_parentSession {
+    margin-left: 1rem;
+}
+
+.sessionWrap #edit_session_sessionID {
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.editSessionForm .example-compact .card-body .form-group:not(:last-child):not(:nth-last-child(2)) {
+    flex: 0 0 50%;
+    max-width: 50%
+}
+
+.editSessionForm .example-compact .card-footer {
+    padding: .65rem !important;
+    justify-content: end !important;
+}
+.editSessionForm .example-compact .card-footer>.save {
+    margin-right: .5rem !important;
+}
+
+.parentSessionWrap .fa-rotate-by.fa-level-up-alt {
+    rotate: 90deg;
+    align-self: start;
+}
+
+@media (min-width: 576px) {
+    #show_edit_session .modal-dialog {
+        max-width: 400px;
+    }
+}
+
+@media (max-width: 576px) {
+    .page.sidebar_cust:not(.has-sidebar-open) .btn-floated {
+        display: block !important;
+    }
+    .page.sidebar_cust:not(.has-sidebar-open) #pc_sidebar {
+        display: none;
+    }
+    .page.sidebar_cust.has-sidebar-open #pc_sidebar {
+        display: flex;
+    }
+}

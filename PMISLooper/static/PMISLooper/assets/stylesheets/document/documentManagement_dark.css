@@ -1,0 +1,129 @@
+.board.document_tree .tree-menu .tree-content .tree_content_title {
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    color: #d6d8e1;
+}
+
+.board.document_tree li.tree-content>div {
+    line-height: 1rem;
+    min-height: 2rem;
+}
+.board.document_tree li.tree-content>div.selected {
+    border-radius: 4px;
+    padding-left: 8px;
+    margin-left: -8px;
+}
+
+.board.document_tree li.tree-content>div>.icon {
+    color: #d6d8e1;
+}
+
+.board.document_tree li.tree-content>div.selected {
+    background-color: rgba(52, 108, 176, .26) !important;
+}
+
+.documentMagtPage .LPDataTable table {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+.tree-open>div>.tree_content_title>.fa-folder.title_icon:before {
+    content: "\f07c";
+}
+
+.fs14 {
+    font-size: 14px !important;
+}
+
+.px12 {
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+.managerMasterTable .table-striped tbody tr:nth-of-type(odd) {
+    background-color: rgba(20, 20, 31, .05)
+}
+
+.documentMagtHeader .btn-toolbar>.btn {
+    margin: 4px 2px;
+}
+
+.documentMagtHeader .buttonBar>.card {
+    box-shadow: none;
+    margin-bottom: 0;
+    padding: 0 !important;
+    background-color: transparent;
+}
+
+.documentMagtPage>.page-inner,
+.documentMagtPage>.page-sidebar {
+    height: 100%;
+}
+
+.documentMagtPage>.page-sidebar {
+    overflow: hidden auto;
+}
+
+.documentMagtPage .sidebar-section {
+    padding: 1rem;
+}
+
+.LPDataTable .dataTables_wrapper .dataTables_info {
+    display: none;
+}
+
+.documentMagtHeader .btn-toolbar .dropdown .dropdown-menu.show {
+    z-index: 1030;
+}
+
+/* dataTable */
+.LPDataTable table.dataTable thead .sorting:before,
+.LPDataTable table.dataTable thead .sorting_asc:before,
+.LPDataTable table.dataTable thead .sorting_desc:before,
+.LPDataTable table.dataTable thead .sorting_asc_disabled:before,
+.LPDataTable table.dataTable thead .sorting_desc_disabled:before {
+    content: "\f0de" !important;
+    right: 7px;
+    top: 8px;
+}
+
+.LPDataTable table.dataTable thead .sorting:after,
+.LPDataTable table.dataTable thead .sorting_asc:after,
+.LPDataTable table.dataTable thead .sorting_desc:after,
+.LPDataTable table.dataTable thead .sorting_asc_disabled:after,
+.LPDataTable table.dataTable thead .sorting_desc_disabled:after {
+    content: "\f0dd" !important;
+    top: 8px;
+}
+
+/* dataTable table-sm */
+.LPDataTable table.dataTable td,
+.LPDataTable table.dataTable th {
+    padding: .3rem
+}
+
+@media (min-width: 992px) {
+    .page {
+        min-height: calc(100vh - 7rem);
+    }
+
+    .documentMagtPage.has-sidebar-expand-lg.has-sidebar-fluid .page-inner {
+        margin-right: calc(100vw - 27.5rem);
+    }
+
+    .documentMagtPage.has-sidebar-expand-lg.has-sidebar-fluid .page-sidebar {
+        width: calc(100vw - 27.5rem);
+        max-width: calc(100vw - 27.5rem);
+    }
+}
+
+@media (min-width: 1200px) {
+    .documentMagtPage .card-deck-xl .card.attachmentsCard {
+        flex: 0 0 33.33%;
+    }
+
+    .documentMagtPage .card-deck-xl .card {
+        margin-bottom: 0;
+    }
+}

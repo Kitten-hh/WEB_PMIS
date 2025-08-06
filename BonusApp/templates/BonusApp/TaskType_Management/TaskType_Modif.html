@@ -1,0 +1,119 @@
+{% extends 'BonusApp/TopBottomBar.html' %}
+
+{% load static %}
+
+{% block solecss %}
+<style>
+    .main {
+        margin: 0 auto;
+        background: white;
+    }
+
+    #app-main {
+        background: rgb(241, 239, 239);
+    }
+
+    .content {
+        width: 96%;
+        margin: 0 auto;
+    }
+
+    .content p {
+        margin: 0 0 1rem 0;
+    }
+
+    #app-main {
+        margin-top: 5rem !important;
+    }
+
+    .myForm {
+        padding-bottom: 8rem;
+    }
+
+    .myForm input {
+        border: 0rem;
+        outline: none;
+        font-size: 2rem;
+        margin-left: 1rem;
+        font-weight: bold;
+        /* border: 1px red solid; */
+        width: 100%;
+    }
+
+    .myForm p {
+        border-bottom: gray 1px dashed;
+    }
+
+    .myForm label {
+        font-size: 2rem;
+    }
+
+    .btn_save_cancel1 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .btn_save_cancel2 {
+        width: 20rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 2rem;
+    }
+
+    .btn_save_cancel2 div a {
+        color: black;
+    }
+</style>
+
+{% endblock %}
+
+
+{% block solenav %}
+<div class="container-fluid Custom_Head">
+    <a class="navbar-brand" id="prev_page" href="/bonus/tasktype">
+        <i class="fa fa-arrow-left"></i>
+    </a>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="main">
+    <div class="content">
+        <form class="myForm" method="POST">
+            {% csrf_token %}
+            <input type="hidden" name="id" id="taskType_Id" value="{{taskType.id}}">
+            <label for="contact">Task Type</label>
+            <p class="tasktype">
+                <input type="text" name="tasktype" value="{{taskType.tasktype}}">
+            </p>
+
+            <label for="">Description</label>
+            <p class="description">
+                <input type="text" name="description" value="{{taskType.description}}">
+            </p>
+
+            <label for="">Score</label>
+            <p class="score">
+                <input type="text" name="score" value="{{taskType.score}}">
+            </p>
+        </form>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block footernav %}
+<div class="container-fluid justify-content-center">
+    <ul class="nav">
+        <li class="nav-item ml-4 mr-4" id='cencel'><button class="btn btn-warning" type="button">Cencel</button></li>
+        <li class="nav-item ml-4 mr-4" id='save'><button class="btn btn-warning" type="button">Save</button></li>
+    </ul>
+</div>
+{% endblock %}
+
+{% block solejs %}
+<script type="text/javascript" src="{% static 'BonusApp/TaskType_Management/TaskType_Modif.js' %}" type="text/javascript"></script>
+<script type="text/javascript" src="{% static 'BonusApp/TaskType_Management/TaskType_Public.js' %}"></script>
+{% endblock %}

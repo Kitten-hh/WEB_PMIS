@@ -1,0 +1,72 @@
+/* dataTable */
+.LPDataTable table.dataTable thead .sorting:before,
+.LPDataTable table.dataTable thead .sorting_asc:before,
+.LPDataTable table.dataTable thead .sorting_desc:before,
+.LPDataTable table.dataTable thead .sorting_asc_disabled:before,
+.LPDataTable table.dataTable thead .sorting_desc_disabled:before {
+  content: "\f0de" !important;
+  right: 0 !important;
+  top: 10px !important;
+}
+
+.LPDataTable table.dataTable thead .sorting:after,
+.LPDataTable table.dataTable thead .sorting_asc:after,
+.LPDataTable table.dataTable thead .sorting_desc:after,
+.LPDataTable table.dataTable thead .sorting_asc_disabled:after,
+.LPDataTable table.dataTable thead .sorting_desc_disabled:after {
+  content: "\f0dd" !important;
+  right: 0 !important;
+  top: 10px !important;
+}
+
+.LPDataTable .text-truncate {
+  text-overflow:clip;
+}
+.LPDataTable label.text-truncate {
+  margin-bottom: 0px !important;
+}
+.LPDataTable table.dataTable.table-sm>thead>tr>th {
+  padding-right: 10px !important;
+}
+
+.LPDataTable table {
+  border-radius: 0;
+}
+
+.LPDataTable .datatable_paging_inline {
+  align-content:center;
+  justify-content:flex-end;
+}
+
+.LPDataTable .dataTables_wrapper .dataTable th,
+.LPDataTable .dataTables_wrapper .dataTable td {
+  font-size: 16px;
+}
+
+.textEdit {
+  /*
+  width: 40px;
+  border: 0;
+  background: transparent;
+  font-size: 18px;
+  color: #FFA800 !important;
+  text-align: right;
+  outline: 0;
+  */
+  text-align: right;
+  font-size: 18px;
+  background-color: #2d2d3f;
+  color: rgb(255 0 0 / 70%);
+  border: 1px solid #d1d3db;
+  padding: 1px 2px;
+  height: 31px;
+}
+
+.masterWrapper .dataTables_wrapper .dataTable tbody tr.selected td {
+  color:white !important;
+  background-color: #0275d8 !important;
+}
+
+.dataTables_wrapper .dataTables_info {
+  display: none;
+}

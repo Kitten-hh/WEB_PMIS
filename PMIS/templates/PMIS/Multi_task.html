@@ -1,0 +1,15 @@
+{% extends 'PMIS/Starter_page.html' %}
+
+{%  block content %}
+
+    <h1> Multi Task Page </h1>
+
+    <ul>
+
+        {% for AllTask in All_Task %}
+        <li>{{ AllTask.Pid }} - {{ AllTask.Task }}</li>
+        {% endfor %}
+
+    </ul>
+
+{% endblock %}

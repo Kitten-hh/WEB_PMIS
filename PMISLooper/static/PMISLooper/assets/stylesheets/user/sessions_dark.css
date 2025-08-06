@@ -1,0 +1,183 @@
+.modal.fade .modal-dialog {
+    transform: translate3d(0, 100vh, 0);
+    transition: transform 0.6s ease-out;
+  }
+  
+  .modal.show .modal-dialog {
+    transform: translate3d(0, 0, 0);
+    transition: transform 0.6s ease-out;
+  }
+
+  #exampleModal {
+    height: 91vh;
+  }
+
+  .task-item {
+    cursor: pointer;
+  }
+
+  /* Sessions部分显示task的样式 */
+.task_wap:first-child{
+    margin-top: 20px;
+}
+
+.task_wap .alert-link {
+    color: #9d5d8e;
+}
+
+.task_wap .wrap-primary{
+    color: #2f5e99;
+    background-color: #222230;
+    border-bottom: 3px solid #346cb0;
+    box-shadow: 0 0 0 1px rgb(20 20 31 / 5%), 0 1px 3px 0 rgb(20 20 31 / 15%);
+}
+
+.circle-dot {
+    margin-right: 8px;
+}
+
+.task_wap .card-body {
+    width: 100%!important;
+}
+
+.task_wap .card-content div{
+    min-width: 0;
+    white-space: pre-wrap;
+    color: #d6d8e1;
+}
+
+.task_wap .card-title {
+    margin-bottom: 5px;
+}
+
+.task_wap .card-subtitle {
+    margin-top: 0;
+}
+
+.task_wap .list-inline{
+    margin-bottom: 0;
+}
+
+.task_wap .card-footer {
+    padding: .5rem;
+}
+
+.task_wap .task-num{
+    display: inline-block;
+    padding: 4px 16px 4px 8px;
+    border-radius: 0 30px 30px 0;
+    background-color: #5664d2;
+    color: #fff;
+    position: relative;
+    left: -25px;
+}
+
+.task_wap ul.list {
+    list-style: none;
+    margin-bottom: 0;
+}
+
+.task_wap .footer_wrap {
+    background-color: transparent;
+    border-top: 1px solid rgba(20, 20, 31, .12);
+    border-radius: 0 0 calc(.25rem - 1px) calc(.25rem - 1px);
+    padding: .5rem;
+}
+
+.task_wap ul li span {
+    min-width: 0;
+    white-space: pre-wrap;
+}
+
+.task_wap .list .badge {
+    font-size: 14px;
+    color: #d6d8e1;
+}
+
+.page-cover {
+    padding-top: 5px;
+    padding-bottom: 0;
+    min-height: 1px;
+}
+
+#sessions .task-body {
+    height: calc(100vh - 296px);
+}
+
+#sessions .SWBoardlist .task-body .item-content {
+    color: #3e6cff;
+}
+
+/* 滾動條樣式 */
+#sessions .task-body::-webkit-scrollbar {
+	width: 8px;
+}
+
+#sessions .task-body::-webkit-scrollbar-track  {
+	background: transparent;
+	border-radius: 6px;
+}
+
+#sessions .task-body::-webkit-scrollbar-thumb {
+	background: rgba(230,232,237,.12);
+	border-radius: 5px;
+}
+
+#sessions .task-body::-webkit-scrollbar-thumb:hover  {
+	background: #c0c0c0;
+}
+
+/* 过滤 */
+.session_task_filter .badge {
+    font-size: 90% !important;
+}
+
+.session_task_filter .active {
+    color: #0073ff !important;
+    background-color: #0073ff3d !important;
+}
+
+.session_task_filter a.badge-dark.focus, a.badge-dark:focus {
+    box-shadow: none !important;
+}
+
+.SWBoardlist .task-body .card-footer {
+    border-top: 1px solid hsla(0,0%,100%,.08)!important;
+}
+
+@media (min-width: 360px) and (max-width: 389.98px) {
+    #sessions .SWBoardlist .task-issue .card-footer .right {
+        flex-grow: 10;
+    }
+}
+
+@media (min-width: 390px) and (max-width: 499.98px) {
+    #sessions .SWBoardlist .task-issue .card-footer .right {
+        flex-grow: 12;
+    }
+}
+
+@media (min-width: 500px) and (max-width: 649.98px) {
+    #sessions .SWBoardlist .task-issue .card-footer .right {
+        flex-grow: 4;
+    }
+}
+
+@media (min-width: 650px) and (max-width: 767.98px),(min-width: 850px) and (max-width: 1129.98px) {
+    #sessions .SWBoardlist .task-issue .card-footer .right {
+        flex-grow: 2;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 849.98px) {
+    #sessions .SWBoardlist .task-issue .card-footer .right {
+        flex-grow: 3;
+    }
+}
+
+@media screen and (min-width: 1500px){
+    #sessions .SWBoardlist .task-issue .card-footer .left,
+    #sessions .SWBoardlist .task-issue .card-footer .add_task {
+        flex-grow: 1.5;
+    }
+}

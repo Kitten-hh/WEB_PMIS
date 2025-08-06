@@ -1,0 +1,25 @@
+{% extends 'PMISLooper/vue_index.html' %}
+{%load static %}
+{% load md5url %}
+{% load render_bundle from webpack_loader %}
+{% block form_css%}
+{{block.super}}
+    <link rel="stylesheet" type="text/css" href="{% md5url 'ProjectManagement_app/assets/stylesheets/ProjectMilestone.css' %}" data-skin="default"/>    
+    <link rel="stylesheet" type="text/css" href="{% md5url 'ProjectManagement_app/assets/stylesheets/ProjectMilestone_dark.css' %}" data-skin="dark"/>    
+    <link rel="stylesheet" type="text/css" href="{% md5url 'ProjectManagement_app/assets/stylesheets/ProjectGanttModal.css' %}" data-skin="default"/>    
+    <link rel="stylesheet" type="text/css" href="{% md5url 'ProjectManagement_app/assets/stylesheets/ProjectGanttModal_dark.css' %}" data-skin="dark"/>    
+{%endblock%}
+
+{% block content%}
+{{block.super}}
+    
+{%endblock%}   
+
+
+{%block form_js%}
+{{block.super}}
+{% render_bundle 'ProjectManagement_app/dist/javascript/ProjectGanttModal' %} 
+<script src="{% static 'BaseApp/vendor/Looper/assets/vendor/moment/min/moment.min.js' %}"></script>
+<script src="{% static 'BaseApp/vendor/Looper/assets/vendor/snapsvg/snap.svg-min.js' %}"></script>
+<script src="{% static 'BaseApp/vendor/Looper/assets/vendor/frappe-gantt-v2/frappe-gantt.min.js' %}"></script>
+{%endblock%}     
